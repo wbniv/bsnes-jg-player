@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="color-scheme" content="dark"><title>LLVM 65816 Torture Test Suite on SNES</title>
+  <link rel="stylesheet" href="library.css">
+</head>
+<body class="library-mode">
+  <main id="game"><canvas id="screen" width="256" height="224" aria-label="SNES gameplay"></canvas></main>
+  <div id="hud"><div id="brand">LLVM 65816 Torture Test Suite</div><div id="status">Starting emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
+  <div id="banner" class="banner"></div>
+  <main id="library" aria-label="ROM library">
+    <header class="top"><div><h1>LLVM 65816 Torture Test Suite on SNES</h1><p id="catalog-total">Loading published ROMs…</p></div><button id="lucky">I'm Feeling Lucky</button><label class="search"><span>SEARCH</span><input id="search" type="search" autocomplete="off" placeholder="Title, category, feature"></label></header>
+    <nav id="filters" class="filters" aria-label="ROM categories"></nav>
+    <section class="content"><div class="results"><div id="result-count" aria-live="polite"></div><div id="rom-list" class="rom-list" role="listbox" aria-label="ROM builds"></div><div id="empty" hidden><p>No ROMs match this search.</p><button id="search-all">Search all ROMs</button><button id="clear-search">Clear search</button></div></div>
+      <aside id="preview" class="preview" aria-label="Selected ROM details"><img id="hero" alt="Screenshot of selected SNES ROM"><h2 id="title">Choose a ROM</h2><div id="category"></div><p id="description"></p><p id="controls"></p><p id="filename"></p><div id="preview-buttons" class="preview-buttons"><button id="favorite">☆ Favorite</button><button id="play">▶ Play</button></div><p id="error" role="status"></p><button id="retry-previous" hidden>Restart previous ROM</button></aside></section>
+    <footer><span>D-PAD Browse　·　SELECT Play　·　HOLD SELECT Favorite　·　BACK</span><span id="catalog-count"></span></footer>
+  </main>
+  <section id="pause-menu" hidden><div id="tv-pause-card"><h1 id="tv-title">Paused</h1><p id="pause-subtitle"></p><p id="pause-progress"></p><div id="tv-actions"><button id="tv-resume">Resume</button><button id="tv-library">Choose another ROM</button><button id="tv-restart">Restart this ROM</button><button id="tv-verify">Verify from start</button><button id="tv-cancel" hidden>Cancel verification</button><button id="tv-exit">Exit to Google TV</button></div><div id="checkresult"></div></div></section>
+  <script>window.BJG_DEFAULT_ROM="mandel-display";window.BJG_TV_MODE=true;window.BJG_LIBRARY_MODE=true;</script>
+  <script src="tv-scheduler.js"></script><script src="engine-adapter.js"></script><script src="tv.js"></script><script src="library.js"></script>
+</body></html>

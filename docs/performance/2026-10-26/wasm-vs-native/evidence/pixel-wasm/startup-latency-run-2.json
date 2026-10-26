@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "launch_wall_start": 1793025783.0926013,
+  "launch_wall_end": 1793025783.9946458,
+  "am_start_output": "Starting: Intent { cmp=org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity\nTotalTime: 437\nWaitTime: 454\nComplete\n",
+  "samples": [
+    {
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46516",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025784.4516783,
+      "valid_presents": 0
+    },
+    {
+      "layer": "f2dfc1e org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46515",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025784.972794,
+      "valid_presents": 0
+    },
+    {
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46516",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025785.5895803,
+      "valid_presents": 0
+    },
+    {
+      "layer": "f2dfc1e org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46515",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025785.811811,
+      "valid_presents": 0
+    },
+    {
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46516",
+      "raw": "8333333\n293052604146428\t293052619101506\t293052606016708\n293052669728500\t293052685804061\t293052670673527\n293052690052393\t293052702446965\t293052690465275\n293052729029769\t293052744149764\t293052730060165\n293052740806136\t293052752468490\t293052741677149\n293052751989364\t293052769135360\t293052752494125\n293053673100937\t293053694781804\t293053674166814\n293053681463607\t293053703049057\t293053682287582\n293053688725977\t293053711347030\t293053689904037\n293053697498764\t293053719684555\t293053698791448\n293053705251124\t293053728038966\t293053706342392\n293053713594996\t293053736405339\t293053714738957\n293053722424586\t293053744676702\t293053723633367\n293053730361231\t293053753009099\t293053731567733\n293053739171005\t293053761366440\t293053740353175\n\n",
+      "host_wall_time": 1793025786.453635,
+      "valid_presents": 15
+    }
+  ],
+  "selected_layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46516",
+  "first_present_ns": 293052619101506,
+  "ring_full": false
+}

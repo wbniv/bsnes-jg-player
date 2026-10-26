@@ -17,6 +17,13 @@
 # Deploy bundle (reproducible via deploy-bundle.sh)
 /dist-bundle/
 
+# Android TV app build products (APK is staged explicitly when delivered)
+/android-tv/.gradle/
+/android-tv/local.properties
+/android-tv/app/build/
+/android-tv/app/.cxx/
+/android-tv/app/.externalNativeBuild/
+
 # Misc
 *.log
 .DS_Store

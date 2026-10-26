@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "launch_wall_start": 1793025832.191855,
+  "launch_wall_end": 1793025832.7875147,
+  "am_start_output": "Starting: Intent { cmp=org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity\nTotalTime: 368\nWaitTime: 374\nComplete\n",
+  "samples": [
+    {
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46549",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025833.181639,
+      "valid_presents": 0
+    },
+    {
+      "layer": "1d3c6f7 org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46548",
+      "raw": "8333333\n\n",
+      "host_wall_time": 1793025833.4050205,
+      "valid_presents": 0
+    },
+    {
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46549",
+      "raw": "8333333\n293100978876920\t293101002954638\t293100979882088\n\n",
+      "host_wall_time": 1793025833.9541163,
+      "valid_presents": 1
+    }
+  ],
+  "selected_layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46549",
+  "first_present_ns": 293101002954638,
+  "ring_full": false
+}

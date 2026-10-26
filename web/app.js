@@ -48,11 +48,26 @@
   var touchNavPressed = 0; // synthetic bit currently owned by that timer
   var running = false;     // RAF loop active
   var rafId = 0;
+  var verification = null; // active, cancellable fidelity run
   var imageData = null;
   var runLabel = "";       // status prefix for the running ROM
   var dimsShown = false;   // whether status already carries WxH
   var revealed = false;    // true once the first non-black live frame has been drawn
                            //  (until then the baked preview stays on the canvas)
+  var tvMetrics = {
+    bootAt: performance.now(), lastRafAt: null,
+    core: [], canvas: [], draw: [], raf: [], drawSubmissions: 0, frames: 0, romFrames: 0,
+    firstLiveFrame: false, fidelityReady: false, romRun: 0,
+    frameCallbacks: 0, windowStartAt: performance.now(), maxBacklog: 0, lastBacklogReport: 0
+  };
+  // SNES NTSC frame rate. Advance by elapsed monotonic time instead of assuming
+  // that every TV display refresh is exactly 60 Hz.
+  var EMULATION_HZ = 60.0988;
+  var MAX_STEPS_PER_CALLBACK = 4;
+  var emulationCredit = 0;
+  var lastEmulationTimestamp = null;
+  var tvFrameClock = window.BJG_TV_MODE && window.BJGFrameScheduler ?
+    window.BJGFrameScheduler.create(EMULATION_HZ, MAX_STEPS_PER_CALLBACK) : null;
 
   var canvas = document.getElementById("screen");
   var ctx = canvas.getContext("2d", { alpha: false });
@@ -61,6 +76,31 @@
   var bannerEl = document.getElementById("banner");
 
   function status(msg) { if (statusEl) statusEl.textContent = msg; }
+
+  // TV runs emit compact one-second summaries through WebView's console. The
+  // Android wrapper records them with a dedicated log tag. Canvas submission
+  // is deliberately separate from display presentation: WebView exposes no
+  // compositor presentation timestamps here.
+  function tvMetric(event, values) {
+    if (!window.BJG_TV_MODE || !window.console || !console.info) return;
+    var record = Object.assign({ event: event, t_ms: Math.round(performance.now() - tvMetrics.bootAt), rom_run: tvMetrics.romRun }, values || {});
+    console.info("BJG_TV_METRIC " + JSON.stringify(record));
+  }
+
+  function percentile(samples, fraction) {
+    if (!samples.length) return 0;
+    var sorted = samples.slice().sort(function (a, b) { return a - b; });
+    return sorted[Math.min(sorted.length - 1, Math.ceil(sorted.length * fraction) - 1)];
+  }
+
+  function summarize(samples) {
+    var sum = samples.reduce(function (total, value) { return total + value; }, 0);
+    return {
+      mean_ms: Number((sum / Math.max(1, samples.length)).toFixed(3)),
+      p95_ms: Number(percentile(samples, 0.95).toFixed(3)),
+      max_ms: Number(Math.max.apply(Math, samples.concat([0])).toFixed(3))
+    };
+  }
 
   function clearTouchNav() {
     clearTimeout(touchRelease);
@@ -86,7 +126,7 @@
 
   function present() {
     var w = Module._bjg_video_w(), h = Module._bjg_video_h(), pitch = Module._bjg_video_pitch();
-    if (!w || !h) return;
+    if (!w || !h) return false;
     // bsnes hands us a 512-wide buffer for lores content (256 logical px doubled)
     // and ~240 scanlines incl. overscan. Collapse the 2x horizontal doubling and
     // crop to the 224 visible NTSC lines — the true 256x224 logical frame, square
@@ -115,7 +155,7 @@
         for (var sx = 0; sx < ow; sx += 8)
           if (heap[sb + sx * step] & 0xffffff) { lit = true; break; }
       }
-      if (!lit) return;                      // still blank — leave the preview up
+      if (!lit) return false;                // still blank — leave the preview up
       revealed = true;
     }
     if (!imageData || canvas.width !== ow || canvas.height !== oh) {
@@ -136,18 +176,120 @@
       }
     }
     ctx.putImageData(imageData, 0, 0);
+    if (window.BJG_TV_MODE && !tvMetrics.firstLiveFrame) {
+      tvMetrics.firstLiveFrame = true;
+      tvMetric("first_live_frame", { width: ow, height: oh, image_ratio: "8:7" });
+    }
+    return true;
   }
 
-  function frame() {
+  function frame(timestamp) {
     if (!running) return;
-    Module._bjg_set_input(0, pad);
-    Module._bjg_run();
-    present();
+    var entered = performance.now();
+    if (window.BJG_TV_MODE && tvMetrics.lastRafAt !== null) tvMetrics.raf.push(entered - tvMetrics.lastRafAt);
+    tvMetrics.lastRafAt = entered;
+    var frameTime = Number.isFinite(timestamp) ? timestamp : entered;
+    var dueSteps;
+    if (window.BJG_TV_MODE) {
+      lastEmulationTimestamp = frameTime;
+      var scheduled = tvFrameClock ? tvFrameClock.advance(frameTime) : { steps: 1, pending: 0 };
+      emulationCredit = scheduled.pending;
+      dueSteps = scheduled.steps;
+    } else {
+      // Preserve the established one-core-frame-per-display-callback browser behavior.
+      emulationCredit = 1;
+      dueSteps = 1;
+    }
+    var steps = 0;
+    var coreEnd = performance.now();
+    while (steps < dueSteps && steps < MAX_STEPS_PER_CALLBACK) {
+      Module._bjg_set_input(0, pad);
+      var coreStart = performance.now();
+      Module._bjg_run();
+      coreEnd = performance.now();
+      if (!tvFrameClock) emulationCredit -= 1;
+      steps++;
+      if (window.BJG_TV_MODE) {
+        tvMetrics.romFrames++;
+        tvMetrics.core.push(coreEnd - coreStart);
+        if (!tvMetrics.fidelityReady) {
+          var meta = romMeta(current), sc = meta && meta.selfcheck;
+          if (sc && sc.mode !== "live-record") {
+            var wram = Module._bjg_wram() >>> 0, off = Number(sc.off), got = 0;
+            for (var i = 0; i < sc.len; i++) got |= Module.HEAPU8[wram + off + i] << (8 * i);
+            if (tvMetrics.romFrames >= Number(sc.frames) && (got >>> 0) === (Number(sc.want) >>> 0)) {
+              tvMetrics.fidelityReady = true;
+              tvMetric("reference_ready", { rom: current, frame: tvMetrics.romFrames, value: "0x" + (got >>> 0).toString(16).toUpperCase() });
+            }
+          }
+        }
+      }
+    }
+    var drawStart = performance.now();
+    var submitted = present();
+    var canvasEnd = performance.now();
+    if (window.BJG_TV_MODE) {
+      tvMetrics.canvas.push(canvasEnd - coreEnd);
+      if (submitted) {
+        tvMetrics.draw.push(canvasEnd - drawStart);
+        tvMetrics.drawSubmissions++;
+      }
+      tvMetrics.frames += steps;
+      tvMetrics.frameCallbacks++;
+      tvMetrics.maxBacklog = Math.max(tvMetrics.maxBacklog, emulationCredit);
+      if (emulationCredit >= MAX_STEPS_PER_CALLBACK && emulationCredit >= tvMetrics.lastBacklogReport + MAX_STEPS_PER_CALLBACK) {
+        tvMetrics.lastBacklogReport = emulationCredit;
+        tvMetric("emulation_backlog", { pending_frames: Number(emulationCredit.toFixed(2)), max_steps_per_callback: MAX_STEPS_PER_CALLBACK });
+      }
+      if (tvMetrics.core.length >= 60) {
+        var windowMs = Math.max(1, entered - tvMetrics.windowStartAt);
+        var core = summarize(tvMetrics.core), canvas = summarize(tvMetrics.canvas), draw = summarize(tvMetrics.draw), raf = summarize(tvMetrics.raf);
+        var perfSample = {
+          emuFps: tvMetrics.core.length * 1000 / windowMs,
+          drawFps: tvMetrics.drawSubmissions * 1000 / windowMs,
+          coreMeanMs: core.mean_ms, coreP95Ms: core.p95_ms,
+          drawMeanMs: draw.mean_ms, drawP95Ms: draw.p95_ms,
+          backlogFrames: Number(emulationCredit.toFixed(2)), windowMs: Number(windowMs.toFixed(1))
+        };
+        if (window.BJGPerformance) window.BJGPerformance.publish(perfSample);
+        tvMetric("playback_window", {
+          frames: tvMetrics.frames, rom_frames: tvMetrics.romFrames,
+          target_hz: EMULATION_HZ,
+          sample_frames: tvMetrics.core.length, canvas_callbacks: tvMetrics.frameCallbacks,
+          draw_submissions: tvMetrics.drawSubmissions,
+          emu_fps: Number(perfSample.emuFps.toFixed(2)), draw_fps: Number(perfSample.drawFps.toFixed(2)),
+          core_mean_ms: core.mean_ms, core_p95_ms: core.p95_ms,
+          draw_mean_ms: draw.mean_ms, draw_p95_ms: draw.p95_ms,
+          window_ms: Math.round(windowMs),
+          core_mean_ms: core.mean_ms, core_p95_ms: core.p95_ms, core_max_ms: core.max_ms,
+          canvas_submit_mean_ms: canvas.mean_ms, canvas_submit_p95_ms: canvas.p95_ms,
+          canvas_submit_max_ms: canvas.max_ms, raf_interval_p95_ms: raf.p95_ms,
+          raf_interval_max_ms: raf.max_ms, emulation_backlog_frames: Number(emulationCredit.toFixed(2)),
+          peak_backlog_frames: Number(tvMetrics.maxBacklog.toFixed(2))
+        });
+        tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+        tvMetrics.drawSubmissions = 0;
+        tvMetrics.frameCallbacks = 0; tvMetrics.windowStartAt = performance.now(); tvMetrics.maxBacklog = emulationCredit;
+        tvMetrics.lastBacklogReport = Math.max(0, emulationCredit - (emulationCredit % MAX_STEPS_PER_CALLBACK));
+      }
+    }
     rafId = requestAnimationFrame(frame);
   }
 
   function startLoop() {
     if (running) return;
+    if (window.BJG_TV_MODE) {
+      tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+      tvMetrics.drawSubmissions = 0;
+      tvMetrics.lastRafAt = null;
+      tvMetrics.frameCallbacks = 0;
+      tvMetrics.windowStartAt = performance.now();
+      tvMetrics.maxBacklog = 0;
+      tvMetrics.lastBacklogReport = 0;
+      lastEmulationTimestamp = null;
+      emulationCredit = 0;
+      if (tvFrameClock) tvFrameClock.reset();
+    }
     running = true;
     rafId = requestAnimationFrame(frame);
   }
@@ -156,6 +298,16 @@
     if (rafId) cancelAnimationFrame(rafId);
     rafId = 0;
     clearTouchNav();
+    tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+    tvMetrics.drawSubmissions = 0;
+    tvMetrics.lastRafAt = null;
+    lastEmulationTimestamp = null;
+    emulationCredit = 0;
+    if (tvFrameClock) tvFrameClock.reset();
+    tvMetrics.frameCallbacks = 0;
+    tvMetrics.windowStartAt = performance.now();
+    tvMetrics.maxBacklog = 0;
+    tvMetrics.lastBacklogReport = 0;
   }
 
   // --- ROM loading -----------------------------------------------------------
@@ -175,22 +327,36 @@
       revealed = true;
       ctx.fillStyle = "#000";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
+      tvMetric("rom_loaded", { rom: current || DEFAULT_ROM, bytes: bytes.length });
     }
     return ok === 1;
   }
 
   function playUrl(id) {
-    current = id;
+    var previous = current;
+    var previousLabel = runLabel;
+    var failurePhase = "fetch";
+    if (window.BJG_TV_MODE) {
+      tvMetrics.romRun++;
+      tvMetrics.romFrames = 0;
+      tvMetrics.firstLiveFrame = false;
+      tvMetrics.fidelityReady = false;
+    }
     stopLoop();
     badge(null, "");
-    markActive(id);
     status("loading " + id + ".sfc…");
     return fetch(bust("roms/" + id + ".sfc"))
       .then(function (r) { if (!r.ok) throw new Error("fetch " + id); return r.arrayBuffer(); })
       .then(function (buf) {
-        if (!loadRomBytes(new Uint8Array(buf))) throw new Error("core rejected ROM");
+        failurePhase = "core";
+        current = id;
+        if (!loadRomBytes(new Uint8Array(buf))) {
+          current = previous;
+          throw new Error("core rejected ROM");
+        }
         runLabel = "running " + id + ".sfc"; dimsShown = false;
         status(runLabel);
+        markActive(id);
         startLoop();
         updateCheckButton(id);
         // ?verify=1 auto-runs the fidelity self-check once the ROM is up — the
@@ -199,8 +365,17 @@
           window.__bjgAutoVerified = true;
           setTimeout(verify, 0);
         }
+        return true;
       })
-      .catch(function (e) { status("error: " + e.message); });
+      .catch(function (e) {
+        window.BJGTV.lastLoadFailure = { rom: id, phase: failurePhase, message: e.message, previous: previous || "" };
+        current = failurePhase === "core" ? null : previous;
+        runLabel = failurePhase === "core" ? "" : previousLabel;
+        status("error: " + e.message);
+        tvMetric("rom_load_error", { rom: id, error: e.message });
+        if (previous && failurePhase !== "core") { status(previousLabel); startLoop(); }
+        return false;
+      });
   }
 
   function playFile(file) {
@@ -316,6 +491,7 @@
   // Power on, run `frames` frames, then read WRAM and compare — exactly what the
   // gate's jgxcheck does. Runs in chunks so the tab stays responsive.
   function verify() {
+    if (verification) return;
     var meta = romMeta(current);
     if (!meta || !meta.selfcheck) return;
     var sc = meta.selfcheck;
@@ -323,19 +499,40 @@
     var off = Number(sc.off), len = sc.len, want = Number(sc.want), total = sc.frames;
 
     stopLoop();
+    var task = { cancelled: false };
+    verification = task;
+    var verifyStarted = performance.now();
+    tvMetric("verification_started", { rom: current, frames: total, expected: want, offset: off });
+    if (window.BJGTV && window.BJGTV.onVerification) window.BJGTV.onVerification("starting");
     // re-load this ROM to power on cleanly, like the gate's harness.
     fetch(bust("roms/" + current + ".sfc"))
       .then(function (r) { return r.arrayBuffer(); })
       .then(function (buf) {
-        loadRomBytes(new Uint8Array(buf));
+        if (verification !== task || task.cancelled) return;
+        if (!loadRomBytes(new Uint8Array(buf))) throw new Error("core rejected ROM during verification");
         badgeState("running");
         var done = 0;
         function chunk() {
-          var n = Math.min(120, total - done);
-          for (var i = 0; i < n; i++) Module._bjg_run();
-          done += n;
+          if (verification !== task || task.cancelled) {
+            if (verification === task) verification = null;
+            badge("warn", "verification cancelled");
+            if (window.BJGTV && window.BJGTV.onVerification) window.BJGTV.onVerification("cancelled");
+            tvMetric("verification_cancelled", {
+              rom: current, frames: done, total_frames: total,
+              duration_ms: Number((performance.now() - verifyStarted).toFixed(1))
+            });
+            return;
+          }
+          // Bound each uninterrupted call so a TV remote can cancel or resume even
+          // on slower WebViews. One unusually slow frame can exceed the budget.
+          var started = performance.now();
+          do {
+            Module._bjg_run();
+            done++;
+          } while (done < total && performance.now() - started < 8);
           badge("running", "verifying… " + done + "/" + total + " frames");
           present();
+          if (window.BJGTV && window.BJGTV.onVerification) window.BJGTV.onVerification("running", done, total);
           if (done < total) { setTimeout(chunk, 0); return; }
           // read `len` little-endian bytes of WRAM at `off`
           var wram = Module._bjg_wram() >>> 0;
@@ -350,11 +547,24 @@
           } else {
             badge("fail", "✗ MISMATCH got " + hexGot + " want " + hexWant);
           }
-          // resume the live demo from the verified state (frame `total`, image
-          // already on screen) rather than a fresh black power-on.
-          startLoop();
+          if (verification === task) verification = null;
+          if (window.BJGTV && window.BJGTV.onVerification) window.BJGTV.onVerification(got === want ? "pass" : "fail", done, total);
+          tvMetric("verification_finished", {
+            rom: current, frames: done, duration_ms: Number((performance.now() - verifyStarted).toFixed(1)),
+            expected: want, actual: got, result: got === want ? "pass" : "fail"
+          });
+          // Browser embeds retain their historical behavior; the TV app leaves
+          // the verified result paused until the user selects Resume.
+          if (!window.BJG_TV_MODE) startLoop();
         }
         setTimeout(chunk, 0);
+      })
+      .catch(function (e) {
+        if (verification !== task) return;
+        verification = null;
+        badge("fail", "verification error: " + e.message);
+        if (window.BJGTV && window.BJGTV.onVerification) window.BJGTV.onVerification("error", 0, total);
+        tvMetric("verification_error", { rom: current, error: e.message });
       });
   }
 
@@ -362,6 +572,7 @@
 
   function onKey(down) {
     return function (e) {
+      if (window.BJG_TV_MODE) return;
       var bit = KEYMAP[e.code];
       if (bit === undefined) return;
       e.preventDefault();
@@ -419,10 +630,56 @@
       ctx.imageSmoothingEnabled = false;     // crisp nearest-neighbour upscale (the SNES look)
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
-    img.src = bust("preview/" + id + ".png");
+    img.src = bust((window.BJG_LIBRARY_MODE ? "roms/cards/" : "preview/") + id + ".png");
   }
 
   function init() {
+    window.BJGTV = {
+      pause: function () { stopLoop(); },
+      resume: function () { if (!verification && Module && current) startLoop(); },
+      restart: function () { if (verification) verification.cancelled = true; verification = null; return playUrl(current || DEFAULT_ROM); },
+      play: playUrl,
+      lastLoadFailure: null,
+      currentRom: function () { return current; },
+      isReady: function () { return !!Module; },
+      hasRom: function () { return !!current; },
+      canVerify: function (id) { return !!manifest && manifest.roms.some(function (rom) { return rom.id === id && !!rom.selfcheck; }); },
+      showLibrary: function () { stopLoop(); },
+      verify: verify,
+      benchmark: function (totalFrames) {
+        if (!window.BJG_TV_MODE || !tvMetrics.fidelityReady || !Module) return Promise.reject(new Error("benchmark requires a TV run with the reference gate complete"));
+        var wasRunning = running, done = 0, coreNs = 0, started = performance.now();
+        stopLoop(); totalFrames = Math.max(1, Math.min(6000, Number(totalFrames) || 600));
+        return new Promise(function (resolve) {
+          function chunk() {
+            var until = Math.min(totalFrames, done + 60);
+            while (done < until) {
+              Module._bjg_set_input(0, pad);
+              var t = performance.now(); Module._bjg_run(); coreNs += (performance.now() - t) * 1e6; done++;
+            }
+            if (done < totalFrames) { setTimeout(chunk, 0); return; }
+            var elapsedNs = Math.round((performance.now() - started) * 1e6);
+            var result = { schema: "bjg-profile-v1", engine: "wasm", phase: "unpaced-core", frames: done,
+              elapsedNs: elapsedNs, coreNs: Math.round(coreNs), throughputWallFps: done * 1e9 / elapsedNs,
+              throughputCoreFps: done * 1e9 / coreNs, instrumentation: "on", wram0580: "0x" + (Module.HEAPU8[(Module._bjg_wram() >>> 0) + 0x580] | (Module.HEAPU8[(Module._bjg_wram() >>> 0) + 0x581] << 8)).toString(16).toUpperCase() };
+            console.info("BJG_TV_METRIC " + JSON.stringify(result));
+            if (wasRunning) startLoop(); resolve(result);
+          }
+          setTimeout(chunk, 0);
+        });
+      },
+      cancelVerification: function () { if (verification) verification.cancelled = true; },
+      background: function () {
+        stopLoop();
+        if (verification) verification.cancelled = true;
+        tvMetric("backgrounded", { frames: tvMetrics.frames });
+        if (window.BJG_TV_MODE && window.BJGTV.onBackground) window.BJGTV.onBackground();
+      },
+      isVerifying: function () { return !!verification; },
+      onVerification: null,
+      onBackground: null
+    };
+
     // The picker, file input, verify button and drag-drop target are all
     // optional — an embed may render just the canvas + status. Guard each.
     document.querySelectorAll("#picker button[data-rom]").forEach(function (b) {
@@ -625,11 +882,18 @@
       Module = res[0];
       window.__bjg = Module;     // exposed for debugging / automated checks
       manifest = res[1];
+      tvMetric("core_ready", { core: "bsnes-jg", version: "2.1.0", runtime: "wasm" });
       showProvenance();
       observeVisibility();
-      playUrl(bootRom);
+      if (window.BJG_TV_MODE) {
+        if (window.BJGTV.onReady) window.BJGTV.onReady();
+        if (new URLSearchParams(location.search).has("rom")) playUrl(bootRom);
+      } else {
+        playUrl(bootRom);
+      }
     }).catch(function (e) {
       status("");
+      tvMetric("startup_error", { error: e.message });
       if (bannerEl) {
         bannerEl.innerHTML =
           "<b>Core not built.</b> Run <code>build.sh</code> to compile " +

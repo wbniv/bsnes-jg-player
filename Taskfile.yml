@@ -30,6 +30,11 @@ tasks:
     cmds:
       - ./serve.py --isolated
 
+  android-tv:build:
+    desc: "Test the TV frame clock and build/verify Debug and profile Release APKs in the rootless container"
+    cmds:
+      - ./android-tv/build-in-container.sh
+
   sync-roms:
     desc: "Refresh web/roms/*.sfc from a sibling llvm-mos-65816 checkout"
     cmds:

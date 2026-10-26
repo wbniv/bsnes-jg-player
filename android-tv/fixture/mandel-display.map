@@ -1,0 +1,587 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __rc0 = 0x00
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 
+       0        0        0     1 __stack = 0x2000
+       0        0        0     1 PROVIDE(__soft_stack_min = 256)
+       0        0        0     1 
+    8000     8000     1326     1 .text
+    8000     8000        0     1         _init = .
+    8000     8000        0     1         _start = .
+    8000     8000       18     1         /work/build/install/bin/../mos-platform/snes/lib/crt0.o:(.init.50)
+    8006     8006        0     1                 $xl.0
+    800e     800e        0     1                 $mh.1
+    8013     8013        0     1                 $mh.2
+    8018     8018        8     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    8018     8018        0     1                 __do_init_stack
+    8020     8020        3     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    8020     8020        0     1                 __do_zero_bss
+    8023     8023        3     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(zero-zp-bss.c.obj):(.init.200)
+    8023     8023        0     1                 __do_zero_zp_bss
+    8026     8026        3     1         /work/build/install/bin/../mos-platform/snes/lib/crt0.o:(.call_main)
+    8029     8029        3     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    8029     8029        0     1                 __after_main
+    802c     802c        0     1         _fini = .
+    802c     802c        1     1         /work/build/install/bin/../mos-platform/snes/lib/crt0.o:(.fini_rts)
+    802d     802d        4     1         /work/build/install/bin/../mos-platform/snes/lib/crt0.o:(.text)
+    802d     802d        0     1                 irq
+    802e     802e        0     1                 nmi
+    802f     802f        0     1                 brk
+    8030     8030        0     1                 cop
+    8031     8031       13     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    8031     8031       13     1                 __zero_bss
+    8044     8044       13     1         /work/build/install/bin/../mos-platform/snes/lib/libcrt0.a(zero-zp-bss.c.obj):(.text.__zero_zp_bss)
+    8044     8044       13     1                 __zero_zp_bss
+    8057     8057      c3f     1         /work/build/mandel-display.sfc.lto.o:(.text.main)
+    8057     8057        0     1                 $xh.0
+    8057     8057      c3f     1                 main
+    8061     8061        0     1                 $mh.1
+    8063     8063        0     1                 $xh.2
+    8074     8074        0     1                 $xh.3
+    8093     8093        0     1                 $xh.4
+    809a     809a        0     1                 $ml.5
+    809f     809f        0     1                 $ml.6
+    80a6     80a6        0     1                 $xh.7
+    80af     80af        0     1                 $xh.8
+    80b5     80b5        0     1                 $ml.9
+    80c7     80c7        0     1                 $ml.10
+    80d6     80d6        0     1                 $ml.11
+    80dd     80dd        0     1                 $mh.12
+    80e8     80e8        0     1                 $xh.13
+    80fc     80fc        0     1                 $ml.14
+    8101     8101        0     1                 $ml.15
+    8108     8108        0     1                 $xh.16
+    8111     8111        0     1                 $xh.17
+    8117     8117        0     1                 $ml.18
+    8129     8129        0     1                 $ml.19
+    8138     8138        0     1                 $ml.20
+    813f     813f        0     1                 $mh.21
+    8147     8147        0     1                 $xh.22
+    8162     8162        0     1                 $xh.23
+    817c     817c        0     1                 $xh.24
+    8189     8189        0     1                 $xh.25
+    8194     8194        0     1                 $xh.26
+    81b3     81b3        0     1                 $xh.27
+    81b8     81b8        0     1                 $xh.28
+    81bf     81bf        0     1                 $xh.29
+    81c6     81c6        0     1                 $xh.30
+    81d9     81d9        0     1                 $xh.31
+    81df     81df        0     1                 $xh.32
+    81f4     81f4        0     1                 $xh.33
+    8213     8213        0     1                 $xh.34
+    821a     821a        0     1                 $xh.35
+    8223     8223        0     1                 $xh.36
+    8226     8226        0     1                 $xh.37
+    823b     823b        0     1                 $xh.38
+    8240     8240        0     1                 $mh.39
+    8244     8244        0     1                 $xh.40
+    8248     8248        0     1                 $xh.41
+    824c     824c        0     1                 $xh.42
+    8251     8251        0     1                 $xh.43
+    8262     8262        0     1                 $xh.44
+    8270     8270        0     1                 $xh.45
+    8277     8277        0     1                 $ml.46
+    827e     827e        0     1                 $xh.47
+    828c     828c        0     1                 $xh.48
+    8292     8292        0     1                 $ml.49
+    8299     8299        0     1                 $xh.50
+    82a5     82a5        0     1                 $ml.51
+    82ac     82ac        0     1                 $xh.52
+    82cf     82cf        0     1                 $xh.53
+    82d7     82d7        0     1                 $mh.54
+    82dc     82dc        0     1                 $xh.55
+    82e4     82e4        0     1                 $mh.56
+    82ec     82ec        0     1                 $xh.57
+    8308     8308        0     1                 $xh.58
+    831a     831a        0     1                 $xh.59
+    832a     832a        0     1                 $xh.60
+    833e     833e        0     1                 $xh.61
+    8348     8348        0     1                 $xh.62
+    834c     834c        0     1                 $xh.63
+    8368     8368        0     1                 $xh.64
+    836f     836f        0     1                 $xh.65
+    837c     837c        0     1                 $xh.66
+    8388     8388        0     1                 $mh.67
+    838d     838d        0     1                 $xh.68
+    83a4     83a4        0     1                 $mh.69
+    83a6     83a6        0     1                 $xh.70
+    83b3     83b3        0     1                 $xh.71
+    83cb     83cb        0     1                 $xh.72
+    83d9     83d9        0     1                 $xh.73
+    83e9     83e9        0     1                 $xh.74
+    83ef     83ef        0     1                 $ml.75
+    83f6     83f6        0     1                 $xh.76
+    8404     8404        0     1                 $xh.77
+    8413     8413        0     1                 $ml.78
+    8417     8417        0     1                 $ml.79
+    841b     841b        0     1                 $ml.80
+    8421     8421        0     1                 $ml.81
+    842b     842b        0     1                 $xh.82
+    842f     842f        0     1                 $xh.83
+    843a     843a        0     1                 $ml.84
+    8447     8447        0     1                 $xh.85
+    8450     8450        0     1                 $xh.86
+    845a     845a        0     1                 $xh.87
+    8476     8476        0     1                 $xh.88
+    847d     847d        0     1                 $ml.89
+    8484     8484        0     1                 $xh.90
+    8490     8490        0     1                 $xh.91
+    8494     8494        0     1                 $xh.92
+    84aa     84aa        0     1                 $xh.93
+    84bd     84bd        0     1                 $ml.94
+    84c4     84c4        0     1                 $xh.95
+    84c7     84c7        0     1                 $xh.96
+    84cd     84cd        0     1                 $xh.97
+    84d5     84d5        0     1                 $ml.98
+    84dc     84dc        0     1                 $xh.99
+    84e5     84e5        0     1                 $xh.100
+    84f7     84f7        0     1                 $xh.101
+    8503     8503        0     1                 $mh.102
+    8508     8508        0     1                 $xh.103
+    8515     8515        0     1                 $mh.104
+    8517     8517        0     1                 $xh.105
+    8527     8527        0     1                 $xh.106
+    853b     853b        0     1                 $xh.107
+    8544     8544        0     1                 $xh.108
+    8555     8555        0     1                 $xh.109
+    855b     855b        0     1                 $ml.110
+    8565     8565        0     1                 $xh.111
+    856b     856b        0     1                 $xh.112
+    8577     8577        0     1                 $ml.113
+    857f     857f        0     1                 $mh.114
+    8583     8583        0     1                 $xh.115
+    8587     8587        0     1                 $xh.116
+    858c     858c        0     1                 $xh.117
+    8595     8595        0     1                 $mh.118
+    85a2     85a2        0     1                 $xh.119
+    85b7     85b7        0     1                 $ml.120
+    85c1     85c1        0     1                 $xh.121
+    85c7     85c7        0     1                 $xh.122
+    85cc     85cc        0     1                 $mh.123
+    85d2     85d2        0     1                 $xh.124
+    85d9     85d9        0     1                 $xh.125
+    85e4     85e4        0     1                 $xh.126
+    85f9     85f9        0     1                 $ml.127
+    8607     8607        0     1                 $xh.128
+    860f     860f        0     1                 $xh.129
+    861f     861f        0     1                 $xh.130
+    8626     8626        0     1                 $xh.131
+    863e     863e        0     1                 $xh.132
+    8647     8647        0     1                 $xh.133
+    8649     8649        0     1                 $mh.134
+    864d     864d        0     1                 $xh.135
+    8655     8655        0     1                 $xh.136
+    8659     8659        0     1                 $mh.137
+    865d     865d        0     1                 $xh.138
+    8679     8679        0     1                 $xh.139
+    8689     8689        0     1                 $xh.140
+    8696     8696        0     1                 $ml.141
+    86aa     86aa        0     1                 $xh.142
+    86bd     86bd        0     1                 $xh.143
+    86dd     86dd        0     1                 $xh.144
+    86e4     86e4        0     1                 $mh.145
+    86e9     86e9        0     1                 $xh.146
+    86f8     86f8        0     1                 $xh.147
+    8710     8710        0     1                 $xh.148
+    8718     8718        0     1                 $xh.149
+    872c     872c        0     1                 $xh.150
+    873d     873d        0     1                 $xh.151
+    8748     8748        0     1                 $xh.152
+    8752     8752        0     1                 $xh.153
+    875f     875f        0     1                 $xh.154
+    876f     876f        0     1                 $xh.155
+    8780     8780        0     1                 $xh.156
+    8789     8789        0     1                 $ml.157
+    8790     8790        0     1                 $xh.158
+    8796     8796        0     1                 $mh.159
+    8798     8798        0     1                 $xh.160
+    87a4     87a4        0     1                 $xh.161
+    87ae     87ae        0     1                 $xh.162
+    87b8     87b8        0     1                 $xh.163
+    87bc     87bc        0     1                 $xh.164
+    87c2     87c2        0     1                 $xh.165
+    87c6     87c6        0     1                 $xh.166
+    87cb     87cb        0     1                 $xh.167
+    87cf     87cf        0     1                 $xh.168
+    87d3     87d3        0     1                 $mh.169
+    87da     87da        0     1                 $mh.170
+    87de     87de        0     1                 $mh.171
+    8800     8800        0     1                 $xh.172
+    8813     8813        0     1                 $xh.173
+    8821     8821        0     1                 $xh.174
+    8831     8831        0     1                 $xh.175
+    8846     8846        0     1                 $xh.176
+    884c     884c        0     1                 $ml.177
+    8853     8853        0     1                 $xh.178
+    885a     885a        0     1                 $xh.179
+    886e     886e        0     1                 $xh.180
+    888c     888c        0     1                 $xh.181
+    8896     8896        0     1                 $mh.182
+    8898     8898        0     1                 $xh.183
+    889f     889f        0     1                 $mh.184
+    88a1     88a1        0     1                 $xh.185
+    88ac     88ac        0     1                 $mh.186
+    88ae     88ae        0     1                 $xh.187
+    88b9     88b9        0     1                 $xh.188
+    88c1     88c1        0     1                 $xh.189
+    88c9     88c9        0     1                 $xh.190
+    88d3     88d3        0     1                 $xh.191
+    88da     88da        0     1                 $ml.192
+    88e1     88e1        0     1                 $xh.193
+    88ed     88ed        0     1                 $xh.194
+    890a     890a        0     1                 $xh.195
+    890e     890e        0     1                 $mh.196
+    8916     8916        0     1                 $mh.197
+    891c     891c        0     1                 $mh.198
+    8923     8923        0     1                 $mh.199
+    8935     8935        0     1                 $ml.200
+    8942     8942        0     1                 $xh.201
+    8950     8950        0     1                 $mh.202
+    8959     8959        0     1                 $mh.203
+    895f     895f        0     1                 $xh.204
+    897e     897e        0     1                 $xh.205
+    898a     898a        0     1                 $xh.206
+    8998     8998        0     1                 $mh.207
+    899b     899b        0     1                 $xh.208
+    89a4     89a4        0     1                 $mh.209
+    89aa     89aa        0     1                 $mh.210
+    89b0     89b0        0     1                 $mh.211
+    89ce     89ce        0     1                 $xh.212
+    89d8     89d8        0     1                 $ml.213
+    89df     89df        0     1                 $xh.214
+    89e6     89e6        0     1                 $xh.215
+    89ee     89ee        0     1                 $ml.216
+    89f5     89f5        0     1                 $xh.217
+    89fc     89fc        0     1                 $xh.218
+    8a02     8a02        0     1                 $xh.219
+    8a08     8a08        0     1                 $mh.220
+    8a0f     8a0f        0     1                 $mh.221
+    8a15     8a15        0     1                 $mh.222
+    8a1b     8a1b        0     1                 $mh.223
+    8a31     8a31        0     1                 $xh.224
+    8a37     8a37        0     1                 $ml.225
+    8a3f     8a3f        0     1                 $xh.226
+    8a43     8a43        0     1                 $xh.227
+    8a58     8a58        0     1                 $ml.228
+    8a69     8a69        0     1                 $ml.229
+    8a78     8a78        0     1                 $xh.230
+    8a82     8a82        0     1                 $xh.231
+    8a8a     8a8a        0     1                 $xh.232
+    8aa0     8aa0        0     1                 $xh.233
+    8ab5     8ab5        0     1                 $mh.234
+    8ab9     8ab9        0     1                 $mh.235
+    8ae5     8ae5        0     1                 $xh.236
+    8aee     8aee        0     1                 $mh.237
+    8af3     8af3        0     1                 $xh.238
+    8b00     8b00        0     1                 $xh.239
+    8b18     8b18        0     1                 $ml.240
+    8b1c     8b1c        0     1                 $ml.241
+    8b20     8b20        0     1                 $ml.242
+    8b24     8b24        0     1                 $ml.243
+    8b31     8b31        0     1                 $mh.244
+    8b43     8b43        0     1                 $xh.245
+    8b58     8b58        0     1                 $ml.246
+    8b60     8b60        0     1                 $xh.247
+    8b64     8b64        0     1                 $xh.248
+    8b6c     8b6c        0     1                 $ml.249
+    8b71     8b71        0     1                 $xh.250
+    8b79     8b79        0     1                 $xh.251
+    8b81     8b81        0     1                 $xh.252
+    8b8e     8b8e        0     1                 $xh.253
+    8ba3     8ba3        0     1                 $ml.254
+    8bab     8bab        0     1                 $xh.255
+    8baf     8baf        0     1                 $xh.256
+    8bb5     8bb5        0     1                 $xh.257
+    8bbb     8bbb        0     1                 $ml.258
+    8bc3     8bc3        0     1                 $xh.259
+    8bc7     8bc7        0     1                 $xh.260
+    8bda     8bda        0     1                 $xh.261
+    8bf1     8bf1        0     1                 $ml.262
+    8bff     8bff        0     1                 $xh.263
+    8c1e     8c1e        0     1                 $xh.264
+    8c41     8c41        0     1                 $xh.265
+    8c48     8c48        0     1                 $xh.266
+    8c64     8c64        0     1                 $xh.267
+    8c6d     8c6d        0     1                 $xh.268
+    8c78     8c78        0     1                 $xh.269
+    8c7f     8c7f        0     1                 $xh.270
+    8c82     8c82        0     1                 $xh.271
+    8c8f     8c8f        0     1                 $xh.272
+    8c96     8c96      101     1         /work/build/mandel-display.sfc.lto.o:(.text._m7t_write_line)
+    8c96     8c96      101     1                 _m7t_write_line
+    8c9c     8c9c        0     1                 $ml.273
+    8ca6     8ca6        0     1                 $xh.274
+    8cc1     8cc1        0     1                 $xh.275
+    8cc4     8cc4        0     1                 $xh.276
+    8cca     8cca        0     1                 $xh.277
+    8cce     8cce        0     1                 $xh.278
+    8cf6     8cf6        0     1                 $ml.279
+    8d09     8d09        0     1                 $xh.280
+    8d1c     8d1c        0     1                 $mh.281
+    8d22     8d22        0     1                 $xh.282
+    8d30     8d30        0     1                 $mh.283
+    8d35     8d35        0     1                 $mh.284
+    8d3b     8d3b        0     1                 $xh.285
+    8d46     8d46        0     1                 $ml.286
+    8d50     8d50        0     1                 $xh.287
+    8d61     8d61        0     1                 $mh.288
+    8d67     8d67        0     1                 $mh.289
+    8d6d     8d6d        0     1                 $mh.290
+    8d73     8d73        0     1                 $mh.291
+    8d7a     8d7a        0     1                 $mh.292
+    8d80     8d80        0     1                 $xh.293
+    8d8e     8d8e        0     1                 $ml.294
+    8d97     8d97      196     1         /work/build/mandel-display.sfc.lto.o:(.text.mandel_cell)
+    8d97     8d97      196     1                 mandel_cell
+    8d99     8d99        0     1                 $xh.295
+    8dad     8dad        0     1                 $xh.296
+    8db3     8db3        0     1                 $ml.297
+    8dbb     8dbb        0     1                 $xh.298
+    8dbf     8dbf        0     1                 $xh.299
+    8dc8     8dc8        0     1                 $xh.300
+    8de1     8de1        0     1                 $xh.301
+    8dec     8dec        0     1                 $xh.302
+    8df9     8df9        0     1                 $ml.303
+    8e07     8e07        0     1                 $xh.304
+    8e26     8e26        0     1                 $xh.305
+    8e31     8e31        0     1                 $xh.306
+    8e3a     8e3a        0     1                 $xh.307
+    8e4f     8e4f        0     1                 $mh.308
+    8e58     8e58        0     1                 $xh.309
+    8e5e     8e5e        0     1                 $ml.310
+    8e66     8e66        0     1                 $mh.311
+    8e6d     8e6d        0     1                 $xh.312
+    8e78     8e78        0     1                 $ml.313
+    8e80     8e80        0     1                 $mh.314
+    8e84     8e84        0     1                 $mh.315
+    8e86     8e86        0     1                 $xh.316
+    8e89     8e89        0     1                 $mh.317
+    8e8d     8e8d        0     1                 $xh.318
+    8e93     8e93        0     1                 $ml.319
+    8e9d     8e9d        0     1                 $xh.320
+    8ead     8ead        0     1                 $xh.321
+    8ec2     8ec2        0     1                 $xh.322
+    8ec6     8ec6        0     1                 $xh.323
+    8edb     8edb        0     1                 $xh.324
+    8ef3     8ef3        0     1                 $xh.325
+    8f02     8f02        0     1                 $ml.326
+    8f07     8f07        0     1                 $xh.327
+    8f13     8f13        0     1                 $xh.328
+    8f16     8f16        0     1                 $xh.329
+    8f25     8f25        0     1                 $mh.330
+    8f2d     8f2d      179     1         /work/build/mandel-display.sfc.lto.o:(.text.coarse_reveal)
+    8f2d     8f2d      179     1                 coarse_reveal
+    8f2f     8f2f        0     1                 $xh.331
+    8f53     8f53        0     1                 $xh.332
+    8f59     8f59        0     1                 $xh.333
+    8f6c     8f6c        0     1                 $mh.334
+    8f6e     8f6e        0     1                 $xh.335
+    8f79     8f79        0     1                 $xh.336
+    8f93     8f93        0     1                 $xh.337
+    8f9b     8f9b        0     1                 $xh.338
+    8fa1     8fa1        0     1                 $xh.339
+    8faa     8faa        0     1                 $xh.340
+    8fb5     8fb5        0     1                 $xh.341
+    8fc5     8fc5        0     1                 $xh.342
+    8fd3     8fd3        0     1                 $xh.343
+    8fd9     8fd9        0     1                 $xh.344
+    8fdf     8fdf        0     1                 $xh.345
+    8ff3     8ff3        0     1                 $xh.346
+    9003     9003        0     1                 $xh.347
+    9006     9006        0     1                 $xh.348
+    900c     900c        0     1                 $xh.349
+    9015     9015        0     1                 $xh.350
+    901b     901b        0     1                 $ml.351
+    9022     9022        0     1                 $xh.352
+    9029     9029        0     1                 $xh.353
+    9037     9037        0     1                 $xh.354
+    903f     903f        0     1                 $ml.355
+    9046     9046        0     1                 $xh.356
+    904c     904c        0     1                 $mh.357
+    904e     904e        0     1                 $xh.358
+    9055     9055        0     1                 $xh.359
+    905d     905d        0     1                 $xh.360
+    906c     906c        0     1                 $xh.361
+    907b     907b        0     1                 $xh.362
+    9090     9090        0     1                 $xh.363
+    9096     9096        0     1                 $xh.364
+    909c     909c        0     1                 $xh.365
+    90a6     90a6       d8     1         /work/build/mandel-display.sfc.lto.o:(.text.coarse_pass)
+    90a6     90a6       d8     1                 coarse_pass
+    90a6     90a6        0     1                 $xh.366
+    90b8     90b8        0     1                 $xh.367
+    90c0     90c0        0     1                 $mh.368
+    90c7     90c7        0     1                 $xh.369
+    90d3     90d3        0     1                 $mh.370
+    90da     90da        0     1                 $xh.371
+    90ec     90ec        0     1                 $xh.372
+    90f5     90f5        0     1                 $xh.373
+    90fc     90fc        0     1                 $ml.374
+    9103     9103        0     1                 $xh.375
+    910f     910f        0     1                 $xh.376
+    9113     9113        0     1                 $xh.377
+    912d     912d        0     1                 $xh.378
+    9148     9148        0     1                 $xh.379
+    914e     914e        0     1                 $xh.380
+    9157     9157        0     1                 $xh.381
+    9168     9168        0     1                 $xh.382
+    9173     9173        0     1                 $xh.383
+    917e     917e        5     1         /work/build/mandel-display.sfc.lto.o:(.text.exit)
+    917e     917e        5     1                 exit
+    9183     9183       12     1         /work/build/mandel-display.sfc.lto.o:(.text.__ashlhi3)
+    9183     9183       12     1                 __ashlhi3
+    9183     9183        0     1                 $xh.384
+    9189     9189        0     1                 $xh.385
+    9192     9192        0     1                 $xh.386
+    9195     9195        9     1         /work/build/mandel-display.sfc.lto.o:(.text.__lshrqi3)
+    9195     9195        9     1                 __lshrqi3
+    919e     919e       12     1         /work/build/mandel-display.sfc.lto.o:(.text.__lshrhi3)
+    919e     919e       12     1                 __lshrhi3
+    919e     919e        0     1                 $xh.387
+    91a4     91a4        0     1                 $xh.388
+    91ad     91ad        0     1                 $xh.389
+    91b0     91b0       b5     1         /work/build/mandel-display.sfc.lto.o:(.text.__udivhi3)
+    91b0     91b0       b5     1                 __udivhi3
+    91b2     91b2        0     1                 $xh.390
+    91b6     91b6        0     1                 $xh.391
+    91bc     91bc        0     1                 $xh.392
+    91c1     91c1        0     1                 $xh.393
+    91ca     91ca        0     1                 $xh.394
+    91ce     91ce        0     1                 $mh.395
+    91db     91db        0     1                 $xh.396
+    91e7     91e7        0     1                 $xh.397
+    91eb     91eb        0     1                 $xh.398
+    91f3     91f3        0     1                 $xh.399
+    91f9     91f9        0     1                 $xh.400
+    9205     9205        0     1                 $xh.401
+    921f     921f        0     1                 $mh.402
+    922b     922b        0     1                 $xh.403
+    922f     922f        0     1                 $xh.404
+    9237     9237        0     1                 $xh.405
+    923f     923f        0     1                 $mh.406
+    924e     924e        0     1                 $xh.407
+    925a     925a        0     1                 $xh.408
+    9260     9260        0     1                 $xh.409
+    9265     9265       1e     1         /work/build/mandel-display.sfc.lto.o:(.text.__memset)
+    9265     9265        0     1                 $xh.411
+    9265     9265       1e     1                 __memset
+    9275     9275        0     1                 $xh.412
+    927b     927b        0     1                 $xh.413
+    9283     9283       32     1         /work/build/mandel-display.sfc.lto.o:(.text.__mulhi3)
+    9283     9283       32     1                 __mulhi3
+    9283     9283        0     1                 $xh.414
+    9287     9287        0     1                 $xh.415
+    928d     928d        0     1                 $xh.416
+    92a5     92a5        0     1                 $xh.417
+    92a9     92a9        0     1                 $xh.418
+    92b0     92b0        0     1                 $xh.419
+    92b5     92b5       71     1         /work/build/mandel-display.sfc.lto.o:(.text.__mulsi3)
+    92b5     92b5       71     1                 __mulsi3
+    92b5     92b5        0     1                 $xh.420
+    92b9     92b9        0     1                 $xh.421
+    92bd     92bd        0     1                 $xh.422
+    92c1     92c1        0     1                 $xh.423
+    92ca     92ca        0     1                 $xh.424
+    9315     9315        0     1                 $xh.425
+    931e     931e        0     1                 $xh.426
+    9326     9326        0     1         __init_array_start = .
+    9326     9326        0     1         __init_array_end = .
+    9326     9326        0     1         __fini_array_start = .
+    9326     9326        0     1         __fini_array_end = .
+    9326     9326     1218     1 .rodata
+    9326     9326       17     1         <internal>:(.rodata.str1.1)
+    933d     933d        1     1         /work/build/mandel-display.sfc.lto.o:(.rodata.m7_zero)
+    933d     933d        1     1                 m7_zero
+    933e     933e      200     1         /work/build/mandel-display.sfc.lto.o:(.rodata.SINCOS)
+    933e     933e      200     1                 SINCOS
+    953e     953e     1000     1         /work/build/mandel-display.sfc.lto.o:(.rodata.FONT16)
+    953e     953e     1000     1                 FONT16
+     200      200        0     1 .data
+     200      200        0     1         __data_start = .
+     200      200        0     1         __data_end = .
+     200      200        0     1 __data_load_start = LOADADDR(.data)
+     200      200        0     1 __data_size = SIZEOF(.data)
+      20       20        0     1 .zp.data
+      20       20        0     1         __zp_data_start = .
+      20       20        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      20       20        0     1 __zp_data_size = SIZEOF(.zp.data)
+      20       20       20     1 .zp.bss
+      20       20        0     1         __zp_bss_start = .
+      20       20       20     1         /work/build/mandel-display.sfc.lto.o:(.zp.bss)
+      20       20       20     1                 pal
+      40       40        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+      40       40       3b     1 .zp
+      40       40       3b     1         /work/build/mandel-display.sfc.lto.o:(.zp.noinit)
+     200      200      583     1 .bss
+     200      200        0     1         __bss_start = .
+     200      200      380     1         /work/build/mandel-display.sfc.lto.o:(.bss.scratch)
+     200      200      380     1                 scratch
+     580      580        2     1         /work/build/mandel-display.sfc.lto.o:(.bss.corpus_result)
+     580      580        2     1                 corpus_result
+     582      582        1     1         /work/build/mandel-display.sfc.lto.o:(.bss._m7t_zero)
+     582      582        1     1                 _m7t_zero
+     583      583      200     1         /work/build/mandel-display.sfc.lto.o:(.bss.chrbuf)
+     583      583      200     1                 chrbuf
+     783      783        0     1         __bss_end = .
+     783      783        0     1 __bss_size = SIZEOF(.bss)
+     783      783        0     1 .noinit
+     783      783        0     1         __heap_start = ALIGN(., 2)
+    ffb0     ffb0       30     1 .snes_header
+    ffb0     ffb0       30     1         /work/build/install/bin/../mos-platform/snes/lib/crt0.o:(.snes_header)
+    ffb0     ffb0        0     1                 __snes_header
+    ffe0     ffe0       10     1 .snes_vectors_native
+    ffe0     ffe0        2     1         SHORT(0x0000)
+    ffe2     ffe2        2     1         SHORT(0x0000)
+    ffe4     ffe4        2     1         SHORT(cop)
+    ffe6     ffe6        2     1         SHORT(brk)
+    ffe8     ffe8        2     1         SHORT(0x0000)
+    ffea     ffea        2     1         SHORT(nmi)
+    ffec     ffec        2     1         SHORT(0x0000)
+    ffee     ffee        2     1         SHORT(irq)
+    fff0     fff0       10     1 .snes_vectors_emu
+    fff0     fff0        2     1         SHORT(0x0000)
+    fff2     fff2        2     1         SHORT(0x0000)
+    fff4     fff4        2     1         SHORT(cop)
+    fff6     fff6        2     1         SHORT(0x0000)
+    fff8     fff8        2     1         SHORT(0x0000)
+    fffa     fffa        2     1         SHORT(nmi)
+    fffc     fffc        2     1         SHORT(_start)
+    fffe     fffe        2     1         SHORT(irq)
+       0        0       d4     1 .comment
+       0        0       d4     1         <internal>:(.comment)
+       0        0     20a0     4 .symtab
+       0        0     20a0     4         <internal>:(.symtab)
+       0        0       8e     1 .shstrtab
+       0        0       8e     1         <internal>:(.shstrtab)
+       0        0     1074     1 .strtab
+       0        0     1074     1         <internal>:(.strtab)

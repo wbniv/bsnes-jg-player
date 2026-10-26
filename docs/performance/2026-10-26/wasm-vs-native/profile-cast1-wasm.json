@@ -1,0 +1,12 @@
+{
+  "workflow": "profile",
+  "app": "bsnes-jg-tv-phase2-wasm",
+  "runs": 1,
+  "warmup": 15,
+  "duration": 12,
+  "trace": "idle",
+  "panel": "require-hidden",
+  "input_script": [
+    { "at": 0.5, "key": "ENTER", "action": "hold", "ms": 120 }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "frames": 163,
+      "interval_count": 163,
+      "fps": 9.962943301199624,
+      "refresh_ms": 16.666666,
+      "p50_ms": 100.002767,
+      "p90_ms": 116.718994,
+      "p95_ms": 116.751343,
+      "p99_ms": 133.33195,
+      "worst_ms": 133.394287,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 12.0,
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46482",
+      "measurement_anchor_ns": 293025439240693,
+      "measurement_start_wall_time": 1793025761.6589808,
+      "settling_reads": 2,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 16.360627083
+    },
+    {
+      "run": 2,
+      "frames": 126,
+      "interval_count": 126,
+      "fps": 5.389850875459488,
+      "refresh_ms": 16.666666,
+      "p50_ms": 175.01237,
+      "p90_ms": 208.448812,
+      "p95_ms": 225.056356,
+      "p99_ms": 225.138631,
+      "worst_ms": 941.878703,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 12.0,
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46516",
+      "measurement_anchor_ns": 293068140794629,
+      "measurement_start_wall_time": 1793025811.6806176,
+      "settling_reads": 3,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 23.377270153
+    },
+    {
+      "run": 3,
+      "frames": 133,
+      "interval_count": 133,
+      "fps": 5.926701916352258,
+      "refresh_ms": 16.666666,
+      "p50_ms": 174.87386,
+      "p90_ms": 175.117594,
+      "p95_ms": 191.69873,
+      "p99_ms": 191.751017,
+      "worst_ms": 750.261068,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 12.0,
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#46549",
+      "measurement_anchor_ns": 293115090740900,
+      "measurement_start_wall_time": 1793025857.7174208,
+      "settling_reads": 2,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 22.440811412
+    }
+  ],
+  "median": {
+    "fps": 5.926701916352258
+  }
+}

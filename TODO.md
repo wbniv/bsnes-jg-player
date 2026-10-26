@@ -45,6 +45,13 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
   (see code comment) since a default sync from `main` today would overwrite the demo with a ROM
   that lacks the `gallery_shown` record.
 
+### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
+
+- [wip T3] **Implement the quick-launch library**: in progress in another session, and both Phase 2
+  APKs build. Two decisions changed on 2026‑10‑26: use the site's `/play/preview/<slug>.png` card art
+  instead of frame‑600 capture, and switch search off (it is deferred, see Parked). Device checks
+  are still open.
+
 ### Later (separate)
 
 - [T3] **Showroom** — a demo-reel page consuming this core (curated `+mos-a16` productions). Its own
@@ -56,7 +63,10 @@ _Nothing being watched._
 
 ## Parked
 
-_Nothing parked._
+- [T2] **Search for the TV library**: see the [plan](docs/plans/2026-10-26-snes-rom-library-search.md).
+  Deferred by Will on 2026‑10‑26. The code exists in `library.js` and is switched off. Un-park when
+  the catalog nears 1,000 ROMs. T2 because it means switching on and testing one module; choosing
+  ghost text would make it T3.
 
 ## Done
 

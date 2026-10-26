@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "revision": "working-tree (uncommitted)",
+  "devices": ["phone-pixel-8-pro", "chromecast-test-01"],
+  "coreVersion": "2.1.0",
+  "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353",
+  "toolchain": { "ndk": "26.2.11394342", "cmake": "3.22.1" },
+  "artifacts": {
+    "wasm": { "variant": "WasmRelease", "sha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9", "apkBytes": 14801590, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.phase2", "packageName": "org.bsnesjg.tv.phase2" },
+    "native": { "variant": "NativeRelease", "sha256": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2", "apkBytes": 13600019, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.native.phase2", "packageName": "org.bsnesjg.tv.native.phase2" }
+  },
+  "metricNotes": {
+    "startup": "Pixel run evidence is from the immediately prior Phase 2 APK hashes b2bfe5ed… and 22b55611…; current build hashes were regenerated after adding native telemetry. Cast1 must be reprofiled against current hashes.",
+    "abi": "Pixel is arm64-v8a; cast1 is armeabi-v7a. Both APKs package both ABIs. cast2 remains unavailable through the coordinator.",
+    "profiling": "Cast1 direct Mandelbrot WASM profile J-b47d61f35ce8 showed Mandelbrot on screen but SurfaceFlinger sampling had only 7 distinct timestamps across 14.46 seconds; native direct-launch profile J-c374ebe393bb returned to Home. Pixel has usable exploratory profiles, but WASM was 60Hz and native was 120Hz, so they are not a controlled comparison.",
+    "correctness": "Screenshots confirm Mandelbrot rendering in Pixel WASM and native, but frame-5800 WRAM/framebuffer equality gate has not been captured.",
+    "cast1Availability": "Shared Android transport is repaired and healthy. Cast1 remains fenced because a cancelled APK install has an uncertain result; cleanup requires a new boot ID. Job evidence was reviewed and recovery stopped before rebooting. Profiling remains paused pending reboot and coordinator cleanup."
+  },
+  "attempts": [
+    {
+      "device": "chromecast-test-01",
+      "engine": "wasm",
+      "job": "J-8dc30c849ee0",
+      "apkSha256": "50008aba5a0286cd8afe2c75962326d1cdec196eb959b9f124fa6dfa630bda5c",
+      "install": "passed; installed SHA-256 matches current Phase 2 WASM APK",
+      "launch": "failed: target-left-foreground; Google TV Home was foreground 5 seconds after start",
+      "evidence": "coordinator evidence: /tmp/phase2-cast1-wasm-check"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "native",
+      "job": "J-d569f93db3b3",
+      "apkSha256": "94ded05c74cff138bd56a3373dc486346dcb511788273876860a3d841fdde815",
+      "install": "passed; installed current Phase 2 native APK",
+      "launch": "failed: target-left-foreground; Google TV Home was foreground 5 seconds after start",
+      "evidence": "coordinator-owned check; exact APK installation was verified"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "wasm",
+      "job": "J-b41b6dee2045",
+      "apkSha256": "50008aba5a0286cd8afe2c75962326d1cdec196eb959b9f124fa6dfa630bda5c",
+      "install": "profile workflow installed/used registered current APK",
+      "launch": "Android am start completed in 870 ms; no first-present sample; failed target-left-foreground",
+      "evidence": "coordinator evidence: /tmp/phase2-cast1-wasm-profile"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "native",
+      "job": "J-d00f37984148",
+      "apkSha256": "94ded05c74cff138bd56a3373dc486346dcb511788273876860a3d841fdde815",
+      "install": "profile workflow installed/used registered current APK",
+      "launch": "Android am start completed in 1,029 ms; no first-present sample; failed target-left-foreground",
+      "evidence": "coordinator evidence: /tmp/phase2-cast1-native-profile"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "wasm",
+      "job": "J-bc91fd5316aa",
+      "install": "not attempted by record workflow",
+      "launch": "failed: target-left-foreground; app was not installed after prior check cleanup",
+      "evidence": "coordinator evidence: /tmp/phase2-cast1-wasm-record"
+    },
+    {
+      "device": "phone-pixel-8-pro",
+      "engine": "wasm",
+      "job": "J-892bd1dd132a",
+      "apkSha256": "50008aba5a0286cd8afe2c75962326d1cdec196eb959b9f124fa6dfa630bda5c",
+      "install": "passed; installed current Phase 2 WASM APK",
+      "launch": "failed: target-left-foreground; check waited on locked device",
+      "evidence": "coordinator-owned check; device was reported locked during the run"
+    },
+    {
+      "device": "phone-pixel-8-pro",
+      "engine": "wasm",
+      "job": "J-7521b6d08a2a",
+      "install": "refused: INSTALL_FAILED_UPDATE_INCOMPATIBLE; existing package/signature unchanged",
+      "launch": "not reached",
+      "evidence": "coordinator evidence: /tmp/phase2-pixel-wasm-check"
+    },
+    {
+      "device": "phone-pixel-8-pro",
+      "engine": "native",
+      "job": "J-f8bc7c55728f",
+      "install": "passed; installed SHA-256 matches 9a7d74cc4433d342564ac60ebdd628b9514f2662a47afa76192ac7f5d8e79887",
+      "launch": "failed: target-left-foreground; activity returned to launcher",
+      "evidence": "coordinator evidence: /tmp/phase2-pixel-native-check; post-failure capture J-2ccb10aaa903"
+    },
+    {
+      "device": "phone-pixel-8-pro",
+      "engine": "native",
+      "job": "J-9a9fcb0173e8",
+      "install": "already installed; launch-only check",
+      "launch": "failed: target-left-foreground again",
+      "evidence": "coordinator-owned check; failure confirms reproducible launch exit"
+    }
+  ],
+  "runs": [
+    { "device": "phone-pixel-8-pro", "engine": "wasm", "phase": "playback", "job": "J-7a4b7a0072ca", "apkSha256": "b2bfe5ed6eab03da8e3847ee2c65a5ff1d890c73ca972a22f0a7ca738d8556fa", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "arm64-v8a", "refreshHz": 60, "runCount": 3, "medianFps": 5.9267, "minFps": 5.3899, "maxFps": 9.9629, "status": "complete; exploratory; no correctness gate", "evidence": "evidence/pixel-wasm/summary.json" },
+    { "device": "phone-pixel-8-pro", "engine": "native", "phase": "playback", "job": "J-dab401a8e077", "apkSha256": "22b5561185bccd46ea517b0916873d17e3ddfe88a6cd527f7807bf8b8bf9643e", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "arm64-v8a", "refreshHz": 120, "runCount": 1, "fps": 119.1671, "status": "complete; exploratory; no correctness gate; sampler reported two holes", "evidence": "evidence/pixel-native/summary.json" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "playback", "job": "J-b47d61f35ce8", "apkSha256": "b2bfe5ed6eab03da8e3847ee2c65a5ff1d890c73ca972a22f0a7ca738d8556fa", "status": "failed: SurfaceFlinger sampler observed only 7 distinct timestamps across 14.46s; screenshot shows Mandelbrot", "evidence": "coordinator evidence in /tmp/phase2-cast1-wasm-mandel-profile" },
+    { "device": "chromecast-test-01", "engine": "native", "phase": "playback", "job": "J-c374ebe393bb", "apkSha256": "22b5561185bccd46ea517b0916873d17e3ddfe88a6cd527f7807bf8b8bf9643e", "status": "failed: target-left-foreground after direct launch; no playback sample", "evidence": "coordinator evidence in /tmp/phase2-cast1-native-profile" }
+  ]
+}

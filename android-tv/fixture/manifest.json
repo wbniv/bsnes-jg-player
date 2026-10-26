@@ -1,0 +1,24 @@
+{
+  "_comment": "Frozen Phase 1 ROM fixture. ROM and map hashes and source revision are recorded in README.md.",
+  "roms": [
+    {
+      "id": "mandel-display",
+      "title": "Mandel display",
+      "selfcheck": {
+        "off": "0x580",
+        "len": 2,
+        "want": "0x204F",
+        "frames": 5800,
+        "label": "llvm-mos-65816 mandel-display native gate",
+        "referenceFrame": {
+          "path": "fixture/reference-5800.png",
+          "sha256": "7acaa3825b82b7e61fe641ca950508d58e8aeb0cb2ff7849547d17eacaab4abe",
+          "width": 256,
+          "height": 224,
+          "frame": 5800,
+          "entropy": 0
+        }
+      }
+    }
+  ]
+}

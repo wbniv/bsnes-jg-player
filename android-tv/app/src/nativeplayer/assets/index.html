@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="color-scheme" content="dark">
+  <title>Mandelbrot Native</title>
+  <link rel="stylesheet" href="library.css">
+  <link rel="stylesheet" href="performance-overlay.css">
+</head>
+<body>
+  <main id="game"><canvas id="screen" width="256" height="224" aria-label="Mandelbrot SNES gameplay"></canvas></main>
+  <div id="hud"><div id="brand">Mandelbrot</div><div id="status">Starting native C++ emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
+  <section id="pause-menu" hidden><div id="tv-pause-card"><h1 id="tv-title">Paused</h1><p id="pause-subtitle">Mandelbrot</p><div id="tv-actions"><button id="tv-resume">Resume</button><button id="tv-restart">Restart</button><button id="tv-verify">Verify from start</button><button id="tv-cancel" hidden>Cancel verification</button><button id="tv-performance" aria-pressed="true">Performance overlay · On</button><button id="tv-exit">Exit to Google TV</button></div><div id="checkresult"></div></div></section>
+  <script>window.BJG_DEFAULT_ROM="mandel-display";window.BJG_TV_MODE=true;</script>
+  <script src="tv-scheduler.js"></script>
+  <script src="performance-overlay.js"></script>
+  <script src="engine-adapter.js"></script>
+  <script src="tv-player.js"></script>
+</body>
+</html>

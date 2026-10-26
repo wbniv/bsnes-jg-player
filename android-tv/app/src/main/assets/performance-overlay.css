@@ -1,0 +1,16 @@
+#performance-overlay{position:fixed;z-index:5;top:21vh;right:2.2vw;width:clamp(230px,15vw,320px);padding:18px 20px 14px;border:1px solid #43576a;border-radius:14px;background:rgba(16,26,36,.96);box-shadow:0 10px 28px #0008;color:#f2f5fb;text-shadow:none;font:16px/1.25 system-ui,sans-serif;pointer-events:none}
+#performance-overlay[hidden]{display:none}
+.library-mode:not(.playing) #performance-overlay{display:none}
+.perf-heading{margin-bottom:13px;color:#a5bed4;font-size:12px;font-weight:700;letter-spacing:1.7px}
+.perf-rate{display:grid;grid-template-columns:1fr auto;align-items:center;margin:0 0 8px}
+.perf-rate span{font-size:14px;font-weight:700;letter-spacing:.5px}
+.perf-rate strong{grid-column:2;grid-row:1/3;color:#91e7a4;font-size:31px;line-height:1;font-variant-numeric:tabular-nums}
+.perf-rate:nth-of-type(3) strong{color:#8ed8ff}
+.perf-rate small{grid-column:1;color:#91a5b9;font-size:11px}
+.perf-detail{display:flex;align-items:baseline;gap:9px;margin-top:8px;color:#c4d1dd;font-size:12px}
+.perf-detail span{min-width:46px;font-weight:700;letter-spacing:.5px}
+.perf-detail b{font-variant-numeric:tabular-nums}
+.perf-detail small{margin-left:auto;color:#8195a9;font-size:10px}
+.perf-backlog{margin-top:12px;padding-top:10px;border-top:1px solid #35495d;color:#91a5b9;font-size:11px;letter-spacing:.5px}
+.perf-backlog b{margin-left:7px;color:#e5edf4;font-variant-numeric:tabular-nums}
+.perf-footnote{margin-top:9px;color:#8195a9;font-size:10px}
