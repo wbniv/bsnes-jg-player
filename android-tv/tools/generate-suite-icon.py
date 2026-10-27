@@ -5,11 +5,10 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw
 
-from icon_art import controller_cutout, fit_controller
+from icon_art import controller_badge, place_controller_bottom_right
 
 ROOT = Path(__file__).resolve().parents[2]
 PREVIEWS = ROOT.parent / "biohack.net/public/play/preview"
-MASTER = ROOT / "docs/plans/assets/mandel-display-app-icon.png"
 OUTPUT = ROOT / "docs/plans/assets/snes-rom-suite-app-icon.png"
 MOSAIC = ROOT / "docs/plans/assets/snes-rom-suite-mosaic.png"
 
@@ -62,9 +61,8 @@ def main() -> None:
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     canvas.save(MOSAIC, optimize=True)
-    badge = fit_controller(controller_cutout(MASTER), (120, 64))
     canvas = canvas.convert("RGBA")
-    canvas.alpha_composite(badge, (512 - 12 - badge.width, 512 - 12 - badge.height))
+    place_controller_bottom_right(canvas, controller_badge())
     canvas.convert("RGB").save(OUTPUT, optimize=True)
     print(f"Wrote {OUTPUT} from {len(frames)} published ROM preview frames.")
 

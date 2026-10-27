@@ -5,13 +5,13 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-from icon_art import controller_cutout, place_controller_bottom_right
+from icon_art import controller_badge, place_controller_bottom_right
 
 ROOT = Path(__file__).resolve().parents[2]
 MASTER = ROOT / "docs/plans/assets/snes-rom-suite-app-icon.png"
 MOSAIC = ROOT / "docs/plans/assets/snes-rom-suite-mosaic.png"
-CONTROLLER_SOURCE = ROOT / "docs/plans/assets/mandel-display-app-icon.png"
 ANDROID_RES = ROOT / "android-tv/app/src/main/res"
+LIBRARY_RES = ROOT / "android-tv/app/src/library/res"
 WEB_ICONS = ROOT / "web/icons"
 
 TV_LAUNCHER = {
@@ -53,22 +53,25 @@ def make_banner() -> Image.Image:
     draw.text((352, 198), "LLVM 65816 ROM SUITE", font=subtitle_font, fill="#b9a8d7")
     draw.rounded_rectangle((352, 238, 473, 243), radius=2, fill="#8154d6")
     banner = canvas.convert("RGBA")
-    place_controller_bottom_right(banner, controller_cutout(CONTROLLER_SOURCE))
+    place_controller_bottom_right(
+        banner, controller_badge(),
+        max_width_fraction=0.30, max_height_fraction=0.20, margin_fraction=0.04,
+    )
     return banner.convert("RGB")
 
 
 def main() -> None:
-    for source in (MASTER, MOSAIC, CONTROLLER_SOURCE):
+    for source in (MASTER, MOSAIC):
         if not source.is_file():
             raise SystemExit(f"missing suite icon source: {source}")
     icon = Image.open(MASTER).convert("RGB")
 
-    for density, size in TV_LAUNCHER.items():
-        save_resize(icon, ANDROID_RES / f"mipmap-{density}/ic_launcher.png", (size, size))
-
     banner = make_banner()
-    for density, size in TV_BANNER.items():
-        save_resize(banner, ANDROID_RES / f"mipmap-{density}/tv_banner.png", size)
+    for resource_root in (ANDROID_RES, LIBRARY_RES):
+        for density, size in TV_LAUNCHER.items():
+            save_resize(icon, resource_root / f"mipmap-{density}/ic_launcher.png", (size, size))
+        for density, size in TV_BANNER.items():
+            save_resize(banner, resource_root / f"mipmap-{density}/tv_banner.png", size)
 
     WEB_ICONS.mkdir(parents=True, exist_ok=True)
     for size in (16, 32, 48, 180, 192, 512):
@@ -77,7 +80,7 @@ def main() -> None:
         WEB_ICONS / "favicon.ico", format="ICO", sizes=[(16, 16), (32, 32), (48, 48)]
     )
 
-    print("Generated Android TV launcher icons (80–320 px), TV banners (160x90–640x360),")
+    print("Generated Android TV launcher icons and banners for both Android resource sets,")
     print("and web/mobile icons (16–512 px) from the updated full-suite artwork.")
 
 

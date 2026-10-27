@@ -5,7 +5,7 @@ from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
-from icon_art import controller_cutout, place_controller_bottom_right
+from icon_art import controller_badge, place_controller_bottom_right
 
 ROOT = Path(__file__).resolve().parents[2]
 ASSETS = ROOT / "docs/plans/assets"
@@ -34,6 +34,15 @@ def save_size(source: Image.Image, path: Path, size: tuple[int, int]) -> None:
     source.resize(size, Image.Resampling.LANCZOS).save(path, optimize=True)
 
 
+def save_round_size(source: Image.Image, path: Path, size: int) -> None:
+    icon = source.resize((size, size), Image.Resampling.LANCZOS).convert("RGBA")
+    mask = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(mask).ellipse((0, 0, size - 1, size - 1), fill=255)
+    icon.putalpha(mask)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    icon.save(path, optimize=True)
+
+
 def make_banner(artwork: Image.Image, badge: Image.Image, subtitle: str) -> Image.Image:
     canvas = Image.new("RGB", (640, 360), "#0a0b27")
     draw = ImageDraw.Draw(canvas)
@@ -48,7 +57,10 @@ def make_banner(artwork: Image.Image, badge: Image.Image, subtitle: str) -> Imag
     draw.text((352, 198), subtitle, font=small_font, fill="#b9a8d7")
     draw.rounded_rectangle((352, 238, 473, 243), radius=2, fill="#8154d6")
     banner = canvas.convert("RGBA")
-    place_controller_bottom_right(banner, badge)
+    place_controller_bottom_right(
+        banner, badge, max_width_fraction=0.30,
+        max_height_fraction=0.20, margin_fraction=0.04,
+    )
     return banner.convert("RGB")
 
 
@@ -61,9 +73,10 @@ def main() -> None:
         if not art_path.is_file():
             raise SystemExit(f"missing banner artwork: {art_path}; regenerate the suite mosaic first")
         artwork = Image.open(art_path).convert("RGB")
-        badge = controller_cutout(PRODUCTS["mandelbrot"])
+        badge = controller_badge()
         for density, size in TV_ICONS.items():
             save_size(master, OUT / name / "tv" / f"launcher-{density}-{size}.png", (size, size))
+            save_round_size(master, OUT / name / "tv" / f"launcher-{density}-{size}-round.png", size)
         subtitle = "MANDELBROT PLAYER" if name == "mandelbrot" else "152 ROM SUITE"
         banner = make_banner(artwork, badge, subtitle)
         for density, size in TV_BANNERS.items():
