@@ -151,6 +151,8 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
 .cartridge-heading span{color:var(--muted);font-size:11px}
 .cartridge-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr) minmax(0,1fr);align-items:center;gap:2%;min-height:0;flex:1;padding:0 4%;outline:none}
 .cartridge-stage:focus-visible{outline:3px solid #fff;outline-offset:-3px;border-radius:10px}
+.cartridge-stage{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.cartridge-card img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
 .cartridge-card{min-width:0;padding:8px;border:1px solid #354a60;border-radius:10px;background:linear-gradient(145deg,#1c2938,#101720);box-shadow:0 12px 28px #0008;overflow:hidden}
 .cartridge-card img{display:block;width:100%;height:auto;max-height:33vh;aspect-ratio:8/7;object-fit:contain;image-rendering:pixelated;background:#05080d;border-radius:5px}
 .cartridge-card strong,.cartridge-card small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -226,5 +228,39 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
   .treemap-actions{flex-direction:row;flex-wrap:wrap}
   .treemap-actions button{flex:1}
 }
-.cartridge-stage{touch-action:pan-y;user-select:none;-webkit-user-select:none}
-.cartridge-card img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
+
+/* In phone landscape, reclaim vertical room from launcher chrome for the map. */
+@media (orientation:landscape) and (max-height:520px) and (max-width:1000px){
+  #library{padding:1vh 3vw .8vh;gap:.55vh}
+  .top{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(150px,28vw);grid-template-areas:"identity lucky search";align-items:center;gap:8px;height:auto;min-height:30px;flex:0 0 auto}
+  .top>div{grid-area:identity;min-width:0}
+  .top h1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;line-height:1.1}
+  .top p{display:none}
+  .top #lucky{grid-area:lucky;min-height:26px;padding:3px 7px;font-size:10px;white-space:nowrap}
+  .top .search{grid-area:search;width:auto;min-width:0;gap:5px;font-size:9px}
+  .top .search input{height:26px;min-width:0;padding:0 6px;font-size:10px}
+  .launcher-views{min-height:27px;gap:4px}
+  .launcher-view{min-height:24px;padding:2px 6px;gap:5px;font-size:9px;line-height:1.05}
+  .launcher-view small{font-size:8px}
+  .view-hint{display:none}
+  .filters{height:auto;min-height:26px;max-height:28px;gap:4px}
+  .chip{min-height:23px;padding:2px 7px;font-size:9px}
+  footer{display:none}
+  .treemap-view{gap:3px}
+  .treemap-heading h2{font-size:12px}
+  .treemap-heading #treemap-total{font-size:9px}
+  .treemap-legend{min-height:19px;max-height:21px;gap:5px}
+  .treemap-legend-item{font-size:8px}
+  .treemap-map-column{min-height:0}
+  .treemap-details{padding:5px}
+}
+
+@media (orientation:portrait) and (max-width:760px){
+  .treemap-content{grid-template-rows:minmax(0,1fr) minmax(0,28vh);overflow:hidden}
+  .treemap-map-column{min-height:0}
+  .treemap-details{min-height:0;overflow:auto}
+}
+
+/* Pause-menu focus stays inside the action rail instead of being clipped. */
+#tv-actions button:focus{transform:none;outline-offset:-3px}
+#tv-verify,#tv-cancel,.menu-section-label,#checkresult{display:none!important}

@@ -1,14 +1,16 @@
 # Google TV ROM Treemap launcher view
 
-**Status:** Implemented; Google TV device validation pending. ROM Treemap is launcher view 3. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
+**Status:** Implemented and captured on Cast1; Pixel verification is pending because the phone locked during its install check. ROM Treemap is launcher view 3. The [Cast1 Treemap proof](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) shows the final native APK’s globally squarified layout. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
 
 **High fidelity mockup and diagrams:** [Open the treemap plan in a browser](2026-10-28-google-tv-rom-treemap-view.html).
 
 ## Goal
 
-Add ROM Treemap as a third way to explore the existing offline library. Every ROM is a focusable tile, grouped by category. Tile area is proportional to the ROM’s exact byte size. Reuse the shared search, category filters, favorite state, selected ROM, preferences, and existing launch path.
+Add ROM Treemap as a third way to explore the existing offline library. Every ROM is a focusable tile. Tile area is proportional to the ROM’s exact byte size, and deterministic colors identify categories. Reuse the shared search, category filters, favorite state, selected ROM, preferences, and existing launch path.
 
 ## Treemap geometry
+
+The squarifier uses the visible map's measured width and height for every render; it never stretches coordinates calculated for a different aspect ratio. Recalculate when the view opens or the map resizes, including on phone rotation. Pack all ROMs in one pass so category boundaries cannot make the map less square, while preserving their exact proportional areas.
 
 The map is the full content area to the left of a fixed details rail. The rail sits outside the map, so every pixel in the map belongs to a ROM tile. For ROM (i) with size (s_i), and map rectangle (M) with area (A_M = W_M H_M):
 
@@ -16,7 +18,7 @@ The map is the full content area to the left of a fixed details rail. The rail s
   A_i = A_M \frac{s_i}{\sum_{j \in R} s_j}
 \]
 
-where (R) is the current filtered result set. A category group (c) receives area (A_c = A_M \frac{\sum_{i\in c}s_i}{\sum_{j\in R}s_j}\). The layout packs categories, then packs their ROMs inside each category rectangle; this preserves the same global byte-to-area ratio for every ROM. Use a deterministic squarified layout to avoid long thin strips while keeping catalog order stable for equal sizes.
+where (R) is the current filtered result set. A ROM’s tile area is its byte share of the map, subject only to pixel rounding. Sort tiles by size for squarification; use category color and legend to show category membership without constraining tile geometry. Ties are stable by ROM slug.
 
 Labels are an overlay and do not change tile bounds. Show title and size only when they fit; every tile always has an accessible name including title, filename, category, and exact byte count. The selected tile gets a bright outline. Category colors are deterministic and repeated in the legend.
 
@@ -32,9 +34,9 @@ Labels are an overlay and do not change tile bounds. Show title and size only wh
 flowchart LR
   Catalog[Offline ROM records] --> Filter[Shared query + category + favorites]
   Filter --> Results[Filtered ROMs with exact byte sizes]
-  Results --> Group[Sum sizes by category]
-  Group --> Pack[Squarified category and tile rectangles]
-  Pack --> Map[ROM Treemap view]
+  Results --> Pack[Squarify all ROMs together by exact byte size]
+  Pack --> Color[Color tiles by category]
+  Color --> Map[ROM Treemap view]
   Map --> Detail[Selected ROM detail rail]
   Detail -->|Favorite| Prefs[Device preferences]
   Detail -->|Play| Loader[Existing ROM launch path]
@@ -45,13 +47,15 @@ flowchart LR
 
 ## Resizing and data behavior
 
-The treemap layout uses normalized coordinates and CSS percentages. Resizing the TV or window changes only the map’s width and height; all tile areas scale by the same factor, preserving their ratios. Recompute after catalog filters/search change, not every animation frame. Do not regenerate ROMs or screenshots.
+The treemap layout measures the visible map rectangle and uses CSS percentages derived from those exact dimensions. Resizing the TV or window reruns the squarifier for the new aspect ratio; tile areas continue to follow their exact byte ratios. Recompute after filters/search and map resizes, not every animation frame. Do not regenerate ROMs or catalog preview cards.
+
+On phone landscape, collapse the title/search area, view carousel, and category filters into compact rows; hide the catalog subtitle and footer so the map retains most of the available height. Keep the details rail beside the map in landscape. In portrait, retain the map-above-details arrangement.
 
 ## Acceptance criteria
 
 1. ROM Treemap is the third option in the chooser carousel and remains selected after relaunch.
-2. The map groups every matching ROM by category and uses exact `size` values to calculate tile areas.
-3. The details rail does not overlap the map. Category groups and tile colors match the legend.
+2. The map includes every matching ROM, uses exact `size` values to calculate tile areas, and identifies categories with a legend and consistent tile colors.
+3. The details rail does not overlap the map. Category colors match the legend.
 4. All tiles are D-pad focusable; directional movement selects the nearest tile geometrically.
 5. Search, category chips, and Favorites update the map while keeping details, selection, and actions in sync.
 6. Select launches the exact focused ROM; Favorite updates the same device preference as other views.
@@ -61,10 +65,12 @@ The treemap layout uses normalized coordinates and CSS percentages. Resizing the
 ## Implementation scope
 
 - `android-tv/app/src/main/assets/index.html`: add the Treemap surface and detail rail.
-- `android-tv/app/src/main/assets/library.js`: register view 3, compute nested squarified rectangles from `size`, and add geometric D-pad movement.
+- `android-tv/app/src/main/assets/library.js`: register view 3, compute globally squarified rectangles from `size`, colored by category, and add geometric D-pad movement.
 - `android-tv/app/src/main/assets/library.css`: style the map, deterministic category palette, selected tile, and responsive details rail.
 - Keep `android-tv/app/src/library/assets/` synchronized for the preview page.
 
 ## Verification plan
 
 On a Google TV remote, switch among all three views, filter by category and search, move among large and small tiles, enter the detail rail, favorite, play, and return from the pause menu. Confirm that each tile’s area ratio agrees with its byte-size ratio within layout rounding, including after resizing and filtering. Check a one-ROM catalog and an empty filter.
+
+Capture the ROM Treemap chooser on Cast1 in landscape and on Pixel in portrait and landscape. Store the full-resolution captures as `docs/proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png`, `pixel-portrait-rom-treemap.png`, and `pixel-landscape-rom-treemap.png`. The [launcher views plan](2026-10-28-google-tv-launcher-views.md#device-proof-capture-matrix) tracks the complete three-view capture matrix.

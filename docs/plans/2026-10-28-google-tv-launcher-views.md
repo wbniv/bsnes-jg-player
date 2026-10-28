@@ -1,6 +1,6 @@
 # Google TV launcher views: Quick Launch and Cartridge Flow
 
-**Status:** Implemented; Google TV device validation pending. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is view 2; ROM Treemap (#3) is now view 3 in the [treemap extension plan](2026-10-28-google-tv-rom-treemap-view.md). All three appear in the focusable launcher chooser carousel.
+**Status:** Implemented. Cast1 installation and capture are complete. Pixel received the APK, but launcher verification stopped because the phone locked; Pixel captures are pending an unlocked phone. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is view 2; ROM Treemap (#3) is now view 3 in the [treemap extension plan](2026-10-28-google-tv-rom-treemap-view.md). All three appear in the focusable launcher chooser carousel.
 
 **Visual plan and mockups:** [Open the high fidelity plan in a browser](2026-10-28-google-tv-launcher-views.html).
 
@@ -46,6 +46,7 @@ flowchart LR
 5. View changes preserve query, category, selected ROM, and favorites; the selected view survives app restart.
 6. Empty and single-item result states remain legible and operable.
 7. Direct `?rom=` launch and existing pause-menu “Choose another ROM” behavior remain intact.
+8. On phone landscape, launcher chrome stays compact enough to leave most of the display for the selected view. Pause-menu focus outlines stay inside button edges, and verification diagnostics are absent from the menu.
 
 ## Implementation scope
 
@@ -56,8 +57,20 @@ flowchart LR
 
 ## Verification plan
 
-Exercise both views with the remote on the Google TV app: switch views in both directions, move between cartridges, filter/search, favorite, launch, return from the pause menu, and restart to verify persistence. Check one result, no results, and the full catalog. Compare WASM and native variants because they share the library UI.
+Exercise all three views with the remote on the Google TV app: switch views in both directions, move between cartridges and treemap tiles, filter/search, favorite, launch, return from the pause menu, and restart to verify persistence. Check one result, no results, and the full catalog. Compare WASM and native variants because they share the library UI.
+
+### Device proof capture matrix
+
+Install the native suite on Cast1 and Pixel. Capture every chooser view on Cast1 in landscape, and on Pixel in both portrait and landscape, after the treemap has recalculated for the visible map dimensions. Save full-resolution coordinator captures under `docs/proof/google-tv-launcher-views-2026-10-28/` using this matrix:
+
+| Device / orientation | Quick Launch | Cartridge Flow | ROM Treemap |
+| --- | --- | --- | --- |
+| Cast1 · landscape | [Quick Launch](../proof/google-tv-launcher-views-2026-10-28/cast1-quick-launch.png) | [Cartridge Flow](../proof/google-tv-launcher-views-2026-10-28/cast1-cartridge-flow.png) | [ROM Treemap](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) |
+| Pixel · portrait | `pixel-portrait-quick-launch.png` | `pixel-portrait-cartridge-flow.png` | `pixel-portrait-rom-treemap.png` |
+| Pixel · landscape | `pixel-landscape-quick-launch.png` | `pixel-landscape-cartridge-flow.png` | `pixel-landscape-rom-treemap.png` |
+
+For the treemap captures, check that the tiles remain compact rather than being stretched from the previous orientation, and confirm that the screenshot reflects the actual device-sized map area. Keep the screenshots as committed proof artifacts and link them here when captured.
 
 ## Non-goals
 
-No ROM or screenshot changes, no catalog rebuild, and no new launch protocol. No treemap or compiler-family grouping in this iteration.
+No ROM or catalog preview-card changes, no catalog rebuild, and no new launch protocol.
