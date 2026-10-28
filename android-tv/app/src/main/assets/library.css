@@ -226,3 +226,5 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
   .treemap-actions{flex-direction:row;flex-wrap:wrap}
   .treemap-actions button{flex:1}
 }
+.cartridge-stage{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.cartridge-card img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}
