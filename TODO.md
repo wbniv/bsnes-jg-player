@@ -64,7 +64,7 @@ _Nothing being watched._
 ## Parked
 
 - [T2] **Search for the TV library**: see the [plan](docs/plans/2026-10-26-snes-rom-library-search.md).
-  Deferred by Will on 2026‑10‑26. The code exists in `library.js` and is switched off. Un-park when
+  Deferred by Will on 2026‑10‑26. The code exists in `library.js` and is still on until the library change switches it off. Un-park when
   the catalog nears 1,000 ROMs. T2 because it means switching on and testing one module; choosing
   ghost text would make it T3.
 
@@ -107,3 +107,24 @@ _Nothing being watched._
   USE_VENDORED_SAMPLERATE=1` → `libbsnes.a`, then `em++` links the frontend to `.js`+`.wasm`.
 - [x] Scaffolded the repo (2026-06-25): reproducible `build.sh`, loader page, `serve.py`,
   `sync-roms.sh`, `Taskfile.yml`, GPLv3 `LICENSE`+`NOTICE`, bundled demo ROMs, the plan.
+
+
+## Inbox — auto-captured plan deferrals
+
+_Auto-added from plan "Out of scope"/"Deferred" sections at commit time. Triage each into M1/M2/etc. and delete it here — it will not come back._
+
+<!-- BEGIN auto-captured-deferrals (managed by audit-plan-deferrals.sh — triage these into the curated sections above; the fingerprint ledger means a deleted item is NOT re-added) -->
+- [verify] **2026-10-26-snes-rom-library-selector** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-26-snes-rom-library-selector.md](docs/plans/2026-10-26-snes-rom-library-selector.md)_  <!-- fp:b5cb5721dabd9fec -->
+- [verify] **2026-10-27-responsive-snes-display** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-27-responsive-snes-display.md](docs/plans/2026-10-27-responsive-snes-display.md)_  <!-- fp:6adcfb5740bb82a1 -->
+- [verify] **2026-10-28-google-tv-launcher-views** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-28-google-tv-launcher-views.md](docs/plans/2026-10-28-google-tv-launcher-views.md)_  <!-- fp:0ee29cdf2adf6368 -->
+- [verify] **2026-10-28-google-tv-rom-treemap-view** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-28-google-tv-rom-treemap-view.md](docs/plans/2026-10-28-google-tv-rom-treemap-view.md)_  <!-- fp:c68fac9462dfeadf -->
+- [ ] **(triage)** [ ] Add devices as they arrive, including the wider Android 7–14 inventory and the planned Android 16 purchase. Reuse both flavors and the same comparison protocol; their arrival is not a prerequisite for Phases 1 or 2. — _from [2026-10-26-chromecast-google-tv.md](docs/plans/2026-10-26-chromecast-google-tv.md)_  <!-- fp:c5e4c82c2f8ecff6 -->
+- [ ] **(triage)** [x] Add the published ROM quick-launch library to the WASM app; keep `?rom=<slug>` direct boot usable for controlled testing. See the [selector implementation plan and published ROM list](2026-10-26-snes-rom-library-selector.md). Android document picker remains later work. — _from [2026-10-26-chromecast-google-tv.md](docs/plans/2026-10-26-chromecast-google-tv.md)_  <!-- fp:8fa6e5ef01ace90c -->
+- [ ] **(triage)** [ ] Add full SNES gamepad mapping, additional controller ports, and disconnect/dead-zone tests with an interactive ROM that can demonstrate the mappings. The initial self-running ROM cannot validate them. — _from [2026-10-26-chromecast-google-tv.md](docs/plans/2026-10-26-chromecast-google-tv.md)_  <!-- fp:7885e979d673ccb9 -->
+- [ ] **(triage)** [ ] Add audio playback and SRAM persistence when a ROM that uses them is in scope; then measure audio underruns and persistence across app restart. The initial `mandel-display` milestone should not wait on these unrelated features. — _from [2026-10-26-chromecast-google-tv.md](docs/plans/2026-10-26-chromecast-google-tv.md)_  <!-- fp:df92f88f6ea0b7b4 -->
+- [ ] **(triage)** Changing the emulator frame scheduler or target SNES clock. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:fbe7360986c55156 -->
+- [ ] **(triage)** Collecting Android SurfaceFlinger presentation timestamps or claiming display refresh rate as app FPS. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:4134ed190639f205 -->
+- [ ] **(triage)** A desktop browser performance dashboard or mouse/keyboard-only controls. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:04a1a690fe2285b1 -->
+- [ ] **(triage)** Persisting historical sessions inside the apps; coordinator evidence remains the record for comparison runs. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:b2b2d02005c6dc83 -->
+- [verify] **2026-10-26-snes-rom-library-search** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-26-snes-rom-library-search.md](docs/plans/2026-10-26-snes-rom-library-search.md)_  <!-- fp:d21c98d625b27066 -->
+<!-- END auto-captured-deferrals -->

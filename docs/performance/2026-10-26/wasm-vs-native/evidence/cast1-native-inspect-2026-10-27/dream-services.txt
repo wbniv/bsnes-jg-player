@@ -1,0 +1,5 @@
+com.android.dreams.basic/.Colors
+com.google.android.apps.tv.dreamx/.service.Backdrop
+org.worldfoundry.plantedtank/org.worldfoundry.screensaver.PlantedTankDreamService
+org.worldfoundry.screensaver/.AquariumDreamService
+org.worldfoundry.seahorsegrid/org.worldfoundry.screensaver.SeahorseGridDreamService

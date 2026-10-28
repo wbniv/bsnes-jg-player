@@ -1,0 +1,263 @@
+{
+  "budgets": {
+    "cleanup": 180,
+    "cleanup_consumed": 0.05160349200014025,
+    "execution": 900,
+    "execution_consumed": 20.71901060800883,
+    "execution_deadline": 69498.581550474,
+    "forced": 1081,
+    "forced_consumed": 22.038649355003145,
+    "forced_deadline": 69679.581550474,
+    "granted": 68598.581550474
+  },
+  "cleanup_attempts": 1,
+  "connected": true,
+  "device": "chromecast-test-01",
+  "diagnostics": {
+    "mdns-endpoint": {
+      "endpoint": "192.168.4.61:37527",
+      "observed_at": 1793159592.84197
+    }
+  },
+  "flags": {},
+  "health": "ready",
+  "job": "J-c519fb63d67c",
+  "journal": [
+    {
+      "job": "J-c519fb63d67c",
+      "key": "install:1",
+      "format": 1,
+      "original": {
+        "before_hash": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870",
+        "boot_id": "66d00ec6-13c9-4caf-92c0-d0afe4aed4ee",
+        "input": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870.apk",
+        "kind": "install",
+        "package": "org.bsnesjg.tv.native.phase2"
+      },
+      "restored": 1,
+      "verification": {
+        "installed_sha256": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870"
+      },
+      "device": "chromecast-test-01",
+      "backend": "android",
+      "scopes": [
+        "device:chromecast-test-01",
+        "transport:android"
+      ]
+    }
+  ],
+  "observations": {},
+  "plugin": {
+    "cleanup": {
+      "observations": {},
+      "reason": "restored",
+      "recovery_state": null,
+      "restoration": "safe"
+    },
+    "run": {
+      "details": {
+        "apk_installations": [
+          {
+            "action": "install",
+            "before_sha256": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870",
+            "end": 1793159613.2007513,
+            "input": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870.apk",
+            "installed_sha256": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870",
+            "journal_key": "install:1",
+            "package": "org.bsnesjg.tv.native.phase2",
+            "reason": "explicit-install",
+            "source_users": [
+              10
+            ],
+            "start": 1793159596.9505405,
+            "status": "verified",
+            "variant": null
+          }
+        ],
+        "next_workflow": "verify-launch",
+        "profile": "tv",
+        "workflow": "install"
+      },
+      "reason": "completed",
+      "recovery_state": null,
+      "status": "succeeded"
+    }
+  },
+  "reaped": [],
+  "reason": "completed",
+  "status": "succeeded",
+  "survivors": [],
+  "tool_diagnostics": [
+    {
+      "healthy": true,
+      "operation": "host-version-probe",
+      "reason": "ready",
+      "seconds": 0.05174811399774626,
+      "timed_out": false
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "aapt"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 1,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    },
+    {
+      "phase": "job",
+      "process_policy": "threads-only",
+      "returncode": 0,
+      "timed_out": false,
+      "tool": "adb"
+    }
+  ],
+  "transport_failure_phases": [],
+  "transport_recovery": [],
+  "version": 1,
+  "work_started": true
+}

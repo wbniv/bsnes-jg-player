@@ -1,0 +1,84 @@
+{
+  "status": "verified",
+  "home": "com.google.android.apps.tv.launcherx/.home.HomeActivity",
+  "apk": "66ec252f3ddd1a72df8d227b440c46d567f20db317bd4ba6d8888c139aca3e53.apk",
+  "attempts": [
+    {
+      "attempt": 1,
+      "verified": false,
+      "reason": "target-tile-not-found"
+    },
+    {
+      "verified": false,
+      "reason": "No identifiable tile geometry or comparable artwork",
+      "verifier_revision": "transparent-circle-v1",
+      "reference_alpha": [
+        {
+          "kind": "banner",
+          "mode": "RGBA",
+          "minimum": 255
+        },
+        {
+          "kind": "icon",
+          "mode": "RGBA",
+          "minimum": 255
+        }
+      ],
+      "screenshot": "attempt-2-view-3.png",
+      "hierarchy": "attempt-2-view-3.xml",
+      "attempt": 2,
+      "launcher_label": "LLVM 65816 Torture Test Suite on SNES"
+    },
+    {
+      "bounds": [
+        308,
+        906,
+        460,
+        1058
+      ],
+      "reference": "expected-icon-1.png",
+      "resource": "res/9w.png",
+      "kind": "icon",
+      "mean_absolute_error": 1.1033421284080915,
+      "rms_error": 1.8009378560312281,
+      "worst_region_error": 1.9415807560137457,
+      "brightness_gain": 0.8804141275145797,
+      "normalisation": "scrim",
+      "scrim_gain": 0.6087948991698316,
+      "scrim_offset": 12.760012008084608,
+      "scrim_correlation": 0.9991916378112404,
+      "verified": true,
+      "verifier_revision": "transparent-circle-v1",
+      "reference_alpha": [
+        {
+          "kind": "banner",
+          "mode": "RGBA",
+          "minimum": 255
+        },
+        {
+          "kind": "icon",
+          "mode": "RGBA",
+          "minimum": 255
+        }
+      ],
+      "screenshot": "attempt-3-view-1.png",
+      "hierarchy": "attempt-3-view-1.xml",
+      "attempt": 3,
+      "launcher_label": "LLVM 65816 Torture Test Suite on SNES"
+    }
+  ],
+  "refreshes": [
+    {
+      "operation": "launcher-force-stop-and-home",
+      "package": "com.google.android.apps.tv.launcherx"
+    },
+    {
+      "operation": "launcher-data-reset-and-home",
+      "package": "com.google.android.apps.tv.launcherx"
+    },
+    {
+      "operation": "launcher-force-stop-and-home",
+      "package": "com.google.android.apps.tv.launcherx"
+    }
+  ]
+}

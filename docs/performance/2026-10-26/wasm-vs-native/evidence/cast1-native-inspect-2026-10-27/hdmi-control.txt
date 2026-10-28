@@ -1,0 +1,233 @@
+mProhibitMode: false
+mPowerStatus: 0
+mIsCecAvailable: false
+mCecVersion: 6
+mIsAbsoluteVolumeBehaviorEnabled: false
+System_settings:
+  mMhlInputChangeEnabled: true
+  mSystemAudioActivated: false
+  mHdmiCecVolumeControlEnabled: 1
+CEC settings:
+  hdmi_cec_enabled (int): 1 (default: 1) [modifiable]
+  hdmi_cec_version (int): 6 (default: 6) [modifiable]
+  routing_control (int): 0 (default: 0) [modifiable]
+  soundbar_mode (int): 0 (default: 0) [modifiable]
+  power_control_mode (string): broadcast (default: broadcast) [modifiable]
+  power_state_change_on_active_source_lost (string): standby_now (default: standby_now) [modifiable]
+  system_audio_control (int): 1 (default: 1) [modifiable]
+  system_audio_mode_muting (int): 1 (default: 1) [modifiable]
+  volume_control_enabled (int): 1 (default: 1) [modifiable]
+  tv_wake_on_one_touch_play (int): 1 (default: 1) [modifiable]
+  tv_send_standby_on_sleep (int): 1 (default: 1) [modifiable]
+  set_menu_language (int): 1 (default: 1) [modifiable]
+  rc_profile_tv (int): 0 (default: 0) [modifiable]
+  rc_profile_source_handles_root_menu (int): 1 (default: 1) [modifiable]
+  rc_profile_source_handles_setup_menu (int): 1 (default: 1) [modifiable]
+  rc_profile_source_handles_contents_menu (int): 0 (default: 0) [modifiable]
+  rc_profile_source_handles_top_menu (int): 0 (default: 0) [modifiable]
+  rc_profile_source_handles_media_context_sensitive_menu (int): 0 (default: 0) [modifiable]
+  query_sad_lpcm (int): 1 (default: 1) [modifiable]
+  query_sad_dd (int): 1 (default: 1) [modifiable]
+  query_sad_mpeg1 (int): 1 (default: 1) [modifiable]
+  query_sad_mp3 (int): 1 (default: 1) [modifiable]
+  query_sad_mpeg2 (int): 1 (default: 1) [modifiable]
+  query_sad_aac (int): 1 (default: 1) [modifiable]
+  query_sad_dts (int): 1 (default: 1) [modifiable]
+  query_sad_atrac (int): 1 (default: 1) [modifiable]
+  query_sad_onebitaudio (int): 1 (default: 1) [modifiable]
+  query_sad_ddp (int): 1 (default: 1) [modifiable]
+  query_sad_dtshd (int): 1 (default: 1) [modifiable]
+  query_sad_truehd (int): 1 (default: 1) [modifiable]
+  query_sad_dst (int): 1 (default: 1) [modifiable]
+  query_sad_wmapro (int): 1 (default: 1) [modifiable]
+  query_sad_max (int): 1 (default: 1) [modifiable]
+  tv_behavior_on_standby_message (int): 0 (default: 0)
+  earc_enabled (int): 1 (default: 1) [modifiable]
+mMhlController: 
+eARC local device: None. eARC is either disabled or not available.
+HDMI CEC Network
+  mPortInfo:
+    port_id: 0, type: HDMI_OUT, address: 0x0000, cec: true, arc: true, mhl: false, earc: false
+  HdmiCecLocalDevice #4:
+    mDeviceType: 4
+    mPreferredAddress: 4
+    mDeviceInfo: CEC: logical_address: 0x04 device_type: 4 cec_version: 6 vendor_id: 1877008 display_name: Bedroom TV power_status: 0 physical_address: 0xFFFF port_id: 0
+      Device features: record_tv_screen: N set_osd_string: N deck_control: N set_audio_rate: N arc_tx: N arc_rx: N set_audio_volume_level: N 
+    mActiveSource: (0x04, invalid)
+    mActiveRoutingPath: 0x0000
+    isActiveSource(): true
+    Active Source history:
+      time=2026-10-26 23:22:23 active source=(0x04, invalid) isActiveSource=true from=ActiveSourceAction
+      time=2026-10-27 06:31:31 active source=(invalid, invalid) isActiveSource=false from=HdmiCecLocalDevicePlayback#onStandby()
+      time=2026-10-27 06:31:32 active source=(0x04, invalid) isActiveSource=true from=OneTouchPlayAction#broadcastActiveSource()
+      time=2026-10-27 06:31:32 active source=(0x04, invalid) isActiveSource=true from=ActiveSourceAction
+      time=2026-10-27 07:25:44 active source=(0x04, invalid) isActiveSource=true from=OneTouchPlayAction#broadcastActiveSource()
+      time=2026-10-27 07:25:44 active source=(0x04, invalid) isActiveSource=true from=ActiveSourceAction
+      time=2026-10-27 07:32:06 active source=(0x04, invalid) isActiveSource=true from=OneTouchPlayAction#broadcastActiveSource()
+      time=2026-10-27 07:32:06 active source=(0x04, invalid) isActiveSource=true from=ActiveSourceAction
+      time=2026-10-27 08:54:08 active source=(0x04, invalid) isActiveSource=true from=OneTouchPlayAction#broadcastActiveSource()
+      time=2026-10-27 08:54:08 active source=(0x04, invalid) isActiveSource=true from=ActiveSourceAction
+  mDeviceInfos:
+    CEC: logical_address: 0x04 device_type: 4 cec_version: 6 vendor_id: 1877008 display_name: Bedroom TV power_status: 0 physical_address: 0xFFFF port_id: 0
+      Device features: record_tv_screen: N set_osd_string: N deck_control: N set_audio_rate: N arc_tx: N arc_rx: N set_audio_volume_level: N 
+mCecController: 
+  CEC message history:
+    [S] time=2026-10-26 22:59:52 message=<Report Features> 4F:A6:06:10:58:00 (ACK)
+    [S] time=2026-10-26 22:59:52 message=<Device Vendor Id> 4F:87:1C:A4:10 (ACK)
+    [S] time=2026-10-26 22:59:52 message=<Set Osd Name> 40:47 <Redacted len=10> (NACK, NACK)
+    [S] time=2026-10-26 22:59:52 message=<Give System Audio Mode Status> 45:7D (NACK, NACK)
+    [S] time=2026-10-26 22:59:52 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 22:59:53 message=<Report Power Status> 4F:90:01 (ACK)
+    [S] time=2026-10-26 22:59:55 message=<Report Power Status> 4F:90:00 (ACK)
+    [S] time=2026-10-26 23:09:02 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:02 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-26 23:09:02 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:02 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:03 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:04 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:06 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:08 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:08 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:08 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:09 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:10 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:12 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:14 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:14 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:14 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:15 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:16 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:18 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:20 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:20 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:09:20 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:21 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:09:22 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:23 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:23 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-26 23:22:23 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:23 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:24 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:25 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:27 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:29 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:29 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:29 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:30 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:31 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:33 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:35 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:35 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:35 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:36 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:37 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:39 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:41 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:41 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-26 23:22:41 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:42 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-26 23:22:43 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:31 message=<Report Power Status> 4F:90:01 (ACK)
+    [S] time=2026-10-27 06:31:31 message=<Standby> 4F:36 (ACK)
+    [S] time=2026-10-27 06:31:32 message=<Report Features> 4F:A6:06:10:58:00 (ACK)
+    [S] time=2026-10-27 06:31:32 message=<Device Vendor Id> 4F:87:1C:A4:10 (ACK)
+    [S] time=2026-10-27 06:31:32 message=<Set Osd Name> 40:47 <Redacted len=10> (NACK, NACK)
+    [S] time=2026-10-27 06:31:32 message=<Give System Audio Mode Status> 45:7D (NACK, NACK)
+    [S] time=2026-10-27 06:31:32 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:32 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-27 06:31:32 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:33 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:33 message=<Report Power Status> 4F:90:00 (ACK)
+    [S] time=2026-10-27 06:31:34 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:34 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:35 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:36 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:38 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:38 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:39 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:39 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:40 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:42 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:44 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:44 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:45 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:45 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:46 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:48 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:50 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:50 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 06:31:51 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:51 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 06:31:52 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:44 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:44 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-27 07:25:44 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:45 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:46 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:46 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:48 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:50 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:50 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:51 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:51 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:52 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:54 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:56 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:56 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:25:57 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:57 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:25:58 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:26:00 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:26:02 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:26:02 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:26:03 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:26:03 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:26:04 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:06 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:06 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-27 07:32:06 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:06 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:07 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:08 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:10 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:12 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:12 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:12 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:13 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:14 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:16 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:18 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:18 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:18 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:19 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:20 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:22 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:24 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:24 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 07:32:24 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:25 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 07:32:26 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:08 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:08 message=<Menu Status> 40:8E:00 (NACK, NACK)
+    [S] time=2026-10-27 08:54:08 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:08 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:09 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:10 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:12 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:14 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:14 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:14 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:15 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:16 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:18 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:20 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:20 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:20 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:21 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:22 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:24 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:26 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:26 message=<Give Device Power Status> 40:8F (NACK, NACK)
+    [S] time=2026-10-27 08:54:26 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:27 message=<Text View On> 40:0D (NACK, NACK)
+    [S] time=2026-10-27 08:54:28 message=<Give Device Power Status> 40:8F (NACK, NACK)

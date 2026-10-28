@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "launch_wall_start": 1793080824.8060877,
+  "launch_wall_end": 1793080826.358149,
+  "am_start_output": "Starting: Intent { cmp=org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity\nTotalTime: 1042\nWaitTime: 1070\nComplete\n",
+  "samples": [
+    {
+      "layer": "org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6423",
+      "raw": "16683333\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n50456926263933\t50456961588988\t50456933086975\n0\t50456978272467\t50456933086975\n50456998357100\t50457061689236\t50457000792767\n50457057636767\t50457095055837\t50457061663725\n0\t50457428722989\t50457061663725\n50457466324100\t50457495456328\t50457471821558\n\n",
+      "host_wall_time": 1793080827.1551614,
+      "valid_presents": 6
+    }
+  ],
+  "selected_layer": "org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6423",
+  "first_present_ns": 50456961588988,
+  "ring_full": false
+}

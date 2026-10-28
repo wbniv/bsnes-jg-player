@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "pidof org.bsnesjg.tv.native.phase2"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": ""
+}

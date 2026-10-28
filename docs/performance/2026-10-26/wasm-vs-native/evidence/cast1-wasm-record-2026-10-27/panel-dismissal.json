@@ -1,0 +1,54 @@
+{
+  "schema": 2,
+  "source": "current-process-log",
+  "controller_advertised": false,
+  "process": "26791",
+  "controller_state": "unobserved",
+  "policy": "best-effort",
+  "variant": null,
+  "panel_visibility": "could-not-verify",
+  "reason": "controller-not-open-yet",
+  "back_sent": false,
+  "back_keys_sent": 0,
+  "back_outcome": null,
+  "before": {
+    "qr_white": 0.0,
+    "qr_black": 0.042,
+    "panel_fill": 0.871,
+    "size": [
+      1920,
+      1080
+    ],
+    "state": "absent"
+  },
+  "after": null,
+  "elapsed_seconds": 12.096,
+  "history": [
+    {
+      "schema": 2,
+      "source": "current-process-log",
+      "controller_advertised": false,
+      "process": "26791",
+      "controller_state": "unobserved",
+      "policy": "best-effort",
+      "variant": null,
+      "panel_visibility": "could-not-verify",
+      "reason": "controller-not-open-yet",
+      "back_sent": false,
+      "back_keys_sent": 0,
+      "back_outcome": null,
+      "before": {
+        "qr_white": 0.0,
+        "qr_black": 0.042,
+        "panel_fill": 0.871,
+        "size": [
+          1920,
+          1080
+        ],
+        "state": "absent"
+      },
+      "after": null,
+      "elapsed_seconds": 12.096
+    }
+  ]
+}

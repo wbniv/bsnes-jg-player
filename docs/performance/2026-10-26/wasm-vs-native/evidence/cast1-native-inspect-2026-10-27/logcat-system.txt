@@ -1,0 +1,1022 @@
+--------- beginning of main
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/BpBinder(25650): Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+W/ProcessState(25650): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+I/DMABUFHEAPS(25650): Using : Non-legacy ION heaps
+--------- beginning of events
+I/auditd  (25650): type=1400 audit(0.0:3027): avc:  denied  { read } for  comm="screencap" name="heap-gfx" dev="tmpfs" ino=541 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25650): type=1400 audit(0.0:3027): avc:  denied  { read } for  name="heap-gfx" dev="tmpfs" ino=541 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25650): type=1400 audit(0.0:3028): avc:  denied  { read } for  comm="screencap" name="heap-fb" dev="tmpfs" ino=544 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25650): type=1400 audit(0.0:3028): avc:  denied  { read } for  name="heap-fb" dev="tmpfs" ino=544 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25650): type=1400 audit(0.0:3029): avc:  denied  { read } for  comm="screencap" name="heap-cached-codecmm" dev="tmpfs" ino=539 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25650): type=1400 audit(0.0:3029): avc:  denied  { read } for  name="heap-cached-codecmm" dev="tmpfs" ino=539 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25650): type=1400 audit(0.0:3030): avc:  denied  { read } for  comm="screencap" name="heap-codecmm" dev="tmpfs" ino=537 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25650): type=1400 audit(0.0:3030): avc:  denied  { read } for  name="heap-codecmm" dev="tmpfs" ino=537 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+E/DMABUFHEAPS(25650): No ion heap of name ion-dev exists
+E/DMABUFHEAPS(25650): No ion heap of name ion-fb exists
+E/DMABUFHEAPS(25650): No ion heap of name ion_secure exists
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/ThermalService( 1145): CPU temperatures: [42.600002]
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before calling getConfig.
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before initializing the system health module.
+--------- beginning of system
+D/ActivityManager(  661): freezing 2931 com.google.android.youtube.tv
+I/am_freeze(  661): [2931,com.google.android.youtube.tv]
+D/ActivityManager(  661): freezing 2340 com.google.android.partnersetup
+I/am_freeze(  661): [2340,com.google.android.partnersetup]
+D/ActivityManager(  661): freezing 32166 com.google.android.tv.dfuservice
+I/am_freeze(  661): [32166,com.google.android.tv.dfuservice]
+D/ActivityManager(  661): freezing 5470 com.google.android.apps.tv.dreamx:smarthome
+I/am_freeze(  661): [5470,com.google.android.apps.tv.dreamx:smarthome]
+D/ActivityManager(  661): freezing 15488 com.google.android.tungsten.setupwraith
+I/am_freeze(  661): [15488,com.google.android.tungsten.setupwraith]
+D/ActivityManager(  661): freezing 4317 com.google.android.webview:webview_service
+I/am_freeze(  661): [4317,com.google.android.webview:webview_service]
+D/ActivityManager(  661): freezing 5515 com.google.android.apps.tv.dreamx
+I/am_freeze(  661): [5515,com.google.android.apps.tv.dreamx]
+D/ActivityManager(  661): freezing 23140 com.google.android.tts
+I/am_freeze(  661): [23140,com.google.android.tts]
+D/ActivityManager(  661): freezing 23289 com.google.process.gservices
+I/am_freeze(  661): [23289,com.google.process.gservices]
+D/ActivityManager(  661): freezing 2429 com.google.android.katniss:search
+I/am_freeze(  661): [2429,com.google.android.katniss:search]
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/ThermalService( 1145): CPU temperatures: [41.600002]
+W/ProcessStats(  661): Tracking association SourceState{9ed9de6 com.google.android.tv.axel/10044 Fgs #10560} whose proc state 3 is better than process ProcessState{f42ddc1 com.google.android.gms.persistent/10058 pkg=com.google.android.gms} proc state 4 (23 skipped)
+I/Finsky  ( 2054): [2] SCH: job service start with id 9760.
+I/Finsky  ( 2054): [354] SCH: Satisfied jobs for 9760 are: 12-1
+I/Finsky  ( 2054): [356] SCH: Job 12-1 starting
+I/Finsky  ( 2054): [2] WM::SCH: Logging work start for 12-1
+I/Finsky  ( 2054): [2] [ContentSync] job started
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.btservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.vndk.v34' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.mainline.primary.libs' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+I/netstats_mobile_sample(  661): [0,0,0,0,0,0,0,0,1793066047582]
+I/netstats_wifi_sample(  661): [308809118,272196395,454851,398712,336084663,267781371,572043,387246,1793066047582]
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+D/ActivityManager(  661): freezer override set to true
+D/ActivityManager(  661): sync unfroze 2931 com.google.android.youtube.tv for 19
+D/ActivityManager(  661): sync unfroze 2340 com.google.android.partnersetup for 19
+D/ActivityManager(  661): sync unfroze 32166 com.google.android.tv.dfuservice for 19
+D/ActivityManager(  661): sync unfroze 5470 com.google.android.apps.tv.dreamx:smarthome for 19
+D/ActivityManager(  661): sync unfroze 15488 com.google.android.tungsten.setupwraith for 19
+D/ActivityManager(  661): sync unfroze 4317 com.google.android.webview:webview_service for 19
+D/ActivityManager(  661): sync unfroze 5515 com.google.android.apps.tv.dreamx for 19
+D/ActivityManager(  661): sync unfroze 23140 com.google.android.tts for 19
+D/ActivityManager(  661): sync unfroze 23289 com.google.process.gservices for 19
+I/am_unfreeze(  661): [2931,com.google.android.youtube.tv,19]
+I/am_unfreeze(  661): [2340,com.google.android.partnersetup,19]
+I/am_unfreeze(  661): [32166,com.google.android.tv.dfuservice,19]
+I/am_unfreeze(  661): [5470,com.google.android.apps.tv.dreamx:smarthome,19]
+I/am_unfreeze(  661): [15488,com.google.android.tungsten.setupwraith,19]
+I/am_unfreeze(  661): [4317,com.google.android.webview:webview_service,19]
+I/am_unfreeze(  661): [5515,com.google.android.apps.tv.dreamx,19]
+I/am_unfreeze(  661): [23140,com.google.android.tts,19]
+I/am_unfreeze(  661): [23289,com.google.process.gservices,19]
+D/ActivityManager(  661): sync unfroze 2429 com.google.android.katniss:search for 19
+I/am_unfreeze(  661): [2429,com.google.android.katniss:search,19]
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.widevine.nonupdatable' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.tzdata5' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+I/y.wf_game.qbert(25508): Explicit concurrent mark compact GC freed 2794(160KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 2147KB/4294KB, paused 323us,1.300ms total 25.308ms
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+D/ActivityManager(  661): freezer override set to false
+I/katniss_search_TvSearchApp( 2429): onTrimMemory level=40
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+D/HdmiControlService(  661): Process pid: 661 is calling oneTouchPlay.
+I/OneTouchPlayAction(  661): Start action.
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+E/HDMI    (  661): [3]:Invalid message type:<Active Source> 4F:82:FF:FF <Validation error: invalid parameters>
+I/adbd    ( 3662): UsbFfsConnection constructed
+D/ResendCecCommandAction(  661): ResendCecCommandAction started
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/HDMI    (  661): [1]:Invalid message type:<System Audio Mode Request> 45:70:FF:FF <Validation error: invalid parameters>
+D/HdmiControlService(  661): Switching to full volume behavior
+D/HdmiControlService(  661): Switching to full volume behavior
+D/WindowManagerShell(  913): TvPipMenuController: closeMenu()
+D/WindowManagerShell(  913): TvPipMenuController: switchToMenuMode: from=MODE_NO_MENU, to=MODE_NO_MENU
+E/CellBroadcastUtils(  661): getDefaultCellBroadcastReceiverPackageName: no package found
+I/wm_task_moved(  661): [1,1,0,1,2]
+I/wm_task_moved(  661): [2914,1,0,1,2147483647]
+I/wm_task_to_front(  661): [0,2914,0]
+I/wm_on_top_resumed_lost_called(25508): [164496311,android.app.NativeActivity,topStateChangedWhenResumed]
+I/wm_focused_root_task(  661): [0,0,1,2923,bringingFoundTaskToFront]
+I/wm_new_intent(  661): [0,103050501,2914,com.google.android.apps.tv.launcherx/.home.HomeActivity,android.intent.action.MAIN,NULL,NULL,276824320]
+I/wm_pause_activity(  661): [0,164496311,org.worldfoundry.wf_game.qbert/android.app.NativeActivity,userLeaving=true,pauseBackTasks]
+I/vol.VolumeDialogImpl(  913): mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$7.onDismissRequested:3
+I/wm_add_to_stopping(  661): [0,164496311,org.worldfoundry.wf_game.qbert/android.app.NativeActivity,makeInvisible]
+I/sysui_multi_action(  661): [757,803,799,window_time_0,802,26]
+I/wm_set_resumed_activity(  661): [0,com.google.android.apps.tv.launcherx/.home.HomeActivity,resumeTopActivity - onActivityStateChanged]
+I/wm_resume_activity(  661): [0,103050501,2914,com.google.android.apps.tv.launcherx/.home.HomeActivity]
+I/wm_on_restart_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,performRestart,1]
+V/WindowManagerShell(  913): Transition requested: android.os.BinderProxy@9743af6 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2914 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity } baseActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} topActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} origActivity=null realActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} numActivities=1 lastActiveTime=35679180 supportsMultiWindow=false resizeMode=0 isResizeable=false minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@b83ef7} topActivityType=2 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{bac4164 com.google.android.apps.tv.launcherx.home.HomeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=false isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+I/ActivityTaskManager(  661): START u0 {act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity (has extras)} with LAUNCH_SINGLE_TASK from uid 0 (BAL_ALLOW_ALLOWLISTED_UID) result code=2
+I/input_focus(  661): [Requesting to set focus to null window,reason=UpdateInputWindows]
+I/BpBinder(  479): onLastStrongRef automatically unlinking death recipients: 
+I/input_focus(  661): [Focus leaving d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (server),reason=Waiting for window because NO_WINDOW]
+I/wf_game (25508): APP_CMD_PAUSE
+I/wm_on_paused_called(25508): [164496311,android.app.NativeActivity,performPause,15]
+D/NetflixService( 1145): onForegroundActivitiesChanged pid:15356,uid:10052,fg:true
+W/ProcessImportanceForegr(15356): Activity started with background importance
+W/AdultGuideFragmentPeer(15356): onStart, enableFixTabRefresh: false
+W/AccountSelectorDataServ(15356): Single user condition 1 [true]
+W/AccountSelectorDataServ(15356): Single user condition 2 [true]
+W/AccountSelectorDataServ(15356): Single user condition 3 [true]
+W/AccountSelectorDataServ(15356): Single user condition 4 [true]
+W/KatnissIntegrationServi(15356): Attempting to connect
+W/KatnissIntegrationServi(15356): Connect count 1
+W/WindowOnBackDispatcher(15356): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(15356): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+W/KatnissIntegrationServi(15356): Connect count 2
+W/KatnissIntegrationServi(15356): Connect count 3
+W/KatnissIntegrationServi(15356): Connect count 4
+I/wm_on_start_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,handleStartActivity,56]
+I/service_manager_slow(  661): [12,phone]
+W/BatteryExternalStatsWorker(  661): error reading modem stats:ERROR_PHONE_NOT_AVAILABLE
+E/bt_btm  ( 1112): packages/modules/Bluetooth/system/main/bte_logmsg.cc:105 LogMsg: wrong length for btm_ble_cont_energy_cmpl_cback
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 117 ms
+W/HomeActivityPeerImpl(15356): Wake by home key, stop dispatch
+W/Settings(15356): Setting development_settings_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+W/BootModeAppToForeground(15356): LauncherX to foreground.
+I/wm_on_resume_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,RESUME_ACTIVITY,2]
+I/NetflixService( 1145): onTaskStackChanged
+D/WindowManagerShell(  913): TvPipController: onTaskStackChanged()
+I/am_pss  (  661): [25508,10150,org.worldfoundry.wf_game.qbert,68432896,57020416,393216,124993536,0,2,11]
+E/ActivityThread(15356): Failed to find provider info for com.google.android.apps.youtube.tvunplugged.client.provider
+W/BootModeAppToForeground(15356): Checking if this is the first launch after boot
+W/BootModeAppToForeground(15356): LauncherX to foreground. The context is com.google.android.apps.tv.launcherx.home.HomeActivity.
+W/BootModeAppToForeground(15356): Update active account last used time.
+I/input_focus(  661): [Focus request 6dead12 com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity,reason=UpdateInputWindows]
+W/BootModeNotificationMan(15356): Mark criteria LauncherX in foreground: tif_in_foreground_on_screen_off = [false], dispatch_to_amati_home = [true], launcherx_in_foreground = [true].
+W/DeviceCustomizationsRea(15356): Cached DeviceCustomizations found.
+W/CustomizationsConversio(15356): Setting power on mode to HOME.
+W/LastUsedInputProtoDataS(15356): Mark Home as last input
+E/ActivityThread(15356): Failed to find provider info for com.google.android.apps.youtube.tvunplugged.client.provider
+W/BootModeAppToForeground(15356): Background timeout condition 1 [false]
+D/BoundBrokerSvc( 1335): onRebind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+W/BootModeAppToForeground(15356): Background timeout condition 2 [true]
+W/BootModeAppToForeground(15356): Background timeout condition 3 [true]
+E/OpenGLRenderer(15356): Unable to match the desired swap behavior.
+W/BootModeAppToForeground(15356): Background timeout condition 4 [true]
+I/auditd  (  264): type=1400 audit(0.0:3031): avc:  denied  { read } for  comm="binder:264_6" name="wakeup4" dev="sysfs" ino=423405 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+W/binder:264_6(  264): type=1400 audit(0.0:3031): avc:  denied  { read } for  name="wakeup4" dev="sysfs" ino=423405 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+E/android.system.suspend-service(  264): Error opening kernel wakelock stats for: wakeup4 (../../devices/platform/soc/fe000000.apb4/fe06e000.i2c/i2c-4/4-004e/power_supply/tcpm-source-psy-4-004e/wakeup4): Permission denied
+E/DMABUFHEAPS(  439): Unable to allocate from DMA-BUF heap: heap-gfx: Out of memory
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+W/mali_gralloc(  439): libdmabufheap allocation failed for heap-gfx heap, falling back to system heap
+I/id.providers.tv(32285): CollectorTransition concurrent mark compact GC freed 3478(516KB) AllocSpace objects, 0(0B) LOS objects, 49% free, 2151KB/4302KB, paused 713us,4.619ms total 153.136ms
+W/id.providers.tv(32285): Reducing the number of considered missed Gc histogram windows from 852 to 100
+I/wm_on_top_resumed_gained_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,topStateChangedWhenResumed]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/KatnissIntegrationServi(15356): Katniss service connected
+I/katniss_interactor_AppAssistantIntegrationServicePeer( 1477): #handleMessage message.what: 1
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ResendCecCommandAction(  661): ResendCecCommandAction started
+I/katniss_interactor_AppAssistantIntegrationServicePeer( 1477): #handleMessage message.what: 2
+V/WindowManagerShell(  913): onTransitionReady android.os.BinderProxy@9743af6: {id=71 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@19e0fd0} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb9c7fcd sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@3fe4bc9} m=TO_BACK f=NONE leash=Surface(name=Task=2923)/@0x6211082 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): Playing animation for (#71)android.os.BinderProxy@9743af6@0
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@77647d8
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@509731
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.pip.tv.TvPipTransition@1477e16
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.RemoteTransitionHandler@edf9397
+V/WindowManagerShell(  913): Transition doesn't have explicit remote, search filters for match for {id=71 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@19e0fd0} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb9c7fcd sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@3fe4bc9} m=TO_BACK f=NONE leash=Surface(name=Task=2923)/@0x6211082 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913):  Delegate animation for #71 to null
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+V/WindowManagerShell(  913): start default transition animation, info = {id=71 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@19e0fd0} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0xb9c7fcd sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@3fe4bc9} m=TO_BACK f=NONE leash=Surface(name=Task=2923)/@0x6211082 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@4d3b2ce animAttr=0x9 type=OPEN isEntrance=false
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@7f215ef animAttr=0x8 type=OPEN isEntrance=true
+V/WindowManagerShell(  913):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+I/auditd  (  264): type=1400 audit(0.0:3032): avc:  denied  { read } for  comm="binder:264_6" name="wakeup5" dev="sysfs" ino=423450 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+W/binder:264_6(  264): type=1400 audit(0.0:3032): avc:  denied  { read } for  name="wakeup5" dev="sysfs" ino=423450 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+E/android.system.suspend-service(  264): Error opening kernel wakelock stats for: wakeup5 (../../devices/platform/soc/fe000000.apb4/fe06e000.i2c/i2c-4/4-004e/power_supply/tcpm-max-source-psy-4-004e/wakeup5): Permission denied
+E/DMABUFHEAPS(  439): Unable to allocate from DMA-BUF heap: heap-gfx: Out of memory
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+W/mali_gralloc(  439): libdmabufheap allocation failed for heap-gfx heap, falling back to system heap
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+I/sysui_multi_action(  661): [319,218,322,209,325,35679,757,761,758,9,759,2,806,com.google.android.apps.tv.launcherx,871,com.google.android.apps.tv.launcherx.home.HomeActivity,905,0,1320,8,1321,5]
+V/WindowManager(  661): Sent Transition #71 createdAt=10-27 08:54:08.275 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2914 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity } baseActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} topActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} origActivity=null realActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} numActivities=1 lastActiveTime=35679180 supportsMultiWindow=false resizeMode=0 isResizeable=false minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{5eb8b13 Task{98bcf8b #2914 type=home A=10052:com.google.android.apps.tv.launcherx}}} topActivityType=2 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{4d5019b com.google.android.apps.tv.launcherx.home.HomeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=false isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+V/WindowManager(  661):     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+V/WindowManager(  661):     info={id=71 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{5f14f2 Task{3bd90d6 #1 type=home}}} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0x958a16c sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{RemoteToken{aeca59f Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}}} m=TO_BACK f=NONE leash=Surface(name=Task=2923)/@0xbdedec0 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+E/FrameEvents(15356): updateAcquireFence: Did not find frame.
+I/input_focus(  661): [Focus entering 6dead12 com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+I/ImeTracker(  661): com.google.android.apps.tv.launcherx:93227970: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+I/ImeTracker(  661): com.google.android.apps.tv.launcherx:93227970: onCancelled at PHASE_SERVER_SHOULD_HIDE
+I/ThermalService( 1145): CPU temperatures: [43.7]
+E/android.system.suspend-service(  264): Error opening kernel wakelock stats for: wakeup6 (../../devices/platform/usb-power-monitor/power_supply/bc12-psy-usb-power-monitor/wakeup6): Permission denied
+I/auditd  (  264): type=1400 audit(0.0:3033): avc:  denied  { read } for  comm="binder:264_6" name="wakeup6" dev="sysfs" ino=423569 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+W/binder:264_6(  264): type=1400 audit(0.0:3033): avc:  denied  { read } for  name="wakeup6" dev="sysfs" ino=423569 scontext=u:r:system_suspend:s0 tcontext=u:object_r:sysfs:s0 tclass=dir permissive=0
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+I/cn_CronetUrlRequestContext(15356): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@24cb661
+I/jank_cuj_events_end_request(  913): [55,1793066048698849000,35679594848470,35679594849053]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/HdmiCecController(  661): Failed to send <Menu Status> 40:8E:00 with errorCode=1
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 110 ms
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+V/WindowManagerShell(  913): Transition animation finished (aborted=false), notifying core (#71)android.os.BinderProxy@9743af6@0
+V/WindowManager(  661): Finish Transition #71: created at 10-27 08:54:08.275 collect-started=0.096ms request-sent=13.763ms started=17.997ms ready=17.94ms sent=206.955ms finished=663.105ms
+V/WindowManagerShell(  913): Track 0 became idle
+V/WindowManagerShell(  913): All active transition animations finished
+I/wm_stop_activity(  661): [0,164496311,org.worldfoundry.wf_game.qbert/android.app.NativeActivity]
+D/CompatibilityChangeReporter(  661): Compat change id reported: 265195908; UID 10150; state: ENABLED
+I/wf_game (25508): APP_CMD_TERM_WINDOW
+I/wm_on_stop_called(25508): [164496311,android.app.NativeActivity,STOP_ACTIVITY_ITEM,15]
+D/NetflixService( 1145): onForegroundActivitiesChanged pid:25508,uid:10150,fg:false
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 227 ms
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+I/cn_CronetUrlRequestContext(15356): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@66365e0
+W/SetWatchNextVerificatio(15356): Watch next verification data is empty
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 117 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+W/Finsky  ( 2054): [2] STU: Failed to get storage stats for package 'com.google.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+I/Finsky  ( 2054): [2] App states replicator found 20 unowned apps
+I/Finsky  ( 2054): [59] Completed 0 account content syncs with 0 successful.
+I/Finsky  ( 2054): [2] [ContentSync] Installation state replication succeeded.
+I/Finsky  ( 2054): [2] SCH: jobFinished: 12-1. TimeElapsed: 2663ms.
+I/Finsky  ( 2054): [2] WM::SCH: Logging work end for 12-1
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 110 ms
+I/Finsky  ( 2054): [56] SCH: Scheduling phonesky job Id: 1-1337, CT: 1793033300992, Constraints: [{ L: 43173606, D: 86373606, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+I/Finsky  ( 2054): [58] SCH: Scheduling 1 system job(s)
+I/Finsky  ( 2054): [58] SCH: Scheduling system job Id: 9763, L: 10424996, D: 53624996, C: false, I: false, N: 1
+I/Finsky  ( 2054): [356] SCH: job service finished with id 9760.
+D/CompatibilityChangeReporter(  661): Compat change id reported: 161252188; UID 10150; state: DISABLED
+W/ActivityTaskManager(  661): callingPackage for (uid=2000, pid=25691) has no WPC
+D/CompatibilityChangeReporter(  661): Compat change id reported: 265464455; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 265452344; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 266124927; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 265451093; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 265456536; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 255940284; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 236283604; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 263959004; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 264304459; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 264301586; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 254631730; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 273509367; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 263259275; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 174042980; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 174042936; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 181136395; UID 10150; state: DISABLED
+D/CompatibilityChangeReporter(  661): Compat change id reported: 194480991; UID 10150; state: ENABLED
+E/CellBroadcastUtils(  661): getDefaultCellBroadcastReceiverPackageName: no package found
+I/wm_task_moved(  661): [2923,2923,0,1,2]
+I/wm_task_to_front(  661): [0,2923,0]
+I/wm_focused_root_task(  661): [0,0,2923,1,bringingFoundTaskToFront]
+I/wm_on_top_resumed_lost_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,topStateChangedWhenResumed]
+I/wm_new_intent(  661): [0,164496311,2923,org.worldfoundry.wf_game.qbert/android.app.NativeActivity,NULL,NULL,NULL,268435456]
+D/CompatibilityChangeReporter(  661): Compat change id reported: 205907456; UID 10150; state: ENABLED
+I/wm_pause_activity(  661): [0,103050501,com.google.android.apps.tv.launcherx/.home.HomeActivity,userLeaving=true,pauseBackTasks]
+I/ActivityTaskManager(  661): START u0 {flg=0x10000000 cmp=org.worldfoundry.wf_game.qbert/android.app.NativeActivity} with LAUNCH_SINGLE_TASK from uid 2000 (BAL_ALLOW_PERMISSION) result code=2
+V/WindowManagerShell(  913): Transition requested: android.os.BinderProxy@8d408e8 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2923 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=org.worldfoundry.wf_game.qbert/android.app.NativeActivity } baseActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} topActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} origActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/android.app.NativeActivity} realActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} numActivities=1 lastActiveTime=35679178 supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@86eab01} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{2ff4da6 android.app.NativeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+I/wm_on_paused_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,performPause,8]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+E/Transition(  661): Trying to add a ready-group twice: Display{#0 state=ON size=1920x1080 ROTATION_0}
+I/wm_set_resumed_activity(  661): [0,org.worldfoundry.wf_game.qbert/android.app.NativeActivity,resumeTopActivity - onActivityStateChanged]
+I/wm_add_to_stopping(  661): [0,103050501,com.google.android.apps.tv.launcherx/.home.HomeActivity,makeInvisible]
+I/wm_resume_activity(  661): [0,164496311,2923,org.worldfoundry.wf_game.qbert/android.app.NativeActivity]
+D/NetflixService( 1145): onForegroundActivitiesChanged pid:25508,uid:10150,fg:true
+I/wm_on_restart_called(25508): [164496311,android.app.NativeActivity,performRestart,0]
+I/sysui_multi_action(  661): [757,803,799,window_time_0,802,1]
+I/input_focus(  661): [Requesting to set focus to null window,reason=UpdateInputWindows]
+D/NetflixService( 1145): handleMessage
+I/wm_on_start_called(25508): [164496311,android.app.NativeActivity,handleStartActivity,12]
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+I/wm_on_resume_called(25508): [164496311,android.app.NativeActivity,RESUME_ACTIVITY,0]
+I/wm_on_top_resumed_gained_called(25508): [164496311,android.app.NativeActivity,topWhenResuming]
+I/wf_game (25508): APP_CMD_RESUME
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+I/input_focus(  661): [Focus leaving 6dead12 com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity (server),reason=Waiting for window because NO_WINDOW]
+I/input_focus(  661): [Focus request d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity,reason=UpdateInputWindows]
+I/wf_game (25508): APP_CMD_INIT_WINDOW
+I/wf_game (25508): EGL surface ready: 1920x1080 (context reused)
+I/BpBinder(  479): onLastStrongRef automatically unlinking death recipients: 
+V/WindowManagerShell(  913): onTransitionReady android.os.BinderProxy@8d408e8: {id=72 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6c29e32} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=2923)/@0x4c0d3e7 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9bcc783} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x254cb94 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): Playing animation for (#72)android.os.BinderProxy@8d408e8@0
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@77647d8
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@509731
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.pip.tv.TvPipTransition@1477e16
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.RemoteTransitionHandler@edf9397
+V/WindowManagerShell(  913): Transition doesn't have explicit remote, search filters for match for {id=72 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6c29e32} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=2923)/@0x4c0d3e7 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9bcc783} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x254cb94 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913):  Delegate animation for #72 to null
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+V/WindowManagerShell(  913): start default transition animation, info = {id=72 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@6c29e32} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=2923)/@0x4c0d3e7 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9bcc783} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x254cb94 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@c7d0d00 animAttr=0x9 type=OPEN isEntrance=false
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@934b939 animAttr=0x8 type=OPEN isEntrance=true
+V/WindowManagerShell(  913):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+I/sysui_multi_action(  661): [319,83,322,77,325,35680,757,761,758,9,759,2,806,org.worldfoundry.wf_game.qbert,871,android.app.NativeActivity,904,com.android.shell,905,0,1320,4,1321,4]
+V/WindowManager(  661): Sent Transition #72 createdAt=10-27 08:54:09.662 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2923 displayId=0 isRunning=true baseIntent=Intent { flg=0x10000000 cmp=org.worldfoundry.wf_game.qbert/android.app.NativeActivity } baseActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} topActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} origActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/android.app.NativeActivity} realActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} numActivities=1 lastActiveTime=35679178 supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{aeca59f Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{93326ec android.app.NativeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+V/WindowManager(  661):     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+V/WindowManager(  661):     info={id=72 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{aeca59f Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}}} m=TO_FRONT f=MOVE_TO_TOP leash=Surface(name=Task=2923)/@0xbdedec0 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{RemoteToken{5f14f2 Task{3bd90d6 #1 type=home}}} m=TO_BACK f=NONE leash=Surface(name=Task=1)/@0x958a16c sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+I/input_focus(  661): [Focus entering d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:ce6e6029: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:ce6e6029: onCancelled at PHASE_SERVER_SHOULD_HIDE
+I/input_focus(  661): [Focus leaving d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (server),reason=NOT_VISIBLE]
+D/WindowManagerShell(  913): TvPipController: onTaskStackChanged()
+I/NetflixService( 1145): onTaskStackChanged
+I/input_focus(  661): [Focus entering d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:e0622d92: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:e0622d92: onCancelled at PHASE_SERVER_SHOULD_HIDE
+V/WindowManagerShell(  913): Transition animation finished (aborted=false), notifying core (#72)android.os.BinderProxy@8d408e8@0
+V/WindowManager(  661): Finish Transition #72: created at 10-27 08:54:09.662 collect-started=0.096ms request-sent=12.056ms started=14.355ms ready=34.348ms sent=75.798ms finished=507.674ms
+V/WindowManagerShell(  913): Track 0 became idle
+V/WindowManagerShell(  913): All active transition animations finished
+I/wm_stop_activity(  661): [0,103050501,com.google.android.apps.tv.launcherx/.home.HomeActivity]
+W/BackgroundControllerHea(15356): Memory trim level 20, clearing 1 preloads
+W/BootModeAppToBackground(15356): LauncherX to background
+W/TifLauncherHelper(15356): Allow remove LastInput? org.worldfoundry.wf_game.qbert in foreground
+W/LastUsedInputProtoDataS(15356): Sending last used input update broadcast
+W/KatnissIntegrationServi(15356): disconnect Katniss service
+I/wm_on_stop_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,STOP_ACTIVITY_ITEM,42]
+W/LastUsedInputUpdateRece(15356): Notify last used input data change
+D/NetflixService( 1145): onForegroundActivitiesChanged pid:15356,uid:10052,fg:false
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 116 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+I/ThermalService( 1145): CPU temperatures: [41.500004]
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before calling getConfig.
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before initializing the system health module.
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): org.worldfoundry.wf_game.qbert is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+D/ActivityManager(  661): freezing 1540 com.google.android.gms
+I/am_freeze(  661): [1540,com.google.android.gms]
+D/ActivityManager(  661): freezing 1056 com.google.android.permissioncontroller
+I/am_freeze(  661): [1056,com.google.android.permissioncontroller]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+I/ThermalService( 1145): CPU temperatures: [41.600002]
+E/TaskPersister(  661): File error accessing recents directory (directory doesn't exist?).
+W/BpBinder(25711): Linking to death on android.gui.ISurfaceComposer but there are no threads (yet?) listening to incoming transactions. See ProcessState::startThreadPool and ProcessState::setThreadPoolMaxThreadCount. Generally you should setup the binder threadpool before other initialization steps.
+W/ProcessState(25711): Extra binder thread started, but 0 threads requested. Do not use *startThreadPool when zero threads are requested.
+I/DMABUFHEAPS(25711): Using : Non-legacy ION heaps
+E/DMABUFHEAPS(25711): No ion heap of name ion-dev exists
+I/auditd  (25711): type=1400 audit(0.0:3034): avc:  denied  { read } for  comm="screencap" name="heap-gfx" dev="tmpfs" ino=541 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+E/DMABUFHEAPS(25711): No ion heap of name ion-fb exists
+E/DMABUFHEAPS(25711): No ion heap of name ion_secure exists
+W/screencap(25711): type=1400 audit(0.0:3034): avc:  denied  { read } for  name="heap-gfx" dev="tmpfs" ino=541 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25711): type=1400 audit(0.0:3035): avc:  denied  { read } for  comm="screencap" name="heap-fb" dev="tmpfs" ino=544 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25711): type=1400 audit(0.0:3035): avc:  denied  { read } for  name="heap-fb" dev="tmpfs" ino=544 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25711): type=1400 audit(0.0:3036): avc:  denied  { read } for  comm="screencap" name="heap-cached-codecmm" dev="tmpfs" ino=539 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25711): type=1400 audit(0.0:3036): avc:  denied  { read } for  name="heap-cached-codecmm" dev="tmpfs" ino=539 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+I/auditd  (25711): type=1400 audit(0.0:3037): avc:  denied  { read } for  comm="screencap" name="heap-codecmm" dev="tmpfs" ino=537 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/screencap(25711): type=1400 audit(0.0:3037): avc:  denied  { read } for  name="heap-codecmm" dev="tmpfs" ino=537 scontext=u:r:shell:s0 tcontext=u:object_r:dmabuf_heap_device:s0 tclass=chr_file permissive=0
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 110 ms
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ResendCecCommandAction(  661): ResendCecCommandAction started
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/ThermalService( 1145): CPU temperatures: [41.7]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 115 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 111 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 114 ms
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before calling getConfig.
+W/starboard( 2931): The access token for the identity is expired, waiting for Kabuki to sync the identity before initializing the system health module.
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 114 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/ThermalService( 1145): CPU temperatures: [41.600002]
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/netstats_mobile_sample(  661): [0,0,0,0,0,0,0,0,1793066057024]
+I/netstats_wifi_sample(  661): [308873613,276480033,455558,401799,336152185,272065177,572778,390336,1793066057024]
+D/ActivityManager(  661): freezer override set to true
+D/ActivityManager(  661): sync unfroze 1540 com.google.android.gms for 19
+I/am_unfreeze(  661): [1540,com.google.android.gms,19]
+D/ActivityManager(  661): sync unfroze 1056 com.google.android.permissioncontroller for 19
+I/am_unfreeze(  661): [1056,com.google.android.permissioncontroller,19]
+I/y.wf_game.qbert(25508): Explicit concurrent mark compact GC freed 3123(220KB) AllocSpace objects, 1(20KB) LOS objects, 49% free, 2151KB/4302KB, paused 311us,1.293ms total 23.262ms
+D/ActivityManager(  661): freezer override set to false
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/ActivityManager(  661): Force stopping org.worldfoundry.wf_game.qbert appid=10150 user=0: from pid 25734
+I/am_uid_stopped(  661): 10150
+I/ActivityManager(  661): Killing 25508:org.worldfoundry.wf_game.qbert/u0a150 (adj 0): stop org.worldfoundry.wf_game.qbert due to from pid 25734
+I/am_kill (  661): [0,25508,org.worldfoundry.wf_game.qbert,0,stop org.worldfoundry.wf_game.qbert due to from pid 25734]
+D/DisplayManagerService(  661): Drop pending events for gone uid 10150
+W/ActivityTaskManager(  661): Force removing ActivityRecord{9ce03b7 u0 org.worldfoundry.wf_game.qbert/android.app.NativeActivity t2923 f}}: app died, no saved state
+I/wm_finish_activity(  661): [0,164496311,2923,org.worldfoundry.wf_game.qbert/android.app.NativeActivity,proc died without state saved]
+I/wm_resume_activity(  661): [0,103050501,2914,com.google.android.apps.tv.launcherx/.home.HomeActivity]
+V/WindowManagerShell(  913): Transition requested: android.os.BinderProxy@32bc18a TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=2923 displayId=0 isRunning=false baseIntent=Intent { flg=0x10000000 cmp=org.worldfoundry.wf_game.qbert/android.app.NativeActivity } baseActivity=null topActivity=null origActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/android.app.NativeActivity} realActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} numActivities=0 lastActiveTime=35680587 supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@955a3fb} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+W/IPCThreadState(  479): Sending oneway calls to frozen process.
+I/wm_on_restart_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,performRestart,1]
+W/ProcessStats(  661): Tracking association SourceState{2f27dd0 com.google.android.apps.tv.launcherx/10052 BTop #10606} whose proc state 2 is better than process ProcessState{f42ddc1 com.google.android.gms.persistent/10058 pkg=com.google.android.gms} proc state 4 (275 skipped)
+D/NetflixService( 1145): onForegroundActivitiesChanged pid:15356,uid:10052,fg:true
+I/BpBinder(  479): onLastStrongRef automatically unlinking death recipients: 
+I/AppsFilter(  661): interaction: PackageSetting{3cd1d1c org.worldfoundry.screensaver/10001} -> PackageSetting{a2596c7 org.worldfoundry.wf_game.qbert/10150} BLOCKED
+I/AppsFilter(  661): interaction: PackageSetting{78b82df org.worldfoundry.seahorsegrid/10006} -> PackageSetting{a2596c7 org.worldfoundry.wf_game.qbert/10150} BLOCKED
+I/AppsFilter(  661): interaction: PackageSetting{ce56fbc org.worldfoundry.plantedtank/10039} -> PackageSetting{a2596c7 org.worldfoundry.wf_game.qbert/10150} BLOCKED
+I/AppsFilter(  661): interaction: PackageSetting{7a6738a org.worldfoundry.tvmediaphase0/10023} -> PackageSetting{a2596c7 org.worldfoundry.wf_game.qbert/10150} BLOCKED
+I/input_focus(  661): [Focus leaving d7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (server),reason=NO_WINDOW]
+W/IPCThreadState(  479): Sending oneway calls to frozen process.
+D/ActivityManager(  661): freezing 2931 com.google.android.youtube.tv
+I/am_freeze(  661): [2931,com.google.android.youtube.tv]
+D/ActivityManager(  661): freezing 2340 com.google.android.partnersetup
+I/am_freeze(  661): [2340,com.google.android.partnersetup]
+D/ActivityManager(  661): freezing 32166 com.google.android.tv.dfuservice
+I/am_freeze(  661): [32166,com.google.android.tv.dfuservice]
+D/ActivityManager(  661): freezing 5470 com.google.android.apps.tv.dreamx:smarthome
+I/am_freeze(  661): [5470,com.google.android.apps.tv.dreamx:smarthome]
+D/ActivityManager(  661): freezing 15488 com.google.android.tungsten.setupwraith
+I/am_freeze(  661): [15488,com.google.android.tungsten.setupwraith]
+D/ActivityManager(  661): freezing 4317 com.google.android.webview:webview_service
+I/am_freeze(  661): [4317,com.google.android.webview:webview_service]
+I/notification_cancel_all(  661): [1000,661,org.worldfoundry.wf_game.qbert,0,0,0,5,NULL]
+D/ActivityManager(  661): freezing 5515 com.google.android.apps.tv.dreamx
+I/am_freeze(  661): [5515,com.google.android.apps.tv.dreamx]
+D/ActivityManager(  661): freezing 23140 com.google.android.tts
+I/am_freeze(  661): [23140,com.google.android.tts]
+D/ActivityManager(  661): freezing 23289 com.google.process.gservices
+W/AdultGuideFragmentPeer(15356): onStart, enableFixTabRefresh: false
+I/am_freeze(  661): [23289,com.google.process.gservices]
+W/AccountSelectorDataServ(15356): Single user condition 1 [true]
+W/AccountSelectorDataServ(15356): Single user condition 2 [true]
+D/ActivityManager(  661): freezing 2429 com.google.android.katniss:search
+W/AccountSelectorDataServ(15356): Single user condition 3 [true]
+W/AccountSelectorDataServ(15356): Single user condition 4 [true]
+I/am_freeze(  661): [2429,com.google.android.katniss:search]
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:c4cdae9: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_REMOVE_CLIENT
+I/WindowManager(  661): WIN DEATH: Window{d7558fd u0 org.worldfoundry.wf_game.qbert/android.app.NativeActivity}
+V/ActivityManager(  661): Got obituary of 25508:org.worldfoundry.wf_game.qbert
+W/InputManager-JNI(  661): Input channel object 'd7558fd org.worldfoundry.wf_game.qbert/android.app.NativeActivity (client)' was disposed without first being removed with the input manager!
+W/KatnissIntegrationServi(15356): Attempting to connect
+W/AAudioClientTracker(  470): binderDied() close abandoned stream 0x00000006
+I/ImeTracker(  661): org.worldfoundry.wf_game.qbert:c4cdae9: onCancelled at PHASE_SERVER_SHOULD_HIDE
+I/Zygote  (  385): Process 25508 exited due to signal 9 (Killed)
+D/audioserver(  470): FGS Logger Transaction failed
+D/audioserver(  470): -129
+I/aml_mmap_audio(  432): [outMmapStop:452] stream:0xf7bc1400
+I/aml_mmap_audio(  432): [outMmapStop:471] --stream:0xf7bc1400
+W/KatnissIntegrationServi(15356): Connect count 1
+W/WindowOnBackDispatcher(15356): OnBackInvokedCallback is not enabled for the application.
+W/WindowOnBackDispatcher(15356): Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+W/KatnissIntegrationServi(15356): Connect count 2
+D/audioserver(  470): FGS Logger Transaction failed
+D/audioserver(  470): -129
+D/AAudioServiceEndpointPlay(  470): callbackLoop() exiting, enabled = 0, state = 4, result = 384 <<<<<<<<<<<<< MIXER
+D/AAudioStream(  470): joinThread_l() pthread_join succeeded
+D/AudioStreamInternal_Service(  470): stopCallback_l() skipped, isDataCallbackSet() = 0, isActive() = 1, getState()  = 4
+D/IsochronousClockModel(  470): stop(nanos = 35688834473683) max lateness = 163 micros, DSP stalled 0 times
+D/AAudioStream(  470): setState(s#3) from 4 to 9
+W/KatnissIntegrationServi(15356): Connect count 3
+D/AAudioStream(  470): joinThread() - but has no thread or already join()ed
+D/AudioStreamInternal_Service(  470): release_l(): mServiceStreamHandle = 0x00000005
+D/AAudioStream(  470): setState(s#3) from 9 to 11
+W/KatnissIntegrationServi(15356): Connect count 4
+I/audio_hw_primary(  432): [adev_release_audio_patch:7796] Patch 6: MIX->DEVICE patch_src:INVAL
+I/audio_hw_primary(  432): [adev_release_audio_patch:7818] Patch 6: mix(io:173) -> dev_0[OUT_HDMI(id:30)]
+I/audio_hw_primary(  432): [unregister_audio_patch:7455] delete the Patch: 6
+D/UEventObserver( 1145): change@/devices/platform/auge_sound/sound/card0/controlC0��ACTION=change��DEVPATH=/devices/platform/auge_sound/sound/card0/controlC0��SUBSYSTEM=sound��AUDIO_FORMAT=0��MAJOR=116��MINOR=10��DEVNAME=snd/controlC0��SEQNUM=3909��
+W/ContextImpl( 1145): Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1220 android.content.ContextWrapper.sendBroadcast:504 com.droidlogic.audioservice.services.AudioSystemCmdService$1.onUEvent:175 com.droidlogic.UEventObserver$UEventThread.sendEvent:213 com.droidlogic.UEventObserver$UEventThread.run:190 
+D/audio_hw_primary(  432): [out_set_parameters:909] out:0xf7bc1400 kvpairs:closing=true out->out_device:0x400, adev->out_device:0x80002
+E/audio_hw_primary(  432): out_set_parameters, ret:-2, hw_sync_mode:is false
+D/AudioFlinger(  470): closing mmapThread 0xf4d00000
+D/AudioFlinger(  470): mmapThread exit()
+D/sub_mixing_factory(  432): [out_standby_subMixingPCM:1609] io 173: out:0xf7bc1400 usecase:PCM_MMAP
+I/audio_hw_primary(  432): [adev_close_output_stream_new:7352] io handle 173: out:0xf7bc1400
+I/sub_mixing_factory(  432): [deleteSubMixingInputPcm:981] cnt_stream_using_mixer 0
+I/audio_hw_primary(  432): [adev_close_output_stream:3525] io 173: out:0xf7bc1400 dev:OUT_HDMI(0x400) flags:0x4001, usecase:PCM_MMAP
+D/sub_mixing_factory(  432): [out_standby_subMixingPCM:1609] io 173: out:0xf7bc1400 usecase:PCM_MMAP
+I/aml_mmap_audio(  432): [outMmapDeInit:731] stream:0xf7bc1400
+I/aml_mmap_audio(  432): [mmap_audio_unregister_client:941] OK ! stream 0xf7bc1400, client id 0
+I/audio_hw_primary(  432): [adev_close_output_stream:3660] io 173: out:0xf7bc1400 exit ------
+I/wm_on_start_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,handleStartActivity,86]
+W/Settings(15356): Setting development_settings_enabled has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+W/BootModeAppToForeground(15356): LauncherX to foreground.
+I/wm_on_resume_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,RESUME_ACTIVITY,5]
+E/ActivityThread(15356): Failed to find provider info for com.google.android.apps.youtube.tvunplugged.client.provider
+W/BootModeAppToForeground(15356): Checking if this is the first launch after boot
+W/BootModeAppToForeground(15356): LauncherX to foreground. The context is com.google.android.apps.tv.launcherx.home.HomeActivity.
+W/BootModeAppToForeground(15356): Update active account last used time.
+I/AudioSystemCmdService( 1145): onAudioPatchListUpdate
+I/AudioSystemCmdService( 1145): mAudioSink:[{{mHandle: 30, mRole: SINK}, mType: hdmi, mAddress: }], previousSink:[{{mHandle: 30, mRole: SINK}, mType: hdmi, mAddress: }]
+I/AudioSystemCmdService( 1145): updateAudioPatch cur sink does not change.
+W/BootModeNotificationMan(15356): Mark criteria LauncherX in foreground: tif_in_foreground_on_screen_off = [false], dispatch_to_amati_home = [true], launcherx_in_foreground = [true].
+E/ActivityThread(15356): Failed to find provider info for com.google.android.apps.youtube.tvunplugged.client.provider
+I/AudioSystemCmdService( 1145): onAudioPortListUpdate
+I/input_focus(  661): [Focus request 6dead12 com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity,reason=UpdateInputWindows]
+I/AudioSystemCmdService( 1145): mAudioSink:[{{mHandle: 30, mRole: SINK}, mType: hdmi, mAddress: }], previousSink:[{{mHandle: 30, mRole: SINK}, mType: hdmi, mAddress: }]
+I/AudioSystemCmdService( 1145): updateAudioPatch cur sink does not change.
+W/DeviceCustomizationsRea(15356): Cached DeviceCustomizations found.
+W/CustomizationsConversio(15356): Setting power on mode to HOME.
+W/LastUsedInputProtoDataS(15356): Mark Home as last input
+W/BootModeAppToForeground(15356): Background timeout condition 1 [false]
+W/BootModeAppToForeground(15356): Background timeout condition 2 [true]
+W/BootModeAppToForeground(15356): Background timeout condition 3 [true]
+W/BootModeAppToForeground(15356): Background timeout condition 4 [true]
+E/OpenGLRenderer(15356): Unable to match the desired swap behavior.
+D/AAudioServiceEndpoint(  470): ~AAudioServiceEndpoint() called
+D/AAudioServiceStreamBase(  470): run() MMAP exiting after 1055 loops <<<<<<<<<<<<<< COMMANDS
+D/AAudioServiceStreamBase(  470): ~AAudioServiceStreamBase() called
+D/AAudioStream(  470): setState(s#3) from 11 to 11
+D/AAudioStream(  470): setState(s#3) from 11 to 12
+D/AudioStreamInternal_Service(  470): ~AudioStreamInternal() 0xf4da3800 called
+D/AAudioStream(  470): ~AudioStream(s#3) mPlayerBase strongCount = 1
+D/audioserver(  470): PlayerBase::~PlayerBase()
+D/AAudioServiceEndpoint(  470): ~AAudioServiceEndpoint() called
+D/AAudioServiceStreamBase(  470): run() Shared exiting after 189 loops <<<<<<<<<<<<<< COMMANDS
+D/AAudioServiceStreamBase(  470): ~AAudioServiceStreamBase() called
+W/KatnissIntegrationServi(15356): Katniss service connected
+I/katniss_interactor_AppAssistantIntegrationServicePeer( 1477): #handleMessage message.what: 1
+I/katniss_interactor_AppAssistantIntegrationServicePeer( 1477): #handleMessage message.what: 2
+V/WindowManager(  661): Sent Transition #73 createdAt=10-27 08:54:17.857 via request=TransitionRequestInfo { type = CLOSE, triggerTask = TaskInfo{userId=0 taskId=2923 displayId=0 isRunning=false baseIntent=Intent { flg=0x10000000 cmp=org.worldfoundry.wf_game.qbert/android.app.NativeActivity } baseActivity=null topActivity=null origActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/android.app.NativeActivity} realActivity=ComponentInfo{org.worldfoundry.wf_game.qbert/org.worldfoundry.wf_game.WorldFoundryActivity} numActivities=0 lastActiveTime=35680587 supportsMultiWindow=false resizeMode=1 isResizeable=true minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{aeca59f Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=null launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+V/WindowManager(  661):     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+V/WindowManager(  661):     info={id=73 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{aeca59f Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}}} m=CLOSE f=NONE leash=Surface(name=Task=2923)/@0xbdedec0 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{RemoteToken{5f14f2 Task{3bd90d6 #1 type=home}}} m=TO_FRONT f=NONE leash=Surface(name=Task=1)/@0x958a16c sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): onTransitionReady android.os.BinderProxy@32bc18a: {id=73 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@35084d7} m=CLOSE f=NONE leash=Surface(name=Task=2923)/@0x8f7c18 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@70c41c4} m=TO_FRONT f=NONE leash=Surface(name=Task=1)/@0x7775671 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): Playing animation for (#73)android.os.BinderProxy@32bc18a@0
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@77647d8
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@509731
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.pip.tv.TvPipTransition@1477e16
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.RemoteTransitionHandler@edf9397
+V/WindowManagerShell(  913): Transition doesn't have explicit remote, search filters for match for {id=73 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@35084d7} m=CLOSE f=NONE leash=Surface(name=Task=2923)/@0x8f7c18 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@70c41c4} m=TO_FRONT f=NONE leash=Surface(name=Task=1)/@0x7775671 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913):  Delegate animation for #73 to null
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+V/WindowManagerShell(  913): start default transition animation, info = {id=73 t=CLOSE f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@35084d7} m=CLOSE f=NONE leash=Surface(name=Task=2923)/@0x8f7c18 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0},{WCT{android.window.IWindowContainerToken$Stub$Proxy@70c41c4} m=TO_FRONT f=NONE leash=Surface(name=Task=1)/@0x7775671 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@d7af7e2 animAttr=0xa type=CLOSE isEntrance=true
+V/WindowManagerShell(  913): loadAnimation: anim=android.view.animation.AlphaAnimation@56db630 animAttr=0xb type=CLOSE isEntrance=false
+V/WindowManagerShell(  913):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+I/input_focus(  661): [Focus entering 6dead12 com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity (server),reason=Window became focusable. Previous reason: NOT_VISIBLE]
+I/ImeTracker(  661): com.google.android.apps.tv.launcherx:dc78a9e0: onRequestHide at ORIGIN_SERVER_HIDE_INPUT reason HIDE_UNSPECIFIED_WINDOW
+I/ImeTracker(  661): com.google.android.apps.tv.launcherx:dc78a9e0: onCancelled at PHASE_SERVER_SHOULD_HIDE
+E/DMABUFHEAPS(  439): Unable to allocate from DMA-BUF heap: heap-gfx: Out of memory
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+E/DMABUFHEAPS(  439): No ion heap of name heap-gfx exists
+W/mali_gralloc(  439): libdmabufheap allocation failed for heap-gfx heap, falling back to system heap
+E/FrameEvents(15356): updateAcquireFence: Did not find frame.
+W/ActivityTaskManager(  661): callingPackage for (uid=2000, pid=25742) has no WPC
+E/CellBroadcastUtils(  661): getDefaultCellBroadcastReceiverPackageName: no package found
+I/wm_task_moved(  661): [1,1,0,1,2]
+I/wm_set_resumed_activity(  661): [0,com.google.android.apps.tv.launcherx/.home.HomeActivity,positionChildTaskAt]
+I/wm_task_moved(  661): [2914,1,0,1,2147483647]
+I/wm_task_to_front(  661): [0,2914,0]
+I/wm_focused_root_task(  661): [0,0,1,2923,bringingFoundTaskToFront]
+I/wm_set_resumed_activity(  661): [0,com.google.android.apps.tv.launcherx/.home.HomeActivity,bringingFoundTaskToFront]
+I/wm_new_intent(  661): [0,103050501,2914,com.google.android.apps.tv.launcherx/.home.HomeActivity,android.intent.action.MAIN,NULL,NULL,276824320]
+I/wm_on_top_resumed_gained_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,topStateChangedWhenResumed]
+I/wm_on_top_resumed_lost_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,pausing]
+I/cn_CronetUrlRequestContext(15356): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@8a67606
+I/wm_on_paused_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,performPause,8]
+V/WindowManagerShell(  913): Transition requested: android.os.BinderProxy@83c8065 TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2914 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity } baseActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} topActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} origActivity=null realActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} numActivities=1 lastActiveTime=35688756 supportsMultiWindow=false resizeMode=0 isResizeable=false minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@3ffa13a} topActivityType=2 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{3d381eb com.google.android.apps.tv.launcherx.home.HomeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+I/ActivityTaskManager(  661): START u0 {flg=0x10000000 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity} with LAUNCH_SINGLE_TASK from uid 2000 (BAL_ALLOW_PERMISSION) result code=2
+V/WindowManager(  661): Sent Transition #74 createdAt=10-27 08:54:18.165 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=2914 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10800100 cmp=com.google.android.apps.tv.launcherx/.home.HomeActivity } baseActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} topActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} origActivity=null realActivity=ComponentInfo{com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity} numActivities=1 lastActiveTime=35688756 supportsMultiWindow=false resizeMode=0 isResizeable=false minWidth=-1 minHeight=-1 defaultMinSize=220 token=WCT{RemoteToken{5eb8b13 Task{98bcf8b #2914 type=home A=10052:com.google.android.apps.tv.launcherx}}} topActivityType=2 pictureInPictureParams=null shouldDockBigOverlays=true launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=null topActivityInfo=ActivityInfo{4d5019b com.google.android.apps.tv.launcherx.home.HomeActivity} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=true isVisible=true isVisibleRequested=true isSleeping=false topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= false topActivityLetterboxed= false isFromDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=-1 topActivityLetterboxHeight=-1 locusId=null displayAreaFeatureId=1 cameraCompatControlState=hidden}, remoteTransition = null, displayChange = null }
+V/WindowManager(  661):     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+V/WindowManager(  661):     info={id=74 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{RemoteToken{5f14f2 Task{3bd90d6 #1 type=home}}} m=CHANGE f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0x958a16c sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): onTransitionReady android.os.BinderProxy@83c8065: {id=74 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@eb69706} m=CHANGE f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0x9661b48 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): Transition (#74)android.os.BinderProxy@83c8065@0 ready while (#73)android.os.BinderProxy@32bc18a@0 is still animating. Notify the animating transition in case they can be merged
+I/wm_on_resume_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,LIFECYCLER_RESUME_ACTIVITY,15]
+V/WindowManagerShell(  913): Transition animation finished (aborted=false), notifying core (#73)android.os.BinderProxy@32bc18a@0
+V/WindowManager(  661): Finish Transition #73: created at 10-27 08:54:17.857 collect-started=0.121ms request-sent=0.242ms started=10.365ms ready=10.29ms sent=221.416ms finished=360.545ms
+E/ActivityThread(15356): Failed to find provider info for com.google.android.apps.youtube.tvunplugged.client.provider
+W/WindowManager(  661): Exception thrown during dispatchAppVisibility Window{d7558fd u0 org.worldfoundry.wf_game.qbert/android.app.NativeActivity EXITING}
+W/WindowManager(  661): android.os.DeadObjectException
+W/WindowManager(  661): 	at android.os.BinderProxy.transactNative(Native Method)
+W/WindowManager(  661): 	at android.os.BinderProxy.transact(BinderProxy.java:584)
+W/WindowManager(  661): 	at android.view.IWindow$Stub$Proxy.dispatchAppVisibility(IWindow.java:546)
+W/WindowManager(  661): 	at com.android.server.wm.WindowState.sendAppVisibilityToClients(WindowState.java:3293)
+W/WindowManager(  661): 	at com.android.server.wm.WindowContainer.sendAppVisibilityToClients(WindowContainer.java:1221)
+W/WindowManager(  661): 	at com.android.server.wm.WindowToken.setClientVisible(WindowToken.java:409)
+W/WindowManager(  661): 	at com.android.server.wm.ActivityRecord.setClientVisible(ActivityRecord.java:6995)
+W/WindowManager(  661): 	at com.android.server.wm.ActivityRecord.postApplyAnimation(ActivityRecord.java:5686)
+W/WindowManager(  661): 	at com.android.server.wm.ActivityRecord.commitVisibility(ActivityRecord.java:5629)
+W/WindowManager(  661): 	at com.android.server.wm.Transition.finishTransition(Transition.java:1153)
+W/WindowManager(  661): 	at com.android.server.wm.TransitionController.finishTransition(TransitionController.java:868)
+W/WindowManager(  661): 	at com.android.server.wm.WindowOrganizerController.finishTransition(WindowOrganizerController.java:396)
+W/WindowManager(  661): 	at android.window.IWindowOrganizerController$Stub.onTransact(IWindowOrganizerController.java:286)
+W/WindowManager(  661): 	at com.android.server.wm.WindowOrganizerController.onTransact(WindowOrganizerController.java:181)
+W/WindowManager(  661): 	at android.os.Binder.execTransactInternal(Binder.java:1344)
+W/WindowManager(  661): 	at android.os.Binder.execTransact(Binder.java:1275)
+I/Process (  661): Sending signal. PID: 25508 SIG: 9
+I/wm_on_top_resumed_gained_called(15356): [103050501,com.google.android.apps.tv.launcherx.home.HomeActivity,topWhenResuming]
+W/ActivityManager(  661): setHasOverlayUi called on unknown pid: 25508
+I/wm_task_removed(  661): [2923,2923,0,removeChild, last child = ActivityRecord{9ce03b7 u0 org.worldfoundry.wf_game.qbert/android.app.NativeActivity t-1 f} isExiting} in Task{8638724 #2923 type=standard A=10150:org.worldfoundry.wf_game.qbert}]
+V/WindowManagerShell(  913): Playing animation for (#74)android.os.BinderProxy@83c8065@0
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@77647d8
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@509731
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.pip.tv.TvPipTransition@1477e16
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.RemoteTransitionHandler@edf9397
+V/WindowManagerShell(  913): Transition doesn't have explicit remote, search filters for match for {id=74 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@eb69706} m=CHANGE f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0x9661b48 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913):  Delegate animation for #74 to null
+V/WindowManagerShell(  913):  try handler com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+V/WindowManagerShell(  913): start default transition animation, info = {id=74 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@eb69706} m=CHANGE f=MOVE_TO_TOP leash=Surface(name=Task=1)/@0x9661b48 sb=Rect(0, 0 - 1920, 1080) eb=Rect(0, 0 - 1920, 1080) d=0}]}
+V/WindowManagerShell(  913): Transition animation finished (aborted=false), notifying core (#74)android.os.BinderProxy@83c8065@0
+V/WindowManager(  661): Finish Transition #74: created at 10-27 08:54:18.165 collect-started=0.14ms request-sent=7.124ms started=17.933ms ready=17.878ms sent=23.874ms finished=74.826ms
+V/WindowManagerShell(  913): Track 0 became idle
+V/WindowManagerShell(  913): All active transition animations finished
+V/WindowManagerShell(  913):  animated by com.android.wm.shell.transition.DefaultTransitionHandler@1f40984
+V/WindowManagerShell(  913): Track 0 became idle
+V/WindowManagerShell(  913): All active transition animations finished
+E/BpTransactionCompletedListener(  479): Failed to transact (-32)
+I/cn_CronetUrlRequestContext(15356): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@b4b69f3
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 116 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+D/NetflixService( 1145): handleMessage
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.netflix.ninja is not top activity.
+I/NetflixService( 1145): fg: false  mIsNetflixFg: false
+D/NetflixService( 1145): com.google.android.apps.tv.launcherx is visible.
+D/NetflixService( 1145): com.google.android.youtube.tv is not top activity.
+I/cast_shell(24351): [1027/085418.584054:INFO:metrics_recorder.cc(193)] Record action: Setup.eureka_info.Unknown
+W/cast_shell(24351): [1027/085418.584526:WARNING:setup_api_registry.cc(123)] Insecure fallback for API: eureka_info
+W/cast_shell(24351): [1027/085418.584616:WARNING:api_eureka_info.cc(1003)] Insecure access to eureka_info. Parameters have been stripped.
+I/cast_shell(24351): [1027/085418.584737:INFO:setup_state.cc(541)] EurekaInfoCalled: wifi_state=0, is_usable_ip_address=1, connected=1, is_initial_setup=0
+I/cast_shell(24351): [1027/085418.585025:INFO:metrics_recorder.cc(193)] Record action: Setup.eureka_info.Unknown.200
+I/ThermalService( 1145): CPU temperatures: [42.2]
+I/cn_CronetUrlRequestContext(15356): destroyNativeStreamLocked org.chromium.net.impl.CronetBidirectionalStream@acf3dba
+W/SetWatchNextVerificatio(15356): Watch next verification data is empty
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/.gms.persistent( 1335): Background concurrent mark compact GC freed 253364(12MB) AllocSpace objects, 35(1148KB) LOS objects, 49% free, 13MB/26MB, paused 1.031ms,4.609ms total 406.693ms
+W/.gms.persistent( 1335): Reducing the number of considered missed Gc histogram windows from 121 to 100
+W/SQLiteConnectionPool( 1335): A SQLiteConnection object for database '/data/user/0/com.google.android.gms/databases/metadata.db' was leaked!  Please fix your application to end transactions in progress properly and to close the database when it is no longer needed.
+W/System  ( 1335): A resource failed to call SQLiteConnection.close. 
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/adbd    ( 3662): New TLS connection [fd=28]
+I/adbd    ( 3662): host-28: read thread spawning
+I/adbd    ( 3662): host-28: read failed: Success
+I/adbd    ( 3662): host-28: connection terminated: read failed
+I/adbd    ( 3662): host-28: already offline
+I/adbd    ( 3662): destroying transport host-28
+I/adbd    ( 3662): host-28: write thread spawning
+I/adbd    ( 3662): BlockingConnectionAdapter(host-28): stopping
+I/adbd    ( 3662): BlockingConnectionAdapter(host-28): stopped
+I/adbd    ( 3662): BlockingConnectionAdapter(host-28): destructing
+I/adbd    ( 3662): BlockingConnectionAdapter(host-28): already stopped
+D/ActivityManager(  661): freezing 1708 com.android.keychain
+I/am_freeze(  661): [1708,com.android.keychain]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ResendCecCommandAction(  661): ResendCecCommandAction started
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+I/ThermalService( 1145): CPU temperatures: [40.7]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 111 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 222 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+E/TaskPersister(  661): File error accessing recents directory (directory doesn't exist?).
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 110 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 117 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 116 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 111 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+I/ThermalService( 1145): CPU temperatures: [40.7]
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 115 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 115 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+I/ThermalService( 1145): CPU temperatures: [40.4]
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 111 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 117 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ResendCecCommandAction(  661): ResendCecCommandAction started
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+I/ThermalService( 1145): CPU temperatures: [40.800003]
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 116 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 114 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+D/ActivityManager(  661): freezing 1540 com.google.android.gms
+I/am_freeze(  661): [1540,com.google.android.gms]
+D/ActivityManager(  661): freezing 1056 com.google.android.permissioncontroller
+I/am_freeze(  661): [1056,com.google.android.permissioncontroller]
+D/ResendCecCommandAction(  661): sendCommandWithoutRetries failed, retry
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/HdmiCecController(  661): Failed to send <Text View On> 40:0D with errorCode=1
+I/auditd  (25839): type=1400 audit(0.0:3038): avc:  denied  { getattr } for  comm="df" path="/linkerconfig" dev="tmpfs" ino=3 scontext=u:r:shell:s0 tcontext=u:object_r:linkerconfig_file:s0 tclass=dir permissive=0
+W/df      (25839): type=1400 audit(0.0:3038): avc:  denied  { getattr } for  path="/linkerconfig" dev="tmpfs" ino=3 scontext=u:r:shell:s0 tcontext=u:object_r:linkerconfig_file:s0 tclass=dir permissive=0
+I/auditd  (25839): type=1400 audit(0.0:3039): avc:  denied  { search } for  comm="df" name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+W/df      (25839): type=1400 audit(0.0:3039): avc:  denied  { search } for  name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+I/auditd  (25839): type=1400 audit(0.0:3040): avc:  denied  { search } for  comm="df" name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+W/df      (25839): type=1400 audit(0.0:3040): avc:  denied  { search } for  name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+I/auditd  (25839): type=1400 audit(0.0:3041): avc:  denied  { search } for  comm="df" name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+W/df      (25839): type=1400 audit(0.0:3041): avc:  denied  { search } for  name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+I/auditd  (25839): type=1400 audit(0.0:3042): avc:  denied  { search } for  comm="df" name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+W/df      (25839): type=1400 audit(0.0:3042): avc:  denied  { search } for  name="vendor" dev="tmpfs" ino=2 scontext=u:r:shell:s0 tcontext=u:object_r:mnt_vendor_file:s0 tclass=dir permissive=0
+I/commit_sys_config_file(  661): [package-user-0,12]
+E/MesonHwc(  444): getPort 11
+E/MesonHwc(  444): getPort 11
+W/DisplayIdentification(  479): Invalid EDID: ASCII text is not printable.
+W/DisplayIdentification(  479): Invalid EDID: falling back to serial number due to missing display name.
+W/DisplayIdentification(  479): Invalid EDID: falling back to ASCII text due to missing serial number.
+E/DisplayIdentification(  479): Invalid EDID: display name and fallback descriptors are missing.
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 113 ms
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+E/IPCThreadState(  449): binder thread pool (1 threads) starved for 112 ms
+W/HdmiCecController(  661): Failed to send <Give Device Power Status> 40:8F with errorCode=1
+I/ThermalService( 1145): CPU temperatures: [40.4]
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/auditd  (  218): avc:  denied  { find } for pid=25878 uid=2000 name=media.codec scontext=u:r:shell:s0 tcontext=u:object_r:default_android_service:s0 tclass=service_manager permissive=0
+W/WindowManager(  661): One touch play failed: 1
+W/ImagePropBinder(15356): both height and width are set/not set for the image, overriding dimension is ignored.
+I/auditd  (25885): type=1400 audit(0.0:3047): avc:  denied  { read } for  comm="getprop" name="u:object_r:drm_service_config_prop:s0" dev="tmpfs" ino=199 scontext=u:r:shell:s0 tcontext=u:object_r:drm_service_config_prop:s0 tclass=file permissive=0
+W/getprop (25885): type=1400 audit(0.0:3047): avc:  denied  { read } for  name="u:object_r:drm_service_config_prop:s0" dev="tmpfs" ino=199 scontext=u:r:shell:s0 tcontext=u:object_r:drm_service_config_prop:s0 tclass=file permissive=0
+W/libc    (25885): Access denied finding property "drm.service.enabled"
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/ThermalService( 1145): CPU temperatures: [42.100002]
+E/WifiHAL (  453): get supported feature = 0x4
+E/FrameEvents(15356): updateAcquireFence: Did not find frame.
+I/ps.tv.launcherx(15356): NativeAlloc concurrent mark compact GC freed 237007(10MB) AllocSpace objects, 10(720KB) LOS objects, 49% free, 11MB/23MB, paused 1.129ms,6.548ms total 417.072ms
+W/ps.tv.launcherx(15356): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/base.apk' with 1 weak references
+W/ps.tv.launcherx(15356): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/split_config.armeabi_v7a.apk' with 1 weak references
+W/ps.tv.launcherx(15356): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/split_config.xhdpi.apk' with 1 weak references
+W/adbd    ( 3662): timed out while waiting for FUNCTIONFS_BIND, trying again
+I/adbd    ( 3662): UsbFfs: connection terminated: monitor thread finished
+I/adbd    ( 3662): UsbFfs: already offline
+I/adbd    ( 3662): destroying transport UsbFfs
+I/adbd    ( 3662): UsbFfsConnection being destroyed
+I/adbd    ( 3662): opening control endpoint /dev/usb-ffs/adb/ep0
+I/adbd    ( 3662): UsbFfsConnection constructed
+I/adbd    ( 3662): UsbFfs-monitor thread spawned
+I/system_server(  661): Background concurrent mark compact GC freed 978884(43MB) AllocSpace objects, 41(1044KB) LOS objects, 42% free, 32MB/56MB, paused 3.555ms,6.702ms total 596.448ms
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/base.apk' with 1 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/base.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_AdsDynamite_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_CronetDynamite_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_DynamiteLoader_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_DynamiteModulesA_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_DynamiteModulesC_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_GoogleCertificates_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_MapsDynamite_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_MeasurementDynamite_installtime.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_config.en.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~OLK_jBIB8eB6B2Rgu_1Dcw==/com.google.android.gms-yeguewCt5is5g_puQtSQ8A==/split_config.xhdpi.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/base.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/split_config.armeabi_v7a.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~wNh09VfIwIzbUFNhZVyJ_Q==/com.google.android.videos-s2EeCTMSeKkdatfZzE_5Bw==/split_config.xhdpi.apk' with 2 weak references
+W/system_server(  661): ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/GoogleCalendarSyncAdapter/GoogleCalendarSyncAdapter.apk' with 1 weak references
+W/System  (  661): A resource failed to call release. 
+W/System  (  661): A resource failed to call CursorWindow.close. 
+W/LastMileLogger(  661): Failed to read event trace: /sys/kernel/debug/tracing/instances/wifi/trace
+I/android_os_HwBinder(  661): HwBinder: Starting thread pool for getting: android.hidl.manager@1.0::IServiceManager/default
+I/hwservicemanager(  219): getTransport: Cannot find entry android.hardware.wifi.hostapd@1.0::IHostapd/default in either framework or device VINTF manifest.
+I/netstats_mobile_sample(  661): [0,0,0,0,0,0,0,0,1793066072260]
+I/netstats_wifi_sample(  661): [308977989,281146678,456876,405865,336260956,276731406,574119,394396,1793066072260]

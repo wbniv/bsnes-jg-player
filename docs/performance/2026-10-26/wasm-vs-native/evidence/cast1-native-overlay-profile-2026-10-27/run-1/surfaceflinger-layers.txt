@@ -1,0 +1,67 @@
+Display 0 name="Built-in Screen"#3
+WindowedMagnification:0:31#4
+HideDisplayCutout:0:14#5
+OneHanded:0:14#6
+FullscreenMagnification:0:12#7
+Leaf:0:1#8
+WallpaperWindowToken{6e369b2 token=android.os.Binder@3d8bfbd}#53
+eb4e2c8 com.android.systemui.wallpapers.ImageWallpaper#56
+com.android.systemui.wallpapers.ImageWallpaper#57
+Wallpaper BBQ wrapper#58
+DefaultTaskDisplayArea#9
+Task=1#46
+Task=2929#6513
+d9a2b5e ActivityRecordInputSink com.google.android.apps.tv.launcherx/.home.HomeActivity#6519
+ActivityRecord{c8f4b3f u0 com.google.android.apps.tv.launcherx/.home.HomeActivity#6514
+78b641f com.google.android.apps.tv.launcherx/com.google.android.apps.tv.launcherx.home.HomeActivity#6516
+Task=2905#76
+b7e5742 ActivityRecordInputSink com.android.tv.settings/.MainSettings#82
+ActivityRecord{26d7353 u0 com.android.tv.settings/.MainSettings#77
+55f9cb com.android.tv.settings/com.android.tv.settings.MainSettings#79
+Task=2933#6567
+84017e4 ActivityRecordInputSink org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6573
+ActivityRecord{8e9d44d u0 org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6568
+1418379 org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6569
+Background for SurfaceView[org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity]#6577
+SurfaceView[org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity]#6575
+SurfaceView[org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity](BLAST)#6576
+org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6570
+Bounds for - org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6574
+Leaf:3:12#10
+WindowToken{61459b4 type=2038 android.os.BinderProxy@1ffcab5}#47
+5eeaaab ShellDropTarget#48
+ImePlaceholder:13:14#11
+ImeContainer#12
+OneHanded:15:15#13
+FullscreenMagnification:15:15#14
+Leaf:15:15#15
+HideDisplayCutout:16:16#16
+OneHanded:16:16#17
+FullscreenMagnification:16:16#18
+Leaf:16:16#19
+OneHanded:17:17#20
+FullscreenMagnification:17:17#21
+Leaf:17:17#22
+HideDisplayCutout:18:23#23
+OneHanded:18:23#24
+FullscreenMagnification:18:23#25
+Leaf:18:23#26
+Leaf:24:25#27
+HideDisplayCutout:26:31#28
+OneHanded:26:31#29
+FullscreenMagnification:26:27#30
+Leaf:26:27#31
+Leaf:28:28#32
+FullscreenMagnification:29:31#33
+Leaf:29:31#34
+HideDisplayCutout:32:35#35
+OneHanded:32:32#36
+Leaf:32:32#37
+FullscreenMagnification:33:33#38
+Leaf:33:33#39
+OneHanded:34:35#40
+FullscreenMagnification:34:35#41
+Leaf:34:35#42
+Leaf:36:36#43
+Accessibility Overlays#45
+Display Overlays#44

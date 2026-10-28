@@ -1,0 +1,850 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793081918.2381458,
+    "end": 1793081918.5972102,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081918.6762934,
+    "end": 1793081919.171615,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081918.6656225,
+    "end": 1793081919.1764314,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081919.1764958,
+    "end": 1793081919.6312604,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793081919.7897487,
+    "end": 1793081921.3051558,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --list"
+    ],
+    "start": 1793081921.3098087,
+    "end": 1793081921.6955605,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081921.703318,
+    "end": 1793081922.295747,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793081927.3168662,
+    "end": 1793081928.149536,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081928.1623192,
+    "end": 1793081929.1581795,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081929.1606164,
+    "end": 1793081929.6622114,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-t",
+      "2000",
+      "--pid=32638",
+      "-v",
+      "brief"
+    ],
+    "start": 1793081929.664842,
+    "end": 1793081930.6753552,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793081930.6777446,
+    "end": 1793081938.9110548,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081943.562374,
+    "end": 1793081944.2130358,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793081946.5636759,
+    "end": 1793081946.9420688,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081946.9680316,
+    "end": 1793081947.5028405,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --list"
+    ],
+    "start": 1793081947.5181673,
+    "end": 1793081947.90092,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081947.9088933,
+    "end": 1793081948.5203369,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency-clear 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081948.5276923,
+    "end": 1793081948.9415364,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081948.950873,
+    "end": 1793081949.363311,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081949.472096,
+    "end": 1793081950.0248256,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081950.0742748,
+    "end": 1793081950.561248,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081950.6685517,
+    "end": 1793081951.0051947,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081951.1122482,
+    "end": 1793081951.5944803,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081951.7016327,
+    "end": 1793081952.2883496,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081952.3949072,
+    "end": 1793081952.8318138,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081952.9391792,
+    "end": 1793081953.3508632,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081953.4573216,
+    "end": 1793081953.8851783,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081954.010332,
+    "end": 1793081954.5452077,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081953.891632,
+    "end": 1793081954.5514925,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081954.6519885,
+    "end": 1793081955.0788825,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081955.1858554,
+    "end": 1793081955.723609,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081955.8310874,
+    "end": 1793081956.343438,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081956.4519346,
+    "end": 1793081956.912262,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081957.0222416,
+    "end": 1793081957.5263557,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081957.6344612,
+    "end": 1793081958.0905585,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081958.2030442,
+    "end": 1793081958.5410104,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081958.6486418,
+    "end": 1793081958.9915614,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081959.1007485,
+    "end": 1793081959.5826445,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081959.690992,
+    "end": 1793081960.2034163,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081960.3145578,
+    "end": 1793081960.6224396,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081960.736676,
+    "end": 1793081961.2289786,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081961.3506522,
+    "end": 1793081961.8364174,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081961.945846,
+    "end": 1793081962.3043756,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081962.4315603,
+    "end": 1793081962.8442905,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081962.9564457,
+    "end": 1793081963.2525425,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081963.3702624,
+    "end": 1793081963.7038226,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081963.821776,
+    "end": 1793081964.8899353,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081965.0017848,
+    "end": 1793081965.3138115,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081964.8984556,
+    "end": 1793081965.328398,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081965.422799,
+    "end": 1793081965.7054486,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081965.814471,
+    "end": 1793081966.359079,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081966.4698067,
+    "end": 1793081966.9311616,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081967.0413074,
+    "end": 1793081967.3431237,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081967.452488,
+    "end": 1793081967.755547,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081967.866464,
+    "end": 1793081968.1740491,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081968.3192005,
+    "end": 1793081968.8028576,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081968.9139144,
+    "end": 1793081969.1866724,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081969.2968829,
+    "end": 1793081969.7961583,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081969.907692,
+    "end": 1793081970.4303694,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081970.543339,
+    "end": 1793081971.0310898,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081971.1414652,
+    "end": 1793081971.4348736,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081971.6009016,
+    "end": 1793081972.0816422,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081972.197081,
+    "end": 1793081972.6707757,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081972.7820864,
+    "end": 1793081973.0824716,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081973.2004447,
+    "end": 1793081973.6926343,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081973.803782,
+    "end": 1793081974.1020439,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081974.2133255,
+    "end": 1793081974.5139465,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081974.625848,
+    "end": 1793081974.9164538,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081975.0290694,
+    "end": 1793081975.4732578,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081974.9308357,
+    "end": 1793081975.4874375,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081975.6260676,
+    "end": 1793081976.279056,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081976.3965209,
+    "end": 1793081976.7583077,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081976.8715413,
+    "end": 1793081977.297773,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081977.4194818,
+    "end": 1793081977.7842503,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081977.8999658,
+    "end": 1793081978.195758,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081978.3076735,
+    "end": 1793081978.8134177,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081978.9275546,
+    "end": 1793081979.22055,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081979.3333828,
+    "end": 1793081979.6296213,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6586'"
+    ],
+    "start": 1793081979.7420645,
+    "end": 1793081980.142369,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793081980.1579947,
+    "end": 1793081980.6730657,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081980.685557,
+    "end": 1793081981.0659537,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793081981.075745,
+    "end": 1793081982.8222895,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793081982.9604878,
+    "end": 1793081983.3397872,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081983.3518932,
+    "end": 1793081983.725892,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793081983.7304327,
+    "end": 1793081985.6121922,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081985.6205518,
+    "end": 1793081986.1816337,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793081985.6172438,
+    "end": 1793081986.186183,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=32638"
+    ],
+    "start": 1793081986.1862366,
+    "end": 1793081986.6675322,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.phase2/files/wf.log"
+    ],
+    "start": 1793081986.6723287,
+    "end": 1793081987.0170743,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793081987.02266,
+    "end": 1793081987.8325734,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793081987.837771,
+    "end": 1793081988.2258782,
+    "returncode": 0
+  }
+]

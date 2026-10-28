@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "launch_wall_start": 1793082763.3540294,
+  "launch_wall_end": 1793082765.7883933,
+  "am_start_output": "Starting: Intent { cmp=org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity\nTotalTime: 1830\nWaitTime: 1862\nComplete\n",
+  "samples": [
+    {
+      "layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634",
+      "raw": "16683333\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n52396255083691\t52396284919757\t52396257946275\n52396295748358\t52396318286372\t52396300224983\n0\t52396418386501\t52396300224983\n52396490019900\t52396518486616\t52396492905608\n0\t52396885520374\t52396492905608\n52397458857983\t52397486121200\t52397461966775\n52397475722275\t52397502804622\t52397478847400\n52397491648525\t52397519487883\t52397494817442\n52397508168942\t52397536171264\t52397507919025\n52397529578275\t52397552855003\t52397529214692\n52397542078234\t52397569538014\t52397545177109\n52397561430359\t52397586221326\t52397563692900\n\n",
+      "host_wall_time": 1793082767.1118183,
+      "valid_presents": 12
+    }
+  ],
+  "selected_layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634",
+  "first_present_ns": 52396284919757,
+  "ring_full": false
+}

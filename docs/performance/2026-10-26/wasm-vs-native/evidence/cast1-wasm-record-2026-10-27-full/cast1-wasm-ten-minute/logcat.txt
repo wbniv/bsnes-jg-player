@@ -1,0 +1,502 @@
+--------- beginning of main
+10-27 09:03:09.709  1520  1520 I nesjg.tv.phase2: Using CollectorTypeCMC GC.
+10-27 09:03:09.806  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 171979766; UID 10072; state: ENABLED
+10-27 09:03:09.806  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 242716250; UID 10072; state: ENABLED
+10-27 09:03:09.869  1520  1520 D nativeloader: Configuring clns-4 for other apk /data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/lib/arm:/data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/base.apk!/lib/armeabi-v7a, permitted_path=/data:/mnt/expand:/data/user/0/org.bsnesjg.tv.phase2
+10-27 09:03:09.911  1520  1520 V GraphicsEnvironment: Currently set values for:
+10-27 09:03:09.911  1520  1520 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+10-27 09:03:09.911  1520  1520 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+10-27 09:03:09.912  1520  1520 V GraphicsEnvironment: ANGLE GameManagerService for org.bsnesjg.tv.phase2: false
+10-27 09:03:09.912  1520  1520 V GraphicsEnvironment: org.bsnesjg.tv.phase2 is not listed in per-application setting
+10-27 09:03:09.912  1520  1520 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+10-27 09:03:09.981  1520  1520 I WebViewFactory: Loading com.google.android.webview version 155.0.8059.43 (code 805904300)
+10-27 09:03:09.988  1520  1520 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+10-27 09:03:10.011  1520  1520 D nativeloader: Configuring clns-5 for other apk /data/app/~~sWWzjFQGCVzyfyI7gqBs0A==/com.google.android.webview-BKTTdxIrLRt__bOlUbjRrw==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~sWWzjFQGCVzyfyI7gqBs0A==/com.google.android.webview-BKTTdxIrLRt__bOlUbjRrw==/lib/arm:/data/app/~~sWWzjFQGCVzyfyI7gqBs0A==/com.google.android.webview-BKTTdxIrLRt__bOlUbjRrw==/base.apk!/lib/armeabi-v7a, permitted_path=/data:/mnt/expand
+10-27 09:03:10.176  1520  1520 I cr_WVCFactoryProvider: version=155.0.8059.43 (805904300) minSdkVersion=29 multiprocess=true packageId=127 splits=<none>
+10-27 09:03:10.245  1520  1565 I chromium: [1027/090310.228321:INFO:android_webview/browser/variations/variations_seed_loader.cc:63] Failed to open file for reading.: No such file or directory (2)
+10-27 09:03:10.341  1520  1520 I cr_LibraryLoader: Successfully loaded native library
+10-27 09:03:10.353  1520  1520 I cr_CachingUmaRecorder: Flushed 46 samples from 21 histograms, 0 samples were dropped.
+10-27 09:03:10.355  1520  1520 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+10-27 09:03:10.361  1520  1520 I cr_CombinedPProvider: #registerProvider() provider:WV.fj@525d975 isPolicyCacheEnabled:false policyProvidersSize:0
+10-27 09:03:10.361  1520  1520 I cr_PolicyProvider: #setManagerAndSource() 0
+10-27 09:03:10.364  1520  1566 I cr_policy: registerReceiver succeeded after 2ms
+10-27 09:03:10.372  1520  1520 I cr_DisplayManager: Is Display Topology available: false
+10-27 09:03:10.450  1520  1520 I cr_CombinedPProvider: #linkNativeInternal() 1
+10-27 09:03:10.450  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 183155436; UID 10072; state: ENABLED
+10-27 09:03:10.453  1520  1520 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-27 09:03:10.453  1520  1520 I cr_PolicyProvider: #notifySettingsAvailable() 0
+10-27 09:03:10.453  1520  1520 I cr_CombinedPProvider: #onSettingsAvailable() 0
+10-27 09:03:10.453  1520  1520 I cr_CombinedPProvider: #flushPolicies()
+10-27 09:03:10.667  1520  1597 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+10-27 09:03:10.688  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 214741472; UID 10072; state: ENABLED
+10-27 09:03:10.752  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 171228096; UID 10072; state: ENABLED
+10-27 09:03:10.795  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 193247900; UID 10072; state: ENABLED
+10-27 09:03:10.940  1520  1603 W cr_media: BLUETOOTH_CONNECT permission is missing.
+10-27 09:03:10.946  1520  1603 W cr_media: getBluetoothAdapter() requires BLUETOOTH permission
+10-27 09:03:10.946  1520  1603 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+10-27 09:03:10.987  1520  1614 D vulkan  : searching for layers in '/data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/lib/arm'
+10-27 09:03:10.987  1520  1614 D vulkan  : searching for layers in '/data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/base.apk!/lib/armeabi-v7a'
+10-27 09:03:10.993  1520  1520 D CompatibilityChangeReporter: Compat change id reported: 237531167; UID 10072; state: DISABLED
+10-27 09:03:10.996  1520  1520 W OpenGLRenderer: Unknown dataspace 0
+10-27 09:03:10.998  1520  1614 W libc    : Access denied finding property "vendor.mali.platform.config"
+10-27 09:03:11.006  1520  1614 I mali    : Successfully parsed 1 environment variable(s) from /vendor/etc/mali_platform.config.
+10-27 09:03:11.007  1520  1614 W libc    : Access denied finding property "vendor.mali.debug.config"
+10-27 09:03:11.011  1520  1614 W libc    : Access denied finding property "vendor.mali.base_max_nr_instances"
+10-27 09:03:11.011  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_unnamed"
+10-27 09:03:11.011  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_default_heap"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_base_internal"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_framepool"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_tiler"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_program"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane_imported"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vao"
+10-27 09:03:11.012  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_img"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_internal_surface"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_buf"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_crc"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_hmem"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_rsd"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_mbs2"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_static"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_hmem"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_sample_pos"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_discard"
+10-27 09:03:11.013  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_tess_geom"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cobj_hmem"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_hmem"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_prof_dump"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cblend_hmem"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_hmem"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_query"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_query_host"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_multiview"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cdeps_hmem"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_suballoc"
+10-27 09:03:11.014  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_hoard"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_registry"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_payload"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_wlm_tls"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_hmem"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_svm"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_protected"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cinstr"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_cpu_uncached"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_cpu_cached"
+10-27 09:03:11.015  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_transient"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_protected"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_external"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_external_swapchain"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_tls"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_host"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_protected"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_transient"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_descriptor_pool"
+10-27 09:03:11.016  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator_host"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator_protected"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_host"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_device"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_device_transient"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vk_bound_buffer"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vk_bound_image"
+10-27 09:03:11.017  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_signal"
+10-27 09:03:11.018  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_flush_chain"
+10-27 09:03:11.018  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_metadata_list"
+10-27 09:03:11.018  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_jit"
+10-27 09:03:11.018  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_mmu"
+10-27 09:03:11.019  1520  1614 W libc    : Access denied finding property "vendor.mali.osu_protected_memory_heap_name"
+10-27 09:03:11.019  1520  1614 W libc    : Access denied finding property "vendor.mali.osu_ion_protected_memory_heap_name"
+10-27 09:03:11.019  1520  1614 W libc    : Access denied finding property "vendor.mali.platform_agt_frequency_khz"
+10-27 09:03:11.019  1520  1614 W libc    : Access denied finding property "vendor.mali.hal_dump_dir"
+10-27 09:03:11.035  1520  1520 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+10-27 09:03:11.035  1520  1520 I cr_PolicyProvider: #notifySettingsAvailable() 0
+10-27 09:03:11.035  1520  1520 I cr_CombinedPProvider: #onSettingsAvailable() 0
+10-27 09:03:11.035  1520  1520 I cr_CombinedPProvider: #flushPolicies()
+10-27 09:03:11.053  1520  1635 I CameraManagerGlobal: Connecting to camera service
+10-27 09:03:11.059  1520  1614 W libc    : Access denied finding property "vendor.mali.base_max_nr_instances"
+10-27 09:03:11.059  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_unnamed"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_default_heap"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_base_internal"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_framepool"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_tiler"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_program"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane_imported"
+10-27 09:03:11.060  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vao"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_img"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_internal_surface"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_buf"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_crc"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_hmem"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_rsd"
+10-27 09:03:11.061  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_mbs2"
+10-27 09:03:11.063  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cpom_static"
+10-27 09:03:11.064  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_hmem"
+10-27 09:03:11.064  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_sample_pos"
+10-27 09:03:11.064  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_discard"
+10-27 09:03:11.064  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cframe_tess_geom"
+10-27 09:03:11.066  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cobj_hmem"
+10-27 09:03:11.066  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_hmem"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_prof_dump"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cblend_hmem"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_hmem"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_query"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_query_host"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gles_multiview"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cdeps_hmem"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_suballoc"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_hoard"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmem_registry"
+10-27 09:03:11.067  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_payload"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_wlm_tls"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_hmem"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_svm"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cl_protected"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cinstr"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_cpu_uncached"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_cpu_cached"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_transient"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_memory_protected"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_external"
+10-27 09:03:11.068  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_external_swapchain"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_tls"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_host"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_protected"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_device_internal_transient"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_descriptor_pool"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator_host"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_command_allocator_protected"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_host"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_device"
+10-27 09:03:11.069  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_gfx_graph_internal_device_transient"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vk_bound_buffer"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_vk_bound_image"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_signal"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_flush_chain"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_cmar_metadata_list"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_jit"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.cctx_memory_class_mmu"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.osu_protected_memory_heap_name"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.osu_ion_protected_memory_heap_name"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.platform_agt_frequency_khz"
+10-27 09:03:11.070  1520  1614 W libc    : Access denied finding property "vendor.mali.hal_dump_dir"
+10-27 09:03:11.071  1520  1614 W libc    : Access denied finding property "vendor.mali.platform.config"
+10-27 09:03:11.072  1520  1614 I mali    : Successfully parsed 1 environment variable(s) from /vendor/etc/mali_platform.config.
+10-27 09:03:11.076  1520  1614 W libc    : Access denied finding property "vendor.mali.debug.config"
+10-27 09:03:11.102  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuyv.hal_format"
+10-27 09:03:11.102  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuyv.recordable"
+10-27 09:03:11.102  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuyv.dataspaces_to_exclude"
+10-27 09:03:11.102  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv12.hal_format"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv12.recordable"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv12.dataspaces_to_exclude"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv21.hal_format"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv21.recordable"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv21.dataspaces_to_exclude"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv16.hal_format"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv16.recordable"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.nv16.dataspaces_to_exclude"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuv420.hal_format"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuv420.recordable"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yuv420.dataspaces_to_exclude"
+10-27 09:03:11.103  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yvu420.hal_format"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yvu420.recordable"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.yvu420.dataspaces_to_exclude"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y410.hal_format"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y410.recordable"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y410.dataspaces_to_exclude"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y210.hal_format"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y210.recordable"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y210.dataspaces_to_exclude"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y0l2.hal_format"
+10-27 09:03:11.104  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y0l2.recordable"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.y0l2.dataspaces_to_exclude"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p210.hal_format"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p210.recordable"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p210.dataspaces_to_exclude"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p010.hal_format"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p010.recordable"
+10-27 09:03:11.105  1520  1614 W libc    : Access denied finding property "ro.vendor.arm.egl.configs.p010.dataspaces_to_exclude"
+10-27 09:03:11.160  1520  1558 E OpenGLRenderer: Unable to match the desired swap behavior.
+10-27 09:03:11.349  1520  1613 W chromium: [WARNING:android_webview/browser/gfx/display_webview.cc:33] WebView overlays are enabled!
+10-27 09:03:11.543  1520  1610 W VideoCapabilities: Unrecognized profile/level 0/4 for video/mpeg2
+10-27 09:03:11.543  1520  1610 I VideoCapabilities: Unsupported profile 3 for video/mpeg2
+10-27 09:03:11.543  1520  1610 I VideoCapabilities: Unsupported profile 4 for video/mpeg2
+10-27 09:03:11.543  1520  1610 I VideoCapabilities: Unsupported profile 5 for video/mpeg2
+10-27 09:03:11.545  1520  1610 I VideoCapabilities: Unsupported profile 2 for video/mp4v-es
+10-27 09:03:11.545  1520  1610 I VideoCapabilities: Unsupported profile 8 for video/mp4v-es
+10-27 09:03:11.545  1520  1610 I VideoCapabilities: Unsupported profile 16 for video/mp4v-es
+10-27 09:03:11.545  1520  1610 I VideoCapabilities: Unsupported profile 1024 for video/mp4v-es
+10-27 09:03:11.580  1520  1610 W cr_VAUtil: Unknown profile: 32768 for codec video/x-vnd.on2.vp9
+10-27 09:03:11.581  1520  1610 W cr_VAUtil: Unknown profile: 32768 for codec video/x-vnd.on2.vp9
+10-27 09:03:13.030  1520  1597 W BJG_WEBVIEW: blocked path /favicon.ico
+10-27 09:03:14.643  1520  1520 I BJG_TV_METRIC: {"event":"core_ready","t_ms":2147,"rom_run":0,"core":"bsnes-jg","version":"2.1.0","runtime":"wasm"}
+10-27 09:03:18.914  1520  1520 I BJG_TV_METRIC: {"event":"rom_loaded","t_ms":6416,"rom_run":1,"rom":"mandel-display","bytes":32768}
+10-27 09:03:35.257  1520  1532 W nesjg.tv.phase2: Suspending all threads took: 13.239ms
+10-27 09:03:35.821  1520  1532 I nesjg.tv.phase2: Background concurrent mark compact GC freed 32879(3157KB) AllocSpace objects, 22(568KB) LOS objects, 49% free, 2977KB/5954KB, paused 34.488ms,26.885ms total 1.410s
+10-27 09:03:52.418  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":39887,"rom_run":1,"pending_frames":115.31,"max_steps_per_callback":4}
+10-27 09:04:00.217  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":47724,"rom_run":1,"pending_frames":2003.31,"max_steps_per_callback":4}
+10-27 09:04:07.765  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":55272,"rom_run":1,"pending_frames":2468.55,"max_steps_per_callback":4}
+10-27 09:04:15.053  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":62548,"rom_run":1,"pending_frames":2918.75,"max_steps_per_callback":4}
+10-27 09:04:24.897  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":72405,"rom_run":1,"pending_frames":3350.91,"max_steps_per_callback":4}
+10-27 09:04:33.735  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":81235,"rom_run":1,"pending_frames":3940.47,"max_steps_per_callback":4}
+10-27 09:04:42.208  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":89715,"rom_run":1,"pending_frames":4466.87,"max_steps_per_callback":4}
+10-27 09:04:49.379  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":96881,"rom_run":1,"pending_frames":4972.22,"max_steps_per_callback":4}
+10-27 09:04:55.586  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":103086,"rom_run":1,"pending_frames":5398.36,"max_steps_per_callback":4}
+10-27 09:05:03.245  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":110742,"rom_run":1,"pending_frames":5771.36,"max_steps_per_callback":4}
+10-27 09:05:11.250  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":118757,"rom_run":1,"pending_frames":6224.56,"max_steps_per_callback":4}
+10-27 09:05:17.242  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":124745,"rom_run":1,"pending_frames":6701.83,"max_steps_per_callback":4}
+10-27 09:05:23.416  1520  1520 I BJG_TV_METRIC: {"event":"first_live_frame","t_ms":130924,"rom_run":1,"width":256,"height":224,"image_ratio":"8:7"}
+10-27 09:05:23.417  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":130925,"rom_run":1,"pending_frames":7057.78,"max_steps_per_callback":4}
+10-27 09:05:25.971  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":133479,"rom_run":1,"pending_frames":7426.77,"max_steps_per_callback":4}
+10-27 09:05:28.223  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":135731,"rom_run":1,"pending_frames":7574.17,"max_steps_per_callback":4}
+10-27 09:05:28.272  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":135776,"rom_run":1,"frames":61,"rom_frames":61,"target_hz":60.0988,"sample_frames":61,"canvas_callbacks":16,"draw_submissions":3,"emu_fps":0.48,"draw_fps":0.02,"core_mean_ms":2098.493,"core_p95_ms":2397.7,"draw_mean_ms":100.6,"draw_p95_ms":294.9,"window_ms":127045,"core_max_ms":25587.7,"canvas_submit_mean_ms":23.031,"canvas_submit_p95_ms":295,"canvas_submit_max_ms":295,"raf_interval_p95_ms":31621.4,"raf_interval_max_ms":31621.4,"emulation_backlog_frames":7574.17,"peak_backlog_frames":7574.17}
+10-27 09:05:30.637  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":138145,"rom_run":1,"pending_frames":7711.55,"max_steps_per_callback":4}
+10-27 09:05:32.686  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":140194,"rom_run":1,"pending_frames":7846.91,"max_steps_per_callback":4}
+10-27 09:05:34.731  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":142239,"rom_run":1,"pending_frames":7966.24,"max_steps_per_callback":4}
+10-27 09:05:36.746  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":144254,"rom_run":1,"pending_frames":8084.56,"max_steps_per_callback":4}
+10-27 09:05:38.838  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":146346,"rom_run":1,"pending_frames":8201.89,"max_steps_per_callback":4}
+10-27 09:05:40.864  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":148372,"rom_run":1,"pending_frames":8323.22,"max_steps_per_callback":4}
+10-27 09:05:42.938  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":150446,"rom_run":1,"pending_frames":8441.53,"max_steps_per_callback":4}
+10-27 09:05:45.000  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":152509,"rom_run":1,"pending_frames":8561.87,"max_steps_per_callback":4}
+10-27 09:05:47.067  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":154575,"rom_run":1,"pending_frames":8682.19,"max_steps_per_callback":4}
+10-27 09:05:49.148  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":156656,"rom_run":1,"pending_frames":8802.52,"max_steps_per_callback":4}
+10-27 09:05:51.202  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":158710,"rom_run":1,"pending_frames":8922.85,"max_steps_per_callback":4}
+10-27 09:05:53.231  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":160739,"rom_run":1,"pending_frames":9043.18,"max_steps_per_callback":4}
+10-27 09:05:55.337  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":162845,"rom_run":1,"pending_frames":9160.5,"max_steps_per_callback":4}
+10-27 09:05:57.414  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":164922,"rom_run":1,"pending_frames":9282.83,"max_steps_per_callback":4}
+10-27 09:05:59.514  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":167022,"rom_run":1,"pending_frames":9404.16,"max_steps_per_callback":4}
+10-27 09:05:59.516  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":167024,"rom_run":1,"frames":121,"rom_frames":121,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.06,"draw_fps":0.51,"core_mean_ms":518.737,"core_p95_ms":557.6,"draw_mean_ms":2.033,"draw_p95_ms":2.9,"window_ms":29143,"core_max_ms":632.9,"canvas_submit_mean_ms":2.1,"canvas_submit_p95_ms":2.9,"canvas_submit_max_ms":2.9,"raf_interval_p95_ms":2341.3,"raf_interval_max_ms":2341.3,"emulation_backlog_frames":9404.16,"peak_backlog_frames":9404.16}
+10-27 09:06:01.624  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":169132,"rom_run":1,"pending_frames":9526.5,"max_steps_per_callback":4}
+10-27 09:06:03.667  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":171175,"rom_run":1,"pending_frames":9648.83,"max_steps_per_callback":4}
+10-27 09:06:05.762  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":173270,"rom_run":1,"pending_frames":9768.15,"max_steps_per_callback":4}
+10-27 09:06:07.855  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":175363,"rom_run":1,"pending_frames":9889.49,"max_steps_per_callback":4}
+10-27 09:06:09.909  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":177418,"rom_run":1,"pending_frames":10011.82,"max_steps_per_callback":4}
+10-27 09:06:11.950  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":179458,"rom_run":1,"pending_frames":10131.15,"max_steps_per_callback":4}
+10-27 09:06:14.117  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":181625,"rom_run":1,"pending_frames":10249.47,"max_steps_per_callback":4}
+10-27 09:06:16.143  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":183652,"rom_run":1,"pending_frames":10375.82,"max_steps_per_callback":4}
+10-27 09:06:18.302  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":185811,"rom_run":1,"pending_frames":10494.14,"max_steps_per_callback":4}
+10-27 09:06:20.304  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":187812,"rom_run":1,"pending_frames":10619.48,"max_steps_per_callback":4}
+10-27 09:06:22.327  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":189835,"rom_run":1,"pending_frames":10735.8,"max_steps_per_callback":4}
+10-27 09:06:24.334  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":191842,"rom_run":1,"pending_frames":10853.12,"max_steps_per_callback":4}
+10-27 09:06:26.339  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":193847,"rom_run":1,"pending_frames":10969.43,"max_steps_per_callback":4}
+10-27 09:06:28.320  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":195828,"rom_run":1,"pending_frames":11086.76,"max_steps_per_callback":4}
+10-27 09:06:30.317  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":197825,"rom_run":1,"pending_frames":11201.07,"max_steps_per_callback":4}
+10-27 09:06:30.318  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":197827,"rom_run":1,"frames":181,"rom_frames":181,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.08,"draw_fps":0.52,"core_mean_ms":512.048,"core_p95_ms":553.7,"draw_mean_ms":1.973,"draw_p95_ms":2.1,"window_ms":28806,"core_max_ms":615.1,"canvas_submit_mean_ms":2.027,"canvas_submit_p95_ms":2.2,"canvas_submit_max_ms":2.2,"raf_interval_p95_ms":2167.6,"raf_interval_max_ms":2167.6,"emulation_backlog_frames":11201.07,"peak_backlog_frames":11201.07}
+10-27 09:06:32.336  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":199844,"rom_run":1,"pending_frames":11317.39,"max_steps_per_callback":4}
+10-27 09:06:34.344  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":201852,"rom_run":1,"pending_frames":11434.71,"max_steps_per_callback":4}
+10-27 09:06:36.351  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":203859,"rom_run":1,"pending_frames":11551.03,"max_steps_per_callback":4}
+10-27 09:06:38.360  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":205868,"rom_run":1,"pending_frames":11668.35,"max_steps_per_callback":4}
+10-27 09:06:40.368  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":207876,"rom_run":1,"pending_frames":11784.67,"max_steps_per_callback":4}
+10-27 09:06:42.387  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":209894,"rom_run":1,"pending_frames":11901.99,"max_steps_per_callback":4}
+10-27 09:06:44.355  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":211864,"rom_run":1,"pending_frames":12019.31,"max_steps_per_callback":4}
+10-27 09:06:46.339  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":213847,"rom_run":1,"pending_frames":12133.62,"max_steps_per_callback":4}
+10-27 09:06:48.338  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":215846,"rom_run":1,"pending_frames":12247.94,"max_steps_per_callback":4}
+10-27 09:06:50.349  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":217858,"rom_run":1,"pending_frames":12364.25,"max_steps_per_callback":4}
+10-27 09:06:52.349  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":219857,"rom_run":1,"pending_frames":12481.57,"max_steps_per_callback":4}
+10-27 09:06:54.337  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":221845,"rom_run":1,"pending_frames":12597.9,"max_steps_per_callback":4}
+10-27 09:06:56.362  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":223870,"rom_run":1,"pending_frames":12713.2,"max_steps_per_callback":4}
+10-27 09:06:58.377  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":225885,"rom_run":1,"pending_frames":12830.52,"max_steps_per_callback":4}
+10-27 09:07:00.390  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":227898,"rom_run":1,"pending_frames":12947.85,"max_steps_per_callback":4}
+10-27 09:07:00.392  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":227900,"rom_run":1,"frames":241,"rom_frames":241,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.14,"draw_fps":0.53,"core_mean_ms":500.052,"core_p95_ms":529.5,"draw_mean_ms":1.98,"draw_p95_ms":2.3,"window_ms":28061,"core_max_ms":534.4,"canvas_submit_mean_ms":2.033,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2024.4,"raf_interval_max_ms":2024.4,"emulation_backlog_frames":12947.85,"peak_backlog_frames":12947.85}
+10-27 09:07:02.427  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":229936,"rom_run":1,"pending_frames":13065.17,"max_steps_per_callback":4}
+10-27 09:07:04.451  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":231960,"rom_run":1,"pending_frames":13183.49,"max_steps_per_callback":4}
+10-27 09:07:06.437  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":233945,"rom_run":1,"pending_frames":13300.81,"max_steps_per_callback":4}
+10-27 09:07:08.424  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":235932,"rom_run":1,"pending_frames":13416.13,"max_steps_per_callback":4}
+10-27 09:07:10.390  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":237898,"rom_run":1,"pending_frames":13531.44,"max_steps_per_callback":4}
+10-27 09:07:12.376  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":239884,"rom_run":1,"pending_frames":13645.75,"max_steps_per_callback":4}
+10-27 09:07:14.394  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":241902,"rom_run":1,"pending_frames":13761.07,"max_steps_per_callback":4}
+10-27 09:07:16.405  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":243914,"rom_run":1,"pending_frames":13878.39,"max_steps_per_callback":4}
+10-27 09:07:18.541  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":246050,"rom_run":1,"pending_frames":13995.71,"max_steps_per_callback":4}
+10-27 09:07:20.625  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":248133,"rom_run":1,"pending_frames":14120.05,"max_steps_per_callback":4}
+10-27 09:07:22.661  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":250169,"rom_run":1,"pending_frames":14241.38,"max_steps_per_callback":4}
+10-27 09:07:24.680  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":252188,"rom_run":1,"pending_frames":14359.71,"max_steps_per_callback":4}
+10-27 09:07:26.714  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":254222,"rom_run":1,"pending_frames":14477.03,"max_steps_per_callback":4}
+10-27 09:07:35.969  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":263477,"rom_run":1,"pending_frames":14595.35,"max_steps_per_callback":4}
+10-27 09:07:38.783  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":266291,"rom_run":1,"pending_frames":15146.82,"max_steps_per_callback":4}
+10-27 09:07:38.784  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":266292,"rom_run":1,"frames":301,"rom_frames":301,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":1.69,"draw_fps":0.42,"core_mean_ms":638.63,"core_p95_ms":569.2,"draw_mean_ms":2.087,"draw_p95_ms":2.6,"window_ms":35578,"core_max_ms":7733.3,"canvas_submit_mean_ms":2.133,"canvas_submit_p95_ms":2.6,"canvas_submit_max_ms":2.6,"raf_interval_p95_ms":9253.9,"raf_interval_max_ms":9253.9,"emulation_backlog_frames":15146.82,"peak_backlog_frames":15146.82}
+10-27 09:07:40.973  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":268481,"rom_run":1,"pending_frames":15312.26,"max_steps_per_callback":4}
+10-27 09:07:43.125  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":270633,"rom_run":1,"pending_frames":15439.6,"max_steps_per_callback":4}
+10-27 09:07:45.472  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":272980,"rom_run":1,"pending_frames":15564.96,"max_steps_per_callback":4}
+10-27 09:07:47.635  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":275144,"rom_run":1,"pending_frames":15702.33,"max_steps_per_callback":4}
+10-27 09:07:49.793  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":277301,"rom_run":1,"pending_frames":15828.67,"max_steps_per_callback":4}
+10-27 09:07:51.851  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":279359,"rom_run":1,"pending_frames":15954.01,"max_steps_per_callback":4}
+10-27 09:07:53.908  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":281416,"rom_run":1,"pending_frames":16073.34,"max_steps_per_callback":4}
+10-27 09:07:55.977  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":283485,"rom_run":1,"pending_frames":16193.67,"max_steps_per_callback":4}
+10-27 09:07:58.050  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":285558,"rom_run":1,"pending_frames":16313.99,"max_steps_per_callback":4}
+10-27 09:08:00.128  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":287636,"rom_run":1,"pending_frames":16434.33,"max_steps_per_callback":4}
+10-27 09:08:02.197  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":289705,"rom_run":1,"pending_frames":16554.65,"max_steps_per_callback":4}
+10-27 09:08:04.259  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":291767,"rom_run":1,"pending_frames":16674.99,"max_steps_per_callback":4}
+10-27 09:08:06.333  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":293841,"rom_run":1,"pending_frames":16795.31,"max_steps_per_callback":4}
+10-27 09:08:08.416  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":295925,"rom_run":1,"pending_frames":16915.64,"max_steps_per_callback":4}
+10-27 09:08:10.485  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":297993,"rom_run":1,"pending_frames":17036.97,"max_steps_per_callback":4}
+10-27 09:08:10.486  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":297995,"rom_run":1,"frames":361,"rom_frames":361,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.02,"draw_fps":0.51,"core_mean_ms":526.503,"core_p95_ms":613.1,"draw_mean_ms":1.98,"draw_p95_ms":2.2,"window_ms":29635,"core_max_ms":691.1,"canvas_submit_mean_ms":2.027,"canvas_submit_p95_ms":2.2,"canvas_submit_max_ms":2.2,"raf_interval_p95_ms":2822.3,"raf_interval_max_ms":2822.3,"emulation_backlog_frames":17036.97,"peak_backlog_frames":17036.97}
+10-27 09:08:12.550  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":300059,"rom_run":1,"pending_frames":17158.3,"max_steps_per_callback":4}
+10-27 09:08:14.608  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":302116,"rom_run":1,"pending_frames":17277.63,"max_steps_per_callback":4}
+10-27 09:08:16.703  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":304211,"rom_run":1,"pending_frames":17396.95,"max_steps_per_callback":4}
+10-27 09:08:18.759  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":306267,"rom_run":1,"pending_frames":17519.28,"max_steps_per_callback":4}
+10-27 09:08:20.916  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":308424,"rom_run":1,"pending_frames":17638.61,"max_steps_per_callback":4}
+10-27 09:08:23.031  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":310539,"rom_run":1,"pending_frames":17763.96,"max_steps_per_callback":4}
+10-27 09:08:25.095  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":312604,"rom_run":1,"pending_frames":17887.29,"max_steps_per_callback":4}
+10-27 09:08:27.176  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":314685,"rom_run":1,"pending_frames":18007.62,"max_steps_per_callback":4}
+10-27 09:08:29.231  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":316739,"rom_run":1,"pending_frames":18128.95,"max_steps_per_callback":4}
+10-27 09:08:31.339  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":318848,"rom_run":1,"pending_frames":18248.27,"max_steps_per_callback":4}
+10-27 09:08:33.454  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":320962,"rom_run":1,"pending_frames":18370.61,"max_steps_per_callback":4}
+10-27 09:08:35.511  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":323020,"rom_run":1,"pending_frames":18493.94,"max_steps_per_callback":4}
+10-27 09:08:37.590  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":325098,"rom_run":1,"pending_frames":18613.27,"max_steps_per_callback":4}
+10-27 09:08:39.617  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":327125,"rom_run":1,"pending_frames":18734.6,"max_steps_per_callback":4}
+10-27 09:08:41.627  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":329135,"rom_run":1,"pending_frames":18851.92,"max_steps_per_callback":4}
+10-27 09:08:41.629  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":329137,"rom_run":1,"frames":421,"rom_frames":421,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.06,"draw_fps":0.51,"core_mean_ms":517.808,"core_p95_ms":556.1,"draw_mean_ms":1.987,"draw_p95_ms":2.3,"window_ms":29132,"core_max_ms":590.1,"canvas_submit_mean_ms":2.033,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2157.9,"raf_interval_max_ms":2157.9,"emulation_backlog_frames":18851.92,"peak_backlog_frames":18851.92}
+10-27 09:08:43.679  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":331188,"rom_run":1,"pending_frames":18969.25,"max_steps_per_callback":4}
+10-27 09:08:45.734  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":333242,"rom_run":1,"pending_frames":19088.57,"max_steps_per_callback":4}
+10-27 09:08:47.807  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":335315,"rom_run":1,"pending_frames":19207.9,"max_steps_per_callback":4}
+10-27 09:08:49.874  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":337382,"rom_run":1,"pending_frames":19328.23,"max_steps_per_callback":4}
+10-27 09:08:51.947  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":339455,"rom_run":1,"pending_frames":19448.56,"max_steps_per_callback":4}
+10-27 09:08:54.007  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":341515,"rom_run":1,"pending_frames":19568.88,"max_steps_per_callback":4}
+10-27 09:08:56.065  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":343574,"rom_run":1,"pending_frames":19689.21,"max_steps_per_callback":4}
+10-27 09:08:58.146  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":345654,"rom_run":1,"pending_frames":19808.54,"max_steps_per_callback":4}
+10-27 09:09:00.242  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":347751,"rom_run":1,"pending_frames":19929.87,"max_steps_per_callback":4}
+10-27 09:09:02.282  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":349791,"rom_run":1,"pending_frames":20052.2,"max_steps_per_callback":4}
+10-27 09:09:04.307  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":351816,"rom_run":1,"pending_frames":20170.52,"max_steps_per_callback":4}
+10-27 09:09:06.343  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":353851,"rom_run":1,"pending_frames":20287.85,"max_steps_per_callback":4}
+10-27 09:09:08.397  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":355905,"rom_run":1,"pending_frames":20406.17,"max_steps_per_callback":4}
+10-27 09:09:10.510  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":358018,"rom_run":1,"pending_frames":20525.5,"max_steps_per_callback":4}
+10-27 09:09:12.530  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":360038,"rom_run":1,"pending_frames":20648.83,"max_steps_per_callback":4}
+10-27 09:09:12.531  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":360039,"rom_run":1,"frames":481,"rom_frames":481,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.08,"draw_fps":0.52,"core_mean_ms":513.858,"core_p95_ms":539.7,"draw_mean_ms":1.993,"draw_p95_ms":2.5,"window_ms":28883,"core_max_ms":554.7,"canvas_submit_mean_ms":2.027,"canvas_submit_p95_ms":2.5,"canvas_submit_max_ms":2.5,"raf_interval_p95_ms":2113.8,"raf_interval_max_ms":2113.8,"emulation_backlog_frames":20648.83,"peak_backlog_frames":20648.83}
+10-27 09:09:14.535  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":362043,"rom_run":1,"pending_frames":20766.15,"max_steps_per_callback":4}
+10-27 09:09:16.596  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":364105,"rom_run":1,"pending_frames":20882.47,"max_steps_per_callback":4}
+10-27 09:09:18.678  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":366186,"rom_run":1,"pending_frames":21002.8,"max_steps_per_callback":4}
+10-27 09:09:20.727  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":368235,"rom_run":1,"pending_frames":21124.13,"max_steps_per_callback":4}
+10-27 09:09:22.850  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":370358,"rom_run":1,"pending_frames":21242.45,"max_steps_per_callback":4}
+10-27 09:09:24.993  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":372502,"rom_run":1,"pending_frames":21366.79,"max_steps_per_callback":4}
+10-27 09:09:27.073  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":374582,"rom_run":1,"pending_frames":21491.14,"max_steps_per_callback":4}
+10-27 09:09:29.142  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":376650,"rom_run":1,"pending_frames":21612.46,"max_steps_per_callback":4}
+10-27 09:09:31.209  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":378717,"rom_run":1,"pending_frames":21732.79,"max_steps_per_callback":4}
+10-27 09:09:33.268  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":380776,"rom_run":1,"pending_frames":21853.12,"max_steps_per_callback":4}
+10-27 09:09:35.345  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":382854,"rom_run":1,"pending_frames":21972.44,"max_steps_per_callback":4}
+10-27 09:09:37.408  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":384917,"rom_run":1,"pending_frames":22093.78,"max_steps_per_callback":4}
+10-27 09:09:39.492  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":387000,"rom_run":1,"pending_frames":22213.11,"max_steps_per_callback":4}
+10-27 09:09:41.563  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":389071,"rom_run":1,"pending_frames":22334.44,"max_steps_per_callback":4}
+10-27 09:09:43.648  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":391156,"rom_run":1,"pending_frames":22454.76,"max_steps_per_callback":4}
+10-27 09:09:43.651  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":391158,"rom_run":1,"frames":541,"rom_frames":541,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.07,"draw_fps":0.52,"core_mean_ms":517.488,"core_p95_ms":541.8,"draw_mean_ms":1.993,"draw_p95_ms":2.2,"window_ms":29033,"core_max_ms":583.7,"canvas_submit_mean_ms":2.033,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2142.5,"raf_interval_max_ms":2142.5,"emulation_backlog_frames":22454.76,"peak_backlog_frames":22454.76}
+10-27 09:09:45.726  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":393234,"rom_run":1,"pending_frames":22577.1,"max_steps_per_callback":4}
+10-27 09:09:47.805  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":395312,"rom_run":1,"pending_frames":22697.43,"max_steps_per_callback":4}
+10-27 09:09:49.929  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":397437,"rom_run":1,"pending_frames":22818.76,"max_steps_per_callback":4}
+10-27 09:09:52.094  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":399602,"rom_run":1,"pending_frames":22942.09,"max_steps_per_callback":4}
+10-27 09:09:54.253  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":401761,"rom_run":1,"pending_frames":23068.44,"max_steps_per_callback":4}
+10-27 09:09:56.597  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":404105,"rom_run":1,"pending_frames":23193.78,"max_steps_per_callback":4}
+10-27 09:09:58.758  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":406267,"rom_run":1,"pending_frames":23331.15,"max_steps_per_callback":4}
+10-27 09:10:00.909  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":408417,"rom_run":1,"pending_frames":23456.5,"max_steps_per_callback":4}
+10-27 09:10:03.070  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":410579,"rom_run":1,"pending_frames":23581.84,"max_steps_per_callback":4}
+10-27 09:10:05.162  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":412670,"rom_run":1,"pending_frames":23708.18,"max_steps_per_callback":4}
+10-27 09:10:07.225  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":414734,"rom_run":1,"pending_frames":23829.51,"max_steps_per_callback":4}
+10-27 09:10:09.316  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":416824,"rom_run":1,"pending_frames":23949.84,"max_steps_per_callback":4}
+10-27 09:10:11.390  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":418898,"rom_run":1,"pending_frames":24071.17,"max_steps_per_callback":4}
+10-27 09:10:13.395  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":420903,"rom_run":1,"pending_frames":24191.5,"max_steps_per_callback":4}
+10-27 09:10:15.473  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":422981,"rom_run":1,"pending_frames":24307.82,"max_steps_per_callback":4}
+10-27 09:10:15.475  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":422983,"rom_run":1,"frames":601,"rom_frames":601,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.02,"draw_fps":0.5,"core_mean_ms":529.222,"core_p95_ms":619.7,"draw_mean_ms":1.927,"draw_p95_ms":2.1,"window_ms":29747,"core_max_ms":699,"canvas_submit_mean_ms":1.987,"canvas_submit_p95_ms":2.1,"canvas_submit_max_ms":2.1,"raf_interval_p95_ms":2344.4,"raf_interval_max_ms":2344.4,"emulation_backlog_frames":24307.82,"peak_backlog_frames":24307.82}
+10-27 09:10:17.567  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":425075,"rom_run":1,"pending_frames":24429.15,"max_steps_per_callback":4}
+10-27 09:10:19.632  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":427141,"rom_run":1,"pending_frames":24550.48,"max_steps_per_callback":4}
+10-27 09:10:21.691  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":429199,"rom_run":1,"pending_frames":24670.81,"max_steps_per_callback":4}
+10-27 09:10:23.767  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":431275,"rom_run":1,"pending_frames":24791.13,"max_steps_per_callback":4}
+10-27 09:10:25.870  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":433378,"rom_run":1,"pending_frames":24911.47,"max_steps_per_callback":4}
+10-27 09:10:28.016  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":435524,"rom_run":1,"pending_frames":25033.8,"max_steps_per_callback":4}
+10-27 09:10:30.068  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":437576,"rom_run":1,"pending_frames":25159.15,"max_steps_per_callback":4}
+10-27 09:10:32.124  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":439632,"rom_run":1,"pending_frames":25278.47,"max_steps_per_callback":4}
+10-27 09:10:34.190  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":441698,"rom_run":1,"pending_frames":25397.8,"max_steps_per_callback":4}
+10-27 09:10:36.245  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":443754,"rom_run":1,"pending_frames":25518.12,"max_steps_per_callback":4}
+10-27 09:10:38.302  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":445811,"rom_run":1,"pending_frames":25637.45,"max_steps_per_callback":4}
+10-27 09:10:40.328  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":447836,"rom_run":1,"pending_frames":25756.77,"max_steps_per_callback":4}
+10-27 09:10:42.424  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":449932,"rom_run":1,"pending_frames":25875.1,"max_steps_per_callback":4}
+10-27 09:10:44.504  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":452012,"rom_run":1,"pending_frames":25996.42,"max_steps_per_callback":4}
+10-27 09:10:46.571  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":454079,"rom_run":1,"pending_frames":26117.76,"max_steps_per_callback":4}
+10-27 09:10:46.572  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":454081,"rom_run":1,"frames":661,"rom_frames":661,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.07,"draw_fps":0.52,"core_mean_ms":517.112,"core_p95_ms":541.7,"draw_mean_ms":1.973,"draw_p95_ms":2.2,"window_ms":29030,"core_max_ms":574.5,"canvas_submit_mean_ms":2.04,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2145.3,"raf_interval_max_ms":2145.3,"emulation_backlog_frames":26117.76,"peak_backlog_frames":26117.76}
+10-27 09:10:48.675  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":456183,"rom_run":1,"pending_frames":26238.09,"max_steps_per_callback":4}
+10-27 09:10:50.733  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":458241,"rom_run":1,"pending_frames":26360.43,"max_steps_per_callback":4}
+10-27 09:10:52.798  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":460307,"rom_run":1,"pending_frames":26479.75,"max_steps_per_callback":4}
+10-27 09:10:54.867  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":462375,"rom_run":1,"pending_frames":26600.08,"max_steps_per_callback":4}
+10-27 09:10:56.934  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":464442,"rom_run":1,"pending_frames":26720.41,"max_steps_per_callback":4}
+10-27 09:10:58.987  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":466495,"rom_run":1,"pending_frames":26840.73,"max_steps_per_callback":4}
+10-27 09:11:01.069  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":468577,"rom_run":1,"pending_frames":26960.06,"max_steps_per_callback":4}
+10-27 09:11:03.253  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":470762,"rom_run":1,"pending_frames":27081.39,"max_steps_per_callback":4}
+10-27 09:11:05.321  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":472830,"rom_run":1,"pending_frames":27208.74,"max_steps_per_callback":4}
+10-27 09:11:07.375  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":474884,"rom_run":1,"pending_frames":27329.06,"max_steps_per_callback":4}
+10-27 09:11:09.442  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":476950,"rom_run":1,"pending_frames":27448.39,"max_steps_per_callback":4}
+10-27 09:11:11.511  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":479019,"rom_run":1,"pending_frames":27568.72,"max_steps_per_callback":4}
+10-27 09:11:13.591  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":481099,"rom_run":1,"pending_frames":27689.05,"max_steps_per_callback":4}
+10-27 09:11:15.622  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":483130,"rom_run":1,"pending_frames":27810.38,"max_steps_per_callback":4}
+10-27 09:11:17.691  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":485199,"rom_run":1,"pending_frames":27927.7,"max_steps_per_callback":4}
+10-27 09:11:17.692  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":485200,"rom_run":1,"frames":721,"rom_frames":721,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.07,"draw_fps":0.52,"core_mean_ms":517.445,"core_p95_ms":542.8,"draw_mean_ms":2.013,"draw_p95_ms":2.4,"window_ms":29051,"core_max_ms":562.9,"canvas_submit_mean_ms":2.073,"canvas_submit_p95_ms":2.4,"canvas_submit_max_ms":2.4,"raf_interval_p95_ms":2186.3,"raf_interval_max_ms":2186.3,"emulation_backlog_frames":27927.7,"peak_backlog_frames":27927.7}
+10-27 09:11:19.924  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":487433,"rom_run":1,"pending_frames":28049.03,"max_steps_per_callback":4}
+10-27 09:11:21.974  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":489483,"rom_run":1,"pending_frames":28178.39,"max_steps_per_callback":4}
+10-27 09:11:24.023  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":491532,"rom_run":1,"pending_frames":28297.72,"max_steps_per_callback":4}
+10-27 09:11:26.084  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":493592,"rom_run":1,"pending_frames":28417.04,"max_steps_per_callback":4}
+10-27 09:11:28.166  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":495674,"rom_run":1,"pending_frames":28536.36,"max_steps_per_callback":4}
+10-27 09:11:30.221  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":497729,"rom_run":1,"pending_frames":28657.69,"max_steps_per_callback":4}
+10-27 09:11:32.287  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":499795,"rom_run":1,"pending_frames":28777.02,"max_steps_per_callback":4}
+10-27 09:11:34.359  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":501867,"rom_run":1,"pending_frames":28897.35,"max_steps_per_callback":4}
+10-27 09:11:36.414  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":503922,"rom_run":1,"pending_frames":29017.68,"max_steps_per_callback":4}
+10-27 09:11:38.462  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":505970,"rom_run":1,"pending_frames":29138.01,"max_steps_per_callback":4}
+10-27 09:11:40.540  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":508049,"rom_run":1,"pending_frames":29256.32,"max_steps_per_callback":4}
+10-27 09:11:42.591  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":510099,"rom_run":1,"pending_frames":29377.66,"max_steps_per_callback":4}
+10-27 09:11:44.641  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":512149,"rom_run":1,"pending_frames":29496.98,"max_steps_per_callback":4}
+10-27 09:11:46.703  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":514211,"rom_run":1,"pending_frames":29616.31,"max_steps_per_callback":4}
+10-27 09:11:48.774  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":516282,"rom_run":1,"pending_frames":29735.64,"max_steps_per_callback":4}
+10-27 09:11:48.775  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":516283,"rom_run":1,"frames":781,"rom_frames":781,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.07,"draw_fps":0.52,"core_mean_ms":516.91,"core_p95_ms":543.8,"draw_mean_ms":1.953,"draw_p95_ms":2.2,"window_ms":29012,"core_max_ms":582.1,"canvas_submit_mean_ms":2.013,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2229.9,"raf_interval_max_ms":2229.9,"emulation_backlog_frames":29735.64,"peak_backlog_frames":29735.64}
+10-27 09:11:50.851  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":518359,"rom_run":1,"pending_frames":29856.97,"max_steps_per_callback":4}
+10-27 09:11:52.927  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":520435,"rom_run":1,"pending_frames":29977.3,"max_steps_per_callback":4}
+10-27 09:11:54.994  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":522502,"rom_run":1,"pending_frames":30097.63,"max_steps_per_callback":4}
+10-27 09:11:57.040  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":524548,"rom_run":1,"pending_frames":30217.96,"max_steps_per_callback":4}
+10-27 09:11:59.125  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":526634,"rom_run":1,"pending_frames":30337.28,"max_steps_per_callback":4}
+10-27 09:12:01.189  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":528698,"rom_run":1,"pending_frames":30458.61,"max_steps_per_callback":4}
+10-27 09:12:03.203  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":530711,"rom_run":1,"pending_frames":30578.94,"max_steps_per_callback":4}
+10-27 09:12:05.280  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":532788,"rom_run":1,"pending_frames":30695.26,"max_steps_per_callback":4}
+10-27 09:12:07.341  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":534850,"rom_run":1,"pending_frames":30816.59,"max_steps_per_callback":4}
+10-27 09:12:09.407  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":536915,"rom_run":1,"pending_frames":30935.92,"max_steps_per_callback":4}
+10-27 09:12:11.481  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":538989,"rom_run":1,"pending_frames":31056.24,"max_steps_per_callback":4}
+10-27 09:12:13.558  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":541066,"rom_run":1,"pending_frames":31177.57,"max_steps_per_callback":4}
+10-27 09:12:15.616  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":543124,"rom_run":1,"pending_frames":31297.91,"max_steps_per_callback":4}
+10-27 09:12:17.676  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":545185,"rom_run":1,"pending_frames":31417.23,"max_steps_per_callback":4}
+10-27 09:12:19.766  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":547275,"rom_run":1,"pending_frames":31537.56,"max_steps_per_callback":4}
+10-27 09:12:19.767  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":547276,"rom_run":1,"frames":841,"rom_frames":841,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.08,"draw_fps":0.52,"core_mean_ms":515.338,"core_p95_ms":543.3,"draw_mean_ms":1.967,"draw_p95_ms":2.4,"window_ms":28903,"core_max_ms":549.5,"canvas_submit_mean_ms":2.033,"canvas_submit_p95_ms":2.4,"canvas_submit_max_ms":2.4,"raf_interval_p95_ms":2083.2,"raf_interval_max_ms":2083.2,"emulation_backlog_frames":31537.56,"peak_backlog_frames":31537.56}
+10-27 09:12:21.851  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":549359,"rom_run":1,"pending_frames":31658.89,"max_steps_per_callback":4}
+10-27 09:12:23.918  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":551426,"rom_run":1,"pending_frames":31780.22,"max_steps_per_callback":4}
+10-27 09:12:26.038  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":553546,"rom_run":1,"pending_frames":31900.55,"max_steps_per_callback":4}
+10-27 09:12:28.086  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":555595,"rom_run":1,"pending_frames":32023.89,"max_steps_per_callback":4}
+10-27 09:12:30.160  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":557668,"rom_run":1,"pending_frames":32143.21,"max_steps_per_callback":4}
+10-27 09:12:32.214  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":559722,"rom_run":1,"pending_frames":32263.54,"max_steps_per_callback":4}
+10-27 09:12:34.379  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":561887,"rom_run":1,"pending_frames":32382.87,"max_steps_per_callback":4}
+10-27 09:12:36.449  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":563957,"rom_run":1,"pending_frames":32509.21,"max_steps_per_callback":4}
+10-27 09:12:38.520  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":566028,"rom_run":1,"pending_frames":32629.54,"max_steps_per_callback":4}
+10-27 09:12:40.585  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":568093,"rom_run":1,"pending_frames":32749.86,"max_steps_per_callback":4}
+10-27 09:12:42.639  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":570147,"rom_run":1,"pending_frames":32870.2,"max_steps_per_callback":4}
+10-27 09:12:44.704  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":572212,"rom_run":1,"pending_frames":32989.52,"max_steps_per_callback":4}
+10-27 09:12:46.772  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":574280,"rom_run":1,"pending_frames":33109.85,"max_steps_per_callback":4}
+10-27 09:12:48.850  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":576359,"rom_run":1,"pending_frames":33230.18,"max_steps_per_callback":4}
+10-27 09:12:50.920  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":578429,"rom_run":1,"pending_frames":33350.51,"max_steps_per_callback":4}
+10-27 09:12:50.922  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":578430,"rom_run":1,"frames":901,"rom_frames":901,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.06,"draw_fps":0.52,"core_mean_ms":518.038,"core_p95_ms":538.5,"draw_mean_ms":1.987,"draw_p95_ms":2.2,"window_ms":29084,"core_max_ms":616.5,"canvas_submit_mean_ms":2.033,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2164.9,"raf_interval_max_ms":2164.9,"emulation_backlog_frames":33350.51,"peak_backlog_frames":33350.51}
+10-27 09:12:53.015  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":580523,"rom_run":1,"pending_frames":33471.83,"max_steps_per_callback":4}
+10-27 09:12:55.090  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":582598,"rom_run":1,"pending_frames":33593.17,"max_steps_per_callback":4}
+10-27 09:12:57.141  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":584649,"rom_run":1,"pending_frames":33713.5,"max_steps_per_callback":4}
+10-27 09:12:59.223  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":586731,"rom_run":1,"pending_frames":33832.83,"max_steps_per_callback":4}
+10-27 09:13:01.291  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":588799,"rom_run":1,"pending_frames":33954.16,"max_steps_per_callback":4}
+10-27 09:13:03.344  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":590852,"rom_run":1,"pending_frames":34074.48,"max_steps_per_callback":4}
+10-27 09:13:05.412  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":592920,"rom_run":1,"pending_frames":34193.81,"max_steps_per_callback":4}
+10-27 09:13:07.461  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":594969,"rom_run":1,"pending_frames":34314.14,"max_steps_per_callback":4}
+10-27 09:13:09.540  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":597048,"rom_run":1,"pending_frames":34433.46,"max_steps_per_callback":4}
+10-27 09:13:11.607  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":599115,"rom_run":1,"pending_frames":34554.8,"max_steps_per_callback":4}
+10-27 09:13:13.675  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":601184,"rom_run":1,"pending_frames":34674.12,"max_steps_per_callback":4}
+10-27 09:13:15.750  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":603259,"rom_run":1,"pending_frames":34794.45,"max_steps_per_callback":4}
+10-27 09:13:17.822  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":605331,"rom_run":1,"pending_frames":34915.78,"max_steps_per_callback":4}
+10-27 09:13:19.889  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":607398,"rom_run":1,"pending_frames":35036.11,"max_steps_per_callback":4}
+10-27 09:13:21.933  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":609441,"rom_run":1,"pending_frames":35156.44,"max_steps_per_callback":4}
+10-27 09:13:21.934  1520  1520 I BJG_TV_METRIC: {"event":"playback_window","t_ms":609442,"rom_run":1,"frames":961,"rom_frames":961,"target_hz":60.0988,"sample_frames":60,"canvas_callbacks":15,"draw_submissions":15,"emu_fps":2.07,"draw_fps":0.52,"core_mean_ms":515.627,"core_p95_ms":545.7,"draw_mean_ms":2,"draw_p95_ms":2.2,"window_ms":28971,"core_max_ms":548,"canvas_submit_mean_ms":2.093,"canvas_submit_p95_ms":2.3,"canvas_submit_max_ms":2.3,"raf_interval_p95_ms":2089.2,"raf_interval_max_ms":2089.2,"emulation_backlog_frames":35156.44,"peak_backlog_frames":35156.44}
+10-27 09:13:24.010  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":611519,"rom_run":1,"pending_frames":35275.76,"max_steps_per_callback":4}
+10-27 09:13:26.088  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":613596,"rom_run":1,"pending_frames":35396.1,"max_steps_per_callback":4}
+10-27 09:13:28.186  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":615694,"rom_run":1,"pending_frames":35516.42,"max_steps_per_callback":4}
+10-27 09:13:30.305  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":617813,"rom_run":1,"pending_frames":35638.76,"max_steps_per_callback":4}
+10-27 09:13:32.448  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":619957,"rom_run":1,"pending_frames":35762.09,"max_steps_per_callback":4}
+10-27 09:13:34.690  1520  1520 I BJG_TV_METRIC: {"event":"emulation_backlog","t_ms":622198,"rom_run":1,"pending_frames":35887.44,"max_steps_per_callback":4}

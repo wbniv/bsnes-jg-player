@@ -1,0 +1,632 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066061.9581041,
+    "end": 1793066062.3357747,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.manufacturer"
+    ],
+    "start": 1793066062.3379874,
+    "end": 1793066062.4632802,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.brand"
+    ],
+    "start": 1793066062.4650052,
+    "end": 1793066062.7021315,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.model"
+    ],
+    "start": 1793066062.7049377,
+    "end": 1793066062.834696,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.name"
+    ],
+    "start": 1793066062.836795,
+    "end": 1793066063.1626015,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.device"
+    ],
+    "start": 1793066063.165562,
+    "end": 1793066063.341186,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.board"
+    ],
+    "start": 1793066063.344056,
+    "end": 1793066063.5169482,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.hardware"
+    ],
+    "start": 1793066063.518821,
+    "end": 1793066063.7297099,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.boot.hardware"
+    ],
+    "start": 1793066063.7318087,
+    "end": 1793066063.937391,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.soc.manufacturer"
+    ],
+    "start": 1793066063.9407077,
+    "end": 1793066064.076801,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.soc.model"
+    ],
+    "start": 1793066064.080039,
+    "end": 1793066064.3976948,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.version.release"
+    ],
+    "start": 1793066064.399609,
+    "end": 1793066064.5278735,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.version.sdk"
+    ],
+    "start": 1793066064.5299275,
+    "end": 1793066064.6524644,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.version.security_patch"
+    ],
+    "start": 1793066064.6554677,
+    "end": 1793066064.9525027,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.id"
+    ],
+    "start": 1793066064.9546158,
+    "end": 1793066065.169926,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.display.id"
+    ],
+    "start": 1793066065.1723163,
+    "end": 1793066065.295128,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.fingerprint"
+    ],
+    "start": 1793066065.2971394,
+    "end": 1793066065.5639596,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.type"
+    ],
+    "start": 1793066065.566058,
+    "end": 1793066065.699911,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.build.tags"
+    ],
+    "start": 1793066065.701999,
+    "end": 1793066065.8212376,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.bootloader"
+    ],
+    "start": 1793066065.8233678,
+    "end": 1793066065.9813156,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.cpu.abilist"
+    ],
+    "start": 1793066065.9834657,
+    "end": 1793066066.1009161,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.cpu.abilist32"
+    ],
+    "start": 1793066066.1029925,
+    "end": 1793066066.2229214,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.product.cpu.abilist64"
+    ],
+    "start": 1793066066.2250576,
+    "end": 1793066066.3988163,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.opengles.version"
+    ],
+    "start": 1793066066.4020405,
+    "end": 1793066066.5914578,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop ro.hardware.egl"
+    ],
+    "start": 1793066066.5954502,
+    "end": 1793066066.8200965,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/meminfo"
+    ],
+    "start": 1793066066.8224642,
+    "end": 1793066067.010631,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/cpuinfo"
+    ],
+    "start": 1793066067.0127778,
+    "end": 1793066067.2270973,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /sys/devices/system/cpu/online"
+    ],
+    "start": 1793066067.237737,
+    "end": 1793066067.4220166,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq"
+    ],
+    "start": 1793066067.425145,
+    "end": 1793066067.7300208,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "df -k /data"
+    ],
+    "start": 1793066067.732061,
+    "end": 1793066067.9335322,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "wm size"
+    ],
+    "start": 1793066067.9358554,
+    "end": 1793066068.1004155,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "wm density"
+    ],
+    "start": 1793066068.1026495,
+    "end": 1793066068.2591982,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys display"
+    ],
+    "start": 1793066068.261334,
+    "end": 1793066068.4269066,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger"
+    ],
+    "start": 1793066068.4292834,
+    "end": 1793066068.7325091,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/version"
+    ],
+    "start": 1793066068.734717,
+    "end": 1793066068.9641657,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/uptime"
+    ],
+    "start": 1793066068.967563,
+    "end": 1793066069.1630955,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys webviewupdate"
+    ],
+    "start": 1793066069.1653352,
+    "end": 1793066069.3078935,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm list packages --show-versioncode"
+    ],
+    "start": 1793066069.31015,
+    "end": 1793066069.4777007,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys battery"
+    ],
+    "start": 1793066069.479858,
+    "end": 1793066069.805399,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793066069.8075655,
+    "end": 1793066069.9930356,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys media.codec"
+    ],
+    "start": 1793066069.9967787,
+    "end": 1793066070.1334376,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys hdmi_control"
+    ],
+    "start": 1793066070.135569,
+    "end": 1793066070.2906141,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys media.drm"
+    ],
+    "start": 1793066070.2928758,
+    "end": 1793066070.4507017,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "getprop drm.service.enabled"
+    ],
+    "start": 1793066070.4528117,
+    "end": 1793066070.5956495,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys audio"
+    ],
+    "start": 1793066070.5978131,
+    "end": 1793066070.809958,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys wifi"
+    ],
+    "start": 1793066070.8131988,
+    "end": 1793066072.0851169,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys media_session"
+    ],
+    "start": 1793066072.0958886,
+    "end": 1793066072.4605045,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "logcat -b crash -d -t 200 -v brief"
+    ],
+    "start": 1793066072.4627838,
+    "end": 1793066072.6093137,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "logcat -b main,system,events -d -t 1000 -v brief"
+    ],
+    "start": 1793066072.630298,
+    "end": 1793066073.231356,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ls /vendor/etc"
+    ],
+    "start": 1793066073.2359185,
+    "end": 1793066073.4765086,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /vendor/etc/media_codecs.xml"
+    ],
+    "start": 1793066073.4787066,
+    "end": 1793066073.6104076,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ls /vendor/lib/mediadrm"
+    ],
+    "start": 1793066073.6127424,
+    "end": 1793066073.7549,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ls /vendor/lib64/mediadrm"
+    ],
+    "start": 1793066073.7571268,
+    "end": 1793066073.8892112,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "ls /system/lib/mediadrm"
+    ],
+    "start": 1793066073.8920689,
+    "end": 1793066074.0308452,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "ls /odm/lib/mediadrm"
+    ],
+    "start": 1793066074.0355763,
+    "end": 1793066074.2761762,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "ls /vendor/etc/drm"
+    ],
+    "start": 1793066074.2791045,
+    "end": 1793066074.4162033,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "settings get global window_animation_scale"
+    ],
+    "start": 1793066074.4188986,
+    "end": 1793066074.716889,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get global transition_animation_scale"
+    ],
+    "start": 1793066074.7205732,
+    "end": 1793066074.9378512,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get global animator_duration_scale"
+    ],
+    "start": 1793066074.9400187,
+    "end": 1793066075.126218,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get global always_finish_activities"
+    ],
+    "start": 1793066075.1285167,
+    "end": 1793066075.3045862,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get global stay_on_while_plugged_in"
+    ],
+    "start": 1793066075.307896,
+    "end": 1793066075.4856987,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get system screen_off_timeout"
+    ],
+    "start": 1793066075.4880948,
+    "end": 1793066075.745381,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get secure sleep_timeout"
+    ],
+    "start": 1793066075.7495282,
+    "end": 1793066075.9482439,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get secure screensaver_enabled"
+    ],
+    "start": 1793066075.9505591,
+    "end": 1793066076.1087718,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get secure screensaver_activate_on_sleep"
+    ],
+    "start": 1793066076.111243,
+    "end": 1793066076.2735124,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "settings get secure screensaver_components"
+    ],
+    "start": 1793066076.2757041,
+    "end": 1793066076.437848,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys power"
+    ],
+    "start": 1793066076.4402792,
+    "end": 1793066076.8094158,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys dreams"
+    ],
+    "start": 1793066076.8133087,
+    "end": 1793066076.9668446,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cmd package query-services --brief --components -a android.service.dreams.DreamService"
+    ],
+    "start": 1793066076.9704316,
+    "end": 1793066077.2418456,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066077.2541,
+    "end": 1793066077.5688689,
+    "returncode": 0
+  }
+]

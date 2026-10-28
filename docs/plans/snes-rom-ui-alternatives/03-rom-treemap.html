@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>03 · ROM treemap</title>
+  <link rel="stylesheet" href="shared.css"><link rel="stylesheet" href="scaling.css">
+  <link rel="stylesheet" href="treemap.css">
+</head>
+<body>
+<main class="review">
+  <header class="review-head">
+    <div>
+      <p class="eyebrow">UI concept 03 · storage map</p>
+      <h1>Treemap grouped by ROM category</h1>
+      <p class="review-intro">A KDirStat-style treemap: each rectangle is one ROM, and its area represents the ROM’s exact byte size. Color and grouping show its category. Large files occupy more of the map; small builds remain individually present as tiny tiles.</p>
+    </div>
+    <span class="pill">519 ROMs · 224.9 MiB</span>
+  </header>
+  <nav class="nav">
+    <a href="index.html">All concepts</a>
+    <a href="01-variant-family-lab.html">01 · Variant family lab</a>
+    <a href="02-snes-game-menu.html">02 · SNES game menu</a>
+    <a aria-current="page" href="03-rom-treemap.html">03 · ROM treemap</a>
+    <a href="04-quick-launch.html">04 · Chromecast quick launch</a>
+    <a href="05-cartridge-flow.html">05 · Cartridge flow</a>
+  </nav>
+  <div class="preview-label"><span>Full page preview · map fills the TV canvas</span><span>Fixed 16:9 Google TV screen · area encodes ROM bytes</span></div>
+  <section class="mock">
+    <div class="tm-layout mock-inner">
+      <header class="tm-topbar">
+        <div class="tm-brand"><b>bsnes-jg</b>　ROM TREEMAP</div>
+        <div class="tm-top-controls">
+          <span class="tm-total">519 ROMs · 224.9 MiB</span>
+          <label class="tm-label" for="group-view">GROUP BY</label>
+          <select class="tm-select" id="group-view"><option selected>Category</option><option>Build family</option><option>Size band</option></select>
+          <button class="tm-search">⌕ Search ROMs</button>
+        </div>
+      </header>
+      <div class="tm-map"><img src="rom-treemap.svg" alt="Full-height treemap of all 519 ROMs grouped by category; each rectangle area represents the ROM's file size. Apollo 11 Daylight is selected." /></div>
+      <div class="tm-categories">
+        <span class="tm-category focus">ALL ROMS · 519</span>
+        <span class="tm-category"><span class="swatch" style="color:#38506b">■</span> Other builds · 368</span>
+        <span class="tm-category"><span class="swatch" style="color:#5070a0">■</span> Fractals · 11</span>
+        <span class="tm-category"><span class="swatch" style="color:#b15f64">■</span> Video · 2</span>
+        <span class="tm-category"><span class="swatch" style="color:#756c83">■</span> Cartridge · 4</span>
+        <span class="tm-category">MORE CATEGORIES ▾</span>
+      </div>
+      <aside class="tm-map-legend">AREA = ROM SIZE<br><span style="color:#d3dfeb">■</span> Every block is one .sfc file</aside>
+      <aside class="tm-detail">
+        <div class="tm-label">SELECTED ROM · VIDEO PLAYBACK</div>
+        <h3>Apollo 11 Daylight Launch</h3>
+        <div class="tm-file">apollo-daylight.sfc</div>
+        <div class="tm-detail-meta"><span>4.0 MiB · 4,194,304 bytes</span><b>SELECT · LOAD</b></div>
+      </aside>
+      <footer class="tm-footer"><span><i class="tm-key">D-PAD</i> Focus tile　 <i class="tm-key">SELECT</i> Load　 <i class="tm-key">SEARCH</i> Find　 <i class="tm-key">BACK</i> Return</span><span>DETAILS OVERLAY · MAP USES FULL HEIGHT</span></footer>
+    </div>
+  </section>
+  <section class="notes">
+    <article class="note">
+      <h2>How to read it</h2>
+      <p>Each tile is one ROM. The area is proportional to exact file size, so a 4 MiB ROM occupies 128 times the area of a 32 KiB ROM. Category clusters give the map a useful hierarchy; tile color repeats the category key.</p>
+    </article>
+    <article class="note">
+      <h2>Group by selector</h2>
+      <dl class="label-list">
+        <dt>Category</dt><dd>Default; curated semantic tags, plus Other builds</dd>
+        <dt>Build family</dt><dd>Group suffix and naming variants together</dd>
+        <dt>Size band</dt><dd>Group into &lt;64 KB, 64–256 KB, 256–512 KB, and ≥512 KB</dd>
+        <dt>Area</dt><dd>Always the individual ROM’s exact byte size</dd>
+        <dt>List</dt><dd>Alternate searchable rows for precise text navigation</dd>
+      </dl>
+    </article>
+    <article class="note">
+      <h2>Interaction and data</h2>
+      <ul>
+        <li>Select a category or search to focus the corresponding tiles. Search autocompletes titles and filenames as the remote keyboard is used; Backspace removes only the typed prefix.</li>
+        <li>Focus a tile to reveal its title, exact filename, and size; Select loads it from the detail panel.</li>
+        <li>Current build size mix: 436 ROMs under 64 KB, 19 between 64–256 KB, none between 256–512 KB, and 64 at least 512 KB.</li>
+        <li>Unclassified ROMs remain in Other builds; category tags never determine whether a file is included.</li>
+      </ul>
+    </article>
+  </section>
+
+<section class="scale-review">
+  <p class="eyebrow">Catalog-size behavior</p><h2>How the treemap adapts</h2>
+  <p class="scale-intro">At runtime, derive labels and navigation from the loaded catalog count. The rectangle area always represents the individual ROM’s byte size; the four counts below are checkpoints for the same screen.</p>
+  <div class="scale-grid">
+    <article class="scale-cell"><b>1 ROM</b><p>Show one full-area tile. Hide the group selector and category legend.</p></article>
+    <article class="scale-cell"><b>10 ROMs</b><p>Show ten readable, accurately sized tiles with inline names and sizes.</p></article>
+    <article class="scale-cell"><b>100 ROMs</b><p>Cluster by category, label tiles that fit, and expose every title by focus, search, or the list view.</p></article>
+    <article class="scale-cell"><b>1,000 ROMs</b><p>Keep all 1,000 tiles in the map; label only large rectangles. Category zoom, search, and a keyboard-accessible list provide exact navigation.</p></article>
+  </div>
+  <div class="scale-principle"><strong>What stays constant:</strong> changing Category / Build family / Size band never changes the size-to-area relationship.</div>
+</section>
+<footer class="review-foot"><span>03 / 05 · ROM treemap</span><span><a href="04-quick-launch.html">Next concept →</a></span></footer>
+</main>
+</body>
+</html>

@@ -39,16 +39,16 @@ def main():
         "",
         f"**{len(records)} ROMs · {total_bytes:,} bytes ({total_bytes / (1024 * 1024):.1f} MiB)**",
         "",
-        "Each row includes a small inline screenshot used by the TV library card. Cards are deterministic frame captures (frame number shown below); nearly blank frames use generated title-card artwork. These are the catalog's presentation images, not screenshots of the emulator UI.",
+        "Each row includes the same gameplay screenshot shown on the biohack.net SNES gallery card. The TV library copies these images byte-for-byte from `/play/preview/<slug>.png`; ROMs and images share the slug mapping in `library.json`.",
         "",
-        "| # | Screenshot | ROM | Slug | Category | Size | Card frame |",
-        "|---:|:---:|---|---|---|---:|---:|",
+        "| # | Screenshot | ROM | Slug | Category | Size | Image source |",
+        "|---:|:---:|---|---|---|---:|---|",
     ]
     for record, image in rows:
         lines.append("| " + " | ".join((
             str(record["order"]), image, cell(record["title"]), f'`{cell(record["slug"])}`',
             cell(record.get("categoryLabel", record.get("category"))),
-            f'{int(record["size"]):,} B', str(record.get("cardFrame", "—")),
+            f'{int(record["size"]):,} B', f'`{cell(record.get("cardSource", "—"))}`',
         )) + " |")
     lines.extend(("", "Source: the published catalog and ROM assets from `biohack.net` and `llvm-mos-65816`. The comparison benchmark uses only `mandel-display`; this full list documents the offline library packaged by the separate library flavor.", ""))
     DOC.write_text("\n".join(lines), encoding="utf-8")

@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "launch_wall_start": 1793065733.4423106,
+  "launch_wall_end": 1793065734.9639146,
+  "am_start_output": "Starting: Intent { cmp=org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity }\nStatus: ok\nLaunchState: COLD\nActivity: org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity\nTotalTime: 1170\nWaitTime: 1193\nComplete\n",
+  "samples": [
+    {
+      "layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#3739",
+      "raw": "16683333\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n0\t0\t0\n35365611257779\t35365645343298\t35365614757362\n35365641788695\t35365662237154\t35365645284154\n0\t35365678709844\t35365645284154\n35365716855987\t35365745443346\t35365719999279\n0\t35366112477118\t35365719999279\n\n",
+      "host_wall_time": 1793065735.442713,
+      "valid_presents": 5
+    }
+  ],
+  "selected_layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#3739",
+  "first_present_ns": 35365645343298,
+  "ring_full": false
+}

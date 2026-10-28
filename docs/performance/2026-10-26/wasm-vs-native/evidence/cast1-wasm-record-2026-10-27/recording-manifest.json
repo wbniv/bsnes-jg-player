@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "preset": "native-12mbps",
+  "segments": [
+    {
+      "index": 1,
+      "file": "capture-001.mp4",
+      "remote": "/data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4",
+      "duration_limit_seconds": 150,
+      "host_start": 1793066172.2838938,
+      "host_end": 1793066325.1438293,
+      "transfer_start": 1793066535.719676,
+      "transfer_end": 1793066536.2732725,
+      "bytes": 2369841,
+      "sha256": "d6235eb55397519c4c657818c0ef2f3158d8690ed38f569216d8817804d3ad38",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 330,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 148.697567,
+        "duration_seconds": 150.749467,
+        "observed_fps": 2.189,
+        "frame_interval_ms": {
+          "min": 13.744,
+          "median": 350.372,
+          "max": 2289.222
+        }
+      }
+    },
+    {
+      "index": 2,
+      "file": "capture-002.mp4",
+      "remote": "/data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4",
+      "duration_limit_seconds": 150,
+      "host_start": 1793066325.2955103,
+      "host_end": 1793066476.613768,
+      "transfer_start": 1793066536.5680223,
+      "transfer_end": 1793066536.834307,
+      "bytes": 955651,
+      "sha256": "15cc914ab88b22a2ac654e195184ccd1612e5d0c9f63a5fb312a1363a27c5710",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 80,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 147.892533,
+        "duration_seconds": 149.994644,
+        "observed_fps": 0.533,
+        "frame_interval_ms": {
+          "min": 114.211,
+          "median": 2052.178,
+          "max": 9609.522
+        }
+      },
+      "host_gap_ms": 152
+    },
+    {
+      "index": 3,
+      "file": "capture-003.mp4",
+      "remote": "/data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4",
+      "duration_limit_seconds": 57,
+      "host_start": 1793066476.836604,
+      "host_end": 1793066535.2584035,
+      "transfer_start": 1793066537.1406171,
+      "transfer_end": 1793066537.3318744,
+      "bytes": 194193,
+      "sha256": "aefe2fffad289e65b927c37e0974a0766c3c3ceb33ccc75a26b25a18e3a8d0a1",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 32,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 55.652722,
+        "duration_seconds": 57.771367,
+        "observed_fps": 0.554,
+        "frame_interval_ms": {
+          "min": 171.478,
+          "median": 2101.661,
+          "max": 2166.778
+        }
+      },
+      "host_gap_ms": 223
+    }
+  ],
+  "requested_seconds": 360.0,
+  "bit_rate": 12000000,
+  "segment_cap_bytes": 402653184,
+  "job_cap_bytes": 1073741824,
+  "overlap": "not attempted",
+  "clock": "host wall clock; no frame-level synchronization claim",
+  "total_bytes": 3519685,
+  "result": "completed"
+}

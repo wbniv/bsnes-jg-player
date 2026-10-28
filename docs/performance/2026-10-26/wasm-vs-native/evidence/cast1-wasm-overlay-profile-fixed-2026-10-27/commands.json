@@ -1,0 +1,521 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793082752.6744545,
+    "end": 1793082753.0219967,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082753.299768,
+    "end": 1793082753.8854532,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082753.2912698,
+    "end": 1793082753.9889932,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~HG5xdIdoRy24s65DnsRq7w==/org.bsnesjg.tv.phase2-Zbkvh5sDzpQbhX5awPkTxg==/base.apk'"
+    ],
+    "start": 1793082753.9890618,
+    "end": 1793082754.4992974,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "install",
+      "-r",
+      "/var/lib/wf-device-coordinator/inputs/b86b571e69152153bc5466243d11ca6bf5f2443bd5ddc400aecfdc0d89a34bb7.apk"
+    ],
+    "start": 1793082754.582213,
+    "end": 1793082760.725101,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082760.7355576,
+    "end": 1793082761.3740828,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~vT-PBfmUKQG1ltLTGcB8IQ==/org.bsnesjg.tv.phase2-JxORUD2AnVFHFfl07Da4Bw==/base.apk'"
+    ],
+    "start": 1793082761.3801417,
+    "end": 1793082762.2391815,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082762.2965436,
+    "end": 1793082762.8445494,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082762.8521261,
+    "end": 1793082763.2039154,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793082763.3631895,
+    "end": 1793082765.7883003,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082763.3183334,
+    "end": 1793082765.8048165,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --list"
+    ],
+    "start": 1793082765.8048818,
+    "end": 1793082766.5880556,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082766.5970213,
+    "end": 1793082767.111091,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793082772.140575,
+    "end": 1793082772.6963878,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082772.713567,
+    "end": 1793082773.4203136,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082773.5471473,
+    "end": 1793082774.379011,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793082778.5448477,
+    "end": 1793082779.2785904,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082779.2947874,
+    "end": 1793082780.3246865,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --list"
+    ],
+    "start": 1793082780.36766,
+    "end": 1793082781.2346816,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082781.2488701,
+    "end": 1793082781.901796,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency-clear 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082781.9152002,
+    "end": 1793082782.5902216,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082782.5956914,
+    "end": 1793082783.2537117,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082783.3605454,
+    "end": 1793082784.207808,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082784.3068025,
+    "end": 1793082785.2405171,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082784.3020916,
+    "end": 1793082785.3845387,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082785.3846252,
+    "end": 1793082786.1583521,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082786.2762542,
+    "end": 1793082787.1056464,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082787.212843,
+    "end": 1793082788.001848,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082788.10963,
+    "end": 1793082788.5401313,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082788.668374,
+    "end": 1793082789.2287996,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082789.3359685,
+    "end": 1793082789.9202833,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082790.0315316,
+    "end": 1793082790.5438266,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082790.6626847,
+    "end": 1793082791.1248114,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082791.2396135,
+    "end": 1793082791.8287847,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082791.9584403,
+    "end": 1793082792.5403023,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082792.6525095,
+    "end": 1793082793.2134295,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082793.324534,
+    "end": 1793082793.7453003,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082793.8720741,
+    "end": 1793082794.3588364,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082794.4807453,
+    "end": 1793082794.921605,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082794.3659847,
+    "end": 1793082794.9303129,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082795.0344844,
+    "end": 1793082795.6568449,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082795.775075,
+    "end": 1793082796.1904469,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys SurfaceFlinger --latency 'org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#6634'"
+    ],
+    "start": 1793082796.3025708,
+    "end": 1793082796.812947,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793082796.8238862,
+    "end": 1793082797.245001,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082797.2564595,
+    "end": 1793082797.8405476,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793082797.8466983,
+    "end": 1793082800.5996351,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793082800.685576,
+    "end": 1793082801.1670158,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082801.1775813,
+    "end": 1793082801.7153835,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793082801.7199965,
+    "end": 1793082804.2137809,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082804.2273343,
+    "end": 1793082804.7889707,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=3149"
+    ],
+    "start": 1793082804.798137,
+    "end": 1793082805.337749,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793082804.7945325,
+    "end": 1793082805.3466368,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.phase2/files/wf.log"
+    ],
+    "start": 1793082805.3466887,
+    "end": 1793082805.8003125,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793082805.8062148,
+    "end": 1793082806.7138493,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793082806.720416,
+    "end": 1793082807.368359,
+    "returncode": 0
+  }
+]

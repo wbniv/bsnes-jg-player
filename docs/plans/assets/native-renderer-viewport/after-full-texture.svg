@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">After: full native framebuffer maps to the fitted game rectangle</title>
+  <desc id="desc">Portrait and landscape game rectangles keep a 4:3 ratio. The full 256 by 224 source texture maps from UV zero to one in both orientations.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#293e52"/></marker>
+    <pattern id="pixels" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#fff" stroke-opacity=".17" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1100" height="560" rx="18" fill="#f4f7fa"/>
+  <text x="32" y="42" font-family="sans-serif" font-size="23" font-weight="700" fill="#172433">After · full texture mapped inside fitted game bounds</text>
+  <text x="32" y="76" font-family="sans-serif" font-size="15" fill="#526579">The rectangle changes with orientation; its 4:3 image and complete framebuffer do not.</text>
+  <text x="75" y="121" font-family="sans-serif" font-size="17" font-weight="700" fill="#172433">Landscape</text>
+  <rect x="35" y="140" width="520" height="300" rx="10" fill="#101820"/>
+  <rect x="35" y="140" width="60" height="300" fill="#05080d"/>
+  <rect x="495" y="140" width="60" height="300" fill="#05080d"/>
+  <text x="39" y="164" font-family="sans-serif" font-size="12" fill="#9aabba">meta</text>
+  <text x="499" y="164" font-family="sans-serif" font-size="12" fill="#9aabba">perf</text>
+  <rect x="95" y="140" width="400" height="300" fill="#237b8b"/>
+  <path d="M95 215H495M95 290H495M95 365H495M195 140V440M295 140V440M395 140V440" stroke="#fff" stroke-opacity=".47" stroke-width="2"/>
+  <rect x="95" y="140" width="400" height="300" fill="url(#pixels)"/>
+  <text x="173" y="305" font-family="monospace" font-size="22" font-weight="700" fill="#fff">FULL FRAME</text>
+  <path d="M95 456V479M495 456V479M95 468H495" stroke="#293e52" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="204" y="501" font-family="sans-serif" font-size="14" font-weight="700" fill="#293e52">4:3 display rectangle</text>
+  <text x="603" y="105" font-family="sans-serif" font-size="17" font-weight="700" fill="#172433">Portrait</text>
+  <rect x="650" y="140" width="300" height="300" rx="10" fill="#101820"/>
+  <rect x="650" y="120" width="300" height="400" rx="10" fill="#101820"/>
+  <rect x="650" y="120" width="300" height="45" fill="#05080d"/>
+  <rect x="650" y="445" width="300" height="45" fill="#05080d"/>
+  <text x="675" y="166" font-family="sans-serif" font-size="12" fill="#9aabba">metadata</text>
+  <text x="675" y="475" font-family="sans-serif" font-size="12" fill="#9aabba">performance</text>
+  <rect x="650" y="200" width="300" height="225" fill="#237b8b"/>
+  <path d="M650 256H950M650 312H950M650 369H950M725 200V425M800 200V425M875 200V425" stroke="#fff" stroke-opacity=".47" stroke-width="2"/>
+  <rect x="650" y="200" width="300" height="225" fill="url(#pixels)"/>
+  <text x="685" y="320" font-family="monospace" font-size="22" font-weight="700" fill="#fff">FULL FRAME</text>
+  <path d="M978 200H1002M978 425H1002M990 200V425" stroke="#293e52" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="1008" y="300" font-family="sans-serif" font-size="14" font-weight="700" fill="#293e52" transform="rotate(90 1008 300)">4:3</text>
+  <text x="55" y="544" font-family="monospace" font-size="15" fill="#293e52">uv = (p − bounds.xy) / bounds.zw → full U: 0…1, full V: 0…1</text>
+</svg>

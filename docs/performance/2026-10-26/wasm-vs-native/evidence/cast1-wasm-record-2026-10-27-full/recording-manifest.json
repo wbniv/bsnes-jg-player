@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "preset": "native-12mbps",
+  "segments": [
+    {
+      "index": 1,
+      "file": "capture-001.mp4",
+      "remote": "/data/local/tmp/wf-J-2ad207f5cdf5-segment-001.mp4",
+      "duration_limit_seconds": 150,
+      "host_start": 1793066607.0188057,
+      "host_end": 1793066759.9320278,
+      "transfer_start": 1793067209.2098205,
+      "transfer_end": 1793067209.8730261,
+      "bytes": 2383784,
+      "sha256": "f8ef318426002562f2afb0484a6e24555675cea566bc6e09c1e83a0782dbcb95",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 333,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 147.978278,
+        "duration_seconds": 150.064011,
+        "observed_fps": 2.219,
+        "frame_interval_ms": {
+          "min": 12.578,
+          "median": 314.967,
+          "max": 2437.844
+        }
+      }
+    },
+    {
+      "index": 2,
+      "file": "capture-002.mp4",
+      "remote": "/data/local/tmp/wf-J-2ad207f5cdf5-segment-002.mp4",
+      "duration_limit_seconds": 150,
+      "host_start": 1793066760.286173,
+      "host_end": 1793066911.2455819,
+      "transfer_start": 1793067210.4233963,
+      "transfer_end": 1793067210.6518073,
+      "bytes": 899745,
+      "sha256": "16dbb97280ae7ad7aee73fd9217571569cbf852c77189f55edc68b7050282dbc",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 80,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 148.669133,
+        "duration_seconds": 150.721322,
+        "observed_fps": 0.531,
+        "frame_interval_ms": {
+          "min": 80.478,
+          "median": 2018.7,
+          "max": 9242.944
+        }
+      },
+      "host_gap_ms": 354
+    },
+    {
+      "index": 3,
+      "file": "capture-003.mp4",
+      "remote": "/data/local/tmp/wf-J-2ad207f5cdf5-segment-003.mp4",
+      "duration_limit_seconds": 150,
+      "host_start": 1793066911.419228,
+      "host_end": 1793067062.297967,
+      "transfer_start": 1793067210.9352107,
+      "transfer_end": 1793067211.113996,
+      "bytes": 458564,
+      "sha256": "b721698ee7332708fa5289b689c5d57da17821a7a815bfa22bdb4de9bcc371a6",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 77,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 149.412256,
+        "duration_seconds": 151.497678,
+        "observed_fps": 0.508,
+        "frame_interval_ms": {
+          "min": 281.078,
+          "median": 2068.489,
+          "max": 2352.156
+        }
+      },
+      "host_gap_ms": 174
+    },
+    {
+      "index": 4,
+      "file": "capture-004.mp4",
+      "remote": "/data/local/tmp/wf-J-2ad207f5cdf5-segment-004.mp4",
+      "duration_limit_seconds": 145,
+      "host_start": 1793067062.4541674,
+      "host_end": 1793067208.7487233,
+      "transfer_start": 1793067211.414146,
+      "transfer_end": 1793067211.713553,
+      "bytes": 533055,
+      "sha256": "694b14d6ad749c31aa2c483179cf3a7812bf2c5e1ef075c0cca9f612fd4d6749",
+      "video": {
+        "width": 1920,
+        "height": 1080,
+        "frames": 77,
+        "first_pts_seconds": 0,
+        "last_pts_seconds": 143.3184,
+        "duration_seconds": 145.384444,
+        "observed_fps": 0.53,
+        "frame_interval_ms": {
+          "min": 27.233,
+          "median": 2066.044,
+          "max": 2119.267
+        }
+      },
+      "host_gap_ms": 156
+    }
+  ],
+  "requested_seconds": 600.0,
+  "bit_rate": 12000000,
+  "segment_cap_bytes": 402653184,
+  "job_cap_bytes": 1073741824,
+  "overlap": "not attempted",
+  "clock": "host wall clock; no frame-level synchronization claim",
+  "total_bytes": 4275148,
+  "result": "completed"
+}

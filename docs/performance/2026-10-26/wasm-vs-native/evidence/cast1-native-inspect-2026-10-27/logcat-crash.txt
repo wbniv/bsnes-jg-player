@@ -1,0 +1,166 @@
+--------- beginning of crash
+F/libc    ( 4951): Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 4989 (GLThread 47), pid 4951 (v.native.phase2)
+F/DEBUG   ( 5092): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+F/DEBUG   ( 5092): Build fingerprint: 'google/boreal/boreal:14/UTTC.250917.004/14193937:user/release-keys'
+F/DEBUG   ( 5092): Revision: '0'
+F/DEBUG   ( 5092): ABI: 'arm'
+F/DEBUG   ( 5092): Timestamp: 2026-10-27 06:57:15.457606815+0700
+F/DEBUG   ( 5092): Process uptime: 6s
+F/DEBUG   ( 5092): Cmdline: org.bsnesjg.tv.native.phase2
+F/DEBUG   ( 5092): pid: 4951, tid: 4989, name: GLThread 47  >>> org.bsnesjg.tv.native.phase2 <<<
+F/DEBUG   ( 5092): uid: 10073
+F/DEBUG   ( 5092): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000
+F/DEBUG   ( 5092): Cause: null pointer dereference
+F/DEBUG   ( 5092):     r0  00000000  r1  e6f50d9c  r2  e6f50d70  r3  00000000
+F/DEBUG   ( 5092):     r4  e6f4093c  r5  eba3fd24  r6  eba3fc44  r7  eba3fb68
+F/DEBUG   ( 5092):     r8  00000000  r9  f4ae9000  r10 eba3fb80  r11 f4ae9000
+F/DEBUG   ( 5092):     ip  e6a90635  sp  eba3fb50  lr  e6b0bbb7  pc  e6926006
+F/DEBUG   ( 5092): 15 total frames
+F/DEBUG   ( 5092): backtrace:
+F/DEBUG   ( 5092):       #00 pc 0005e006  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   ( 5092):       #01 pc 00243bb3  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   ( 5092):       #02 pc 0014b11d  /apex/com.android.art/lib/libart.so (art_quick_generic_jni_trampoline+44) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #03 pc 00307cbc  /apex/com.android.art/lib/libart.so (nterp_helper+172) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #04 pc 000024d4  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/oat/arm/base.vdex (org.bsnesjg.tv.a.onDrawFrame+268)
+F/DEBUG   ( 5092):       #05 pc 00309168  /apex/com.android.art/lib/libart.so (nterp_helper+5464) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #06 pc 004bfb9c  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.guardedRun+1072)
+F/DEBUG   ( 5092):       #07 pc 00308700  /apex/com.android.art/lib/libart.so (nterp_helper+2800) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #08 pc 004c0194  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.run+52)
+F/DEBUG   ( 5092):       #09 pc 00143bd5  /apex/com.android.art/lib/libart.so (art_quick_invoke_stub_internal+68) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #10 pc 001bdcc7  /apex/com.android.art/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+454) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #11 pc 0022453b  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallback(void*)+2002) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #12 pc 004e57bb  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+2) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5092):       #13 pc 000ad03f  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+40) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/DEBUG   ( 5092):       #14 pc 00063b33  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/libc    ( 5751): Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 5773 (GLThread 47), pid 5751 (v.native.phase2)
+F/DEBUG   ( 5871): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+F/DEBUG   ( 5871): Build fingerprint: 'google/boreal/boreal:14/UTTC.250917.004/14193937:user/release-keys'
+F/DEBUG   ( 5871): Revision: '0'
+F/DEBUG   ( 5871): ABI: 'arm'
+F/DEBUG   ( 5871): Timestamp: 2026-10-27 07:01:54.187126531+0700
+F/DEBUG   ( 5871): Process uptime: 6s
+F/DEBUG   ( 5871): Cmdline: org.bsnesjg.tv.native.phase2
+F/DEBUG   ( 5871): pid: 5751, tid: 5773, name: GLThread 47  >>> org.bsnesjg.tv.native.phase2 <<<
+F/DEBUG   ( 5871): uid: 10073
+F/DEBUG   ( 5871): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000
+F/DEBUG   ( 5871): Cause: null pointer dereference
+F/DEBUG   ( 5871):     r0  00000000  r1  e6fe8d9c  r2  e6fe8d70  r3  00000000
+F/DEBUG   ( 5871):     r4  e6fd893c  r5  eba3fd24  r6  eba3fc44  r7  eba3fb68
+F/DEBUG   ( 5871):     r8  00000000  r9  f4ae9000  r10 eba3fb80  r11 f4ae9000
+F/DEBUG   ( 5871):     ip  e6b28635  sp  eba3fb50  lr  e6ba3bb7  pc  e69be006
+F/DEBUG   ( 5871): 15 total frames
+F/DEBUG   ( 5871): backtrace:
+F/DEBUG   ( 5871):       #00 pc 0005e006  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   ( 5871):       #01 pc 00243bb3  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   ( 5871):       #02 pc 0014b11d  /apex/com.android.art/lib/libart.so (art_quick_generic_jni_trampoline+44) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #03 pc 00307cbc  /apex/com.android.art/lib/libart.so (nterp_helper+172) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #04 pc 000024d4  /data/app/~~Jf4ptX127r5cD3OwPaOuug==/org.bsnesjg.tv.native.phase2-2tBtPX7bL963UQbTu69gvg==/oat/arm/base.vdex (org.bsnesjg.tv.a.onDrawFrame+268)
+F/DEBUG   ( 5871):       #05 pc 00309168  /apex/com.android.art/lib/libart.so (nterp_helper+5464) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #06 pc 004bfb9c  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.guardedRun+1072)
+F/DEBUG   ( 5871):       #07 pc 00308700  /apex/com.android.art/lib/libart.so (nterp_helper+2800) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #08 pc 004c0194  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.run+52)
+F/DEBUG   ( 5871):       #09 pc 00143bd5  /apex/com.android.art/lib/libart.so (art_quick_invoke_stub_internal+68) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #10 pc 001bdcc7  /apex/com.android.art/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+454) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #11 pc 0022453b  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallback(void*)+2002) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #12 pc 004e57bb  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+2) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   ( 5871):       #13 pc 000ad03f  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+40) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/DEBUG   ( 5871):       #14 pc 00063b33  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/libc    (26178): Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 26200 (GLThread 48), pid 26178 (v.native.phase2)
+F/DEBUG   (26318): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+F/DEBUG   (26318): Build fingerprint: 'google/boreal/boreal:14/UTTC.250917.004/14193937:user/release-keys'
+F/DEBUG   (26318): Revision: '0'
+F/DEBUG   (26318): ABI: 'arm'
+F/DEBUG   (26318): Timestamp: 2026-10-27 08:00:03.314251528+0700
+F/DEBUG   (26318): Process uptime: 7s
+F/DEBUG   (26318): Cmdline: org.bsnesjg.tv.native.phase2
+F/DEBUG   (26318): pid: 26178, tid: 26200, name: GLThread 48  >>> org.bsnesjg.tv.native.phase2 <<<
+F/DEBUG   (26318): uid: 10073
+F/DEBUG   (26318): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000
+F/DEBUG   (26318): Cause: null pointer dereference
+F/DEBUG   (26318):     r0  00000000  r1  e713cd9c  r2  e713cd70  r3  00000000
+F/DEBUG   (26318):     r4  e712c93c  r5  eba3fd24  r6  eba3fc44  r7  eba3fb68
+F/DEBUG   (26318):     r8  00000000  r9  f4ae9e00  r10 eba3fb80  r11 f4ae9e00
+F/DEBUG   (26318):     ip  e6c7c635  sp  eba3fb50  lr  e6cf7bb7  pc  e6b12006
+F/DEBUG   (26318): 15 total frames
+F/DEBUG   (26318): backtrace:
+F/DEBUG   (26318):       #00 pc 0005e006  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (26318):       #01 pc 00243bb3  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (26318):       #02 pc 0014b11d  /apex/com.android.art/lib/libart.so (art_quick_generic_jni_trampoline+44) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #03 pc 00307cbc  /apex/com.android.art/lib/libart.so (nterp_helper+172) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #04 pc 00002528  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/oat/arm/base.vdex (org.bsnesjg.tv.a.onDrawFrame+268)
+F/DEBUG   (26318):       #05 pc 00309168  /apex/com.android.art/lib/libart.so (nterp_helper+5464) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #06 pc 004bfb9c  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.guardedRun+1072)
+F/DEBUG   (26318):       #07 pc 00308700  /apex/com.android.art/lib/libart.so (nterp_helper+2800) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #08 pc 004c0194  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.run+52)
+F/DEBUG   (26318):       #09 pc 00143bd5  /apex/com.android.art/lib/libart.so (art_quick_invoke_stub_internal+68) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #10 pc 001bdcc7  /apex/com.android.art/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+454) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #11 pc 0022453b  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallback(void*)+2002) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #12 pc 004e57bb  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+2) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (26318):       #13 pc 000ad03f  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+40) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/DEBUG   (26318):       #14 pc 00063b33  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/libc    (28611): Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 28632 (GLThread 47), pid 28611 (v.native.phase2)
+F/DEBUG   (28728): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+F/DEBUG   (28728): Build fingerprint: 'google/boreal/boreal:14/UTTC.250917.004/14193937:user/release-keys'
+F/DEBUG   (28728): Revision: '0'
+F/DEBUG   (28728): ABI: 'arm'
+F/DEBUG   (28728): Timestamp: 2026-10-27 08:04:01.726794767+0700
+F/DEBUG   (28728): Process uptime: 6s
+F/DEBUG   (28728): Cmdline: org.bsnesjg.tv.native.phase2
+F/DEBUG   (28728): pid: 28611, tid: 28632, name: GLThread 47  >>> org.bsnesjg.tv.native.phase2 <<<
+F/DEBUG   (28728): uid: 10073
+F/DEBUG   (28728): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000
+F/DEBUG   (28728): Cause: null pointer dereference
+F/DEBUG   (28728):     r0  00000000  r1  e6fd4d9c  r2  e6fd4d70  r3  00000000
+F/DEBUG   (28728):     r4  e6fc493c  r5  eba3fd24  r6  eba3fc44  r7  eba3fb68
+F/DEBUG   (28728):     r8  00000000  r9  f4ae9000  r10 eba3fb80  r11 f4ae9000
+F/DEBUG   (28728):     ip  e6b14635  sp  eba3fb50  lr  e6b8fbb7  pc  e69aa006
+F/DEBUG   (28728): 15 total frames
+F/DEBUG   (28728): backtrace:
+F/DEBUG   (28728):       #00 pc 0005e006  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (28728):       #01 pc 00243bb3  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (28728):       #02 pc 0014b11d  /apex/com.android.art/lib/libart.so (art_quick_generic_jni_trampoline+44) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #03 pc 00307cbc  /apex/com.android.art/lib/libart.so (nterp_helper+172) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #04 pc 00002528  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/oat/arm/base.vdex (org.bsnesjg.tv.a.onDrawFrame+268)
+F/DEBUG   (28728):       #05 pc 00309168  /apex/com.android.art/lib/libart.so (nterp_helper+5464) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #06 pc 004bfb9c  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.guardedRun+1072)
+F/DEBUG   (28728):       #07 pc 00308700  /apex/com.android.art/lib/libart.so (nterp_helper+2800) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #08 pc 004c0194  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.run+52)
+F/DEBUG   (28728):       #09 pc 00143bd5  /apex/com.android.art/lib/libart.so (art_quick_invoke_stub_internal+68) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #10 pc 001bdcc7  /apex/com.android.art/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+454) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #11 pc 0022453b  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallback(void*)+2002) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #12 pc 004e57bb  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+2) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (28728):       #13 pc 000ad03f  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+40) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/DEBUG   (28728):       #14 pc 00063b33  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/libc    (25221): Fatal signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x0 in tid 25241 (GLThread 46), pid 25221 (v.native.phase2)
+F/DEBUG   (25346): *** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+F/DEBUG   (25346): Build fingerprint: 'google/boreal/boreal:14/UTTC.250917.004/14193937:user/release-keys'
+F/DEBUG   (25346): Revision: '0'
+F/DEBUG   (25346): ABI: 'arm'
+F/DEBUG   (25346): Timestamp: 2026-10-27 08:53:29.197388349+0700
+F/DEBUG   (25346): Process uptime: 6s
+F/DEBUG   (25346): Cmdline: org.bsnesjg.tv.native.phase2
+F/DEBUG   (25346): pid: 25221, tid: 25241, name: GLThread 46  >>> org.bsnesjg.tv.native.phase2 <<<
+F/DEBUG   (25346): uid: 10073
+F/DEBUG   (25346): signal 11 (SIGSEGV), code 1 (SEGV_MAPERR), fault addr 0x00000000
+F/DEBUG   (25346): Cause: null pointer dereference
+F/DEBUG   (25346):     r0  00000000  r1  e6f0ad9c  r2  e6f0ad70  r3  00000000
+F/DEBUG   (25346):     r4  e6efa93c  r5  eba3fd24  r6  eba3fc44  r7  eba3fb68
+F/DEBUG   (25346):     r8  00000000  r9  f5693200  r10 eba3fb80  r11 f5693200
+F/DEBUG   (25346):     ip  e6a4a635  sp  eba3fb50  lr  e6ac5bb7  pc  e68e0006
+F/DEBUG   (25346): 15 total frames
+F/DEBUG   (25346): backtrace:
+F/DEBUG   (25346):       #00 pc 0005e006  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (25346):       #01 pc 00243bb3  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/base.apk!libbjg.so (offset 0x35c000) (BuildId: 5897c5b19b7e32c35e422a2880c6d7382673fded)
+F/DEBUG   (25346):       #02 pc 0014b11d  /apex/com.android.art/lib/libart.so (art_quick_generic_jni_trampoline+44) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #03 pc 00307cbc  /apex/com.android.art/lib/libart.so (nterp_helper+172) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #04 pc 00002528  /data/app/~~uTKoBnqwY7ZvoUyumaMCXQ==/org.bsnesjg.tv.native.phase2-2bOzHKNiIcPEOikr4PuLow==/oat/arm/base.vdex (org.bsnesjg.tv.a.onDrawFrame+268)
+F/DEBUG   (25346):       #05 pc 00309168  /apex/com.android.art/lib/libart.so (nterp_helper+5464) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #06 pc 004bfb9c  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.guardedRun+1072)
+F/DEBUG   (25346):       #07 pc 00308700  /apex/com.android.art/lib/libart.so (nterp_helper+2800) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #08 pc 004c0194  /system/framework/framework.jar (android.opengl.GLSurfaceView$GLThread.run+52)
+F/DEBUG   (25346):       #09 pc 00143bd5  /apex/com.android.art/lib/libart.so (art_quick_invoke_stub_internal+68) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #10 pc 001bdcc7  /apex/com.android.art/lib/libart.so (art::ArtMethod::Invoke(art::Thread*, unsigned int*, unsigned int, art::JValue*, char const*)+454) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #11 pc 0022453b  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallback(void*)+2002) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #12 pc 004e57bb  /apex/com.android.art/lib/libart.so (art::Thread::CreateCallbackWithUffdGc(void*)+2) (BuildId: 4bd03f747c304599809b5b4cb9ef7547)
+F/DEBUG   (25346):       #13 pc 000ad03f  /apex/com.android.runtime/lib/bionic/libc.so (__pthread_start(void*)+40) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)
+F/DEBUG   (25346):       #14 pc 00063b33  /apex/com.android.runtime/lib/bionic/libc.so (__start_thread+30) (BuildId: dd4d02469ce82c8ed696e0d7d7fb0271)

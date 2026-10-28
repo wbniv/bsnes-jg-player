@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "ls /vendor/lib64/mediadrm"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "ls: /vendor/lib64/mediadrm: No such file or directory\n"
+}

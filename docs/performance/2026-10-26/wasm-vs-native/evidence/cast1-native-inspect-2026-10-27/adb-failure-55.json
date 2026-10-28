@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "ls /odm/lib/mediadrm"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "ls: /odm/lib/mediadrm: No such file or directory\n"
+}

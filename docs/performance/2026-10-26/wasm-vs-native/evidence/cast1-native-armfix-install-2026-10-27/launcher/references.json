@@ -1,0 +1,19 @@
+{
+  "package": "org.bsnesjg.tv.native.phase2",
+  "label": "bsnes-jg Native",
+  "apk_sha256": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a",
+  "references": [
+    {
+      "kind": "banner",
+      "resource": "res/fx.png",
+      "file": "expected-banner-0.png",
+      "sha256": "c178da17fc4e1aafd501ec52f383afd2838c2a68c7a84d7e02bcfc00c672fe4d"
+    },
+    {
+      "kind": "icon",
+      "resource": "res/9w.png",
+      "file": "expected-icon-1.png",
+      "sha256": "f5cc6151c6bb4ee1f3eafd4e52bdc3e37a4ce3fecc725ef3eaa931e280454097"
+    }
+  ]
+}

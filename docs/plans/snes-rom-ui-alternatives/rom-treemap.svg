@@ -1,0 +1,1127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 505" role="img" aria-labelledby="t d">
+<title id="t">ROM treemap grouped by category</title><desc id="d">All generated SNES ROM files shown as rectangles with areas proportional to exact byte size.</desc>
+<rect width="100%" height="100%" fill="#0b1017"/>
+<rect x="0.00" y="0.00" width="896.64" height="505.00" fill="none" stroke="#101720" stroke-width="3"/>
+<rect x="4.00" y="2.00" width="156" height="16" rx="3" fill="#0b1017" fill-opacity=".82"/>
+<text x="7.0" y="13.0" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="10" font-weight="600">Other builds · 368</text>
+<g><title>Cartsize Exhirom8 · cartsize-exhirom8.sfc · 8.0 MiB</title><rect x="0.00" y="0.00" width="137.00" height="144.29" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="6.0" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Exhirom8</text>
+<text x="6.0" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">8.0 MiB</text>
+</g>
+<g><title>Svx2 Video Reel 5994 · svx2-video-reel-5994.sfc · 8.0 MiB</title><rect x="0.00" y="144.29" width="137.00" height="144.29" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="6.0" y="160.3" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Svx2 Video Reel 5994</text>
+<text x="6.0" y="176.3" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">8.0 MiB</text>
+</g>
+<g><title>Cartsize Exhirom6 · cartsize-exhirom6.sfc · 6.0 MiB</title><rect x="0.00" y="288.57" width="137.00" height="108.21" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="6.0" y="304.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Exhirom6</text>
+<text x="6.0" y="320.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Iso Bare · iso-bare.sfc · 6.0 MiB</title><rect x="0.00" y="396.79" width="137.00" height="108.21" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="6.0" y="412.8" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Iso Bare</text>
+<text x="6.0" y="428.8" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Iso Full · iso-full.sfc · 6.0 MiB</title><rect x="137.00" y="0.00" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="143.0" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Iso Full</text>
+<text x="143.0" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Iso Nodraw · iso-nodraw.sfc · 6.0 MiB</title><rect x="137.00" y="126.25" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="143.0" y="142.2" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Iso Nodraw</text>
+<text x="143.0" y="158.2" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Iso Nohud · iso-nohud.sfc · 6.0 MiB</title><rect x="137.00" y="252.50" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="143.0" y="268.5" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Iso Nohud</text>
+<text x="143.0" y="284.5" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Opf 16 · opf-16.sfc · 6.0 MiB</title><rect x="137.00" y="378.75" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="143.0" y="394.8" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Opf 16</text>
+<text x="143.0" y="410.8" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Opf 32 · opf-32.sfc · 6.0 MiB</title><rect x="254.43" y="0.00" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="260.4" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Opf 32</text>
+<text x="260.4" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Opf 64 · opf-64.sfc · 6.0 MiB</title><rect x="254.43" y="126.25" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="260.4" y="142.2" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Opf 64</text>
+<text x="260.4" y="158.2" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Opf 8 · opf-8.sfc · 6.0 MiB</title><rect x="254.43" y="252.50" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="260.4" y="268.5" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Opf 8</text>
+<text x="260.4" y="284.5" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Seamdemo Bench · seamdemo-bench.sfc · 6.0 MiB</title><rect x="254.43" y="378.75" width="117.43" height="126.25" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="260.4" y="394.8" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Seamdemo Bench</text>
+<text x="260.4" y="410.8" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Apollo Daylight Corrupt · apollo-daylight-corrupt.sfc · 4.0 MiB</title><rect x="371.87" y="0.00" width="97.86" height="101.00" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="377.9" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Daylight Corrupt</text>
+<text x="377.9" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Apollo Daylight Selftest Slow · apollo-daylight-selftest-slow.sfc · 4.0 MiB</title><rect x="371.87" y="101.00" width="97.86" height="101.00" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="377.9" y="117.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Daylight Selftest Slo</text>
+<text x="377.9" y="133.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Apollo Daylight Selftest · apollo-daylight-selftest.sfc · 4.0 MiB</title><rect x="371.87" y="202.00" width="97.86" height="101.00" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="377.9" y="218.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Daylight Selftest</text>
+<text x="377.9" y="234.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Apollo Daylight Slow · apollo-daylight-slow.sfc · 4.0 MiB</title><rect x="371.87" y="303.00" width="97.86" height="101.00" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="377.9" y="319.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Daylight Slow</text>
+<text x="377.9" y="335.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Apollo Reel Slow · apollo-reel-slow.sfc · 4.0 MiB</title><rect x="371.87" y="404.00" width="97.86" height="101.00" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="377.9" y="420.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Reel Slow</text>
+<text x="377.9" y="436.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Apollo Reel Verify · apollo-reel-verify.sfc · 4.0 MiB</title><rect x="469.72" y="0.00" width="106.73" height="92.61" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="475.7" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Apollo Reel Verify</text>
+<text x="475.7" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Cartsize Hirom4 · cartsize-hirom4.sfc · 4.0 MiB</title><rect x="576.45" y="0.00" width="106.73" height="92.61" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="582.5" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Hirom4</text>
+<text x="582.5" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Cartsize Lorom4M Fast · cartsize-lorom4m_fast.sfc · 4.0 MiB</title><rect x="683.18" y="0.00" width="106.73" height="92.61" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="689.2" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Lorom4M Fast</text>
+<text x="689.2" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Cartsize Lorom4M Slow · cartsize-lorom4m_slow.sfc · 4.0 MiB</title><rect x="789.91" y="0.00" width="106.73" height="92.61" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="795.9" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Lorom4M Slow</text>
+<text x="795.9" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Probe · probe.sfc · 4.0 MiB</title><rect x="469.72" y="92.61" width="95.87" height="103.10" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="475.7" y="108.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Probe</text>
+<text x="475.7" y="124.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Reel At06Ffdf3 · reel-at06ffdf3.sfc · 4.0 MiB</title><rect x="469.72" y="195.71" width="95.87" height="103.10" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="475.7" y="211.7" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reel At06Ffdf3</text>
+<text x="475.7" y="227.7" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Reel C1 · reel-c1.sfc · 4.0 MiB</title><rect x="469.72" y="298.80" width="95.87" height="103.10" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="475.7" y="314.8" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reel C1</text>
+<text x="475.7" y="330.8" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Reel Control · reel-control.sfc · 4.0 MiB</title><rect x="469.72" y="401.90" width="95.87" height="103.10" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="475.7" y="417.9" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reel Control</text>
+<text x="475.7" y="433.9" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Reel Mine · reel-mine.sfc · 4.0 MiB</title><rect x="565.59" y="92.61" width="110.35" height="89.57" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="571.6" y="108.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reel Mine</text>
+<text x="571.6" y="124.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Reel Pre06Ffdf3 · reel-pre06ffdf3.sfc · 4.0 MiB</title><rect x="675.94" y="92.61" width="110.35" height="89.57" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="681.9" y="108.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Reel Pre06Ffdf3</text>
+<text x="681.9" y="124.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Snes Video Reel Probe · snes-video-reel-probe.sfc · 4.0 MiB</title><rect x="786.29" y="92.61" width="110.35" height="89.57" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="792.3" y="108.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Snes Video Reel Probe</text>
+<text x="792.3" y="124.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Snes Video Reel · snes-video-reel.sfc · 4.0 MiB</title><rect x="565.59" y="182.18" width="84.20" height="117.39" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="571.6" y="198.2" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Snes Video Reel</text>
+<text x="571.6" y="214.2" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Svx2 Video Reel · svx2-video-reel.sfc · 4.0 MiB</title><rect x="565.59" y="299.57" width="84.20" height="117.39" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="571.6" y="315.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Svx2 Video Reel</text>
+<text x="571.6" y="331.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<g><title>Cartsize Hirom3M Fast · cartsize-hirom3m_fast.sfc · 3.0 MiB</title><rect x="565.59" y="416.96" width="84.20" height="88.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="571.6" y="433.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Hirom3M Fast</text>
+<text x="571.6" y="449.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">3.0 MiB</text>
+</g>
+<g><title>Cartsize Lorom3M Fast · cartsize-lorom3m_fast.sfc · 3.0 MiB</title><rect x="649.79" y="182.18" width="92.57" height="80.08" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="655.8" y="198.2" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Lorom3M Fast</text>
+<text x="655.8" y="214.2" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">3.0 MiB</text>
+</g>
+<g><title>Cartsize Lorom3M Slow · cartsize-lorom3m_slow.sfc · 3.0 MiB</title><rect x="742.36" y="182.18" width="92.57" height="80.08" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+<text x="748.4" y="198.2" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartsize Lorom3M Slow</text>
+<text x="748.4" y="214.2" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">3.0 MiB</text>
+</g>
+<g><title>Cartsize Hirom2M Fast · cartsize-hirom2m_fast.sfc · 2.0 MiB</title><rect x="834.92" y="182.18" width="61.71" height="80.08" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Apollo Reel · apollo-reel.sfc · 1.0 MiB</title><rect x="649.79" y="262.26" width="50.90" height="48.55" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Lorom1M Fast · cartsize-lorom1m_fast.sfc · 1.0 MiB</title><rect x="649.79" y="310.81" width="50.90" height="48.55" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Lorom1M Slow · cartsize-lorom1m_slow.sfc · 1.0 MiB</title><rect x="649.79" y="359.35" width="50.90" height="48.55" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzss Gallery Bench · lzss-gallery-bench.sfc · 1.0 MiB</title><rect x="649.79" y="407.90" width="50.90" height="48.55" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzss Gallery Headless · lzss-gallery-headless.sfc · 1.0 MiB</title><rect x="649.79" y="456.45" width="50.90" height="48.55" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzss Gallery Indri · lzss-gallery-indri.sfc · 1.0 MiB</title><rect x="700.68" y="262.26" width="55.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Apollo Reel Battery · apollo-reel-battery.sfc · 512 KiB</title><rect x="756.67" y="262.26" width="27.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Apollo Smoke · apollo-smoke.sfc · 512 KiB</title><rect x="784.66" y="262.26" width="27.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bankwalk A16 · bankwalk-a16.sfc · 512 KiB</title><rect x="812.66" y="262.26" width="27.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bankwalk Xy16 · bankwalk-xy16.sfc · 512 KiB</title><rect x="840.65" y="262.26" width="27.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Canary · cartsize-canary.sfc · 512 KiB</title><rect x="868.64" y="262.26" width="27.99" height="44.14" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Hirom512K Fast · cartsize-hirom512k_fast.sfc · 512 KiB</title><rect x="700.68" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Lorom512K Fast · cartsize-lorom512k_fast.sfc · 512 KiB</title><rect x="733.34" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cartsize Lorom512K Slow · cartsize-lorom512k_slow.sfc · 512 KiB</title><rect x="766.00" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farbank A16 · farbank_a16.sfc · 512 KiB</title><rect x="798.66" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farblit A16 · farblit_a16.sfc · 512 KiB</title><rect x="831.32" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farblit Xy16 · farblit_xy16.sfc · 512 KiB</title><rect x="863.98" y="306.39" width="32.66" height="37.83" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farindex A16 · farindex_a16.sfc · 512 KiB</title><rect x="700.68" y="344.22" width="38.42" height="32.16" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farptrcmp A16 · farptrcmp-a16.sfc · 512 KiB</title><rect x="700.68" y="376.38" width="38.42" height="32.16" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farptrcmp Xy16 · farptrcmp-xy16.sfc · 512 KiB</title><rect x="700.68" y="408.53" width="38.42" height="32.16" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzss Gallery Bedroom · lzss-gallery-bedroom.sfc · 512 KiB</title><rect x="700.68" y="440.69" width="38.42" height="32.16" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzss Gallery Portrait · lzss-gallery-portrait.sfc · 512 KiB</title><rect x="700.68" y="472.84" width="38.42" height="32.16" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Bank1 · far-bank1.sfc · 64 KiB</title><rect x="739.11" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Call · far_call.sfc · 64 KiB</title><rect x="751.22" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Fnptr · far_fnptr.sfc · 64 KiB</title><rect x="763.34" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Indir · far_indir.sfc · 64 KiB</title><rect x="775.46" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Indir Tail · far_indir_tail.sfc · 64 KiB</title><rect x="787.58" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Near Call · far_near_call.sfc · 64 KiB</title><rect x="799.69" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Tail · far_tail.sfc · 64 KiB</title><rect x="811.81" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farloop · farloop.sfc · 64 KiB</title><rect x="823.93" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farspill A16 · farspill-a16.sfc · 64 KiB</title><rect x="836.05" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farspill Xy16 · farspill-xy16.sfc · 64 KiB</title><rect x="848.17" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fartbl · fartbl.sfc · 64 KiB</title><rect x="860.28" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farvol · farvol.sfc · 64 KiB</title><rect x="872.40" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fft Far · fft_far.sfc · 64 KiB</title><rect x="884.52" y="344.22" width="12.12" height="12.74" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fft Farplat · fft_farplat.sfc · 64 KiB</title><rect x="739.11" y="356.97" width="10.43" height="14.80" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Packed24 E2E · packed24_e2e.sfc · 64 KiB</title><rect x="739.11" y="371.77" width="10.43" height="14.80" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Packed24 Table · packed24_table.sfc · 64 KiB</title><rect x="739.11" y="386.57" width="10.43" height="14.80" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16 · a16.sfc · 32 KiB</title><rect x="739.11" y="401.38" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Abs · a16abs.sfc · 32 KiB</title><rect x="739.11" y="408.78" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Abscmp · a16abscmp.sfc · 32 KiB</title><rect x="739.11" y="416.18" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Absidx · a16absidx.sfc · 32 KiB</title><rect x="739.11" y="423.58" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Add · a16add.sfc · 32 KiB</title><rect x="739.11" y="430.98" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Ashift · a16ashift.sfc · 32 KiB</title><rect x="739.11" y="438.39" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Bit · a16bit.sfc · 32 KiB</title><rect x="739.11" y="445.79" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Bitchain · a16bitchain.sfc · 32 KiB</title><rect x="739.11" y="453.19" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Call · a16call.sfc · 32 KiB</title><rect x="739.11" y="460.59" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Chain · a16chain.sfc · 32 KiB</title><rect x="739.11" y="467.99" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Chainimm · a16chainimm.sfc · 32 KiB</title><rect x="739.11" y="475.39" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Chainld · a16chainld.sfc · 32 KiB</title><rect x="739.11" y="482.80" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Cmp · a16cmp.sfc · 32 KiB</title><rect x="739.11" y="490.20" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Cmpidx · a16cmpidx.sfc · 32 KiB</title><rect x="739.11" y="497.60" width="10.43" height="7.40" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Copy · a16copy.sfc · 32 KiB</title><rect x="749.54" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eq · a16eq.sfc · 32 KiB</title><rect x="758.19" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqval A16 · a16eqval_a16.sfc · 32 KiB</title><rect x="766.84" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqval Default · a16eqval_default.sfc · 32 KiB</title><rect x="775.50" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalc A16 · a16eqvalc_a16.sfc · 32 KiB</title><rect x="784.15" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalc Default · a16eqvalc_default.sfc · 32 KiB</title><rect x="792.80" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalg A16 · a16eqvalg_a16.sfc · 32 KiB</title><rect x="801.46" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalg Default · a16eqvalg_default.sfc · 32 KiB</title><rect x="810.11" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalmg A16 · a16eqvalmg_a16.sfc · 32 KiB</title><rect x="818.76" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalmg Default · a16eqvalmg_default.sfc · 32 KiB</title><rect x="827.41" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalp A16 · a16eqvalp_a16.sfc · 32 KiB</title><rect x="836.07" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Eqvalp Default · a16eqvalp_default.sfc · 32 KiB</title><rect x="844.72" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Frameidx · a16frameidx.sfc · 32 KiB</title><rect x="853.37" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Imm · a16imm.sfc · 32 KiB</title><rect x="862.03" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Incabs · a16incabs.sfc · 32 KiB</title><rect x="870.68" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Incdec · a16incdec.sfc · 32 KiB</title><rect x="879.33" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Indiry · a16indiry.sfc · 32 KiB</title><rect x="887.98" y="356.97" width="8.65" height="8.92" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Loadfold · a16loadfold.sfc · 32 KiB</title><rect x="749.54" y="365.89" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Local · a16local.sfc · 32 KiB</title><rect x="749.54" y="374.59" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Localbit · a16localbit.sfc · 32 KiB</title><rect x="749.54" y="383.28" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Localimm · a16localimm.sfc · 32 KiB</title><rect x="749.54" y="391.97" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Localsub · a16localsub.sfc · 32 KiB</title><rect x="749.54" y="400.67" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Localx · a16localx.sfc · 32 KiB</title><rect x="749.54" y="409.36" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Loop · a16loop.sfc · 32 KiB</title><rect x="749.54" y="418.06" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Loopred · a16loopred.sfc · 32 KiB</title><rect x="749.54" y="426.75" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Mixfold · a16mixfold.sfc · 32 KiB</title><rect x="749.54" y="435.45" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Ptr · a16ptr.sfc · 32 KiB</title><rect x="749.54" y="444.14" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Regpress · a16regpress.sfc · 32 KiB</title><rect x="749.54" y="452.83" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Ret A16 · a16ret_a16.sfc · 32 KiB</title><rect x="749.54" y="461.53" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Ret Default · a16ret_default.sfc · 32 KiB</title><rect x="749.54" y="470.22" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16S32 A16 · a16s32_a16.sfc · 32 KiB</title><rect x="749.54" y="478.92" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16S32 Default · a16s32_default.sfc · 32 KiB</title><rect x="749.54" y="487.61" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Scavnz.A16 · a16scavnz.a16.sfc · 32 KiB</title><rect x="749.54" y="496.31" width="8.88" height="8.69" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Scavnz.Default · a16scavnz.default.sfc · 32 KiB</title><rect x="758.42" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Scavnz.Xy16 · a16scavnz.xy16.sfc · 32 KiB</title><rect x="767.06" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Scmp · a16scmp.sfc · 32 KiB</title><rect x="775.70" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Shift · a16shift.sfc · 32 KiB</title><rect x="784.34" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Spillr A16 · a16spillr_a16.sfc · 32 KiB</title><rect x="792.97" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Spillr Default · a16spillr_default.sfc · 32 KiB</title><rect x="801.61" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Sub · a16sub.sfc · 32 KiB</title><rect x="810.25" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Sunfold · a16sunfold.sfc · 32 KiB</title><rect x="818.89" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>A16Thread · a16thread.sfc · 32 KiB</title><rect x="827.53" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Absdiff A16 · absdiff-a16.sfc · 32 KiB</title><rect x="836.17" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Absdiff Default · absdiff-default.sfc · 32 KiB</title><rect x="844.81" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Absdiff Xy16 · absdiff-xy16.sfc · 32 KiB</title><rect x="853.44" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Adpcm Sim · adpcm_sim.sfc · 32 KiB</title><rect x="862.08" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Arith · arith.sfc · 32 KiB</title><rect x="870.72" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Arityfan · arityfan.sfc · 32 KiB</title><rect x="879.36" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Arityfan Sim · arityfan_sim.sfc · 32 KiB</title><rect x="888.00" y="365.89" width="8.64" height="8.94" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Arrays · arrays.sfc · 32 KiB</title><rect x="758.42" y="374.83" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Asmisland A16 · asmisland-a16.sfc · 32 KiB</title><rect x="758.42" y="383.51" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Asmisland Default · asmisland-default.sfc · 32 KiB</title><rect x="758.42" y="392.19" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Asmisland Xy16 · asmisland-xy16.sfc · 32 KiB</title><rect x="758.42" y="400.86" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Avalanche Sim · avalanche_sim.sfc · 32 KiB</title><rect x="758.42" y="409.54" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Backtrack Sim · backtrack_sim.sfc · 32 KiB</title><rect x="758.42" y="418.22" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bf Vm Sim · bf_vm_sim.sfc · 32 KiB</title><rect x="758.42" y="426.90" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bhut Sim · bhut_sim.sfc · 32 KiB</title><rect x="758.42" y="435.58" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bigbyval Sim · bigbyval_sim.sfc · 32 KiB</title><rect x="758.42" y="444.25" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitboard64 A16 · bitboard64-a16.sfc · 32 KiB</title><rect x="758.42" y="452.93" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitboard64 Default · bitboard64-default.sfc · 32 KiB</title><rect x="758.42" y="461.61" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitboard64 Xy16 · bitboard64-xy16.sfc · 32 KiB</title><rect x="758.42" y="470.29" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitcensus Sim · bitcensus_sim.sfc · 32 KiB</title><rect x="758.42" y="478.97" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitshuffle Sim · bitshuffle_sim.sfc · 32 KiB</title><rect x="758.42" y="487.64" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitweave Sim · bitweave_sim.sfc · 32 KiB</title><rect x="758.42" y="496.32" width="8.90" height="8.68" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Boids Sim · boids_sim.sfc · 32 KiB</title><rect x="767.32" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Borrowlad Sim · borrowlad_sim.sfc · 32 KiB</title><rect x="775.94" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Borrowov Sim · borrowov_sim.sfc · 32 KiB</title><rect x="784.56" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Brkcop A16 · brkcop-a16.sfc · 32 KiB</title><rect x="793.18" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Brkcop Default · brkcop-default.sfc · 32 KiB</title><rect x="801.80" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Brkcop Xy16 · brkcop-xy16.sfc · 32 KiB</title><rect x="810.42" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bsearchviz Sim · bsearchviz_sim.sfc · 32 KiB</title><rect x="819.05" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bt A16 · bt_a16.sfc · 32 KiB</title><rect x="827.67" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bt Default · bt_default.sfc · 32 KiB</title><rect x="836.29" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bt Xy16 · bt_xy16.sfc · 32 KiB</title><rect x="844.91" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Buddha · buddha.sfc · 32 KiB</title><rect x="853.53" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Burning Ship Sim · burning-ship_sim.sfc · 32 KiB</title><rect x="862.15" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Byvaledge Sim · byvaledge_sim.sfc · 32 KiB</title><rect x="870.77" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ca1D Sim · ca1d_sim.sfc · 32 KiB</title><rect x="879.39" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cardioid Sim · cardioid_sim.sfc · 32 KiB</title><rect x="888.01" y="374.83" width="8.62" height="8.96" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cgrade Sim · cgrade_sim.sfc · 32 KiB</title><rect x="767.32" y="383.79" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Compass Sim · compass_sim.sfc · 32 KiB</title><rect x="767.32" y="392.44" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Control · control.sfc · 32 KiB</title><rect x="767.32" y="401.10" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cordic Sim · cordic_sim.sfc · 32 KiB</title><rect x="767.32" y="409.76" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cosmzoom Sim · cosmzoom_sim.sfc · 32 KiB</title><rect x="767.32" y="418.42" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cpu6502 Sim · cpu6502_sim.sfc · 32 KiB</title><rect x="767.32" y="427.08" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Crctex Sim · crctex_sim.sfc · 32 KiB</title><rect x="767.32" y="435.73" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Crcwall Sim · crcwall_sim.sfc · 32 KiB</title><rect x="767.32" y="444.39" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Critters Sim · critters_sim.sfc · 32 KiB</title><rect x="767.32" y="453.05" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Csrjmp Sim · csrjmp_sim.sfc · 32 KiB</title><rect x="767.32" y="461.71" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dblbridge Sim · dblbridge_sim.sfc · 32 KiB</title><rect x="767.32" y="470.37" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dctbloom Sim · dctbloom_sim.sfc · 32 KiB</title><rect x="767.32" y="479.03" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dhmix Sim · dhmix_sim.sfc · 32 KiB</title><rect x="767.32" y="487.68" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Disbits Sim · disbits_sim.sfc · 32 KiB</title><rect x="767.32" y="496.34" width="8.92" height="8.66" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dither Sim · dither_sim.sfc · 32 KiB</title><rect x="776.24" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Divclock Sim · divclock_sim.sfc · 32 KiB</title><rect x="784.84" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Domcol Sim · domcol_sim.sfc · 32 KiB</title><rect x="793.44" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Doom Fire Sim · doom-fire_sim.sfc · 32 KiB</title><rect x="802.04" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpbank A16 · dpbank-a16.sfc · 32 KiB</title><rect x="810.64" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpbank Default · dpbank-default.sfc · 32 KiB</title><rect x="819.24" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpbank Xy16 · dpbank-xy16.sfc · 32 KiB</title><rect x="827.84" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpend Sim · dpend_sim.sfc · 32 KiB</title><rect x="836.44" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpprobe Donly · dpprobe-donly.sfc · 32 KiB</title><rect x="845.04" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dpprobe Full · dpprobe-full.sfc · 32 KiB</title><rect x="853.64" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Duff Sim · duff_sim.sfc · 32 KiB</title><rect x="862.24" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Editdist Sim · editdist_sim.sfc · 32 KiB</title><rect x="870.84" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Epicycles Sim · epicycles_sim.sfc · 32 KiB</title><rect x="879.44" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Extload · extload.sfc · 32 KiB</title><rect x="888.04" y="383.79" width="8.60" height="8.98" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Extload Sim · extload_sim.sfc · 32 KiB</title><rect x="776.24" y="392.76" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fabsridge Sim · fabsridge_sim.sfc · 32 KiB</title><rect x="776.24" y="401.40" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Factorial Sim · factorial_sim.sfc · 32 KiB</title><rect x="776.24" y="410.03" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Run · far-run.sfc · 32 KiB</title><rect x="776.24" y="418.67" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Arith · far_arith.sfc · 32 KiB</title><rect x="776.24" y="427.30" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Cast · far_cast.sfc · 32 KiB</title><rect x="776.24" y="435.93" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Loop · far_loop.sfc · 32 KiB</title><rect x="776.24" y="444.57" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops O2 · far_memops-O2.sfc · 32 KiB</title><rect x="776.24" y="453.20" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops Os · far_memops-Os.sfc · 32 KiB</title><rect x="776.24" y="461.83" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops · far_memops.sfc · 32 KiB</title><rect x="776.24" y="470.47" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops32 A16 O2 · far_memops32_a16-O2.sfc · 32 KiB</title><rect x="776.24" y="479.10" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops32 A16 Os · far_memops32_a16-Os.sfc · 32 KiB</title><rect x="776.24" y="487.73" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops32 Xy16 O2 · far_memops32_xy16-O2.sfc · 32 KiB</title><rect x="776.24" y="496.37" width="8.94" height="8.63" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Memops32 Xy16 Os · far_memops32_xy16-Os.sfc · 32 KiB</title><rect x="785.18" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far Store · far_store.sfc · 32 KiB</title><rect x="793.75" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farblit Press A16 · farblit_press_a16.sfc · 32 KiB</title><rect x="802.33" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Farblit Press Xy16 · farblit_press_xy16.sfc · 32 KiB</title><rect x="810.90" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fenwick Sim · fenwick_sim.sfc · 32 KiB</title><rect x="819.47" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fftx · fftX.sfc · 32 KiB</title><rect x="828.05" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fft A16 · fft_a16.sfc · 32 KiB</title><rect x="836.62" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fft Repro · fft_repro.sfc · 32 KiB</title><rect x="845.20" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fft Sim · fft_sim.sfc · 32 KiB</title><rect x="853.77" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fn Plot Sim · fn_plot_sim.sfc · 32 KiB</title><rect x="862.34" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Funcs · funcs.sfc · 32 KiB</title><rect x="870.92" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Funnelkal Sim · funnelkal_sim.sfc · 32 KiB</title><rect x="879.49" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Gf256 Sim · gf256_sim.sfc · 32 KiB</title><rect x="888.06" y="392.76" width="8.57" height="9.01" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Globals · globals.sfc · 32 KiB</title><rect x="785.18" y="401.77" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Gouraud Sim · gouraud_sim.sfc · 32 KiB</title><rect x="785.18" y="410.37" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Grid3D Sim · grid3d_sim.sfc · 32 KiB</title><rect x="785.18" y="418.98" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Harmonograph Sim · harmonograph_sim.sfc · 32 KiB</title><rect x="785.18" y="427.58" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Hdr Bloom Sim · hdr_bloom_sim.sfc · 32 KiB</title><rect x="785.18" y="436.18" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Hello · hello.sfc · 32 KiB</title><rect x="785.18" y="444.78" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Hilbert Sim · hilbert_sim.sfc · 32 KiB</title><rect x="785.18" y="453.39" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Huffman Sim · huffman_sim.sfc · 32 KiB</title><rect x="785.18" y="461.99" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Hull Sim · hull_sim.sfc · 32 KiB</title><rect x="785.18" y="470.59" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Iir Scope Sim · iir_scope_sim.sfc · 32 KiB</title><rect x="785.18" y="479.19" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Invaders A16 · invaders-a16.sfc · 32 KiB</title><rect x="785.18" y="487.80" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Invaders · invaders.sfc · 32 KiB</title><rect x="785.18" y="496.40" width="8.98" height="8.60" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Invaders Sim · invaders_sim.sfc · 32 KiB</title><rect x="794.16" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Irqgate A16 · irqgate-a16.sfc · 32 KiB</title><rect x="802.70" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Irqgate Default · irqgate-default.sfc · 32 KiB</title><rect x="811.24" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Irqgate Xy16 · irqgate-xy16.sfc · 32 KiB</title><rect x="819.78" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Irqprobe · irqprobe.sfc · 32 KiB</title><rect x="828.32" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Isrbracket A16 · isrbracket-a16.sfc · 32 KiB</title><rect x="836.86" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Isrbracket Default · isrbracket-default.sfc · 32 KiB</title><rect x="845.40" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Isrbracket Xy16 · isrbracket-xy16.sfc · 32 KiB</title><rect x="853.94" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Jt256 Sim · jt256_sim.sfc · 32 KiB</title><rect x="862.48" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Jtedge Sim · jtedge_sim.sfc · 32 KiB</title><rect x="871.02" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Jtsparse Sim · jtsparse_sim.sfc · 32 KiB</title><rect x="879.56" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Julia Sim · julia_sim.sfc · 32 KiB</title><rect x="888.10" y="401.77" width="8.54" height="9.04" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Keycmp64 Sim · keycmp64_sim.sfc · 32 KiB</title><rect x="794.16" y="410.81" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lfsr2 Sim · lfsr2_sim.sfc · 32 KiB</title><rect x="794.16" y="419.38" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Life Sim · life_sim.sfc · 32 KiB</title><rect x="794.16" y="427.94" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Llabs64 A16 · llabs64-a16.sfc · 32 KiB</title><rect x="794.16" y="436.50" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Llabs64 Default · llabs64-default.sfc · 32 KiB</title><rect x="794.16" y="445.06" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Llabs64 Xy16 · llabs64-xy16.sfc · 32 KiB</title><rect x="794.16" y="453.63" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lsystem Sim · lsystem_sim.sfc · 32 KiB</title><rect x="794.16" y="462.19" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lzdec Sim · lzdec_sim.sfc · 32 KiB</title><rect x="794.16" y="470.75" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mandel Double Sim · mandel-double_sim.sfc · 32 KiB</title><rect x="794.16" y="479.31" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mandel Float Sim · mandel-float_sim.sfc · 32 KiB</title><rect x="794.16" y="487.88" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Matcascade Sim · matcascade_sim.sfc · 32 KiB</title><rect x="794.16" y="496.44" width="9.02" height="8.56" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Maze Sim · maze_sim.sfc · 32 KiB</title><rect x="803.18" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Md Published · md-published.sfc · 32 KiB</title><rect x="811.67" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Medfilt Sim · medfilt_sim.sfc · 32 KiB</title><rect x="820.17" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Metaball Sim · metaball_sim.sfc · 32 KiB</title><rect x="828.66" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mixedwidth A16 · mixedwidth-a16.sfc · 32 KiB</title><rect x="837.16" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mixedwidth Default · mixedwidth-default.sfc · 32 KiB</title><rect x="845.66" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mixedwidth Xy16 · mixedwidth-xy16.sfc · 32 KiB</title><rect x="854.15" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Modethread A16 · modethread-a16.sfc · 32 KiB</title><rect x="862.65" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Modethread Default · modethread-default.sfc · 32 KiB</title><rect x="871.15" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Modethread Xy16 · modethread-xy16.sfc · 32 KiB</title><rect x="879.64" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Modexp256 Sim · modexp256_sim.sfc · 32 KiB</title><rect x="888.14" y="410.81" width="8.50" height="9.09" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Montorbit Sim · montorbit_sim.sfc · 32 KiB</title><rect x="803.18" y="419.90" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Msquares Sim · msquares_sim.sfc · 32 KiB</title><rect x="803.18" y="428.41" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mulov64 Sim · mulov64_sim.sfc · 32 KiB</title><rect x="803.18" y="436.92" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Multibase Sim · multibase_sim.sfc · 32 KiB</title><rect x="803.18" y="445.43" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mvscrl Sim · mvscrl_sim.sfc · 32 KiB</title><rect x="803.18" y="453.94" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>N Body Sim · n-body_sim.sfc · 32 KiB</title><rect x="803.18" y="462.45" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nbody Sim · nbody_sim.sfc · 32 KiB</title><rect x="803.18" y="470.96" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Newton Sim · newton_sim.sfc · 32 KiB</title><rect x="803.18" y="479.47" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nmitally A16 · nmitally-a16.sfc · 32 KiB</title><rect x="803.18" y="487.98" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nmitally Default · nmitally-default.sfc · 32 KiB</title><rect x="803.18" y="496.49" width="9.07" height="8.51" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nmitally Xy16 · nmitally-xy16.sfc · 32 KiB</title><rect x="812.25" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nmitally Sim · nmitally_sim.sfc · 32 KiB</title><rect x="820.69" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nrecip Sim · nrecip_sim.sfc · 32 KiB</title><rect x="829.13" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Oddmask Sim · oddmask_sim.sfc · 32 KiB</title><rect x="837.57" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ovmatrix Sim · ovmatrix_sim.sfc · 32 KiB</title><rect x="846.00" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ovmove Sim · ovmove_sim.sfc · 32 KiB</title><rect x="854.44" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Packrec Sim · packrec_sim.sfc · 32 KiB</title><rect x="862.88" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Pcooker Sim · pcooker_sim.sfc · 32 KiB</title><rect x="871.32" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Percol Sim · percol_sim.sfc · 32 KiB</title><rect x="879.76" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Perlin Sim · perlin_sim.sfc · 32 KiB</title><rect x="888.20" y="419.90" width="8.44" height="9.15" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Permscat Sim · permscat_sim.sfc · 32 KiB</title><rect x="812.25" y="429.05" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Pi Sim · pi_sim.sfc · 32 KiB</title><rect x="812.25" y="437.49" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Plyoracle Sim · plyoracle_sim.sfc · 32 KiB</title><rect x="812.25" y="445.93" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Polyfill Sim · polyfill_sim.sfc · 32 KiB</title><rect x="812.25" y="454.37" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Poolfx Sim · poolfx_sim.sfc · 32 KiB</title><rect x="812.25" y="462.81" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Qsortviz A16 · qsortviz-a16.sfc · 32 KiB</title><rect x="812.25" y="471.25" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Qsortviz Default · qsortviz-default.sfc · 32 KiB</title><rect x="812.25" y="479.68" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Qsortviz Xy16 · qsortviz-xy16.sfc · 32 KiB</title><rect x="812.25" y="488.12" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Qsortviz Sim · qsortviz_sim.sfc · 32 KiB</title><rect x="812.25" y="496.56" width="9.15" height="8.44" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Radix Sim · radix_sim.sfc · 32 KiB</title><rect x="821.40" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rangecode Sim · rangecode_sim.sfc · 32 KiB</title><rect x="829.76" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Raycaster Sim · raycaster_sim.sfc · 32 KiB</title><rect x="838.12" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rdiff Default · rdiff-default.sfc · 32 KiB</title><rect x="846.48" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rdiff Sim · rdiff_sim.sfc · 32 KiB</title><rect x="854.84" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Retryjmp Sim · retryjmp_sim.sfc · 32 KiB</title><rect x="863.20" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ropeedit Sim · ropeedit_sim.sfc · 32 KiB</title><rect x="871.56" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rotkal Sim · rotkal_sim.sfc · 32 KiB</title><rect x="879.92" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rotozoom Sim · rotozoom_sim.sfc · 32 KiB</title><rect x="888.28" y="429.05" width="8.36" height="9.24" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rotslab Sim · rotslab_sim.sfc · 32 KiB</title><rect x="821.40" y="438.29" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Satcast Sim · satcast_sim.sfc · 32 KiB</title><rect x="821.40" y="446.63" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Satcomet Sim · satcomet_sim.sfc · 32 KiB</title><rect x="821.40" y="454.97" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sbitfld Sim · sbitfld_sim.sfc · 32 KiB</title><rect x="821.40" y="463.31" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Scopeguard Sim · scopeguard_sim.sfc · 32 KiB</title><rect x="821.40" y="471.64" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Seqvm Sim · seqvm_sim.sfc · 32 KiB</title><rect x="821.40" y="479.98" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Setjmp Sim · setjmp_sim.sfc · 32 KiB</title><rect x="821.40" y="488.32" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Shift64Seam A16 · shift64seam-a16.sfc · 32 KiB</title><rect x="821.40" y="496.66" width="9.26" height="8.34" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Shift64Seam Default · shift64seam-default.sfc · 32 KiB</title><rect x="830.66" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Shift64Seam Xy16 · shift64seam-xy16.sfc · 32 KiB</title><rect x="838.91" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sj · sj.sfc · 32 KiB</title><rect x="847.15" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Smulorbit Sim · smulorbit_sim.sfc · 32 KiB</title><rect x="855.40" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Snes Video Codec Bench · snes-video-codec-bench.sfc · 32 KiB</title><rect x="863.65" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Snes Video Reel Battery · snes-video-reel-battery.sfc · 32 KiB</title><rect x="871.89" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Snes Video Reel Fast · snes-video-reel-fast.sfc · 32 KiB</title><rect x="880.14" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sobel Sim · sobel_sim.sfc · 32 KiB</title><rect x="888.39" y="438.29" width="8.25" height="9.36" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sodo Sim · sodo_sim.sfc · 32 KiB</title><rect x="830.66" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sort Race Sim · sort-race_sim.sfc · 32 KiB</title><rect x="830.66" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Spaceship Sim · spaceship_sim.sfc · 32 KiB</title><rect x="830.66" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Speedcap Sim · speedcap_sim.sfc · 32 KiB</title><rect x="830.66" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Spiro Ctrl Sim · spiro_ctrl_sim.sfc · 32 KiB</title><rect x="830.66" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Spiro Sim · spiro_sim.sfc · 32 KiB</title><rect x="830.66" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sretrec · sretrec.sfc · 32 KiB</title><rect x="830.66" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sretrec Sim · sretrec_sim.sfc · 32 KiB</title><rect x="840.08" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Strcmprace Sim · strcmprace_sim.sfc · 32 KiB</title><rect x="849.51" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Structs · structs.sfc · 32 KiB</title><rect x="858.94" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Svx2 Fastrom Visible · svx2-fastrom-visible.sfc · 32 KiB</title><rect x="868.36" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Tea Sim · tea_sim.sfc · 32 KiB</title><rect x="877.79" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Title Probe · title-probe.sfc · 32 KiB</title><rect x="887.21" y="447.65" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Trapguard Sim · trapguard_sim.sfc · 32 KiB</title><rect x="840.08" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Trimerge Sim · trimerge_sim.sfc · 32 KiB</title><rect x="840.08" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Truchet Sim · truchet_sim.sfc · 32 KiB</title><rect x="840.08" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Truncstair Sim · truncstair_sim.sfc · 32 KiB</title><rect x="840.08" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Turtle Vm Sim · turtle-vm_sim.sfc · 32 KiB</title><rect x="840.08" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Uarteye Sim · uarteye_sim.sfc · 32 KiB</title><rect x="840.08" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ucmprank Sim · ucmprank_sim.sfc · 32 KiB</title><rect x="849.51" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ulam Sim · ulam_sim.sfc · 32 KiB</title><rect x="858.94" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Vaprintf Sim · vaprintf_sim.sfc · 32 KiB</title><rect x="868.36" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Vawidth · vawidth.sfc · 32 KiB</title><rect x="877.79" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Vawidth Sim · vawidth_sim.sfc · 32 KiB</title><rect x="887.21" y="455.84" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Lzss Median · video-bench-lzss-median.sfc · 32 KiB</title><rect x="849.51" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Lzss Worst · video-bench-lzss-worst.sfc · 32 KiB</title><rect x="849.51" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Raw Copy · video-bench-raw-copy.sfc · 32 KiB</title><rect x="849.51" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Svc Median · video-bench-svc-median.sfc · 32 KiB</title><rect x="849.51" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Svc Worst · video-bench-svc-worst.sfc · 32 KiB</title><rect x="849.51" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Svx Keyframe · video-bench-svx-keyframe.sfc · 32 KiB</title><rect x="858.94" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Svx Median · video-bench-svx-median.sfc · 32 KiB</title><rect x="868.36" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Video Bench Svx Worst · video-bench-svx-worst.sfc · 32 KiB</title><rect x="877.79" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Vlanest Sim · vlanest_sim.sfc · 32 KiB</title><rect x="887.21" y="464.04" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Vlastack Sim · vlastack_sim.sfc · 32 KiB</title><rect x="858.94" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Wire3D Ctrl Sim · wire3d_ctrl_sim.sfc · 32 KiB</title><rect x="858.94" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Wire3D Sim · wire3d_sim.sfc · 32 KiB</title><rect x="858.94" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Wireframe · wireframe.sfc · 32 KiB</title><rect x="858.94" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Basic · xy16basic.sfc · 32 KiB</title><rect x="868.36" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Call A16 · xy16call_a16.sfc · 32 KiB</title><rect x="877.79" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Call Default · xy16call_default.sfc · 32 KiB</title><rect x="887.21" y="472.23" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Call Xy16 · xy16call_xy16.sfc · 32 KiB</title><rect x="868.36" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Indiry A16 · xy16indiry_a16.sfc · 32 KiB</title><rect x="868.36" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Indiry Default · xy16indiry_default.sfc · 32 KiB</title><rect x="868.36" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Indiry Xy16 · xy16indiry_xy16.sfc · 32 KiB</title><rect x="877.79" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Inplace · xy16inplace.sfc · 32 KiB</title><rect x="887.21" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Ops Default · xy16ops_default.sfc · 32 KiB</title><rect x="877.79" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Ops Xy16 · xy16ops_xy16.sfc · 32 KiB</title><rect x="877.79" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Spillr Default · xy16spillr_default.sfc · 32 KiB</title><rect x="887.21" y="488.61" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Xy16Spillr Xy16 · xy16spillr_xy16.sfc · 32 KiB</title><rect x="887.21" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#38506b" stroke="#111822" stroke-width="1"/>
+</g>
+<rect x="896.64" y="0.00" width="203.36" height="291.61" fill="none" stroke="#101720" stroke-width="3"/>
+<rect x="900.64" y="2.00" width="156" height="16" rx="3" fill="#0b1017" fill-opacity=".82"/>
+<text x="903.6" y="13.0" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="10" font-weight="600">Cartridge &amp; Mapping Tests · 4</text>
+<g><title>ExHiROM 64 Mbit Cartridge Test · cartsize-exhirom-8m.sfc · 8.0 MiB</title><rect x="896.64" y="0.00" width="116.21" height="170.11" rx="1.5" fill="#756c83" stroke="#111822" stroke-width="1"/>
+<text x="902.6" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">ExHiROM 64 Mbit Cartridge Te</text>
+<text x="902.6" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">8.0 MiB</text>
+</g>
+<g><title>ExHiROM 48 Mbit Cartridge Test · cartsize-exhirom-6m.sfc · 6.0 MiB</title><rect x="1012.84" y="0.00" width="87.16" height="170.11" rx="1.5" fill="#756c83" stroke="#111822" stroke-width="1"/>
+<text x="1018.8" y="16.0" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">ExHiROM 48 Mbit Cartridge Te</text>
+<text x="1018.8" y="32.0" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>Seam Demo — Three-Act Boundary Cartridge · seamdemo.sfc · 6.0 MiB</title><rect x="896.64" y="170.11" width="122.02" height="121.50" rx="1.5" fill="#756c83" stroke="#111822" stroke-width="1"/>
+<text x="902.6" y="186.1" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">Seam Demo — Three-Act Bounda</text>
+<text x="902.6" y="202.1" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">6.0 MiB</text>
+</g>
+<g><title>HiROM 32 Mbit Cartridge Test · cartsize-hirom-4m.sfc · 4.0 MiB</title><rect x="1018.65" y="170.11" width="81.35" height="121.50" rx="1.5" fill="#756c83" stroke="#111822" stroke-width="1"/>
+<text x="1024.7" y="186.1" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">HiROM 32 Mbit Cartridge Test</text>
+<text x="1024.7" y="202.1" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">4.0 MiB</text>
+</g>
+<rect x="896.64" y="291.61" width="203.36" height="145.80" fill="none" stroke="#101720" stroke-width="3"/>
+<rect x="900.64" y="293.61" width="156" height="16" rx="3" fill="#0b1017" fill-opacity=".82"/>
+<text x="903.6" y="304.6" fill="#f6f8fb" font-family="Arial,sans-serif" font-size="10" font-weight="600">Video Playback · 2</text>
+<g><title>SVX2 60 FPS FastROM Video · svx2-fastrom-video.sfc · 8.0 MiB</title><rect x="896.64" y="291.61" width="135.58" height="145.80" rx="1.5" fill="#b15f64" stroke="#111822" stroke-width="1"/>
+<text x="902.6" y="307.6" fill="#fff" font-family="Arial,sans-serif" font-size="10" font-weight="600">SVX2 60 FPS FastROM Video</text>
+<text x="902.6" y="323.6" fill="#d8e0ea" font-family="Arial,sans-serif" font-size="9" font-weight="400">8.0 MiB</text>
+</g>
+<g><title>Apollo 11 Daylight Launch · apollo-daylight.sfc · 4.0 MiB</title><rect x="1032.21" y="291.61" width="67.79" height="145.80" rx="1.5" fill="#b15f64" stroke="#ffffff" stroke-width="3"/>
+</g>
+<g><title>Far-Pointer Order Shuffle · farptrcmp.sfc · 512 KiB</title><rect x="896.64" y="437.41" width="65.12" height="18.97" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Backtracking Solver · backtrack.sfc · 32 KiB</title><rect x="896.64" y="456.39" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bitboard Knight Tour · bitboard64.sfc · 32 KiB</title><rect x="896.64" y="464.49" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Reservoir Ladder · borrowov.sfc · 32 KiB</title><rect x="896.64" y="472.59" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bisection Oracle · bsearchviz.sfc · 32 KiB</title><rect x="896.64" y="480.69" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>By-Value Boundary Trio · byvaledge.sfc · 32 KiB</title><rect x="896.64" y="488.80" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Duff Dissolve · duff.sfc · 32 KiB</title><rect x="896.64" y="496.90" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Edit-Distance DP · editdist.sfc · 32 KiB</title><rect x="906.17" y="456.39" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fenwick Tree · fenwick.sfc · 32 KiB</title><rect x="906.17" y="464.49" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Huffman Decode · huffman.sfc · 32 KiB</title><rect x="906.17" y="472.59" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Convex Hull · hull.sfc · 32 KiB</title><rect x="906.17" y="480.69" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>ISA-256 Bytecode Machine · jt256.sfc · 32 KiB</title><rect x="906.17" y="488.80" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Jump-Table Boundary Sweep · jtedge.sfc · 32 KiB</title><rect x="906.17" y="496.90" width="9.53" height="8.10" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sparse Switch Ladder · jtsparse.sfc · 32 KiB</title><rect x="915.70" y="456.39" width="9.21" height="8.38" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>64-bit Multi-Key Record Sort · keycmp64.sfc · 32 KiB</title><rect x="924.91" y="456.39" width="9.21" height="8.38" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>LZ77 Decompress Reveal · lzdec.sfc · 32 KiB</title><rect x="934.12" y="456.39" width="9.21" height="8.38" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Maze Generate + Solve · maze.sfc · 32 KiB</title><rect x="943.33" y="456.39" width="9.21" height="8.38" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Threaded Mode Interpreter · modethread.sfc · 32 KiB</title><rect x="952.55" y="456.39" width="9.21" height="8.38" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>256-bit Modular Exponentiation · modexp256.sfc · 32 KiB</title><rect x="915.70" y="464.77" width="9.60" height="8.05" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Memmove Scroll Slabs · mvscrl.sfc · 32 KiB</title><rect x="915.70" y="472.81" width="9.60" height="8.05" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Odd-Width Mask Sculptor · oddmask.sfc · 32 KiB</title><rect x="915.70" y="480.86" width="9.60" height="8.05" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Overlap-Move Mosaic · ovmove.sfc · 32 KiB</title><rect x="915.70" y="488.91" width="9.60" height="8.05" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Unaligned Record Reader · packrec.sfc · 32 KiB</title><rect x="915.70" y="496.95" width="9.60" height="8.05" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Pressure-Cooker Fixed-Point Evaluator · pcooker.sfc · 32 KiB</title><rect x="925.29" y="464.77" width="9.12" height="8.47" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Gather-Scatter Permutation · permscat.sfc · 32 KiB</title><rect x="934.41" y="464.77" width="9.12" height="8.47" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>qsort Sort Visualizer · qsortviz.sfc · 32 KiB</title><rect x="943.53" y="464.77" width="9.12" height="8.47" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Radix Sort · radix.sfc · 32 KiB</title><rect x="952.64" y="464.77" width="9.12" height="8.47" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Range Coder · rangecode.sfc · 32 KiB</title><rect x="925.29" y="473.24" width="9.72" height="7.94" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Retry-On-Fault Ladder · retryjmp.sfc · 32 KiB</title><rect x="925.29" y="481.18" width="9.72" height="7.94" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Gap-Buffer Rope Editor · ropeedit.sfc · 32 KiB</title><rect x="925.29" y="489.12" width="9.72" height="7.94" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>In-Place Block Rotate · rotslab.sfc · 32 KiB</title><rect x="925.29" y="497.06" width="9.72" height="7.94" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Signed-Bitfield Terrain · sbitfld.sfc · 32 KiB</title><rect x="935.02" y="473.24" width="8.91" height="8.66" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Scope-Guard Ripple Tank · scopeguard.sfc · 32 KiB</title><rect x="943.93" y="473.24" width="8.91" height="8.66" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sorting Race · sort-race.sfc · 32 KiB</title><rect x="952.84" y="473.24" width="8.91" height="8.66" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Width-Sweep Sort Gallery · spaceship.sfc · 32 KiB</title><rect x="935.02" y="481.90" width="10.03" height="7.70" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lexicographic Race · strcmprace.sfc · 32 KiB</title><rect x="935.02" y="489.60" width="10.03" height="7.70" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Unreachable Sentinel · trapguard.sfc · 32 KiB</title><rect x="935.02" y="497.30" width="10.03" height="7.70" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Three-Way Merge Diff · trimerge.sfc · 32 KiB</title><rect x="945.04" y="481.90" width="8.36" height="9.24" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Truncation Staircase · truncstair.sfc · 32 KiB</title><rect x="953.40" y="481.90" width="8.36" height="9.24" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Unsigned Rank Percentile Field · ucmprank.sfc · 32 KiB</title><rect x="945.04" y="491.14" width="11.14" height="6.93" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Ulam Prime Sieve · ulam.sfc · 32 KiB</title><rect x="945.04" y="498.07" width="11.14" height="6.93" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Nested VLA Pyramid · vlanest.sfc · 32 KiB</title><rect x="956.19" y="491.14" width="5.57" height="13.86" rx="1.5" fill="#4e7d96" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>64K Bank-Boundary Walk · bankwalk.sfc · 512 KiB</title><rect x="961.76" y="437.41" width="36.56" height="33.79" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Far-Pointer Spill Funnel · farspill.sfc · 64 KiB</title><rect x="961.76" y="471.21" width="11.42" height="13.52" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Motion-Detect Difference Field · absdiff.sfc · 32 KiB</title><rect x="961.76" y="484.72" width="11.42" height="6.76" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>ADPCM Waverider · adpcm.sfc · 32 KiB</title><rect x="961.76" y="491.48" width="11.42" height="6.76" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Inline-Asm Island · asmisland.sfc · 32 KiB</title><rect x="961.76" y="498.24" width="11.42" height="6.76" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Software Vectors · brkcop.sfc · 32 KiB</title><rect x="973.18" y="471.21" width="8.38" height="9.22" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>DCT Bloom · dctbloom.sfc · 32 KiB</title><rect x="981.56" y="471.21" width="8.38" height="9.22" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bank/Direct-Page Windows · dpbank.sfc · 32 KiB</title><rect x="989.94" y="471.21" width="8.38" height="9.22" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>FFT Spectrum Analyser · fft.sfc · 32 KiB</title><rect x="973.18" y="480.42" width="9.43" height="8.19" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>IIR Resonant-Filter Scope · iir-scope.sfc · 32 KiB</title><rect x="973.18" y="488.62" width="9.43" height="8.19" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>IRQ Gate · irqgate.sfc · 32 KiB</title><rect x="973.18" y="496.81" width="9.43" height="8.19" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mid-Bracket NMI Tunnel · isrbracket.sfc · 32 KiB</title><rect x="982.61" y="480.42" width="7.85" height="9.83" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Seismograph Absolute Trace · llabs64.sfc · 32 KiB</title><rect x="990.46" y="480.42" width="7.85" height="9.83" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Split-Personality Link · mixedwidth.sfc · 32 KiB</title><rect x="982.61" y="490.25" width="10.47" height="7.37" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>VBlank Interrupt Tally · nmitally.sfc · 32 KiB</title><rect x="982.61" y="497.63" width="10.47" height="7.37" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Step-Sequencer VM (Sparse Switch) · seqvm.sfc · 32 KiB</title><rect x="993.08" y="490.25" width="5.24" height="14.75" rx="1.5" fill="#4a8b68" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Affine Stage Pipeline · bigbyval.sfc · 32 KiB</title><rect x="998.32" y="437.41" width="8.85" height="8.72" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Many-Arg Color Grade · cgrade.sfc · 32 KiB</title><rect x="1007.17" y="437.41" width="8.85" height="8.72" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>CRC32 Hash-Marble Texture · crctex.sfc · 32 KiB</title><rect x="1016.03" y="437.41" width="8.85" height="8.72" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Floyd-Steinberg Dither · dither.sfc · 32 KiB</title><rect x="1024.88" y="437.41" width="8.85" height="8.72" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fabs Ridgeline · fabsridge.sfc · 32 KiB</title><rect x="998.32" y="446.13" width="9.44" height="8.18" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Funnel-Shift Kaleidoscope · funnelkal.sfc · 32 KiB</title><rect x="998.32" y="454.31" width="9.44" height="8.18" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Gouraud Triangle · gouraud.sfc · 32 KiB</title><rect x="998.32" y="462.49" width="9.44" height="8.18" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>HDR Additive Bloom · hdr-bloom.sfc · 32 KiB</title><rect x="998.32" y="470.66" width="9.44" height="8.18" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Matrix Cascade · matcascade.sfc · 32 KiB</title><rect x="1007.76" y="446.13" width="8.66" height="8.92" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Median Denoiser · medfilt.sfc · 32 KiB</title><rect x="1016.42" y="446.13" width="8.66" height="8.92" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Type-Pun Metaballs · metaball.sfc · 32 KiB</title><rect x="1025.08" y="446.13" width="8.66" height="8.92" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Newton Reciprocal Floor · nrecip.sfc · 32 KiB</title><rect x="1007.76" y="455.05" width="9.74" height="7.93" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Perlin Noise · perlin.sfc · 32 KiB</title><rect x="1007.76" y="462.98" width="9.74" height="7.93" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Polygon Scanline Fill (VLA) · polyfill.sfc · 32 KiB</title><rect x="1007.76" y="470.91" width="9.74" height="7.93" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rotate-Register Kaleidoscope · rotkal.sfc · 32 KiB</title><rect x="1017.50" y="455.05" width="8.12" height="9.51" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Rotozoom · rotozoom.sfc · 32 KiB</title><rect x="1025.62" y="455.05" width="8.12" height="9.51" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Saturating-Cast Kaleidoscope · satcast.sfc · 32 KiB</title><rect x="1017.50" y="464.57" width="10.82" height="7.14" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Sobelscope · sobel.sfc · 32 KiB</title><rect x="1017.50" y="471.70" width="10.82" height="7.14" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Run-Length Scanline Decoder · vlastack.sfc · 32 KiB</title><rect x="1028.32" y="464.57" width="5.41" height="14.27" rx="1.5" fill="#7966a2" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Precision Bridge · dblbridge.sfc · 64 KiB</title><rect x="998.32" y="478.84" width="11.81" height="13.08" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>64-Bit Avalanche · avalanche.sfc · 32 KiB</title><rect x="998.32" y="491.92" width="11.81" height="6.54" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Borrow-Ladder Odometer · borrowlad.sfc · 32 KiB</title><rect x="998.32" y="498.46" width="11.81" height="6.54" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cosmic Zoom Ruler · cosmzoom.sfc · 32 KiB</title><rect x="1010.12" y="478.84" width="7.87" height="9.81" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Diffie-Hellman Colour-Mixer · dhmix.sfc · 32 KiB</title><rect x="1017.99" y="478.84" width="7.87" height="9.81" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bignum Factorial · factorial.sfc · 32 KiB</title><rect x="1025.86" y="478.84" width="7.87" height="9.81" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>64-bit Multiply-Overflow · mulov64.sfc · 32 KiB</title><rect x="1010.12" y="488.65" width="9.44" height="8.18" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Multi-Base Clock · multibase.sfc · 32 KiB</title><rect x="1010.12" y="496.82" width="9.44" height="8.18" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Overflow Family Matrix · ovmatrix.sfc · 32 KiB</title><rect x="1019.57" y="488.65" width="7.08" height="10.90" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Signed 64-bit Odometer · sodo.sfc · 32 KiB</title><rect x="1026.65" y="488.65" width="7.08" height="10.90" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>π Spigot + Monte-Carlo · spigot.sfc · 32 KiB</title><rect x="1019.57" y="499.55" width="14.17" height="5.45" rx="1.5" fill="#6a8652" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bit-Census Field · bitcensus.sfc · 32 KiB</title><rect x="1033.74" y="437.41" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Perfect-Shuffle Transition · bitshuffle.sfc · 32 KiB</title><rect x="1033.74" y="446.74" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Serial Bit-Reversal Weave · bitweave.sfc · 32 KiB</title><rect x="1033.74" y="456.06" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bit-Serial CRC Wall · crcwall.sfc · 32 KiB</title><rect x="1042.02" y="437.41" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Cross-Byte Bitfields · disbits.sfc · 32 KiB</title><rect x="1050.30" y="437.41" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>GF(2⁸) Galois Field · gf256.sfc · 32 KiB</title><rect x="1058.58" y="437.41" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Dual-LFSR Scrambler · lfsr2.sfc · 32 KiB</title><rect x="1042.02" y="446.74" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Montgomery Orbit · montorbit.sfc · 32 KiB</title><rect x="1042.02" y="456.06" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>64-Bit Limb-Seam Barrel · shift64seam.sfc · 32 KiB</title><rect x="1050.30" y="446.74" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>TEA Cipher Avalanche · tea.sfc · 32 KiB</title><rect x="1058.58" y="446.74" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Truchet · Packed Bitfields · truchet.sfc · 32 KiB</title><rect x="1050.30" y="456.06" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bit-Banged UART Eye · uarteye.sfc · 32 KiB</title><rect x="1058.58" y="456.06" width="8.28" height="9.32" rx="1.5" fill="#96714f" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Double-Precision Mandelbrot · mandel-double.sfc · 64 KiB</title><rect x="1066.87" y="437.41" width="11.04" height="13.98" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Buddhabrot · buddhabrot.sfc · 32 KiB</title><rect x="1066.87" y="451.40" width="11.04" height="6.99" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Burning Ship Fractal · burning-ship.sfc · 32 KiB</title><rect x="1066.87" y="458.39" width="11.04" height="6.99" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Domain Colouring · domcol.sfc · 32 KiB</title><rect x="1077.91" y="437.41" width="7.36" height="10.49" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Function Plotter · fn-plot.sfc · 32 KiB</title><rect x="1085.27" y="437.41" width="7.36" height="10.49" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Julia Set Explorer · julia.sfc · 32 KiB</title><rect x="1092.64" y="437.41" width="7.36" height="10.49" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>L-System Plant · lsystem.sfc · 32 KiB</title><rect x="1077.91" y="447.90" width="8.84" height="8.74" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mode 7 Mandelbrot · mandel-display.sfc · 32 KiB</title><rect x="1077.91" y="456.64" width="8.84" height="8.74" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Soft-Float Mandelbrot · mandel-float.sfc · 32 KiB</title><rect x="1086.75" y="447.90" width="6.63" height="11.65" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Mode 7 Mandelbrot (OOP) · mandel-oop.sfc · 32 KiB</title><rect x="1093.37" y="447.90" width="6.63" height="11.65" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Newton&#x27;s Fractal · newton.sfc · 32 KiB</title><rect x="1086.75" y="459.55" width="13.25" height="5.83" rx="1.5" fill="#5070a0" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Times-table Cardioid · cardioid.sfc · 32 KiB</title><rect x="1033.74" y="465.38" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Copysign Compass · compass.sfc · 32 KiB</title><rect x="1044.45" y="465.38" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>CORDIC Rotator · cordic.sfc · 32 KiB</title><rect x="1033.74" y="472.58" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Callee-Saved Restore Curve · csrjmp.sfc · 32 KiB</title><rect x="1044.45" y="472.58" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fourier Epicycles · epicycles.sfc · 32 KiB</title><rect x="1033.74" y="479.79" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Lissajous Harmonograph · harmonograph.sfc · 32 KiB</title><rect x="1044.45" y="479.79" width="10.72" height="7.20" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Hilbert Curve · hilbert.sfc · 32 KiB</title><rect x="1033.74" y="486.99" width="8.58" height="9.00" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Saturating Comet Trails · satcomet.sfc · 32 KiB</title><rect x="1033.74" y="496.00" width="8.58" height="9.00" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Signed Multiply-Overflow Orbit · smulorbit.sfc · 32 KiB</title><rect x="1042.31" y="486.99" width="6.43" height="12.01" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Spirograph · spirograph.sfc · 32 KiB</title><rect x="1048.74" y="486.99" width="6.43" height="12.01" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>VA_ARG Formatter · vaprintf.sfc · 32 KiB</title><rect x="1042.31" y="499.00" width="12.86" height="6.00" rx="1.5" fill="#88734b" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Brainfuck Threaded-Code VM · bf-vm.sfc · 32 KiB</title><rect x="1055.17" y="465.38" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Blossom · blossom.sfc · 32 KiB</title><rect x="1055.17" y="472.81" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>6502 CPU Simulator · cpu6502.sfc · 32 KiB</title><rect x="1055.17" y="480.24" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Protothread Critters · critters.sfc · 32 KiB</title><rect x="1065.57" y="465.38" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Division Clock + Odometer · divclock.sfc · 32 KiB</title><rect x="1075.96" y="465.38" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>PlyOracle · plyoracle.sfc · 32 KiB</title><rect x="1065.57" y="472.81" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Free-List Pool Allocator · poolfx.sfc · 32 KiB</title><rect x="1065.57" y="480.24" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Space Invaders · space-invaders.sfc · 32 KiB</title><rect x="1075.96" y="472.81" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Bytecode-VM Turtle · turtle-vm.sfc · 32 KiB</title><rect x="1075.96" y="480.24" width="10.39" height="7.43" rx="1.5" fill="#ac6848" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>1-D Cellular Automaton · 1d-ca.sfc · 32 KiB</title><rect x="1055.17" y="487.67" width="8.91" height="8.67" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Doom Fire · doom-fire.sfc · 32 KiB</title><rect x="1055.17" y="496.33" width="8.91" height="8.67" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>3-D Grid Voxel Life · grid3d.sfc · 32 KiB</title><rect x="1064.08" y="487.67" width="8.91" height="8.67" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Conway&#x27;s Game of Life · life.sfc · 32 KiB</title><rect x="1064.08" y="496.33" width="8.91" height="8.67" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Marching Squares · msquares.sfc · 32 KiB</title><rect x="1072.99" y="487.67" width="6.68" height="11.56" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Union-Find Percolation · percol.sfc · 32 KiB</title><rect x="1079.68" y="487.67" width="6.68" height="11.56" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Reaction-Diffusion · rdiff.sfc · 32 KiB</title><rect x="1072.99" y="499.22" width="13.36" height="5.78" rx="1.5" fill="#3c8a80" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Wireframe 3-D Solid · 3d-wireframe.sfc · 32 KiB</title><rect x="1086.36" y="465.38" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Barnes-Hut Galaxy · bhut.sfc · 32 KiB</title><rect x="1093.18" y="465.38" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Boids Flock · boids.sfc · 32 KiB</title><rect x="1086.36" y="476.70" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Double Pendulum (Chaos) · double-pendulum.sfc · 32 KiB</title><rect x="1093.18" y="476.70" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>N-body Orbits · n-body.sfc · 32 KiB</title><rect x="1086.36" y="488.02" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Raycaster Maze · raycaster.sfc · 32 KiB</title><rect x="1093.18" y="488.02" width="6.82" height="11.32" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+<g><title>Fmin/Fmax Speed Cap · speedcap.sfc · 32 KiB</title><rect x="1086.36" y="499.34" width="13.64" height="5.66" rx="1.5" fill="#6877ae" stroke="#111822" stroke-width="1"/>
+</g>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "home": "com.google.android.apps.tv.launcherx/.home.HomeActivity",
+  "apk": "4052deb5b869452e075cc5666e8cbbc6ec95f3647a396158011a84f025b2e870.apk",
+  "attempts": [],
+  "error": "APK installed, but launcher artwork is stale or unverified after bounded recovery; inspect launcher evidence."
+}

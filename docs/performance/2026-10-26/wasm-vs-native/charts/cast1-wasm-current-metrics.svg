@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="560" viewBox="0 0 980 560" role="img" aria-labelledby="title desc">
+  <title id="title">Cast1 current WASM profile metrics</title>
+  <desc id="desc">App-side emulation and draw rates compared with Cast1's SurfaceFlinger presentation rate, plus presentation interval percentiles.</desc>
+  <rect width="980" height="560" rx="18" fill="#101923"/>
+  <text x="40" y="48" fill="#edf4fb" font-family="sans-serif" font-size="26" font-weight="700">Cast1 · WASM · mandel-display</text>
+  <text x="40" y="76" fill="#9db2c7" font-family="sans-serif" font-size="15">Android 14 · ARMv7 · 120s warmup + 120s measured · 60Hz display</text>
+
+  <text x="40" y="124" fill="#edf4fb" font-family="sans-serif" font-size="19" font-weight="700">FPS · common 0–3 scale</text>
+  <text x="40" y="151" fill="#9db2c7" font-family="sans-serif" font-size="13">App telemetry measures emulation/draw work; SurfaceFlinger measures presented frames.</text>
+  <text x="44" y="207" fill="#dce8f4" font-family="sans-serif" font-size="16">Emulated</text>
+  <rect x="165" y="185" width="260" height="28" rx="6" fill="#1d2b39"/>
+  <rect x="165" y="185" width="174.2" height="28" rx="6" fill="#7ee4a3"/>
+  <text x="438" y="206" fill="#7ee4a3" font-family="sans-serif" font-size="17" font-weight="700">2.01 fps</text>
+  <text x="44" y="249" fill="#dce8f4" font-family="sans-serif" font-size="16">Draw submissions</text>
+  <rect x="165" y="227" width="260" height="28" rx="6" fill="#1d2b39"/>
+  <rect x="165" y="227" width="43.3" height="28" rx="6" fill="#73cef0"/>
+  <text x="438" y="248" fill="#73cef0" font-family="sans-serif" font-size="17" font-weight="700">0.50 fps</text>
+  <text x="44" y="291" fill="#dce8f4" font-family="sans-serif" font-size="16">Presented frames</text>
+  <rect x="165" y="269" width="260" height="28" rx="6" fill="#1d2b39"/>
+  <rect x="165" y="269" width="38.7" height="28" rx="6" fill="#f1bd64"/>
+  <text x="438" y="290" fill="#f1bd64" font-family="sans-serif" font-size="17" font-weight="700">0.447 fps</text>
+  <text x="165" y="322" fill="#8298ad" font-family="sans-serif" font-size="12">All bars: 0–3 fps · 60.1Hz target is off scale</text>
+
+  <line x1="40" y1="350" x2="940" y2="350" stroke="#293c4d" stroke-width="2"/>
+  <text x="40" y="388" fill="#edf4fb" font-family="sans-serif" font-size="19" font-weight="700">Presented-frame interval · lower is better</text>
+  <text x="40" y="414" fill="#9db2c7" font-family="sans-serif" font-size="13">Milliseconds, logarithmic scale · 60Hz target interval = 16.68ms</text>
+  <text x="44" y="459" fill="#dce8f4" font-family="sans-serif" font-size="16">60Hz target</text>
+  <rect x="165" y="438" width="51" height="24" rx="5" fill="#dce8f4"/>
+  <text x="438" y="458" fill="#dce8f4" font-family="sans-serif" font-size="16">16.68 ms</text>
+  <text x="44" y="496" fill="#dce8f4" font-family="sans-serif" font-size="16">Median / p95</text>
+  <rect x="165" y="476" width="535" height="24" rx="5" fill="#8eb8ff"/>
+  <text x="710" y="496" fill="#8eb8ff" font-family="sans-serif" font-size="16">p50 2052ms · p95 2219ms</text>
+  <text x="44" y="533" fill="#dce8f4" font-family="sans-serif" font-size="16">Worst observed</text>
+  <rect x="165" y="513" width="700" height="24" rx="5" fill="#f1bd64"/>
+  <text x="865" y="532" fill="#f1bd64" font-family="sans-serif" font-size="15" font-weight="700">10727 ms</text>
+</svg>

@@ -1,0 +1,188 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793145467.3185835,
+    "end": 1793145467.5897605,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793145467.6010945,
+    "end": 1793145467.8551624,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native"
+    ],
+    "start": 1793145467.8806987,
+    "end": 1793145468.223291,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793145467.8761878,
+    "end": 1793145468.2257187,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793145468.2257562,
+    "end": 1793145468.4780855,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.native/org.bsnesjg.tv.MainActivity"
+    ],
+    "start": 1793145468.6312387,
+    "end": 1793145469.0747464,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793145474.0804374,
+    "end": 1793145474.3474534,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native"
+    ],
+    "start": 1793145474.3586445,
+    "end": 1793145474.5549946,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native"
+    ],
+    "start": 1793145474.5569923,
+    "end": 1793145474.7616477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-t",
+      "2000",
+      "--pid=1533",
+      "-v",
+      "brief"
+    ],
+    "start": 1793145474.7639208,
+    "end": 1793145475.1264932,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793145478.1302915,
+    "end": 1793145478.4292848,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793145477.9125764,
+    "end": 1793145478.4564464,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native"
+    ],
+    "start": 1793145478.4564974,
+    "end": 1793145478.6603584,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793145478.6646366,
+    "end": 1793145479.199667,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native"
+    ],
+    "start": 1793145479.202637,
+    "end": 1793145479.3798563,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=1533"
+    ],
+    "start": 1793145479.3829992,
+    "end": 1793145479.8296425,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.native/files/wf.log"
+    ],
+    "start": 1793145479.8316715,
+    "end": 1793145479.948761,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.native"
+    ],
+    "start": 1793145479.951097,
+    "end": 1793145484.0614214,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793145484.065192,
+    "end": 1793145485.0421798,
+    "returncode": 0
+  }
+]

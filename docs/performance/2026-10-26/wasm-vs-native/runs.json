@@ -6,15 +6,15 @@
   "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353",
   "toolchain": { "ndk": "26.2.11394342", "cmake": "3.22.1" },
   "artifacts": {
-    "wasm": { "variant": "WasmRelease", "sha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9", "apkBytes": 14801590, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.phase2", "packageName": "org.bsnesjg.tv.phase2" },
-    "native": { "variant": "NativeRelease", "sha256": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2", "apkBytes": 13600019, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.native.phase2", "packageName": "org.bsnesjg.tv.native.phase2" }
+    "wasm": { "variant": "WasmRelease", "sha256": "708f1bd787f98b037a6ba1e547e3f41dabcaa921a7fbd93c959abb60ee7221fc", "apkBytes": 14803255, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.phase2", "packageName": "org.bsnesjg.tv.phase2" },
+    "native": { "variant": "NativeRelease", "sha256": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a", "apkBytes": 13850612, "abis": ["armeabi-v7a", "arm64-v8a"], "applicationId": "org.bsnesjg.tv.native.phase2", "packageName": "org.bsnesjg.tv.native.phase2" }
   },
   "metricNotes": {
-    "startup": "Pixel run evidence is from the immediately prior Phase 2 APK hashes b2bfe5ed… and 22b55611…; current build hashes were regenerated after adding native telemetry. Cast1 must be reprofiled against current hashes.",
+    "startup": "Pixel run evidence is from earlier Phase 2 APK hashes b2bfe5ed… and 22b55611…. Cast1 WASM profile J-d8dad3cd3989 uses the current APK hash 708f1bd7…; native launch failure J-85f6adb7394f uses a4a2fee6….",
     "abi": "Pixel is arm64-v8a; cast1 is armeabi-v7a. Both APKs package both ABIs. cast2 remains unavailable through the coordinator.",
-    "profiling": "Cast1 direct Mandelbrot WASM profile J-b47d61f35ce8 showed Mandelbrot on screen but SurfaceFlinger sampling had only 7 distinct timestamps across 14.46 seconds; native direct-launch profile J-c374ebe393bb returned to Home. Pixel has usable exploratory profiles, but WASM was 60Hz and native was 120Hz, so they are not a controlled comparison.",
-    "correctness": "Screenshots confirm Mandelbrot rendering in Pixel WASM and native, but frame-5800 WRAM/framebuffer equality gate has not been captured.",
-    "cast1Availability": "Shared Android transport is repaired and healthy. Cast1 remains fenced because a cancelled APK install has an uncertain result; cleanup requires a new boot ID. Job evidence was reviewed and recovery stopped before rebooting. Profiling remains paused pending reboot and coordinator cleanup."
+    "profiling": "Current Cast1 WASM profile J-d8dad3cd3989 completed a 120-second SurfaceFlinger measurement after a 120-second warmup: 0.447 presented FPS (53 intervals), p50 2052.1 ms, p95 2218.9 ms, worst 10727.4 ms, 100% missed refreshes. Fixed native build J-cccde460b47d completed the same window with 3.859 FPS (464 intervals), p50/p95 250.3/266.9 ms, 100% missed refreshes. Native app telemetry median was 15.50 emulated FPS, 3.87 draw FPS, 63.8 ms core mean, and 70.7 ms core p95 across 250 windows. This is one matched pair; repeat runs and the correctness gate remain outstanding.",
+    "correctness": "The ten-minute continuous Cast1 WASM recording J-2ad207f5cdf5 reached 961 emulated frames and captured the fully rendered, animated Mandelbrot. This is visual completion, not the frame-5800 WRAM/framebuffer equality gate, which remains unmeasured.",
+    "cast1Availability": "Coordinator last reported Cast1 ready between jobs. All Chromecast work has used coordinator jobs. The ARMv7 native build now launches; fixed native check/profile evidence is saved in cast1-native-armfix-check-pass-2026-10-27/ and cast1-native-profile-armfix-2026-10-27/. Two frame-5800 record attempts returned plugin-error before capture; the correctness gate remains open."
   },
   "attempts": [
     {
@@ -93,12 +93,38 @@
       "install": "already installed; launch-only check",
       "launch": "failed: target-left-foreground again",
       "evidence": "coordinator-owned check; failure confirms reproducible launch exit"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "native",
+      "job": "J-4779d0958348",
+      "apkSha256": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a",
+      "install": "fixed APK installed by coordinator job J-2be7f552becc",
+      "launch": "completed; screenshot shows Mandelbrot output and populated native HUD",
+      "evidence": "evidence/cast1-native-armfix-check-pass-2026-10-27/"
+    },
+    {
+      "device": "chromecast-test-01",
+      "engine": "native",
+      "job": "J-61743abe7d92 / J-02504bee773f",
+      "apkSha256": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a",
+      "install": "already installed",
+      "launch": "record workflows failed plugin-error before capture; coordinator automatic recovery completed",
+      "evidence": "evidence/cast1-native-frame5800-record-failed-2026-10-27/"
     }
   ],
   "runs": [
     { "device": "phone-pixel-8-pro", "engine": "wasm", "phase": "playback", "job": "J-7a4b7a0072ca", "apkSha256": "b2bfe5ed6eab03da8e3847ee2c65a5ff1d890c73ca972a22f0a7ca738d8556fa", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "arm64-v8a", "refreshHz": 60, "runCount": 3, "medianFps": 5.9267, "minFps": 5.3899, "maxFps": 9.9629, "status": "complete; exploratory; no correctness gate", "evidence": "evidence/pixel-wasm/summary.json" },
     { "device": "phone-pixel-8-pro", "engine": "native", "phase": "playback", "job": "J-dab401a8e077", "apkSha256": "22b5561185bccd46ea517b0916873d17e3ddfe88a6cd527f7807bf8b8bf9643e", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "arm64-v8a", "refreshHz": 120, "runCount": 1, "fps": 119.1671, "status": "complete; exploratory; no correctness gate; sampler reported two holes", "evidence": "evidence/pixel-native/summary.json" },
     { "device": "chromecast-test-01", "engine": "wasm", "phase": "playback", "job": "J-b47d61f35ce8", "apkSha256": "b2bfe5ed6eab03da8e3847ee2c65a5ff1d890c73ca972a22f0a7ca738d8556fa", "status": "failed: SurfaceFlinger sampler observed only 7 distinct timestamps across 14.46s; screenshot shows Mandelbrot", "evidence": "coordinator evidence in /tmp/phase2-cast1-wasm-mandel-profile" },
-    { "device": "chromecast-test-01", "engine": "native", "phase": "playback", "job": "J-c374ebe393bb", "apkSha256": "22b5561185bccd46ea517b0916873d17e3ddfe88a6cd527f7807bf8b8bf9643e", "status": "failed: target-left-foreground after direct launch; no playback sample", "evidence": "coordinator evidence in /tmp/phase2-cast1-native-profile" }
+    { "device": "chromecast-test-01", "engine": "native", "phase": "playback", "job": "J-c374ebe393bb", "apkSha256": "22b5561185bccd46ea517b0916873d17e3ddfe88a6cd527f7807bf8b8bf9643e", "status": "failed: target-left-foreground after direct launch; no playback sample", "evidence": "coordinator evidence in /tmp/phase2-cast1-native-profile" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "playback", "job": "J-465cd70b2af6", "apkSha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9", "rom": "mandel-display", "status": "failed: black canvas with FPS placeholders; only 5 valid presents then sampler stalled; plugin-error", "evidence": "evidence/cast1-wasm-failed/" },
+    { "device": "chromecast-test-01", "engine": "native", "phase": "playback", "job": "J-d04e6c326f4a", "apkSha256": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2", "rom": "mandel-display", "status": "failed: benchmark activity left foreground; no playback sample", "evidence": "evidence/cast1-native-failed/" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "launcher-check", "job": "J-1533a2deb8a6", "apkSha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9", "status": "completed: normal MainActivity opened the selector; does not verify gameplay", "evidence": "evidence/cast1-wasm-launch-check/" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "playback-profile", "job": "J-d8dad3cd3989", "apkSha256": "708f1bd787f98b037a6ba1e547e3f41dabcaa921a7fbd93c959abb60ee7221fc", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "armeabi-v7a", "warmupSeconds": 120, "measurementSeconds": 120, "appTelemetry": { "emuFps": 2.01, "drawFps": 0.5, "coreMeanMs": 531.063, "coreP95Ms": 648.3, "drawMeanMs": 2.04, "drawP95Ms": 2.3, "backlogFrames": 13883.66 }, "surfaceFlinger": { "presentedFps": 0.4471873, "intervalCount": 53, "p50Ms": 2052.0527, "p90Ms": 2152.1529, "p95Ms": 2218.8863, "p99Ms": 2936.2706, "worstMs": 10727.3978, "missedRefreshPercent": 100, "refreshHz": 59.94, "samplingHoles": 0 }, "status": "completed measurement; visible progressive output; render not complete", "evidence": "evidence/cast1-wasm-profile-2026-10-27/run-1/summary.json" },
+    { "device": "chromecast-test-01", "engine": "native", "phase": "playback-profile", "job": "J-85f6adb7394f", "apkSha256": "a4a2fee6d142dabe8d382ce25331fa702597ccdb6045fc0116a741f49292bf68", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "armeabi-v7a", "status": "failed target-left-foreground; crash log shows SIGSEGV in libbjg.so co_swap_function; no performance sample", "evidence": "evidence/cast1-native-profile-2026-10-27/receipt.json" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "continuous-record", "job": "J-fe78ffeb82e2", "apkSha256": "708f1bd787f98b037a6ba1e547e3f41dabcaa921a7fbd93c959abb60ee7221fc", "rom": "mandel-display", "durationSeconds": 360, "status": "completed recording; ROM at 481 emulated frames, progressive output still in progress", "evidence": "evidence/cast1-wasm-record-2026-10-27/recording-manifest.json" },
+    { "device": "chromecast-test-01", "engine": "wasm", "phase": "continuous-record", "job": "J-2ad207f5cdf5", "apkSha256": "708f1bd787f98b037a6ba1e547e3f41dabcaa921a7fbd93c959abb60ee7221fc", "rom": "mandel-display", "durationSeconds": 600, "romFrames": 961, "status": "completed; final screenshot shows fully rendered animated Mandelbrot", "evidence": "evidence/cast1-wasm-record-2026-10-27-full/recording-manifest.json" },
+    { "device": "chromecast-test-01", "engine": "native", "phase": "playback-profile", "job": "J-cccde460b47d", "apkSha256": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a", "rom": "mandel-display", "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353", "abi": "armeabi-v7a", "warmupSeconds": 120, "measurementSeconds": 120, "appTelemetry": { "windowCount": 250, "emuFpsMedian": 15.5, "drawFpsMedian": 3.87, "coreMeanMsMedian": 63.781, "coreP95MsMedian": 70.716, "drawMeanMsMedian": 1.429, "drawP95MsMedian": 1.538, "peakBacklogFrames": 11040.96 }, "surfaceFlinger": { "presentedFps": 3.8590468, "intervalCount": 464, "p50Ms": 250.2508, "p90Ms": 266.9337, "p95Ms": 266.9339, "p99Ms": 283.6171, "worstMs": 283.6175, "missedRefreshPercent": 100, "refreshHz": 59.94, "samplingHoles": 0 }, "status": "completed; ARMv7 coroutine fix confirmed; one matched profile pair; correctness gate pending", "evidence": "evidence/cast1-native-profile-armfix-2026-10-27/run-1/summary.json" }
   ]
 }

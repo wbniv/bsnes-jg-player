@@ -1,0 +1,29 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "frames": 53,
+      "interval_count": 53,
+      "fps": 0.4471873443220673,
+      "refresh_ms": 16.683333,
+      "p50_ms": 2052.052734,
+      "p90_ms": 2152.152897,
+      "p95_ms": 2218.886299,
+      "p99_ms": 2936.270612,
+      "worst_ms": 10727.397805,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 120.0,
+      "layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#3739",
+      "measurement_anchor_ns": 35503916996176,
+      "measurement_start_wall_time": 1793065873.6284873,
+      "settling_reads": 9,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 118.518559778
+    }
+  ],
+  "median": {
+    "fps": 0.4471873443220673
+  }
+}

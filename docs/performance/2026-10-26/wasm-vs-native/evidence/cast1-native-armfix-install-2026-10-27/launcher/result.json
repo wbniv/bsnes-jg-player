@@ -1,0 +1,43 @@
+{
+  "status": "unverified",
+  "home": "com.google.android.apps.tv.launcherx/.home.HomeActivity",
+  "apk": "b27a10d51ee6dbc7aa805d2e8eb3abda3e44ae36346b4f4abfe41c817a6f4a8a.apk",
+  "attempts": [
+    {
+      "bounds": [
+        1769,
+        255,
+        1891,
+        324
+      ],
+      "reference": "expected-banner-0.png",
+      "resource": "res/fx.png",
+      "kind": "banner",
+      "mean_absolute_error": 109.84056473829202,
+      "rms_error": 138.5938570505019,
+      "worst_region_error": 158.00744047619048,
+      "brightness_gain": 3.182269152999326,
+      "normalisation": "gain",
+      "scrim_gain": -0.18026735012349593,
+      "scrim_offset": 128.84512719868871,
+      "scrim_correlation": -0.0966963410668588,
+      "verified": false,
+      "verifier_revision": "transparent-circle-v1",
+      "reference_alpha": [
+        {
+          "kind": "banner",
+          "mode": "RGBA",
+          "minimum": 255
+        },
+        {
+          "kind": "icon",
+          "mode": "RGBA",
+          "minimum": 255
+        }
+      ],
+      "screenshot": "attempt-1-view-8.png",
+      "hierarchy": "attempt-1-view-8.xml",
+      "attempt": 1
+    }
+  ]
+}

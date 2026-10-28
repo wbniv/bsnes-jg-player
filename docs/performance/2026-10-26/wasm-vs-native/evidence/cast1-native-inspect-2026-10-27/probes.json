@@ -1,0 +1,927 @@
+{
+  "property-ro.product.manufacturer": {
+    "command": [
+      "getprop",
+      "ro.product.manufacturer"
+    ],
+    "started_at": "2026-10-27T01:54:22.337218+00:00",
+    "artifact": "property-ro.product.manufacturer.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.126
+  },
+  "property-ro.product.brand": {
+    "command": [
+      "getprop",
+      "ro.product.brand"
+    ],
+    "started_at": "2026-10-27T01:54:22.464277+00:00",
+    "artifact": "property-ro.product.brand.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.238
+  },
+  "property-ro.product.model": {
+    "command": [
+      "getprop",
+      "ro.product.model"
+    ],
+    "started_at": "2026-10-27T01:54:22.703806+00:00",
+    "artifact": "property-ro.product.model.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.131
+  },
+  "property-ro.product.name": {
+    "command": [
+      "getprop",
+      "ro.product.name"
+    ],
+    "started_at": "2026-10-27T01:54:22.835994+00:00",
+    "artifact": "property-ro.product.name.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.327
+  },
+  "property-ro.product.device": {
+    "command": [
+      "getprop",
+      "ro.product.device"
+    ],
+    "started_at": "2026-10-27T01:54:23.164365+00:00",
+    "artifact": "property-ro.product.device.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.177
+  },
+  "property-ro.product.board": {
+    "command": [
+      "getprop",
+      "ro.product.board"
+    ],
+    "started_at": "2026-10-27T01:54:23.342930+00:00",
+    "artifact": "property-ro.product.board.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.174
+  },
+  "property-ro.hardware": {
+    "command": [
+      "getprop",
+      "ro.hardware"
+    ],
+    "started_at": "2026-10-27T01:54:23.518103+00:00",
+    "artifact": "property-ro.hardware.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.212
+  },
+  "property-ro.boot.hardware": {
+    "command": [
+      "getprop",
+      "ro.boot.hardware"
+    ],
+    "started_at": "2026-10-27T01:54:23.730993+00:00",
+    "artifact": "property-ro.boot.hardware.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.207
+  },
+  "property-ro.soc.manufacturer": {
+    "command": [
+      "getprop",
+      "ro.soc.manufacturer"
+    ],
+    "started_at": "2026-10-27T01:54:23.939398+00:00",
+    "artifact": "property-ro.soc.manufacturer.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.138
+  },
+  "property-ro.soc.model": {
+    "command": [
+      "getprop",
+      "ro.soc.model"
+    ],
+    "started_at": "2026-10-27T01:54:24.078759+00:00",
+    "artifact": "property-ro.soc.model.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.319
+  },
+  "property-ro.build.version.release": {
+    "command": [
+      "getprop",
+      "ro.build.version.release"
+    ],
+    "started_at": "2026-10-27T01:54:24.398853+00:00",
+    "artifact": "property-ro.build.version.release.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.129
+  },
+  "property-ro.build.version.sdk": {
+    "command": [
+      "getprop",
+      "ro.build.version.sdk"
+    ],
+    "started_at": "2026-10-27T01:54:24.529078+00:00",
+    "artifact": "property-ro.build.version.sdk.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.124
+  },
+  "property-ro.build.version.security_patch": {
+    "command": [
+      "getprop",
+      "ro.build.version.security_patch"
+    ],
+    "started_at": "2026-10-27T01:54:24.654305+00:00",
+    "artifact": "property-ro.build.version.security_patch.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.298
+  },
+  "property-ro.build.id": {
+    "command": [
+      "getprop",
+      "ro.build.id"
+    ],
+    "started_at": "2026-10-27T01:54:24.953782+00:00",
+    "artifact": "property-ro.build.id.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.216
+  },
+  "property-ro.build.display.id": {
+    "command": [
+      "getprop",
+      "ro.build.display.id"
+    ],
+    "started_at": "2026-10-27T01:54:25.171444+00:00",
+    "artifact": "property-ro.build.display.id.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.124
+  },
+  "property-ro.build.fingerprint": {
+    "command": [
+      "getprop",
+      "ro.build.fingerprint"
+    ],
+    "started_at": "2026-10-27T01:54:25.296361+00:00",
+    "artifact": "property-ro.build.fingerprint.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.268
+  },
+  "property-ro.build.type": {
+    "command": [
+      "getprop",
+      "ro.build.type"
+    ],
+    "started_at": "2026-10-27T01:54:25.565240+00:00",
+    "artifact": "property-ro.build.type.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.135
+  },
+  "property-ro.build.tags": {
+    "command": [
+      "getprop",
+      "ro.build.tags"
+    ],
+    "started_at": "2026-10-27T01:54:25.701193+00:00",
+    "artifact": "property-ro.build.tags.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.12
+  },
+  "property-ro.bootloader": {
+    "command": [
+      "getprop",
+      "ro.bootloader"
+    ],
+    "started_at": "2026-10-27T01:54:25.822569+00:00",
+    "artifact": "property-ro.bootloader.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.159
+  },
+  "property-ro.product.cpu.abilist": {
+    "command": [
+      "getprop",
+      "ro.product.cpu.abilist"
+    ],
+    "started_at": "2026-10-27T01:54:25.982638+00:00",
+    "artifact": "property-ro.product.cpu.abilist.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.118
+  },
+  "property-ro.product.cpu.abilist32": {
+    "command": [
+      "getprop",
+      "ro.product.cpu.abilist32"
+    ],
+    "started_at": "2026-10-27T01:54:26.102189+00:00",
+    "artifact": "property-ro.product.cpu.abilist32.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.121
+  },
+  "property-ro.product.cpu.abilist64": {
+    "command": [
+      "getprop",
+      "ro.product.cpu.abilist64"
+    ],
+    "started_at": "2026-10-27T01:54:26.224250+00:00",
+    "artifact": "property-ro.product.cpu.abilist64.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.175
+  },
+  "property-ro.opengles.version": {
+    "command": [
+      "getprop",
+      "ro.opengles.version"
+    ],
+    "started_at": "2026-10-27T01:54:26.400825+00:00",
+    "artifact": "property-ro.opengles.version.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.191
+  },
+  "property-ro.hardware.egl": {
+    "command": [
+      "getprop",
+      "ro.hardware.egl"
+    ],
+    "started_at": "2026-10-27T01:54:26.593992+00:00",
+    "artifact": "property-ro.hardware.egl.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.226
+  },
+  "proc-meminfo": {
+    "command": [
+      "cat",
+      "/proc/meminfo"
+    ],
+    "started_at": "2026-10-27T01:54:26.821654+00:00",
+    "artifact": "proc-meminfo.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.189
+  },
+  "proc-cpuinfo": {
+    "command": [
+      "cat",
+      "/proc/cpuinfo"
+    ],
+    "started_at": "2026-10-27T01:54:27.011968+00:00",
+    "artifact": "proc-cpuinfo.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.223
+  },
+  "cpu-online": {
+    "command": [
+      "cat",
+      "/sys/devices/system/cpu/online"
+    ],
+    "started_at": "2026-10-27T01:54:27.236575+00:00",
+    "artifact": "cpu-online.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.186
+  },
+  "cpu-max-frequency": {
+    "command": [
+      "cat",
+      "/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq"
+    ],
+    "started_at": "2026-10-27T01:54:27.423917+00:00",
+    "artifact": "cpu-max-frequency.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.306
+  },
+  "storage": {
+    "command": [
+      "df",
+      "-k",
+      "/data"
+    ],
+    "started_at": "2026-10-27T01:54:27.731313+00:00",
+    "artifact": "storage.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.202
+  },
+  "display-size": {
+    "command": [
+      "wm",
+      "size"
+    ],
+    "started_at": "2026-10-27T01:54:27.935009+00:00",
+    "artifact": "display-size.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.166
+  },
+  "display-density": {
+    "command": [
+      "wm",
+      "density"
+    ],
+    "started_at": "2026-10-27T01:54:28.101798+00:00",
+    "artifact": "display-density.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.158
+  },
+  "display": {
+    "command": [
+      "dumpsys",
+      "display"
+    ],
+    "started_at": "2026-10-27T01:54:28.260559+00:00",
+    "artifact": "display.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.167
+  },
+  "graphics": {
+    "command": [
+      "dumpsys",
+      "SurfaceFlinger"
+    ],
+    "started_at": "2026-10-27T01:54:28.428467+00:00",
+    "artifact": "graphics.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.304
+  },
+  "kernel": {
+    "command": [
+      "cat",
+      "/proc/version"
+    ],
+    "started_at": "2026-10-27T01:54:28.733933+00:00",
+    "artifact": "kernel.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.23
+  },
+  "uptime": {
+    "command": [
+      "cat",
+      "/proc/uptime"
+    ],
+    "started_at": "2026-10-27T01:54:28.966269+00:00",
+    "artifact": "uptime.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.197
+  },
+  "webview": {
+    "command": [
+      "dumpsys",
+      "webviewupdate"
+    ],
+    "started_at": "2026-10-27T01:54:29.164607+00:00",
+    "artifact": "webview.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.143
+  },
+  "packages": {
+    "command": [
+      "pm",
+      "list",
+      "packages",
+      "--show-versioncode"
+    ],
+    "started_at": "2026-10-27T01:54:29.309310+00:00",
+    "artifact": "packages.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.169
+  },
+  "battery": {
+    "command": [
+      "dumpsys",
+      "battery"
+    ],
+    "started_at": "2026-10-27T01:54:29.479066+00:00",
+    "artifact": "battery.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.327
+  },
+  "thermal": {
+    "command": [
+      "dumpsys",
+      "thermalservice"
+    ],
+    "started_at": "2026-10-27T01:54:29.806831+00:00",
+    "artifact": "thermal.txt",
+    "group": "core",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.186
+  },
+  "codec": {
+    "command": [
+      "dumpsys",
+      "media.codec"
+    ],
+    "started_at": "2026-10-27T01:54:29.995643+00:00",
+    "artifact": "codec.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.138
+  },
+  "hdmi-control": {
+    "command": [
+      "dumpsys",
+      "hdmi_control"
+    ],
+    "started_at": "2026-10-27T01:54:30.134774+00:00",
+    "artifact": "hdmi-control.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.156
+  },
+  "drm": {
+    "command": [
+      "dumpsys",
+      "media.drm"
+    ],
+    "started_at": "2026-10-27T01:54:30.292017+00:00",
+    "artifact": "drm.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.159
+  },
+  "drm-property": {
+    "command": [
+      "getprop",
+      "drm.service.enabled"
+    ],
+    "started_at": "2026-10-27T01:54:30.452042+00:00",
+    "artifact": "drm-property.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.144
+  },
+  "audio": {
+    "command": [
+      "dumpsys",
+      "audio"
+    ],
+    "started_at": "2026-10-27T01:54:30.597024+00:00",
+    "artifact": "audio.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.213
+  },
+  "wifi": {
+    "command": [
+      "dumpsys",
+      "wifi"
+    ],
+    "started_at": "2026-10-27T01:54:30.812068+00:00",
+    "artifact": "wifi.txt",
+    "group": "platform",
+    "truncated": true,
+    "kept": "head",
+    "status": "truncated",
+    "exit_status": 0,
+    "duration_seconds": 1.281
+  },
+  "media-session": {
+    "command": [
+      "dumpsys",
+      "media_session"
+    ],
+    "started_at": "2026-10-27T01:54:32.095094+00:00",
+    "artifact": "media-session.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.366
+  },
+  "logcat-crash": {
+    "command": [
+      "logcat",
+      "-b",
+      "crash",
+      "-d",
+      "-t",
+      "200",
+      "-v",
+      "brief"
+    ],
+    "started_at": "2026-10-27T01:54:32.461956+00:00",
+    "artifact": "logcat-crash.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.148
+  },
+  "logcat-system": {
+    "command": [
+      "logcat",
+      "-b",
+      "main,system,events",
+      "-d",
+      "-t",
+      "1000",
+      "-v",
+      "brief"
+    ],
+    "started_at": "2026-10-27T01:54:32.610883+00:00",
+    "artifact": "logcat-system.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.622
+  },
+  "vendor-etc": {
+    "command": [
+      "ls",
+      "/vendor/etc"
+    ],
+    "started_at": "2026-10-27T01:54:33.234611+00:00",
+    "artifact": "vendor-etc.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.242
+  },
+  "codec-xml": {
+    "command": [
+      "cat",
+      "/vendor/etc/media_codecs.xml"
+    ],
+    "started_at": "2026-10-27T01:54:33.477937+00:00",
+    "artifact": "codec-xml.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.133
+  },
+  "drm-plugins": {
+    "command": [
+      "ls",
+      "/vendor/lib/mediadrm"
+    ],
+    "started_at": "2026-10-27T01:54:33.611911+00:00",
+    "artifact": "drm-plugins.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.143
+  },
+  "drm-plugins64": {
+    "command": [
+      "ls",
+      "/vendor/lib64/mediadrm"
+    ],
+    "started_at": "2026-10-27T01:54:33.756346+00:00",
+    "artifact": "drm-plugins64.txt",
+    "group": "platform",
+    "status": "unavailable",
+    "error": "ADB failed: ls: /vendor/lib64/mediadrm: No such file or directory\n",
+    "exit_status": 1,
+    "duration_seconds": 0.134
+  },
+  "drm-system": {
+    "command": [
+      "ls",
+      "/system/lib/mediadrm"
+    ],
+    "started_at": "2026-10-27T01:54:33.891317+00:00",
+    "artifact": "drm-system.txt",
+    "group": "platform",
+    "status": "unavailable",
+    "error": "ADB failed: ls: /system/lib/mediadrm: No such file or directory\n",
+    "exit_status": 1,
+    "duration_seconds": 0.141
+  },
+  "drm-odm": {
+    "command": [
+      "ls",
+      "/odm/lib/mediadrm"
+    ],
+    "started_at": "2026-10-27T01:54:34.034277+00:00",
+    "artifact": "drm-odm.txt",
+    "group": "platform",
+    "status": "unavailable",
+    "error": "ADB failed: ls: /odm/lib/mediadrm: No such file or directory\n",
+    "exit_status": 1,
+    "duration_seconds": 0.243
+  },
+  "drm-etc": {
+    "command": [
+      "ls",
+      "/vendor/etc/drm"
+    ],
+    "started_at": "2026-10-27T01:54:34.278352+00:00",
+    "artifact": "drm-etc.txt",
+    "group": "platform",
+    "status": "unavailable",
+    "error": "ADB failed: ls: /vendor/etc/drm: No such file or directory\n",
+    "exit_status": 1,
+    "duration_seconds": 0.139
+  },
+  "setting-window-animation": {
+    "command": [
+      "settings",
+      "get",
+      "global",
+      "window_animation_scale"
+    ],
+    "started_at": "2026-10-27T01:54:34.418149+00:00",
+    "artifact": "setting-window-animation.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.299
+  },
+  "setting-transition-animation": {
+    "command": [
+      "settings",
+      "get",
+      "global",
+      "transition_animation_scale"
+    ],
+    "started_at": "2026-10-27T01:54:34.719305+00:00",
+    "artifact": "setting-transition-animation.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.219
+  },
+  "setting-animator-duration": {
+    "command": [
+      "settings",
+      "get",
+      "global",
+      "animator_duration_scale"
+    ],
+    "started_at": "2026-10-27T01:54:34.939268+00:00",
+    "artifact": "setting-animator-duration.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.187
+  },
+  "setting-always-finish": {
+    "command": [
+      "settings",
+      "get",
+      "global",
+      "always_finish_activities"
+    ],
+    "started_at": "2026-10-27T01:54:35.127713+00:00",
+    "artifact": "setting-always-finish.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.177
+  },
+  "setting-stay-on": {
+    "command": [
+      "settings",
+      "get",
+      "global",
+      "stay_on_while_plugged_in"
+    ],
+    "started_at": "2026-10-27T01:54:35.306734+00:00",
+    "artifact": "setting-stay-on.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.179
+  },
+  "setting-screen-off-timeout": {
+    "command": [
+      "settings",
+      "get",
+      "system",
+      "screen_off_timeout"
+    ],
+    "started_at": "2026-10-27T01:54:35.487169+00:00",
+    "artifact": "setting-screen-off-timeout.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.258
+  },
+  "setting-sleep-timeout": {
+    "command": [
+      "settings",
+      "get",
+      "secure",
+      "sleep_timeout"
+    ],
+    "started_at": "2026-10-27T01:54:35.748072+00:00",
+    "artifact": "setting-sleep-timeout.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.2
+  },
+  "setting-screensaver-enabled": {
+    "command": [
+      "settings",
+      "get",
+      "secure",
+      "screensaver_enabled"
+    ],
+    "started_at": "2026-10-27T01:54:35.949774+00:00",
+    "artifact": "setting-screensaver-enabled.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.159
+  },
+  "setting-screensaver-on-sleep": {
+    "command": [
+      "settings",
+      "get",
+      "secure",
+      "screensaver_activate_on_sleep"
+    ],
+    "started_at": "2026-10-27T01:54:36.110400+00:00",
+    "artifact": "setting-screensaver-on-sleep.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.163
+  },
+  "setting-screensaver-components": {
+    "command": [
+      "settings",
+      "get",
+      "secure",
+      "screensaver_components"
+    ],
+    "started_at": "2026-10-27T01:54:36.274936+00:00",
+    "artifact": "setting-screensaver-components.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.163
+  },
+  "power": {
+    "command": [
+      "dumpsys",
+      "power"
+    ],
+    "started_at": "2026-10-27T01:54:36.439393+00:00",
+    "artifact": "power.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.37
+  },
+  "dreams": {
+    "command": [
+      "dumpsys",
+      "dreams"
+    ],
+    "started_at": "2026-10-27T01:54:36.812019+00:00",
+    "artifact": "dreams.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.155
+  },
+  "dream-services": {
+    "command": [
+      "cmd",
+      "package",
+      "query-services",
+      "--brief",
+      "--components",
+      "-a",
+      "android.service.dreams.DreamService"
+    ],
+    "started_at": "2026-10-27T01:54:36.969202+00:00",
+    "artifact": "dream-services.txt",
+    "group": "platform",
+    "truncated": false,
+    "status": "ok",
+    "exit_status": 0,
+    "duration_seconds": 0.273
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "ls /vendor/etc/drm"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "ls: /vendor/etc/drm: No such file or directory\n"
+}

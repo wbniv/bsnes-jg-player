@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Google TV gameplay screen mockup</title>
+  <desc id="desc">A 16 by 9 television screen with a maximum-size centered 8 by 7 SNES picture and small player status and remote hints in the unused side gutters.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#111a27"/><stop offset="1" stop-color="#030508"/></linearGradient>
+    <radialGradient id="fractal" cx="49%" cy="50%" r="68%"><stop stop-color="#ffeda2"/><stop offset=".13" stop-color="#ff933f"/><stop offset=".3" stop-color="#dd438c"/><stop offset=".53" stop-color="#6e51d4"/><stop offset=".77" stop-color="#155caa"/><stop offset="1" stop-color="#071a37"/></radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="pixels" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1"/></pattern>
+    <clipPath id="gameClip"><rect x="343" width="1234" height="1080"/></clipPath>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect x="343" width="1234" height="1080" fill="#02030a"/>
+  <g clip-path="url(#gameClip)">
+    <rect x="343" width="1234" height="1080" fill="url(#fractal)"/>
+    <g transform="translate(960 540) scale(2.5)" fill="none" stroke="#ffe7bb" stroke-opacity=".8" stroke-width="1.1" filter="url(#glow)">
+      <path d="M-132 18 C-129-28-91-57-44-45 C-7-36 1-4 31-1 C66 3 94-28 119-13 C147 4 124 45 97 54 C62 65 47 36 17 40 C-21 45-30 81-72 78 C-112 75-137 54-132 18Z"/>
+      <path d="M-116 20 C-111-15-82-39-51-33 C-20-28-8 1 17 7 C43 12 72-10 95-1 C119 8 108 34 84 42 C57 51 39 30 14 31 C-17 31-33 63-65 63 C-94 63-119 47-116 20Z"/>
+      <path d="M-99 18 C-96-5-75-23-53-20 C-29-17-17 5 5 13 C27 21 49 3 70 9 C88 15 83 33 63 36 C42 40 29 24 9 22 C-16 20-34 45-58 47 C-80 48-101 37-99 18Z"/>
+      <path d="M-83 15 C-77 2-63-5-48 0 C-31 5-19 21-1 25 C17 30 31 18 46 20 C57 21 58 31 43 31 C25 31 18 23 2 21 C-20 18-36 35-55 34 C-71 34-87 26-83 15Z"/>
+      <path d="M-66 12 C-54 8-44 16-34 24 C-23 32-8 35 4 32 C17 29 25 27 31 30 C13 45-10 48-31 39 C-48 32-64 28-66 12Z"/>
+      <path d="M-144 18 C-143-43-93-80-43-69 M-125 57 C-93 94-39 102-5 76 M104 66 C157 42 170-2 145-28" stroke-opacity=".42"/>
+      <circle cx="-42" cy="14" r="6" fill="#fff0c7" stroke="none"/>
+    </g>
+    <image href="../../../android-tv/fixture/reference-5800.png" x="343" y="0" width="1234" height="1080" preserveAspectRatio="none" image-rendering="pixelated"/>
+    <rect x="343" width="1234" height="1080" fill="url(#pixels)" opacity=".32"/>
+  </g>
+  <g font-family="Roboto,Arial,sans-serif" fill="#dce7f4">
+    <text x="54" y="74" font-size="25" font-weight="700" letter-spacing="1.5">bsnes-jg</text>
+    <text x="54" y="108" font-size="20" fill="#92a8c1">MANDEL DISPLAY</text>
+    <circle cx="59" cy="151" r="6" fill="#71dfa0"/>
+    <text x="77" y="158" font-size="17" fill="#9fb3c9">Running</text>
+    <text x="54" y="1000" font-size="16" font-weight="700" fill="#7790aa" letter-spacing="2">REMOTE</text>
+    <rect x="54" y="1024" width="49" height="35" rx="8" fill="#253449" stroke="#506982"/>
+    <text x="111" y="1048" font-size="16" fill="#9fb3c9">BACK</text>
+    <text x="1762" y="1000" font-size="16" font-weight="700" fill="#7790aa" letter-spacing="2">PLAYER</text>
+    <text x="1762" y="1037" font-size="16" fill="#9fb3c9">256 × 224</text>
+    <text x="1762" y="1061" font-size="14" fill="#72869d">8:7 image · fit</text>
+  </g>
+  <path d="M343 0V1080M1577 0V1080" stroke="#9ab4d0" stroke-opacity=".12"/>
+</svg>

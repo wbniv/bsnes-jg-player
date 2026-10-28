@@ -1,0 +1,14 @@
+[
+  {
+    "input": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2.apk",
+    "package": "org.bsnesjg.tv.native.phase2",
+    "before_sha256": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2",
+    "action": "reuse",
+    "reason": "exact-match",
+    "variant": null,
+    "status": "verified",
+    "start": 1793059030.2679372,
+    "installed_sha256": "98c16b0b6d2d25b1bda89a254515d78d0c65a172d1ef725fe308e1b579f4cfb2",
+    "end": 1793059030.2940998
+  }
+]

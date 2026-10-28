@@ -1,8 +1,14 @@
 | Date | Change |
 |------|--------|
+| [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/39c02cb) | TODO/plan-index: triage deferrals, record A1 done, index the npm-package plan |
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-wasm/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+39c02cb	author	Will Norris
+39c02cb	added	2
+39c02cb	deleted	1
+39c02cb	files	1
+39c02cb	body	Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_011DEG8ouwAWtqeWtcvZSysz
 9b85386	author	Will Norris
 9b85386	added	22
 9b85386	deleted	0

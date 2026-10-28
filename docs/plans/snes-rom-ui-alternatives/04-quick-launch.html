@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>04 · Chromecast quick launcher</title>
+  <link rel="stylesheet" href="shared.css"><link rel="stylesheet" href="scaling.css">
+  <link rel="stylesheet" href="tvquick.css">
+  <link rel="stylesheet" href="tv-search.css">
+</head>
+<body>
+<main class="review">
+  <header class="review-head">
+    <div>
+      <p class="eyebrow">UI concept 04 · Chromecast-first quick launch</p>
+      <h1>A launcher you can use from the couch</h1>
+      <p class="review-intro">The search-first concept becomes a 10-foot, D-pad-first home screen. The first view offers a featured ROM and recent choices; a large Search action reaches every build through the Android TV on-screen keyboard.</p>
+    </div>
+    <span class="pill">Android TV · D-pad · Select</span>
+  </header>
+  <nav class="nav">
+    <a href="index.html">All concepts</a>
+    <a href="01-variant-family-lab.html">01 · Variant family lab</a>
+    <a href="02-snes-game-menu.html">02 · SNES game menu</a>
+    <a href="03-rom-treemap.html">03 · ROM treemap</a>
+    <a aria-current="page" href="04-quick-launch.html">04 · Chromecast quick launch</a>
+    <a href="05-cartridge-flow.html">05 · Cartridge flow</a>
+  </nav>
+  <div class="preview-label"><span>Full page preview · Fixed 16:9 Google TV · 10-foot layout</span><span>Focus ring shown on Play</span></div>
+  <section class="mock">
+    <div class="tvquick mock-inner">
+      <div class="appbar">
+        <div class="brand"><em>bsnes-jg</em> &nbsp; ROM library</div>
+        <div class="right"><span>Home</span><span>Recently played</span><button class="tv-search">⌕ &nbsp; Search all ROMs</button></div>
+      </div>
+      <main class="tv-main">
+        <section class="tv-hero">
+          <div class="tv-hero-art"></div>
+          <div class="tv-hero-copy">
+            <p class="eyebrow">FEATURED · FRACTALS</p>
+            <h2>Mode 7 Mandelbrot</h2>
+            <p>mandel-display.sfc · 32 KB</p>
+            <div class="tv-hero-meta">SELF-RUNNING &nbsp; · &nbsp; FIDELITY CHECK AVAILABLE</div>
+          </div>
+          <div class="tv-hero-actions"><button class="tv-action focus">▶ &nbsp; Play</button><button class="tv-action">Details</button></div>
+        </section>
+        <section class="tv-section">
+          <div class="tv-section-head"><h3>Recently played</h3><span>5 ROMS</span></div>
+          <div class="tv-cards">
+            <article class="tv-card"><div class="tv-card-art a"></div><div class="tv-card-title">Mode 7 Mandelbrot</div><p class="tv-card-sub">FRACTALS</p></article>
+            <article class="tv-card"><div class="tv-card-art d"></div><div class="tv-card-title">Space Invaders</div><p class="tv-card-sub">GAMES &amp; CLASSICS</p></article>
+            <article class="tv-card"><div class="tv-card-art b"></div><div class="tv-card-title">Apollo 11 Daylight Launch</div><p class="tv-card-sub">VIDEO PLAYBACK</p></article>
+            <article class="tv-card"><div class="tv-card-art c"></div><div class="tv-card-title">1-D Cellular Automaton</div><p class="tv-card-sub">CELLULAR AUTOMATA</p></article>
+            <article class="tv-card"><div class="tv-card-art d"></div><div class="tv-card-title">ADPCM Waverider</div><p class="tv-card-sub">SIGNALS &amp; AUDIO</p></article>
+          </div>
+        </section>
+        <section class="tv-section">
+          <div class="tv-section-head"><h3>Browse categories</h3><span>ALL 152 PUBLISHED ROMS</span></div>
+          <div class="tv-cards">
+            <article class="tv-card"><div class="tv-card-art a"></div><div class="tv-card-title">Fractals</div><p class="tv-card-sub">11 CURATED</p></article>
+            <article class="tv-card"><div class="tv-card-art b"></div><div class="tv-card-title">Video Playback</div><p class="tv-card-sub">2 CURATED</p></article>
+            <article class="tv-card"><div class="tv-card-art c"></div><div class="tv-card-title">Cellular Automata</div><p class="tv-card-sub">7 CURATED</p></article>
+            <article class="tv-card"><div class="tv-card-art d"></div><div class="tv-card-title">Algorithms &amp; Data</div><p class="tv-card-sub">PUBLISHED CATEGORY</p></article>
+            <article class="tv-card"><div class="tv-card-art b"></div><div class="tv-card-title">All ROMs</div><p class="tv-card-sub">SEARCH OR BROWSE</p></article>
+          </div>
+        </section>
+        <footer class="tv-bottom"><span><i class="tv-key">SELECT</i> PLAY &nbsp; <i class="tv-key">SEARCH</i> FIND &nbsp; <i class="tv-key">BACK</i> RETURN</span><span>← → ↑ ↓ MOVE &nbsp; · &nbsp; FOCUS STAYS VISIBLE</span></footer>
+      </main>
+    </div>
+  </section>
+  <div class="preview-label" id="search-results"><span>Search state · published ROM catalog</span><span>Android TV keyboard + D-pad result focus</span></div>
+  <section class="mock">
+    <div class="tv-search-state">
+      <h3>Search ROMs</h3>
+      <div class="tv-search-query"><span>APOLLO</span><span style="color:#8acaff">▍</span><span style="color:#93a9be;opacity:.7"> 11 Daylight Launch</span><span style="float:right;color:#8b9aaa;font-size:9px">5 MATCHES</span></div>
+      <div class="tv-search-layout">
+        <div class="tv-search-results">
+          <div class="tm-label">RESULTS · SORTED BY MATCH</div>
+          <div class="tv-result focus">Apollo 11 Daylight Launch<small>apollo-daylight.sfc · 4.0 MiB</small></div>
+          <div class="tv-result">Apollo 11 Daylight Launch · slow<small>apollo-daylight-slow.sfc · 4.0 MiB</small></div>
+          <div class="tv-result">Apollo 11 Daylight Launch · self-test<small>apollo-daylight-selftest.sfc · 4.0 MiB</small></div>
+          <div class="tv-result">Apollo 11 Daylight Launch · corrupt<small>apollo-daylight-corrupt.sfc · 4.0 MiB</small></div>
+          <div class="tv-result">Apollo 11 Daylight Launch · slow self-test<small>apollo-daylight-selftest-slow.sfc · 4.0 MiB</small></div>
+        </div>
+        <div class="tv-keyboard">
+          <div class="tm-label">ON-SCREEN KEYBOARD · SEARCH FIELD FOCUSED</div>
+          <div class="tv-keygrid">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+            <span>8</span><span>9</span><span>0</span><span>A</span><span>B</span><span>C</span><span>D</span>
+            <span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span>
+            <span>L</span><span>M</span><span>N</span><span>O</span><span>P</span><span>Q</span><span>R</span>
+            <span>S</span><span>T</span><span>U</span><span>V</span><span>W</span><span>X</span><span>Y</span>
+            <span>Z</span><span style="grid-column:span 3">SPACE</span><span style="grid-column:span 2">⌫</span><span class="focus" style="grid-column:span 2">DONE</span>
+          </div>
+          <div class="tv-search-help">↑ ↓ choose result &nbsp; · &nbsp; Select launch &nbsp; · &nbsp; ⌫ removes typed letters; completion updates</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="notes">
+    <article class="note">
+      <h2>Design intent</h2>
+      <p>Make the first screen usable from across the room. Recent and featured ROMs launch in one or two remote presses; Search and All ROMs provide direct access to the full published ROM library using only the TV remote and its on-screen keyboard.</p>
+    </article>
+    <article class="note">
+      <h2>Remote behavior</h2>
+      <dl class="label-list">
+        <dt>D-pad</dt><dd>Move focus among actions and cards; focused item grows and gets a bright outline.</dd>
+        <dt>Select</dt><dd>Launch the focused ROM or open its details.</dd>
+        <dt>Search</dt><dd>Open the on-screen keyboard; results filter as the query changes.</dd>
+        <dt>Completion</dt><dd>Suggested suffix is ghost text, never inserted into the query. Backspace deletes one typed letter; Select loads the focused result.</dd>
+        <dt>Back</dt><dd>Close search/details or return to the launcher.</dd>
+        <dt>Default focus</dt><dd>Featured Play action, then recent ROMs.</dd>
+      </dl>
+    </article>
+    <article class="note">
+      <h2>Why this is different</h2>
+      <ul>
+        <li>Search remains the fastest way to find an exact build, but is not the only first-screen path.</li>
+        <li>Large cards and persistent focus replace small text inputs and dense result rows.</li>
+        <li>Recent and pinned ROMs reduce repeated search on a TV.</li>
+        <li>The query and matching ROMs share the screen; Select launches the focused result.</li>
+      </ul>
+    </article>
+  </section>
+  
+<section class="scale-review">
+  <p class="eyebrow">Catalog-size behavior</p><h2>How the Chromecast launcher adapts</h2>
+  <p class="scale-intro">At runtime, the launcher reads the loaded catalog count and adjusts browsing density. The 1 / 10 / 100 / 1,000 cases below are checkpoints, not separate screens.</p>
+  <div class="scale-grid">
+    <article class="scale-cell"><b>1 ROM</b><p>Launch directly or show one focused Play tile and a small Change ROM action.</p></article>
+    <article class="scale-cell"><b>10 ROMs</b><p>Show the whole recent/all list as large focusable cards; Search can stay secondary.</p></article>
+    <article class="scale-cell"><b>100 ROMs</b><p>Use category shelves and Recent/Pinned rows, with Search always visible in the header.</p></article>
+    <article class="scale-cell"><b>1,000 ROMs</b><p>Keep the home screen sparse. Search opens the TV keyboard and a paged set of large results; category jumps and letter navigation reduce D-pad travel.</p></article>
+  </div>
+  <div class="scale-principle"><strong>What stays constant:</strong> one focused item at a time, large targets, retained focus after Back, and Select launches the chosen ROM.</div>
+</section>
+<footer class="review-foot"><span>04 / 05 · Chromecast quick launch</span><span><a href="05-cartridge-flow.html">Next concept →</a></span></footer>
+</main>
+</body>
+</html>

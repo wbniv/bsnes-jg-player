@@ -1,0 +1,68 @@
+ACTIVITY MANAGER PROCESS EXIT INFO (dumpsys activity exit-info)
+Last Timestamp of Persistence Into Persistent Storage: 2026-10-27 12:50:28.061
+  package: org.bsnesjg.tv.native.phase2
+    Historical Process Exit for uid=10073
+        ApplicationExitInfo #0:
+          timestamp=2026-10-27 12:58:23.660 pid=27777 realUid=99015 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #1:
+          timestamp=2026-10-27 12:58:23.512 pid=27743 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #2:
+          timestamp=2026-10-27 08:53:30.615 pid=25250 realUid=99012 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #3:
+          timestamp=2026-10-27 08:53:30.463 pid=25221 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #4:
+          timestamp=2026-10-27 08:04:02.988 pid=28641 realUid=99008 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #5:
+          timestamp=2026-10-27 08:04:02.841 pid=28611 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #6:
+          timestamp=2026-10-27 08:00:04.695 pid=26210 realUid=99007 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #7:
+          timestamp=2026-10-27 08:00:04.542 pid=26178 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #8:
+          timestamp=2026-10-27 07:01:55.594 pid=5782 realUid=99003 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=13 (OTHER KILLS BY SYSTEM) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #9:
+          timestamp=2026-10-27 07:01:55.439 pid=5751 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #10:
+          timestamp=2026-10-27 06:57:16.881 pid=4998 realUid=99001 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #11:
+          timestamp=2026-10-27 06:57:16.714 pid=4951 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #12:
+          timestamp=2026-10-26 21:26:32.262 pid=2631 realUid=99023 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #13:
+          timestamp=2026-10-26 21:26:32.074 pid=2593 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null
+        ApplicationExitInfo #14:
+          timestamp=2026-10-26 21:19:55.661 pid=1965 realUid=99022 packageUid=10073 definingUid=10066 user=0
+          process=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 reason=1 (EXIT_SELF) subreason=17 (ISOLATED NOT NEEDED) status=0
+          importance=400 pss=0.00 rss=0.00 description=isolated not needed state=empty trace=null
+        ApplicationExitInfo #15:
+          timestamp=2026-10-26 21:19:55.495 pid=1933 realUid=10073 packageUid=10073 definingUid=10073 user=0
+          process=org.bsnesjg.tv.native.phase2 reason=5 (APP CRASH(NATIVE)) subreason=0 (UNKNOWN) status=11
+          importance=100 pss=0.00 rss=0.00 description=crash state=71 bytes trace=null

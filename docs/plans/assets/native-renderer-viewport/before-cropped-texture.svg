@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="560" viewBox="0 0 1100 560" role="img" aria-labelledby="title desc">
+  <title id="title">Before: inset native game quad crops its texture</title>
+  <desc id="desc">The game quad is inset to create side gutters, but clip-space coordinates are reused as texture coordinates. Only the middle 60 percent of the SNES framebuffer is sampled.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#293e52"/></marker>
+    <pattern id="pixels" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M14 0H0V14" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1100" height="560" rx="18" fill="#f4f7fa"/>
+  <text x="32" y="42" font-family="sans-serif" font-size="23" font-weight="700" fill="#172433">Before · screen position is incorrectly reused for UV</text>
+  <text x="32" y="76" font-family="sans-serif" font-size="15" fill="#526579">Landscape viewport · central 4:3 game rectangle · side gutters reserved for panels</text>
+  <rect x="55" y="130" width="480" height="300" rx="10" fill="#111827"/>
+  <rect x="55" y="130" width="40" height="300" fill="#05080d"/>
+  <rect x="495" y="130" width="40" height="300" fill="#05080d"/>
+  <text x="57" y="157" font-family="sans-serif" font-size="12" fill="#9aabba">meta</text>
+  <text x="497" y="157" font-family="sans-serif" font-size="12" fill="#9aabba">perf</text>
+  <rect x="95" y="130" width="400" height="300" fill="#c33228"/>
+  <path d="M95 200H495M95 270H495M95 340H495M195 130V430M295 130V430M395 130V430" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M95 130H495V430H95Z" fill="url(#pixels)"/>
+  <text x="170" y="245" font-family="monospace" font-size="27" font-weight="700" fill="#fff">SNES FRAME</text>
+  <rect x="95" y="130" width="400" height="300" fill="#f5c84c" fill-opacity=".06" stroke="#ffcf4a" stroke-width="4" stroke-dasharray="10 7"/>
+  <path d="M95 455V476M495 455V476M95 466H495" stroke="#293e52" stroke-width="2" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+  <text x="220" y="501" font-family="sans-serif" font-size="15" font-weight="700" fill="#293e52">4:3 inset quad</text>
+  <rect x="600" y="130" width="440" height="300" rx="10" fill="#fff" stroke="#8a9aab" stroke-width="2"/>
+  <text x="620" y="160" font-family="sans-serif" font-size="16" font-weight="700" fill="#172433">Source texture · 256 × 224</text>
+  <rect x="620" y="185" width="400" height="210" fill="#c33228"/>
+  <path d="M620 255H1020M620 325H1020M720 185V395M820 185V395M920 185V395" stroke="#fff" stroke-opacity=".48" stroke-width="2"/>
+  <rect x="620" y="185" width="400" height="210" fill="url(#pixels)"/>
+  <rect x="653" y="185" width="334" height="210" fill="#f5c84c" fill-opacity=".18" stroke="#d18a00" stroke-width="4" stroke-dasharray="10 7"/>
+  <text x="806" y="295" font-family="monospace" font-size="21" font-weight="700" fill="#fff">sampled UV</text>
+  <path d="M455 128C530 95 615 95 665 170" fill="none" stroke="#293e52" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="548" y="107" font-family="sans-serif" font-size="15" fill="#293e52">p reused as UV</text>
+  <text x="620" y="447" font-family="sans-serif" font-size="15" fill="#526579">uv = (p + 1) / 2</text>
+  <text x="620" y="474" font-family="sans-serif" font-size="15" fill="#526579">even this 4:3 inset samples only about 83% of source width</text>
+  <rect x="32" y="520" width="16" height="16" rx="3" fill="#f5c84c"/>
+  <text x="57" y="534" font-family="sans-serif" font-size="14" fill="#526579">yellow = sampled UV interval; the outer framebuffer columns are lost</text>
+</svg>

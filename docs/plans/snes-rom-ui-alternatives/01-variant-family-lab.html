@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>01 · Variant family lab</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="stylesheet" href="scaling.css">
+  <link rel="stylesheet" href="variant.css">
+</head>
+<body>
+<main class="review">
+  <header class="review-head">
+    <div>
+      <p class="eyebrow">UI concept 01 · compiler variant browser</p>
+      <h1>Compare ROMs by build family</h1>
+      <p class="review-intro">This view groups related build outputs together so you can find a family, compare its variants, then launch one ROM. It surfaces compiler suffixes and build modes rather than making each file look like a separate game.</p>
+    </div>
+    <span class="pill">Google TV · family-first</span>
+  </header>
+  <nav class="nav">
+    <a href="index.html">All concepts</a>
+    <a aria-current="page" href="01-variant-family-lab.html">01 · Variant family lab</a>
+    <a href="02-snes-game-menu.html">02 · SNES game menu</a>
+    <a href="03-rom-treemap.html">03 · ROM treemap</a>
+    <a href="04-quick-launch.html">04 · Chromecast quick launch</a>
+    <a href="05-cartridge-flow.html">05 · Cartridge flow</a>
+  </nav>
+  <div class="preview-label"><span>Full page preview · fixed 16:9 Google TV</span><span>Focus shown on the default build</span></div>
+  <section class="mock">
+    <div class="variant-app mock-inner">
+      <header class="va-top"><div class="va-brand"><strong>bsnes-jg</strong> / BUILD LAB</div><div class="va-top-actions"><span>Families</span><span>Recent</span><button class="va-search">⌕　Search families or ROM names</button></div></header>
+      <main class="va-main">
+        <aside class="va-families">
+          <div class="va-kicker">BUILD FAMILIES</div>
+          <div class="va-count">519 ROMs · group by shared build family</div>
+          <div class="va-family focused"><span><b>absdiff</b><small>4 variants</small></span><span>›</span></div>
+          <div class="va-family"><span><b>apollo-daylight</b><small>5 variants</small></span><span>›</span></div>
+          <div class="va-family"><span><b>bitboard64</b><small>build family</small></span><span>›</span></div>
+          <div class="va-family"><span><b>mandel</b><small>build family</small></span><span>›</span></div>
+          <div class="va-family"><span><b>nmitally</b><small>build family</small></span><span>›</span></div>
+          <div class="va-family"><span><b>Other ROMs</b><small>standalone builds</small></span><span>›</span></div>
+          <div class="va-family-search">Search or jump by letter</div>
+        </aside>
+        <section class="va-variants">
+          <div class="va-head"><div><div class="va-kicker">SELECTED FAMILY</div><h2>absdiff</h2><div class="va-sub">Absolute-difference fixture · 4 generated builds</div></div><span class="va-tag">COMPILER TEST</span></div>
+          <div class="va-grid">
+            <article class="va-card selected"><div class="va-card-art art-a"><span>BASE</span></div><div class="va-name">absdiff.sfc</div><div class="va-meta">32 KB · default build</div><div class="va-focus">SELECT　▶　LOAD</div></article>
+            <article class="va-card"><div class="va-card-art art-b"><span>A16</span></div><div class="va-name">absdiff-a16.sfc</div><div class="va-meta">32 KB · 16-bit accumulator</div></article>
+            <article class="va-card"><div class="va-card-art art-c"><span>DEFAULT</span></div><div class="va-name">absdiff-default.sfc</div><div class="va-meta">32 KB · default mode</div></article>
+            <article class="va-card"><div class="va-card-art art-d"><span>XY16</span></div><div class="va-name">absdiff-xy16.sfc</div><div class="va-meta">32 KB · 16-bit index registers</div></article>
+          </div>
+          <div class="va-bottom"><div class="va-detail"><span class="va-kicker">SELECTED BUILD</span><b>absdiff.sfc</b><span>32,768 bytes · no self-check configured</span></div><button class="va-load">Load selected ROM</button></div>
+        </section>
+      </main>
+      <footer class="va-footer"><span><i>↑ ↓</i> Family　 <i>← →</i> Variant　 <i>SELECT</i> Load　 <i>SEARCH</i> Find　 <i>BACK</i> Return</span><span>FOCUS VISIBLE</span></footer>
+    </div>
+  </section>
+  <section class="notes">
+    <article class="note"><h2>Design intent</h2><p>Make suffix-driven build variants understandable as one family. The left rail navigates families; the main panel compares the exact ROMs in the chosen family. Selecting a build loads that file without hiding its exact filename.</p></article>
+    <article class="note"><h2>Visible labels</h2><dl class="label-list"><dt>Family</dt><dd>Shared base name and count of matching builds</dd><dt>Variant</dt><dd>Exact .sfc filename, size, and recognized build suffix</dd><dt>Selection</dt><dd>Persistent remote focus and one clear Load action</dd><dt>Search</dt><dd>Matches family or full filename</dd><dt>Fallback</dt><dd>Standalone builds remain under Other ROMs</dd></dl></article>
+    <article class="note"><h2>Interaction and tradeoff</h2><ul><li>D-pad up/down changes family; left/right changes variant; Select loads.</li><li>Search opens the Google TV keyboard; typed letters show family and filename completions. Backspace removes one typed letter and refreshes them.</li><li>Useful for comparing `-a16`, `-default`, `-xy16`, `_sim`, and speed variants.</li><li>Family detection is a navigation aid; every ROM remains individually selectable, including unrecognized names.</li></ul></article>
+  </section>
+  <section class="scale-review">
+    <p class="eyebrow">Catalog-size behavior</p><h2>How family browsing adapts</h2>
+    <p class="scale-intro">At runtime, the same Google TV screen reads the loaded catalog count and recalculates family density and navigation; 1, 10, 100, and 1,000 are checkpoints, not separate designs.</p>
+    <div class="scale-grid">
+      <article class="scale-cell"><b>1 ROM</b><p>Show the single build directly. Hide the family rail and variant comparison.</p></article>
+      <article class="scale-cell"><b>10 ROMs</b><p>Group obvious suffix variants; list standalone ROMs as one-build families.</p></article>
+      <article class="scale-cell"><b>100 ROMs</b><p>Show a searchable family rail and one selected family’s variants at a time.</p></article>
+      <article class="scale-cell"><b>1,000 ROMs</b><p>Search or letter-jump to a family, page the family rail, and show only its variants. Keep unmatched builds in the standalone group.</p></article>
+    </div>
+    <div class="scale-principle"><strong>What stays constant:</strong> the chosen ROM remains an individual file with exact name and size, even when grouped with sibling builds.</div>
+  </section>
+  <footer class="review-foot"><span>01 / 05 · Variant family lab</span><span><a href="02-snes-game-menu.html">Next concept →</a></span></footer>
+</main>
+</body>
+</html>

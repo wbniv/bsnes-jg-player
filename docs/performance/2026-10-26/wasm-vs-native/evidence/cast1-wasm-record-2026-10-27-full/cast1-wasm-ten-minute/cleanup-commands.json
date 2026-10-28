@@ -1,0 +1,101 @@
+[
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793067216.4160497,
+    "end": 1793067216.6581578,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-2ad207f5cdf5-segment-001.mp4"
+    ],
+    "start": 1793067216.6601424,
+    "end": 1793067217.005971,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793067217.0425627,
+    "end": 1793067217.2717843,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-2ad207f5cdf5-segment-002.mp4"
+    ],
+    "start": 1793067217.2736857,
+    "end": 1793067217.5829248,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793067217.601893,
+    "end": 1793067217.8183153,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-2ad207f5cdf5-segment-003.mp4"
+    ],
+    "start": 1793067217.8201075,
+    "end": 1793067218.005985,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793067218.020399,
+    "end": 1793067218.2352872,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-2ad207f5cdf5-segment-004.mp4"
+    ],
+    "start": 1793067218.2374146,
+    "end": 1793067218.4032402,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793067218.4380884,
+    "end": 1793067218.9582994,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.apps.tv.launcherx/.home.HomeActivity"
+    ],
+    "start": 1793067218.9591227,
+    "end": 1793067219.6760788,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793067219.676952,
+    "end": 1793067219.8976035,
+    "returncode": 0
+  }
+]

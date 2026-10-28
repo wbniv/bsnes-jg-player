@@ -1,0 +1,4047 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066150.0862377,
+    "end": 1793066150.2912278,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066150.3341174,
+    "end": 1793066150.7038188,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793066150.7063904,
+    "end": 1793066150.879472,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793066151.030741,
+    "end": 1793066152.766357,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066157.7680051,
+    "end": 1793066158.2376902,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066158.2441752,
+    "end": 1793066158.5316339,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066158.5363777,
+    "end": 1793066158.9471686,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-t",
+      "2000",
+      "--pid=26791",
+      "-v",
+      "brief"
+    ],
+    "start": 1793066158.9831278,
+    "end": 1793066159.449483,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793066159.4526105,
+    "end": 1793066168.0030878,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066170.636312,
+    "end": 1793066171.4213972,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066171.425129,
+    "end": 1793066172.2378144,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "screenrecord --time-limit 150 --bit-rate 12000000 /data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4 >/dev/null 2>&1 & echo $!"
+    ],
+    "start": 1793066172.2849312,
+    "end": 1793066173.2395413,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066173.2644377,
+    "end": 1793066173.653534,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066174.1646168,
+    "end": 1793066175.5791185,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066176.0822942,
+    "end": 1793066177.5444868,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066178.0472202,
+    "end": 1793066178.8832083,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066179.3858926,
+    "end": 1793066180.45733,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066180.9593074,
+    "end": 1793066181.39531,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066181.8973286,
+    "end": 1793066182.9694884,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066183.4717343,
+    "end": 1793066183.9663699,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066184.4696617,
+    "end": 1793066185.3237927,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066185.8279526,
+    "end": 1793066186.2834113,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066186.7853255,
+    "end": 1793066187.19707,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066187.6990423,
+    "end": 1793066188.1333144,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066188.6444798,
+    "end": 1793066189.2070189,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066189.7099528,
+    "end": 1793066190.1598158,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066190.6627293,
+    "end": 1793066191.1609325,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066191.663059,
+    "end": 1793066192.001027,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066192.5029426,
+    "end": 1793066193.070448,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066193.5724232,
+    "end": 1793066194.1304934,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066194.6335483,
+    "end": 1793066195.2466495,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066195.7496324,
+    "end": 1793066196.2687511,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066196.7708592,
+    "end": 1793066197.2028985,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066197.705834,
+    "end": 1793066198.1934962,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066198.6955197,
+    "end": 1793066199.3766167,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066199.87958,
+    "end": 1793066200.1845477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066200.695885,
+    "end": 1793066201.082863,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066201.641962,
+    "end": 1793066202.2063782,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066202.7169707,
+    "end": 1793066203.1724427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066203.675201,
+    "end": 1793066203.947943,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066204.4500535,
+    "end": 1793066204.8062084,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066205.3083794,
+    "end": 1793066205.7892072,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066206.3930004,
+    "end": 1793066206.890381,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066207.3921652,
+    "end": 1793066207.9717405,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066208.473772,
+    "end": 1793066209.1319764,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066209.6347816,
+    "end": 1793066210.5500991,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066211.0523071,
+    "end": 1793066212.256429,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066212.7603898,
+    "end": 1793066213.7007096,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066214.2036607,
+    "end": 1793066215.0199585,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066215.523048,
+    "end": 1793066216.6790297,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066217.1819284,
+    "end": 1793066218.2241364,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066218.7261198,
+    "end": 1793066219.2113283,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066219.71542,
+    "end": 1793066220.371281,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066220.8744678,
+    "end": 1793066221.6877642,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066222.1901352,
+    "end": 1793066222.8299363,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066223.3318245,
+    "end": 1793066237.4699955,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066237.9730263,
+    "end": 1793066238.9391944,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066239.4412317,
+    "end": 1793066240.3187668,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066240.8236682,
+    "end": 1793066241.135948,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066241.6386871,
+    "end": 1793066242.3893635,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066242.892452,
+    "end": 1793066243.6496027,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066244.151578,
+    "end": 1793066245.1710818,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066245.6743054,
+    "end": 1793066246.1246934,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066246.6268132,
+    "end": 1793066247.0645688,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066247.566565,
+    "end": 1793066247.8494058,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066248.3515413,
+    "end": 1793066248.8373752,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066249.3413377,
+    "end": 1793066250.169491,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066250.6724503,
+    "end": 1793066251.0950315,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066251.5978513,
+    "end": 1793066252.043033,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066252.5451412,
+    "end": 1793066253.1235309,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066253.625799,
+    "end": 1793066254.244498,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066254.9170141,
+    "end": 1793066255.366144,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066255.8687017,
+    "end": 1793066256.6192443,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066257.122544,
+    "end": 1793066257.9158192,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066258.4179115,
+    "end": 1793066258.8664315,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066259.369505,
+    "end": 1793066259.761608,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066260.2645104,
+    "end": 1793066260.7978923,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066261.3082242,
+    "end": 1793066262.2465878,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066262.7497513,
+    "end": 1793066263.7866967,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066264.2895963,
+    "end": 1793066265.0402498,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066265.5422013,
+    "end": 1793066266.0687263,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066266.571659,
+    "end": 1793066267.016821,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066267.5200553,
+    "end": 1793066268.14071,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066268.6444566,
+    "end": 1793066269.1837225,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066269.6858642,
+    "end": 1793066270.2306018,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066270.7338057,
+    "end": 1793066271.2493777,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066271.7511966,
+    "end": 1793066272.3502696,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066272.853517,
+    "end": 1793066273.3676577,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066273.8703632,
+    "end": 1793066274.7271626,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066275.229176,
+    "end": 1793066275.940045,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066276.442072,
+    "end": 1793066277.1796668,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066277.6822355,
+    "end": 1793066278.2134678,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066278.7180088,
+    "end": 1793066279.43472,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066279.936831,
+    "end": 1793066280.6767104,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066281.1786952,
+    "end": 1793066281.6114042,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066282.1146793,
+    "end": 1793066282.6636252,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066283.1665967,
+    "end": 1793066283.6708026,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066284.1727908,
+    "end": 1793066284.497233,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066285.0003614,
+    "end": 1793066285.4003513,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066285.9024336,
+    "end": 1793066286.5309467,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066287.0341816,
+    "end": 1793066287.7701292,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066288.272005,
+    "end": 1793066288.830357,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066289.3323243,
+    "end": 1793066289.5957258,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066290.0977201,
+    "end": 1793066290.4095242,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066290.912457,
+    "end": 1793066291.2006347,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066291.7065594,
+    "end": 1793066291.9790678,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066292.481979,
+    "end": 1793066292.849737,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066293.3523328,
+    "end": 1793066293.622981,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066294.1263552,
+    "end": 1793066294.2540429,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066294.7558908,
+    "end": 1793066294.8932836,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066295.396197,
+    "end": 1793066295.6772487,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066296.1790946,
+    "end": 1793066296.4896092,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066296.9925895,
+    "end": 1793066297.35315,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066297.8560567,
+    "end": 1793066298.0834048,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066298.5861833,
+    "end": 1793066298.7459803,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066299.2479086,
+    "end": 1793066299.5731156,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066300.0750563,
+    "end": 1793066300.3811147,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066300.8832,
+    "end": 1793066301.0175102,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066301.5195274,
+    "end": 1793066301.8116033,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066302.3134718,
+    "end": 1793066302.6343765,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066303.1364806,
+    "end": 1793066303.4527245,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066303.954874,
+    "end": 1793066304.152663,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066304.6557899,
+    "end": 1793066304.9202993,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066305.423249,
+    "end": 1793066305.7261243,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066306.2306607,
+    "end": 1793066306.5270288,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066307.029871,
+    "end": 1793066307.1680968,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066307.6708536,
+    "end": 1793066307.9598205,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066308.4617224,
+    "end": 1793066308.67358,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066309.1756158,
+    "end": 1793066309.402266,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066309.904925,
+    "end": 1793066310.2348971,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066310.737227,
+    "end": 1793066311.0750856,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066311.5768802,
+    "end": 1793066311.7509797,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066312.254837,
+    "end": 1793066312.3882856,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066312.8923004,
+    "end": 1793066313.1860228,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066313.6877587,
+    "end": 1793066314.0053227,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066314.5072954,
+    "end": 1793066314.774039,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066315.2767751,
+    "end": 1793066316.0907905,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066316.5928996,
+    "end": 1793066316.8589034,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066317.3615153,
+    "end": 1793066317.6907666,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066318.1944337,
+    "end": 1793066318.3263853,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066318.8301508,
+    "end": 1793066319.1234765,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066319.6254377,
+    "end": 1793066319.9399767,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066320.4419575,
+    "end": 1793066320.5801628,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066321.082821,
+    "end": 1793066321.374477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066321.8772094,
+    "end": 1793066322.2384179,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066322.7416272,
+    "end": 1793066323.0222106,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066323.5241888,
+    "end": 1793066323.731183,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066324.2339318,
+    "end": 1793066324.4545653,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/26949/cmdline"
+    ],
+    "start": 1793066324.9572227,
+    "end": 1793066325.143821,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4"
+    ],
+    "start": 1793066325.145672,
+    "end": 1793066325.277148,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "screenrecord --time-limit 150 --bit-rate 12000000 /data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4 >/dev/null 2>&1 & echo $!"
+    ],
+    "start": 1793066325.2963457,
+    "end": 1793066325.4406679,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066325.4454172,
+    "end": 1793066325.582422,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066326.0853255,
+    "end": 1793066326.2888725,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066326.791802,
+    "end": 1793066327.1071918,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066327.610841,
+    "end": 1793066327.9280784,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066328.4310317,
+    "end": 1793066328.7477705,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066329.2501533,
+    "end": 1793066329.5677195,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066330.1232314,
+    "end": 1793066330.4007597,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066330.9044836,
+    "end": 1793066331.0436215,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066331.5458782,
+    "end": 1793066331.8619103,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066332.3647726,
+    "end": 1793066332.493293,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066332.9964411,
+    "end": 1793066333.2604046,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066333.7631524,
+    "end": 1793066333.9604943,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066334.4625046,
+    "end": 1793066334.6871486,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066335.189209,
+    "end": 1793066335.324517,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066335.8275232,
+    "end": 1793066336.1175275,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066336.619493,
+    "end": 1793066336.9395745,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066337.4421818,
+    "end": 1793066337.579627,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066338.0816472,
+    "end": 1793066338.4012456,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066338.9031634,
+    "end": 1793066339.1912162,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066339.6931424,
+    "end": 1793066340.0607564,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066340.5636346,
+    "end": 1793066340.8359845,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066341.3378692,
+    "end": 1793066341.466482,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066341.9708352,
+    "end": 1793066342.1639414,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066342.6670845,
+    "end": 1793066342.884064,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066343.385946,
+    "end": 1793066343.5125022,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066344.0151184,
+    "end": 1793066344.2441862,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066344.7460878,
+    "end": 1793066344.927548,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066345.4295232,
+    "end": 1793066345.5639884,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066346.0659773,
+    "end": 1793066346.2564135,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066346.7595413,
+    "end": 1793066346.9710724,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066347.473943,
+    "end": 1793066347.6357713,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066348.137831,
+    "end": 1793066348.3186758,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066348.822836,
+    "end": 1793066349.02241,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066349.5268035,
+    "end": 1793066349.6636696,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066350.1657984,
+    "end": 1793066350.3658376,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066350.8687751,
+    "end": 1793066351.071727,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066351.573684,
+    "end": 1793066351.6996295,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066352.2026675,
+    "end": 1793066352.3846354,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066352.8866408,
+    "end": 1793066353.117427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066353.619757,
+    "end": 1793066353.7437496,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066354.2457526,
+    "end": 1793066354.5509498,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066355.0529177,
+    "end": 1793066355.3686273,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066355.871403,
+    "end": 1793066356.2337153,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066356.7376888,
+    "end": 1793066357.0112364,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066357.5137079,
+    "end": 1793066357.830004,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066358.3352456,
+    "end": 1793066358.51969,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066359.0221329,
+    "end": 1793066359.2946255,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066359.796872,
+    "end": 1793066360.0813427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066360.5924437,
+    "end": 1793066360.747428,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066361.2501078,
+    "end": 1793066361.5178528,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066362.0204704,
+    "end": 1793066362.3344762,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066362.8364835,
+    "end": 1793066363.155691,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066363.6579597,
+    "end": 1793066363.9708054,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066364.4726884,
+    "end": 1793066364.7935622,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066365.296384,
+    "end": 1793066365.4327927,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066365.943769,
+    "end": 1793066366.2240162,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066366.7285767,
+    "end": 1793066367.0460851,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066367.548748,
+    "end": 1793066367.6802776,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066368.1821032,
+    "end": 1793066368.479469,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066368.9829977,
+    "end": 1793066369.298747,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066369.8006167,
+    "end": 1793066369.9545217,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066370.4569209,
+    "end": 1793066370.7820642,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066371.2863495,
+    "end": 1793066371.5607,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066372.06261,
+    "end": 1793066372.4137995,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066372.9158173,
+    "end": 1793066373.0513055,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066373.5542226,
+    "end": 1793066373.8043268,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066374.3075125,
+    "end": 1793066374.6208043,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066375.1241198,
+    "end": 1793066375.4694679,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066375.9713607,
+    "end": 1793066376.1021678,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066376.6125033,
+    "end": 1793066376.912399,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066377.415136,
+    "end": 1793066377.6948197,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066378.197499,
+    "end": 1793066378.5124502,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066379.0148945,
+    "end": 1793066379.3816617,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066379.8835888,
+    "end": 1793066380.1510088,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066380.652995,
+    "end": 1793066381.0334542,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066381.5353205,
+    "end": 1793066381.7885685,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066382.2914014,
+    "end": 1793066382.6075692,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066383.1096413,
+    "end": 1793066383.2408714,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066383.7427003,
+    "end": 1793066384.041632,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066384.544104,
+    "end": 1793066384.861482,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066385.3645103,
+    "end": 1793066385.7009525,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066386.2027843,
+    "end": 1793066386.3294225,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066386.8312185,
+    "end": 1793066387.1289022,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066387.6308434,
+    "end": 1793066387.933019,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066388.4349458,
+    "end": 1793066388.754489,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066389.2576065,
+    "end": 1793066389.3932993,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066389.8961315,
+    "end": 1793066390.1937146,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066390.698976,
+    "end": 1793066391.0515814,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066391.5720675,
+    "end": 1793066391.8264139,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066392.3295224,
+    "end": 1793066392.4744792,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066392.9764776,
+    "end": 1793066393.2624946,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066393.7644038,
+    "end": 1793066394.0764468,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066394.5799797,
+    "end": 1793066394.9524972,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066395.4551911,
+    "end": 1793066395.717911,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066396.2209196,
+    "end": 1793066396.5414412,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066397.0434794,
+    "end": 1793066397.2752013,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066397.7770464,
+    "end": 1793066397.9715157,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066398.4764085,
+    "end": 1793066398.6371825,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066399.139408,
+    "end": 1793066399.4036286,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066399.9054754,
+    "end": 1793066400.2231026,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066400.7254593,
+    "end": 1793066401.0426142,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066401.5446517,
+    "end": 1793066401.7090583,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066402.2110984,
+    "end": 1793066402.5019524,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066403.0051968,
+    "end": 1793066403.2979188,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066403.7999249,
+    "end": 1793066404.1157844,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066404.6186574,
+    "end": 1793066404.7761817,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066405.277979,
+    "end": 1793066405.5480018,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066406.0581694,
+    "end": 1793066406.3731546,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066406.8806162,
+    "end": 1793066407.186066,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066407.6895528,
+    "end": 1793066407.8565276,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066408.358432,
+    "end": 1793066408.6173663,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066409.1194692,
+    "end": 1793066409.4698808,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066409.9718895,
+    "end": 1793066410.151986,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066410.6548812,
+    "end": 1793066410.8727603,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066411.3757246,
+    "end": 1793066411.6892838,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066412.1927757,
+    "end": 1793066412.5072083,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066413.0105078,
+    "end": 1793066413.330429,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066413.8323987,
+    "end": 1793066413.9625108,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066414.464707,
+    "end": 1793066414.8064537,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066415.3083894,
+    "end": 1793066415.60509,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066416.1076133,
+    "end": 1793066416.4027646,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066416.9055614,
+    "end": 1793066417.048085,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066417.5500004,
+    "end": 1793066417.840421,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066418.3433475,
+    "end": 1793066418.6745436,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066419.1765053,
+    "end": 1793066419.5605247,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066420.0625489,
+    "end": 1793066420.3057334,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066420.8079731,
+    "end": 1793066421.1138482,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066421.616829,
+    "end": 1793066422.0215147,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066422.5242953,
+    "end": 1793066422.7565138,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066423.2591465,
+    "end": 1793066423.57186,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066424.0745127,
+    "end": 1793066424.2047105,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066424.7076476,
+    "end": 1793066425.0184577,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066425.5203772,
+    "end": 1793066425.8241694,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066426.3271034,
+    "end": 1793066426.6827064,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066427.1852038,
+    "end": 1793066427.4823725,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066427.9855156,
+    "end": 1793066428.2804084,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066428.7823253,
+    "end": 1793066429.1337445,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066429.6361134,
+    "end": 1793066429.9205291,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066430.4235916,
+    "end": 1793066430.7406797,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066431.242731,
+    "end": 1793066431.3751807,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066431.8779912,
+    "end": 1793066432.2146847,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066432.7178695,
+    "end": 1793066432.9909816,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066433.4927917,
+    "end": 1793066433.72118,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066434.224085,
+    "end": 1793066434.4059043,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066434.9087586,
+    "end": 1793066435.1462042,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066435.6481862,
+    "end": 1793066435.8636427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066436.3671865,
+    "end": 1793066436.590293,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066437.0921147,
+    "end": 1793066437.2974284,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066437.7994623,
+    "end": 1793066438.1134896,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066438.6155467,
+    "end": 1793066438.9290087,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066439.4311976,
+    "end": 1793066439.5592434,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066440.0627337,
+    "end": 1793066440.3667068,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066440.8701742,
+    "end": 1793066441.1818216,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066441.6836777,
+    "end": 1793066442.0137072,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066442.5156803,
+    "end": 1793066442.6526837,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066443.155758,
+    "end": 1793066443.3092136,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066443.8121636,
+    "end": 1793066444.107501,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066444.609546,
+    "end": 1793066444.8696108,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066445.3715315,
+    "end": 1793066445.69485,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066446.1976464,
+    "end": 1793066446.7399697,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066447.241911,
+    "end": 1793066447.5324118,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066448.0341787,
+    "end": 1793066448.3216963,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066448.824851,
+    "end": 1793066449.1708775,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066449.6727543,
+    "end": 1793066449.7996163,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066450.3013973,
+    "end": 1793066450.504763,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066451.025149,
+    "end": 1793066451.2184615,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066451.7215722,
+    "end": 1793066451.8484857,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066452.3531375,
+    "end": 1793066452.5672202,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066453.0701444,
+    "end": 1793066453.26502,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066453.7686543,
+    "end": 1793066453.9076667,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066454.4105978,
+    "end": 1793066454.677391,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066455.1793635,
+    "end": 1793066455.5208716,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066456.0227785,
+    "end": 1793066456.357314,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066456.8592908,
+    "end": 1793066457.030422,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066457.5327203,
+    "end": 1793066457.8367746,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066458.3386824,
+    "end": 1793066458.469107,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066458.971059,
+    "end": 1793066459.1247509,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066459.6274335,
+    "end": 1793066459.8186507,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066460.3205166,
+    "end": 1793066460.6530988,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066461.1549964,
+    "end": 1793066461.4569254,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066461.9588828,
+    "end": 1793066462.1263452,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066462.6295545,
+    "end": 1793066462.8949413,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066463.397696,
+    "end": 1793066463.7535865,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066464.2556822,
+    "end": 1793066464.5365198,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066465.038582,
+    "end": 1793066465.2098045,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066465.7126617,
+    "end": 1793066465.9603174,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066466.4625735,
+    "end": 1793066466.8386645,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066467.341482,
+    "end": 1793066467.5436225,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066468.0464272,
+    "end": 1793066468.5268018,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066469.0299013,
+    "end": 1793066469.240992,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066469.7431347,
+    "end": 1793066469.8753755,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066470.3784194,
+    "end": 1793066470.6764455,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066471.1823645,
+    "end": 1793066471.5302637,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066472.0322294,
+    "end": 1793066472.3221407,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066472.8250823,
+    "end": 1793066472.9702687,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066473.4722219,
+    "end": 1793066473.7772021,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066474.2802448,
+    "end": 1793066474.5727878,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066475.0747623,
+    "end": 1793066475.2103431,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066475.7310803,
+    "end": 1793066475.9321332,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/31257/cmdline"
+    ],
+    "start": 1793066476.434907,
+    "end": 1793066476.6137595,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4"
+    ],
+    "start": 1793066476.6162188,
+    "end": 1793066476.8205414,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "screenrecord --time-limit 57 --bit-rate 12000000 /data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4 >/dev/null 2>&1 & echo $!"
+    ],
+    "start": 1793066476.8391483,
+    "end": 1793066476.9715753,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066476.982284,
+    "end": 1793066477.1184351,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066477.64074,
+    "end": 1793066477.8492107,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066478.3514314,
+    "end": 1793066478.4874187,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066478.989361,
+    "end": 1793066479.31944,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066479.8216777,
+    "end": 1793066480.1218097,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066480.6246154,
+    "end": 1793066480.9227521,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066481.4260492,
+    "end": 1793066481.5682986,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066482.0719502,
+    "end": 1793066482.3381436,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066482.8435142,
+    "end": 1793066483.0668442,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066483.5691628,
+    "end": 1793066483.723639,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066484.226653,
+    "end": 1793066484.4273477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066484.9293704,
+    "end": 1793066485.065319,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066485.5671692,
+    "end": 1793066485.7192886,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066486.22122,
+    "end": 1793066486.5339139,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066487.0361753,
+    "end": 1793066487.2024417,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066487.7047608,
+    "end": 1793066487.8776085,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066488.379418,
+    "end": 1793066488.6806407,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066489.1828308,
+    "end": 1793066489.5459266,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066490.0479383,
+    "end": 1793066490.3391726,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066490.8420916,
+    "end": 1793066491.1563096,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066491.6591454,
+    "end": 1793066491.7937832,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066492.3049831,
+    "end": 1793066492.5950704,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066493.09701,
+    "end": 1793066493.4117908,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066493.913673,
+    "end": 1793066494.2313464,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066494.7349048,
+    "end": 1793066494.9444203,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066495.4464786,
+    "end": 1793066495.7611232,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066496.263016,
+    "end": 1793066496.5817626,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066497.083612,
+    "end": 1793066497.2169147,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066497.7191055,
+    "end": 1793066498.0163634,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066498.5183249,
+    "end": 1793066498.8339052,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066499.3358238,
+    "end": 1793066499.6526203,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066500.1544974,
+    "end": 1793066500.2809432,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066500.7839355,
+    "end": 1793066501.0943387,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066501.5975547,
+    "end": 1793066501.9148228,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066502.4167945,
+    "end": 1793066502.7259996,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066503.2287354,
+    "end": 1793066503.430098,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066503.93205,
+    "end": 1793066504.1581404,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066504.6612222,
+    "end": 1793066504.985004,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066505.48696,
+    "end": 1793066505.7978427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066506.299887,
+    "end": 1793066506.7129533,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066507.2149565,
+    "end": 1793066507.4512103,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066507.954185,
+    "end": 1793066508.254987,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066508.759147,
+    "end": 1793066508.9227595,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066509.4257212,
+    "end": 1793066509.6722324,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066510.1743176,
+    "end": 1793066510.5056772,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066511.0077999,
+    "end": 1793066511.3305726,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066511.8334465,
+    "end": 1793066511.9867346,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066512.4897108,
+    "end": 1793066512.7795177,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066513.2830567,
+    "end": 1793066513.5899282,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066514.092809,
+    "end": 1793066514.4024434,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066514.9046218,
+    "end": 1793066515.0415308,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066515.5450816,
+    "end": 1793066515.857192,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066516.3600123,
+    "end": 1793066516.7250357,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066517.2273395,
+    "end": 1793066517.474593,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066517.9772682,
+    "end": 1793066518.1418056,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066518.6445735,
+    "end": 1793066518.9198961,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066519.4223373,
+    "end": 1793066519.7269907,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066520.2289462,
+    "end": 1793066520.6259882,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066521.1289098,
+    "end": 1793066521.3670378,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066521.8689976,
+    "end": 1793066522.1825051,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066522.7038703,
+    "end": 1793066522.9565775,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066523.4592645,
+    "end": 1793066523.6164808,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066524.1184077,
+    "end": 1793066524.2505984,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066524.7539134,
+    "end": 1793066525.0497477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066525.5518432,
+    "end": 1793066525.8767128,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066526.380846,
+    "end": 1793066526.6971297,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066527.2001987,
+    "end": 1793066527.359275,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066527.8623753,
+    "end": 1793066528.1220443,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066528.7265084,
+    "end": 1793066528.9207506,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066529.4226985,
+    "end": 1793066529.7637882,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066530.268469,
+    "end": 1793066530.6627498,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066531.1656473,
+    "end": 1793066531.409833,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066531.9124994,
+    "end": 1793066532.2795653,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066532.7826967,
+    "end": 1793066533.0498357,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066533.5516994,
+    "end": 1793066533.6824524,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066534.1844118,
+    "end": 1793066534.4659894,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "cat /proc/32503/cmdline"
+    ],
+    "start": 1793066534.9689515,
+    "end": 1793066535.2583973,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4"
+    ],
+    "start": 1793066535.2602413,
+    "end": 1793066535.500087,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4"
+    ],
+    "start": 1793066535.5351248,
+    "end": 1793066535.7196555,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "pull",
+      "/data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4",
+      "/var/lib/wf-device-coordinator/evidence/J-fe78ffeb82e2/capture-001.mp4"
+    ],
+    "start": 1793066535.7205215,
+    "end": 1793066536.2732687,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4"
+    ],
+    "start": 1793066536.2794414,
+    "end": 1793066536.4176826,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4"
+    ],
+    "start": 1793066536.418789,
+    "end": 1793066536.5679975,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "pull",
+      "/data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4",
+      "/var/lib/wf-device-coordinator/evidence/J-fe78ffeb82e2/capture-002.mp4"
+    ],
+    "start": 1793066536.5697262,
+    "end": 1793066536.834302,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4"
+    ],
+    "start": 1793066536.8382013,
+    "end": 1793066536.9807305,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "stat -c %s /data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4"
+    ],
+    "start": 1793066536.9825034,
+    "end": 1793066537.1405923,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "pull",
+      "/data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4",
+      "/var/lib/wf-device-coordinator/evidence/J-fe78ffeb82e2/capture-003.mp4"
+    ],
+    "start": 1793066537.1617591,
+    "end": 1793066537.3318708,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4"
+    ],
+    "start": 1793066537.334041,
+    "end": 1793066537.5912306,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066537.6018124,
+    "end": 1793066537.774406,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066537.7782416,
+    "end": 1793066537.926459,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793066537.9283535,
+    "end": 1793066539.6695454,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066539.6715364,
+    "end": 1793066539.8157628,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=26791"
+    ],
+    "start": 1793066539.8166337,
+    "end": 1793066540.0058787,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.phase2/files/wf.log"
+    ],
+    "start": 1793066540.0078237,
+    "end": 1793066540.2090862,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066540.2103531,
+    "end": 1793066541.11086,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793066541.1227434,
+    "end": 1793066541.452702,
+    "returncode": 0
+  }
+]

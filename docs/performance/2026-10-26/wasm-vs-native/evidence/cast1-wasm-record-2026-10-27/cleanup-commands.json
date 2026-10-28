@@ -1,0 +1,83 @@
+[
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793066541.5343752,
+    "end": 1793066542.6667962,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-001.mp4"
+    ],
+    "start": 1793066542.668723,
+    "end": 1793066542.8707752,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793066542.8906407,
+    "end": 1793066543.164711,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-002.mp4"
+    ],
+    "start": 1793066543.1667128,
+    "end": 1793066543.4803228,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "ps -A -o PID,ARGS"
+    ],
+    "start": 1793066543.4950707,
+    "end": 1793066543.7288842,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "rm -f /data/local/tmp/wf-J-fe78ffeb82e2-segment-003.mp4"
+    ],
+    "start": 1793066543.7308524,
+    "end": 1793066543.8920078,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2"
+    ],
+    "start": 1793066543.8995922,
+    "end": 1793066544.2435818,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.apps.tv.launcherx/.home.HomeActivity"
+    ],
+    "start": 1793066544.2450132,
+    "end": 1793066545.024836,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793066545.0261824,
+    "end": 1793066545.2798011,
+    "returncode": 0
+  }
+]

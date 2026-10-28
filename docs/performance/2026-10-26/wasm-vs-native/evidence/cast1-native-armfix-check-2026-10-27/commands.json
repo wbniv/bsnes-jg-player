@@ -1,0 +1,65 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793080694.4077563,
+    "end": 1793080694.735807,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793080694.8093784,
+    "end": 1793080695.1611326,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793080695.1633766,
+    "end": 1793080695.5755346,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793080695.7352474,
+    "end": 1793080698.1245081,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793080703.1306372,
+    "end": 1793080703.6061363,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793080703.6159117,
+    "end": 1793080704.1368017,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity exit-info org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793080704.1395245,
+    "end": 1793080704.5042531,
+    "returncode": 0
+  }
+]

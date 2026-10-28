@@ -1,0 +1,14 @@
+[
+  {
+    "input": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9.apk",
+    "package": "org.bsnesjg.tv.phase2",
+    "before_sha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9",
+    "action": "reuse",
+    "reason": "exact-match",
+    "variant": null,
+    "status": "verified",
+    "start": 1793058811.041115,
+    "installed_sha256": "247bc559214e86237c908a2a9f90f5d6883587e6573dbeec21afaa8fa7758bf9",
+    "end": 1793058811.0650551
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793086944.460775,
+    "end": 1793086945.2071824,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MainActivity"
+    ],
+    "start": 1793086945.2116873,
+    "end": 1793086946.8751836,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793086946.878641,
+    "end": 1793086947.5221996,
+    "returncode": 0
+  }
+]
