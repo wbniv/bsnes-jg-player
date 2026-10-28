@@ -161,6 +161,19 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
 .cartridge-card.neighbor{opacity:.68;transform:scale(.84)}
 .cartridge-card.center{z-index:1;border:2px solid var(--blue);box-shadow:0 0 0 3px #60b9eb24,0 16px 32px #0009}
 .cartridge-card.center strong{font-size:16px}
+@keyframes cartridge-from-right{from{transform:translateX(90%) scale(.84);opacity:.35}to{transform:translateX(0) scale(1);opacity:1}}
+@keyframes cartridge-to-left{from{transform:translateX(70%) scale(1);opacity:1}to{transform:translateX(0) scale(.84);opacity:.68}}
+@keyframes cartridge-enter-right{from{transform:translateX(65%) scale(.72);opacity:.2}to{transform:translateX(0) scale(.84);opacity:.68}}
+@keyframes cartridge-from-left{from{transform:translateX(-90%) scale(.84);opacity:.35}to{transform:translateX(0) scale(1);opacity:1}}
+@keyframes cartridge-to-right{from{transform:translateX(-70%) scale(1);opacity:1}to{transform:translateX(0) scale(.84);opacity:.68}}
+@keyframes cartridge-enter-left{from{transform:translateX(-65%) scale(.72);opacity:.2}to{transform:translateX(0) scale(.84);opacity:.68}}
+.cartridge-moving-next .cartridge-card.center{animation:cartridge-from-right .56s cubic-bezier(.2,.75,.25,1) both}
+.cartridge-moving-next .cartridge-card.previous{animation:cartridge-to-left .56s cubic-bezier(.2,.75,.25,1) both}
+.cartridge-moving-next .cartridge-card.next{animation:cartridge-enter-right .56s cubic-bezier(.2,.75,.25,1) both}
+.cartridge-moving-previous .cartridge-card.center{animation:cartridge-from-left .56s cubic-bezier(.2,.75,.25,1) both}
+.cartridge-moving-previous .cartridge-card.next{animation:cartridge-to-right .56s cubic-bezier(.2,.75,.25,1) both}
+.cartridge-moving-previous .cartridge-card.previous{animation:cartridge-enter-left .56s cubic-bezier(.2,.75,.25,1) both}
+@media(prefers-reduced-motion:reduce){.cartridge-stage[class*="cartridge-moving-"] .cartridge-card{animation-duration:.01ms}}
 .cartridge-arrows{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 1%;pointer-events:none;color:#dbeeff;font-size:24px;text-shadow:0 2px 8px #000}
 .cartridge-details{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;flex:0 0 auto;border-top:1px solid var(--line);padding-top:8px}
 .cartridge-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
