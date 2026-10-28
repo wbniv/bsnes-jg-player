@@ -1,6 +1,6 @@
 # Google TV ROM Treemap launcher view
 
-**Status:** Implementing as launcher view 3. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
+**Status:** Implemented; Google TV device validation pending. ROM Treemap is launcher view 3. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
 
 **High fidelity mockup and diagrams:** [Open the treemap plan in a browser](2026-10-28-google-tv-rom-treemap-view.html).
 

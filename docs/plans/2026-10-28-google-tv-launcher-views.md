@@ -1,6 +1,6 @@
 # Google TV launcher views: Quick Launch and Cartridge Flow
 
-**Status:** Implemented; Google TV device validation pending. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is the second view, with a focusable view carousel. The view registry can accept additional launchers without changing ROM launch behavior.
+**Status:** Implemented; Google TV device validation pending. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is view 2; ROM Treemap (#3) is now view 3 in the [treemap extension plan](2026-10-28-google-tv-rom-treemap-view.md). All three appear in the focusable launcher chooser carousel.
 
 **Visual plan and mockups:** [Open the high fidelity plan in a browser](2026-10-28-google-tv-launcher-views.html).
 
@@ -10,7 +10,7 @@ Let a Google TV user choose between the existing Quick Launch library and a new 
 
 ## Quick Launch (existing view)
 
-Keep the current list, category chips, search, and large selected-ROM preview as view 1. Add a persistent two-card view carousel in the header: **Quick Launch** and **Cartridge Flow**. D-pad left/right moves between views; Select opens the focused view. The selected view is indicated separately from focus. Keep this switcher data-driven for future views.
+Keep the current list, category chips, search, and large selected-ROM preview as view 1. Add a persistent view carousel in the header. D-pad left/right moves through the registered launcher views; Select opens the focused view. The selected view is indicated separately from focus. Keep this switcher data-driven for future views.
 
 ## Cartridge Flow (new view)
 
@@ -23,7 +23,7 @@ Keep the current list, category chips, search, and large selected-ROM preview as
 
 ## Interaction and state
 
-`prefs.launcherView` stores `quick` or `cartridge` beside existing favorites and `lastPlayed`. Old preference JSON defaults to `quick`. The view switcher is registered from a list of `{id, label}` entries. Adding a future view means registering a renderer and adding its card; ROM loading, filters, search, and persistent preferences stay shared.
+`prefs.launcherView` stores the active view id beside existing favorites and `lastPlayed`. Old preference JSON defaults to `quick`. The view switcher is registered from a list of `{id, label}` entries. Adding a future view means registering its surface and card; ROM loading, filters, search, and persistent preferences stay shared.
 
 ```mermaid
 flowchart LR
@@ -39,7 +39,7 @@ flowchart LR
 
 ## Acceptance criteria
 
-1. Both WASM and native Google TV library builds expose Quick Launch and Cartridge Flow.
+1. Both WASM and native Google TV library builds expose Quick Launch, Cartridge Flow, and ROM Treemap.
 2. The view carousel is fully D-pad usable; changing views never launches a ROM.
 3. Cartridge Flow shows real card art, neighboring matches, useful metadata, favorite state, and Play.
 4. D-pad selection wraps among filtered matches; category/search changes reset selection to a valid match.
