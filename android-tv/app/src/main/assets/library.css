@@ -63,6 +63,8 @@ footer{font-size:10px}
    game rectangle with the native surface. */
 body.playing #hud{inset:auto;left:var(--metadata-x,0px);top:var(--metadata-y,0px);width:var(--metadata-width,24vw);height:var(--metadata-height,100vh);padding:8px;overflow:hidden;font-size:clamp(8px,1.05vw,12px);line-height:1.3}
 body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
+#brand{font-size:clamp(20px,2vw,32px);font-weight:800;line-height:1.08}
+#brand .engine-badge{display:inline-block;margin:.45em 0 0;font-size:.36em;vertical-align:middle}
 #status{white-space:pre-line}
 #performance-overlay{box-sizing:border-box;left:var(--performance-x,auto);right:auto;top:var(--performance-y,15vh);bottom:auto;width:var(--performance-width,min(240px,24vw));height:var(--performance-height,80vh);max-height:none;overflow:hidden;padding:8px;font-size:clamp(8px,1.05vw,12px)}
 .perf-rate strong{font-size:clamp(14px,1.75vw,20px)}

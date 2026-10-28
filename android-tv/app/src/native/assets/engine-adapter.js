@@ -7,7 +7,7 @@
   var nextId = 1;
   var pending = new Map();
   var status = document.getElementById("status");
-  if (status) status.textContent = "Native C++ engine ready";
+  if (status) status.textContent = "Ready";
 
   function request(method, args) {
     return new Promise(function (resolve) {
@@ -39,7 +39,7 @@
       if (status) status.textContent = "Starting native core…";
       return request("playRom", [slug]).then(function (ok) {
         if (!ok) { currentRom = ""; document.documentElement.classList.remove("game-active"); }
-        if (status) status.textContent = ok ? "Native C++ · " + slug : "Native core failed to load";
+        if (status) status.textContent = ok ? slug : "Native core failed to load";
         return ok;
       });
     },
