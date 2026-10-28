@@ -52,6 +52,10 @@ public class MainActivity extends Activity {
     private long metricOriginNs;
     private WebView webView;
     private NativeRenderer nativeRenderer;
+    // Keep the active ROM outside the GL renderer so a lost EGL surface can
+    // recreate both the texture and the core's coroutine state on GLThread.
+    private volatile byte[] activeRomBytes;
+    private volatile String activeRomSlug = "";
     private GLSurfaceView glView;
     private volatile boolean paused = false;
     private volatile boolean cancelVerification = false;
@@ -165,6 +169,7 @@ public class MainActivity extends Activity {
         private int texture, program, boundsLocation, frame = 0, w = 0, h = 0;
         private boolean referenceChecked = false;
         private boolean pixelSampleReported = false;
+        private boolean coreRecoveryAttempted = false;
         private volatile boolean hasRom = false;
         private volatile String romSlug = "";
         private volatile float[] gameRect = {0f, 0f, 1f, 1f};
@@ -181,6 +186,18 @@ public class MainActivity extends Activity {
         private final ArrayList<Double> callbackIntervalsMs = new ArrayList<>();
         @Override public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             GLES20.glClearColor(0,0,0,1); initGl();
+            byte[] rom = activeRomBytes;
+            String slug = activeRomSlug;
+            if (hasRom && rom != null && !slug.isEmpty()) {
+                // GLSurfaceView can recreate its EGL context after the app is
+                // backgrounded or the display changes. Rebuild the emulator
+                // on this GL thread too; its libco coroutines belong to the
+                // thread that powered the core.
+                boolean restored = NativeEngine.load(getAssets(), rom, slug + ".sfc");
+                setRom(restored ? slug : "", restored);
+                coreRecoveryAttempted = true;
+                android.util.Log.i("BJG_NATIVE", "surface_recreated rom=" + slug + " restored=" + restored);
+            }
         }
         private void initGl() {
             int[] t=new int[1]; GLES20.glGenTextures(1,t,0); texture=t[0]; GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,texture);
@@ -192,7 +209,7 @@ public class MainActivity extends Activity {
         }
         private int shader(int type,String src){int s=GLES20.glCreateShader(type);GLES20.glShaderSource(s,src);GLES20.glCompileShader(s);return s;}
         void resetPerformanceWindow() { sampleStartNs=0;lastCallbackNs=0;sampleSteps=0;sampleDraws=0;peakCredit=0;coreSamplesMs.clear();drawSamplesMs.clear();callbackIntervalsMs.clear(); }
-        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;pixelSampleReported=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
+        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;pixelSampleReported=false;coreRecoveryAttempted=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
         void pauseGame() { paused=true; }
         void resumeGame() { paused=false; }
         void restartGame() { NativeEngine.reset();frame=0;credit=0;lastNs=0;referenceChecked=false;paused=false;resetPerformanceWindow(); }
@@ -233,6 +250,14 @@ public class MainActivity extends Activity {
         }
         @Override public void onDrawFrame(GL10 gl){
             if(!hasRom){GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);return;}
+            if(!NativeEngine.isLoaded()&&!coreRecoveryAttempted){
+                coreRecoveryAttempted=true;
+                byte[] rom=activeRomBytes;String slug=activeRomSlug;
+                boolean restored=rom!=null&&!slug.isEmpty()&&NativeEngine.load(getAssets(),rom,slug+".sfc");
+                android.util.Log.i("BJG_NATIVE","inactive_core_recovery rom="+slug+" restored="+restored);
+                if(restored){setRom(slug,true);coreRecoveryAttempted=true;}
+                else paused=true;
+            }
             long now=SystemClock.elapsedRealtimeNanos();if(sampleStartNs==0)sampleStartNs=now;if(lastCallbackNs>0)callbackIntervalsMs.add((now-lastCallbackNs)/1_000_000.0);lastCallbackNs=now;if(lastNs==0)lastNs=now;credit+=Math.min(.25,(now-lastNs)/1e9)*60.0988;lastNs=now;peakCredit=Math.max(peakCredit,credit);
             if(!paused){int steps=Math.min(4,(int)credit);for(int i=0;i<steps;i++){long coreStart=SystemClock.elapsedRealtimeNanos();NativeEngine.step();long coreEnd=SystemClock.elapsedRealtimeNanos();coreSamplesMs.add((coreEnd-coreStart)/1_000_000.0);sampleSteps++;frame++;credit-=1;if(frame==5800&&"mandel-display".equals(romSlug)){int got=NativeEngine.wramWord(0x580);android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"correctness\",\"frame\":5800,\"offset\":1408,\"expected\":8271,\"actual\":"+got+",\"status\":\""+(got==0x204f?"pass":"fail")+"\"}");}}}
             w=NativeEngine.width();h=NativeEngine.height();if(w<=0||h<=0)return;long drawStart=SystemClock.elapsedRealtimeNanos();NativeEngine.copyPixels(rgba);rgba.position(0);if(!pixelSampleReported&&frame>=30){int lit=0,samples=0;for(int y=0;y<h;y+=8)for(int x=0;x<w;x+=8){int p=(y*w+x)*4;samples++;if(((rgba.get(p)&255)|(rgba.get(p+1)&255)|(rgba.get(p+2)&255))!=0)lit++;}android.util.Log.i("BJG_TV_METRIC","{\"event\":\"native_rgba_sample\",\"rom\":\""+romSlug+"\",\"frame\":"+frame+",\"width\":"+w+",\"height\":"+h+",\"lit_samples\":"+lit+",\"samples\":"+samples+"}");pixelSampleReported=true;}
@@ -472,6 +497,8 @@ public class MainActivity extends Activity {
                 byte[] rom;
                 try { rom = NativeEngine.read(getAssets().open("roms/" + slug + ".sfc")); }
                 catch (IOException failure) { android.util.Log.e("BJG_NATIVE", "ROM asset missing: " + slug, failure); resolve(callbackId, false); return; }
+                activeRomBytes = rom;
+                activeRomSlug = slug;
                 runOnUiThread(() -> { if (glView != null) glView.setVisibility(View.VISIBLE); });
                 if (glView != null) glView.queueEvent(() -> {
                     boolean ok = NativeEngine.load(getAssets(), rom, slug + ".sfc");

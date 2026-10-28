@@ -35,9 +35,11 @@
     background: function () { api.pause(); if (api.hasRom() && api.onBackground) api.onBackground(); },
     play: function (slug) {
       currentRom = slug;
+      if (window.BJGTVLoading) window.BJGTVLoading.show("Loading " + slug + "…");
       document.documentElement.classList.add("game-active");
       if (status) status.textContent = "Starting native core…";
       return request("playRom", [slug]).then(function (ok) {
+        if (window.BJGTVLoading) window.BJGTVLoading.hide();
         if (!ok) { currentRom = ""; document.documentElement.classList.remove("game-active"); }
         if (status) status.textContent = ok ? slug : "Native core failed to load";
         return ok;

@@ -8,6 +8,7 @@ import java.io.InputStream;
 final class NativeEngine {
     static { System.loadLibrary("bjg"); }
     static native boolean load(AssetManager assets, byte[] rom, String romName);
+    static native boolean isLoaded();
     static native void step();
     static native long benchmark(int frames);
     static native void reset();

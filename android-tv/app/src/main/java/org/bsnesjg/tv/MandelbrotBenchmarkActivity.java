@@ -9,6 +9,7 @@ public final class MandelbrotBenchmarkActivity extends MainActivity {
     protected void onCreate(Bundle state) {
         Intent launch = new Intent(getIntent());
         launch.putExtra("rom", "mandel-display");
+        launch.putExtra("benchmark", true);
         setIntent(launch);
         super.onCreate(state);
     }
