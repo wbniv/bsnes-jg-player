@@ -1,6 +1,6 @@
 # Google TV ROM Treemap launcher view
 
-**Status:** Implemented and captured on Cast1; Pixel verification is pending because the phone locked during its install check. ROM Treemap is launcher view 3. The [Cast1 Treemap proof](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) shows the final native APK’s globally squarified layout. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
+**Status:** Implemented and captured on Cast1. Pixel’s final APK launch check passed in portrait, but it opened Cartridge Flow; Pixel Treemap screenshots and landscape validation remain pending. ROM Treemap is launcher view 3. The [Cast1 Treemap proof](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) shows the final native APK’s globally squarified layout. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
 
 **High fidelity mockup and diagrams:** [Open the treemap plan in a browser](2026-10-28-google-tv-rom-treemap-view.html).
 

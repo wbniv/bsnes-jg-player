@@ -1,6 +1,6 @@
 # Google TV launcher views: Quick Launch and Cartridge Flow
 
-**Status:** Implemented. Cast1 installation and capture are complete. Pixel received the APK, but launcher verification stopped because the phone locked; Pixel captures are pending an unlocked phone. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is view 2; ROM Treemap (#3) is now view 3 in the [treemap extension plan](2026-10-28-google-tv-rom-treemap-view.md). All three appear in the focusable launcher chooser carousel.
+**Status:** Implemented. Cast1 installation and captures are complete. Pixel’s final APK launch check passed in portrait; landscape validation and the remaining Pixel chooser captures are pending phone rotation. The current ROM library is Quick Launch (#4). Cartridge Flow (#5) is view 2; ROM Treemap (#3) is now view 3 in the [treemap extension plan](2026-10-28-google-tv-rom-treemap-view.md). All three appear in the focusable launcher chooser carousel.
 
 **Visual plan and mockups:** [Open the high fidelity plan in a browser](2026-10-28-google-tv-launcher-views.html).
 
@@ -58,6 +58,8 @@ flowchart LR
 ## Verification plan
 
 Exercise all three views with the remote on the Google TV app: switch views in both directions, move between cartridges and treemap tiles, filter/search, favorite, launch, return from the pause menu, and restart to verify persistence. Check one result, no results, and the full catalog. Compare WASM and native variants because they share the library UI.
+
+The pause menu hides the verification diagnostics and keeps keyboard focus outlines inset within each action. Coordinator record attempts using BACK exited the activity before capturing the menu and produced no screenshot; automatic recovery returned Cast1 to Home. Device-level pause-menu proof remains pending.
 
 ### Device proof capture matrix
 
