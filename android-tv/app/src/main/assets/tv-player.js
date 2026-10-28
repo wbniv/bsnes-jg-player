@@ -3,6 +3,8 @@
   var pause = document.getElementById("pause-menu");
   var subtitle = document.getElementById("pause-subtitle");
   var resume = document.getElementById("tv-resume");
+  var verify = document.getElementById("tv-verify");
+  var cancel = document.getElementById("tv-cancel");
   var status = document.getElementById("status");
   var nativeStartRequested = false;
 
@@ -28,7 +30,11 @@
     api.onVerification = function (state, done, total) {
       pause.hidden = false;
       subtitle.textContent = state === "running" ? "Verifying frame " + done + " of " + total : "Verification " + state;
-      document.getElementById("tv-cancel").hidden = !(state === "running" || state === "starting");
+      var active = state === "running" || state === "starting";
+      verify.hidden = active;
+      cancel.hidden = !active;
+      if (active && document.activeElement === verify) cancel.focus();
+      else if (!active && document.activeElement === cancel) verify.focus();
       var result = document.getElementById("checkresult");
       if (result) result.textContent = state === "pass" ? "PASS" : state === "fail" ? "MISMATCH" : "";
     };
@@ -61,10 +67,10 @@
   document.getElementById("tv-restart").addEventListener("click", function () {
     window.BJGTV.restart().then(function (ok) { if (ok) hide(); });
   });
-  document.getElementById("tv-verify").addEventListener("click", function () {
+  verify.addEventListener("click", function () {
     window.BJGTV.verify();
   });
-  document.getElementById("tv-cancel").addEventListener("click", function () {
+  cancel.addEventListener("click", function () {
     window.BJGTV.cancelVerification();
   });
   document.getElementById("tv-exit").addEventListener("click", function () {

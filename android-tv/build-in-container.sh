@@ -30,6 +30,7 @@ fi
 docker build -f "$here/Dockerfile.jdk" -t "$image" "$here"
 docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
   --user 0:0 -e GRADLE_USER_HOME=/gradle-cache -e ANDROID_HOME=/android-sdk \
+  -e ORG_GRADLE_PROJECT_publicDownloadUrl="${ORG_GRADLE_PROJECT_publicDownloadUrl:-}" \
   --mount "type=bind,src=$repo,dst=/workspace" \
   --mount "type=bind,src=$gradle_cache,dst=/gradle-cache" \
   --mount "type=bind,src=$android_sdk,dst=/android-sdk,readonly" \
@@ -40,10 +41,10 @@ docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
   sh -c 'python3 tools/apply-core-patches.py ../vendor/bsnes-jg && python3 tools/generate-suite-icon.py && python3 tools/generate-app-icons.py && node --check ../web/app.js && node --check app/src/main/assets/tv.js && node --check app/src/main/assets/tv-player.js && node --check app/src/main/assets/performance-overlay.js && node --check app/src/main/assets/library.js && node --check app/src/main/assets/tv-scheduler.js && node --check app/src/wasm/assets/engine-adapter.js && node --check app/src/native/assets/engine-adapter.js && node --check tools/metrics-report.mjs && node --check tools/compare-report.mjs && node tools/compare-report.mjs && node test/frame-scheduler.test.mjs && node test/metrics-report.test.mjs && node ../bin/sync.mjs sync /tmp/bsnes-jg-tv-package-smoke --demo && node ../bin/sync.mjs sync --check /tmp/bsnes-jg-tv-package-smoke && exec ./gradlew :app:verifyDebugArtifact :app:verifyReleaseArtifact :app:verifyWasmplayerDebugArtifact :app:verifyWasmplayerReleaseArtifact :app:verifyNativeDebugArtifact :app:verifyNativeReleaseArtifact :app:verifyNativeplayerReleaseArtifact --offline --no-daemon'
 
 cp "$here/app/build/outputs/apk/wasmplayer/release/app-wasmplayer-release.apk" "$here/app/build/outputs/apk/wasmplayer/release/bsnes-jg-wasm-player.apk"
-cp "$here/app/build/outputs/apk/wasm/release/app-wasm-release.apk" "$here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm-phase2.apk"
-cp "$here/app/build/outputs/apk/native/release/app-native-release.apk" "$here/app/build/outputs/apk/native/release/bsnes-jg-native-phase2.apk"
+cp "$here/app/build/outputs/apk/wasm/release/app-wasm-release.apk" "$here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk"
+cp "$here/app/build/outputs/apk/native/release/app-native-release.apk" "$here/app/build/outputs/apk/native/release/bsnes-jg-native.apk"
 cp "$here/app/build/outputs/apk/nativeplayer/release/app-nativeplayer-release.apk" "$here/app/build/outputs/apk/nativeplayer/release/mandelbrot-native.apk"
 echo "WASM Mandelbrot player APK: $here/app/build/outputs/apk/wasmplayer/release/bsnes-jg-wasm-player.apk"
-echo "WASM Phase 2 APK: $here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm-phase2.apk"
-echo "Native Phase 2 APK: $here/app/build/outputs/apk/native/release/bsnes-jg-native-phase2.apk"
+echo "WASM library APK: $here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk"
+echo "Native library APK: $here/app/build/outputs/apk/native/release/bsnes-jg-native.apk"
 echo "Native Mandelbrot player APK: $here/app/build/outputs/apk/nativeplayer/release/mandelbrot-native.apk"

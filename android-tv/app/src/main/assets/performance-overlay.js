@@ -20,7 +20,7 @@
   var emuHistory = [], drawHistory = [];
   function updateToggle() {
     if (!toggle) return;
-    toggle.textContent = "Performance overlay · " + (visible ? "On" : "Off");
+    document.getElementById("tv-performance-label").textContent = "Performance overlay · " + (visible ? "On" : "Off");
     toggle.setAttribute("aria-pressed", String(visible));
   }
   function setVisible(value, persist) {

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1600" viewBox="0 0 720 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Pause menu mockup, portrait</title>
+  <desc id="desc">A portrait paused SNES app with a full-width vertical action list, readable touch targets, grouped diagnostics, and safe-area margins.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#1a2634"/><stop offset="1" stop-color="#070a10"/></linearGradient>
+    <linearGradient id="game" x2="1" y2="1"><stop stop-color="#132c40"/><stop offset=".52" stop-color="#263742"/><stop offset="1" stop-color="#392b40"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.4"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+  <rect width="720" height="1600" fill="url(#bg)"/>
+  <rect x="95" y="405" width="530" height="700" rx="14" fill="url(#game)" opacity=".64"/>
+  <g opacity=".25" fill="none" stroke="#8fc3e6" stroke-width="3"><path d="m116 945 110-150 85 90 98-240 185 280M120 500h480M120 1020h480"/><circle cx="360" cy="760" r="176"/><circle cx="360" cy="760" r="108"/></g>
+  <rect width="720" height="1600" fill="#02050a" opacity=".63"/>
+  <rect x="29" y="280" width="662" height="1060" rx="28" fill="#000" opacity=".48" filter="url(#shadow)"/>
+  <rect x="29" y="270" width="662" height="1060" rx="26" fill="#141d29" stroke="#40546b" stroke-width="2"/>
+  <g transform="translate(0 133)">
+  <text x="72" y="215" fill="#f2f5fb" font-family="sans-serif" font-size="34" font-weight="800">Paused</text>
+  <text x="72" y="260" fill="#b4c2d3" font-family="sans-serif" font-size="22">Soft-Float Mandelbrot</text>
+  <g font-family="sans-serif" font-size="22" font-weight="700">
+    <rect x="54" y="292" width="612" height="82" rx="12" fill="#2a4057" stroke="#fff" stroke-width="3"/><path d="M89 317v32l26-16z" fill="#f2f5fb"/><text x="137" y="343" fill="#f2f5fb">Resume</text>
+    <rect x="54" y="390" width="612" height="82" rx="12" fill="#1a2635" stroke="#34465b" stroke-width="2"/><g fill="none" stroke="#dce8f5" stroke-width="2"><rect x="85" y="414" width="16" height="16"/><rect x="108" y="414" width="16" height="16"/><rect x="85" y="437" width="16" height="16"/><rect x="108" y="437" width="16" height="16"/></g><text x="145" y="442" fill="#f2f5fb">Choose another ROM</text>
+    <rect x="54" y="488" width="612" height="82" rx="12" fill="#1a2635" stroke="#34465b" stroke-width="2"/><g transform="translate(87 509)" fill="none" stroke="#dce8f5" stroke-width="3" stroke-linecap="round"><path d="M25 0h13v13M0 35 38 0M38 27v13H25M0 1l9 9m9 9 20 21"/></g><text x="145" y="540" fill="#f2f5fb">Choose a random ROM</text>
+    <rect x="54" y="586" width="612" height="82" rx="12" fill="#1a2635" stroke="#34465b" stroke-width="2"/><path d="M116 610a17 17 0 1 0 2 18m-2-29v14h-14" fill="none" stroke="#dce8f5" stroke-width="3" stroke-linecap="round"/><text x="145" y="638" fill="#f2f5fb">Restart this ROM</text>
+  </g>
+  <path d="M54 695h612" stroke="#34465b" stroke-width="2"/>
+  <text x="54" y="737" fill="#9fb2c7" font-family="sans-serif" font-size="16" font-weight="800" letter-spacing="2">DIAGNOSTICS</text>
+  <g font-family="sans-serif" font-size="21" font-weight="700" fill="#f2f5fb">
+    <rect x="54" y="760" width="612" height="76" rx="11" fill="#1a2635" stroke="#34465b" stroke-width="2"/><circle cx="105" cy="798" r="14" fill="none" stroke="#dce8f5" stroke-width="2"/><path d="m98 798 5 5 10-11" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="145" y="806">Verify from start</text>
+    <rect x="54" y="850" width="612" height="76" rx="11" fill="#1a2635" stroke="#34465b" stroke-width="2"/><path d="M86 902v-18h8v18m8 0v-28h8v28m8 0v-13h8v13m-34 1h38" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="145" y="897">Performance overlay · On</text>
+  </g>
+  <path d="M54 952h612" stroke="#34465b" stroke-width="2"/>
+  <g font-family="sans-serif" font-size="21" font-weight="700" fill="#f2f5fb">
+    <rect x="54" y="976" width="612" height="76" rx="11" fill="#1a2635" stroke="#34465b" stroke-width="2"/><path d="M91 997h26v30H91zM96 990h16" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="145" y="1022">Share app APK</text>
+    <rect x="54" y="1066" width="612" height="76" rx="11" fill="#1a2635" stroke="#34465b" stroke-width="2"/><path d="M104 1082v38m-12-13 12 12 12-12m-24-22h24" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="145" y="1112">Exit app</text>
+  </g>
+  </g>
+  <text x="360" y="1517" fill="#91a3b7" text-anchor="middle" font-family="sans-serif" font-size="17">PORTRAIT · 9:20 · SAFE-AREA MARGINS</text>
+</svg>

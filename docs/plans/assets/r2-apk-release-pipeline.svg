@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-labelledby="title desc">
+  <title id="title">Android APK publication pipeline</title>
+  <desc id="desc">The web release task builds two Native Android APK variants, verifies signatures and bundled ROM assets, uploads versioned artifacts to R2, publishes the manifest, then prunes releases older than the previous version.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#8ab9da"/></marker></defs>
+  <rect width="1280" height="300" rx="20" fill="#0d131c"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g><rect x="24" y="78" width="178" height="130" rx="15" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="113" y="119" fill="#92d0ff" font-size="17" font-weight="700">EXPLICIT TASK</text><text x="113" y="154" fill="#f0f5fa" font-size="20">task web:release</text><text x="113" y="181" fill="#aebdca" font-size="15">user-directed only</text></g>
+    <path d="M205 143h36" stroke="#8ab9da" stroke-width="3" marker-end="url(#arrow)"/>
+    <g><rect x="246" y="78" width="178" height="130" rx="15" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="335" y="119" fill="#92d0ff" font-size="17" font-weight="700">BUILD</text><text x="335" y="154" fill="#f0f5fa" font-size="19">Web + two Native APKs</text><text x="335" y="181" fill="#aebdca" font-size="15">one release version</text></g>
+    <path d="M427 143h36" stroke="#8ab9da" stroke-width="3" marker-end="url(#arrow)"/>
+    <g><rect x="468" y="78" width="178" height="130" rx="15" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="557" y="119" fill="#92d0ff" font-size="17" font-weight="700">VERIFY</text><text x="557" y="154" fill="#f0f5fa" font-size="19">Signing · assets</text><text x="557" y="181" fill="#aebdca" font-size="15">size · SHA-256</text></g>
+    <path d="M649 143h36" stroke="#8ab9da" stroke-width="3" marker-end="url(#arrow)"/>
+    <g><rect x="690" y="78" width="178" height="130" rx="15" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="779" y="119" fill="#92d0ff" font-size="17" font-weight="700">UPLOAD</text><text x="779" y="154" fill="#f0f5fa" font-size="19">Versioned R2 keys</text><text x="779" y="181" fill="#aebdca" font-size="15">two APKs + metadata</text></g>
+    <path d="M871 143h36" stroke="#8ab9da" stroke-width="3" marker-end="url(#arrow)"/>
+    <g><rect x="912" y="78" width="158" height="130" rx="15" fill="#19332f" stroke="#4f9b80" stroke-width="2"/><text x="991" y="119" fill="#85e0b8" font-size="17" font-weight="700">PUBLISH</text><text x="991" y="154" fill="#f0f5fa" font-size="19">current.json</text><text x="991" y="181" fill="#b5d5c8" font-size="15">only after checks</text></g>
+    <path d="M1073 143h36" stroke="#8ab9da" stroke-width="3" marker-end="url(#arrow)"/>
+    <g><rect x="1114" y="78" width="142" height="130" rx="15" fill="#312628" stroke="#a36163" stroke-width="2"/><text x="1185" y="119" fill="#ffb8aa" font-size="17" font-weight="700">PRUNE</text><text x="1185" y="154" fill="#f0f5fa" font-size="18">keep two</text><text x="1185" y="181" fill="#d8b9b4" font-size="15">current + previous</text></g>
+    <text x="640" y="258" fill="#91a3b7" font-size="15">Versioned objects are immutable; the single public manifest is the release pointer.</text>
+  </g>
+</svg>

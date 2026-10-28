@@ -6,11 +6,17 @@ plugins {
     id("com.android.application")
 }
 
+dependencies {
+    implementation(files("libs/zxing-core-3.5.4.jar"))
+}
+
 val tvProject = rootProject.projectDir
 val repo = tvProject.parentFile
 val rom = tvProject.resolve("fixture/mandel-display.sfc")
 val map = tvProject.resolve("fixture/mandel-display.map")
 val referenceFrame = tvProject.resolve("fixture/reference-5800.png")
+val qrLibrary = tvProject.resolve("app/libs/zxing-core-3.5.4.jar")
+val expectedQrLibrarySha = "71de5d89341b5fcf5dd89da7f44e84d825d0e084cdf3ec77c9abe26b0f0ceb13"
 val expectedRomSha = "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353"
 val expectedMapSha = "44ebc8e330f5e70c5723ff90b80e1a55fb53b914c6a4d4d1dc970a933b27c3cb"
 val expectedReferenceSha = "7acaa3825b82b7e61fe641ca950508d58e8aeb0cb2ff7849547d17eacaab4abe"
@@ -76,6 +82,16 @@ val verifyRomFixture by tasks.registering {
     }
 }
 
+val verifyQrLibrary by tasks.registering {
+    inputs.file(qrLibrary)
+    doLast {
+        val actual = MessageDigest.getInstance("SHA-256").digest(qrLibrary.readBytes())
+            .joinToString("") { "%02x".format(it) }
+        check(actual == expectedQrLibrarySha) { "Vendored ZXing QR library hash changed" }
+    }
+}
+tasks.named("preBuild") { dependsOn(verifyQrLibrary) }
+
 val stageWasmAssets by tasks.registering(Sync::class) {
     dependsOn(verifyRomFixture, stagePublishedAssets)
     into(wasmAssetsDir)
@@ -99,6 +115,14 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "0.1.0"
+        // Set only after the public release page has been published and verified.
+        val publicDownloadUrl = providers.gradleProperty("publicDownloadUrl").orElse("").get()
+            .replace("\\", "\\\\").replace("\"", "\\\"")
+        check(publicDownloadUrl.isEmpty() ||
+                publicDownloadUrl.startsWith("https://downloads.biohack.net/bsnes-jg/")) {
+            "publicDownloadUrl must use the verified Biohack SNES release page"
+        }
+        buildConfigField("String", "PUBLIC_DOWNLOAD_URL", "\"$publicDownloadUrl\"")
         ndkVersion = "26.2.11394342"
         externalNativeBuild {
             cmake { cppFlags += listOf("-std=c++11", "-O3") }
@@ -119,14 +143,14 @@ android {
             dimension = "engine"
             // Keep Phase 2 measurements beside the Phase 1 install and user data.
             applicationIdSuffix = ".phase2"
-            resValue("string", "app_name", "bsnes-jg WASM Phase 2")
+            resValue("string", "app_name", "LLVM 65816 Torture Test Suite on SNES")
             buildConfigField("boolean", "NATIVE_ENGINE", "false")
             buildConfigField("boolean", "ROM_LIBRARY", "true")
         }
         create("native") {
             dimension = "engine"
             applicationIdSuffix = ".native.phase2"
-            resValue("string", "app_name", "bsnes-jg Native Phase 2")
+            resValue("string", "app_name", "LLVM 65816 Torture Test Suite on SNES")
             buildConfigField("boolean", "NATIVE_ENGINE", "true")
             buildConfigField("boolean", "ROM_LIBRARY", "true")
         }
@@ -187,7 +211,8 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
         val required = mutableSetOf(
             "AndroidManifest.xml", "classes.dex", "assets/index.html", "assets/library.js", "assets/library.css",
             "assets/tv.js", "assets/tv-player.js", "assets/tv-scheduler.js", "assets/performance-overlay.js",
-            "assets/performance-overlay.css", "assets/engine-adapter.js", "assets/roms/library.json", "assets/roms/manifest.json"
+            "assets/performance-overlay.css", "assets/engine-adapter.js", "assets/apk-share-menu.js",
+            "assets/roms/library.json", "assets/roms/manifest.json"
         )
         if (flavor == "wasm" || flavor == "wasmplayer") {
             required += setOf("assets/app.js", "assets/cores/bsnes_jg.js", "assets/cores/bsnes_jg.wasm", "assets/cores/PROVENANCE.json")
@@ -258,8 +283,13 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
                 "APK self-check metadata differs from the frozen fixture manifest"
             }
             val manifestText = tvProject.resolve("app/src/main/AndroidManifest.xml").readText()
-            check(!manifestText.contains("android.permission.INTERNET")) {
-                "TV APK must not request Internet permission"
+            check(manifestText.contains("android.permission.INTERNET") &&
+                  manifestText.contains("android:usesCleartextTraffic=\"false\"")) {
+                "APK transfer requires socket access while cleartext app traffic stays disabled"
+            }
+            check(tvProject.resolve("app/src/main/java/org/bsnesjg/tv/MainActivity.java")
+                  .readText().contains("setBlockNetworkLoads(true)")) {
+                "The WebView must remain offline while the explicit APK transfer server is available"
             }
             if (buildType == "Release") {
                 val releaseManifest = zip.getInputStream(zip.getEntry("AndroidManifest.xml")).use { it.readBytes() }

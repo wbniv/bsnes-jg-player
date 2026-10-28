@@ -76,6 +76,11 @@
   var bannerEl = document.getElementById("banner");
 
   function status(msg) { if (statusEl) statusEl.textContent = msg; }
+  function setLoading(show, message) {
+    if (!window.BJGTVLoading) return;
+    if (show) window.BJGTVLoading.show(message || "Loading SNES frame…");
+    else window.BJGTVLoading.hide();
+  }
 
   // TV runs emit compact one-second summaries through WebView's console. The
   // Android wrapper records them with a dedicated log tag. Canvas submission
@@ -130,7 +135,7 @@
     // bsnes hands us a 512-wide buffer for lores content (256 logical px doubled)
     // and ~240 scanlines incl. overscan. Collapse the 2x horizontal doubling and
     // crop to the 224 visible NTSC lines — the true 256x224 logical frame, square
-    // pixels at the SNES 8:7 aspect (matches the gate's jgxcheck PNG). Without
+    // pixels at the SNES 8:7 sample-grid aspect (matches the gate's jgxcheck PNG). Without
     // this the picture is stretched 2x wide.
     var step = w >= 512 ? 2 : 1;
     var ow = (w / step) | 0;
@@ -145,18 +150,24 @@
     var oh = avail < 224 ? avail : 224;
     var heap = Module.HEAPU32;               // re-fetch each frame (may grow)
     var base = Module._bjg_video() >>> 2;    // uint32 index
-    // Pre-ROM only: hold the poster until the core emits a non-black frame. loadRomBytes() sets
-    // `revealed` as soon as the ROM is accepted, so from that point every frame is drawn — black
-    // boot frames included. This branch now only covers the window before a ROM is loaded.
+    // Keep the selected ROM card up while the core is booting or the first video
+    // frames contain only a few lit pixels. Slow devices can take a long time to
+    // reach a useful title/game frame; switching on the first pixel reads as a
+    // broken black screen. Once at least 1% of a 4px sampling grid is lit, hand
+    // over to the live framebuffer. The frame cap prevents a deliberately dark
+    // game from keeping its poster forever.
     if (!revealed) {
-      var lit = false;
-      for (var sy = yoff; sy < yoff + oh && !lit; sy += 8) {
+      var lit = 0, samples = 0;
+      for (var sy = yoff; sy < yoff + oh; sy += 4) {
         var sb = base + sy * pitch;
-        for (var sx = 0; sx < ow; sx += 8)
-          if (heap[sb + sx * step] & 0xffffff) { lit = true; break; }
+        for (var sx = 0; sx < ow; sx += 4) {
+          samples++;
+          if (heap[sb + sx * step] & 0xffffff) lit++;
+        }
       }
-      if (!lit) return false;                // still blank — leave the preview up
+      if (lit < Math.max(12, Math.ceil(samples * 0.01)) && tvMetrics.romFrames < 600) return false;
       revealed = true;
+      setLoading(false);
     }
     if (!imageData || canvas.width !== ow || canvas.height !== oh) {
       canvas.width = ow; canvas.height = oh;
@@ -241,7 +252,10 @@
         tvMetrics.lastBacklogReport = emulationCredit;
         tvMetric("emulation_backlog", { pending_frames: Number(emulationCredit.toFixed(2)), max_steps_per_callback: MAX_STEPS_PER_CALLBACK });
       }
-      if (tvMetrics.core.length >= 60) {
+      // Sample by elapsed monotonic time so slower engines still publish an
+      // approximately one-second window instead of stretching each sample to
+      // 60 completed frames.
+      if (entered - tvMetrics.windowStartAt >= 1000 && (tvMetrics.core.length || tvMetrics.drawSubmissions)) {
         var windowMs = Math.max(1, entered - tvMetrics.windowStartAt);
         var core = summarize(tvMetrics.core), canvas = summarize(tvMetrics.canvas), draw = summarize(tvMetrics.draw), raf = summarize(tvMetrics.raf);
         var perfSample = {
@@ -317,16 +331,11 @@
     Module.HEAPU8.set(bytes, ptr);
     var ok = Module._bjg_load(ptr, bytes.length);
     Module._free(ptr);
-    // The ROM is about to run, so the poster has done its job: clear to black and let present()
-    // draw every frame from here, including the black ones. Holding the preview until the first
-    // *lit* frame (the old `revealed` behaviour) meant the page opened on a screenshot of the
-    // FINISHED demo, which reads as leftover state from a previous session — and every demo now
-    // fades its title card up from black, so the hold fired on all 113 pages rather than just the
-    // one long-force-blanking demo it was added for.
+    // Select a fresh poster for this ROM. `present()` replaces it when the game
+    // has produced a useful live frame (or after a bounded 600-frame dark-ROM
+    // fallback); clearing it here makes long boot/title sequences look broken.
     if (ok === 1 && ctx) {
-      revealed = true;
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      revealed = false;
       tvMetric("rom_loaded", { rom: current || DEFAULT_ROM, bytes: bytes.length });
     }
     return ok === 1;
@@ -344,6 +353,8 @@
     }
     stopLoop();
     badge(null, "");
+    paintPreview(id);
+    setLoading(true, "Loading " + id + "…");
     status("loading " + id + ".sfc…");
     return fetch(bust("roms/" + id + ".sfc"))
       .then(function (r) { if (!r.ok) throw new Error("fetch " + id); return r.arrayBuffer(); })
@@ -368,6 +379,7 @@
         return true;
       })
       .catch(function (e) {
+        setLoading(false);
         window.BJGTV.lastLoadFailure = { rom: id, phase: failurePhase, message: e.message, previous: previous || "" };
         current = failurePhase === "core" ? null : previous;
         runLabel = failurePhase === "core" ? "" : previousLabel;
@@ -617,11 +629,8 @@
     }, { threshold: 0.05 }).observe(target);
   }
 
-  // Paint the baked preview onto the canvas as a LOADING POSTER, so the page shows the demo
-  // rather than a black box while the ~3.9 MB core downloads. It is cleared to black the moment
-  // the ROM is accepted (see loadRomBytes), so the emulator always starts from a blank screen and
-  // the title card fades up over black. A ROM without a preview/<id>.png just 404s the image and
-  // keeps the default black — no error path needed.
+  // Paint the baked preview onto the canvas as a loading poster. Keep it visible
+  // through blank boot frames until the game has produced a meaningful live image.
   function paintPreview(id) {
     if (!id || !ctx) return;
     var img = new Image();
@@ -682,6 +691,50 @@
 
     // The picker, file input, verify button and drag-drop target are all
     // optional — an embed may render just the canvas + status. Guard each.
+    var shareAppEl = document.getElementById("share-app");
+    var shareStatusEl = document.getElementById("share-status");
+    function shareStatus(message) {
+      if (!shareStatusEl) return;
+      shareStatusEl.textContent = message;
+      clearTimeout(shareStatusEl._clearTimer);
+      shareStatusEl._clearTimer = setTimeout(function () { shareStatusEl.textContent = ""; }, 3500);
+    }
+    function copyAppUrl() {
+      var url = window.location.href;
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(url).then(function () {
+          shareStatus("Web app link copied.");
+        });
+      }
+      var field = document.createElement("textarea");
+      field.value = url;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+      var copied = false;
+      try { copied = document.execCommand("copy"); } catch (_) {}
+      field.remove();
+      if (copied) shareStatus("Web app link copied.");
+      else {
+        window.prompt("Copy this web app link:", url);
+        shareStatus("Web app link ready to copy.");
+      }
+      return Promise.resolve();
+    }
+    if (shareAppEl) shareAppEl.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: "SNES homebrew library", url: window.location.href })
+          .then(function () { shareStatus("Web app link shared."); })
+          .catch(function (error) {
+            if (error && error.name === "AbortError") return;
+            copyAppUrl().catch(function () { shareStatus("Could not copy the web app link."); });
+          });
+      } else {
+        copyAppUrl().catch(function () { shareStatus("Could not copy the web app link."); });
+      }
+    });
     document.querySelectorAll("#picker button[data-rom]").forEach(function (b) {
       b.addEventListener("click", function () { playUrl(b.dataset.rom); });
     });
@@ -869,6 +922,8 @@
     // Show the baked preview before anything loads (covers the core download + ROM boot).
     var bootRom = new URLSearchParams(location.search).get("rom") || DEFAULT_ROM;
     paintPreview(bootRom);
+    var directRom = new URLSearchParams(location.search).has("rom");
+    setLoading(directRom || !window.BJG_LIBRARY_MODE, "Starting emulator…");
 
     status("loading core…");
     Promise.all([
@@ -886,12 +941,17 @@
       showProvenance();
       observeVisibility();
       if (window.BJG_TV_MODE) {
+        if (window.BJG_LIBRARY_MODE && !directRom) setLoading(false);
         if (window.BJGTV.onReady) window.BJGTV.onReady();
-        if (new URLSearchParams(location.search).has("rom")) playUrl(bootRom);
+        // In the TV library build, library.js owns direct-ROM startup so it can
+        // wait for both the core and the ROM catalog. Starting here as well
+        // races its play() call and can reset/unload the same core twice.
+        if (new URLSearchParams(location.search).has("rom") && !window.BJG_LIBRARY_MODE) playUrl(bootRom);
       } else {
         playUrl(bootRom);
       }
     }).catch(function (e) {
+      setLoading(false);
       status("");
       tvMetric("startup_error", { error: e.message });
       if (bannerEl) {

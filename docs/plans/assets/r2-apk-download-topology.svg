@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="440" viewBox="0 0 1080 440" role="img" aria-labelledby="title desc">
+  <title id="title">Public Android download topology</title>
+  <desc id="desc">A sender or web page displays a QR or link to a public R2 landing page. The page reads one manifest and offers the Native library and Native player APKs. The library APK includes the ROM assets and is downloaded over HTTPS to the recipient's Android installer.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#85afd0"/></marker></defs>
+  <rect width="1080" height="440" rx="20" fill="#0d131c"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <rect x="55" y="48" width="250" height="90" rx="14" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="180" y="82" fill="#92d0ff" font-size="18" font-weight="700">SENDER OR WEB APP</text><text x="180" y="113" fill="#f0f5fa" font-size="17">link · QR · Download button</text>
+    <path d="M180 141v46" stroke="#85afd0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="55" y="194" width="250" height="112" rx="14" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="180" y="231" fill="#92d0ff" font-size="18" font-weight="700">PUBLIC LANDING PAGE</text><text x="180" y="261" fill="#f0f5fa" font-size="16">downloads.biohack.net</text><text x="180" y="284" fill="#aebdca" font-size="15">QR resolves here, across networks</text>
+    <path d="M307 250h55" stroke="#85afd0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="369" y="194" width="245" height="112" rx="14" fill="#19332f" stroke="#4f9b80" stroke-width="2"/><text x="491" y="231" fill="#85e0b8" font-size="18" font-weight="700">R2 RELEASE INDEX</text><text x="491" y="261" fill="#f0f5fa" font-size="16">current + previous</text><text x="491" y="284" fill="#b5d5c8" font-size="15">variant · version · hash · URL</text>
+    <path d="M616 250h55" stroke="#85afd0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="678" y="194" width="204" height="112" rx="14" fill="#162638" stroke="#47769b" stroke-width="2"/><text x="780" y="231" fill="#92d0ff" font-size="18" font-weight="700">VERSIONED APK</text><text x="780" y="261" fill="#f0f5fa" font-size="16">two Native variants</text><text x="780" y="284" fill="#aebdca" font-size="15">library APK includes ROMs</text>
+    <path d="M884 250h55" stroke="#85afd0" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="946" y="194" width="110" height="112" rx="14" fill="#312628" stroke="#a36163" stroke-width="2"/><text x="1001" y="231" fill="#ffb8aa" font-size="16" font-weight="700">ANDROID</text><text x="1001" y="261" fill="#f0f5fa" font-size="15">review +</text><text x="1001" y="284" fill="#f0f5fa" font-size="15">install</text>
+    <path d="M180 308v50h600v-48" fill="none" stroke="#576b7c" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow)"/><text x="478" y="394" fill="#91a3b7" font-size="15">Browser UI and Android fallback never read private APK paths; R2 serves explicit release artifacts.</text>
+  </g>
+</svg>

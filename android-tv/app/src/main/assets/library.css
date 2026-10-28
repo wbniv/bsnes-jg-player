@@ -63,8 +63,13 @@ footer{font-size:10px}
    game rectangle with the native surface. */
 body.playing #hud{inset:auto;left:var(--metadata-x,0px);top:var(--metadata-y,0px);width:var(--metadata-width,24vw);height:var(--metadata-height,100vh);padding:8px;overflow:hidden;font-size:clamp(8px,1.05vw,12px);line-height:1.3}
 body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
-#brand{font-size:clamp(20px,2vw,32px);font-weight:800;line-height:1.08}
+#brand{font-size:clamp(24px,2.5vw,42px);font-weight:800;line-height:1.02}
+.brand-icon{display:block;width:1em;height:1em;margin:0 0 .12em;color:var(--blue);fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.brand-name{display:block;max-width:100%}
 #brand .engine-badge{display:inline-block;margin:.45em 0 0;font-size:.36em;vertical-align:middle}
+#tv-actions button{display:flex;align-items:center;gap:.65em}
+.menu-icon{width:1.15em;height:1.15em;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.menu-icon.filled{fill:currentColor;stroke:none}
 #status{white-space:pre-line}
 #performance-overlay{box-sizing:border-box;left:var(--performance-x,auto);right:auto;top:var(--performance-y,15vh);bottom:auto;width:var(--performance-width,min(240px,24vw));height:var(--performance-height,80vh);max-height:none;overflow:hidden;padding:8px;font-size:clamp(8px,1.05vw,12px)}
 .perf-rate strong{font-size:clamp(14px,1.75vw,20px)}
@@ -95,4 +100,129 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
   .top .search span{flex:none}
   .top .search input{min-width:0;height:30px;padding:0 7px;font-size:11px}
   .filters{min-height:34px;max-height:38px}
+}
+
+.menu-section-label{margin:8px 0 0;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);font-size:16px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+
+/* Keep the pause actions usable when the app rotates, including on narrow
+   phone screens where the full menu may need its own vertical scroll area. */
+#pause-menu{padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));overflow:hidden}
+#tv-pause-card{display:flex;flex-direction:column;width:min(70vw,760px);max-height:100%;min-height:0;overflow:hidden}
+#tv-pause-card h1,#tv-pause-card p{flex:0 0 auto}
+#tv-pause-card p{overflow-wrap:anywhere}
+#tv-actions{min-height:0;max-height:calc(100vh - 180px - env(safe-area-inset-top) - env(safe-area-inset-bottom));max-height:calc(100dvh - 180px - env(safe-area-inset-top) - env(safe-area-inset-bottom));overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#60758c transparent;padding:4px}
+#tv-actions button{width:100%;flex:0 0 auto;text-align:left;touch-action:manipulation}
+.menu-section-label,.menu-divider{flex:0 0 auto}
+.menu-divider{height:1px;margin:8px 0;border-top:1px solid var(--line)}
+
+@media (orientation:portrait){
+  #tv-pause-card{width:min(92vw,560px);max-height:100%;padding:clamp(16px,4.5vw,26px);border-radius:18px}
+  #tv-pause-card h1{font-size:clamp(24px,7vw,32px);line-height:1.15;margin:0 0 8px}
+  #tv-pause-card p{font-size:clamp(14px,4vw,18px);line-height:1.3;margin:4px 0 12px}
+  #tv-actions{max-height:calc(100vh - 210px - env(safe-area-inset-top) - env(safe-area-inset-bottom));max-height:calc(100dvh - 210px - env(safe-area-inset-top) - env(safe-area-inset-bottom));gap:10px;padding:4px}
+  #tv-actions button{min-height:54px;padding:12px 14px;font-size:clamp(16px,4.5vw,20px);line-height:1.2;white-space:normal}
+  #tv-actions .menu-icon{width:1.2em;height:1.2em}
+  .menu-section-label{margin-top:8px;padding-top:10px;font-size:clamp(12px,3.5vw,15px)}
+}
+
+@media (orientation:landscape) and (max-height:520px){
+  #tv-pause-card{width:min(76vw,760px);padding:clamp(12px,2vh,22px)}
+  #tv-pause-card h1{font-size:clamp(18px,4vh,24px);line-height:1.15;margin:0 0 4px}
+  #tv-pause-card p{font-size:clamp(11px,2.6vh,14px);line-height:1.2;margin:2px 0 6px}
+  #tv-actions{max-height:calc(100vh - 100px - env(safe-area-inset-top) - env(safe-area-inset-bottom));max-height:calc(100dvh - 100px - env(safe-area-inset-top) - env(safe-area-inset-bottom));gap:5px}
+  #tv-actions button{min-height:36px;padding:6px 10px;font-size:clamp(12px,2.5vh,14px)}
+  .menu-section-label{margin-top:3px;padding-top:5px;font-size:10px}
+  .menu-divider{margin:3px 0}
+}
+
+/* Shared launcher-view picker and screenshot-first cartridge browser. */
+.launcher-views{display:flex;align-items:center;gap:6px;min-height:42px;flex:0 0 auto;overflow-x:auto;scrollbar-width:none}
+.launcher-views::-webkit-scrollbar{display:none}
+.launcher-view{display:flex;align-items:center;gap:8px;min-height:36px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:#101720;color:var(--muted);text-align:left;font-size:12px}
+.launcher-view .view-number{color:var(--blue);font-weight:900}
+.launcher-view.active{border-color:#60b9eb;background:#14283a;color:var(--fg)}
+.launcher-view:focus{z-index:1}
+.view-hint{margin-left:auto;padding-right:6px;color:var(--muted);font-size:10px;white-space:nowrap}
+#filters{flex:0 0 auto}
+#quick-view[hidden],#cartridge-view[hidden]{display:none}
+.cartridge-view{min-height:0;flex:1;display:flex;flex-direction:column;gap:8px;overflow:hidden}
+.cartridge-heading{display:flex;align-items:center;justify-content:space-between;flex:0 0 auto}
+.cartridge-heading h2{margin:0;font-size:18px;line-height:1.2}
+.cartridge-heading span{color:var(--muted);font-size:11px}
+.cartridge-stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.55fr) minmax(0,1fr);align-items:center;gap:2%;min-height:0;flex:1;padding:0 4%;outline:none}
+.cartridge-stage:focus-visible{outline:3px solid #fff;outline-offset:-3px;border-radius:10px}
+.cartridge-card{min-width:0;padding:8px;border:1px solid #354a60;border-radius:10px;background:linear-gradient(145deg,#1c2938,#101720);box-shadow:0 12px 28px #0008;overflow:hidden}
+.cartridge-card img{display:block;width:100%;height:auto;max-height:33vh;aspect-ratio:8/7;object-fit:contain;image-rendering:pixelated;background:#05080d;border-radius:5px}
+.cartridge-card strong,.cartridge-card small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cartridge-card strong{margin-top:7px;font-size:13px}
+.cartridge-card small{margin-top:2px;color:var(--muted);font-size:10px}
+.cartridge-card.neighbor{opacity:.68;transform:scale(.84)}
+.cartridge-card.center{z-index:1;border:2px solid var(--blue);box-shadow:0 0 0 3px #60b9eb24,0 16px 32px #0009}
+.cartridge-card.center strong{font-size:16px}
+.cartridge-arrows{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:0 1%;pointer-events:none;color:#dbeeff;font-size:24px;text-shadow:0 2px 8px #000}
+.cartridge-details{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:12px;flex:0 0 auto;border-top:1px solid var(--line);padding-top:8px}
+.cartridge-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
+.cartridge-copy strong{font-size:14px}
+.cartridge-copy span,.cartridge-copy p,.cartridge-copy small{margin:0;color:#ccd7e3;font-size:11px;line-height:1.3}
+.cartridge-copy code{color:#9fb1c5;font-size:10px;overflow-wrap:anywhere}
+.cartridge-actions{display:flex;gap:8px}
+.cartridge-actions button{min-height:36px;padding:5px 11px;font-size:11px;white-space:nowrap}
+#cartridge-favorite{border-color:#9e824c;color:#ffdc8e}
+#cartridge-play{border-color:#4d95bc;background:#17374d}
+#cartridge-empty{margin:auto;text-align:center;color:var(--muted)}
+#cartridge-empty[hidden]{display:none}
+@media(max-width:760px),(max-aspect-ratio:1/1){
+  .launcher-view{min-height:30px;padding:3px 8px;font-size:10px}
+  .cartridge-stage{grid-template-columns:minmax(0,1fr);padding:0 8%;}
+  .cartridge-card.neighbor{display:none}
+  .cartridge-card.center{width:min(100%,440px);justify-self:center}
+  .cartridge-card.center img{max-height:30vh}
+  .cartridge-details{grid-template-columns:minmax(0,1fr);overflow:auto}
+  .cartridge-actions button{flex:1;white-space:normal}
+}
+
+/* ROM Treemap view: nested tile geometry is normalized to the map box. */
+#quick-view[hidden],#cartridge-view[hidden],#treemap-view[hidden]{display:none}
+.treemap-view{min-height:0;flex:1;display:flex;flex-direction:column;gap:7px;overflow:hidden}
+.treemap-heading{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0}
+.treemap-heading h2{margin:0;font-size:17px;white-space:nowrap}
+.treemap-heading #treemap-total{color:var(--muted);font-size:11px;white-space:nowrap}
+.treemap-key{margin-left:auto;color:#aec0d1;font:9px ui-monospace,monospace;white-space:nowrap}
+.treemap-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,26%);gap:12px;min-width:0;min-height:0;flex:1}
+.treemap-map-column{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0}
+.treemap-legend{display:flex;align-items:center;gap:8px;min-height:27px;max-height:32px;flex:0 0 auto;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;white-space:nowrap}
+.treemap-legend::-webkit-scrollbar{display:none}
+.treemap-legend-item{display:inline-flex;align-items:center;gap:4px;color:#bdcbd8;font-size:9px;white-space:nowrap}
+.treemap-swatch{width:9px;height:9px;flex:none;border-radius:2px;box-shadow:inset 0 0 0 1px #ffffff40}
+.treemap-map{position:relative;isolation:isolate;min-width:0;min-height:0;flex:1;overflow:hidden;border:1px solid #53677d;background:#0a1018}
+.treemap-tile{position:absolute;display:block;min-width:0;min-height:0;padding:0;border:0;border-radius:0;overflow:hidden;text-align:left;line-height:1.1;box-shadow:inset 0 0 0 1px #091019a8;color:#fff;text-shadow:0 1px 3px #000,0 0 5px #000;font-size:10px}
+.treemap-tile:focus{z-index:3;transform:none;outline:3px solid #fff;outline-offset:-3px}
+.treemap-tile[aria-selected="true"]{z-index:2;box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #fff}
+.treemap-tile .tile-copy{position:absolute;inset:5px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;pointer-events:none}
+.treemap-tile .tile-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:850}
+.treemap-tile .tile-size{display:block;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#f2f6fa;font:9px ui-monospace,monospace}
+.treemap-tile:not(.labeled) .tile-copy{display:none}
+.treemap-hint{position:absolute;right:6px;bottom:6px;z-index:4;padding:3px 6px;border:1px solid #66798d;border-radius:4px;background:#101923e8;color:#d3dfeb;font:8px ui-monospace,monospace;pointer-events:none}
+.treemap-details{display:flex;flex-direction:column;min-width:0;min-height:0;overflow-x:hidden;overflow-y:auto;padding:9px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(145deg,#172331,#0f151e)}
+.treemap-details img{display:block;width:100%;max-height:25vh;aspect-ratio:8/7;object-fit:contain;background:#070a10;border-radius:5px;image-rendering:pixelated}
+.treemap-eyeline{margin-top:7px;color:#a3c8df;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.treemap-details h3{margin:2px 0;font-size:15px;line-height:1.2;overflow-wrap:anywhere}
+.treemap-details #treemap-category{color:var(--muted);font-size:10px}
+.treemap-details p,.treemap-details small{margin:5px 0 0;color:#c1ccd8;font-size:10px;line-height:1.3;overflow-wrap:anywhere}
+.treemap-details code{margin-top:6px;padding-top:6px;border-top:1px solid #2b3b4c;color:#aebdcb;font-size:9px;line-height:1.4;overflow-wrap:anywhere}
+.treemap-actions{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:8px}
+.treemap-actions button{min-width:0;min-height:34px;padding:4px 8px;font-size:10px;white-space:normal}
+#treemap-favorite{border-color:#9e824c;color:#ffdc8e}
+#treemap-play{border-color:#4d95bc;background:#17374d}
+#treemap-empty{margin:auto;text-align:center;color:var(--muted)}
+#treemap-empty[hidden],#treemap-content[hidden]{display:none}
+@media(max-width:760px),(max-aspect-ratio:1/1){
+  .treemap-key{display:none}
+  .treemap-content{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;overflow:auto}
+  .treemap-map-column{min-height:38vh}
+  .treemap-details{display:grid;grid-template-columns:minmax(76px,24%) minmax(0,1fr);grid-template-rows:auto;column-gap:9px;align-content:start;overflow:visible}
+  .treemap-details img{grid-column:1;grid-row:1/8;max-height:22vh}
+  .treemap-details .treemap-eyeline,.treemap-details h3,.treemap-details #treemap-category,.treemap-details p,.treemap-details small,.treemap-details code,.treemap-actions{grid-column:2}
+  .treemap-actions{flex-direction:row;flex-wrap:wrap}
+  .treemap-actions button{flex:1}
 }

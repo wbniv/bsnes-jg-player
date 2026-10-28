@@ -82,6 +82,18 @@ Each mockup shows a 1920×1080 TV screen at 0.75 scale on the 1440×900 canvas, 
 | [![Vertical pause menu naming the paused ROM](2026-10-26-snes-rom-library-selector/05-pause-menu.png)](2026-10-26-snes-rom-library-selector/05-pause-menu.html) | [![The same UI at 1, 10, 100 and 1,000 ROMs](2026-10-26-snes-rom-library-selector/06-catalog-scale.png)](2026-10-26-snes-rom-library-selector/06-catalog-scale.html) |
 | **Pause menu** | **Catalog scale:** 1 / 10 / 100 / 1,000 ROMs |
 
+#### Pause menu across orientations
+
+**Mockup update · 2026‑10‑28:** the pause menu now needs to show the newer random-ROM and app-sharing actions while keeping test controls visually separate from game navigation. These are proposed shell mockups, not device captures. The landscape version keeps the D-pad list centered over a dimmed game shell; the portrait version uses a near-full-width card with large rows and safe-area margins. “Cancel verification” replaces “Verify from start” while a run is active.
+
+**Implementation update · 2026‑10‑28:** the shared Android pause-menu CSS now changes card width, text size, button targets, safe-area padding, and the action-list scroll limit in portrait. Landscape retains the compact centered card and scrolls its actions if a short viewport cannot fit them. Orientation changes are handled by CSS without restarting the activity. Hardware checks in both orientations remain pending.
+
+**Pause-menu follow-up · 2026‑10‑28:** the portrait/landscape treatment is now applied to the library and standalone player variants. Player menus use the same SVG action icons and Diagnostics grouping; sharing is separated from Diagnostics and Exit. While verification is active, “Verify from start” is replaced by “Cancel verification,” and focus follows the active action. Build and device screenshots remain to be recorded in the proof section below.
+
+| Landscape | Portrait |
+|---|---|
+| ![Landscape pause menu with Resume focused, ROM actions, a Diagnostics group, APK sharing, and Exit app](2026-10-26-snes-rom-library-selector/07-pause-menu-landscape.svg) | ![Portrait pause menu with large touch targets, ROM actions, a Diagnostics group, APK sharing, and Exit app](2026-10-26-snes-rom-library-selector/08-pause-menu-portrait.svg) |
+
 ### Screen layout and visual rules
 
 - **Canvas:** 1920×1080 px (960×540 dp). The safe area is 96 px left and right and 54 px top and bottom, and nothing interactive sits outside it.
@@ -274,7 +286,7 @@ flowchart TB
     - Every ROM's SHA matches its record.
     - Nothing else under `assets/roms/`.
 
-    The Release APKs are `wasm/release/bsnes-jg-wasm-phase2.apk` and `native/release/bsnes-jg-native-phase2.apk`. They differ by the engine adapter/core and native renderer while sharing UI and catalog.
+    The Release APKs are `wasm/release/bsnes-jg-wasm.apk` and `native/release/bsnes-jg-native.apk`. They differ by the engine adapter/core and native renderer while sharing UI and catalog.
 - **Size:** both Phase 2 APKs include the 152-ROM library (42.6 MiB raw ROM data before compression) and card art. Record both actual download sizes; include the WASM/WebView versus native-library distinction in the comparison.
 - **Direct boot for testing:** `MainActivity` accepts the `rom` intent extra and appends `?rom=<slug>`, so the coordinator can boot the same selected ROM in either engine.
 

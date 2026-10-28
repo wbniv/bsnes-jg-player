@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+  <title id="title">Chromecast APK sharing mockup with planned public fallback</title>
+  <desc id="desc">The current Chromecast transfer screen shows a temporary same-Wi-Fi QR code and expiry guidance. A separate callout shows the planned public download QR fallback and states that it is not available yet. The QR pattern is decorative and cannot be scanned.</desc>
+  <rect width="1000" height="470" rx="22" fill="#101820"/>
+  <g font-family="sans-serif">
+    <text x="35" y="42" fill="#f3f6fa" font-size="22" font-weight="700">CURRENT: LOCAL APK TRANSFER</text>
+    <rect x="35" y="62" width="625" height="352" rx="20" fill="#05080c" stroke="#8194a5" stroke-width="4"/>
+    <rect x="54" y="81" width="587" height="314" rx="12" fill="#14202b"/>
+    <text x="84" y="117" fill="#edf3f8" font-size="22" font-weight="700">Share app APK</text>
+    <text x="84" y="145" fill="#aebdca" font-size="14">Scan with a phone on the same Wi-Fi</text>
+    <rect x="85" y="169" width="190" height="190" rx="5" fill="#ffffff"/>
+    <g fill="#111820">
+      <path d="M99 183h53v53H99z M107 191h37v37h-37z" fill-rule="evenodd"/><path d="M112 196h27v27h-27z"/>
+      <path d="M208 183h53v53h-53z M216 191h37v37h-37z" fill-rule="evenodd"/><path d="M221 196h27v27h-27z"/>
+      <path d="M99 292h53v53H99z M107 300h37v37h-37z" fill-rule="evenodd"/><path d="M112 305h27v27h-27z"/>
+      <path d="M164 184h11v11h-11zM180 200h11v11h-11zM163 219h13v11h-13zM183 241h11v12h-11zM161 258h12v12h-12zM180 275h13v11h-13zM201 253h11v12h-11zM220 245h12v11h-12zM239 261h12v12h-12zM162 281h11v11h-11zM183 300h11v11h-11zM204 281h12v13h-12zM226 296h12v11h-12zM245 318h11v11h-11zM164 322h11v12h-11zM185 339h12v11h-12zM210 329h11v11h-11z"/>
+    </g>
+    <text x="300" y="194" fill="#dfe8f0" font-size="16">Download link expires in 10 minutes.</text>
+    <text x="300" y="222" fill="#dfe8f0" font-size="16">Up to 5 downloads.</text>
+    <text x="300" y="270" fill="#8ab9da" font-size="14">http://192.168.x.x:port/…</text>
+    <text x="300" y="292" fill="#8294a4" font-size="12">Example address only</text>
+    <rect x="300" y="325" width="110" height="38" rx="8" fill="#33495d"/><text x="355" y="350" text-anchor="middle" fill="#f3f6fa" font-size="15">Done</text>
+    <rect x="690" y="62" width="275" height="352" rx="18" fill="#19242e" stroke="#e1a75a" stroke-width="2" stroke-dasharray="8 7"/>
+    <text x="715" y="103" fill="#ffd28e" font-size="17" font-weight="700">PLANNED BACKUP</text>
+    <text x="715" y="136" fill="#f3f6fa" font-size="19" font-weight="700">Public download QR</text>
+    <rect x="742" y="160" width="171" height="171" rx="6" fill="#ffffff"/>
+    <g fill="#202a33">
+      <path d="M755 173h45v45h-45z M762 180h31v31h-31z" fill-rule="evenodd"/><path d="M767 185h21v21h-21z"/>
+      <path d="M855 173h45v45h-45z M862 180h31v31h-31z" fill-rule="evenodd"/><path d="M867 185h21v21h-21z"/>
+      <path d="M755 273h45v45h-45z M762 280h31v31h-31z" fill-rule="evenodd"/><path d="M767 285h21v21h-21z"/>
+      <path d="M809 176h12v12h-12zM827 195h11v11h-11zM810 215h12v12h-12zM831 235h12v12h-12zM808 252h13v12h-13zM833 269h11v12h-11zM855 242h11v11h-11zM878 260h11v11h-11zM807 292h11v11h-11zM827 309h13v11h-13zM857 291h11v11h-11zM881 307h12v12h-12z"/>
+    </g>
+    <text x="827" y="360" text-anchor="middle" fill="#ffd28e" font-size="14">Cross-network · not live yet</text>
+    <text x="500" y="449" text-anchor="middle" fill="#91a3b7" font-size="14">Illustrative mockup; QR patterns are decorative and cannot be scanned.</text>
+  </g>
+</svg>

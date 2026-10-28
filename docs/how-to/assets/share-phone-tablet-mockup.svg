@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+  <title id="title">Android phone and tablet APK sharing mockups</title>
+  <desc id="desc">Illustrative phone and tablet screens show the pause menu Share app APK action, followed by the choice between Share with another app and Show QR code. The mockups are not device screenshots.</desc>
+  <rect width="1000" height="440" rx="22" fill="#101820"/>
+  <g font-family="sans-serif">
+    <text x="35" y="42" fill="#f3f6fa" font-size="22" font-weight="700">PHONE · PORTRAIT</text>
+    <rect x="45" y="62" width="250" height="345" rx="30" fill="#05080c" stroke="#8194a5" stroke-width="4"/>
+    <rect x="59" y="82" width="222" height="306" rx="16" fill="#1a2734"/>
+    <text x="76" y="111" fill="#dbe7f3" font-size="14">SNES game · paused</text>
+    <rect x="78" y="130" width="184" height="104" rx="7" fill="#080d12"/>
+    <rect x="102" y="145" width="136" height="74" rx="4" fill="#25394a"/>
+    <rect x="112" y="155" width="48" height="42" fill="#386c62"/><rect x="174" y="168" width="42" height="29" fill="#75639b"/>
+    <rect x="68" y="240" width="204" height="135" rx="14" fill="#f1f4f7"/>
+    <text x="84" y="265" fill="#14202b" font-size="14" font-weight="700">Share app APK and ROM library</text>
+    <rect x="78" y="278" width="184" height="35" rx="7" fill="#dceaf7" stroke="#347bb0" stroke-width="2"/>
+    <text x="91" y="301" fill="#14202b" font-size="14">Share with another app</text>
+    <rect x="78" y="318" width="184" height="35" rx="7" fill="#ffffff" stroke="#c4ced8"/>
+    <text x="91" y="341" fill="#14202b" font-size="14">Show QR code</text>
+    <text x="158" y="368" text-anchor="middle" fill="#5a6875" font-size="12">Cancel</text>
+    <text x="350" y="42" fill="#f3f6fa" font-size="22" font-weight="700">TABLET · LANDSCAPE</text>
+    <rect x="350" y="62" width="610" height="345" rx="28" fill="#05080c" stroke="#8194a5" stroke-width="4"/>
+    <rect x="366" y="78" width="578" height="313" rx="14" fill="#1a2734"/>
+    <text x="390" y="110" fill="#dbe7f3" font-size="16">LLVM 65816 Torture Test Suite</text>
+    <rect x="390" y="127" width="530" height="246" rx="10" fill="#080d12"/>
+    <rect x="430" y="148" width="450" height="202" rx="8" fill="#203243"/>
+    <rect x="450" y="166" width="184" height="126" fill="#386c62"/><rect x="654" y="166" width="204" height="126" fill="#75639b"/>
+    <rect x="442" y="177" width="425" height="176" rx="12" fill="#f2f5f8" opacity=".97"/>
+    <text x="468" y="209" fill="#14202b" font-size="18" font-weight="700">Share app APK and ROM library</text>
+    <rect x="466" y="228" width="376" height="44" rx="9" fill="#dceaf7" stroke="#347bb0" stroke-width="2"/>
+    <text x="487" y="256" fill="#14202b" font-size="17">Share with another app</text>
+    <rect x="466" y="282" width="376" height="44" rx="9" fill="#ffffff" stroke="#c4ced8"/>
+    <text x="487" y="310" fill="#14202b" font-size="17">Show QR code</text>
+    <text x="654" y="341" text-anchor="middle" fill="#5a6875" font-size="14">Cancel</text>
+  </g>
+</svg>

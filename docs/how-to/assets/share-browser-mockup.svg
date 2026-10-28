@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+  <title id="title">Browser app sharing mockup</title>
+  <desc id="desc">A browser page shows the Share web app button in the header. An explanatory panel shows the browser share sheet when supported and a copy-link fallback otherwise.</desc>
+  <rect width="1000" height="430" rx="22" fill="#101820"/>
+  <g font-family="sans-serif">
+    <text x="35" y="42" fill="#f3f6fa" font-size="22" font-weight="700">SHARE THE HOSTED WEB APP</text>
+    <rect x="35" y="62" width="590" height="318" rx="16" fill="#f4f6f8" stroke="#8294a4" stroke-width="3"/>
+    <rect x="35" y="62" width="590" height="39" rx="14" fill="#dce2e8"/>
+    <circle cx="59" cy="82" r="6" fill="#e36b68"/><circle cx="79" cy="82" r="6" fill="#e3b45e"/><circle cx="99" cy="82" r="6" fill="#71ba7a"/>
+    <rect x="135" y="70" width="341" height="24" rx="11" fill="#ffffff"/><text x="155" y="87" fill="#687784" font-size="12">https://project-site.example/</text>
+    <rect x="51" y="117" width="558" height="72" rx="8" fill="#ffffff"/>
+    <text x="72" y="148" fill="#17232e" font-size="20" font-weight="700">bsnes-jg-wasm</text>
+    <text x="72" y="171" fill="#536473" font-size="13">The gate's cycle-accurate SNES core, in the browser</text>
+    <rect x="447" y="131" width="142" height="40" rx="9" fill="#245e8b"/>
+    <text x="518" y="156" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700">Share web app</text>
+    <rect x="105" y="205" width="418" height="143" rx="8" fill="#101820"/>
+    <rect x="154" y="222" width="320" height="109" rx="4" fill="#273d50"/>
+    <rect x="183" y="238" width="118" height="77" fill="#386c62"/><rect x="317" y="238" width="130" height="77" fill="#75639b"/>
+    <rect x="661" y="62" width="304" height="318" rx="16" fill="#19242e" stroke="#47769b" stroke-width="2"/>
+    <text x="687" y="103" fill="#92d0ff" font-size="17" font-weight="700">WHEN YOU TAP SHARE</text>
+    <rect x="686" y="125" width="254" height="99" rx="12" fill="#253545"/>
+    <text x="708" y="154" fill="#f3f6fa" font-size="16" font-weight="700">Browser supports sharing</text>
+    <text x="708" y="181" fill="#c4d2df" font-size="14">Choose a messaging or nearby</text>
+    <text x="708" y="202" fill="#c4d2df" font-size="14">sharing app from its share sheet.</text>
+    <rect x="686" y="239" width="254" height="111" rx="12" fill="#253545"/>
+    <text x="708" y="269" fill="#f3f6fa" font-size="16" font-weight="700">If sharing is unsupported</text>
+    <text x="708" y="296" fill="#c4d2df" font-size="14">Copy the HTTPS page link and</text>
+    <text x="708" y="317" fill="#c4d2df" font-size="14">send it to the other person.</text>
+    <text x="500" y="412" text-anchor="middle" fill="#91a3b7" font-size="14">Illustrative mockup of the current page control; recipient gets the hosted web app and its published ROM library.</text>
+  </g>
+</svg>

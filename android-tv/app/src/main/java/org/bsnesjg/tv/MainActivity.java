@@ -1,6 +1,7 @@
 package org.bsnesjg.tv;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Bitmap;
@@ -19,11 +20,13 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.content.ClipData;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.widget.FrameLayout;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView.Renderer;
-import android.view.Gravity;
 import android.widget.TextView;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
@@ -35,11 +38,13 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
+import com.google.zxing.WriterException;
 
 public class MainActivity extends Activity {
     private static final String HOST = "appassets.androidplatform.net";
@@ -52,11 +57,16 @@ public class MainActivity extends Activity {
     private volatile boolean cancelVerification = false;
     private Bitmap referenceFrame;
     private volatile String currentRom = "";
+    private ApkTransferServer apkTransferServer;
+    private AlertDialog apkTransferDialog;
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
+        // Android TV uses its D-pad directly; it never renders the optional
+        // phone-controller overlay. Keep this explicit for device diagnostics.
+        android.util.Log.i("BJG_TV_METRIC", "phone controller: off (Android TV remote input)");
         metricOriginNs = SystemClock.elapsedRealtimeNanos();
         // Emulation is active foreground media. Keep Android's screensaver and
         // display timeout from covering the game during long play/profile runs.
@@ -68,6 +78,7 @@ public class MainActivity extends Activity {
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
 
         FrameLayout root = new FrameLayout(this);
+        root.setBackgroundColor(Color.rgb(8, 12, 18));
         if (BuildConfig.NATIVE_ENGINE) createNativeSurface(root);
 
         webView = new WebView(this);
@@ -306,7 +317,86 @@ public class MainActivity extends Activity {
             webView.destroy();
             webView = null;
         }
+        stopApkTransfer();
         super.onDestroy();
+    }
+
+    private void showLocalApkTransfer() {
+        stopApkTransfer();
+        try {
+            apkTransferServer = ApkTransferServer.start(new File(getApplicationInfo().sourceDir));
+            apkTransferDialog = ApkTransferDialog.create(MainActivity.this, apkTransferServer);
+            apkTransferDialog.show();
+        } catch (IOException | WriterException failure) {
+            stopApkTransfer();
+            android.widget.Toast.makeText(MainActivity.this,
+                    failure.getMessage() == null ? "Could not start APK transfer" : failure.getMessage(),
+                    android.widget.Toast.LENGTH_LONG).show();
+            android.util.Log.w("BJG_APK_SHARE", "Could not start local APK transfer", failure);
+            if (!BuildConfig.PUBLIC_DOWNLOAD_URL.isEmpty()) showPublicDownloadQr();
+        }
+    }
+
+    private void stopApkTransfer() {
+        if (apkTransferDialog != null) {
+            apkTransferDialog.setOnDismissListener(null);
+            apkTransferDialog.dismiss();
+            apkTransferDialog = null;
+        }
+        if (apkTransferServer != null) {
+            apkTransferServer.close();
+            apkTransferServer = null;
+        }
+    }
+
+    private void showApkShareOptions() {
+        CharSequence[] options = BuildConfig.PUBLIC_DOWNLOAD_URL.isEmpty()
+                ? new CharSequence[]{"Share with another app", "Show QR code"}
+                : new CharSequence[]{"Share with another app", "Show QR code", "Public download QR"};
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle(BuildConfig.ROM_LIBRARY ? "Share app APK and ROM library" : "Share app APK")
+                .setItems(options, (dialog, choice) -> {
+                    if (choice == 0) shareApkWithAndroid();
+                    else if (choice == 1) showLocalApkTransfer();
+                    else showPublicDownloadQr();
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+    }
+
+    private void showPublicDownloadQr() {
+        try {
+            AlertDialog dialog = ApkTransferDialog.createForUrl(
+                    MainActivity.this,
+                    BuildConfig.PUBLIC_DOWNLOAD_URL,
+                    "Scan this code to open the public release page and choose an APK. " +
+                            "The recipient needs internet access; this device does not upload the APK.",
+                    "Public APK download");
+            dialog.show();
+        } catch (WriterException failure) {
+            android.widget.Toast.makeText(MainActivity.this,
+                    "Could not create the public download QR code", android.widget.Toast.LENGTH_LONG).show();
+            android.util.Log.w("BJG_APK_SHARE", "Could not create public download QR", failure);
+        }
+    }
+
+    private void shareApkWithAndroid() {
+        try {
+            Uri apk = new Uri.Builder()
+                    .scheme("content")
+                    .authority(getPackageName() + ".apkshare")
+                    .appendPath("app.apk")
+                    .build();
+            Intent send = new Intent(Intent.ACTION_SEND)
+                    .setType("application/vnd.android.package-archive")
+                    .putExtra(Intent.EXTRA_STREAM, apk)
+                    .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            send.setClipData(ClipData.newUri(getContentResolver(), "App APK", apk));
+            startActivity(Intent.createChooser(send, "Share app APK"));
+        } catch (RuntimeException unavailable) {
+            android.util.Log.w("BJG_APK_SHARE", "Sharesheet unavailable; offering local transfer", unavailable);
+            showLocalApkTransfer();
+        }
     }
 
     private final class TvBridge {
@@ -355,7 +445,23 @@ public class MainActivity extends Activity {
 
         @JavascriptInterface
         public void exitApp() {
+            if (getIntent().getBooleanExtra("benchmark", false)) {
+                android.util.Log.w("BJG_TV_METRIC", "{\"event\":\"benchmark_exit_ignored\"}");
+                return;
+            }
             runOnUiThread(MainActivity.this::finish);
+        }
+
+        @JavascriptInterface
+        public void shareApk() {
+            if (getIntent().getBooleanExtra("benchmark", false)) return;
+            runOnUiThread(() -> {
+                if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK)) {
+                    showLocalApkTransfer();
+                    return;
+                }
+                showApkShareOptions();
+            });
         }
 
         @JavascriptInterface

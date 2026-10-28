@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pause menu mockup, landscape</title>
+  <desc id="desc">A widescreen paused SNES app with a centered vertical menu, gameplay actions, a Diagnostics group, app sharing, and Exit app.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#1a2634"/><stop offset="1" stop-color="#070a10"/></linearGradient>
+    <linearGradient id="game" x2="1" y2="1"><stop stop-color="#10283b"/><stop offset=".5" stop-color="#2a3440"/><stop offset="1" stop-color="#3b293e"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.4"><feGaussianBlur stdDeviation="22"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="410" y="145" width="780" height="610" rx="18" fill="url(#game)" opacity=".62"/>
+  <g opacity=".28" fill="none" stroke="#8fc3e6" stroke-width="3">
+    <path d="M445 617 610 470l104 82 125-204 245 269M450 246h700M450 681h700"/>
+    <circle cx="780" cy="455" r="174"/><circle cx="780" cy="455" r="108"/>
+  </g>
+  <rect width="1600" height="900" fill="#02050a" opacity=".62"/>
+  <rect x="245" y="66" width="1110" height="768" rx="26" fill="#000" opacity=".5" filter="url(#shadow)"/>
+  <rect x="245" y="56" width="1110" height="768" rx="24" fill="#141d29" stroke="#40546b" stroke-width="2"/>
+  <text x="308" y="119" fill="#f2f5fb" font-family="sans-serif" font-size="34" font-weight="800">Paused</text>
+  <text x="308" y="158" fill="#b4c2d3" font-family="sans-serif" font-size="22">Soft-Float Mandelbrot</text>
+  <g font-family="sans-serif" font-size="23" font-weight="700">
+    <rect x="286" y="183" width="1028" height="60" rx="10" fill="#2a4057" stroke="#fff" stroke-width="3"/>
+    <path d="M322 199v28l23-14z" fill="#f2f5fb"/><text x="370" y="222" fill="#f2f5fb">Resume</text>
+    <rect x="286" y="253" width="1028" height="60" rx="10" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <g fill="none" stroke="#dce8f5" stroke-width="2"><rect x="320" y="269" width="14" height="14"/><rect x="341" y="269" width="14" height="14"/><rect x="320" y="290" width="14" height="14"/><rect x="341" y="290" width="14" height="14"/></g>
+    <text x="379" y="291" fill="#f2f5fb">Choose another ROM</text>
+    <rect x="286" y="323" width="1028" height="60" rx="10" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <g transform="translate(322 340)" fill="none" stroke="#dce8f5" stroke-width="3" stroke-linecap="round"><path d="M25 0h13v13M0 35 38 0M38 27v13H25M0 1l9 9m9 9 20 21"/></g>
+    <text x="379" y="361" fill="#f2f5fb">Choose a random ROM</text>
+    <rect x="286" y="393" width="1028" height="60" rx="10" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <path d="M347 414a15 15 0 1 0 2 15m-2-27v13h-13" fill="none" stroke="#dce8f5" stroke-width="3" stroke-linecap="round"/>
+    <text x="379" y="431" fill="#f2f5fb">Restart this ROM</text>
+  </g>
+  <path d="M286 475h1028" stroke="#34465b" stroke-width="2"/>
+  <text x="286" y="509" fill="#9fb2c7" font-family="sans-serif" font-size="16" font-weight="800" letter-spacing="2">DIAGNOSTICS</text>
+  <g font-family="sans-serif" font-size="21" font-weight="700" fill="#f2f5fb">
+    <rect x="286" y="526" width="1028" height="54" rx="9" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <circle cx="339" cy="553" r="14" fill="none" stroke="#dce8f5" stroke-width="2"/><path d="m332 553 5 5 10-11" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="379" y="561">Verify from start</text>
+    <rect x="286" y="588" width="1028" height="54" rx="9" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <path d="M320 627v-18h8v18m7 0v-28h8v28m7 0v-13h8v13m-34 1h38" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="379" y="623">Performance overlay · On</text>
+  </g>
+  <path d="M286 660h1028" stroke="#34465b" stroke-width="2"/>
+  <g font-family="sans-serif" font-size="21" font-weight="700" fill="#f2f5fb">
+    <rect x="286" y="675" width="1028" height="54" rx="9" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <path d="M326 692h24v20h-24zM331 687h14" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="379" y="710">Share app APK</text>
+    <rect x="286" y="737" width="1028" height="54" rx="9" fill="#1a2635" stroke="#34465b" stroke-width="2"/>
+    <path d="M337 750v26m-10-10 10 10 10-10m-20-16h20" fill="none" stroke="#dce8f5" stroke-width="2"/><text x="379" y="772">Exit app</text>
+  </g>
+  <text x="800" y="872" fill="#91a3b7" text-anchor="middle" font-family="sans-serif" font-size="17">LANDSCAPE · 16:9 · FOCUSED ROW SHOWN IN WHITE</text>
+</svg>
