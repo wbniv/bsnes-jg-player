@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1660" viewBox="0 0 1920 1660" role="img" aria-labelledby="title desc">
+  <title id="title">Resolution-adaptive SNES display mockups</title>
+  <desc id="desc">Annotated high-fidelity layouts: 16:9 TV uses two gutters, 4:3 landscape stacks metadata and performance in one side rail, portrait phone uses metadata above and performance below a 4:3 game image. Dimension arrows label the viewport and game dimensions.</desc>
+  <defs>
+    <linearGradient id="page" x2="0" y2="1"><stop stop-color="#111c29"/><stop offset="1" stop-color="#080c12"/></linearGradient>
+    <linearGradient id="fractal" x2="1" y2="1"><stop stop-color="#142bea"/><stop offset=".42" stop-color="#2455c5"/><stop offset=".73" stop-color="#52b99e"/><stop offset="1" stop-color="#9bff46"/></linearGradient>
+    <pattern id="pixel-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 0h20v20H0z" fill="none" stroke="#07101c" stroke-opacity=".38"/><path d="M0 0h10v10H0zM10 10h10v10H10z" fill="#fff" opacity=".04"/></pattern>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".45"/></filter>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse"><path d="M0 0 8 4 0 8z" fill="#9bdcff"/></marker>
+    <style>
+      .label{font:700 14px system-ui,sans-serif;letter-spacing:1.2px;fill:#9db2c7}.title{font:700 30px system-ui,sans-serif;fill:#f0f5fa}.note{font:14px system-ui,sans-serif;fill:#b8c7d5}.muted{font:12px system-ui,sans-serif;fill:#8ea3b8}.screen{fill:#03060a;stroke:#607286;stroke-width:2}.panelTitle{font:700 16px system-ui,sans-serif;fill:#edf4fb}.panelCopy{font:12px system-ui,sans-serif;fill:#b7c7d6}.tiny{font:10px system-ui,sans-serif;fill:#9eb2c5}.metric{font:700 15px system-ui,sans-serif;fill:#f3f7fb}.valueGreen{font:700 25px system-ui,sans-serif;fill:#91e7a4}.valueBlue{font:700 25px system-ui,sans-serif;fill:#8ed8ff}.arrow{stroke:#9bdcff;stroke-width:2;marker-start:url(#arrow);marker-end:url(#arrow)}.dash{stroke:#9bdcff;stroke-width:1.5;stroke-dasharray:6 5}.game{fill:url(#fractal)}.grid{fill:url(#pixel-grid)}
+    </style>
+  </defs>
+  <rect width="1920" height="1660" rx="24" fill="url(#page)"/>
+  <text x="58" y="56" class="label">RESPONSIVE SNES DISPLAY · MEASURED VIEWPORTS · 4:3 CRT-CORRECTED GAME RECTANGLES</text>
+  <text x="58" y="105" class="title">Maximize the picture. Allocate only the gutters the data needs.</text>
+  <text x="58" y="137" class="note">No cropping or covered pixels. Correct pixel aspect for a 4:3 CRT presentation; panels adapt to the safe viewport.</text>
+
+  <!-- 16:9 TV: viewport 960×540; exact max-height image 720×540; equal 120 gutters. -->
+  <text x="60" y="194" class="label">A · NORMAL 16:9 TV · TWO GUTTERS</text>
+  <g transform="translate(60 220)">
+    <rect width="960" height="540" rx="12" class="screen"/>
+    <rect x="120" width="720" height="540" class="game"/><rect x="120" width="720" height="540" class="grid"/>
+    <path d="M360 0h428v106H477q-62 0-62 64t62 64h120q76 0 76 86t-76 86H171V337h267q51 0 51-51t-51-51h-71q-70 0-70-108t63-127z" fill="#05080e"/>
+    <rect x="120" width="720" height="540" fill="none" stroke="#73869a"/>
+    <text x="10" y="42" class="panelTitle" font-size="12">bsnes-jg</text><text x="10" y="62" class="panelCopy" font-size="10">WASM</text><text x="10" y="78" class="tiny">mandel-display</text><text x="10" y="94" class="tiny">256 × 224 · NTSC</text>
+    <rect x="10" y="108" width="94" height="23" rx="11" fill="#173247" stroke="#527690"/><text x="57" y="123" text-anchor="middle" class="tiny" fill="#bde6ff">PERF ON</text>
+    <text x="10" y="511" class="tiny">BACK · Pause</text>
+    <g transform="translate(846 42)">
+      <text class="label" font-size="10">PERFORMANCE</text><text y="35" class="metric" font-size="12">EMU FPS</text><text y="68" class="valueGreen" font-size="22">60.0</text><text y="86" class="tiny">target 60.0988</text>
+      <path d="M0 98h102M0 210h102M0 323h102" stroke="#405366"/>
+      <text y="132" class="metric" font-size="12">DRAW FPS</text><text y="165" class="valueBlue" font-size="22">59.8</text><text y="184" class="tiny">app submissions</text>
+      <text y="237" class="panelCopy" font-size="11">CORE <tspan x="0" dy="17" class="tiny">mean / p95</tspan><tspan x="0" dy="14" class="tiny">11.8 / 13.6 ms</tspan></text>
+      <text y="285" class="panelCopy" font-size="11">DRAW <tspan x="0" dy="17" class="tiny">mean / p95</tspan><tspan x="0" dy="14" class="tiny">4.2 / 7.5 ms</tspan></text>
+      <text y="350" class="panelCopy" font-size="11">BACKLOG 0.9</text><text y="369" class="tiny">SNES frames</text>
+      <text y="404" class="tiny">App-side rates</text><text y="419" class="tiny">not panel FPS</text>
+    </g>
+    <line x1="120" y1="526" x2="840" y2="526" class="arrow"/><text x="480" y="520" text-anchor="middle" class="tiny">Wgame = 720</text>
+    <line x1="2" y1="553" x2="958" y2="553" class="arrow"/><text x="480" y="547" text-anchor="middle" class="tiny">viewport W = 960</text>
+    <line x1="14" y1="0" x2="14" y2="540" class="arrow"/><text transform="translate(8 285) rotate(-90)" text-anchor="middle" class="tiny">H = Hgame = 540</text>
+    <line x1="20" y1="180" x2="114" y2="180" class="arrow"/><text x="67" y="169" text-anchor="middle" class="tiny">GL = 120</text>
+    <line x1="845" y1="490" x2="958" y2="490" class="arrow"/><text x="901" y="479" text-anchor="middle" class="tiny">GR = 120</text>
+  </g>
+  <g transform="translate(60 812)">
+    <text class="note">Wmax = min(W, 4H/3) = 1440 at 1920×1080</text>
+    <text y="25" class="note">GL = GR = (W − Wmax)/2 = 240 px at 1920×1080</text>
+    <text y="50" class="note">SNES game viewport = 1440×1080 px · 4:3 · centered in the 1920×1080 safe viewport</text>
+  </g>
+
+  <!-- 4:3 landscape: one combined rail reserves width; corrected 4:3 image. -->
+  <text x="1100" y="194" class="label">B · 4:3 LANDSCAPE · ONE COMBINED RAIL</text>
+  <g transform="translate(1100 220)">
+    <rect width="720" height="540" rx="12" class="screen"/>
+    <rect width="576" height="432" y="54" class="game"/><rect width="576" height="432" y="54" class="grid"/>
+    <path d="M180 18h396v99H280q-55 0-55 63t55 63h96q65 0 65 75t-65 75H0V306h226q43 0 43-43t-43-43h-61q-61 0-61-96t76-106z" fill="#05080e"/>
+    <rect y="54" width="576" height="432" fill="none" stroke="#73869a"/>
+    <g transform="translate(586 48)">
+      <text class="label">DEVICE</text><text y="23" class="panelCopy">bsnes-jg Native</text><text y="42" class="tiny">mandel-display</text><path d="M0 58h118" stroke="#405366"/>
+      <text y="80" class="label">PERFORMANCE</text><text y="105" class="metric">EMU FPS</text><text y="135" class="valueGreen" font-size="20">60.0</text>
+      <text y="166" class="metric">DRAW FPS</text><text y="196" class="valueBlue" font-size="20">59.8</text><path d="M0 209h118" stroke="#405366"/>
+      <text y="232" class="tiny">CORE mean / p95</text><text y="249" class="panelCopy">11.8 / 13.6 ms</text>
+      <text y="282" class="tiny">DRAW mean / p95</text><text y="299" class="panelCopy">4.2 / 7.5 ms</text>
+      <text y="334" class="tiny">BACKLOG</text><text y="354" class="panelCopy">0.9 frames</text>
+      <text y="389" class="tiny">BACK · Pause / menu</text>
+    </g>
+    <line x1="2" y1="530" x2="576" y2="530" class="arrow"/><text x="289" y="523" text-anchor="middle" class="tiny">Wgame = 576</text>
+    <line x1="581" y1="54" x2="581" y2="486" class="arrow"/><text transform="translate(578 276) rotate(-90)" text-anchor="middle" class="tiny">Hgame = 432</text>
+    <line x1="576" y1="490" x2="718" y2="490" class="arrow"/><text x="647" y="480" text-anchor="middle" class="tiny">S = 144</text>
+    <line x1="2" y1="9" x2="718" y2="9" class="arrow"/><text x="360" y="-1" text-anchor="middle" class="tiny">W = 720 · H = 540</text>
+  </g>
+  <g transform="translate(1100 778)">
+    <text class="note">At 1200×900, two minimum rails do not fit.</text>
+    <text y="25" class="note">Stack both panels; Wgame = min(4H/3, W − S)</text>
+    <text y="50" class="note">Scaled 0.6×: image 576×432, rail reserve 144.</text>
+  </g>
+
+  <!-- Portrait phone: top metadata and bottom performance, corrected 4:3 image uses full width. -->
+  <text x="60" y="910" class="label">C · PORTRAIT PHONE · METADATA TOP, PERFORMANCE BOTTOM</text>
+  <g transform="translate(110 940)">
+    <rect width="330" height="715" rx="26" fill="#05080d" stroke="#6c7e90" stroke-width="2"/>
+    <rect x="14" y="14" width="302" height="687" rx="18" class="screen"/>
+    <text x="32" y="48" class="tiny">9:41 · ●●● · 100%</text>
+    <text x="32" y="84" class="panelTitle">bsnes-jg WASM</text><text x="32" y="106" class="panelCopy">mandel-display · 256×224</text>
+    <rect x="32" y="118" width="266" height="1" fill="#405366"/>
+    <rect x="14" y="177" width="302" height="226.5" class="game"/><rect x="14" y="177" width="302" height="226.5" class="grid"/>
+    <path d="M111 158h205v51H163q-33 0-33 32t33 32h50q40 0 40 44t-40 44H14v-48h138q28 0 28-26t-28-26h-37q-42 0-42-57t38-46z" fill="#05080e"/>
+    <rect x="14" y="177" width="302" height="226.5" fill="none" stroke="#73869a"/>
+    <line x1="320" y1="177" x2="320" y2="403" class="arrow"/><text transform="translate(315 292) rotate(-90)" text-anchor="middle" class="tiny">Hgame = 226.5</text>
+    <text x="32" y="460" class="label">PERFORMANCE · LIVE</text>
+    <text x="32" y="491" class="metric">EMU FPS</text><text x="250" y="494" text-anchor="end" class="valueGreen" font-size="22">60.0</text>
+    <text x="32" y="519" class="tiny">target 60.0988</text><path d="M32 530h260" stroke="#405366"/>
+    <text x="32" y="556" class="metric">DRAW FPS</text><text x="250" y="559" text-anchor="end" class="valueBlue" font-size="22">59.8</text>
+    <text x="32" y="585" class="tiny">CORE 11.8 / 13.6 ms · DRAW 4.2 / 7.5 ms</text>
+    <text x="32" y="611" class="panelCopy">BACKLOG 0.9 frames</text>
+    <text x="32" y="655" class="tiny">D-pad / touch · Pause / menu</text>
+    <line x1="14" y1="690" x2="316" y2="690" class="arrow"/><text x="165" y="684" text-anchor="middle" class="tiny">Wgame = 302</text>
+  </g>
+  <g transform="translate(500 1000)">
+    <text class="panelTitle">Portrait formula</text>
+    <text y="36" class="note">Harea = H − Hmeta − Hperf − gaps</text>
+    <text y="65" class="note">Wgame = min(W, 4Harea/3)</text>
+    <text y="94" class="note">Hgame = 3Wgame/4</text>
+    <text y="150" class="muted">Example: 1080×2400 viewport</text>
+    <text y="176" class="muted">safe viewport 302×687 · metadata 220 · performance 340 · gaps 48</text>
+    <text y="202" class="muted">image 1080×810 · full width, 4:3 CRT presentation</text>
+  </g>
+
+  <rect x="500" y="1260" width="1310" height="300" rx="18" fill="#101923" stroke="#34475a"/>
+  <text x="540" y="1310" class="label">MODE SELECTION · SIZE-DRIVEN, NOT MODEL-NAME-DRIVEN</text>
+  <g transform="translate(540 1350)">
+    <rect width="170" height="100" rx="12" fill="#17283a" stroke="#587087"/><text x="85" y="38" text-anchor="middle" class="panelCopy">Measure safe</text><text x="85" y="60" text-anchor="middle" class="panelCopy">viewport W × H</text>
+    <path d="M180 50h42" class="arrow"/>
+    <rect x="236" width="170" height="100" rx="12" fill="#17283a" stroke="#587087"/><text x="321" y="38" text-anchor="middle" class="panelCopy">Portrait?</text><text x="321" y="60" text-anchor="middle" class="tiny">top / bottom rails</text>
+    <path d="M416 50h42" class="arrow"/>
+    <rect x="472" width="220" height="100" rx="12" fill="#17283a" stroke="#587087"/><text x="582" y="38" text-anchor="middle" class="panelCopy">Both side rails fit?</text><text x="582" y="62" text-anchor="middle" class="tiny">yes: split · no: stack one side</text>
+    <path d="M702 50h42" class="arrow"/>
+    <rect x="758" width="220" height="100" rx="12" fill="#173247" stroke="#6c9ab7"/><text x="868" y="38" text-anchor="middle" class="panelCopy">Maximize 4:3 game</text><text x="868" y="62" text-anchor="middle" class="tiny">then recompute on rotation</text>
+  </g>
+  <text x="60" y="1620" class="muted">Dimensions in each viewport are proportional to the annotated sample geometry. Rails stay outside the SNES game rectangle.</text>
+</svg>

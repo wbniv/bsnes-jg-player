@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   window.BJG_ENGINE = "native";
+  document.querySelectorAll("[data-engine-label]").forEach(function (node) { node.textContent = "NATIVE C++"; });
   document.documentElement.classList.add("native-engine");
   var currentRom = "";
   var nextId = 1;

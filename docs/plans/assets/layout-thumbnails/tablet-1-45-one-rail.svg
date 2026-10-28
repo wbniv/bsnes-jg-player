@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="56" viewBox="0 0 96 56" role="img" aria-labelledby="t d">
+  <title id="t">Widescreen tablet, combined side rail</title><desc id="d">A 4:3 game nearly fills the landscape tablet height, with both panels stacked on the right.</desc>
+  <rect x="10" y="1.8" width="76" height="52.4" rx="2" fill="#02050a" stroke="#91a6ba"/>
+  <rect x="10.45" y="1.8" width="69.85" height="52.4" fill="#172b9d"/>
+  <path d="M10.45 39 26 22l10 10 12-20 11 14 10-9v38H10.45z" fill="#43b98e" opacity=".8"/>
+  <path d="M81 9h3m-3 4h3m-3 5h3m-3 4h3m-3 4h3" stroke="#9bdcff" stroke-width="1.2"/>
+</svg>

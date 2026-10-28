@@ -1,6 +1,7 @@
 (function () {
   "use strict";
   window.BJG_ENGINE = "wasm";
+  document.querySelectorAll("[data-engine-label]").forEach(function (node) { node.textContent = "WASM"; });
   var script = document.createElement("script");
   script.src = "app.js";
   script.onerror = function () {

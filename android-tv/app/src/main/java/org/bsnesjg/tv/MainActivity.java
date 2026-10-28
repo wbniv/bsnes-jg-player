@@ -151,11 +151,12 @@ public class MainActivity extends Activity {
     }
 
     private final class NativeRenderer implements Renderer {
-        private final float[] vertices = {-1,-1, 1,-1, -1,1, 1,1};
-        private int texture, program, frame = 0, w = 0, h = 0;
+        private int texture, program, boundsLocation, frame = 0, w = 0, h = 0;
         private boolean referenceChecked = false;
+        private boolean pixelSampleReported = false;
         private volatile boolean hasRom = false;
         private volatile String romSlug = "";
+        private volatile float[] gameRect = {0f, 0f, 1f, 1f};
         private final ByteBuffer rgba = ByteBuffer.allocateDirect(256 * 224 * 4);
         private ByteBuffer verticesBuffer;
         private final float[] drawVertices = new float[8];
@@ -174,13 +175,13 @@ public class MainActivity extends Activity {
             int[] t=new int[1]; GLES20.glGenTextures(1,t,0); texture=t[0]; GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,texture);
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_MIN_FILTER,GLES20.GL_NEAREST);
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_MAG_FILTER,GLES20.GL_NEAREST);
-            String vs="attribute vec2 p; varying vec2 uv; void main(){gl_Position=vec4(p,0.,1.);uv=(p+1.)*.5;}";
+            String vs="attribute vec2 p; varying vec2 uv; uniform vec4 bounds; void main(){gl_Position=vec4(p,0.,1.);uv=(p-bounds.xy)/bounds.zw;}";
             String fs="precision mediump float; varying vec2 uv; uniform sampler2D tex; void main(){gl_FragColor=texture2D(tex,vec2(uv.x,1.-uv.y));}";
-            int v=shader(GLES20.GL_VERTEX_SHADER,vs),f=shader(GLES20.GL_FRAGMENT_SHADER,fs);program=GLES20.glCreateProgram();GLES20.glAttachShader(program,v);GLES20.glAttachShader(program,f);GLES20.glLinkProgram(program);
+            int v=shader(GLES20.GL_VERTEX_SHADER,vs),f=shader(GLES20.GL_FRAGMENT_SHADER,fs);program=GLES20.glCreateProgram();GLES20.glAttachShader(program,v);GLES20.glAttachShader(program,f);GLES20.glLinkProgram(program);boundsLocation=GLES20.glGetUniformLocation(program,"bounds");
         }
         private int shader(int type,String src){int s=GLES20.glCreateShader(type);GLES20.glShaderSource(s,src);GLES20.glCompileShader(s);return s;}
         void resetPerformanceWindow() { sampleStartNs=0;lastCallbackNs=0;sampleSteps=0;sampleDraws=0;peakCredit=0;coreSamplesMs.clear();drawSamplesMs.clear();callbackIntervalsMs.clear(); }
-        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
+        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;pixelSampleReported=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
         void pauseGame() { paused=true; }
         void resumeGame() { paused=false; }
         void restartGame() { NativeEngine.reset();frame=0;credit=0;lastNs=0;referenceChecked=false;paused=false;resetPerformanceWindow(); }
@@ -197,7 +198,10 @@ public class MainActivity extends Activity {
         private void finishVerification(int callbackId, Object pass) {
             runOnUiThread(() -> { if(webView!=null)webView.evaluateJavascript("window.__bjgNativeResolve("+callbackId+","+ (pass instanceof String ? "'"+pass+"'" : pass) +")",null); });
         }
-        @Override public void onSurfaceChanged(GL10 gl,int width,int height){GLES20.glViewport(0,0,width,height); if(program==0)initGl(); float aspect=8f/7f;float screen=(float)width/height;float x=1,y=1;if(screen>aspect)x=aspect/screen;else y=screen/aspect;float[] v={-x,-y,x,-y,-x,y,x,y};vertices[0]=v[0];vertices[1]=v[1];vertices[2]=v[2];vertices[3]=v[3];vertices[4]=v[4];vertices[5]=v[5];vertices[6]=v[6];vertices[7]=v[7];}
+        @Override public void onSurfaceChanged(GL10 gl,int width,int height){GLES20.glViewport(0,0,width,height); if(program==0)initGl();}
+        void setGameRect(float left,float top,float width,float height) {
+            gameRect=new float[]{left,top,width,height};
+        }
         private double mean(ArrayList<Double> values) {
             if(values.isEmpty())return 0;double sum=0;for(double value:values)sum+=value;return sum/values.size();
         }
@@ -220,10 +224,18 @@ public class MainActivity extends Activity {
             if(!hasRom){GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);return;}
             long now=SystemClock.elapsedRealtimeNanos();if(sampleStartNs==0)sampleStartNs=now;if(lastCallbackNs>0)callbackIntervalsMs.add((now-lastCallbackNs)/1_000_000.0);lastCallbackNs=now;if(lastNs==0)lastNs=now;credit+=Math.min(.25,(now-lastNs)/1e9)*60.0988;lastNs=now;peakCredit=Math.max(peakCredit,credit);
             if(!paused){int steps=Math.min(4,(int)credit);for(int i=0;i<steps;i++){long coreStart=SystemClock.elapsedRealtimeNanos();NativeEngine.step();long coreEnd=SystemClock.elapsedRealtimeNanos();coreSamplesMs.add((coreEnd-coreStart)/1_000_000.0);sampleSteps++;frame++;credit-=1;if(frame==5800&&"mandel-display".equals(romSlug)){int got=NativeEngine.wramWord(0x580);android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"correctness\",\"frame\":5800,\"offset\":1408,\"expected\":8271,\"actual\":"+got+",\"status\":\""+(got==0x204f?"pass":"fail")+"\"}");}}}
-            w=NativeEngine.width();h=NativeEngine.height();if(w<=0||h<=0)return;long drawStart=SystemClock.elapsedRealtimeNanos();NativeEngine.copyPixels(rgba);rgba.position(0);
+            w=NativeEngine.width();h=NativeEngine.height();if(w<=0||h<=0)return;long drawStart=SystemClock.elapsedRealtimeNanos();NativeEngine.copyPixels(rgba);rgba.position(0);if(!pixelSampleReported&&frame>=30){int lit=0,samples=0;for(int y=0;y<h;y+=8)for(int x=0;x<w;x+=8){int p=(y*w+x)*4;samples++;if(((rgba.get(p)&255)|(rgba.get(p+1)&255)|(rgba.get(p+2)&255))!=0)lit++;}android.util.Log.i("BJG_TV_METRIC","{\"event\":\"native_rgba_sample\",\"rom\":\""+romSlug+"\",\"frame\":"+frame+",\"width\":"+w+",\"height\":"+h+",\"lit_samples\":"+lit+",\"samples\":"+samples+"}");pixelSampleReported=true;}
             if(frame==5800&&!referenceChecked&&referenceFrame!=null&&"mandel-display".equals(romSlug)){referenceChecked=true;int diff=0;int[] expected=new int[w*h];referenceFrame.getPixels(expected,0,w,0,0,w,h);for(int i=0;i<expected.length;i++){int p=i*4,e=expected[i];if(rgba.get(p)!=(byte)((e>>16)&255)||rgba.get(p+1)!=(byte)((e>>8)&255)||rgba.get(p+2)!=(byte)(e&255))diff++;}android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"framebuffer\",\"frame\":5800,\"differentPixels\":"+diff+",\"pixels\":"+(w*h)+",\"status\":\""+(diff==0?"pass":"fail")+"\"}");}
             GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);GLES20.glUseProgram(program);GLES20.glBindTexture(GLES20.GL_TEXTURE_2D,texture);
-            if(verticesBuffer==null){verticesBuffer=ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder());for(float z:vertices)verticesBuffer.putFloat(z);verticesBuffer.position(0);}int loc=GLES20.glGetAttribLocation(program,"p");GLES20.glEnableVertexAttribArray(loc);GLES20.glVertexAttribPointer(loc,2,GLES20.GL_FLOAT,false,0,verticesBuffer);
+            float[] rect=gameRect;
+            float left=-1f+2f*rect[0],right=-1f+2f*(rect[0]+rect[2]);
+            float top=1f-2f*rect[1],bottom=1f-2f*(rect[1]+rect[3]);
+            GLES20.glUniform4f(boundsLocation,left,bottom,right-left,top-bottom);
+            drawVertices[0]=left;drawVertices[1]=bottom;drawVertices[2]=right;drawVertices[3]=bottom;
+            drawVertices[4]=left;drawVertices[5]=top;drawVertices[6]=right;drawVertices[7]=top;
+            if(verticesBuffer==null)verticesBuffer=ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder());
+            verticesBuffer.position(0);for(float vertex:drawVertices)verticesBuffer.putFloat(vertex);verticesBuffer.position(0);
+            int loc=GLES20.glGetAttribLocation(program,"p");GLES20.glEnableVertexAttribArray(loc);GLES20.glVertexAttribPointer(loc,2,GLES20.GL_FLOAT,false,0,verticesBuffer);
             GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D,0,GLES20.GL_RGBA,w,h,0,GLES20.GL_RGBA,GLES20.GL_UNSIGNED_BYTE,rgba);GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP,0,4);
             long drawEnd=SystemClock.elapsedRealtimeNanos();drawSamplesMs.add((drawEnd-drawStart)/1_000_000.0);sampleDraws++;publishPerformance(drawEnd);
         }
@@ -298,6 +310,17 @@ public class MainActivity extends Activity {
     }
 
     private final class TvBridge {
+        @JavascriptInterface
+        public void setGameRect(double left, double top, double width, double height) {
+            if (!BuildConfig.NATIVE_ENGINE || glView == null || !Double.isFinite(left)
+                    || !Double.isFinite(top) || !Double.isFinite(width) || !Double.isFinite(height)
+                    || left < 0 || top < 0 || width <= 0 || height <= 0
+                    || left + width > 1.0001 || top + height > 1.0001) return;
+            float boundedWidth = (float) Math.min(width, 1 - left);
+            float boundedHeight = (float) Math.min(height, 1 - top);
+            nativeRenderer.setGameRect((float) left, (float) top, boundedWidth, boundedHeight);
+        }
+
         @JavascriptInterface
         public boolean getPerformanceOverlayEnabled() {
             return getSharedPreferences("tv-performance", MODE_PRIVATE).getBoolean("enabled", true);

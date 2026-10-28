@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="56" viewBox="0 0 96 56" role="img" aria-labelledby="t d">
+  <title id="t">Portrait tablet, top and bottom panels</title><desc id="d">Metadata above, a large centered 4:3 game image, and performance below.</desc>
+  <rect x="34.4" y="3" width="27.2" height="50" rx="2.5" fill="#02050a" stroke="#91a6ba"/>
+  <path d="M37 7h12m-12 2h9" stroke="#9bdcff" stroke-width="1.1"/>
+  <rect x="34.4" y="18.5" width="27.2" height="20.4" fill="#172b9d"/>
+  <path d="m34.4 33 8-8 5 6 5-10 9 9v9H34.4z" fill="#43b98e" opacity=".8"/>
+  <path d="M37 44h20m-20 3h16m-16 3h19" stroke="#91e7a4" stroke-width="1.1"/>
+</svg>

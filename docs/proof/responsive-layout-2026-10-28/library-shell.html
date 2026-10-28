@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Library shell layout proof</title>
+  <link rel="stylesheet" href="../../../android-tv/app/src/main/assets/library.css">
+  <style>
+    .preview .mock-screen{width:100%;aspect-ratio:8/7;background-color:#080c12;background-image:linear-gradient(90deg,transparent 49%,#f8fafc 49%,#f8fafc 50%,transparent 50%),linear-gradient(0deg,transparent 49%,#f8fafc 49%,#f8fafc 50%,transparent 50%),repeating-linear-gradient(0deg,#155e75 0 20px,#7c2d12 20px 40px),repeating-linear-gradient(90deg,transparent 0 20px,#365314 20px 40px);background-blend-mode:normal,normal,screen,difference;image-rendering:pixelated;border-radius:6px}
+    .rom.mock-selected{outline:4px solid #fff;outline-offset:2px;background:#2a4057;transform:scale(1.025)}
+    .rom .mock-thumb{display:block;flex:none;width:48px;height:36px;border:1px solid #9bdcff;background:repeating-linear-gradient(90deg,#155e75 0 8px,#7c2d12 8px 16px)}
+  </style>
+</head>
+<body class="library-mode">
+  <main id="game"><canvas id="screen" width="256" height="224" aria-label="Synthetic geometry pattern"></canvas></main>
+  <div id="hud"><div id="brand">DISPLAY SHELL</div><div id="status">Synthetic geometry pattern</div><div id="remote-hint">Remote input · unchanged</div></div>
+  <div id="banner" class="banner"></div>
+  <main id="library" aria-label="Sample library layout">
+    <header class="top">
+      <div><h1>Sample Library Layout</h1><p id="catalog-total">Static sample content · no ROM loaded</p></div>
+      <button id="lucky">Choose sample</button>
+      <label class="search"><span>FILTER</span><input type="search" placeholder="Sample title or category"></label>
+    </header>
+    <nav class="filters" aria-label="Sample categories">
+      <button class="chip active">All · 3</button><button class="chip">★ Favorites · 0</button>
+      <button class="chip">Geometry · 2</button><button class="chip">Patterns · 1</button>
+      <button class="chip">More examples · 4</button>
+    </nav>
+    <section class="content">
+      <div class="results"><div id="result-count">1 of 3 samples</div><div class="rom-list">
+        <button class="rom mock-selected"><span class="mock-thumb"></span><span class="copy"><strong>Color Grid</strong><small>Geometry</small></span></button>
+        <button class="rom"><span class="mock-thumb"></span><span class="copy"><strong>Edge Markers</strong><small>Patterns</small></span></button>
+        <button class="rom"><span class="mock-thumb"></span><span class="copy"><strong>Safe Area Check</strong><small>Geometry</small></span></button>
+        <button class="rom"><span class="mock-thumb"></span><span class="copy"><strong>Long Title Wrap Sample</strong><small>Patterns</small></span></button>
+      </div></div>
+      <aside class="preview" aria-label="Selected sample details">
+        <div class="mock-screen" role="img" aria-label="Synthetic colored grid with edge markers"></div>
+        <div id="preview-details"><h2>Color Grid</h2><div id="category">Geometry · synthetic</div>
+          <p>Static content used to review the library shell at different viewport sizes. No game or ROM is loaded.</p>
+          <p>Check that title, detail text, preview, and actions remain visible and readable.</p>
+          <p id="filename">sample-pattern · 256 × 224</p>
+          <div class="preview-buttons"><button id="favorite">☆ Favorite</button><button id="play">▶ Open sample</button></div>
+        </div>
+      </aside>
+    </section>
+    <footer><span>D-PAD Browse · SELECT Open · BACK</span><span>Layout proof</span></footer>
+  </main>
+</body>
+</html>

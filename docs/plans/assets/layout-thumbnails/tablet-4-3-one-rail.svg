@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="56" viewBox="0 0 96 56" role="img" aria-labelledby="t d">
+  <title id="t">4:3 tablet, combined side rail</title><desc id="d">A slightly reduced 4:3 game with a right-side rail containing both panels.</desc>
+  <rect x="12" y="1" width="72" height="54" rx="2" fill="#02050a" stroke="#91a6ba"/>
+  <rect x="12" y="1" width="66.1" height="49.6" fill="#172b9d"/>
+  <path d="M12 37 27 20l10 10 12-20 10 14 9-8v34H12z" fill="#43b98e" opacity=".8"/>
+  <path d="M79.5 9h3m-3 4h3m-3 5h3m-3 4h3m-3 4h3" stroke="#9bdcff" stroke-width="1.2"/>
+</svg>

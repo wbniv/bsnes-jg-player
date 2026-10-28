@@ -1,2 +1,96 @@
-:root{color-scheme:dark;--fg:#f2f5fb;--muted:#b4c2d3;--panel:#141d29;--line:#34465b;--blue:#81d0ff;--gold:#f6ca68}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#080c12;color:var(--fg);font:24px/1.3 system-ui,sans-serif}button,input{font:inherit;color:inherit}button{border:2px solid var(--line);border-radius:10px;background:#1a2635;padding:12px 22px;min-height:54px;font-weight:700}button:focus,input:focus,.rom:focus,.chip:focus{outline:4px solid #fff;outline-offset:2px;background:#2a4057;transform:scale(1.025)}#game{position:absolute;inset:0;display:grid;place-items:center;background:#000}#screen{width:min(100vw,114.2857vh);height:min(100vh,87.5vw);aspect-ratio:8/7;image-rendering:pixelated}#hud{display:none}#library{position:absolute;inset:0;padding:2.8vh 5vw 2vh;display:flex;flex-direction:column;gap:1.3vh;background:radial-gradient(ellipse at 80% 20%,#1b2939,#0b1018 70%)}#library[hidden]{display:none}.top{height:10vh;display:flex;align-items:center;gap:3vw}.top>div{min-width:0;flex:1}h1{margin:0;font-size:32px}.top p{margin:4px 0 0;color:var(--muted);font-size:20px}.search{display:flex;align-items:center;gap:12px;width:32vw;color:var(--muted);font-size:18px}.search input{width:100%;height:54px;padding:0 14px;border:2px solid var(--line);border-radius:9px;background:#0c121a}.content{display:grid;grid-template-columns:57% 1fr;gap:2vw;min-height:0;flex:1}.results{min-height:0;display:flex;flex-direction:column}#result-count{height:38px;color:var(--muted);font-size:20px}.filters{height:6vh;display:flex;gap:10px;overflow:hidden;align-items:center}.chip{flex:none;min-height:48px;padding:6px 17px;border-radius:24px;font-size:20px}.chip.active{color:#06111b;background:#d9efff;border-color:#d9efff}.rom-list{min-height:0;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:5px}.rom{display:flex;align-items:center;text-align:left;gap:16px;min-height:9.2vh;padding:7px 12px;background:#121a24;border:2px solid transparent;border-radius:8px}.rom img{width:86px;height:76px;object-fit:cover;image-rendering:pixelated;background:#080b10}.rom .copy{min-width:0;flex:1}.rom strong,.rom small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rom strong{font-size:25px}.rom small{font-size:19px;color:var(--muted)}.rom .star{color:var(--gold);font-size:28px}.rom .tag{font-size:16px;color:#c7d4e2;border:1px solid #66778a;border-radius:5px;padding:4px 7px}.preview{border:1px solid var(--line);border-radius:14px;padding:18px;background:#101721;display:flex;flex-direction:column;min-height:0}.preview img{width:100%;height:38vh;object-fit:contain;image-rendering:pixelated;background:#05080d;border-radius:6px}.preview h2{margin:14px 0 3px;font-size:32px}.preview #category{color:var(--muted);font-size:20px}.preview p{margin:10px 0;color:#d0d9e5;font-size:19px}.preview #filename{color:#9dadc0;font:17px ui-monospace,monospace}.preview-buttons{display:flex;gap:12px;margin-top:auto}.preview-buttons button{flex:1}.preview-buttons #favorite{border-color:#9e824c;color:#ffdc8e}.preview-buttons #play{border-color:#4d95bc;background:#17374d}footer{height:3.5vh;display:flex;justify-content:space-between;color:#9eafc2;font:17px ui-monospace,monospace}.filters{display:flex}#empty{margin:auto;text-align:center;color:var(--muted)}#error{color:#ff9c9c}#pause-menu{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:#000b}#pause-menu[hidden]{display:none}#tv-pause-card{width:70vw;padding:30px;background:#141e2b;border:1px solid var(--line);border-radius:16px}#tv-pause-card h1{font-size:38px}#tv-pause-card p{color:var(--muted)}#tv-actions{display:flex;flex-direction:column;gap:10px}#tv-actions button{text-align:left}body:not(.playing) #game{display:none}body.playing #library{display:none}body.playing #game{display:grid}body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;padding:2vh 3vw;color:#d3dfec;text-shadow:0 2px 5px #000}
+:root{color-scheme:dark;--fg:#f2f5fb;--muted:#b4c2d3;--panel:#141d29;--line:#34465b;--blue:#81d0ff;--gold:#f6ca68}*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#080c12;color:var(--fg);font:24px/1.3 system-ui,sans-serif}button,input{font:inherit;color:inherit}button{border:2px solid var(--line);border-radius:10px;background:#1a2635;padding:12px 22px;min-height:54px;font-weight:700}button:focus,input:focus,.rom:focus,.chip:focus{outline:4px solid #fff;outline-offset:2px;background:#2a4057;transform:scale(1.025)}#game{position:absolute;inset:0;display:grid;place-items:center;background:#000}#screen{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(100vw,133.3333vh);height:min(100vh,75vw);aspect-ratio:4/3;image-rendering:pixelated}#hud{display:none}#library{position:absolute;inset:0;padding:2.8vh 5vw 2vh;display:flex;flex-direction:column;gap:1.3vh;background:radial-gradient(ellipse at 80% 20%,#1b2939,#0b1018 70%)}#library[hidden]{display:none}.top{height:10vh;display:flex;align-items:center;gap:3vw}.top>div{min-width:0;flex:1}h1{margin:0;font-size:32px}.top p{margin:4px 0 0;color:var(--muted);font-size:20px}.search{display:flex;align-items:center;gap:12px;width:32vw;color:var(--muted);font-size:18px}.search input{width:100%;height:54px;padding:0 14px;border:2px solid var(--line);border-radius:9px;background:#0c121a}.content{display:grid;grid-template-columns:57% 1fr;gap:2vw;min-height:0;flex:1}.results{min-height:0;display:flex;flex-direction:column}#result-count{height:38px;color:var(--muted);font-size:20px}.filters{height:6vh;display:flex;gap:10px;overflow:hidden;align-items:center}.chip{flex:none;min-height:48px;padding:6px 17px;border-radius:24px;font-size:20px}.chip.active{color:#06111b;background:#d9efff;border-color:#d9efff}.rom-list{min-height:0;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:5px}.rom{display:flex;align-items:center;text-align:left;gap:16px;min-height:9.2vh;padding:7px 12px;background:#121a24;border:2px solid transparent;border-radius:8px}.rom img{width:86px;height:76px;object-fit:cover;image-rendering:pixelated;background:#080b10}.rom .copy{min-width:0;flex:1}.rom strong,.rom small{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rom strong{font-size:25px}.rom small{font-size:19px;color:var(--muted)}.rom .star{color:var(--gold);font-size:28px}.rom .tag{font-size:16px;color:#c7d4e2;border:1px solid #66778a;border-radius:5px;padding:4px 7px}.preview{border:1px solid var(--line);border-radius:14px;padding:18px;background:#101721;display:flex;flex-direction:column;min-height:0}.preview img{width:100%;height:38vh;object-fit:contain;image-rendering:pixelated;background:#05080d;border-radius:6px}.preview h2{margin:14px 0 3px;font-size:32px}.preview #category{color:var(--muted);font-size:20px}.preview p{margin:10px 0;color:#d0d9e5;font-size:19px}.preview #filename{color:#9dadc0;font:17px ui-monospace,monospace}.preview-buttons{display:flex;gap:12px;margin-top:auto}.preview-buttons button{flex:1}.preview-buttons #favorite{border-color:#9e824c;color:#ffdc8e}.preview-buttons #play{border-color:#4d95bc;background:#17374d}footer{height:3.5vh;display:flex;justify-content:space-between;color:#9eafc2;font:17px ui-monospace,monospace}.filters{display:flex}#empty{margin:auto;text-align:center;color:var(--muted)}#error{color:#ff9c9c}#pause-menu{position:absolute;inset:0;z-index:8;display:grid;place-items:center;background:#000b}#pause-menu[hidden]{display:none}#tv-pause-card{width:70vw;padding:30px;background:#141e2b;border:1px solid var(--line);border-radius:16px}#tv-pause-card h1{font-size:38px}#tv-pause-card p{color:var(--muted)}#tv-actions{display:flex;flex-direction:column;gap:10px}#tv-actions button{text-align:left}body:not(.playing) #game{display:none}body.playing #library{display:none}body.playing #game{display:grid}body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;padding:2vh 3vw;color:#d3dfec;text-shadow:0 2px 5px #000}
 html.native-engine,html.native-engine body,html.native-engine #game{background:transparent}html.native-engine #screen{display:none}
+
+/* Android TV reports a half-size CSS viewport on 320 dpi Chromecast panels.
+   Keep type sizes readable and row art inside its allocated list card. */
+html,body{font-size:12px}
+button{padding:6px 12px;min-height:34px}
+.top{gap:2vw}
+h1{font-size:16px}
+.engine-badge{display:inline-block;margin-left:.45em;padding:.16em .5em;border:1px solid #69b9e2;border-radius:999px;background:#15344a;color:#9fddff;font-size:.52em;font-weight:800;letter-spacing:.09em;line-height:1.35;vertical-align:.18em;text-transform:uppercase;white-space:nowrap}
+.top p{font-size:12px}
+.search{gap:7px;font-size:11px}
+.search input{height:32px;padding:0 8px}
+#result-count{height:26px;font-size:12px}
+.filters{gap:6px}
+.chip{min-height:30px;padding:3px 10px;font-size:12px}
+.rom{min-height:7.2vh;gap:8px;padding:3px 7px;border-width:1px}
+.rom img{width:48px;height:36px;object-fit:contain}
+.rom strong{font-size:14px}
+.rom small{font-size:11px}
+.rom .star{font-size:17px}
+.rom .tag{font-size:9px;padding:2px 4px}
+.preview{padding:9px;overflow:hidden}
+.preview img{height:16vh;max-height:16vh;min-height:0;flex:0 0 16vh;object-fit:contain}
+.preview h2{margin:8px 0 2px;font-size:17px}
+.preview #category,.preview p{font-size:12px}
+.preview p{margin:5px 0}
+.preview #description,.preview #controls{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.preview #description{-webkit-line-clamp:2}
+.preview #controls{-webkit-line-clamp:1}
+.preview #filename{font-size:10px}
+footer{font-size:10px}
+#tv-pause-card h1{font-size:22px}
+
+/* On widescreen TV, give the selected game image most of the preview panel;
+   keep its metadata in a narrow rail so the 8:7 screenshot can grow without
+   cropping or letterboxing. */
+.content{grid-template-columns:minmax(0,44%) minmax(0,1fr);gap:2.3%}
+.preview{display:grid;grid-template-columns:minmax(0,2.4fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);column-gap:12px;align-items:stretch}
+.preview img#hero{grid-column:1;grid-row:1;width:100%;height:auto;max-height:none;aspect-ratio:8/7;object-fit:contain;align-self:start}
+#preview-details{grid-column:2;grid-row:1;display:flex;flex-direction:column;min-width:0;min-height:0;max-height:100%;overflow-y:auto;overscroll-behavior:contain;padding-right:3px}
+.preview h2,.preview #category,.preview #description,.preview #controls,.preview #filename,.preview-buttons,.preview #error,.preview #retry-previous{min-width:0}
+.preview h2{margin:0;font-size:16px;line-height:1.25;overflow-wrap:anywhere}
+.preview #category{font-size:11px}
+.preview #description,.preview #controls{display:block;-webkit-line-clamp:unset;overflow:visible;white-space:normal;overflow-wrap:anywhere}
+.preview #description{font-size:12px;line-height:1.3}
+.preview #controls{font-size:11px;line-height:1.3}
+.preview #filename{overflow-wrap:anywhere;font-size:9px}
+.preview-buttons{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:10px}
+.preview-buttons button{flex:auto;min-width:0;padding:4px 7px;font-size:11px;line-height:1.15}
+.preview #error{font-size:11px;overflow-wrap:anywhere}
+.preview #retry-previous{font-size:11px;padding:4px 7px}
+
+@media (max-aspect-ratio:1/1){
+  .content{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:1vh}
+  .preview{display:flex;flex-direction:column;overflow:auto}
+  .preview img#hero{grid-column:auto;grid-row:auto;width:min(100%,calc(28vh * 8 / 7));height:auto;max-height:28vh;justify-self:center}
+  #preview-details{display:flex;flex-direction:column;max-height:none;overflow:visible;padding-right:0}
+  .preview-buttons{flex-direction:row}
+}
+
+/* display-layout.js computes one responsive geometry and shares its normalized
+   game rectangle with the native surface. */
+body.playing #hud{inset:auto;left:var(--metadata-x,0px);top:var(--metadata-y,0px);width:var(--metadata-width,24vw);height:var(--metadata-height,100vh);padding:8px;overflow:hidden;font-size:clamp(8px,1.05vw,12px);line-height:1.3}
+body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
+#status{white-space:pre-line}
+#performance-overlay{box-sizing:border-box;left:var(--performance-x,auto);right:auto;top:var(--performance-y,15vh);bottom:auto;width:var(--performance-width,min(240px,24vw));height:var(--performance-height,80vh);max-height:none;overflow:hidden;padding:8px;font-size:clamp(8px,1.05vw,12px)}
+.perf-rate strong{font-size:clamp(14px,1.75vw,20px)}
+.perf-detail{font-size:clamp(8px,.95vw,10px)}
+.perf-detail b{overflow-wrap:anywhere;text-align:right}
+@media (max-aspect-ratio:1/1){body.playing #hud{padding:6px 10px;font-size:clamp(9px,2vw,14px)}.perf-rate strong{font-size:clamp(14px,4vw,20px)}}
+
+/* Library controls reflow on narrow screens instead of sharing one fixed row. */
+.top{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(200px,min(32vw,360px));grid-template-areas:"identity lucky search";height:auto;min-height:10vh;flex:0 0 auto;align-items:center;gap:1.6vw}
+.top>div{grid-area:identity;min-width:0;flex:initial}
+.top #lucky{grid-area:lucky;white-space:nowrap}
+.top .search{grid-area:search;width:100%;min-width:0}
+.top h1{line-height:1.2;overflow-wrap:normal}
+.top p{line-height:1.25}
+.filters{height:auto;min-height:6vh;max-height:48px;flex:0 0 auto;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior-x:contain}
+.filters::-webkit-scrollbar{display:none}
+.chip{white-space:nowrap}
+#result-count{height:auto;min-height:26px;flex:0 0 auto}
+.rom-list{overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.preview{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)}
+
+@media(max-width:760px),(max-aspect-ratio:1/1){
+  .top{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"identity identity" "lucky search";gap:.8vh 8px;min-height:0}
+  .top h1{font-size:clamp(14px,4.5vw,18px);line-height:1.18}
+  .top p{font-size:clamp(10px,3vw,12px);line-height:1.2}
+  .top #lucky{min-width:0;min-height:30px;padding:4px 8px;font-size:11px}
+  .top .search{gap:6px;font-size:10px}
+  .top .search span{flex:none}
+  .top .search input{min-width:0;height:30px;padding:0 7px;font-size:11px}
+  .filters{min-height:34px;max-height:38px}
+}

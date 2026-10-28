@@ -1,16 +1,33 @@
-#performance-overlay{position:fixed;z-index:5;top:21vh;right:2.2vw;width:clamp(230px,15vw,320px);padding:18px 20px 14px;border:1px solid #43576a;border-radius:14px;background:rgba(16,26,36,.96);box-shadow:0 10px 28px #0008;color:#f2f5fb;text-shadow:none;font:16px/1.25 system-ui,sans-serif;pointer-events:none}
+#performance-overlay{position:absolute;z-index:5;top:21vh;right:2.2vw;width:clamp(205px,13vw,280px);padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#f2f5fb;text-shadow:0 1px 4px #000;font:13px/1.25 system-ui,sans-serif;pointer-events:none}
 #performance-overlay[hidden]{display:none}
 .library-mode:not(.playing) #performance-overlay{display:none}
-.perf-heading{margin-bottom:13px;color:#a5bed4;font-size:12px;font-weight:700;letter-spacing:1.7px}
-.perf-rate{display:grid;grid-template-columns:1fr auto;align-items:center;margin:0 0 8px}
-.perf-rate span{font-size:14px;font-weight:700;letter-spacing:.5px}
-.perf-rate strong{grid-column:2;grid-row:1/3;color:#91e7a4;font-size:31px;line-height:1;font-variant-numeric:tabular-nums}
+.perf-heading{margin-bottom:10px;color:#a5bed4;font-size:10px;font-weight:700;letter-spacing:1.3px}
+.perf-rate{display:grid;grid-template-columns:1fr auto;align-items:center;margin:0 0 7px}
+.perf-rate span{font-size:12px;font-weight:700;letter-spacing:.4px}
+.perf-rate strong{grid-column:2;grid-row:1/3;color:#91e7a4;font-size:25px;line-height:1;font-variant-numeric:tabular-nums}
 .perf-rate:nth-of-type(3) strong{color:#8ed8ff}
-.perf-rate small{grid-column:1;color:#91a5b9;font-size:11px}
-.perf-detail{display:flex;align-items:baseline;gap:9px;margin-top:8px;color:#c4d1dd;font-size:12px}
+.perf-rate small{grid-column:1;color:#91a5b9;font-size:9px}
+.perf-sparkline{grid-column:1;display:block;width:min(100%,120px);height:16px;margin-top:2px;overflow:visible}
+.perf-sparkline .perf-target{stroke:#536779;stroke-width:.6;stroke-dasharray:2 2}
+.perf-sparkline polyline{fill:none;stroke:#91e7a4;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.perf-rate:nth-of-type(3) .perf-sparkline polyline{stroke:#8ed8ff}
+.perf-detail{display:flex;align-items:baseline;gap:7px;margin-top:7px;color:#c4d1dd;font-size:10px}
 .perf-detail span{min-width:46px;font-weight:700;letter-spacing:.5px}
 .perf-detail b{font-variant-numeric:tabular-nums}
-.perf-detail small{margin-left:auto;color:#8195a9;font-size:10px}
-.perf-backlog{margin-top:12px;padding-top:10px;border-top:1px solid #35495d;color:#91a5b9;font-size:11px;letter-spacing:.5px}
+.perf-detail small{margin-left:auto;color:#8195a9;font-size:9px}
+.perf-backlog{margin-top:10px;padding-top:8px;border-top:1px solid #35495d;color:#91a5b9;font-size:9px;letter-spacing:.5px}
 .perf-backlog b{margin-left:7px;color:#e5edf4;font-variant-numeric:tabular-nums}
-.perf-footnote{margin-top:9px;color:#8195a9;font-size:10px}
+.perf-footnote{margin-top:8px;color:#8195a9;font-size:9px}
+
+/* display-layout.js assigns this panel to a measured gutter/rail rectangle. */
+#performance-overlay{left:var(--performance-x,auto);right:auto;top:var(--performance-y,15vh);bottom:auto;width:var(--performance-width,min(240px,24vw));height:var(--performance-height,80vh);max-height:none;overflow:hidden;padding:8px}
+.perf-rate{grid-template-columns:minmax(0,1fr) auto;column-gap:3px}
+.perf-rate strong{font-size:20px}
+.perf-rate span{font-size:10px}
+.perf-rate small{font-size:8px}
+.perf-sparkline{max-width:100%;height:12px}
+.perf-detail{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1px 4px;font-size:9px}
+.perf-detail span{min-width:0}
+.perf-detail b{min-width:0;overflow-wrap:anywhere;text-align:right}
+.perf-detail small{grid-column:1/-1;margin:0;font-size:8px}
+.perf-backlog{overflow-wrap:anywhere}

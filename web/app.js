@@ -733,9 +733,9 @@
         availW = Math.max(0, Math.floor(availW) - 2);
         availH = Math.max(0, Math.floor(availH) - 2);
         // The core's backing buffer can switch to a native 512x240 frame. That is storage
-        // resolution, not the intended SNES display shape; fullscreen must remain 256:224 (8:7).
-        var displayW = 8;
-        var displayH = 7;
+        // resolution, not the intended SNES display shape; use the shared 4:3 display geometry.
+        var displayW = 4;
+        var displayH = 3;
         var scale = Math.min(availW / displayW, availH / displayH);
         if (!(scale > 0)) return;
         wrap.style.setProperty("--bjg-fs-width", Math.max(1, Math.floor(displayW * scale)) + "px");
@@ -797,7 +797,7 @@
         "}" +
         ".rp-screen:-webkit-full-screen canvas,.rp-screen:fullscreen canvas{" +
           "display:block;width:var(--bjg-fs-width,auto);height:var(--bjg-fs-height,auto);" +
-          "max-width:100%;max-height:100%;aspect-ratio:8/7;image-rendering:pixelated;" +
+          "max-width:100%;max-height:100%;aspect-ratio:4/3;image-rendering:pixelated;" +
         "}";
       document.head.appendChild(styleEl);
 

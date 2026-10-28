@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="56" viewBox="0 0 96 56" role="img" aria-labelledby="t d">
+  <title id="t">Portrait phone, top and bottom panels</title><desc id="d">Metadata at the top, a centered 4:3 game image, and performance metrics below.</desc>
+  <rect x="36.4" y="3" width="23.2" height="50" rx="3" fill="#02050a" stroke="#91a6ba"/>
+  <path d="M39 7h10m-10 2h8" stroke="#9bdcff" stroke-width="1.1"/>
+  <rect x="36.4" y="21.2" width="23.2" height="17.4" fill="#172b9d"/>
+  <path d="m36.4 34 7-7 4 5 4-8 8 8v6H36.4z" fill="#43b98e" opacity=".8"/>
+  <path d="M39 43h16m-16 3h13m-13 3h15" stroke="#91e7a4" stroke-width="1.1"/>
+</svg>

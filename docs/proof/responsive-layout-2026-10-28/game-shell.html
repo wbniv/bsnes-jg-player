@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <title>Display shell layout proof</title>
+  <link rel="stylesheet" href="../../../android-tv/app/src/main/assets/library.css">
+  <link rel="stylesheet" href="../../../android-tv/app/src/main/assets/performance-overlay.css">
+</head>
+<body class="playing">
+  <main id="game"><canvas id="screen" width="256" height="224" aria-label="Synthetic geometry pattern"></canvas></main>
+  <div id="hud">
+    <div id="brand">DISPLAY SHELL</div>
+    <div id="status">Synthetic 256 × 224 pattern<br>Safe-area and panel layout</div>
+    <div id="remote-hint">Remote input · unchanged</div>
+  </div>
+  <script>
+    (function () {
+      var canvas = document.getElementById("screen");
+      var context = canvas.getContext("2d");
+      var colors = ["#164e63", "#7c2d12", "#365314", "#4c1d95", "#854d0e", "#155e75", "#7f1d1d"];
+      context.fillStyle = "#080c12";
+      context.fillRect(0, 0, 256, 224);
+      for (var row = 0; row < 7; row++) {
+        for (var column = 0; column < 8; column++) {
+          context.fillStyle = colors[(row + column) % colors.length];
+          context.fillRect(column * 32 + 2, row * 32 + 2, 28, 28);
+        }
+      }
+      context.strokeStyle = "#f8fafc";
+      context.lineWidth = 2;
+      context.strokeRect(1, 1, 254, 222);
+      context.fillStyle = "#fff";
+      context.font = "bold 9px sans-serif";
+      context.textAlign = "center";
+      context.fillText("TOP EDGE", 128, 18);
+      context.fillText("BOTTOM EDGE", 128, 216);
+    }());
+  </script>
+  <script src="../../../android-tv/app/src/main/assets/performance-overlay.js"></script>
+  <script src="../../../android-tv/app/src/main/assets/display-layout.js"></script>
+  <script>
+    window.BJGPerformance.publish({emuFps: 60.1, drawFps: 60, coreMeanMs: 9.7,
+      coreP95Ms: 12.2, drawMeanMs: 2.1, drawP95Ms: 3.4, backlogFrames: 0});
+    window.addEventListener("load", function () {
+      setTimeout(function () { window.dispatchEvent(new Event("resize")); }, 100);
+    });
+  </script>
+</body>
+</html>
