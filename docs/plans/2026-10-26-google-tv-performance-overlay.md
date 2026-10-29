@@ -19,7 +19,7 @@ The overlay is for the Google TV app experience. Keep a fixed landscape composit
 
 ## Overlay mockups
 
-The playing view keeps the 8:7 SNES picture at maximum size and places unboxed profiling meters entirely in the right side gutter. The left gutter carries the app name, engine badge, ROM, and pause hint. The mockup uses current Cast1 WASM values (2.1 emulated FPS, 0.5 draw FPS, 515.6 ms core mean, and a 35,156-frame backlog); these are not native/WASM paired measurements. The pause view shows the Native C++ name and D-pad toggle.
+The playing view keeps the 4:3 SNES picture sized to leave room for unboxed profiling meters in the right side gutter. The source grid is 256×224 (8:7), displayed at 4:3 for the traditional TV picture. The left gutter carries the app name, engine badge, ROM, and pause hint. The mockup uses current Cast1 WASM values (2.1 emulated FPS, 0.5 draw FPS, 515.6 ms core mean, and a 35,156-frame backlog); these are not native/WASM paired measurements. The pause view shows the Native C++ name and D-pad toggle.
 
 ![Google TV playing and paused mockups for the performance overlay](assets/google-tv-performance-overlay.svg)
 
@@ -72,7 +72,7 @@ flowchart LR
 
 ## Visual placement
 
-- Keep the game image centered at its maximum 8:7 aspect and leave the pixels unobscured.
+- Keep the game image centered at its maximum 4:3 aspect and leave the pixels unobscured.
 - Place unboxed profiling meters directly in the right side gutter. The gutter is already dark; use clear labels, readable numerals, sparklines, and thin separators without adding a panel background or border.
 - The left gutter retains ROM identity and existing status. Performance meters should not displace pause controls or shrink the game.
 - Show a small `PERF ON` indicator only while the overlay is visible. Hide it with the overlay.
@@ -83,12 +83,12 @@ flowchart LR
 
 The first Cast1 profile capture put the performance overlay over the right edge of
 the SNES image. Its CSS width had a 205 px minimum, while the 16:9 WebView's
-right gutter beside a maximum-height 8:7 picture was only about 171 CSS px.
+right gutter beside a maximum-height 4:3 picture is only 120 CSS px at 960×540.
 The playing title and status could also extend from the left gutter into the
 image. Will reports the overlap is worse on the phone. The mockup above already
 shows the intended layout, but the implementation did not enforce it.
 
-Compute each side gutter as half the viewport width minus the displayed 8:7
+Compute each side gutter as half the viewport width minus the displayed 4:3
 picture width. Keep the picture centered and at its present maximum size. Bound
 all performance labels and sparklines by the right gutter with an inner gap,
 and bound the playing title and status by the left gutter. Stack detail labels
@@ -101,13 +101,12 @@ landscape Pixel, and compare the pixel bounds of the picture, left status, and
 right-gutter meters. Check legibility and the pause toggle on hardware. A desktop-sized
 layout check is useful but does not replace either device capture.
 
-The shared CSS passed a headless geometry check at both target landscape
-viewports. At 960×540 CSS px (16:9 TV), the picture ends at x=788.6 and the
-right-gutter meter bounds begin at x=803.0; the left HUD ends where the picture
-begins at x=171.4. At 1200×540 CSS px (landscape phone), the picture ends at
-x=908.6 and meter bounds begin at x=942.0; the left HUD ends at x=291.4.
-The picture remains 617.1×540 in both cases. Physical capture and readability
-remain open.
+The geometry must use the 4:3 picture bounds. At 960×540 CSS px (16:9 TV),
+the picture is 720×540 from x=120 to x=840, leaving 120 px per gutter; a
+205 px meter cannot fit beside it. At 1200×540 CSS px (landscape phone), the
+picture remains 720×540 and leaves 240 px per gutter. Keep TV meters in a
+temporary overlay or reduce their width to fit the measured gutter; verify the
+phone and TV independently on hardware.
 
 The full Android build verified Debug and Release artifacts for WASM library,
 WASM player, Native library, and Native player. ROM/card inputs were hash
@@ -127,7 +126,7 @@ and [Cast1 WASM profile](../performance/2026-10-26/wasm-vs-native/evidence/cast1
 ## 27 October device-sized layout
 
 The Native C++ `GLSurfaceView` now measures the available Android window and
-occupies a centered 8:7 rectangle. The WebView derives its game rectangle and
+occupies a centered 4:3 rectangle. The WebView derives its game rectangle and
 side gutters from its own current viewport, so panel width follows the device
 resolution instead of assuming Chromecast pixel dimensions. Portrait layouts
 use top and bottom gutters. The root surface behind the native renderer uses

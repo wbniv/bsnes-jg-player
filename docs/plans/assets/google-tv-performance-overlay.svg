@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="760" viewBox="0 0 1920 760" role="img" aria-labelledby="title desc">
   <title id="title">Google TV performance overlay mockups</title>
-  <desc id="desc">Two 16:9 Google TV mockups. The first shows the WASM build label, maximum-size 8:7 SNES image, and live Cast1 performance meters and sparklines contained in the right side gutter. The second shows the Native build label and D-pad pause menu with the overlay toggle.</desc>
+  <desc id="desc">Two 16:9 Google TV mockups. The first shows the WASM build label, a 4:3 SNES display with live Cast1 performance meters and sparklines in the right side gutter. The second shows the Native build label and D-pad pause menu with the overlay toggle.</desc>
   <defs>
     <linearGradient id="tvbg" x2="0" y2="1"><stop stop-color="#111c29"/><stop offset="1" stop-color="#090e15"/></linearGradient>
     <linearGradient id="fractal" x2="1" y2="1"><stop stop-color="#1239df"/><stop offset=".48" stop-color="#267ed0"/><stop offset=".74" stop-color="#7ae66f"/><stop offset="1" stop-color="#dbff20"/></linearGradient>
@@ -13,7 +13,7 @@
   <text x="50" y="132" fill="#b6c5d4" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.5">01 · PLAYING · OVERLAY VISIBLE</text>
   <text x="990" y="132" fill="#b6c5d4" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="1.5">02 · PAUSE MENU · TOGGLE ON</text>
 
-  <!-- Playing screen: 900 × 506 fixed 16:9; maximum-height 8:7 game image -->
+  <!-- Playing screen: 900 × 506 fixed 16:9; 4:3 game image sized to leave a readable right gutter -->
   <g transform="translate(50 150)">
     <rect width="900" height="506" rx="10" fill="url(#tvbg)" stroke="#4a5c6f" stroke-width="2"/>
     <text x="28" y="52" fill="#eef4fa" font-family="Arial,sans-serif" font-size="19" font-weight="700">bsnes-jg WASM</text>
@@ -21,10 +21,10 @@
     <rect x="28" y="101" width="83" height="24" rx="12" fill="#173247" stroke="#527690"/>
     <text x="69" y="118" text-anchor="middle" fill="#bde6ff" font-family="Arial,sans-serif" font-size="10" font-weight="700" letter-spacing="1">PERF ON</text>
     <text x="28" y="480" fill="#8fa2b5" font-family="Arial,sans-serif" font-size="13">BACK · Pause / menu</text>
-    <rect x="161" y="0" width="578" height="506" fill="url(#fractal)"/>
-    <rect x="161" y="0" width="578" height="506" fill="url(#pixels)"/>
-    <path d="M340 0h399v91H407q-72 0-72 83t72 83h87q84 0 84 91t-84 91H161V351h269q53 0 53-53t-53-53h-79q-88 0-88-121t77-124z" fill="#05080d"/>
-    <rect x="160" y="0" width="580" height="506" fill="none" stroke="#627384"/>
+    <rect x="161" y="36.25" width="578" height="433.5" fill="url(#fractal)"/>
+    <rect x="161" y="36.25" width="578" height="433.5" fill="url(#pixels)"/>
+    <path d="M340 36.25h399v78.2H407q-72 0-72 71t72 71h87q84 0 84 78t-84 78H161v-72h269q53 0 53-45t-53-45h-79q-88 0-88-104t77-106z" fill="#05080d"/>
+    <rect x="160" y="36.25" width="580" height="433.5" fill="none" stroke="#627384"/>
     <g>
       <text x="768" y="96" fill="#9eb4c9" font-family="Arial,sans-serif" font-size="10" letter-spacing="1.2">PERFORMANCE</text>
       <text x="768" y="128" fill="#f3f7fb" font-family="Arial,sans-serif" font-size="13" font-weight="700">EMU FPS</text>
@@ -50,9 +50,9 @@
   <!-- Paused screen: same fixed-size 16:9 screen and same unobscured game frame -->
   <g transform="translate(990 150)">
     <rect width="900" height="506" rx="10" fill="url(#tvbg)" stroke="#4a5c6f" stroke-width="2"/>
-    <rect x="161" y="0" width="578" height="506" fill="url(#fractal)"/>
-    <rect x="161" y="0" width="578" height="506" fill="url(#pixels)"/>
-    <path d="M340 0h399v91H407q-72 0-72 83t72 83h87q84 0 84 91t-84 91H161V351h269q53 0 53-53t-53-53h-79q-88 0-88-121t77-124z" fill="#05080d"/>
+    <rect x="161" y="36.25" width="578" height="433.5" fill="url(#fractal)"/>
+    <rect x="161" y="36.25" width="578" height="433.5" fill="url(#pixels)"/>
+    <path d="M340 36.25h399v78.2H407q-72 0-72 71t72 71h87q84 0 84 78t-84 78H161v-72h269q53 0 53-45t-53-45h-79q-88 0-88-104t77-106z" fill="#05080d"/>
     <rect width="900" height="506" rx="10" fill="#05080d" opacity=".56"/>
     <g filter="url(#shadow)">
       <rect x="286" y="38" width="500" height="430" rx="18" fill="#13202d" stroke="#52677b" stroke-width="2"/>

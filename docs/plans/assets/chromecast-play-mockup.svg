@@ -6,12 +6,12 @@
     <radialGradient id="fractal" cx="49%" cy="50%" r="68%"><stop stop-color="#ffeda2"/><stop offset=".13" stop-color="#ff933f"/><stop offset=".3" stop-color="#dd438c"/><stop offset=".53" stop-color="#6e51d4"/><stop offset=".77" stop-color="#155caa"/><stop offset="1" stop-color="#071a37"/></radialGradient>
     <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="12" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <pattern id="pixels" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M12 0H0V12" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1"/></pattern>
-    <clipPath id="gameClip"><rect x="343" width="1234" height="1080"/></clipPath>
+    <clipPath id="gameClip"><rect x="240" width="1440" height="1080"/></clipPath>
   </defs>
   <rect width="1920" height="1080" fill="url(#bg)"/>
-  <rect x="343" width="1234" height="1080" fill="#02030a"/>
+  <rect x="240" width="1440" height="1080" fill="#02030a"/>
   <g clip-path="url(#gameClip)">
-    <rect x="343" width="1234" height="1080" fill="url(#fractal)"/>
+    <rect x="240" width="1440" height="1080" fill="url(#fractal)"/>
     <g transform="translate(960 540) scale(2.5)" fill="none" stroke="#ffe7bb" stroke-opacity=".8" stroke-width="1.1" filter="url(#glow)">
       <path d="M-132 18 C-129-28-91-57-44-45 C-7-36 1-4 31-1 C66 3 94-28 119-13 C147 4 124 45 97 54 C62 65 47 36 17 40 C-21 45-30 81-72 78 C-112 75-137 54-132 18Z"/>
       <path d="M-116 20 C-111-15-82-39-51-33 C-20-28-8 1 17 7 C43 12 72-10 95-1 C119 8 108 34 84 42 C57 51 39 30 14 31 C-17 31-33 63-65 63 C-94 63-119 47-116 20Z"/>
@@ -21,8 +21,8 @@
       <path d="M-144 18 C-143-43-93-80-43-69 M-125 57 C-93 94-39 102-5 76 M104 66 C157 42 170-2 145-28" stroke-opacity=".42"/>
       <circle cx="-42" cy="14" r="6" fill="#fff0c7" stroke="none"/>
     </g>
-    <image href="../../../android-tv/fixture/reference-5800.png" x="343" y="0" width="1234" height="1080" preserveAspectRatio="none" image-rendering="pixelated"/>
-    <rect x="343" width="1234" height="1080" fill="url(#pixels)" opacity=".32"/>
+    <image href="../../../android-tv/fixture/reference-5800.png" x="240" y="0" width="1440" height="1080" preserveAspectRatio="none" image-rendering="pixelated"/>
+    <rect x="240" width="1440" height="1080" fill="url(#pixels)" opacity=".32"/>
   </g>
   <g font-family="Roboto,Arial,sans-serif" fill="#dce7f4">
     <text x="54" y="74" font-size="25" font-weight="700" letter-spacing="1.5">bsnes-jg</text>
@@ -34,7 +34,7 @@
     <text x="111" y="1048" font-size="16" fill="#9fb3c9">BACK</text>
     <text x="1762" y="1000" font-size="16" font-weight="700" fill="#7790aa" letter-spacing="2">PLAYER</text>
     <text x="1762" y="1037" font-size="16" fill="#9fb3c9">256 × 224</text>
-    <text x="1762" y="1061" font-size="14" fill="#72869d">8:7 image · fit</text>
+    <text x="1762" y="1061" font-size="14" fill="#72869d">4:3 image · fit</text>
   </g>
-  <path d="M343 0V1080M1577 0V1080" stroke="#9ab4d0" stroke-opacity=".12"/>
+  <path d="M240 0V1080M1680 0V1080" stroke="#9ab4d0" stroke-opacity=".12"/>
 </svg>

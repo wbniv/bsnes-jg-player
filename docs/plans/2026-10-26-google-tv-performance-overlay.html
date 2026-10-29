@@ -17,9 +17,9 @@
 <tr><td>ROM library</td><td>WASM</td><td><code>org.bsnesjg.tv.phase2</code></td><td>Library; selected ROM plays</td></tr>
 <tr><td>ROM library</td><td>Native C++</td><td><code>org.bsnesjg.tv.native.phase2</code></td><td>Library; selected ROM plays</td></tr>
 </tbody></table>
-<p>The overlay is for TV and phone app experiences. Keep the device in landscape, preserve the 8:7 SNES image, and derive the game bounds and side gutters from the current device viewport. The overlay starts visible in current development and comparison APKs and can be hidden with the remote.</p>
+<p>The overlay is for TV and phone app experiences. Keep the device in landscape, preserve the 4:3 SNES image, and derive the game bounds and side gutters from the current device viewport. The overlay starts visible in current development and comparison APKs and can be hidden with the remote.</p>
 
-<h2>High-fidelity screen mockups</h2><p>The 8:7 SNES picture stays at maximum size. The engine badge and ROM identity sit in the left gutter; all profiling meters and sparklines fit in the right gutter without covering the image. The WASM meters use Cast1’s latest ten-minute run; the pause view shows the Native C++ label and remote toggle.</p>
+<h2>High-fidelity screen mockups</h2><p>The 4:3 SNES picture stays at maximum size. The engine badge and ROM identity sit in the left gutter; all profiling meters and sparklines fit in the right gutter without covering the image. The WASM meters use Cast1’s latest ten-minute run; the pause view shows the Native C++ label and remote toggle.</p>
 <img class="mockup" src="assets/google-tv-performance-overlay.svg" alt="Two high fidelity fixed landscape Google TV screens: gameplay with unboxed profiling meters in the side gutter and a pause menu with the overlay toggle enabled">
 
 <h2>Metrics and labels</h2>
@@ -54,7 +54,7 @@
 </ol>
 
 <h2>Visual placement</h2><ul>
-<li>Keep the game image centered at maximum 8:7 aspect; do not cover its pixels.</li>
+<li>Keep the game image centered at maximum 4:3 aspect; do not cover its pixels.</li>
 <li>Place unboxed meters in the dark right gutter. Use couch-readable values, sparklines, clear EMU / DRAW labels, and thin separators without a panel background.</li>
 <li>Keep ROM identity and existing status in the left gutter. Unboxed meters must not shrink the game or displace pause controls.</li>
 <li>Show a small <code>PERF ON</code> marker only while enabled.</li>
@@ -62,7 +62,7 @@
 <li>Keep the layout identical across engines. Only the engine badge and live meter values change.</li>
 </ul>
 
-<h2>27 October device-sized layout</h2><p>The Native C++ renderer now uses a centered 8:7 Android surface sized from the actual window dimensions. Side gutters are left for the responsive WebView panels. Shared CSS derives image bounds and gutter width from the WebView viewport, with top/bottom gutters for portrait viewports. The updated build passed and a Native profile on Cast1 shows the image and side panels aligned. The Pixel profile job was cancelled while the phone was locked. <a href="../performance/2026-10-26/wasm-vs-native/evidence/cast1-native-responsive-layout-2026-10-27/">Cast1 responsive-layout evidence</a>.</p>
+<h2>27 October device-sized layout</h2><p>The Native C++ renderer now uses a centered 4:3 Android surface sized from the actual window dimensions. Side gutters are left for the responsive WebView panels. Shared CSS derives image bounds and gutter width from the WebView viewport, with top/bottom gutters for portrait viewports. The updated build passed and a Native profile on Cast1 shows the image and side panels aligned. The Pixel profile job was cancelled while the phone was locked. <a href="../performance/2026-10-26/wasm-vs-native/evidence/cast1-native-responsive-layout-2026-10-27/">Cast1 responsive-layout evidence</a>.</p>
 
 <h2>Acceptance criteria</h2><ul>
 <li>All four apps expose the same overlay, metric names, precision, and remote toggle.</li>

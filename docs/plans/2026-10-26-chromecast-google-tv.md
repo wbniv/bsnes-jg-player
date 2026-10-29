@@ -65,17 +65,17 @@ The icon designs have since been updated to distinguish the Mandelbrot-only play
 
 ## Screen mockups
 
-The player uses the largest centered **8:7 image that fits the TV** (the source frame is 256×224). On a 1920×1080 display this is 1234×1080; the remaining 343-pixel gutters carry status and remote hints. These measurements preserve the source image's square-pixel aspect ratio without cropping or stretching. The gameplay canvas is not reduced to make room for a permanent toolbar. The menu uses the right gutter on widescreen TVs, keeping the full game image visible; only narrow screens fall back to a temporary centered overlay.
+The player uses the largest centered **4:3 SNES image that fits the TV**. The source frame is 256×224 samples (8:7 grid), horizontally expanded for the traditional television presentation. On a 1920×1080 display the image is 1440×1080, leaving 240-pixel gutters for status and remote hints. The gameplay canvas is not reduced to make room for a permanent toolbar. The menu uses the right gutter on widescreen TVs, keeping the full game image visible; only narrow screens fall back to a temporary centered overlay.
 
 ### Playing: image area at maximum size
 
-![High-fidelity 1920×1080 Google TV gameplay mockup with 1234×1080 game image and compact side-gutter status](assets/chromecast-play-mockup.svg)
+![High-fidelity 1920×1080 Google TV gameplay mockup with a 1440×1080 4:3 game image and compact side-gutter status](assets/chromecast-play-mockup.svg)
 
 ### Paused: remote actions in the unused side gutter
 
 ![High-fidelity paused Google TV mockup with D-pad focused controls beside the unobscured game image](assets/chromecast-pause-mockup.svg)
 
-The shipped layout follows these mockups: no permanent bottom bar or translucent HUD over the SNES picture. Branding, running status, source dimensions, and the Back hint stay in the unused side gutters on widescreen output. Back pauses or resumes; the pause menu is reachable from the remote and keeps focus visible. The verification state replaces the Verify action with progress and Cancel, using the same side card. On narrower displays, status pills and the card move over the picture because no side gutter is available; this does not change the 8:7 scaling rule.
+The shipped layout follows these mockups: no permanent bottom bar or translucent HUD over the SNES picture. Branding, running status, source dimensions, and the Back hint stay in the unused side gutters on widescreen output. Back pauses or resumes; the pause menu is reachable from the remote and keeps focus visible. The verification state replaces the Verify action with progress and Cancel, using the same side card. On narrower displays, status pills and the card move over the picture because no side gutter is available; this does not change the 4:3 display rule.
 
 The app launches directly into the self-running ROM. Back opens the pause overlay; D-pad and Select navigate its actions. Back from that overlay resumes playback. Initial input work is limited to these app actions. Keep core/ROM provenance in the report or an unobtrusive information view.
 

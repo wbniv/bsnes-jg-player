@@ -67,7 +67,7 @@ A minor point: "I'm Feeling Lucky" is the label of Google's search button. That 
 
 ## Design
 
-**2026‑10‑27 preview sizing update:** the first Browse mockup showed the selected 8:7 image at 512×448 px inside a 668 px pane, leaving 78 px of unused space on each side. Enlarge it to 640×560 px (2.5× the 256×224 source) in a 640 px image stage, and put the title, category, Mode 7 status, favorite action, description, controls and file details in a compact rail alongside it. This uses almost all of the available preview width while preserving the complete image and its aspect ratio: no crop, stretch or decorative side padding. The list narrows to keep the image and details legible within the same safe area.
+**2026‑10‑27 preview sizing update:** the first Browse mockup showed a 4:3 SNES display at 512×384 px inside a 668 px pane, leaving 78 px of unused space on each side. Enlarge it to 640×480 px in a 640 px image stage, and put the title, category, Mode 7 status, favorite action, description, controls and file details in a compact rail alongside it. This uses almost all of the available preview width while preserving the complete 4:3 television picture: no crop or distortion. The raw 256×224 sample grid (8:7) is aspect-corrected for display. The list narrows to keep the image and details legible within the same safe area.
 
 **2026‑10‑27 details fit update:** the selected ROM description and controls must wrap in full; do not replace their endings with ellipses while there is unused space in the rail. Keep the favorite and Play actions at the rail's bottom. If a particularly long description cannot fit, scroll the details rail independently while keeping the large screenshot visible. The revised mockups below illustrate this behavior.
 
