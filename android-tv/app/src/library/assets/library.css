@@ -9,19 +9,19 @@ button:focus,input:focus,.rom:focus,.chip:focus{outline:2px solid #fff;outline-o
 #hud{display:none}
 #library{position:absolute;inset:0;padding:5vh 5vw;display:flex;flex-direction:column;gap:1vh;background:radial-gradient(ellipse at 80% 20%,#1b2939,#0b1018 70%)}
 #library[hidden]{display:none}
-.top{height:10vh;min-height:46px;display:flex;align-items:center;gap:2vw}
+.top{height:auto;min-height:0;display:flex;align-items:center;gap:2vw}
 .top>div{min-width:0;flex:1}
 h1{margin:0;font-size:18px;line-height:1.1}
 .top p{margin:2px 0 0;color:var(--muted);font-size:12px}
 .top button{min-width:150px;min-height:28px;font-size:14px}
 .search{display:flex;align-items:center;gap:6px;width:32vw;color:var(--muted);font-size:10px}
 .search input{width:100%;height:27px;padding:0 7px;border:1px solid var(--line);border-radius:5px;background:#0c121a}
-.filters{height:6vh;min-height:25px;display:flex;gap:5px;overflow:hidden;align-items:center}
-.chip{flex:none;min-height:24px;padding:3px 9px;border-radius:12px;font-size:11px}
+.filters{height:auto;min-height:26px;max-height:34px;display:flex;gap:5px;overflow-x:auto;overflow-y:hidden;align-items:center}
+.chip{flex:none;min-height:24px;padding:2px 8px;border-radius:12px;font-size:11px}
 .chip.active{color:#06111b;background:#d9efff;border-color:#d9efff}
 .content{display:grid;grid-template-columns:57% 1fr;gap:2vw;min-height:0;flex:1}
 .results{min-height:0;display:flex;flex-direction:column}
-#result-count{height:20px;flex:none;color:var(--muted);font-size:11px}
+
 .rom-list{min-height:0;flex:1;overflow:hidden;display:flex;flex-direction:column;gap:2px}
 .rom{display:flex;align-items:center;text-align:left;gap:8px;min-height:9.2vh;padding:3px 6px;background:#121a24;border:1px solid transparent;border-radius:4px}
 .rom img{width:48px;height:42px;flex:none;object-fit:cover;image-rendering:pixelated;background:#080b10}
@@ -90,13 +90,13 @@ body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;pa
 
 
 /* Shared launcher-view picker and screenshot-first cartridge browser. */
-.launcher-views{display:flex;align-items:center;gap:6px;min-height:42px;flex:0 0 auto;overflow-x:auto;scrollbar-width:none}
+.launcher-views{display:flex;align-items:center;gap:6px;min-height:31px;flex:0 0 auto;overflow-x:auto;scrollbar-width:none}
 .launcher-views::-webkit-scrollbar{display:none}
-.launcher-view{display:flex;align-items:center;gap:8px;min-height:36px;padding:4px 12px;border:1px solid var(--line);border-radius:8px;background:#101720;color:var(--muted);text-align:left;font-size:12px}
+.launcher-view{display:flex;align-items:center;gap:7px;min-height:27px;padding:2px 8px;border:1px solid var(--line);border-radius:8px;background:#101720;color:var(--muted);text-align:left;font-size:12px}
 .launcher-view .view-number{color:var(--blue);font-weight:900}
 .launcher-view.active{border-color:#60b9eb;background:#14283a;color:var(--fg)}
-.launcher-view:focus{z-index:1}
-.view-hint{margin-left:auto;padding-right:6px;color:var(--muted);font-size:10px;white-space:nowrap}
+.launcher-view:focus,.chip:focus{z-index:2;transform:none;outline:2px solid #fff;outline-offset:-3px}
+.treemap-total{margin-left:auto;padding:0 8px;color:var(--muted);font:10px ui-monospace,monospace;white-space:nowrap}
 #filters{flex:0 0 auto}
 #quick-view[hidden],#cartridge-view[hidden]{display:none}
 .cartridge-view{min-height:0;flex:1;display:flex;flex-direction:column;gap:8px;overflow:hidden}
@@ -152,18 +152,18 @@ body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;pa
 /* ROM Treemap view: nested tile geometry is normalized to the map box. */
 #quick-view[hidden],#cartridge-view[hidden],#treemap-view[hidden]{display:none}
 .treemap-view{min-height:0;flex:1;display:flex;flex-direction:column;gap:7px;overflow:hidden}
-.treemap-heading{display:flex;align-items:center;gap:12px;flex:0 0 auto;min-width:0}
-.treemap-heading h2{margin:0;font-size:17px;white-space:nowrap}
-.treemap-heading #treemap-total{color:var(--muted);font-size:11px;white-space:nowrap}
-.treemap-key{margin-left:auto;color:#aec0d1;font:9px ui-monospace,monospace;white-space:nowrap}
+
+
+
+
 .treemap-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,26%);gap:12px;min-width:0;min-height:0;flex:1}
 .treemap-map-column{position:relative;display:flex;flex-direction:column;min-width:0;min-height:0}
-.treemap-legend{display:flex;align-items:center;gap:8px;min-height:27px;max-height:32px;flex:0 0 auto;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;white-space:nowrap}
-.treemap-legend::-webkit-scrollbar{display:none}
-.treemap-legend-item{display:inline-flex;align-items:center;gap:4px;color:#bdcbd8;font-size:9px;white-space:nowrap}
-.treemap-swatch{width:9px;height:9px;flex:none;border-radius:2px;box-shadow:inset 0 0 0 1px #ffffff40}
+
+
+
+
 .treemap-map{position:relative;isolation:isolate;min-width:0;min-height:0;flex:1;overflow:hidden;border:1px solid #53677d;background:#0a1018}
-.treemap-tile{position:absolute;display:block;min-width:0;min-height:0;padding:0;border:0;border-radius:0;overflow:hidden;text-align:left;line-height:1.1;box-shadow:inset 0 0 0 1px #091019a8;color:#fff;text-shadow:0 1px 3px #000,0 0 5px #000;font-size:10px}
+.treemap-tile{position:absolute;display:block;min-width:0;min-height:0;padding:0;border:0;border-radius:0;overflow:hidden;text-align:left;line-height:1.1;box-shadow:inset 0 0 0 1px #ffffff70;color:#fff;text-shadow:0 1px 3px #000,0 0 5px #000;font-size:10px}
 .treemap-tile:focus{z-index:3;transform:none;outline:3px solid #fff;outline-offset:-3px}
 .treemap-tile[aria-selected="true"]{z-index:2;box-shadow:inset 0 0 0 2px #fff,0 0 0 2px #fff}
 .treemap-tile .tile-copy{position:absolute;inset:5px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;pointer-events:none}
@@ -185,7 +185,7 @@ body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;pa
 #treemap-empty{margin:auto;text-align:center;color:var(--muted)}
 #treemap-empty[hidden],#treemap-content[hidden]{display:none}
 @media(max-width:760px),(max-aspect-ratio:1/1){
-  .treemap-key{display:none}
+
   .treemap-content{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;overflow:auto}
   .treemap-map-column{min-height:38vh}
   .treemap-details{display:grid;grid-template-columns:minmax(76px,24%) minmax(0,1fr);grid-template-rows:auto;column-gap:9px;align-content:start;overflow:visible}
@@ -213,18 +213,16 @@ body.playing #hud{display:block;position:absolute;inset:0;pointer-events:none;pa
   .top #lucky{grid-area:lucky;min-height:26px;padding:3px 7px;font-size:10px;white-space:nowrap}
   .top .search{grid-area:search;width:auto;min-width:0;gap:5px;font-size:9px}
   .top .search input{height:26px;min-width:0;padding:0 6px;font-size:10px}
-  .launcher-views{min-height:27px;gap:4px}
-  .launcher-view{min-height:24px;padding:2px 6px;gap:5px;font-size:9px;line-height:1.05}
-  .launcher-view small{font-size:8px}
-  .view-hint{display:none}
+  .launcher-views{min-height:21px;gap:4px}
+  .launcher-view{min-height:19px;padding:1px 6px;gap:5px;font-size:9px;line-height:1.05}
   .filters{height:auto;min-height:26px;max-height:28px;gap:4px}
   .chip{min-height:23px;padding:2px 7px;font-size:9px}
   footer{display:none}
   .treemap-view{gap:3px}
-  .treemap-heading h2{font-size:12px}
-  .treemap-heading #treemap-total{font-size:9px}
-  .treemap-legend{min-height:19px;max-height:21px;gap:5px}
-  .treemap-legend-item{font-size:8px}
+
+
+
+
   .treemap-map-column{min-height:0}
   .treemap-details{padding:5px}
 }

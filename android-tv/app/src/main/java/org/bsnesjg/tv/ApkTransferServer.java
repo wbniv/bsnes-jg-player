@@ -145,7 +145,7 @@ final class ApkTransferServer implements AutoCloseable {
     }
 
     private String filename() {
-        if (BuildConfig.NATIVE_ENGINE && BuildConfig.ROM_LIBRARY) return "bsnes-jg-native.apk";
+        if (BuildConfig.NATIVE_ENGINE && BuildConfig.ROM_LIBRARY) return "llvm-65816-torture-test-suite-snes.apk";
         if (BuildConfig.NATIVE_ENGINE) return "mandelbrot-native.apk";
         if (BuildConfig.ROM_LIBRARY) return "bsnes-jg-wasm.apk";
         return "bsnes-jg-wasm-player.apk";

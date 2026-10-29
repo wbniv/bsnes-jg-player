@@ -1,6 +1,8 @@
 (function () {
   "use strict";
   var pause = document.getElementById("pause-menu");
+  var appVersion = window.BjgAndroid && window.BjgAndroid.getAppVersion ? window.BjgAndroid.getAppVersion() : "";
+  document.querySelectorAll("[data-app-version]").forEach(function (element) { element.textContent = appVersion ? "v" + appVersion : ""; });
   var subtitle = document.getElementById("pause-subtitle");
   var resume = document.getElementById("tv-resume");
   var verify = document.getElementById("tv-verify");

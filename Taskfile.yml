@@ -3,6 +3,10 @@ version: '3'
 # bsnes-jg-wasm — build the gate's cycle-accurate SNES core to WebAssembly and
 # serve a page that runs the +mos-a16 homebrew demos.
 
+includes:
+  chromecast:
+    taskfile: Taskfile.chromecast.yml
+
 tasks:
   default:
     desc: List available tasks

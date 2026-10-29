@@ -1,0 +1,141 @@
+version: '3'
+
+# Consumer entry points for the shared Chromecast coordinator. Device
+# ownership and implementation stay in ../chromecast-coordinator; this file
+# only forwards the project's approved task surface to its CLI.
+tasks:
+  devices:
+    desc: "List coordinator-managed Chromecast devices"
+    silent: true
+    env: &chromecast_env
+      WF_CC_DEVICE: '{{.DEVICE | default ""}}'
+      WF_CC_POOL: '{{.POOL | default ""}}'
+      WF_CC_JOB: '{{.JOB | default ""}}'
+      WF_CC_BATCH: '{{.BATCH | default ""}}'
+      WF_CC_OUT: '{{.OUT | default ""}}'
+      WF_CC_CLIPBOARD: '{{.CLIPBOARD | default ""}}'
+      WF_CC_TEXT: '{{.TEXT | default ""}}'
+      WF_CC_WORKFLOW: '{{.WORKFLOW | default ""}}'
+      WF_CC_APP: '{{.APP | default ""}}'
+      WF_CC_SCENE: '{{.SCENE | default ""}}'
+      WF_CC_APK: '{{.APK | default ""}}'
+      WF_CC_ACTIVITY: '{{.ACTIVITY | default ""}}'
+      WF_CC_REPLACE: '{{.REPLACE | default ""}}'
+      WF_CC_APK_ARGS: '{{.CLI_ARGS}}'
+      WF_CC_STAGE: '{{.STAGE | default ""}}'
+      WF_CC_REINSTALL: '{{.REINSTALL | default ""}}'
+      WF_CC_RESET_LAUNCHER_DATA: '{{.RESET_LAUNCHER_DATA | default ""}}'
+      WF_CC_REQUIRE_ABI: '{{.REQUIRE_ABI | default ""}}'
+      WF_CC_WARMUP: '{{.WARMUP | default ""}}'
+      WF_CC_RUNS: '{{.RUNS | default ""}}'
+      WF_CC_DURATION: '{{.DURATION | default ""}}'
+      WF_CC_WATCH: '{{.WATCH | default ""}}'
+      WF_CC_VALIDATOR: '{{.VALIDATOR | default ""}}'
+      WF_CC_ASYNC: '{{.ASYNC | default ""}}'
+      WF_CC_RECIPE: '{{.RECIPE | default ""}}'
+      WF_CC_TRACE: '{{.TRACE | default ""}}'
+      WF_CC_PAIRING_ENDPOINT: '{{.PAIRING_ENDPOINT | default ""}}'
+      WF_CC_ACCEPT_NEW_HOST: '{{.ACCEPT_NEW_HOST | default ""}}'
+      WF_CC_ADDRESS: '{{.ADDRESS | default ""}}'
+      WF_CC_REBOOT: '{{.REBOOT | default ""}}'
+      WF_CC_ACK_WIRELESS_DEBUG_LOSS: '{{.ACK_WIRELESS_DEBUG_LOSS | default ""}}'
+      WF_CC_METHOD: '{{.METHOD | default ""}}'
+      WF_CC_REASON: '{{.REASON | default ""}}'
+      WF_CC_FREQUENCY: '{{.FREQUENCY | default ""}}'
+      WF_CC_CALLGRAPH: '{{.CALLGRAPH | default ""}}'
+      WF_CC_RETRY: '{{.RETRY | default ""}}'
+      WF_CC_KEYS: '{{.KEYS | default ""}}'
+      WF_CC_MILLISECONDS: '{{.MILLISECONDS | default ""}}'
+      WF_CC_INTERACTIVE: '{{.INTERACTIVE | default ""}}'
+      WF_CC_RECORD: '{{.RECORD | default ""}}'
+      WF_CC_PANEL: '{{.PANEL | default ""}}'
+      WF_CC_SAMPLE: '{{.SAMPLE | default ""}}'
+      WF_CC_CONDITIONS: '{{.CONDITIONS | default ""}}'
+      WF_CC_CHANGE: '{{.CHANGE | default ""}}'
+      WF_CC_STRESS: '{{.STRESS | default ""}}'
+      WF_CC_COMPONENT: '{{.COMPONENT | default ""}}'
+      WF_CC_ENABLED: '{{.ENABLED | default ""}}'
+      WF_CC_ACTIVATE_ON_SLEEP: '{{.ACTIVATE_ON_SLEEP | default ""}}'
+      WF_CC_IDLE_MINUTES: '{{.IDLE_MINUTES | default ""}}'
+      WF_CC_SLEEP_MINUTES: '{{.MINUTES | default ""}}'
+      WF_CC_WAIT_MINUTES: '{{.WAIT_MINUTES | default ""}}'
+      WF_CC_SETTING_ID: '{{.SETTING_ID | default ""}}'
+      WF_CC_VALUE: '{{.VALUE | default ""}}'
+      WF_CC_OVERRIDES: '{{.OVERRIDES | default ""}}'
+      WF_CC_ACTION: '{{.ACTION | default ""}}'
+      WF_CC_FRAME_WIDTH: '{{.FRAME_WIDTH | default ""}}'
+      WF_CC_FRAME_HEIGHT: '{{.FRAME_HEIGHT | default ""}}'
+      WF_CC_X: '{{.X | default ""}}'
+      WF_CC_Y: '{{.Y | default ""}}'
+      WF_CC_X2: '{{.X2 | default ""}}'
+      WF_CC_Y2: '{{.Y2 | default ""}}'
+      WF_CC_DURATION_MS: '{{.DURATION_MS | default ""}}'
+      WF_CC_USER: '{{if eq (.USER | default "") (env "USER")}}{{else}}{{.USER}}{{end}}'
+      WF_CC_YES: '{{.YES | default ""}}'
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task devices"]
+
+  queue:
+    desc: "Inspect shared Chromecast queue and reservations"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task queue"]
+
+  submit:
+    desc: "Submit a coordinator-owned device job or batch"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task submit"]
+
+  check:
+    desc: "Run a coordinator-owned app or device check"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task check"]
+
+  profile:
+    desc: "Collect a coordinator-owned device profile"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task profile"]
+
+  record:
+    desc: "Record a coordinator-owned interactive device session"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task record"]
+
+  capture:
+    desc: "Capture the current display through a coordinator-owned job"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task capture"]
+
+  readd:
+    desc: "Reconnect an enrolled device through the coordinator"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task readd"]
+
+  watch:
+    desc: "Watch an owned coordinator job or batch"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task watch"]
+
+  evidence:
+    desc: "Download verified coordinator evidence for a job or batch"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task evidence"]
+
+  message:
+    desc: "Send a message to an owned coordinator job"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task message"]
+
+  cancel:
+    desc: "Cancel only a coordinator job owned by this session"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task cancel"]

@@ -68,6 +68,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle state) {
         super.onCreate(state);
+        android.util.Log.i("BJG_TV_METRIC", "{\"event\":\"app_start\",\"app_version\":\"" + BuildConfig.VERSION_NAME + "\",\"version_code\":" + BuildConfig.VERSION_CODE + "}");
         // Android TV uses its D-pad directly; it never renders the optional
         // phone-controller overlay. Keep this explicit for device diagnostics.
         android.util.Log.i("BJG_TV_METRIC", "phone controller: off (Android TV remote input)");
@@ -169,7 +170,8 @@ public class MainActivity extends Activity {
         private int texture, program, boundsLocation, frame = 0, w = 0, h = 0;
         private boolean referenceChecked = false;
         private boolean pixelSampleReported = false;
-        private boolean coreRecoveryAttempted = false;
+        private long lastRendererDiagnosticNs;
+        private boolean surfaceCreated = false;
         private volatile boolean hasRom = false;
         private volatile String romSlug = "";
         private volatile float[] gameRect = {0f, 0f, 1f, 1f};
@@ -186,16 +188,18 @@ public class MainActivity extends Activity {
         private final ArrayList<Double> callbackIntervalsMs = new ArrayList<>();
         @Override public void onSurfaceCreated(GL10 gl, EGLConfig config) {
             GLES20.glClearColor(0,0,0,1); initGl();
+            boolean recreated = surfaceCreated;
+            surfaceCreated = true;
+            android.util.Log.i("BJG_TV_METRIC", "{\"event\":\"renderer_surface\",\"app_version\":\"" + BuildConfig.VERSION_NAME + "\",\"recreated\":" + recreated + ",\"gl_version\":\"" + GLES20.glGetString(GLES20.GL_VERSION) + "\",\"gl_vendor\":\"" + GLES20.glGetString(GLES20.GL_VENDOR) + "\",\"gl_renderer\":\"" + GLES20.glGetString(GLES20.GL_RENDERER) + "\"}");
             byte[] rom = activeRomBytes;
             String slug = activeRomSlug;
-            if (hasRom && rom != null && !slug.isEmpty()) {
+            if (recreated && hasRom && rom != null && !slug.isEmpty()) {
                 // GLSurfaceView can recreate its EGL context after the app is
                 // backgrounded or the display changes. Rebuild the emulator
                 // on this GL thread too; its libco coroutines belong to the
                 // thread that powered the core.
                 boolean restored = NativeEngine.load(getAssets(), rom, slug + ".sfc");
                 setRom(restored ? slug : "", restored);
-                coreRecoveryAttempted = true;
                 android.util.Log.i("BJG_NATIVE", "surface_recreated rom=" + slug + " restored=" + restored);
             }
         }
@@ -205,11 +209,11 @@ public class MainActivity extends Activity {
             GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D,GLES20.GL_TEXTURE_MAG_FILTER,GLES20.GL_NEAREST);
             String vs="attribute vec2 p; varying vec2 uv; uniform vec4 bounds; void main(){gl_Position=vec4(p,0.,1.);uv=(p-bounds.xy)/bounds.zw;}";
             String fs="precision mediump float; varying vec2 uv; uniform sampler2D tex; void main(){gl_FragColor=texture2D(tex,vec2(uv.x,1.-uv.y));}";
-            int v=shader(GLES20.GL_VERTEX_SHADER,vs),f=shader(GLES20.GL_FRAGMENT_SHADER,fs);program=GLES20.glCreateProgram();GLES20.glAttachShader(program,v);GLES20.glAttachShader(program,f);GLES20.glLinkProgram(program);boundsLocation=GLES20.glGetUniformLocation(program,"bounds");
+            int v=shader(GLES20.GL_VERTEX_SHADER,vs),f=shader(GLES20.GL_FRAGMENT_SHADER,fs);program=GLES20.glCreateProgram();GLES20.glAttachShader(program,v);GLES20.glAttachShader(program,f);GLES20.glLinkProgram(program);int[] status=new int[1];GLES20.glGetProgramiv(program,GLES20.GL_LINK_STATUS,status,0);boundsLocation=GLES20.glGetUniformLocation(program,"bounds");if(status[0]==0)android.util.Log.e("BJG_TV_METRIC","{\"event\":\"renderer_program_link_failed\",\"log\":\""+GLES20.glGetProgramInfoLog(program).replace("\\","\\\\").replace("\"","\\\"").replace("\n"," ")+"\"}");
         }
-        private int shader(int type,String src){int s=GLES20.glCreateShader(type);GLES20.glShaderSource(s,src);GLES20.glCompileShader(s);return s;}
+        private int shader(int type,String src){int s=GLES20.glCreateShader(type);GLES20.glShaderSource(s,src);GLES20.glCompileShader(s);int[] status=new int[1];GLES20.glGetShaderiv(s,GLES20.GL_COMPILE_STATUS,status,0);if(status[0]==0)android.util.Log.e("BJG_TV_METRIC","{\"event\":\"renderer_shader_compile_failed\",\"type\":"+type+",\"log\":\""+GLES20.glGetShaderInfoLog(s).replace("\\","\\\\").replace("\"","\\\"").replace("\n"," ")+"\"}");return s;}
         void resetPerformanceWindow() { sampleStartNs=0;lastCallbackNs=0;sampleSteps=0;sampleDraws=0;peakCredit=0;coreSamplesMs.clear();drawSamplesMs.clear();callbackIntervalsMs.clear(); }
-        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;pixelSampleReported=false;coreRecoveryAttempted=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
+        void setRom(String slug, boolean loaded) { frame=0;credit=0;lastNs=0;referenceChecked=false;pixelSampleReported=false;romSlug=slug;hasRom=loaded;paused=false;resetPerformanceWindow(); }
         void pauseGame() { paused=true; }
         void resumeGame() { paused=false; }
         void restartGame() { NativeEngine.reset();frame=0;credit=0;lastNs=0;referenceChecked=false;paused=false;resetPerformanceWindow(); }
@@ -250,14 +254,6 @@ public class MainActivity extends Activity {
         }
         @Override public void onDrawFrame(GL10 gl){
             if(!hasRom){GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);return;}
-            if(!NativeEngine.isLoaded()&&!coreRecoveryAttempted){
-                coreRecoveryAttempted=true;
-                byte[] rom=activeRomBytes;String slug=activeRomSlug;
-                boolean restored=rom!=null&&!slug.isEmpty()&&NativeEngine.load(getAssets(),rom,slug+".sfc");
-                android.util.Log.i("BJG_NATIVE","inactive_core_recovery rom="+slug+" restored="+restored);
-                if(restored){setRom(slug,true);coreRecoveryAttempted=true;}
-                else paused=true;
-            }
             long now=SystemClock.elapsedRealtimeNanos();if(sampleStartNs==0)sampleStartNs=now;if(lastCallbackNs>0)callbackIntervalsMs.add((now-lastCallbackNs)/1_000_000.0);lastCallbackNs=now;if(lastNs==0)lastNs=now;credit+=Math.min(.25,(now-lastNs)/1e9)*60.0988;lastNs=now;peakCredit=Math.max(peakCredit,credit);
             if(!paused){int steps=Math.min(4,(int)credit);for(int i=0;i<steps;i++){long coreStart=SystemClock.elapsedRealtimeNanos();NativeEngine.step();long coreEnd=SystemClock.elapsedRealtimeNanos();coreSamplesMs.add((coreEnd-coreStart)/1_000_000.0);sampleSteps++;frame++;credit-=1;if(frame==5800&&"mandel-display".equals(romSlug)){int got=NativeEngine.wramWord(0x580);android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"correctness\",\"frame\":5800,\"offset\":1408,\"expected\":8271,\"actual\":"+got+",\"status\":\""+(got==0x204f?"pass":"fail")+"\"}");}}}
             w=NativeEngine.width();h=NativeEngine.height();if(w<=0||h<=0)return;long drawStart=SystemClock.elapsedRealtimeNanos();NativeEngine.copyPixels(rgba);rgba.position(0);if(!pixelSampleReported&&frame>=30){int lit=0,samples=0;for(int y=0;y<h;y+=8)for(int x=0;x<w;x+=8){int p=(y*w+x)*4;samples++;if(((rgba.get(p)&255)|(rgba.get(p+1)&255)|(rgba.get(p+2)&255))!=0)lit++;}android.util.Log.i("BJG_TV_METRIC","{\"event\":\"native_rgba_sample\",\"rom\":\""+romSlug+"\",\"frame\":"+frame+",\"width\":"+w+",\"height\":"+h+",\"lit_samples\":"+lit+",\"samples\":"+samples+"}");pixelSampleReported=true;}
@@ -273,7 +269,7 @@ public class MainActivity extends Activity {
             verticesBuffer.position(0);for(float vertex:drawVertices)verticesBuffer.putFloat(vertex);verticesBuffer.position(0);
             int loc=GLES20.glGetAttribLocation(program,"p");GLES20.glEnableVertexAttribArray(loc);GLES20.glVertexAttribPointer(loc,2,GLES20.GL_FLOAT,false,0,verticesBuffer);
             GLES20.glTexImage2D(GLES20.GL_TEXTURE_2D,0,GLES20.GL_RGBA,w,h,0,GLES20.GL_RGBA,GLES20.GL_UNSIGNED_BYTE,rgba);GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP,0,4);
-            long drawEnd=SystemClock.elapsedRealtimeNanos();drawSamplesMs.add((drawEnd-drawStart)/1_000_000.0);sampleDraws++;publishPerformance(drawEnd);
+            long drawEnd=SystemClock.elapsedRealtimeNanos();drawSamplesMs.add((drawEnd-drawStart)/1_000_000.0);sampleDraws++;if(drawEnd-lastRendererDiagnosticNs>=5_000_000_000L){int lit=0,samples=0;for(int y=0;y<h;y+=8)for(int x=0;x<w;x+=8){int p=(y*w+x)*4;samples++;if(((rgba.get(p)&255)|(rgba.get(p+1)&255)|(rgba.get(p+2)&255))!=0)lit++;}int glError=GLES20.glGetError();android.util.Log.i("BJG_TV_METRIC",String.format(Locale.US,"{\"event\":\"renderer_health\",\"app_version\":\"%s\",\"rom\":\"%s\",\"frame\":%d,\"width\":%d,\"height\":%d,\"lit_samples\":%d,\"samples\":%d,\"game_rect\":[%.4f,%.4f,%.4f,%.4f],\"program\":%d,\"bounds_location\":%d,\"gl_error\":%d}",BuildConfig.VERSION_NAME,romSlug,frame,w,h,lit,samples,rect[0],rect[1],rect[2],rect[3],program,boundsLocation,glError));lastRendererDiagnosticNs=drawEnd;}publishPerformance(drawEnd);
         }
     }
 
@@ -425,6 +421,9 @@ public class MainActivity extends Activity {
     }
 
     private final class TvBridge {
+        @JavascriptInterface
+        public String getAppVersion() { return BuildConfig.VERSION_NAME; }
+
         @JavascriptInterface
         public void setGameRect(double left, double top, double width, double height) {
             if (!BuildConfig.NATIVE_ENGINE || glView == null || !Double.isFinite(left)

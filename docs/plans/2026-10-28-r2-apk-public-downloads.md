@@ -6,16 +6,18 @@
 
 Give people a stable public HTTPS page for downloading the SNES Android app when nearby transfer or the temporary same-Wi-Fi QR transfer is unavailable or unsuccessful. The R2 page must offer the current and previous release, clearly identify the Native library and Native player APKs, and state the version and SHA-256 for each file.
 
+Make the release page discoverable directly from [`https://biohack.net/snes/`](https://biohack.net/snes/): add a clearly labeled Android APK download link and a scannable QR code that opens the stable R2 release page. The page offers both Native APK variants, so the QR encodes the landing-page URL rather than choosing or linking to one versioned APK.
+
 The Android library APKs bundle the ROM catalog, ROM files, and preview art; downloading either library APK also delivers those assets. The standalone player APKs contain only their configured single-ROM app build. The web build remains a web app and is not represented as an APK.
 
 ## Current state
 
-- The current Android build can produce four artifacts, but Android WASM is too slow for usable playback and is excluded from public distribution. The public release contains only `bsnes-jg-native.apk` (Native library) and `mandelbrot-native.apk` (Native player).
+- The current Android build can produce four artifacts, but Android WASM is too slow for usable playback and is excluded from public distribution. The public release contains only `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` (Native library) and `bsnes-jg_mandelbrot-v<version>.apk` (Native player).
 - The Native library APK includes the published ROM assets. Its payload and SHA-256 must be recorded per release. The Native player contains only its configured single-ROM build.
 - Browser WASM remains a separate web target and is included in the web release; this policy does not remove it.
 - `versionName` and `versionCode` are currently fixed in Gradle. The release workflow needs a real versioning policy and must reject duplicate or non-increasing Android `versionCode` values.
 - Controlled device builds currently use the local debug signing key. Public releases need a durable, backed-up release key and a single signing path so future updates install over earlier public versions.
-- Proposed public R2 host: `https://downloads.biohack.net/bsnes-jg/`. The R2 bucket and custom-domain binding are not provisioned yet; confirm the DNS route and Cloudflare ownership during setup. The public project presence should link from the existing `biohack.net` SNES area and from `https://wald3n.com/open-source`.
+- Proposed public R2 host: `https://downloads.biohack.net/bsnes-jg/`. The R2 bucket and custom-domain binding are not provisioned yet; confirm the DNS route and Cloudflare ownership during setup. The public project presence should link from the existing `biohack.net` SNES area and from `https://wald3n.com/open-source`. The `/snes/` page needs both a visible download link and a QR code to the release landing page.
 
 ## Release task contract
 
@@ -43,7 +45,7 @@ task web:release
 
 ## Public object layout
 
-Use a dedicated bucket, for example `bsnes-jg-downloads`, with the read-only custom domain `downloads.biohack.net`. Give the publishing task credentials that can write only to this bucket. Serve the small static download page and manifest from the same R2 prefix as the APKs, so the QR, version index, and APK links share one HTTPS origin. Add a discoverable link to this page from the existing SNES area on `biohack.net` and a project entry on `wald3n.com/open-source` linking to both the source repository and the download page.
+Use a dedicated bucket, for example `bsnes-jg-downloads`, with the read-only custom domain `downloads.biohack.net`. Give the publishing task credentials that can write only to this bucket. Serve the small static download page and manifest from the same R2 prefix as the APKs, so the QR, version index, and APK links share one HTTPS origin. On `https://biohack.net/snes/`, add a prominent, clearly named Android APK download link and a QR code that encodes `https://downloads.biohack.net/bsnes-jg/`; keep the human-readable URL beside the QR. The QR must lead to the variant-selection page, where visitors can choose Native library or Native player and review version, size, and SHA-256. Also add a project entry on `wald3n.com/open-source` linking to both the source repository and the download page.
 
 Proposed keys:
 
@@ -51,8 +53,8 @@ Proposed keys:
 bsnes-jg/index.html
 bsnes-jg/current.json
 bsnes-jg/releases/<version>/release.json
-bsnes-jg/releases/<version>/bsnes-jg-native.apk
-bsnes-jg/releases/<version>/mandelbrot-native.apk
+bsnes-jg/releases/<version>/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk
+bsnes-jg/releases/<version>/bsnes-jg_mandelbrot-v<version>.apk
 ```
 
 There are no Android WASM APK keys: those builds are too slow for usable playback and are excluded from distribution. Browser WASM remains the web app on biohack.net; this R2 release prefix contains the download page/manifest and the two Native Android APKs.
@@ -77,7 +79,7 @@ For each successful release, shift the old current to previous and remove the ve
 
 The static R2 page is the public fallback for Android phone/tablet and Chromecast. Direct Android Sharesheet/Quick Share and the temporary local QR route remain the preferred transfer methods. If those routes cannot transfer the APK, the app can show a QR for the public download page; the recipient selects the Native library or Native player APK there. This public route works across different networks and delivers the latest signed release, which may be newer than the sender's currently installed APK.
 
-The QR must encode only the stable HTTPS landing-page URL, never an APK filesystem path or the temporary LAN server address. Keep a short human-readable URL on screen as well. The web app's download action points to the same page; it does not attempt to read an installed Android APK.
+The in-app public QR and the QR on `biohack.net/snes/` must encode only the stable HTTPS landing-page URL, never an APK filesystem path or the temporary LAN server address. Keep a human-readable URL beside each QR. The SNES page's download link and QR both lead to the same variant-selection page; the web app does not attempt to read an installed Android APK.
 
 ![Phone, TV, and browser clients download signed APK artifacts from the public R2 page](assets/r2-apk-download-topology.svg)
 
@@ -85,7 +87,7 @@ The QR must encode only the stable HTTPS landing-page URL, never an APK filesyst
 
 - Establish one durable release signing key, owner, backup, and recovery procedure before the first public upload. Do not publish the controlled-build debug-signed APKs.
 - Keep package IDs stable within each distributed variant. Increment `versionCode` monotonically and set one release `versionName` across both APKs.
-- Preserve recognizable variant names in the landing page and downloaded filename: Native library and Native player. Android WASM builds are not public release variants because their playback performance is unusable.
+- Preserve the app titles in downloaded filenames: `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` for the Native library, and `bsnes-jg_mandelbrot-v<version>.apk` for the Native player. Label the variants Native library and Native player on the landing page. Android WASM builds are not public release variants because their playback performance is unusable.
 - Before upload, inspect both APKs. Verify that the Native library APK contains the expected catalog, ROM files, and preview cards; record the verified asset counts in `release.json`. Do not claim that the Native player includes the full ROM library.
 - Report SHA-256 and byte size beside each download. After downloading, the recipient should be able to compare the advertised hash before installation.
 - Android's normal installer remains responsible for the recipient's explicit install approval. The public page transfers a file; it does not install it silently.
@@ -109,7 +111,7 @@ The QR must encode only the stable HTTPS landing-page URL, never an APK filesyst
 5. Add project-scoped `task secrets-pull` and `task secrets-bootstrap` wiring for SSM and the local `.env` cache; add `task web:r2:setup` for the project bucket/domain and least-privilege permissions.
 6. Implement `task web:release` with staged upload, public HTTPS verification, manifest-last publication, two-version pruning, and retry-safe cleanup.
 7. Add the static landing page at `downloads.biohack.net/bsnes-jg/` with two clearly named Native variants, current/previous release labels, SHA-256/size, and QR codes for the page URL.
-8. Add links to the download page from the biohack.net SNES area and `wald3n.com/open-source`; identify this repository as the emulator/player project, not as the separate packaged-upstream `bsnes-jg` APT package.
+8. After the public route passes HTTPS checks, set `PUBLIC_ANDROID_DOWNLOAD_URL=https://downloads.biohack.net/bsnes-jg/` in the biohack.net production build environment. This renders the gated download link and build-generated QR on `https://biohack.net/snes/`; invalid URLs fail the site build. Also link from `wald3n.com/open-source` to the source repository and download page. Identify this repository as the emulator/player project, not as the separate packaged-upstream `bsnes-jg` APT package.
 9. Add the public-download QR fallback to Android phone/tablet and Chromecast share flows. Use Quick Share for direct phone-to-phone transfer and local QR when both devices share a network; show the public QR when those routes are unavailable or fail. The sender never uploads the APK through this fallback; the recipient downloads the published copy from R2.
 10. Update `docs/how-to/share-the-app.md` to the verified URL and capture proof for current/previous release links, both APK files and hashes, Native library ROM payload, biohack.net and wald3n.com links, phone and TV scans, recipient install approval, and successful removal of the older third release.
 
@@ -122,7 +124,10 @@ The QR must encode only the stable HTTPS landing-page URL, never an APK filesyst
 - [ ] A new release changes the index only after both APKs have been uploaded and fetched back with matching hashes.
 - [ ] After publishing a third version, R2 contains only the current and previous release artifacts under `bsnes-jg/releases/`.
 - [ ] Failure before manifest publication leaves existing current/previous downloads intact. Failure during pruning is reported and retryable.
-- [ ] The biohack.net SNES area and wald3n.com/open-source both link to the project source and download page.
+- [ ] `https://biohack.net/snes/` displays a clearly labeled Android APK download link and QR code; both open `https://downloads.biohack.net/bsnes-jg/`, where visitors can choose either Native APK and verify its version, size, and SHA-256.
+- [ ] The `/snes/` QR is scannable from a second device, has an adjacent readable URL, and remains usable at desktop and mobile page widths.
+- [ ] The `/snes/` APK section remains absent when `PUBLIC_ANDROID_DOWNLOAD_URL` is unset, and the build rejects a configured URL outside the verified HTTPS release page.
+- [ ] `wald3n.com/open-source` links to both the project source and the public download page.
 - [ ] A phone can scan the public page QR from a different network and download the selected APK.
 - [ ] Chromecast offers public QR when local transfer is unavailable or unsuccessful; the QR displays a readable HTTPS URL.
 - [ ] Quick Share transfers directly without internet or sender cellular data; if it and local QR are unavailable, the recipient can scan the public QR and download over mobile data without a sender upload.

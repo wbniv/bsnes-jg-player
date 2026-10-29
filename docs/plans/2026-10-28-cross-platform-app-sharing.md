@@ -58,7 +58,7 @@ On phone and tablet, keep Quick Share and local QR discoverable. Quick Share is 
 
 1. **Record the original flow and failure.** Keep the Sharesheet path for devices with usable targets; note the Chromecast empty-target behavior and preserve the read-only provider boundary.
 2. **Build and validate Android LAN/QR transfer.** The offline-compatible QR encoder, short-lived tokenized local server, transfer screen, Chromecast route, and phone/tablet choice between QR and Android Sharesheet are implemented in source. Build the APKs and validate transfer, hash, bundled ROM assets, and recipient installation.
-3. **Complete browser sharing.** The web URL now shares with Web Share API/copy-prompt fallback. Add a locally generated QR for that URL. Define how a versioned APK artifact URL is published before showing an APK download action on web.
+3. **Complete browser sharing.** The web URL now shares with Web Share API/copy-prompt fallback. Add a locally generated QR for that URL. Once the release page is live, configure the biohack.net production build with `PUBLIC_ANDROID_DOWNLOAD_URL=https://downloads.biohack.net/bsnes-jg/`; this reveals the `/snes/` APK link and generated QR. Both target the stable R2 variant-selection page, not a version-specific APK. Keep the APK link hidden until release URL verification passes.
 4. **Harden package release metadata.** Establish stable signing, version labels, APK filename, and SHA-256 reporting for shared APKs.
 5. **Validate recipient installation.** Transfer the exact file to a second Android device, check its SHA-256, install it through the normal installer, and verify launch. Repeat update-in-place with the next APK signed by the same key.
 
@@ -73,6 +73,7 @@ Record evidence in this plan as work completes:
 - [ ] Android tablet, portrait and landscape: Sharesheet, QR screen, focus/touch targets, and long download URL remain usable.
 - [ ] Cast1: `Share app APK` opens a scannable QR screen instead of an empty Sharesheet; a phone on the same Wi-Fi downloads the APK successfully.
 - [ ] Web browser: HTTPS app URL shares through Web Share API where supported and through copy/QR fallback elsewhere.
+- [ ] `https://biohack.net/snes/` shows the Android APK download link and a scannable QR to the verified R2 variant-selection page; the QR works from a second device at desktop and mobile widths.
 - [ ] Web APK action, if enabled: downloaded file hash matches the release manifest and the recipient can install it.
 - [ ] Payload: the received library APK has the same hash as the sender's APK and contains the bundled ROM catalog/assets expected for that build.
 - [ ] Security: requests without the random token, for a different path, after expiry, or after dismissal are rejected; the server serves only the APK endpoint (which itself contains that build's bundled ROMs), not raw filesystem paths or unrelated app files.

@@ -113,8 +113,8 @@ android {
         applicationId = "org.bsnesjg.tv"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 9
+        versionName = "0.1.8"
         // Set only after the public release page has been published and verified.
         val publicDownloadUrl = providers.gradleProperty("publicDownloadUrl").orElse("").get()
             .replace("\\", "\\\\").replace("\"", "\\\"")

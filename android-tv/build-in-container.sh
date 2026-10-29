@@ -10,6 +10,11 @@ if [[ ! -f "$android_sdk/platforms/android-34/android.jar" ]]; then
   android_sdk="/home/will/android-sdk-local"
 fi
 image='bsnes-jg-tv-jdk:local'
+version_name="$(sed -n 's/^[[:space:]]*versionName = "\([^"]*\)".*/\1/p' "$here/app/build.gradle.kts" | head -n 1)"
+if [[ -z "$version_name" ]]; then
+  echo 'Could not read Android versionName from app/build.gradle.kts.' >&2
+  exit 1
+fi
 
 if [[ "${REFRESH_PUBLISHED_LIBRARY:-0}" == "1" || ! -f "$here/app/build/generated/publishedLibrary/library.json" ]]; then
   python3 "$here/tools/sync-published-library.py" --output "$here/app/build/generated/publishedLibrary" --check
@@ -42,9 +47,9 @@ docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges \
 
 cp "$here/app/build/outputs/apk/wasmplayer/release/app-wasmplayer-release.apk" "$here/app/build/outputs/apk/wasmplayer/release/bsnes-jg-wasm-player.apk"
 cp "$here/app/build/outputs/apk/wasm/release/app-wasm-release.apk" "$here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk"
-cp "$here/app/build/outputs/apk/native/release/app-native-release.apk" "$here/app/build/outputs/apk/native/release/bsnes-jg-native.apk"
-cp "$here/app/build/outputs/apk/nativeplayer/release/app-nativeplayer-release.apk" "$here/app/build/outputs/apk/nativeplayer/release/mandelbrot-native.apk"
+cp "$here/app/build/outputs/apk/native/release/app-native-release.apk" "$here/app/build/outputs/apk/native/release/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v${version_name}.apk"
+cp "$here/app/build/outputs/apk/nativeplayer/release/app-nativeplayer-release.apk" "$here/app/build/outputs/apk/nativeplayer/release/bsnes-jg_mandelbrot-v${version_name}.apk"
 echo "WASM Mandelbrot player APK: $here/app/build/outputs/apk/wasmplayer/release/bsnes-jg-wasm-player.apk"
 echo "WASM library APK: $here/app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk"
-echo "Native library APK: $here/app/build/outputs/apk/native/release/bsnes-jg-native.apk"
-echo "Native Mandelbrot player APK: $here/app/build/outputs/apk/nativeplayer/release/mandelbrot-native.apk"
+echo "Native SNES library APK: $here/app/build/outputs/apk/native/release/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v${version_name}.apk"
+echo "Native Mandelbrot player APK: $here/app/build/outputs/apk/nativeplayer/release/bsnes-jg_mandelbrot-v${version_name}.apk"

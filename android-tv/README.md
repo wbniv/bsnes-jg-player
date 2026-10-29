@@ -2,7 +2,7 @@
 
 The Android project can build a WASM and a Native Phase 2 APK for controlled comparison, but Android WASM playback is too slow for usable play and is not intended for public distribution. The Native APK is the supported Android release. Browser WASM remains a separate web target. Both Android Phase 2 builds use the same D-pad-friendly selector, 152-ROM catalog, card screenshots, pause menu, and control/lifecycle contract. The `wasm` APK selects the bsnes-jg WebAssembly adapter; the `native` APK selects the JNI/C++ adapter and GLES surface. The engine is chosen at compile time, while both adapters receive the same selected ROM. Catalog, screenshots, and ROM bytes are bundled for offline use. The existing Phase 1 APK remains a separate package.
 
-The TV remote opens a pause overlay with Resume, Choose another ROM, Restart, Verify from start when supported, and Exit. Verification runs in short batches, can be cancelled, and leaves the game paused. Leaving the app pauses emulation and cancels verification. Returning to the app leaves the menu visible; select Resume to continue.
+In the ROM-library app, Back pauses gameplay and returns to the ROM selector with its previous view, filters, search, and selection intact. The primary action reads **Resume** when the selected ROM is the one currently loaded; selecting another ROM changes it to **Play**. Back from the selector exits the app. The pause overlay no longer has a duplicate “Choose another ROM” action. Leaving the app pauses emulation and cancels verification; returning to the app leaves the pause menu visible.
 
 ## Build in a container
 
@@ -12,7 +12,7 @@ Builds always run in the pinned JDK 17 container with the rootless Docker daemon
 ./android-tv/build-in-container.sh
 ```
 
-The script uses Android SDK 34 at `/home/will/android-sdk-local` and the shared Gradle cache. Override `ANDROID_HOME` or `GRADLE_USER_HOME` when needed. It mounts the sibling `../biohack.net/` catalog and `../llvm-mos-65816/` build directory read-only, validates the staged ROM library against source ROM and card hashes, then builds and checks both library variants. Set `REFRESH_PUBLISHED_LIBRARY=1` to recapture all catalog card art. The APKs are `app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk` and `app/build/outputs/apk/native/release/bsnes-jg-native.apk`.
+The script uses Android SDK 34 at `/home/will/android-sdk-local` and the shared Gradle cache. Override `ANDROID_HOME` or `GRADLE_USER_HOME` when needed. It mounts the sibling `../biohack.net/` catalog and `../llvm-mos-65816/` build directory read-only, validates the staged ROM library against source ROM and card hashes, then builds and checks both library variants. Set `REFRESH_PUBLISHED_LIBRARY=1` to recapture all catalog card art. The APKs are `app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk` and `app/build/outputs/apk/native/release/llvm-65816-torture-test-suite-snes.apk`.
 
 Both Release APKs are non-debuggable, shell-profileable, and signed with the local debug key for controlled coordinator installation. Do not distribute these test-signed APKs. They have distinct application IDs (`org.bsnesjg.tv.phase2` and `org.bsnesjg.tv.native.phase2`) and share the suite icon/product identity. The WASM build checks the frozen core hashes and canonical `web/app.js`; the native build checks its C++ library and adapter assets. Both APK gates check the exact same ROM/catalog contents. The container syntax-checks both engine adapters, the player, and remote-control JavaScript.
 

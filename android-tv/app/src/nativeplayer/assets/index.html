@@ -10,7 +10,7 @@
 </head>
 <body>
   <main id="game"><canvas id="screen" width="256" height="224" aria-label="Mandelbrot SNES gameplay"></canvas></main>
-  <div id="hud"><div id="brand">Mandelbrot</div><div id="status">Starting native C++ emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
+  <div id="hud"><div id="brand">Mandelbrot <small class="app-version" data-app-version></small></div><div id="status">Starting native C++ emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
   <section id="pause-menu" hidden><div id="tv-pause-card"><h1 id="tv-title">Paused</h1><p id="pause-subtitle">Mandelbrot</p><div id="tv-actions">
     <button id="tv-resume"><svg class="menu-icon filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Resume</span></button>
     <button id="tv-restart"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0 1 4M20 4v7h-7"/></svg><span>Restart this ROM</span></button>

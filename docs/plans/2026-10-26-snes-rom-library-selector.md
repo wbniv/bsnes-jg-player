@@ -7,6 +7,8 @@
 
 The built capture step and search UI still need switching over; see resolved decisions 2 and 3.
 
+**Back/return behavior update (2026-10-29):** the later [launcher views plan](2026-10-28-google-tv-launcher-views.md) supersedes this original Back ladder for library builds. Back during gameplay pauses and returns to the same selector state; its primary action becomes Resume for the loaded ROM and Play for another selection. Back from the selector exits the app. The pause menu no longer includes “Choose another ROM.”
+
 ## Goal
 
 Ship two Phase 2 Google TV app variants, **LLVM 65816 Torture Test Suite on SNES**: one selects the WASM engine and one selects the native C++ engine at compile time. Both open the same remote-friendly library of every SNES ROM published on biohack.net and play the chosen ROM offline. The current Phase 1 APK remains separately installable.
@@ -286,7 +288,7 @@ flowchart TB
     - Every ROM's SHA matches its record.
     - Nothing else under `assets/roms/`.
 
-    The Release APKs are `wasm/release/bsnes-jg-wasm.apk` and `native/release/bsnes-jg-native.apk`. They differ by the engine adapter/core and native renderer while sharing UI and catalog.
+    The Release APKs are `wasm/release/bsnes-jg-wasm.apk` and `native/release/llvm-65816-torture-test-suite-snes.apk`. They differ by the engine adapter/core and native renderer while sharing UI and catalog.
 - **Size:** both Phase 2 APKs include the 152-ROM library (42.6 MiB raw ROM data before compression) and card art. Record both actual download sizes; include the WASM/WebView versus native-library distinction in the comparison.
 - **Direct boot for testing:** `MainActivity` accepts the `rom` intent extra and appends `?rom=<slug>`, so the coordinator can boot the same selected ROM in either engine.
 

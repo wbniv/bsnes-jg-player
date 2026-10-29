@@ -45,7 +45,7 @@ flowchart LR
 4. D-pad selection wraps among filtered matches; category/search changes reset selection to a valid match.
 5. View changes preserve query, category, selected ROM, and favorites; the selected view survives app restart.
 6. Empty and single-item result states remain legible and operable.
-7. Direct `?rom=` launch and existing pause-menu “Choose another ROM” behavior remain intact.
+7. Direct `?rom=` launch remains intact. During playback, Back pauses and returns to the same selector view, preserving its filter, search, and selected ROM. The primary action reads Resume when that ROM is still loaded and Play for another selection; Back from the selector exits the app. The pause menu does not duplicate “Choose another ROM.”
 8. On phone landscape, launcher chrome stays compact enough to leave most of the display for the selected view. Pause-menu focus outlines stay inside button edges, and verification diagnostics are absent from the menu.
 
 ## Implementation scope
