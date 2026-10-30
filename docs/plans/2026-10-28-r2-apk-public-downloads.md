@@ -1,6 +1,6 @@
 # Publish Android APK downloads to Cloudflare R2
 
-**Status:** In progress; the Native player demo has changed from Mandelbrot to Raycaster Maze and needs a rebuilt, verified APK before R2 publication. The selected ROM is centralized in `demo-rom.json` for the npm payload and single-ROM Android player. R2 publication is also pending: the `bsnes-jg-downloads` bucket and `downloads.biohack.net` custom-domain binding have been created, but Cloudflare ownership/TLS are pending and the download URL currently returns 404. The reusable player package and browser WebAssembly integration are the product; the Native APKs are example host integrations. The npm payload contains only the 32 KiB Raycaster Maze sample ROM, not the full suite; the full suite APK will be downloadable from Indri. Retain exactly the current and previous example build.
+**Status:** The 0.1.9 Native APK release is published. The Raycaster Maze player and full LLVM 65816 suite APKs are available from R2, with 0.1.8 retained as the previous release. `https://downloads.biohack.net/bsnes-jg/` redirects to the Indri product/download page; its release manifest is at `https://downloads.biohack.net/bsnes-jg/current.json`. The older `/bsnes-jg-wasm/current.json` path is kept in sync. The biohack.net SNES download panel and QR are live and open the Indri page. Future-release automation, bucket-scoped SSM credentials, the wald3n.com source listing, and device QR fallback proof remain open. The reusable player package and browser WebAssembly integration are the product; the Native APKs are example host integrations. The npm payload contains only the 32 KiB Raycaster Maze sample ROM, not the full suite. Retain exactly the current and previous example build.
 
 ## Goal
 
@@ -15,21 +15,24 @@ The Native library example APK bundles the ROM catalog, ROM files, and preview a
 - The current Android build can produce four artifacts. Browser WebAssembly is the supported web integration; Android WASM APKs are comparison builds, not recommended Android integrations, and are excluded from public distribution. The public release contains only `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` (Native library example) and `bsnes-jg_<apkSlug>-v<version>.apk` (Native player example; `apkSlug` comes from `demo-rom.json`).
 - The Native library APK includes the published ROM assets. Its payload and SHA-256 must be recorded per release. The Native player contains only its configured single-ROM build.
 - Browser WASM remains a separate web target and is included in the web release; this policy does not remove it.
-- `versionName` and `versionCode` are currently fixed in Gradle. The release workflow needs a real versioning policy and must reject duplicate or non-increasing Android `versionCode` values.
+- `versionName` and `versionCode` are currently fixed in Gradle (`0.1.9` / `10`). Future-release automation still needs a versioning policy and must reject duplicate or non-increasing Android `versionCode` values.
 - Controlled device builds currently use the local debug signing key. Public releases need a durable, backed-up release key and a single signing path so future updates install over earlier public versions.
 - Gradle keeps debug signing explicit for controlled device builds and has a fail-closed durable-key path for public Native example APKs. The release keystore is stored in AWS SSM SecureString at `/indri-studio/bsnes-jg/android/release/signing-payload`; the local ignored cache is mode `0600`.
-- The `bsnes-jg-downloads` bucket and `downloads.biohack.net` custom-domain binding have been created. Domain ownership and TLS remain pending, and the stable download URL currently returns 404.
-- The previous Native player build `0.1.8` (`versionCode` 9) used Mandelbrot and is superseded. Rebuild and verify the Raycaster Maze player before publishing. The Native suite build from `0.1.8` remains a staged artifact. The release signing certificate is SHA-256 `1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e` (RSA 4096).
+- The `bsnes-jg-downloads` bucket and `downloads.biohack.net` custom domain resolve over HTTPS. The stable `/bsnes-jg/` object redirects visitors to the Indri product/download page; the R2 manifest and versioned APKs are under that prefix. The legacy `/bsnes-jg-wasm/current.json` alias is also updated.
+- Version 0.1.9 (`versionCode` 10) is published. Its Native library APK bundles the 152-ROM suite; its Native player APK bundles only the configured 32 KiB Raycaster Maze ROM. Both were verified to use the same release certificate as the 0.1.8 packages. The previous Native player build `0.1.8` used Mandelbrot and remains available for rollback. The release signing certificate is SHA-256 `1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e` (RSA 4096).
 
 | Example APK | Package ID | Size (bytes) | SHA-256 |
 |---|---|---:|---|
-| `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk` | `org.bsnesjg.tv.native.phase2` | 26,811,243 | `55eca48e96cd2ba8d359689c5001fd62a4255af133bafe475fa43c4744a0f468` |
-| `bsnes-jg_raycaster-maze-v0.1.9.apk` | `org.bsnesjg.tv.native` | Pending rebuild | Pending rebuild |
-- Public R2 host: `https://downloads.biohack.net/bsnes-jg/`. Confirm the DNS route, domain ownership, and HTTPS certificate before publishing. The public project presence should link from the existing `biohack.net` SNES area and from `https://wald3n.com/open-source`. The `/snes/` page needs both a visible download link and a QR code to the release landing page.
+| `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.9.apk` | `org.bsnesjg.tv.native.phase2` | 26,814,539 | `c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c` |
+| `bsnes-jg_raycaster-maze-v0.1.9.apk` | `org.bsnesjg.tv.native` | 7,156,299 | `0d6e3583c127e6642514cee0d530213867c3ebe946799005c34f58b6f7837b76` |
+
+Release records are tracked in [`docs/releases/`](../releases/). Both 0.1.9 public URLs were downloaded back and their exact sizes and SHA-256 hashes matched the local APKs. The 0.1.8 Native suite and Mandelbrot player were copied to the new release prefix and likewise verified.
+
+- Public product/download page: `https://indri.studio/apps/bsnes-jg-wasm/`. The biohack.net SNES panel and QR point there; `https://downloads.biohack.net/bsnes-jg/` redirects to the same page. The `wald3n.com/open-source` listing remains pending.
 
 ## Release task contract
 
-Add project-scoped secret tasks and an explicit root Task command, **`task web:release`**, for the next user-directed public web release. This command is the single release entry point; a normal local web or Android build must not upload anything to R2. The release task uses Task's interactive `prompt:` confirmation to state that it will publish the current web build and two Native APKs and prune releases older than current/previous.
+The 0.1.9 release was published through a reviewed one-time Wrangler upload after signature, size, and public-download hash verification. Do not repeat that manual sequence for future releases: add project-scoped secret tasks and an explicit root Task command, **`task web:release`**, as a separate follow-up. Normal local web or Android builds must not upload anything to R2. The future release task should use Task's interactive `prompt:` confirmation, publish the two Native APKs, and prune releases older than current/previous.
 
 The release task will:
 
@@ -118,8 +121,8 @@ The in-app public QR and the QR on `biohack.net/snes/` must encode only the stab
 4. Add the two-APK inspection/manifest generation step, including the Native library ROM payload checks and SHA-256.
 5. Add project-scoped `task secrets-pull` and `task secrets-bootstrap` wiring for SSM and the local `.env` cache; add `task web:r2:setup` for the project bucket/domain and least-privilege permissions.
 6. Implement `task web:release` with staged upload, public HTTPS verification, manifest-last publication, two-version pruning, and retry-safe cleanup.
-7. Add the static landing page at `downloads.biohack.net/bsnes-jg/` with two clearly named Native variants, current/previous release labels, SHA-256/size, and QR codes for the page URL.
-8. After the public route passes HTTPS checks, set `PUBLIC_ANDROID_DOWNLOAD_URL=https://downloads.biohack.net/bsnes-jg/` in the biohack.net production build environment. This renders the gated download link and build-generated QR on `https://biohack.net/snes/`; invalid URLs fail the site build. Also link from `wald3n.com/open-source` to the source repository and download page. Identify this repository as the emulator/player project, not as the separate packaged-upstream `bsnes-jg` APT package.
+7. Keep `downloads.biohack.net/bsnes-jg/` as the stable entry URL, currently an HTML redirect to the Indri product/download page. Publish `current.json` and immutable current/previous release objects under the same R2 prefix.
+8. The biohack.net `/snes/` panel and generated QR are live and open the Indri product/download page. Add the pending `wald3n.com/open-source` listing for the source repository and download page. Identify this repository as the emulator/player project, not as the separate packaged-upstream `bsnes-jg` APT package.
 9. Add the public-download QR fallback to Android phone/tablet and Chromecast share flows. Use Quick Share for direct phone-to-phone transfer and local QR when both devices share a network; show the public QR when those routes are unavailable or fail. The sender never uploads the APK through this fallback; the recipient downloads the published copy from R2.
 10. Update `docs/how-to/share-the-app.md` to the verified URL and capture proof for current/previous release links, both APK files and hashes, Native library ROM payload, biohack.net and wald3n.com links, phone and TV scans, recipient install approval, and successful removal of the older third release.
 
@@ -127,12 +130,12 @@ The in-app public QR and the QR on `biohack.net/snes/` must encode only the stab
 
 - [ ] `task web:release` builds browser WASM and two Native Android APKs from one release version; Android WASM APKs are excluded from public distribution.
 - [ ] The release task refuses debug signing, duplicate/non-increasing version codes, package/variant mismatches, incomplete ROM-library APKs, and hash mismatches.
-- [ ] `downloads.biohack.net/bsnes-jg/` serves the landing page and `current.json` over HTTPS; all APK URLs work without credentials.
-- [ ] The index shows exactly current and previous versions, with both Native APKs, hashes, and sizes.
-- [ ] A new release changes the index only after both APKs have been uploaded and fetched back with matching hashes.
+- [x] `downloads.biohack.net/bsnes-jg/` redirects to the Indri product/download page; `current.json` and all versioned APK URLs work over HTTPS without credentials.
+- [x] The public page and manifest show current 0.1.9 and previous 0.1.8, both Native APKs, hashes, and sizes.
+- [x] The 0.1.9 manifest was published only after both APKs had been uploaded and downloaded back with matching sizes and hashes.
 - [ ] After publishing a third version, R2 contains only the current and previous release artifacts under `bsnes-jg/releases/`.
 - [ ] Failure before manifest publication leaves existing current/previous downloads intact. Failure during pruning is reported and retryable.
-- [ ] `https://biohack.net/snes/` displays a clearly labeled Android APK download link and QR code; both open `https://downloads.biohack.net/bsnes-jg/`, where visitors can choose either Native APK and verify its version, size, and SHA-256.
+- [x] `https://biohack.net/snes/` displays a labeled Android APK download link and QR code; both open the Indri product/download page, which lists both Native APK variants and current/previous version metadata.
 - [ ] The `/snes/` QR is scannable from a second device, has an adjacent readable URL, and remains usable at desktop and mobile page widths.
 - [ ] The `/snes/` APK section remains absent when `PUBLIC_ANDROID_DOWNLOAD_URL` is unset, and the build rejects a configured URL outside the verified HTTPS release page.
 - [ ] `wald3n.com/open-source` links to both the project source and the public download page.
@@ -144,7 +147,7 @@ The in-app public QR and the QR on `biohack.net/snes/` must encode only the stab
 
 ## Open decisions
 
-- Verify the proposed `downloads.biohack.net` R2 custom-domain binding and HTTPS route.
-- Choose the R2 bucket name and where its infrastructure is managed.
-- Select the release-signing key owner, backup, and local/CI signing workflow.
-- Decide whether the public page initially labels the Native library build “Recommended” or presents both Native variants equally.
+- Implement the repeatable `task web:release` workflow and least-privilege bucket-scoped SSM credentials. The stored S3 credentials returned `AccessDenied`; the 0.1.9 objects were uploaded with the authenticated Wrangler session.
+- Add the public-download QR option to a future Android build and verify it on Chromecast; 0.1.9 was built before the verified download URL was configured in its BuildConfig.
+- Add the project to `wald3n.com/open-source` and capture phone/TV scan and install proof.
+- Verify the release-key backup and recovery procedure beyond its durable SSM SecureString storage.

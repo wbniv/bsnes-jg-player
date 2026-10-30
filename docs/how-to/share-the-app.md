@@ -2,7 +2,7 @@
 
 This guide covers sending the Android app package (APK) to another Android user and sharing the browser version. The ROM-library APK builds bundle the app together with their ROM catalog, ROM files, and preview images, so sharing that APK shares the bundled library too. A single-ROM player build contains only the ROM bundled with that build. Device-local preferences, such as favorites, are not copied.
 
-**Version note:** These controls are in the current source and become available after the updated APK is built and installed; the web button appears after the updated web page is published. The public R2 download page and its QR fallback are planned, but are not live yet. Quick Share is the direct phone-to-phone option; it does not use cellular data. The public QR is a backup: the recipient downloads the already-published APK from R2 and needs internet or mobile data; the sender does not upload the APK. **Share web app** uses the browser share feature or copies the page link.
+**Release note:** Version 0.1.9 is published. The stable download link is <https://downloads.biohack.net/bsnes-jg/>; it opens the Indri product page, which lists the current and previous Native APK examples with sizes and hashes. The QR on <https://biohack.net/snes/> opens that product page. The current APKs do not yet show a public-download QR inside the Android share menu; until that is added to a future build, use the web page's link or QR when direct transfer fails. Quick Share is the direct phone-to-phone option; it does not use cellular data. The recipient needs internet or mobile data for the public download; the sender does not upload the APK. **Share web app** uses the browser share feature or copies the page link.
 
 ## Choose a sharing method
 
@@ -33,10 +33,10 @@ data, and the sender does not upload the file.
 
 | Sender | Share the Android APK | Share the browser version |
 |---|---|---|
-| Android phone | Use **Share with another app** for direct Quick Share, or the local QR. If direct transfer is unavailable or fails, use the public download QR when published. | Send the web app's HTTPS link from the browser; the recipient accesses the ROMs hosted with that web release. |
-| Android tablet | Same as phone; the public R2 page is the fallback when direct transfer is unavailable or fails. | Send the web app's HTTPS link from the browser; the recipient accesses the ROMs hosted with that web release. |
-| Chromecast / Google TV | Use local QR when connected to the same network. If local transfer fails, show the public download QR when published. | Send the web app's HTTPS link from a phone or computer. |
-| Web browser | Download an APK from the public R2 release page, when published, then share that file or page link. A browser cannot extract an APK installed on an Android device. | Use the browser's Share action, or copy and send the page URL. This shares access to the hosted web app and its published ROM library, not an offline APK bundle. |
+| Android phone | Use **Share with another app** for direct Quick Share, or the local QR. If direct transfer is unavailable or fails, send the public download page link or QR from `biohack.net/snes/`. | Send the web app's HTTPS link from the browser; the recipient accesses the ROMs hosted with that web release. |
+| Android tablet | Same as phone; send the public download page link or QR if direct transfer is unavailable or fails. | Send the web app's HTTPS link from the browser; the recipient accesses the ROMs hosted with that web release. |
+| Chromecast / Google TV | Use local QR when connected to the same network. If local transfer fails, open the public download page on a phone or computer and send its link or QR; the current APK does not yet show that public QR inside the TV app. | Send the web app's HTTPS link from a phone or computer. |
+| Web browser | Download an APK from the public product/download page, then share that file or page link. A browser cannot extract an APK installed on an Android device. | Use the browser's Share action, or copy and send the page URL. This shares access to the hosted web app and its published ROM library, not an offline APK bundle. |
 
 Quick Share is a direct device-to-device transfer: Bluetooth discovers nearby devices and local Wi-Fi transfers the file. It does not use internet or cellular data and does not require both devices to join the same Wi-Fi network. The built-in QR transfer uses a temporary local URL and does require both devices on the same network. The public R2 QR is a fallback; it points the recipient to an APK already on R2, so the sender does not upload anything. The recipient needs internet access or mobile data.
 
@@ -53,7 +53,7 @@ flowchart LR
     I --> B
 ```
 
-If direct Android transfer is unavailable or unsuccessful, use the project's public Android downloads page at `https://downloads.biohack.net/bsnes-jg/` once it is published. Its QR code works across networks and opens a page with the current Native library and Native player APKs. Choose the app type you need. The sender does not upload the APK; the recipient downloads it from R2 and needs internet access or mobile data. Android WASM APKs are excluded from public distribution because playback performance is unusable; browser WASM remains available as the web app. The public page and QR are not live yet; until then, use Quick Share with Wi-Fi and Bluetooth enabled or the local QR when both devices share a network.
+If direct Android transfer is unavailable or unsuccessful, use the public Android downloads page at `https://downloads.biohack.net/bsnes-jg/`. It opens the Indri page with current and previous Native library and Native player APKs, including version, size, and SHA-256. The QR on `https://biohack.net/snes/` opens that page and works across networks. The sender does not upload the APK; the recipient downloads it from R2 and needs internet access or mobile data. Android WASM APKs are excluded from public distribution; browser WASM remains available as the web app.
 
 ## Android phone or tablet: send the APK
 

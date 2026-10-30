@@ -1,0 +1,31 @@
+{
+  "versionName": "0.1.8",
+  "versionCode": 9,
+  "publishedAt": "2026-10-29T05:13:35+00:00",
+  "sourceRepository": "https://github.com/wbniv/bsnes-jg-wasm",
+  "sourceRevision": "e8c438fd6a5661e9007f13ba740bc5b701b336d5",
+  "sourceWorktreeDirty": true,
+  "romCount": 152,
+  "artifacts": [
+    {
+      "name": "Native library",
+      "packageId": "org.bsnesjg.tv.native.phase2",
+      "engine": "native",
+      "type": "library",
+      "filename": "bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk",
+      "bytes": 26811243,
+      "sha256": "55eca48e96cd2ba8d359689c5001fd62a4255af133bafe475fa43c4744a0f468",
+      "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.8/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk"
+    },
+    {
+      "name": "Native player",
+      "packageId": "org.bsnesjg.tv.native",
+      "engine": "native",
+      "type": "player",
+      "filename": "bsnes-jg_mandelbrot-v0.1.8.apk",
+      "bytes": 26809995,
+      "sha256": "907511eeaa8a77279a7c5e8a597b4b410ff94415ce637183aef1a56c3f2c21d3",
+      "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.8/bsnes-jg_mandelbrot-v0.1.8.apk"
+    }
+  ]
+}

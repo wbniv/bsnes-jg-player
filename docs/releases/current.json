@@ -1,0 +1,69 @@
+{
+  "current": {
+    "versionName": "0.1.9",
+    "versionCode": 10,
+    "publishedAt": "2026-10-30T10:52:08Z",
+    "sourceRepository": "https://github.com/wbniv/bsnes-jg-wasm",
+    "sourceRevision": "e3144863b4ba35bbfdf9014db09c15407129c3c9",
+    "sourceWorktreeDirty": false,
+    "romCount": 152,
+    "demoRom": {
+      "slug": "raycaster",
+      "title": "Raycaster Maze",
+      "bytes": 32768
+    },
+    "artifacts": [
+      {
+        "name": "Native library",
+        "packageId": "org.bsnesjg.tv.native.phase2",
+        "engine": "native",
+        "type": "library",
+        "filename": "bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.9.apk",
+        "bytes": 26814539,
+        "sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.9/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.9.apk"
+      },
+      {
+        "name": "Native player \u00b7 Raycaster Maze",
+        "packageId": "org.bsnesjg.tv.native",
+        "engine": "native",
+        "type": "player",
+        "filename": "bsnes-jg_raycaster-maze-v0.1.9.apk",
+        "bytes": 7156299,
+        "sha256": "0d6e3583c127e6642514cee0d530213867c3ebe946799005c34f58b6f7837b76",
+        "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.9/bsnes-jg_raycaster-maze-v0.1.9.apk"
+      }
+    ]
+  },
+  "previous": {
+    "versionName": "0.1.8",
+    "versionCode": 9,
+    "publishedAt": "2026-10-29T05:13:35+00:00",
+    "sourceRepository": "https://github.com/wbniv/bsnes-jg-wasm",
+    "sourceRevision": "e8c438fd6a5661e9007f13ba740bc5b701b336d5",
+    "sourceWorktreeDirty": true,
+    "romCount": 152,
+    "artifacts": [
+      {
+        "name": "Native library",
+        "packageId": "org.bsnesjg.tv.native.phase2",
+        "engine": "native",
+        "type": "library",
+        "filename": "bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk",
+        "bytes": 26811243,
+        "sha256": "55eca48e96cd2ba8d359689c5001fd62a4255af133bafe475fa43c4744a0f468",
+        "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.8/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk"
+      },
+      {
+        "name": "Native player",
+        "packageId": "org.bsnesjg.tv.native",
+        "engine": "native",
+        "type": "player",
+        "filename": "bsnes-jg_mandelbrot-v0.1.8.apk",
+        "bytes": 26809995,
+        "sha256": "907511eeaa8a77279a7c5e8a597b4b410ff94415ce637183aef1a56c3f2c21d3",
+        "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.8/bsnes-jg_mandelbrot-v0.1.8.apk"
+      }
+    ]
+  }
+}
