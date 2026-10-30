@@ -56,7 +56,7 @@
                            //  (until then the baked preview stays on the canvas)
   var tvMetrics = {
     bootAt: performance.now(), lastRafAt: null,
-    core: [], canvas: [], raf: [], frames: 0, romFrames: 0,
+    core: [], canvas: [], draw: [], raf: [], drawSubmissions: 0, frames: 0, romFrames: 0,
     firstLiveFrame: false, fidelityReady: false, romRun: 0,
     frameCallbacks: 0, windowStartAt: performance.now(), maxBacklog: 0, lastBacklogReport: 0
   };
@@ -76,6 +76,11 @@
   var bannerEl = document.getElementById("banner");
 
   function status(msg) { if (statusEl) statusEl.textContent = msg; }
+  function setLoading(show, message) {
+    if (!window.BJGTVLoading) return;
+    if (show) window.BJGTVLoading.show(message || "Loading SNES frame…");
+    else window.BJGTVLoading.hide();
+  }
 
   // TV runs emit compact one-second summaries through WebView's console. The
   // Android wrapper records them with a dedicated log tag. Canvas submission
@@ -126,11 +131,11 @@
 
   function present() {
     var w = Module._bjg_video_w(), h = Module._bjg_video_h(), pitch = Module._bjg_video_pitch();
-    if (!w || !h) return;
+    if (!w || !h) return false;
     // bsnes hands us a 512-wide buffer for lores content (256 logical px doubled)
     // and ~240 scanlines incl. overscan. Collapse the 2x horizontal doubling and
     // crop to the 224 visible NTSC lines — the true 256x224 logical frame, square
-    // pixels at the SNES 8:7 aspect (matches the gate's jgxcheck PNG). Without
+    // pixels at the SNES 8:7 sample-grid aspect (matches the gate's jgxcheck PNG). Without
     // this the picture is stretched 2x wide.
     var step = w >= 512 ? 2 : 1;
     var ow = (w / step) | 0;
@@ -145,18 +150,24 @@
     var oh = avail < 224 ? avail : 224;
     var heap = Module.HEAPU32;               // re-fetch each frame (may grow)
     var base = Module._bjg_video() >>> 2;    // uint32 index
-    // Pre-ROM only: hold the poster until the core emits a non-black frame. loadRomBytes() sets
-    // `revealed` as soon as the ROM is accepted, so from that point every frame is drawn — black
-    // boot frames included. This branch now only covers the window before a ROM is loaded.
+    // Keep the selected ROM card up while the core is booting or the first video
+    // frames contain only a few lit pixels. Slow devices can take a long time to
+    // reach a useful title/game frame; switching on the first pixel reads as a
+    // broken black screen. Once at least 1% of a 4px sampling grid is lit, hand
+    // over to the live framebuffer. The frame cap prevents a deliberately dark
+    // game from keeping its poster forever.
     if (!revealed) {
-      var lit = false;
-      for (var sy = yoff; sy < yoff + oh && !lit; sy += 8) {
+      var lit = 0, samples = 0;
+      for (var sy = yoff; sy < yoff + oh; sy += 4) {
         var sb = base + sy * pitch;
-        for (var sx = 0; sx < ow; sx += 8)
-          if (heap[sb + sx * step] & 0xffffff) { lit = true; break; }
+        for (var sx = 0; sx < ow; sx += 4) {
+          samples++;
+          if (heap[sb + sx * step] & 0xffffff) lit++;
+        }
       }
-      if (!lit) return;                      // still blank — leave the preview up
+      if (lit < Math.max(12, Math.ceil(samples * 0.01)) && tvMetrics.romFrames < 600) return false;
       revealed = true;
+      setLoading(false);
     }
     if (!imageData || canvas.width !== ow || canvas.height !== oh) {
       canvas.width = ow; canvas.height = oh;
@@ -180,6 +191,7 @@
       tvMetrics.firstLiveFrame = true;
       tvMetric("first_live_frame", { width: ow, height: oh, image_ratio: "8:7" });
     }
+    return true;
   }
 
   function frame(timestamp) {
@@ -224,10 +236,15 @@
         }
       }
     }
-    present();
+    var drawStart = performance.now();
+    var submitted = present();
     var canvasEnd = performance.now();
     if (window.BJG_TV_MODE) {
       tvMetrics.canvas.push(canvasEnd - coreEnd);
+      if (submitted) {
+        tvMetrics.draw.push(canvasEnd - drawStart);
+        tvMetrics.drawSubmissions++;
+      }
       tvMetrics.frames += steps;
       tvMetrics.frameCallbacks++;
       tvMetrics.maxBacklog = Math.max(tvMetrics.maxBacklog, emulationCredit);
@@ -235,20 +252,37 @@
         tvMetrics.lastBacklogReport = emulationCredit;
         tvMetric("emulation_backlog", { pending_frames: Number(emulationCredit.toFixed(2)), max_steps_per_callback: MAX_STEPS_PER_CALLBACK });
       }
-      if (tvMetrics.core.length >= 60) {
-        var core = summarize(tvMetrics.core), canvas = summarize(tvMetrics.canvas), raf = summarize(tvMetrics.raf);
+      // Sample by elapsed monotonic time so slower engines still publish an
+      // approximately one-second window instead of stretching each sample to
+      // 60 completed frames.
+      if (entered - tvMetrics.windowStartAt >= 1000 && (tvMetrics.core.length || tvMetrics.drawSubmissions)) {
+        var windowMs = Math.max(1, entered - tvMetrics.windowStartAt);
+        var core = summarize(tvMetrics.core), canvas = summarize(tvMetrics.canvas), draw = summarize(tvMetrics.draw), raf = summarize(tvMetrics.raf);
+        var perfSample = {
+          emuFps: tvMetrics.core.length * 1000 / windowMs,
+          drawFps: tvMetrics.drawSubmissions * 1000 / windowMs,
+          coreMeanMs: core.mean_ms, coreP95Ms: core.p95_ms,
+          drawMeanMs: draw.mean_ms, drawP95Ms: draw.p95_ms,
+          backlogFrames: Number(emulationCredit.toFixed(2)), windowMs: Number(windowMs.toFixed(1))
+        };
+        if (window.BJGPerformance) window.BJGPerformance.publish(perfSample);
         tvMetric("playback_window", {
           frames: tvMetrics.frames, rom_frames: tvMetrics.romFrames,
           target_hz: EMULATION_HZ,
           sample_frames: tvMetrics.core.length, canvas_callbacks: tvMetrics.frameCallbacks,
-          window_ms: Math.round(entered - tvMetrics.windowStartAt),
+          draw_submissions: tvMetrics.drawSubmissions,
+          emu_fps: Number(perfSample.emuFps.toFixed(2)), draw_fps: Number(perfSample.drawFps.toFixed(2)),
+          core_mean_ms: core.mean_ms, core_p95_ms: core.p95_ms,
+          draw_mean_ms: draw.mean_ms, draw_p95_ms: draw.p95_ms,
+          window_ms: Math.round(windowMs),
           core_mean_ms: core.mean_ms, core_p95_ms: core.p95_ms, core_max_ms: core.max_ms,
           canvas_submit_mean_ms: canvas.mean_ms, canvas_submit_p95_ms: canvas.p95_ms,
           canvas_submit_max_ms: canvas.max_ms, raf_interval_p95_ms: raf.p95_ms,
           raf_interval_max_ms: raf.max_ms, emulation_backlog_frames: Number(emulationCredit.toFixed(2)),
           peak_backlog_frames: Number(tvMetrics.maxBacklog.toFixed(2))
         });
-        tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.raf.length = 0;
+        tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+        tvMetrics.drawSubmissions = 0;
         tvMetrics.frameCallbacks = 0; tvMetrics.windowStartAt = performance.now(); tvMetrics.maxBacklog = emulationCredit;
         tvMetrics.lastBacklogReport = Math.max(0, emulationCredit - (emulationCredit % MAX_STEPS_PER_CALLBACK));
       }
@@ -259,7 +293,8 @@
   function startLoop() {
     if (running) return;
     if (window.BJG_TV_MODE) {
-      tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.raf.length = 0;
+      tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+      tvMetrics.drawSubmissions = 0;
       tvMetrics.lastRafAt = null;
       tvMetrics.frameCallbacks = 0;
       tvMetrics.windowStartAt = performance.now();
@@ -277,7 +312,8 @@
     if (rafId) cancelAnimationFrame(rafId);
     rafId = 0;
     clearTouchNav();
-    tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.raf.length = 0;
+    tvMetrics.core.length = 0; tvMetrics.canvas.length = 0; tvMetrics.draw.length = 0; tvMetrics.raf.length = 0;
+    tvMetrics.drawSubmissions = 0;
     tvMetrics.lastRafAt = null;
     lastEmulationTimestamp = null;
     emulationCredit = 0;
@@ -295,23 +331,20 @@
     Module.HEAPU8.set(bytes, ptr);
     var ok = Module._bjg_load(ptr, bytes.length);
     Module._free(ptr);
-    // The ROM is about to run, so the poster has done its job: clear to black and let present()
-    // draw every frame from here, including the black ones. Holding the preview until the first
-    // *lit* frame (the old `revealed` behaviour) meant the page opened on a screenshot of the
-    // FINISHED demo, which reads as leftover state from a previous session — and every demo now
-    // fades its title card up from black, so the hold fired on all 113 pages rather than just the
-    // one long-force-blanking demo it was added for.
+    // Select a fresh poster for this ROM. `present()` replaces it when the game
+    // has produced a useful live frame (or after a bounded 600-frame dark-ROM
+    // fallback); clearing it here makes long boot/title sequences look broken.
     if (ok === 1 && ctx) {
-      revealed = true;
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      revealed = false;
       tvMetric("rom_loaded", { rom: current || DEFAULT_ROM, bytes: bytes.length });
     }
     return ok === 1;
   }
 
   function playUrl(id) {
-    current = id;
+    var previous = current;
+    var previousLabel = runLabel;
+    var failurePhase = "fetch";
     if (window.BJG_TV_MODE) {
       tvMetrics.romRun++;
       tvMetrics.romFrames = 0;
@@ -320,14 +353,21 @@
     }
     stopLoop();
     badge(null, "");
-    markActive(id);
+    paintPreview(id);
+    setLoading(true, "Loading " + id + "…");
     status("loading " + id + ".sfc…");
     return fetch(bust("roms/" + id + ".sfc"))
       .then(function (r) { if (!r.ok) throw new Error("fetch " + id); return r.arrayBuffer(); })
       .then(function (buf) {
-        if (!loadRomBytes(new Uint8Array(buf))) throw new Error("core rejected ROM");
+        failurePhase = "core";
+        current = id;
+        if (!loadRomBytes(new Uint8Array(buf))) {
+          current = previous;
+          throw new Error("core rejected ROM");
+        }
         runLabel = "running " + id + ".sfc"; dimsShown = false;
         status(runLabel);
+        markActive(id);
         startLoop();
         updateCheckButton(id);
         // ?verify=1 auto-runs the fidelity self-check once the ROM is up — the
@@ -336,10 +376,17 @@
           window.__bjgAutoVerified = true;
           setTimeout(verify, 0);
         }
+        return true;
       })
       .catch(function (e) {
+        setLoading(false);
+        window.BJGTV.lastLoadFailure = { rom: id, phase: failurePhase, message: e.message, previous: previous || "" };
+        current = failurePhase === "core" ? null : previous;
+        runLabel = failurePhase === "core" ? "" : previousLabel;
         status("error: " + e.message);
         tvMetric("rom_load_error", { rom: id, error: e.message });
+        if (previous && failurePhase !== "core") { status(previousLabel); startLoop(); }
+        return false;
       });
   }
 
@@ -582,11 +629,8 @@
     }, { threshold: 0.05 }).observe(target);
   }
 
-  // Paint the baked preview onto the canvas as a LOADING POSTER, so the page shows the demo
-  // rather than a black box while the ~3.9 MB core downloads. It is cleared to black the moment
-  // the ROM is accepted (see loadRomBytes), so the emulator always starts from a blank screen and
-  // the title card fades up over black. A ROM without a preview/<id>.png just 404s the image and
-  // keeps the default black — no error path needed.
+  // Paint the baked preview onto the canvas as a loading poster. Keep it visible
+  // through blank boot frames until the game has produced a meaningful live image.
   function paintPreview(id) {
     if (!id || !ctx) return;
     var img = new Image();
@@ -595,15 +639,44 @@
       ctx.imageSmoothingEnabled = false;     // crisp nearest-neighbour upscale (the SNES look)
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
-    img.src = bust("preview/" + id + ".png");
+    img.src = bust((window.BJG_LIBRARY_MODE ? "roms/cards/" : "preview/") + id + ".png");
   }
 
   function init() {
     window.BJGTV = {
       pause: function () { stopLoop(); },
       resume: function () { if (!verification && Module && current) startLoop(); },
-      restart: function () { if (verification) verification.cancelled = true; verification = null; return playUrl(DEFAULT_ROM); },
+      restart: function () { if (verification) verification.cancelled = true; verification = null; return playUrl(current || DEFAULT_ROM); },
+      play: playUrl,
+      lastLoadFailure: null,
+      currentRom: function () { return current; },
+      isReady: function () { return !!Module; },
+      hasRom: function () { return !!current; },
+      canVerify: function (id) { return !!manifest && manifest.roms.some(function (rom) { return rom.id === id && !!rom.selfcheck; }); },
+      showLibrary: function () { stopLoop(); },
       verify: verify,
+      benchmark: function (totalFrames) {
+        if (!window.BJG_TV_MODE || !tvMetrics.fidelityReady || !Module) return Promise.reject(new Error("benchmark requires a TV run with the reference gate complete"));
+        var wasRunning = running, done = 0, coreNs = 0, started = performance.now();
+        stopLoop(); totalFrames = Math.max(1, Math.min(6000, Number(totalFrames) || 600));
+        return new Promise(function (resolve) {
+          function chunk() {
+            var until = Math.min(totalFrames, done + 60);
+            while (done < until) {
+              Module._bjg_set_input(0, pad);
+              var t = performance.now(); Module._bjg_run(); coreNs += (performance.now() - t) * 1e6; done++;
+            }
+            if (done < totalFrames) { setTimeout(chunk, 0); return; }
+            var elapsedNs = Math.round((performance.now() - started) * 1e6);
+            var result = { schema: "bjg-profile-v1", engine: "wasm", phase: "unpaced-core", frames: done,
+              elapsedNs: elapsedNs, coreNs: Math.round(coreNs), throughputWallFps: done * 1e9 / elapsedNs,
+              throughputCoreFps: done * 1e9 / coreNs, instrumentation: "on", wram0580: "0x" + (Module.HEAPU8[(Module._bjg_wram() >>> 0) + 0x580] | (Module.HEAPU8[(Module._bjg_wram() >>> 0) + 0x581] << 8)).toString(16).toUpperCase() };
+            console.info("BJG_TV_METRIC " + JSON.stringify(result));
+            if (wasRunning) startLoop(); resolve(result);
+          }
+          setTimeout(chunk, 0);
+        });
+      },
       cancelVerification: function () { if (verification) verification.cancelled = true; },
       background: function () {
         stopLoop();
@@ -618,6 +691,50 @@
 
     // The picker, file input, verify button and drag-drop target are all
     // optional — an embed may render just the canvas + status. Guard each.
+    var shareAppEl = document.getElementById("share-app");
+    var shareStatusEl = document.getElementById("share-status");
+    function shareStatus(message) {
+      if (!shareStatusEl) return;
+      shareStatusEl.textContent = message;
+      clearTimeout(shareStatusEl._clearTimer);
+      shareStatusEl._clearTimer = setTimeout(function () { shareStatusEl.textContent = ""; }, 3500);
+    }
+    function copyAppUrl() {
+      var url = window.location.href;
+      if (navigator.clipboard && window.isSecureContext) {
+        return navigator.clipboard.writeText(url).then(function () {
+          shareStatus("Web app link copied.");
+        });
+      }
+      var field = document.createElement("textarea");
+      field.value = url;
+      field.setAttribute("readonly", "");
+      field.style.position = "fixed";
+      field.style.opacity = "0";
+      document.body.appendChild(field);
+      field.select();
+      var copied = false;
+      try { copied = document.execCommand("copy"); } catch (_) {}
+      field.remove();
+      if (copied) shareStatus("Web app link copied.");
+      else {
+        window.prompt("Copy this web app link:", url);
+        shareStatus("Web app link ready to copy.");
+      }
+      return Promise.resolve();
+    }
+    if (shareAppEl) shareAppEl.addEventListener("click", function () {
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: "SNES homebrew library", url: window.location.href })
+          .then(function () { shareStatus("Web app link shared."); })
+          .catch(function (error) {
+            if (error && error.name === "AbortError") return;
+            copyAppUrl().catch(function () { shareStatus("Could not copy the web app link."); });
+          });
+      } else {
+        copyAppUrl().catch(function () { shareStatus("Could not copy the web app link."); });
+      }
+    });
     document.querySelectorAll("#picker button[data-rom]").forEach(function (b) {
       b.addEventListener("click", function () { playUrl(b.dataset.rom); });
     });
@@ -669,9 +786,9 @@
         availW = Math.max(0, Math.floor(availW) - 2);
         availH = Math.max(0, Math.floor(availH) - 2);
         // The core's backing buffer can switch to a native 512x240 frame. That is storage
-        // resolution, not the intended SNES display shape; fullscreen must remain 256:224 (8:7).
-        var displayW = 8;
-        var displayH = 7;
+        // resolution, not the intended SNES display shape; use the shared 4:3 display geometry.
+        var displayW = 4;
+        var displayH = 3;
         var scale = Math.min(availW / displayW, availH / displayH);
         if (!(scale > 0)) return;
         wrap.style.setProperty("--bjg-fs-width", Math.max(1, Math.floor(displayW * scale)) + "px");
@@ -733,7 +850,7 @@
         "}" +
         ".rp-screen:-webkit-full-screen canvas,.rp-screen:fullscreen canvas{" +
           "display:block;width:var(--bjg-fs-width,auto);height:var(--bjg-fs-height,auto);" +
-          "max-width:100%;max-height:100%;aspect-ratio:8/7;image-rendering:pixelated;" +
+          "max-width:100%;max-height:100%;aspect-ratio:4/3;image-rendering:pixelated;" +
         "}";
       document.head.appendChild(styleEl);
 
@@ -805,6 +922,8 @@
     // Show the baked preview before anything loads (covers the core download + ROM boot).
     var bootRom = new URLSearchParams(location.search).get("rom") || DEFAULT_ROM;
     paintPreview(bootRom);
+    var directRom = new URLSearchParams(location.search).has("rom");
+    setLoading(directRom || !window.BJG_LIBRARY_MODE, "Starting emulator…");
 
     status("loading core…");
     Promise.all([
@@ -821,8 +940,18 @@
       tvMetric("core_ready", { core: "bsnes-jg", version: "2.1.0", runtime: "wasm" });
       showProvenance();
       observeVisibility();
-      playUrl(bootRom);
+      if (window.BJG_TV_MODE) {
+        if (window.BJG_LIBRARY_MODE && !directRom) setLoading(false);
+        if (window.BJGTV.onReady) window.BJGTV.onReady();
+        // In the TV library build, library.js owns direct-ROM startup so it can
+        // wait for both the core and the ROM catalog. Starting here as well
+        // races its play() call and can reset/unload the same core twice.
+        if (new URLSearchParams(location.search).has("rom") && !window.BJG_LIBRARY_MODE) playUrl(bootRom);
+      } else {
+        playUrl(bootRom);
+      }
     }).catch(function (e) {
+      setLoading(false);
       status("");
       tvMetric("startup_error", { error: e.message });
       if (bannerEl) {

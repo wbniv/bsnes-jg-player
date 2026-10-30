@@ -1,6 +1,9 @@
 # Emscripten SDK (bootstrapped by build.sh — reproducible, not vendored)
 /emsdk/
 
+# Android public release signing material is materialized here from AWS SSM.
+/.private/
+
 # Upstream core checkout (cloned by build.sh at a pinned commit)
 /vendor/
 

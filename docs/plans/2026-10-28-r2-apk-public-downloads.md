@@ -1,23 +1,31 @@
 # Publish Android APK downloads to Cloudflare R2
 
-**Status:** Proposed. No Android APKs are currently published for public download. The next user-directed web release should build the web app and two Native Android APKs, publish the APKs and download page to a dedicated R2 bucket, and retain exactly the current and previous release.
+**Status:** In progress; the Native player demo has changed from Mandelbrot to Raycaster Maze and needs a rebuilt, verified APK before R2 publication. The selected ROM is centralized in `demo-rom.json` for the npm payload and single-ROM Android player. R2 publication is also pending: the `bsnes-jg-downloads` bucket and `downloads.biohack.net` custom-domain binding have been created, but Cloudflare ownership/TLS are pending and the download URL currently returns 404. The reusable player package and browser WebAssembly integration are the product; the Native APKs are example host integrations. The npm payload contains only the 32 KiB Raycaster Maze sample ROM, not the full suite; the full suite APK will be downloadable from Indri. Retain exactly the current and previous example build.
 
 ## Goal
 
-Give people a stable public HTTPS page for downloading the SNES Android app when nearby transfer or the temporary same-Wi-Fi QR transfer is unavailable or unsuccessful. The R2 page must offer the current and previous release, clearly identify the Native library and Native player APKs, and state the version and SHA-256 for each file.
+Give people a stable public HTTPS page for downloading example Android integrations when nearby transfer or the temporary same-Wi-Fi QR transfer is unavailable or unsuccessful. The R2 page must offer the current and previous example build, clearly identify the Native library and Native player examples, and state the version and SHA-256 for each file.
 
-Make the release page discoverable directly from [`https://biohack.net/snes/`](https://biohack.net/snes/): add a clearly labeled Android APK download link and a scannable QR code that opens the stable R2 release page. The page offers both Native APK variants, so the QR encodes the landing-page URL rather than choosing or linking to one versioned APK.
+Make the example integrations discoverable directly from [`https://biohack.net/snes/`](https://biohack.net/snes/): add a clearly labeled Android example-build link and a scannable QR code that opens the stable R2 page. The page offers both Native APK examples, so the QR encodes the landing-page URL rather than choosing or linking to one versioned APK. The browser WebAssembly integration remains the primary web experience.
 
-The Android library APKs bundle the ROM catalog, ROM files, and preview art; downloading either library APK also delivers those assets. The standalone player APKs contain only their configured single-ROM app build. The web build remains a web app and is not represented as an APK.
+The Native library example APK bundles the ROM catalog, ROM files, and preview art. The standalone Native player example contains only the configured Raycaster Maze ROM (32 KiB); it does not package the full suite. The npm player package also includes only that one small demo ROM. The reusable browser WebAssembly player remains a web integration and is not represented as an APK.
 
 ## Current state
 
-- The current Android build can produce four artifacts, but Android WASM is too slow for usable playback and is excluded from public distribution. The public release contains only `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` (Native library) and `bsnes-jg_mandelbrot-v<version>.apk` (Native player).
+- The current Android build can produce four artifacts. Browser WebAssembly is the supported web integration; Android WASM APKs are comparison builds, not recommended Android integrations, and are excluded from public distribution. The public release contains only `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` (Native library example) and `bsnes-jg_<apkSlug>-v<version>.apk` (Native player example; `apkSlug` comes from `demo-rom.json`).
 - The Native library APK includes the published ROM assets. Its payload and SHA-256 must be recorded per release. The Native player contains only its configured single-ROM build.
 - Browser WASM remains a separate web target and is included in the web release; this policy does not remove it.
 - `versionName` and `versionCode` are currently fixed in Gradle. The release workflow needs a real versioning policy and must reject duplicate or non-increasing Android `versionCode` values.
 - Controlled device builds currently use the local debug signing key. Public releases need a durable, backed-up release key and a single signing path so future updates install over earlier public versions.
-- Proposed public R2 host: `https://downloads.biohack.net/bsnes-jg/`. The R2 bucket and custom-domain binding are not provisioned yet; confirm the DNS route and Cloudflare ownership during setup. The public project presence should link from the existing `biohack.net` SNES area and from `https://wald3n.com/open-source`. The `/snes/` page needs both a visible download link and a QR code to the release landing page.
+- Gradle keeps debug signing explicit for controlled device builds and has a fail-closed durable-key path for public Native example APKs. The release keystore is stored in AWS SSM SecureString at `/indri-studio/bsnes-jg/android/release/signing-payload`; the local ignored cache is mode `0600`.
+- The `bsnes-jg-downloads` bucket and `downloads.biohack.net` custom-domain binding have been created. Domain ownership and TLS remain pending, and the stable download URL currently returns 404.
+- The previous Native player build `0.1.8` (`versionCode` 9) used Mandelbrot and is superseded. Rebuild and verify the Raycaster Maze player before publishing. The Native suite build from `0.1.8` remains a staged artifact. The release signing certificate is SHA-256 `1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e` (RSA 4096).
+
+| Example APK | Package ID | Size (bytes) | SHA-256 |
+|---|---|---:|---|
+| `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.8.apk` | `org.bsnesjg.tv.native.phase2` | 26,811,243 | `55eca48e96cd2ba8d359689c5001fd62a4255af133bafe475fa43c4744a0f468` |
+| `bsnes-jg_raycaster-maze-v0.1.9.apk` | `org.bsnesjg.tv.native` | Pending rebuild | Pending rebuild |
+- Public R2 host: `https://downloads.biohack.net/bsnes-jg/`. Confirm the DNS route, domain ownership, and HTTPS certificate before publishing. The public project presence should link from the existing `biohack.net` SNES area and from `https://wald3n.com/open-source`. The `/snes/` page needs both a visible download link and a QR code to the release landing page.
 
 ## Release task contract
 
@@ -54,10 +62,10 @@ bsnes-jg/index.html
 bsnes-jg/current.json
 bsnes-jg/releases/<version>/release.json
 bsnes-jg/releases/<version>/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk
-bsnes-jg/releases/<version>/bsnes-jg_mandelbrot-v<version>.apk
+bsnes-jg/releases/<version>/bsnes-jg_<demo-rom.json apkSlug>-v<version>.apk
 ```
 
-There are no Android WASM APK keys: those builds are too slow for usable playback and are excluded from distribution. Browser WASM remains the web app on biohack.net; this R2 release prefix contains the download page/manifest and the two Native Android APKs.
+There are no Android WASM APK keys. Browser WASM is the web integration; the R2 release prefix contains the download page/manifest and the two Native Android example APKs.
 
 `current.json` is the only mutable release pointer. It lists both `current` and `previous`; each release record includes the version name, Android version code, publish timestamp, and each APK's display name, package ID, engine, player/library type, byte size, SHA-256, and versioned URL. The landing page reads this manifest to render the two Native download buttons and QR codes. Follow the established static-site cache split: mutable `index.html` and `current.json` use `Cache-Control: no-store` (or `max-age=0, must-revalidate` where a CDN requires revalidation); versioned APKs and release manifests use `public, max-age=31536000, immutable`.
 
@@ -87,7 +95,7 @@ The in-app public QR and the QR on `biohack.net/snes/` must encode only the stab
 
 - Establish one durable release signing key, owner, backup, and recovery procedure before the first public upload. Do not publish the controlled-build debug-signed APKs.
 - Keep package IDs stable within each distributed variant. Increment `versionCode` monotonically and set one release `versionName` across both APKs.
-- Preserve the app titles in downloaded filenames: `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` for the Native library, and `bsnes-jg_mandelbrot-v<version>.apk` for the Native player. Label the variants Native library and Native player on the landing page. Android WASM builds are not public release variants because their playback performance is unusable.
+- Preserve the app titles in downloaded filenames: `bsnes-jg_llvm-65816-torture-test-suite-on-snes-v<version>.apk` for the Native library example, and `bsnes-jg_<apkSlug>-v<version>.apk` for the Native player example. The current `demo-rom.json` value is `raycaster-maze`. Label both as Android Native examples on the landing page. Browser WebAssembly remains the supported browser integration; Android WASM comparison builds are not public release variants.
 - Before upload, inspect both APKs. Verify that the Native library APK contains the expected catalog, ROM files, and preview cards; record the verified asset counts in `release.json`. Do not claim that the Native player includes the full ROM library.
 - Report SHA-256 and byte size beside each download. After downloading, the recipient should be able to compare the advertised hash before installation.
 - Android's normal installer remains responsible for the recipient's explicit install approval. The public page transfers a file; it does not install it silently.

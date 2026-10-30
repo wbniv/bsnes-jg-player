@@ -20,7 +20,6 @@ so the page's pitch is "byte-for-byte what the gate verified," not a snes9x look
 
 snes9x (the turnkey browser default) is high-compat but **not** cycle-accurate and **non-commercial /
 GPL-incompatible**. bsnes-jg is **cycle-accurate AND GPLv3** — accuracy-matched and license-clean.
-Cost = one Emscripten core build, owned by `build.sh`.
 
 ## Goal / deliverable
 

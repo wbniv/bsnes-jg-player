@@ -1,5 +1,7 @@
 import org.gradle.api.tasks.Sync
+import java.io.FileInputStream
 import java.security.MessageDigest
+import java.security.KeyStore
 import java.util.zip.ZipFile
 
 plugins {
@@ -12,6 +14,12 @@ dependencies {
 
 val tvProject = rootProject.projectDir
 val repo = tvProject.parentFile
+val playerRomConfig = groovy.json.JsonSlurper().parse(repo.resolve("demo-rom.json")) as Map<*, *>
+val playerRomSlug = playerRomConfig["slug"] as String
+val playerRomTitle = playerRomConfig["title"] as String
+val playerRomApkSlug = playerRomConfig["apkSlug"] as String
+val playerRomSha = playerRomConfig["sha256"] as String
+val playerRomSelfCheck = groovy.json.JsonOutput.toJson(playerRomConfig["selfcheck"] ?: emptyMap<String, Any>())
 val rom = tvProject.resolve("fixture/mandel-display.sfc")
 val map = tvProject.resolve("fixture/mandel-display.map")
 val referenceFrame = tvProject.resolve("fixture/reference-5800.png")
@@ -22,7 +30,17 @@ val expectedMapSha = "44ebc8e330f5e70c5723ff90b80e1a55fb53b914c6a4d4d1dc970a933b
 val expectedReferenceSha = "7acaa3825b82b7e61fe641ca950508d58e8aeb0cb2ff7849547d17eacaab4abe"
 val expectedGlueSha = "54e19fd849b823d87e278438fe7ec5ccaf8e526e966c8f4e007d29ccf78cdf4d"
 val expectedWasmSha = "e74dbd3d7160608dfb6e1ae2ed7ff263fafaa62b0444870530530e2e931ebeb3"
+val controlledDebugSigning = providers.gradleProperty("controlledDebugSigning")
+    .map(String::toBoolean).getOrElse(false)
+val releaseKeystorePath = providers.environmentVariable("BJG_RELEASE_KEYSTORE").orNull
+val releaseKeystorePassword = providers.environmentVariable("BJG_RELEASE_KEYSTORE_PASSWORD").orNull
+val releaseKeyAlias = providers.environmentVariable("BJG_RELEASE_KEY_ALIAS").orNull
+val releaseKeyPassword = providers.environmentVariable("BJG_RELEASE_KEY_PASSWORD").orNull
+val releaseSigningConfigured = !releaseKeystorePath.isNullOrBlank() &&
+    !releaseKeystorePassword.isNullOrBlank() && !releaseKeyAlias.isNullOrBlank() &&
+    !releaseKeyPassword.isNullOrBlank() && releaseKeystorePath?.let { file(it).isFile } == true
 val nativeAssetsDir = layout.buildDirectory.dir("generated/nativeAssets")
+val nativePlayerAssetsDir = layout.buildDirectory.dir("generated/nativePlayerAssets")
 val publishedLibraryDir = layout.buildDirectory.dir("generated/publishedLibrary")
 val publishedAssetsDir = layout.buildDirectory.dir("generated/publishedAssets")
 val wasmAssetsDir = layout.buildDirectory.dir("generated/wasmAssets")
@@ -43,6 +61,27 @@ val stageNativeAssets by tasks.registering(Sync::class) {
     from(publishedAssetsDir)
     from(tvProject.resolve("fixture/reference-5800.png")) { rename { "reference-5800.png" } }
     from(repo.resolve("vendor/bsnes-jg/Database")) { into("Database") }
+}
+val stageNativePlayerAssets by tasks.registering(Sync::class) {
+    dependsOn(verifyPlayerDemoRom)
+    into(nativePlayerAssetsDir)
+    from(repo.resolve("web/roms/$playerRomSlug.sfc")) { into("roms") }
+    from(repo.resolve("vendor/bsnes-jg/Database")) {
+        into("Database")
+        include("boards.bml", "SuperFamicom.bml")
+    }
+}
+
+val verifyPlayerDemoRom by tasks.registering {
+    val sampleRom = repo.resolve("web/roms/$playerRomSlug.sfc")
+    inputs.file(sampleRom)
+    doLast {
+        val actual = MessageDigest.getInstance("SHA-256").digest(sampleRom.readBytes())
+            .joinToString("") { "%02x".format(it) }
+        check(actual == playerRomSha) {
+            "${playerRomTitle} sample ROM differs from its pinned published build"
+        }
+    }
 }
 
 val verifyRomFixture by tasks.registering {
@@ -92,6 +131,44 @@ val verifyQrLibrary by tasks.registering {
 }
 tasks.named("preBuild") { dependsOn(verifyQrLibrary) }
 
+val verifyPublicReleaseSigning by tasks.registering {
+    group = "verification"
+    description = "Requires the configured durable signing key for public APK releases."
+    doLast {
+        check(!controlledDebugSigning) {
+            "Public release builds cannot use controlledDebugSigning"
+        }
+        check(releaseSigningConfigured) {
+            "Set BJG_RELEASE_KEYSTORE, BJG_RELEASE_KEYSTORE_PASSWORD, " +
+                "BJG_RELEASE_KEY_ALIAS, and BJG_RELEASE_KEY_PASSWORD to sign public APKs"
+        }
+        val releaseStore = KeyStore.getInstance("PKCS12")
+        FileInputStream(releaseKeystorePath!!).use {
+            releaseStore.load(it, releaseKeystorePassword!!.toCharArray())
+        }
+        val releaseCertificate = releaseStore.getCertificate(releaseKeyAlias!!)
+            ?: error("The configured release alias has no certificate")
+        val debugStore = KeyStore.getInstance("JKS")
+        FileInputStream("/root/.android/debug.keystore").use {
+            debugStore.load(it, "android".toCharArray())
+        }
+        val debugCertificate = debugStore.getCertificate("androiddebugkey")
+            ?: error("The local debug keystore has no debug certificate")
+        fun fingerprint(certificate: java.security.cert.Certificate) =
+            MessageDigest.getInstance("SHA-256").digest(certificate.encoded)
+                .joinToString("") { "%02x".format(it) }
+        check(fingerprint(releaseCertificate) != fingerprint(debugCertificate)) {
+            "The public release keystore uses the controlled-build debug certificate"
+        }
+    }
+}
+if (!controlledDebugSigning) {
+    tasks.matching {
+        it.name.startsWith("assemble") && it.name.endsWith("Release") &&
+            (it.name.contains("Native") || it.name.contains("Nativeplayer"))
+    }.configureEach { dependsOn(verifyPublicReleaseSigning) }
+}
+
 val stageWasmAssets by tasks.registering(Sync::class) {
     dependsOn(verifyRomFixture, stagePublishedAssets)
     into(wasmAssetsDir)
@@ -113,8 +190,13 @@ android {
         applicationId = "org.bsnesjg.tv"
         minSdk = 24
         targetSdk = 34
-        versionCode = 9
-        versionName = "0.1.8"
+        versionCode = 10
+        versionName = "0.1.9"
+        buildConfigField("String", "PLAYER_ROM_SLUG", groovy.json.JsonOutput.toJson(playerRomSlug))
+        buildConfigField("String", "PLAYER_ROM_TITLE", groovy.json.JsonOutput.toJson(playerRomTitle))
+        buildConfigField("String", "PLAYER_ROM_APK_SLUG", groovy.json.JsonOutput.toJson(playerRomApkSlug))
+        buildConfigField("String", "PLAYER_ROM_SHA256", groovy.json.JsonOutput.toJson(playerRomSha))
+        buildConfigField("String", "PLAYER_ROM_SELFCHECK", groovy.json.JsonOutput.toJson(playerRomSelfCheck))
         // Set only after the public release page has been published and verified.
         val publicDownloadUrl = providers.gradleProperty("publicDownloadUrl").orElse("").get()
             .replace("\\", "\\\\").replace("\"", "\\\"")
@@ -157,7 +239,7 @@ android {
         create("nativeplayer") {
             dimension = "engine"
             applicationIdSuffix = ".native"
-            resValue("string", "app_name", "Mandelbrot Native")
+            resValue("string", "app_name", "$playerRomTitle Native")
             buildConfigField("boolean", "NATIVE_ENGINE", "true")
             buildConfigField("boolean", "ROM_LIBRARY", "false")
         }
@@ -165,9 +247,19 @@ android {
 
     buildTypes {
         getByName("release") {
-            // The coordinator needs an installable APK; use the local debug key for
-            // controlled profiling while keeping the app itself non-debuggable.
-            signingConfig = signingConfigs.getByName("debug")
+            // Device test builds may opt into the local debug key. Public release
+            // artifacts use the durable key supplied through the environment.
+            signingConfig = when {
+                controlledDebugSigning -> signingConfigs.getByName("debug")
+                releaseSigningConfigured -> signingConfigs.create("publicRelease").apply {
+                    storeFile = file(releaseKeystorePath!!)
+                    storePassword = releaseKeystorePassword!!
+                    keyAlias = releaseKeyAlias!!
+                    keyPassword = releaseKeyPassword!!
+                    storeType = "PKCS12"
+                }
+                else -> null
+            }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(
@@ -181,7 +273,7 @@ android {
     sourceSets.getByName("wasmplayer").assets.srcDir(stageWasmAssets.map { it.destinationDir })
     sourceSets.getByName("wasmplayer").assets.srcDir(tvProject.resolve("app/src/wasm/assets"))
     sourceSets.getByName("native").assets.srcDir(nativeAssetsDir)
-    sourceSets.getByName("nativeplayer").assets.srcDir(nativeAssetsDir)
+    sourceSets.getByName("nativeplayer").assets.srcDir(nativePlayerAssetsDir)
     sourceSets.getByName("nativeplayer").assets.srcDir(tvProject.resolve("app/src/native/assets"))
     externalNativeBuild { cmake { path = file("src/main/cpp/CMakeLists.txt"); version = "3.22.1" } }
     compileOptions {
@@ -196,7 +288,7 @@ tasks.configureEach {
         "preWasmplayerDebugBuild", "preWasmplayerReleaseBuild" -> dependsOn(stageWasmAssets)
         "preWasmDebugBuild", "preWasmReleaseBuild" -> dependsOn(stageWasmAssets)
         "preNativeDebugBuild", "preNativeReleaseBuild" -> dependsOn(stageNativeAssets)
-        "preNativeplayerDebugBuild", "preNativeplayerReleaseBuild" -> dependsOn(stageNativeAssets)
+        "preNativeplayerDebugBuild", "preNativeplayerReleaseBuild" -> dependsOn(stageNativePlayerAssets)
     }
 }
 
@@ -211,42 +303,58 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
         val required = mutableSetOf(
             "AndroidManifest.xml", "classes.dex", "assets/index.html", "assets/library.js", "assets/library.css",
             "assets/tv.js", "assets/tv-player.js", "assets/tv-scheduler.js", "assets/performance-overlay.js",
-            "assets/performance-overlay.css", "assets/engine-adapter.js", "assets/apk-share-menu.js",
-            "assets/roms/library.json", "assets/roms/manifest.json"
+            "assets/performance-overlay.css", "assets/engine-adapter.js", "assets/apk-share-menu.js"
         )
+        if (flavor != "nativeplayer") {
+            required += setOf("assets/roms/library.json", "assets/roms/manifest.json")
+        }
         if (flavor == "wasm" || flavor == "wasmplayer") {
             required += setOf("assets/app.js", "assets/cores/bsnes_jg.js", "assets/cores/bsnes_jg.wasm", "assets/cores/PROVENANCE.json")
         } else {
             required += setOf("lib/armeabi-v7a/libbjg.so", "lib/arm64-v8a/libbjg.so", "assets/Database/boards.bml",
-                "assets/Database/SuperFamicom.bml", "assets/reference-5800.png")
+                "assets/Database/SuperFamicom.bml")
+            if (flavor != "nativeplayer") required += "assets/reference-5800.png"
         }
+        if (flavor == "nativeplayer") required += "assets/roms/$playerRomSlug.sfc"
         fun sha(bytes: ByteArray) = MessageDigest.getInstance("SHA-256").digest(bytes)
             .joinToString("") { "%02x".format(it) }
         ZipFile(file).use { zip ->
             val entries = zip.entries().asSequence().filterNot { it.isDirectory }.map { it.name }.toSet()
             check(entries.containsAll(required)) { "APK is missing assets: ${required - entries}" }
             val romEntries = entries.filter { it.startsWith("assets/roms/") && it.endsWith(".sfc") }
-            val library = groovy.json.JsonSlurper().parseText(
-                zip.getInputStream(zip.getEntry("assets/roms/library.json")).bufferedReader().use { it.readText() }
-            ) as Map<*, *>
-            val records = library["roms"] as List<*>
-            val ids = records.map { (it as Map<*, *>) ["slug"] as String }.toSet()
-            check(records.size == 152 && ids.size == 152) { "Expected 152 unique catalog records" }
-            check(romEntries.size == 152 && romEntries.map { it.substringAfterLast('/').removeSuffix(".sfc") }.toSet() == ids) {
-                "APK ROM files do not exactly match the published catalog"
-            }
-            val cards = entries.filter { it.startsWith("assets/roms/cards/") && it.endsWith(".png") }
-            check(cards.size == 152 && cards.map { it.substringAfterLast('/').removeSuffix(".png") }.toSet() == ids) {
-                "APK card art does not exactly match the published catalog"
-            }
-            records.forEach { raw ->
-                val record = raw as Map<*, *>
-                val id = record["slug"] as String
-                val romEntry = zip.getEntry("assets/roms/$id.sfc")
-                val cardEntry = zip.getEntry("assets/roms/cards/$id.png")
-                check(romEntry.size == (record["size"] as Number).toLong()) { "ROM size mismatch for $id" }
-                check(sha(zip.getInputStream(romEntry).use { it.readBytes() }) == record["romSha256"]) { "ROM hash mismatch for $id" }
-                check(sha(zip.getInputStream(cardEntry).use { it.readBytes() }) == record["cardSha256"]) { "Card hash mismatch for $id" }
+            if (flavor == "nativeplayer") {
+                check(romEntries == listOf("assets/roms/$playerRomSlug.sfc")) {
+                    "Standalone Native player must contain only the configured demo ROM"
+                }
+                check(sha(zip.getInputStream(zip.getEntry("assets/roms/$playerRomSlug.sfc")).use { it.readBytes() }) == playerRomSha) {
+                    "Standalone Native player ROM differs from the configured published build"
+                }
+                check(entries.none { it.startsWith("assets/roms/cards/") || it == "assets/roms/library.json" || it == "assets/roms/manifest.json" }) {
+                    "Standalone Native player must not package the full ROM library or card art"
+                }
+            } else {
+                val library = groovy.json.JsonSlurper().parseText(
+                    zip.getInputStream(zip.getEntry("assets/roms/library.json")).bufferedReader().use { it.readText() }
+                ) as Map<*, *>
+                val records = library["roms"] as List<*>
+                val ids = records.map { (it as Map<*, *>) ["slug"] as String }.toSet()
+                check(records.size == 152 && ids.size == 152) { "Expected 152 unique catalog records" }
+                check(romEntries.size == 152 && romEntries.map { it.substringAfterLast('/').removeSuffix(".sfc") }.toSet() == ids) {
+                    "APK ROM files do not exactly match the published catalog"
+                }
+                val cards = entries.filter { it.startsWith("assets/roms/cards/") && it.endsWith(".png") }
+                check(cards.size == 152 && cards.map { it.substringAfterLast('/').removeSuffix(".png") }.toSet() == ids) {
+                    "APK card art does not exactly match the published catalog"
+                }
+                records.forEach { raw ->
+                    val record = raw as Map<*, *>
+                    val id = record["slug"] as String
+                    val romEntry = zip.getEntry("assets/roms/$id.sfc")
+                    val cardEntry = zip.getEntry("assets/roms/cards/$id.png")
+                    check(romEntry.size == (record["size"] as Number).toLong()) { "ROM size mismatch for $id" }
+                    check(sha(zip.getInputStream(romEntry).use { it.readBytes() }) == record["romSha256"]) { "ROM hash mismatch for $id" }
+                    check(sha(zip.getInputStream(cardEntry).use { it.readBytes() }) == record["cardSha256"]) { "Card hash mismatch for $id" }
+                }
             }
             if (flavor == "wasm" || flavor == "wasmplayer") {
                 check(sha(zip.getInputStream(zip.getEntry("assets/app.js")).use { it.readBytes() }) == sha(repo.resolve("web/app.js").readBytes())) {
@@ -278,9 +386,11 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
                     "Standalone WASM APK is missing the shared performance overlay"
                 }
             }
-            check(sha(zip.getInputStream(zip.getEntry("assets/roms/manifest.json")).use { it.readBytes() }) ==
-                  sha(tvProject.resolve("fixture/manifest.json").readBytes())) {
-                "APK self-check metadata differs from the frozen fixture manifest"
+            if (flavor != "nativeplayer") {
+                check(sha(zip.getInputStream(zip.getEntry("assets/roms/manifest.json")).use { it.readBytes() }) ==
+                      sha(tvProject.resolve("fixture/manifest.json").readBytes())) {
+                    "APK self-check metadata differs from the frozen fixture manifest"
+                }
             }
             val manifestText = tvProject.resolve("app/src/main/AndroidManifest.xml").readText()
             check(manifestText.contains("android.permission.INTERNET") &&

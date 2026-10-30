@@ -93,7 +93,7 @@ package.json                # @wbniv/bsnes-jg-player, GPL-3.0-only, type: module
 bin/sync.mjs                # CLI: sync / --demo / --check / version (zero deps)
 dist/                       # COMMITTED prebuilt artifacts (what npm ships)
   engine/{app.js, cores/bsnes_jg.js, cores/bsnes_jg.wasm, cores/PROVENANCE.json}
-  demo/{roms/mandel-display.sfc, roms/manifest.json, preview/mandel-display.png}
+  demo/{roms/raycaster.sfc, roms/manifest.json, preview/raycaster.png}  # one 32 KiB sample; no suite catalog
 astro/{index.ts, SnesPlayer.astro, integration.mjs}
 embed/{snippet.html, player.css}
 scripts/stage-dist.sh       # web/app.js (single source) → dist/engine/

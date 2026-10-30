@@ -1,9 +1,15 @@
 | Date | Change |
 |------|--------|
+| [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/1eea176) | plan: annotate as-built — status, deviations, gate results, verification evidence |
 | [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/6edc1c3) | ci: reproducibility gate is functional, not bitwise |
 | [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/85462bc) | app.js: merge the three drifted copies into one canonical player |
 
 <!--history-meta v1
+1eea176	author	Will Norris
+1eea176	added	63
+1eea176	deleted	19
+1eea176	files	1
+1eea176	body	Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_011DEG8ouwAWtqeWtcvZSysz
 6edc1c3	author	Will Norris
 6edc1c3	added	2
 6edc1c3	deleted	1

@@ -157,9 +157,11 @@ public class MainActivity extends Activity {
     }
 
     private void createNativeSurface(FrameLayout root) {
-        try {
-            referenceFrame = BitmapFactory.decodeStream(getAssets().open("reference-5800.png"));
-        } catch (IOException failure) { throw new IllegalStateException(failure); }
+        if (BuildConfig.ROM_LIBRARY) {
+            try {
+                referenceFrame = BitmapFactory.decodeStream(getAssets().open("reference-5800.png"));
+            } catch (IOException failure) { throw new IllegalStateException(failure); }
+        }
         glView = new GLSurfaceView(this); glView.setEGLContextClientVersion(2);
         glView.setVisibility(View.GONE);
         nativeRenderer = new NativeRenderer(); glView.setRenderer(nativeRenderer);
@@ -219,12 +221,30 @@ public class MainActivity extends Activity {
         void restartGame() { NativeEngine.reset();frame=0;credit=0;lastNs=0;referenceChecked=false;paused=false;resetPerformanceWindow(); }
         void renderVerification(int callbackId) {
             paused=true;
-            if (!"mandel-display".equals(romSlug)) { finishVerification(callbackId, false); return; }
+            boolean mandelCheck = "mandel-display".equals(romSlug);
+            boolean playerCheck = BuildConfig.PLAYER_ROM_SLUG.equals(romSlug) && !"{}".equals(BuildConfig.PLAYER_ROM_SELFCHECK);
+            if (!mandelCheck && !playerCheck) { finishVerification(callbackId, false); return; }
+            int frames, offset, expectedValue;
+            try {
+                if (mandelCheck) {
+                    frames = 5800; offset = 0x580; expectedValue = 0x204F;
+                } else {
+                    org.json.JSONObject spec = new org.json.JSONObject(BuildConfig.PLAYER_ROM_SELFCHECK);
+                    frames = spec.getInt("frames");
+                    offset = Integer.decode(spec.getString("offset"));
+                    expectedValue = Integer.decode(spec.getString("want"));
+                }
+            } catch (org.json.JSONException invalidConfig) {
+                android.util.Log.e("BJG_TV_METRIC", "Invalid configured player ROM self-check", invalidConfig);
+                finishVerification(callbackId, false); return;
+            }
             cancelVerification=false;NativeEngine.reset();
-            for (int i=0;i<5800&&!cancelVerification;i++) NativeEngine.step();
+            for (int i=0;i<frames&&!cancelVerification;i++) NativeEngine.step();
             if(cancelVerification){finishVerification(callbackId,"cancelled");paused=false;return;}
-            int got=NativeEngine.wramWord(0x580);boolean pass=got==0x204f;
-            if(referenceFrame!=null){int width=NativeEngine.width(),height=NativeEngine.height();ByteBuffer checkPixels=ByteBuffer.allocateDirect(256*224*4);NativeEngine.copyPixels(checkPixels);int[] expected=new int[width*height];referenceFrame.getPixels(expected,0,width,0,0,width,height);int diff=0;for(int i=0;i<expected.length;i++){int p=i*4,e=expected[i];if(checkPixels.get(p)!=(byte)((e>>16)&255)||checkPixels.get(p+1)!=(byte)((e>>8)&255)||checkPixels.get(p+2)!=(byte)(e&255))diff++;}pass=pass&&diff==0;android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"verification\",\"frame\":5800,\"wram\":"+got+",\"differentPixels\":"+diff+",\"status\":\""+(pass?"pass":"fail")+"\"}");}
+            int got=NativeEngine.wramWord(offset);boolean pass=got==expectedValue;
+            int diff=-1;
+            if(mandelCheck&&referenceFrame!=null){int width=NativeEngine.width(),height=NativeEngine.height();ByteBuffer checkPixels=ByteBuffer.allocateDirect(256*224*4);NativeEngine.copyPixels(checkPixels);int[] expected=new int[width*height];referenceFrame.getPixels(expected,0,width,0,0,width,height);diff=0;for(int i=0;i<expected.length;i++){int p=i*4,e=expected[i];if(checkPixels.get(p)!=(byte)((e>>16)&255)||checkPixels.get(p+1)!=(byte)((e>>8)&255)||checkPixels.get(p+2)!=(byte)(e&255))diff++;}pass=pass&&diff==0;}
+            android.util.Log.i("BJG_TV_METRIC","{\"engine\":\"native\",\"phase\":\"verification\",\"rom\":\""+romSlug+"\",\"frame\":"+frames+",\"wram\":"+got+",\"differentPixels\":"+diff+",\"status\":\""+(pass?"pass":"fail")+"\"}");
             finishVerification(callbackId,pass);paused=false;
         }
         private void finishVerification(int callbackId, Object pass) {
@@ -425,6 +445,15 @@ public class MainActivity extends Activity {
         public String getAppVersion() { return BuildConfig.VERSION_NAME; }
 
         @JavascriptInterface
+        public String getPlayerRomSlug() { return BuildConfig.PLAYER_ROM_SLUG; }
+
+        @JavascriptInterface
+        public String getPlayerRomTitle() { return BuildConfig.PLAYER_ROM_TITLE; }
+
+        @JavascriptInterface
+        public boolean hasPlayerRomSelfCheck() { return !"{}".equals(BuildConfig.PLAYER_ROM_SELFCHECK); }
+
+        @JavascriptInterface
         public void setGameRect(double left, double top, double width, double height) {
             if (!BuildConfig.NATIVE_ENGINE || glView == null || !Double.isFinite(left)
                     || !Double.isFinite(top) || !Double.isFinite(width) || !Double.isFinite(height)
@@ -525,7 +554,8 @@ public class MainActivity extends Activity {
             glView.queueEvent(() -> { nativeRenderer.restartGame(); resolve(callbackId, true); });
         }
         @JavascriptInterface public void verifyGame(int callbackId) {
-            if (glView == null || !"mandel-display".equals(currentRom)) { resolve(callbackId, false); return; }
+            boolean configuredCheck = BuildConfig.PLAYER_ROM_SLUG.equals(currentRom) && !"{}".equals(BuildConfig.PLAYER_ROM_SELFCHECK);
+            if (glView == null || (!"mandel-display".equals(currentRom) && !configuredCheck)) { resolve(callbackId, false); return; }
             glView.queueEvent(() -> nativeRenderer.renderVerification(callbackId));
         }
         @JavascriptInterface public void cancelVerify() { cancelVerification = true; }

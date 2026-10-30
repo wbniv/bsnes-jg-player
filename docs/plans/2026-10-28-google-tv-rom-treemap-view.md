@@ -1,6 +1,6 @@
 # Google TV ROM Treemap launcher view
 
-**Status:** Implemented and captured on Cast1. Pixel’s final APK launch check passed in portrait, but it opened Cartridge Flow; Pixel Treemap screenshots and landscape validation remain pending. ROM Treemap is launcher view 3. The [Cast1 Treemap proof](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) shows the final native APK’s globally squarified layout. This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
+**Status:** Implemented and captured on Cast1. Pixel’s final APK launch check passed in portrait, but it opened Cartridge Flow; Pixel Treemap screenshots and landscape validation remain pending. ROM Treemap is launcher view 3. The [Cast1 Treemap proof](../proof/google-tv-launcher-views-2026-10-28/cast1-rom-treemap.png) shows the final native APK’s globally squarified layout. A named palette selector is now implemented in source; build and device validation remain pending. See the [palette investigation and mockups](2026-10-29-treemap-palette-investigation.md). This extends the [Quick Launch and Cartridge Flow plan](2026-10-28-google-tv-launcher-views.md) and joins the same persistent launcher chooser carousel.
 
 **High fidelity mockup and diagrams:** [Open the treemap plan in a browser](2026-10-28-google-tv-rom-treemap-view.html).
 
@@ -20,7 +20,7 @@ The map is the full content area to the left of a fixed details rail. The rail s
 
 where (R) is the current filtered result set. A ROM’s tile area is its byte share of the map, subject only to pixel rounding. Sort tiles by size for squarification; use category color and legend to show category membership without constraining tile geometry. Ties are stable by ROM slug.
 
-Labels are an overlay and do not change tile bounds. Show title and size only when they fit; every tile always has an accessible name including title, filename, category, and exact byte count. The selected tile gets a bright outline. Category colors are deterministic and repeated in the legend.
+Labels are an overlay and do not change tile bounds. Show title and size only when they fit; every tile always has an accessible name including title, filename, category, and exact byte count. The selected tile gets a bright outline. Category colors are selected from named qualitative palettes and remain stable across filtering. The palette choice persists with the other launcher preferences; label ink adapts to the fill luminance.
 
 ## Interaction
 
@@ -29,6 +29,8 @@ Labels are an overlay and do not change tile bounds. Show title and size only wh
 - D-pad arrows move to the nearest tile in that direction. At the map edges, up returns to filters, left returns to the view chooser, and right/down enters the selected-ROM actions.
 - Select on a tile launches the focused ROM through the existing `launch()` function. The details rail has explicit Favorite and Play actions.
 - The map reports “N ROMs · total bytes” for the current results. No matches retain Search all / Clear search recovery; one match fills the map.
+- A palette dropdown is visible only in ROM Treemap, reports curated versus extended color counts, and persists across relaunch.
+- Category colors remain stable across search and filters, and light palette fills retain readable dark label ink.
 
 ```mermaid
 flowchart LR
@@ -65,8 +67,8 @@ On phone landscape, collapse the title/search area, view carousel, and category 
 ## Implementation scope
 
 - `android-tv/app/src/main/assets/index.html`: add the Treemap surface and detail rail.
-- `android-tv/app/src/main/assets/library.js`: register view 3, compute globally squarified rectangles from `size`, colored by category, and add geometric D-pad movement.
-- `android-tv/app/src/main/assets/library.css`: style the map, deterministic category palette, selected tile, and responsive details rail.
+- `android-tv/app/src/main/assets/library.js`: compute globally squarified rectangles from `size`, assign category colors from the selected named palette, persist palette choice, and add geometric D-pad movement.
+- `android-tv/app/src/main/assets/library.css`: style the map, palette selector, selected tile, and responsive details rail.
 - Keep `android-tv/app/src/library/assets/` synchronized for the preview page.
 
 ## Verification plan

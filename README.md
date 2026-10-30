@@ -1,6 +1,8 @@
 # bsnes-jg-wasm
 
-**The cycle-accurate SNES core that gates a compiler's correctness — now in your browser.**
+**Reusable integrations for a cycle-accurate SNES core — including the browser WebAssembly player.**
+
+The product is the reusable player integration: the pinned bsnes-jg core, browser WebAssembly frontend, package sync CLI, framework-agnostic embed, and Astro component. The Android APKs are example Native host integrations; they are not the product API.
 
 A WebAssembly build of [**bsnes-jg 2.1.0**](https://gitlab.com/jgemu/bsnes) (the Jolly Good fork of
 bsnes), plus a minimal page that runs `.sfc` homebrew. Its reason to exist: bsnes-jg is the
@@ -14,20 +16,25 @@ WRAM assert (`mandel-display` → `0x9103`) live in the tab.
 
 > **Why bsnes-jg and not snes9x?** snes9x is the turnkey browser default, but it is *not*
 > cycle-accurate and its license is **non-commercial / GPL-incompatible**. bsnes-jg is
-> **cycle-accurate AND GPLv3** — the accuracy-matched *and* license-clean choice. The only cost is
-> one Emscripten core build, which `build.sh` owns.
+> **cycle-accurate AND GPLv3** — the accuracy-matched *and* license-clean choice.
 
 ---
 
 ## The npm package — `@wbniv/bsnes-jg-player`
+
+See [Integrate the bsnes-jg player](docs/how-to/integrate-the-player.md) for the browser WebAssembly flow, Astro and static-site samples, the C++ frontend contract, and the Android Native example bridge.
 
 This repo doubles as an npm package so any site can vendor the player without touching Emscripten:
 
 ```sh
 npm i @wbniv/bsnes-jg-player          # or: npm i git+https://github.com/wbniv/bsnes-jg-wasm.git
 npx bsnes-jg-player sync public/play  # vendor app.js + cores/* (+ ENGINE_VERSION stamp)
-npx bsnes-jg-player sync public/play --demo   # also seed the mandel-display demo ROM
+npx bsnes-jg-player sync public/play --demo   # also seed the 32 KiB Raycaster Maze demo ROM
 ```
+
+The npm payload includes this one small sample ROM, not the 152-ROM suite. The full suite is available as the APK download on [Indri](https://indri.studio/apps/bsnes-jg-wasm/).
+
+`demo-rom.json` is the one place that selects the sample for npm and the standalone Android player: slug, title, APK filename stem, integrity hash, and optional WRAM self-check. Add the ROM and preview under `web/roms/` and `web/preview/`, update that config, and run `bash scripts/stage-dist.sh` to refresh the npm payload.
 
 `sync` never touches `roms/` or `preview/` (your site's content) unless `--demo`. In CI, run
 `npx bsnes-jg-player sync --check public/play` — it exits 1 if the vendored engine drifts from the
@@ -83,12 +90,13 @@ web/
   app.js            # drives the core: render framebuffer, keyboard→pad, the fidelity self-check
   src/main.cpp      # minimal Jolly-Good-API wasm frontend (mirrors the gate's dev/jgxcheck.cpp)
   src/libco_emscripten.c  # libco backend on Emscripten fibers (stock libco has no wasm path)
-  roms/*.sfc        # snapshot of the +mos-a16 graphics demos (Mandelbrot zoom / Mode-7 / display / interactive)
-  roms/manifest.json# per-ROM self-check metadata (WRAM offset + expected gate value)
+  roms/*.sfc        # local demo sources; the npm payload stages only Raycaster Maze
+  roms/manifest.json# per-ROM metadata and optional self-checks
   cores/            # build.sh drops bsnes_jg.{wasm,js} + PROVENANCE.json here (gitignored — reproducible)
 package.json        # @wbniv/bsnes-jg-player (see above)
+demo-rom.json       # selected one-ROM npm / standalone Android example
 bin/sync.mjs        # the sync CLI (vendor / --check drift gate / version)
-dist/               # COMMITTED npm payload: engine (app.js + cores) + demo ROM — staged by scripts/stage-dist.sh
+dist/               # COMMITTED npm payload: engine (app.js + cores) + 32 KiB Raycaster demo — staged by scripts/stage-dist.sh
 astro/              # SnesPlayer.astro component + optional integration (ENGINE_VERSION warning light)
 embed/              # framework-agnostic snippet.html + player.css
 docs/plans/         # the build plan / contract (+ verification evidence)

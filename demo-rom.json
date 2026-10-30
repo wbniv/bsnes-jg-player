@@ -1,0 +1,11 @@
+{
+  "slug": "raycaster",
+  "title": "Raycaster Maze",
+  "apkSlug": "raycaster-maze",
+  "sha256": "b5085b575247e8d5c71a35f48f49e4cdead9ba32dd2bcbcd7cbb4d0955f4e109",
+  "selfcheck": {
+    "frames": 500,
+    "offset": "0x1362",
+    "want": "0xB200"
+  }
+}

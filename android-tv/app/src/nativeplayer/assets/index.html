@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
   <meta name="color-scheme" content="dark">
-  <title>Mandelbrot Native</title>
+  <title>SNES Native player</title>
   <link rel="stylesheet" href="library.css">
   <link rel="stylesheet" href="performance-overlay.css">
 </head>
 <body>
-  <main id="game"><canvas id="screen" width="256" height="224" aria-label="Mandelbrot SNES gameplay"></canvas></main>
-  <div id="hud"><div id="brand">Mandelbrot <small class="app-version" data-app-version></small></div><div id="status">Starting native C++ emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
-  <section id="pause-menu" hidden><div id="tv-pause-card"><h1 id="tv-title">Paused</h1><p id="pause-subtitle">Mandelbrot</p><div id="tv-actions">
+  <main id="game"><canvas id="screen" width="256" height="224" aria-label="SNES gameplay"></canvas></main>
+  <div id="hud"><div id="brand">SNES player <small class="app-version" data-app-version></small></div><div id="status">Starting native C++ emulator…</div><div id="remote-hint">BACK · Pause / menu</div></div>
+  <section id="pause-menu" hidden><div id="tv-pause-card"><h1 id="tv-title">Paused</h1><p id="pause-subtitle">SNES player</p><div id="tv-actions">
     <button id="tv-resume"><svg class="menu-icon filled" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><span>Resume</span></button>
     <button id="tv-restart"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0 1 4M20 4v7h-7"/></svg><span>Restart this ROM</span></button>
     <div class="menu-section-label" role="separator" aria-label="Diagnostics">Diagnostics</div>
@@ -20,7 +20,7 @@
     <button id="tv-performance" aria-pressed="true"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9h4v10M10 19V5h4v14M16 19v-7h4v7M3 19h18"/></svg><span id="tv-performance-label">Performance overlay · On</span></button>
     <button id="tv-exit"><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4H5v16h5M14 8l4 4-4 4M8 12h10"/></svg><span>Exit app</span></button>
   </div><div id="checkresult"></div></div></section>
-  <script>window.BJG_DEFAULT_ROM="mandel-display";window.BJG_TV_MODE=true;</script>
+  <script>window.BJG_TV_MODE=true;</script>
   <script src="tv-scheduler.js"></script>
   <script src="performance-overlay.js"></script>
   <script src="display-layout.js"></script>

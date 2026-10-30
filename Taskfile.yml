@@ -39,6 +39,27 @@ tasks:
     cmds:
       - ./android-tv/build-in-container.sh
 
+  android-tv:release-build:
+    desc: Build the two public Native APKs with the durable release key
+    cmds:
+      - ./android-tv/tools/release-signing-secrets.sh build
+
+  android-tv:release-secrets-pull:
+    desc: Restore the Android release keystore from encrypted AWS SSM storage
+    cmds:
+      - ./android-tv/tools/release-signing-secrets.sh pull
+
+  android-tv:release-secrets-inspect:
+    desc: List relevant SSM parameter names without reading secret values
+    cmds:
+      - ./android-tv/tools/release-signing-secrets.sh inspect
+
+  android-tv:release-key-bootstrap:
+    desc: Generate and store the durable Android release key in AWS SSM SecureString
+    prompt: This creates the permanent Android app signing identity in AWS SSM. Future public APK updates must use this same key. Continue?
+    cmds:
+      - ./android-tv/tools/release-signing-secrets.sh bootstrap
+
   sync-roms:
     desc: "Refresh web/roms/*.sfc from a sibling llvm-mos-65816 checkout"
     cmds:

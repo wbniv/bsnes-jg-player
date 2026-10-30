@@ -1,15 +1,14 @@
 {
-  "_comment": "Demo ROMs (homebrew built by the llvm-mos-65816 +mos-a16 toolchain) and their in-browser fidelity self-checks. Legacy selfcheck (no `mode`) mirrors the gate's headless dev/jgxcheck.cpp assert exactly: power on, run `frames` frames, read `len` little-endian bytes of WRAM at `off`, require == `want`. `mode: \"live-record\"` (the gallery) instead polls the RUNNING machine's `record` fields at `off` until `state == ready`, then asserts `ok === 1 && z === oracle[work]` against a host-generated per-work table — see docs/plans/2026-07-28-gallery-per-image-selfcheck.md (\"The player / manifest contract\") in llvm-mos-65816.",
   "roms": [
     {
-      "id": "mandel-display",
-      "title": "Mode 7",
+      "id": "raycaster",
+      "title": "Raycaster Maze",
       "selfcheck": {
-        "off": "0x200",
+        "off": "0x1362",
         "len": 2,
-        "want": "0x204F",
-        "frames": 5800,
-        "label": "gate jgxcheck CRC (corpus_result @ WRAM $0200)"
+        "want": "0xB200",
+        "frames": 500,
+        "label": "Raycaster Maze WRAM fidelity check"
       }
     }
   ]

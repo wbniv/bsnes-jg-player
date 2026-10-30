@@ -1,10 +1,15 @@
 | Date | Change |
 |------|--------|
+| [2026-10-29](https://github.com/wbniv/bsnes-jg-wasm/commit/4b68d74) | Index the published ROM inventory plan |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-wasm/commit/a071ee1) | Record SNES launcher and profiling work |
 | [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/39c02cb) | TODO/plan-index: triage deferrals, record A1 done, index the npm-package plan |
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-wasm/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+4b68d74	author	Will Norris
+4b68d74	added	1
+4b68d74	deleted	0
+4b68d74	files	1
 a071ee1	author	Will Norris
 a071ee1	added	12
 a071ee1	deleted	0
