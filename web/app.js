@@ -1,5 +1,5 @@
 /*
- * bsnes-jg-wasm loader — drives our Emscripten build of bsnes-jg 2.1.0 (the exact
+ * bsnes-jg-player loader — drives our Emscripten build of bsnes-jg 2.1.0 (the exact
  * core the llvm-mos-65816 differential gate trusts). Boots a .sfc, renders the
  * core's framebuffer to a <canvas>, maps the keyboard to an SNES pad, and runs an
  * in-browser fidelity self-check that reproduces the gate's headless WRAM assert.
@@ -745,7 +745,7 @@
     var verifyEl = document.getElementById("verify");
     if (verifyEl) verifyEl.addEventListener("click", verify);
 
-    // BEGIN SHARED FULLSCREEN CONTROLLER — canonical copy lives in bsnes-jg-wasm;
+    // BEGIN SHARED FULLSCREEN CONTROLLER — canonical copy lives in bsnes-jg-player;
     // sites vendor this file verbatim via `bsnes-jg-player sync`, never edit a site copy.
     (function () {
       if (window.__bjgFullscreenCleanup) window.__bjgFullscreenCleanup();

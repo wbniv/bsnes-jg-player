@@ -2,7 +2,7 @@
 
 The reusable player is the product: a pinned cycle-accurate bsnes-jg core, its frontend contracts, and integration tools. WebAssembly is the browser integration. The Android APKs are example Native host applications, not the project’s SDK or primary product.
 
-This repository is the `bsnes-jg-wasm` fork: it owns the browser build, the reusable web package, and the web-specific integration. Use `https://biohack.net/apps/bsnes-jg-wasm/` as the proposed human-facing project page so its path identifies the repository. Keep the APK delivery prefix `https://downloads.biohack.net/bsnes-jg/` separate; it is a stable download location and does not need to mirror the source repository name.
+This repository is `bsnes-jg-player`: it owns the reusable SNES player integration, including its browser WebAssembly runtime, package sync CLI, framework-agnostic embed, and Astro component. The product page is `https://indri.studio/apps/bsnes-jg-player/`. Keep the APK delivery prefix `https://downloads.biohack.net/bsnes-jg/` separate; it is a stable download location and does not need to mirror the source repository name.
 
 The Native Android frontend is an upstream candidate for [`libretro/bsnes-jg`](https://github.com/libretro/bsnes-jg), since it adapts that core for Android rather than for the browser. It remains an example integration in this repository until an upstream proposal is reviewed and accepted. The browser WASM frontend and web package stay in this fork because they are the fork’s web product.
 
@@ -32,7 +32,7 @@ The browser build and Android Native example compile the same core source for di
 The package currently ships from this repository’s `npm-package` branch:
 
 ```sh
-npm install github:wbniv/bsnes-jg-wasm#npm-package
+npm install github:wbniv/bsnes-jg-player#npm-package
 npx bsnes-jg-player sync public/play
 ```
 

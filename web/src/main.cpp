@@ -1,5 +1,5 @@
 /*
- * bsnes-jg-wasm — Emscripten frontend for bsnes-jg 2.1.0 (jgemu/bsnes), the
+ * bsnes-jg-player — Emscripten frontend for bsnes-jg 2.1.0 (jgemu/bsnes), the
  * exact cycle-accurate SNES core the llvm-mos-65816 differential gate trusts.
  *
  * This drives the Jolly Good C++ API the same way the gate's headless harness

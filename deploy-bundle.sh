@@ -81,7 +81,7 @@ cat > "$OUT/index.html" <<HTML
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$ROM — bsnes-jg-wasm</title>
+<title>$ROM — bsnes-jg-player</title>
 <style>
   html,body{margin:0;background:#0c0e13;color:#e7e9ee;
     font:14px/1.5 ui-sans-serif,system-ui,sans-serif;}

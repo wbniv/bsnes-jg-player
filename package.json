@@ -7,7 +7,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wbniv/bsnes-jg-wasm.git"
+    "url": "git+https://github.com/wbniv/bsnes-jg-player.git"
   },
   "author": "Will Norris",
   "bin": {

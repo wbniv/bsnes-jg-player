@@ -1,11 +1,16 @@
 | Date | Change |
 |------|--------|
-| [2026-10-29](https://github.com/wbniv/bsnes-jg-wasm/commit/4b68d74) | Index the published ROM inventory plan |
-| [2026-10-29](https://github.com/wbniv/bsnes-jg-wasm/commit/a071ee1) | Record SNES launcher and profiling work |
-| [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/39c02cb) | TODO/plan-index: triage deferrals, record A1 done, index the npm-package plan |
-| [2026-06-26](https://github.com/wbniv/bsnes-jg-wasm/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
+| [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
+| [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/4b68d74) | Index the published ROM inventory plan |
+| [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/a071ee1) | Record SNES launcher and profiling work |
+| [2026-07-27](https://github.com/wbniv/bsnes-jg-player/commit/39c02cb) | TODO/plan-index: triage deferrals, record A1 done, index the npm-package plan |
+| [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+e314486	author	Will Norris
+e314486	added	3
+e314486	deleted	1
+e314486	files	1
 4b68d74	author	Will Norris
 4b68d74	added	1
 4b68d74	deleted	0

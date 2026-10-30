@@ -1,4 +1,4 @@
-bsnes-jg-wasm — a WebAssembly build of bsnes-jg + a loader page.
+bsnes-jg-player — the reusable browser player integration for bsnes-jg, using WebAssembly.
 
 This project builds and redistributes the following under the GNU GPL v3:
 

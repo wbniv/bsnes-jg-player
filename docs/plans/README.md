@@ -1,4 +1,4 @@
-# Plans — bsnes-jg-wasm
+# Plans — bsnes-jg-player
 
 *Index of the plans in this directory — one row per `*.md`, oldest → newest by the commit that first
 introduced it, with a one-sentence summary, the commit(s) that touched it, and a category. Summaries are
@@ -27,6 +27,8 @@ rows on commit.*
 | [Share the SNES app across phone, tablet, Chromecast, and web](2026-10-28-cross-platform-app-sharing.md) | Share the installed Android APK through Android Sharesheet or a short-lived LAN QR, with a public-download fallback and web URL sharing. | [`33177cd`](https://github.com/wbniv/bsnes-jg-wasm/commit/33177cd) | Platform |
 | [Public Android APK downloads on Cloudflare R2](2026-10-28-r2-apk-public-downloads.md) | Publish the Native suite and Raycaster Maze example APKs with a public QR/download page, retaining only current and previous releases. The npm payload carries only the small Raycaster ROM; the full suite remains a separate APK download. | In progress; rebuild Raycaster player APK; R2 domain/TLS pending | Infra |
 | [Propose a reusable Native Android frontend upstream](2026-10-29-native-android-upstream.md) | Keep the browser player in this fork and prepare a focused upstream proposal for the core-facing Native Android adapter, leaving the launcher and ROM catalog downstream. | Proposal draft; not submitted | Platform |
+| [Native iOS player integration](2026-10-30-native-ios-player.md) | Build an iPhone-first Native example for the compact Raycaster Maze ROM, reusing the pinned bsnes-jg core while keeping the browser integration WebAssembly-based. | Proposed | Platform |
+| [Rename the project to `bsnes-jg-player`](2026-10-31-bsnes-jg-player-rename.md) | Align the GitHub repository, local checkout, and public product URL around the reusable player, while retaining redirects and the established APK delivery path. | In progress | Platform |
 
 ---
 

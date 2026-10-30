@@ -28,7 +28,7 @@ The Native library example APK bundles the ROM catalog, ROM files, and preview a
 
 Release records are tracked in [`docs/releases/`](../releases/). Both 0.1.9 public URLs were downloaded back and their exact sizes and SHA-256 hashes matched the local APKs. The 0.1.8 Native suite and Mandelbrot player were copied to the new release prefix and likewise verified.
 
-- Public product/download page: `https://indri.studio/apps/bsnes-jg-wasm/`. The biohack.net SNES panel and QR point there; `https://downloads.biohack.net/bsnes-jg/` redirects to the same page. The `wald3n.com/open-source` listing remains pending.
+- Public product/download page: `https://indri.studio/apps/bsnes-jg-player/`. The biohack.net SNES panel and QR point there; `https://downloads.biohack.net/bsnes-jg/` redirects to the same page. The `wald3n.com/open-source` listing remains pending.
 
 ## Release task contract
 

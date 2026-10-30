@@ -1,4 +1,4 @@
-# TODO — bsnes-jg-wasm
+# TODO — bsnes-jg-player
 
 Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-bsnes-jg-wasm.md).
 
@@ -30,7 +30,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
   base-class fix, and `.rp-badge.warn` in `embed/player.css`; both sites are synced and committed
   locally (also unpushed). What remains needs the user's go-ahead and is outward-facing:
   `git push origin npm-package`, then on each site `pnpm update @wbniv/bsnes-jg-player` (the dep is
-  `github:wbniv/bsnes-jg-wasm#npm-package`, so the branch push *is* the release — `npm publish` is
+  `github:wbniv/bsnes-jg-player#npm-package`, so the branch push *is* the release — `npm publish` is
   only needed for registry consumers), then flip the gallery's selfcheck to `mode: "live-record"`
   and deploy. Until the branch is pushed, both sites' CI `sync --check` sees 1.1.0 on disk against
   1.0.0 in `node_modules` and fails — that is the gate working, not a defect.
@@ -127,4 +127,10 @@ _Auto-added from plan "Out of scope"/"Deferred" sections at commit time. Triage 
 - [ ] **(triage)** A desktop browser performance dashboard or mouse/keyboard-only controls. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:04a1a690fe2285b1 -->
 - [ ] **(triage)** Persisting historical sessions inside the apps; coordinator evidence remains the record for comparison runs. — _from [2026-10-26-google-tv-performance-overlay.md](docs/plans/2026-10-26-google-tv-performance-overlay.md)_  <!-- fp:b2b2d02005c6dc83 -->
 - [verify] **2026-10-26-snes-rom-library-search** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-26-snes-rom-library-search.md](docs/plans/2026-10-26-snes-rom-library-search.md)_  <!-- fp:d21c98d625b27066 -->
+- [ ] **(triage)** The Android frontend relies on bsnes-jg global state. A reusable multi-instance C API may take more work than a thin iOS bridge; constrain the first app to one emulator instance. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3755e5a5576d6456 -->
+- [ ] **(triage)** Metal texture upload and audio-ring behavior need measurement on physical hardware; simulator success alone is not performance proof. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:cdcdee449261179e -->
+- [ ] **(triage)** Codemagic's current Xcode image, workflow availability, account link, and minute counter must be checked in the account; no repo config proves those settings. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3e43923983786c69 -->
+- [ ] **(triage)** Public iOS distribution requires Apple Developer signing/provisioning and account setup. Those credentials are outside the repo and are not part of simulator CI. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:e0e28266e1471873 -->
+- [ ] **(triage)** Upstream ownership for the cross-platform native adapter is unresolved. Keep the web package and browser WASM product in this fork; coordinate the Android/iOS adapter proposal with the core maintainer before submission. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3d782bc12400b500 -->
+- [ ] **(triage)** tvOS, full 152-ROM catalog, save states, import-any-ROM UX, cloud saves, and App Store submission are outside this first iOS example. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:8cf6d1326fee5a82 -->
 <!-- END auto-captured-deferrals -->

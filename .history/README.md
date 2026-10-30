@@ -1,11 +1,16 @@
 | Date | Change |
 |------|--------|
-| [2026-09-15](https://github.com/wbniv/bsnes-jg-wasm/commit/f1557ce) | release(prep): 1.1.0 — badge keeps the host page's base class; live-record staged |
-| [2026-07-27](https://github.com/wbniv/bsnes-jg-wasm/commit/4d52482) | package: SnesPlayer.astro + integration warning light + framework-agnostic embed |
-| [2026-06-25](https://github.com/wbniv/bsnes-jg-wasm/commit/66bc05d) | Wire accurate mode: the gate's bsnes-jg 2.1.0 core, in the browser |
-| [2026-06-25](https://github.com/wbniv/bsnes-jg-wasm/commit/0c1dc94) | scaffold bsnes-jg-wasm: the gate's cycle-accurate SNES core, in the browser |
+| [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
+| [2026-09-15](https://github.com/wbniv/bsnes-jg-player/commit/f1557ce) | release(prep): 1.1.0 — badge keeps the host page's base class; live-record staged |
+| [2026-07-27](https://github.com/wbniv/bsnes-jg-player/commit/4d52482) | package: SnesPlayer.astro + integration warning light + framework-agnostic embed |
+| [2026-06-25](https://github.com/wbniv/bsnes-jg-player/commit/66bc05d) | Wire accurate mode: the gate's bsnes-jg 2.1.0 core, in the browser |
+| [2026-06-25](https://github.com/wbniv/bsnes-jg-player/commit/0c1dc94) | scaffold bsnes-jg-wasm: the gate's cycle-accurate SNES core, in the browser |
 
 <!--history-meta v1
+e314486	author	Will Norris
+e314486	added	15
+e314486	deleted	7
+e314486	files	1
 f1557ce	author	Will Norris
 f1557ce	added	2
 f1557ce	deleted	0

@@ -1,4 +1,4 @@
-# bsnes-jg-wasm
+# bsnes-jg-player
 
 **Reusable integrations for a cycle-accurate SNES core — including the browser WebAssembly player.**
 
@@ -27,12 +27,12 @@ See [Integrate the bsnes-jg player](docs/how-to/integrate-the-player.md) for the
 This repo doubles as an npm package so any site can vendor the player without touching Emscripten:
 
 ```sh
-npm i @wbniv/bsnes-jg-player          # or: npm i git+https://github.com/wbniv/bsnes-jg-wasm.git
+npm i @wbniv/bsnes-jg-player          # or: npm i git+https://github.com/wbniv/bsnes-jg-player.git
 npx bsnes-jg-player sync public/play  # vendor app.js + cores/* (+ ENGINE_VERSION stamp)
 npx bsnes-jg-player sync public/play --demo   # also seed the 32 KiB Raycaster Maze demo ROM
 ```
 
-The npm payload includes this one small sample ROM, not the 152-ROM suite. The full suite is available as the APK download on [Indri](https://indri.studio/apps/bsnes-jg-wasm/).
+The npm payload includes this one small sample ROM, not the 152-ROM suite. The full suite is available as the APK download on [Indri](https://indri.studio/apps/bsnes-jg-player/).
 
 `demo-rom.json` is the one place that selects the sample for npm and the standalone Android player: slug, title, APK filename stem, integrity hash, and optional WRAM self-check. Add the ROM and preview under `web/roms/` and `web/preview/`, update that config, and run `bash scripts/stage-dist.sh` to refresh the npm payload.
 

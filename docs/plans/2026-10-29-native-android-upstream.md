@@ -6,7 +6,7 @@
 
 Keep the browser WebAssembly frontend and reusable browser player in `wbniv/bsnes-jg-wasm`. Propose the reusable Native Android core adapter to [`libretro/bsnes-jg`](https://github.com/libretro/bsnes-jg), where it can live beside the core it adapts. Keep this repository’s ROM catalog, TV launcher, APK sharing, benchmark screens, and release pipeline as downstream example-app code.
 
-The human project page should identify this fork as `bsnes-jg-wasm` at `https://biohack.net/apps/bsnes-jg-wasm/`. The APK download prefix may remain `https://downloads.biohack.net/bsnes-jg/`; source identity and stable binary URLs serve different purposes.
+The human project page is `bsnes-jg-player` at `https://indri.studio/apps/bsnes-jg-player/`. The APK download prefix remains `https://downloads.biohack.net/bsnes-jg/`; source identity and stable binary URLs serve different purposes.
 
 ## Candidate upstream scope
 
