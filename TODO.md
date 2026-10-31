@@ -54,6 +54,8 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Later (separate)
 
+- [T3] **Native iOS host:** simulator bootstrap passes on Codemagic (2026-10-31): native ARM64 core, Metal rendering, and Raycaster WRAM fidelity. Remaining: audio, GameController, touch/lifecycle/orientation validation, iPad proof, and physical iPhone signing/testing. See [iOS plan and build evidence](docs/plans/2026-10-30-native-ios-player.md).
+
 - [T3] **Showroom** — a demo-reel page consuming this core (curated `+mos-a16` productions). Its own
   effort; this repo just provides the `.wasm`.
 

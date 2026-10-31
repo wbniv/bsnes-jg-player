@@ -1,0 +1,17 @@
+{
+  "build_id": "6ae53afca7837523d3173c64",
+  "build_url": "https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae53afca7837523d3173c64",
+  "status": "finished",
+  "commit": "f0af1b08d67d2244b7cf5ad63660631320899c19",
+  "started_at": "2026-10-31T00:49:06.753000+00:00",
+  "finished_at": "2026-10-31T00:51:25.767000+00:00",
+  "elapsed_seconds": 139.014,
+  "machine": "mac_mini_m2",
+  "xcode": "16.4",
+  "device": "iPhone 16",
+  "target": "arm64 iOS Simulator",
+  "artifact": "BsnesPlayer-simulator.zip",
+  "artifact_sha256": "787fcece8841d1aca831906dddfce9871af05abd74dc1ac25135223cb742c104",
+  "physical_device_tested": false,
+  "audio_implemented": false
+}

@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "frames": 500,
+  "expected": 45568,
+  "nonblack": true,
+  "height": 240,
+  "width": 512,
+  "wram": 45568
+}
