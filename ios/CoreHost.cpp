@@ -13,6 +13,9 @@ uint32_t videoBuffer[512 * 512]{};
 float audioBuffer[3200]{};
 unsigned frameWidth = 0, frameHeight = 0, framePitch = 0;
 uint16_t pad = 0;
+uint16_t lastObservedPad = 0;
+PlayerCore::AudioSink sink = nullptr;
+void* sinkContext = nullptr;
 bool loaded = false;
 bool stream(void*, std::string name, std::stringstream& out) {
     std::ifstream file(databasePath + "/" + name, std::ios::binary);
@@ -33,9 +36,12 @@ void video(const void*, unsigned w, unsigned h, unsigned p) {
     if (w > 512 || h > 512 || p < w || p * h > 512 * 512) std::abort();
     frameWidth = w; frameHeight = h; framePitch = p;
 }
-// First CI milestone explicitly has no audio output; retain a valid core sink.
-void audio(const void*, size_t) {}
-int input(const void*, unsigned, unsigned) { return pad; }
+void audio(const void*, size_t count) { if (sink) sink(sinkContext, audioBuffer, count); }
+int input(const void*, unsigned port, unsigned) {
+    if (port != 0) return 0;
+    if (pad) lastObservedPad = pad;
+    return pad;
+}
 void attach() {
     Bsnes::setAudioSpec({48000.0, 1600, 0, audioBuffer, nullptr, audio});
     Bsnes::setInputSpec({0, Bsnes::Input::Device::Gamepad, nullptr, input});
@@ -49,7 +55,7 @@ bool PlayerCore::load(const std::string& path, const std::string& database) {
     rom.assign(std::istreambuf_iterator<char>(in), {});
     if (rom.size() < 32768) return false;
     romPath = path; databasePath = database;
-    frameWidth = frameHeight = framePitch = 0; pad = 0;
+    frameWidth = frameHeight = framePitch = 0; pad = lastObservedPad = 0;
     Bsnes::setOpenFileCallback(nullptr, file);
     Bsnes::setOpenStreamCallback(nullptr, stream);
     Bsnes::setOpenMsuCallback(nullptr, msu);
@@ -69,6 +75,8 @@ bool PlayerCore::load(const std::string& path, const std::string& database) {
 void PlayerCore::frame() { if (loaded) Bsnes::run(); }
 void PlayerCore::stop() { if (loaded) Bsnes::unload(); loaded = false; pad = 0; }
 void PlayerCore::buttons(uint16_t mask) { pad = mask; }
+void PlayerCore::audioSink(void* context, AudioSink callback) { sinkContext = context; sink = callback; }
+uint16_t PlayerCore::lastInput() { return lastObservedPad; }
 int PlayerCore::wramWord(unsigned offset) {
     if (!loaded) return -1;
     auto m = Bsnes::getMemoryRaw(Bsnes::Memory::MainRAM);

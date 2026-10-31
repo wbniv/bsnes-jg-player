@@ -5,6 +5,7 @@ from pathlib import Path
 import subprocess
 import shutil
 import time
+import os
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "ios/artifacts"
@@ -41,10 +42,41 @@ try:
     proof = json.loads(result.read_text())
     (OUT / "selfcheck.json").write_text(json.dumps(proof, indent=2))
     assert proof["pass"], proof
-    run("xcrun", "simctl", "launch", udid, APP)
+    run("xcrun", "simctl", "launch", udid, APP,
+        env={**os.environ, "SIMCTL_CHILD_BJG_AUDIO_OFFLINE": "1"})
     time.sleep(12)
     run("xcrun", "simctl", "io", udid, "screenshot", str(OUT / "iphone.png"))
     print("PASS", device["name"], json.dumps(proof))
+    run("xcrun", "simctl", "terminate", udid, APP)
+    tablets = [d for runtime, ds in devices["devices"].items() if ".iOS-" in runtime
+               for d in ds if d["name"].startswith("iPad")]
+    if not tablets:
+        raise RuntimeError("No available iPad simulator for the required layout matrix")
+    tablet = tablets[0]
+    for label, target in [("iphone", device), ("ipad", tablet)]:
+        target_id = target["udid"]
+        if target_id != udid:
+            if target["state"] != "Booted":
+                run("xcrun", "simctl", "boot", target_id)
+            run("xcrun", "simctl", "bootstatus", target_id, "-b", timeout=300)
+        (OUT / f"{label}-device.json").write_text(json.dumps(target, indent=2))
+        result_bundle = OUT / f"ui-{label}.xcresult"
+        command = ["xcodebuild", "-project", str(ROOT / "ios/build/BsnesPlayer.xcodeproj"),
+                   "-scheme", "PlayerUITests", "-configuration", "Release",
+                   "-destination", f"platform=iOS Simulator,id={target_id}",
+                   "-parallel-testing-enabled", "NO", "-resultBundlePath", str(result_bundle),
+                   "CODE_SIGNING_ALLOWED=NO", "test"]
+        try:
+            with (OUT / f"ui-{label}.log").open("w") as log_file:
+                tested = subprocess.run(command, stdout=log_file, stderr=subprocess.STDOUT)
+            subprocess.run(["xcrun", "xcresulttool", "export", "attachments", "--path", str(result_bundle),
+                            "--output-path", str(OUT / f"{label}-screenshots")], check=True)
+            if tested.returncode:
+                raise RuntimeError(f"{label} UI validation failed; see ui-{label}.log and .xcresult")
+            print(f"PASS {label}: touch, core input polling, audio graph, lifecycle, portrait/landscape", flush=True)
+        finally:
+            if target_id != udid:
+                subprocess.run(["xcrun", "simctl", "shutdown", target_id], capture_output=True)
 except Exception:
     # Preserve diagnostics before shutting down the ephemeral CI simulator.
     log = subprocess.run([
