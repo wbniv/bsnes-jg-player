@@ -4,7 +4,7 @@
       "id": "raycaster",
       "title": "Raycaster Maze",
       "selfcheck": {
-        "off": "0x1362",
+        "off": "0x13EA",
         "len": 2,
         "want": "0xB200",
         "frames": 500,

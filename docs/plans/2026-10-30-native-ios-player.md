@@ -12,6 +12,10 @@ Local adapter verification: `python3 ios/prepare.py`, then `cmake -S ios -B /tmp
 
 Apple build commands and artifact paths are in `codemagic.yaml`; `ios/simulator-check.py` boots an available iPhone (preferring iPhone 16), requires a JSON self-check PASS, and captures the app. The `.xcresult` currently records the **build**, not an XCTest suite. Retained proof includes the ROM self-check JSON, simulator identity, build log, simulator `.app` ZIP, and screenshot. Simulator artifacts cannot be installed on a physical iPhone.
 
+Local investigation found a stale demo self-check address: the exact bundled SHA-256 matches biohack.net's published ROM, whose manifest names `0x13EA`; `0x1362` belongs to an earlier build. The independent LLVM-MOS `build/jgxcheck` returned `0xB3AF` at the old address and **PASS `0xB200` at `0x13EA` after 500 frames** for this exact bundled ROM. Corrected `demo-rom.json` and the staged demo manifest; the expected value remains unchanged. The new adapter uses entropy=0 to match jgxcheck's deterministic baseline.
+
+Budget instruction: use the necessary free minutes, check cumulative usage before each run, and stop near the allowance until the next **UTC calendar month**. October ends at 2026-11-01 00:00 UTC (07:00 Bangkok), not 2026-10-31 00:00 UTC. Account-wide runs by other sessions share the same allowance.
+
 ## Goal
 
 Add an iPhone-first, native iOS example host for the same compact Raycaster Maze ROM used by the standalone Android Native player. Reuse the vendored bsnes-jg C++ core and keep the browser integration on WebAssembly. This demonstrates a third host integration without turning the full torture-test suite into an iOS app or making the browser package depend on Apple frameworks.

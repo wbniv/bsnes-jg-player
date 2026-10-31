@@ -1,5 +1,6 @@
 #include "CoreHost.hpp"
 #include <bsnes.hpp>
+#include <settings.hpp>
 #include <fstream>
 #include <sstream>
 #include <iterator>
@@ -56,6 +57,8 @@ bool PlayerCore::load(const std::string& path, const std::string& database) {
     Bsnes::setLogCallback(nullptr, log);
     Bsnes::setRomLoadCallback(nullptr, loadRom);
     Bsnes::setVideoSpec({videoBuffer, nullptr, video});
+    // Match jgxcheck's deterministic picture/fidelity baseline.
+    SuperFamicom::configuration.entropy = 0;
     attach();
     if (!Bsnes::load()) return false;
     loaded = true;
