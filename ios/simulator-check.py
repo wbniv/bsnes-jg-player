@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import time
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,7 +11,10 @@ OUT = ROOT / "ios/artifacts"
 OUT.mkdir(exist_ok=True)
 APP = "org.bsnesjg.player.ios"
 def run(*args, **kwargs):
-    return subprocess.run(args, check=True, text=True, capture_output=True, **kwargs).stdout.strip()
+    result = subprocess.run(args, text=True, capture_output=True, **kwargs)
+    if result.returncode:
+        raise RuntimeError(f"{args!r} failed ({result.returncode}):\n{result.stdout}\n{result.stderr}")
+    return result.stdout.strip()
 
 devices = json.loads(run("xcrun", "simctl", "list", "devices", "available", "--json"))
 choices = [d for runtime, ds in devices["devices"].items() if ".iOS-" in runtime
@@ -41,6 +45,17 @@ try:
     time.sleep(12)
     run("xcrun", "simctl", "io", udid, "screenshot", str(OUT / "iphone.png"))
     print("PASS", device["name"], json.dumps(proof))
+except Exception:
+    # Preserve diagnostics before shutting down the ephemeral CI simulator.
+    log = subprocess.run([
+        "xcrun", "simctl", "spawn", udid, "log", "show", "--last", "3m",
+        "--style", "compact", "--predicate", 'process == "BsnesPlayer"'
+    ], text=True, capture_output=True, timeout=30)
+    (OUT / "simulator-failure.log").write_text(log.stdout + log.stderr)
+    for report in (Path.home() / "Library/Logs/DiagnosticReports").glob("BsnesPlayer*"):
+        if report.is_file():
+            shutil.copyfile(report, OUT / report.name)
+    raise
 finally:
     subprocess.run(["xcrun", "simctl", "terminate", udid, APP], capture_output=True)
     subprocess.run(["xcrun", "simctl", "shutdown", udid], capture_output=True)

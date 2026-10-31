@@ -1,6 +1,6 @@
 # Native iOS player integration
 
-**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` allows 15 minutes per manual M2 run. The user explicitly rejected shortening runs merely to fit the budget: leave enough time to obtain an answer, and defer starting a run until the next UTC month when the shared allowance is too close to its limit. No simulator success is claimed until a run receipt is recorded.
+**Status:** Bootstrap implementation in progress (2026-10-31). The user corrected the dashboard reading to **385/500 minutes used (115 free minutes remaining)** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` allows 15 minutes per manual M2 run. The user explicitly rejected shortening runs merely to fit the budget: leave enough time to obtain an answer, and defer starting a run until the next UTC month when the shared allowance is too close to its limit. No simulator success is claimed until a run receipt is recorded.
 
 ### Bootstrap scope adjustment
 
@@ -83,7 +83,7 @@ This is a design sketch, not a committed API. Choose concrete types after checki
 
 ## Codemagic build plan and expiring minutes
 
-The initial plan had no `codemagic.yaml` or Xcode project; the bootstrap now generates the Xcode project with CMake. The latest user-reported allowance is **37 free build minutes**, with the UTC calendar month ending at **00:00 UTC, 2026-11-01**. Do not spend that shared allowance on speculative parallel pipelines. Stop near the limit and leave remaining cloud work for the next UTC month.
+The initial plan had no `codemagic.yaml` or Xcode project; the bootstrap now generates the Xcode project with CMake. The latest user-reported dashboard reading is **385/500 used (115 free minutes remaining)**, with the UTC calendar month ending at **00:00 UTC, 2026-11-01**. Do not spend that shared allowance on speculative parallel pipelines. Stop near the limit and leave remaining cloud work for the next UTC month.
 
 1. Immediately confirm this GitHub repository is connected to the intended Codemagic app/team and that the remaining minutes are visible there. Confirm the account's macOS/Xcode machine availability and workflow trigger method.
 2. Add a minimal `codemagic.yaml` with one `ios-simulator` workflow. Pin a supported Xcode version explicitly. It should run the project build and unit tests for a named iPhone Simulator destination, without signing, then retain the `.xcresult` and build log as artifacts.

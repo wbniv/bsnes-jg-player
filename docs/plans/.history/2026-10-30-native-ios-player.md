@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/edd12e5) | Record initial iOS build evidence and pending simulator retry |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/08f9e2a) | Restore iOS build time and defer launches when budget is low |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/4b7573d) | Reserve shared Codemagic minutes and correct UTC month deadline |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d10ca38) | Correct Raycaster self-check address using reference harness proof |
@@ -7,6 +8,10 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 
 <!--history-meta v1
+edd12e5	author	Will Norris
+edd12e5	added	7
+edd12e5	deleted	0
+edd12e5	files	1
 08f9e2a	author	Will Norris
 08f9e2a	added	1
 08f9e2a	deleted	1
