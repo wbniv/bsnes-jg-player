@@ -23,6 +23,10 @@ APK sha256 prefixes: baseline `8811ca04`, A `88c11c51`, B `bc847ac1`, full `6402
 - **Not thermal throttling.** Every run reports thermal status 0 with the same SoC temperatures.
 - **The resampler and framebuffer changes are in all three non-baseline builds.** A matches the baseline, so they cost nothing on Cast1. The host profile still shows the sinc resampler at about 0.9% of instructions and the linear one at 0.05%.
 
+## Catch-up clamp build (2026-10-31)
+
+Job J‑12d2458f0664 ran the release APK built from commit `9132eae` (the credit cap, no compiler-flag changes) on Cast1: frame 5809 at 377 s, WRAM `0x204F` gate passes, median core time 64.24 ms (0.999× the baseline). `emulation_backlog_frames` stays at 0.0 in all 366 windows; the baseline's rose from 3,739.74 to 16,219.70.
+
 ## Failed first attempt
 
 Job `J‑5f612b5220da`'s first submission (the debug-signed tuned APK) was refused with `INSTALL_FAILED_UPDATE_INCOMPATIBLE`: Cast1 had the frozen release-signed APK installed. Release-signed builds installed over it without trouble.
