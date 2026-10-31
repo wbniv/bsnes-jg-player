@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/330c043) | Record device validation status for launcher views |
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/844c869) | Square ROM treemap and compact phone layout |
@@ -7,6 +8,10 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/33177cd) | Implement share and responsive ROM launcher menus |
 
 <!--history-meta v1
+83c5456	author	Will Norris
+83c5456	added	4
+83c5456	deleted	4
+83c5456	files	1
 e314486	author	Will Norris
 e314486	added	6
 e314486	deleted	4

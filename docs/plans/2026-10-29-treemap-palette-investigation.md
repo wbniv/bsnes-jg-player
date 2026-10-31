@@ -1,6 +1,8 @@
 # Treemap category palette investigation
 
-**Status:** Palette dropdown and curated palette previews implemented in the launcher source; build and device validation remain pending.
+**Status (2026-10-31):** Implemented; Will confirmed the Android chooser, palette and pause menu work. This closes their functional acceptance items by user validation. Earlier automated captures remain the evidence for their recorded devices only; Will requested Cast1/Pixel checks instead of Cast2/tablet coverage. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`, and no tablet is enrolled in the coordinator.
+
+**Earlier validation record:** Palette dropdown and curated palette previews implemented in the launcher source; build and device validation remain pending.
 
 ## Summary
 

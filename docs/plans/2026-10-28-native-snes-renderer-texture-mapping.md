@@ -45,3 +45,40 @@ A dedicated native layout benchmark freezes at frame 5800. Pixel portrait job `J
 - Capture on Pixel after coordinator recovery and compare the title screen against the complete source frame.
 - Compare native emulation and draw metrics before and after. This adds one `glUniform4f` update and a few vertex-shader arithmetic operations per draw; it does not add framebuffer copies or fragment work.
 
+
+## Follow-up coverage requested by Will (2026-10-31)
+
+Will confirmed the Android chooser, palette and pause menu work, and selected Cast1 and/or Pixel instead of Cast2/tablet. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`; no physical tablet is enrolled. These remain coverage limits, not claims of tested devices.
+
+The new checks used frozen APK SHA-256 `a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e`. [Machine-readable results](../proof/android-coverage-2026-10-31/results.json). The coordinator restored foreground state after each job; the Native app registration was restored to MainActivity afterward.
+
+### Pixel landscape: PASS
+
+Job `J‑d2fafec54801`: all 57,344 source-pixel centers match the canonical frame 5800. The rasterized game rectangle is 1345×1008 (4:3 with one pixel of rounding); GL error is zero. Emulation intentionally freezes at frame 5800, so the screenshot's zero EMU FPS is expected and is not a playback-performance measurement.
+
+![Pixel landscape: frozen frame 5800 matches the complete reference](../proof/android-coverage-2026-10-31/pixel-landscape.png)
+
+### Pixel portrait: PASS
+
+Job `J‑5300c2716758`: all 57,344 source-pixel centers match, game rectangle 1008×756 (exactly 4:3), GL error zero. The owned keep-awake job covered the preparation gap and was cancelled before this test started.
+
+![Pixel portrait: complete reference frame with separate information panels](../proof/android-coverage-2026-10-31/pixel-portrait.png)
+
+### Cast1 initial short run: comparison inconclusive (superseded below)
+
+Job `J‑37ef8b2243b5` completed its 120-second check and captured the running demo with no reported GL error. It reached frame 1937 and approximately 15 emulated FPS, not the required frame 5800. This capture is launch/render evidence only; it does not pass the canonical pixel comparison or the 60 FPS pacing target. The longer profile request was rejected before submission by the coordinator's 120-second duration limit. No longer-run pass is claimed. The earlier 31 October correctness receipts above remain separate evidence.
+
+![Cast1 running demo before the frame-5800 validation point](../proof/android-coverage-2026-10-31/cast1-landscape.png)
+
+
+### Cast1 checkpoint run: PASS
+
+After the coordinator 0.1.18 update, job `J‑980895a9d7bc` used the same frozen APK with `DURATION=600 CHECKPOINT=frame TARGET=5800`. The coordinator detected frame 5800 at **379.561 seconds**, ended early, captured evidence, and completed with device health `ready`, one cleanup attempt and no survivors. The normal MainActivity registration was restored afterward.
+
+The actual 1920×1080 screenshot contains an exact **1440×1080 (4:3)** game rectangle. All **57,344 source-pixel centers match**, with **zero GL error**. This closes the substitute Cast1/Pixel correctness and layout coverage. It does not establish 60 FPS emulation: the run still took approximately 6 minutes 20 seconds to emulate 5800 frames. Zero EMU FPS in the screenshot reflects the intentional freeze at the validation point.
+
+![Cast1: complete canonical frame 5800, zero differing source pixels](../proof/android-coverage-2026-10-31/cast1-frame-5800.png)
+
+[Checkpoint observations](../proof/android-coverage-2026-10-31/cast1-checkpoint.json) · [Pixel comparison](../proof/android-coverage-2026-10-31/cast1-frame-5800.json).
+
+**Coordinator feedback:** longer execution, checkpoint detection, early completion, evidence retrieval and cleanup passed this real-device test. The `watch` command displayed phases and completion but no intermediate frame counts; progress was visible in downloaded `checkpoint.json`. The downloaded receipt reported session success and ready health, while checkpoint details were in the separate artifact. The timeout/incomplete path was not tested by this successful run.

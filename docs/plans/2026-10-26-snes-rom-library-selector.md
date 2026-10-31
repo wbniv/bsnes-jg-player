@@ -1,11 +1,13 @@
 # SNES ROM quick-launch library for Google TV
 
-**Status:** Implemented; remaining interaction/device checks are tracked in the [launcher views plan](2026-10-28-google-tv-launcher-views.md). Catalog staging uses published gallery previews, APK checks pass, and Cast1 launcher captures exist. Pixel chooser/treemap coverage and hardware pause-menu proof remain open. **Two decisions changed after implementation started** (Will, 2026‑10‑26):
+**Status (2026-10-31):** Implemented; Will confirmed the Android chooser, palette and pause menu work. This closes their functional acceptance items by user validation. Earlier automated captures remain the evidence for their recorded devices only; Will requested Cast1/Pixel checks instead of Cast2/tablet coverage. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`, and no tablet is enrolled in the coordinator.
+
+**Earlier validation record:** Implemented; remaining interaction/device checks are tracked in the [launcher views plan](2026-10-28-google-tv-launcher-views.md). Catalog staging uses published gallery previews, APK checks pass, and Cast1 launcher captures exist. Pixel chooser/treemap coverage and hardware pause-menu proof remain open. **Two decisions changed after implementation started** (Will, 2026‑10‑26):
 
 - Card art now comes from the site's own gallery images instead of frame‑600 captures.
 - Search is out of this release, deferred to its own [search plan](2026-10-26-snes-rom-library-search.md).
 
-The gallery-card switch is implemented in `android/tools/sync-published-library.py`. Search remains visible in the current source; switching it off to match the deferral is still open (decision 3).
+The gallery-card switch is implemented in `android/tools/sync-published-library.py`. Search remains visible in the current source. The old disable-search decision is under clarification with Will (2026-10-31); no removal is authorized by the current coverage request.
 
 **Back/return behavior update (2026-10-29):** the later [launcher views plan](2026-10-28-google-tv-launcher-views.md) supersedes this original Back ladder for library builds. Back during gameplay pauses and returns to the same selector state; its primary action becomes Resume for the loaded ROM and Play for another selection. Back from the selector exits the app. The pause menu no longer includes “Choose another ROM.”
 

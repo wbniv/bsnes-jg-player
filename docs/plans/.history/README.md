@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/4b68d74) | Index the published ROM inventory plan |
@@ -8,6 +9,10 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+1e7b34a	author	Will Norris
+1e7b34a	added	8
+1e7b34a	deleted	8
+1e7b34a	files	1
 eb74075	author	Will Norris
 eb74075	added	3
 eb74075	deleted	1

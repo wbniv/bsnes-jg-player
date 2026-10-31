@@ -78,6 +78,20 @@ capture. Watch any returned job and fetch its evidence. The coordinator guide
 covers options such as `ASYNC=true`, profiling fields, recording recipes and
 output locations.
 
+For a slow fixed-frame validation, use the coordinator's bounded checkpoint
+workflow (available with coordinator 0.1.18):
+
+```sh
+task chromecast:check DEVICE=chromecast-test-01 APP=bsnes-jg-tv-phase2-native APK="<absolute frozen APK path>" DURATION=600 CHECKPOINT=frame TARGET=5800 ASYNC=true
+```
+
+Register the frozen layout benchmark activity before submitting this check.
+The coordinator captures when the registered frame checkpoint reaches 5800,
+or retains partial evidence if the duration expires. Follow the returned job
+with `watch`, retrieve its proof with `evidence`, and restore the app's normal
+activity after completion. A completed checkpoint still needs the project's
+canonical pixel comparison; session success alone does not establish correctness.
+
 ## Ownership and availability rules
 
 For phone test sequences, keep preparation gaps covered. While a test is running,

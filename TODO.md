@@ -39,7 +39,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
 
-- [T3] **Finish library validation:** Quick Launch, Cartridge Flow and ROM Treemap are implemented; published gallery card art is staged and Cast1 captures exist. Remaining: Pixel chooser/treemap captures, hardware pause-menu proof and palette interaction validation. Search is still visible in source despite the deferral; switching it off remains open. See the [launcher views plan](docs/plans/2026-10-28-google-tv-launcher-views.md).
+- [T3] **Device coverage:** Will selected Cast1 and/or Pixel instead of unavailable Cast2/tablet (2026-10-31). Follow-up Pixel portrait and landscape checks PASS with zero differing pixels. Cast1 checkpoint job `J‑980895a9d7bc` also PASS: frame 5800 at 379.561 seconds, zero differing pixels, exact 4:3 geometry and no GL error. Substitute layout/correctness coverage is complete; sustained emulation pacing remains below target. See [inline proof](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md#follow-up-coverage-requested-by-will-2026-10-31). Chooser, palette and pause menu are user-validated. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`; no physical tablet is enrolled. Those devices remain untested, but are not blockers for the requested substitute coverage. iPad simulator coverage already passes.
 
 ### Later (separate)
 
@@ -55,11 +55,13 @@ _Nothing being watched._
 ## Parked
 
 - [T2] **Search for the TV library**: see the [plan](docs/plans/2026-10-26-snes-rom-library-search.md).
-  Deferred by Will on 2026‑10‑26. The code exists in `library.js` and is still on until the library change switches it off. Un-park when
+  Deferred by Will on 2026‑10‑26. Search is currently visible. The old instruction to disable it is under clarification with Will; do not remove it solely because of that historical deferral. Un-park when
   the catalog nears 1,000 ROMs. T2 because it means switching on and testing one module; choosing
   ghost text would make it T3.
 
 ## Done
+
+- [x] 2026-10-31 — Android chooser, palette and pause menu confirmed working by Will. This is user acceptance, not a new automated device-run receipt.
 
 - [x] 2026-10-31 — Native iOS simulator milestone: SwiftUI, audio graph, touch and controller mapping, lifecycle, iPhone/iPad portrait and landscape tests; unsigned device SDK build. Android directory rename and APK build checks also pass. Physical iPhone validation remains open above.
 

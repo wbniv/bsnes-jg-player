@@ -29,6 +29,8 @@ tasks:
       WF_CC_WARMUP: '{{.WARMUP | default ""}}'
       WF_CC_RUNS: '{{.RUNS | default ""}}'
       WF_CC_DURATION: '{{.DURATION | default ""}}'
+      WF_CC_CHECKPOINT: '{{.CHECKPOINT | default ""}}'
+      WF_CC_TARGET: '{{.TARGET | default ""}}'
       WF_CC_WATCH: '{{.WATCH | default ""}}'
       WF_CC_VALIDATOR: '{{.VALIDATOR | default ""}}'
       WF_CC_ASYNC: '{{.ASYNC | default ""}}'
