@@ -1,6 +1,6 @@
 # Native iOS player integration
 
-**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` limits each manual M2 run to 10 minutes; admission must leave a five-minute reserve after the full timeout, accounting for other account builds. No simulator success is claimed until a run receipt is recorded.
+**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` allows 15 minutes per manual M2 run. The user explicitly rejected shortening runs merely to fit the budget: leave enough time to obtain an answer, and defer starting a run until the next UTC month when the shared allowance is too close to its limit. No simulator success is claimed until a run receipt is recorded.
 
 ### Bootstrap scope adjustment
 
