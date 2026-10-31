@@ -5,10 +5,13 @@ Plan: docs/plans/2026-10-31-cast1-armv7-build-tuning.md
 
 Usage:
   tuning-report.py --baseline LOGCAT --tuned LOGCAT --out DIR [--title TEXT]
-                   [--skip-windows N]
+                   [--skip-windows N] [--baseline-engine E] [--tuned-engine E]
+                   [--baseline-label TEXT] [--tuned-label TEXT]
 
-Each logcat is read for BJG_TV_METRIC `playback_window` records emitted by the
-native engine for the frozen mandel-display ROM. Windows with emu_fps == 0 are
+Each logcat is read for BJG_TV_METRIC `playback_window` records for the frozen
+mandel-display ROM. The engine defaults to native for both logs; pass
+--tuned-engine wasm (or --baseline-engine wasm) to read the WebView engine's
+records, which carry no `engine` field (docs/plans/2026-10-31-pixel-phone-perf.md). Windows with emu_fps == 0 are
 ignored (the unpaced verification burst). The first --skip-windows paced windows
 are dropped as warm-up. Writes DIR/summary.json and DIR/core-ms.svg.
 """
@@ -22,7 +25,11 @@ from pathlib import Path
 WINDOW = re.compile(r'\{"event":"playback_window".*?\}')
 
 
-def windows(path, skip):
+def engine_of(record):
+    return record.get("engine") or "wasm"
+
+
+def windows(path, skip, engine="native"):
     text = Path(path).read_text(errors="replace")
     rows = []
     for m in WINDOW.finditer(text):
@@ -30,7 +37,7 @@ def windows(path, skip):
             r = json.loads(m.group(0))
         except json.JSONDecodeError:
             continue
-        if r.get("engine") == "native" and r.get("emu_fps", 0) > 0:
+        if engine_of(r) == engine and r.get("emu_fps", 0) > 0:
             rows.append(r)
     return rows[skip:]
 
@@ -65,7 +72,11 @@ def summarize(rows):
     }
 
 
-def svg(base, tuned, title, path):
+BASE_LABEL = "baseline (ARMv7-A, no LTO, sinc)"
+TUNED_LABEL = "tuned (ARMv8 AArch32, thin LTO, linear)"
+
+
+def svg(base, tuned, title, path, base_label=BASE_LABEL, tuned_label=TUNED_LABEL):
     w, h, ml, mr, mt, mb = 760, 360, 70, 30, 50, 60
     top = max(max(base["series_core_mean_ms"]), max(tuned["series_core_mean_ms"]), 16.7) * 1.1
     px = lambda v: mt + (h - mt - mb) * (1 - v / top)
@@ -81,8 +92,8 @@ def svg(base, tuned, title, path):
     y60 = px(1000 / 60.0988)
     out.append(f'<line x1="{ml}" x2="{w-mr}" y1="{y60:.1f}" y2="{y60:.1f}" stroke="#b42318" stroke-dasharray="5 4"/>')
     out.append(f'<text x="{w-mr}" y="{y60-5:.1f}" text-anchor="end" fill="#b42318">16.6 ms = 60.1 FPS budget</text>')
-    for series, color, label in ((base, "#6b7280", "baseline (ARMv7-A, no LTO, sinc)"),
-                                 (tuned, "#0b6bcb", "tuned (ARMv8 AArch32, thin LTO, linear)")):
+    for series, color, label in ((base, "#6b7280", base_label),
+                                 (tuned, "#0b6bcb", tuned_label)):
         pts = series["series_core_mean_ms"]
         n = max(len(pts) - 1, 1)
         path_d = " ".join(("M" if i == 0 else "L") + f"{ml + (w-ml-mr)*i/n:.1f},{px(v):.1f}" for i, v in enumerate(pts))
@@ -91,8 +102,8 @@ def svg(base, tuned, title, path):
         out.append(f'<line x1="{ml}" x2="{w-mr}" y1="{px(med):.1f}" y2="{px(med):.1f}" stroke="{color}" stroke-width="1" stroke-dasharray="2 3"/>')
         out.append(f'<text x="{ml+6}" y="{px(med)-4:.1f}" fill="{color}">median {med:.1f} ms</text>')
     ly = h - 28
-    out.append(f'<rect x="{ml}" y="{ly-9}" width="14" height="3" fill="#6b7280"/><text x="{ml+20}" y="{ly}" >baseline (ARMv7-A, no LTO, sinc)</text>')
-    out.append(f'<rect x="{ml+260}" y="{ly-9}" width="14" height="3" fill="#0b6bcb"/><text x="{ml+280}" y="{ly}">tuned (ARMv8 AArch32, thin LTO, linear)</text>')
+    out.append(f'<rect x="{ml}" y="{ly-9}" width="14" height="3" fill="#6b7280"/><text x="{ml+20}" y="{ly}" >{base_label}</text>')
+    out.append(f'<rect x="{ml+260}" y="{ly-9}" width="14" height="3" fill="#0b6bcb"/><text x="{ml+280}" y="{ly}">{tuned_label}</text>')
     out.append(f'<text x="{(ml+w-mr)/2}" y="{h-8}" text-anchor="middle" fill="#555">playback window index</text>')
     out.append('</svg>')
     Path(path).write_text("\n".join(out))
@@ -105,11 +116,16 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--title", default="Cast1 native core time")
     ap.add_argument("--skip-windows", type=int, default=3)
+    ap.add_argument("--baseline-engine", choices=("native", "wasm"), default="native")
+    ap.add_argument("--tuned-engine", choices=("native", "wasm"), default="native")
+    ap.add_argument("--baseline-label", default=BASE_LABEL)
+    ap.add_argument("--tuned-label", default=TUNED_LABEL)
     a = ap.parse_args()
-    b = summarize(windows(a.baseline, a.skip_windows))
-    t = summarize(windows(a.tuned, a.skip_windows))
-    if not b["windows"] or not t["windows"]:
-        sys.exit("no paced native playback_window records in one of the logcats")
+    base_rows = windows(a.baseline, a.skip_windows, a.baseline_engine)
+    tuned_rows = windows(a.tuned, a.skip_windows, a.tuned_engine)
+    if not base_rows or not tuned_rows:
+        sys.exit("no paced playback_window records for the requested engine in one of the logcats")
+    b, t = summarize(base_rows), summarize(tuned_rows)
     speedup = b["core_mean_ms"]["median"] / t["core_mean_ms"]["median"]
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -117,7 +133,7 @@ def main():
         {"baseline": {k: v for k, v in b.items() if k != "series_core_mean_ms"},
          "tuned": {k: v for k, v in t.items() if k != "series_core_mean_ms"},
          "median_core_speedup": speedup}, indent=2))
-    svg(b, t, a.title, out / "core-ms.svg")
+    svg(b, t, a.title, out / "core-ms.svg", a.baseline_label, a.tuned_label)
     print(f"baseline: {b['windows']} windows, median {b['core_mean_ms']['median']:.2f} ms, {b['emu_fps']['median']:.2f} FPS")
     print(f"tuned:    {t['windows']} windows, median {t['core_mean_ms']['median']:.2f} ms, {t['emu_fps']['median']:.2f} FPS")
     print(f"median core-time speedup: {speedup:.3f}x")
