@@ -18,12 +18,11 @@ EOF
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC="${1:-$ROOT/../llvm-mos-65816/build}"
-ROMS=(mandel-display)
-# lzss-gallery is deliberately NOT in this list yet: its manifest entry (mode "live-record")
-# asserts a `gallery_shown` WRAM record that only exists on the unmerged
-# `feature/verify-fidelity-button` branch of llvm-mos-65816. A default sync from that project's
-# `main` would silently overwrite web/roms/lzss-gallery.sfc with a ROM lacking the symbol, and the
-# poll would then hang until the frame budget times out. Add it here once that branch merges.
+ROMS=(mandel-display lzss-gallery)
+# lzss-gallery's manifest entry (mode "live-record") asserts a `gallery_shown` WRAM record. That
+# record is defined in llvm-mos-65816 main's examples/snes/lzss-gallery.c (the
+# `feature/verify-fidelity-button` branch has merged), so a build from main carries it. A missing
+# build only WARNs below and leaves the committed web/roms ROM untouched.
 
 [ -d "$SRC" ] || { echo "ERROR: source build dir not found: $SRC" >&2; exit 1; }
 

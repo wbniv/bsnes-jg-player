@@ -19,10 +19,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 ### live-record mode — [spec](../llvm-mos-65816/docs/plans/2026-07-28-gallery-per-image-selfcheck.md)
 
 - [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
-- [T1] **Wire `lzss-gallery` into `sync-roms.sh`'s default ROMS list** once
-  `feature/verify-fidelity-button` merges to `llvm-mos-65816` main — deliberately left out for now
-  (see code comment) since a default sync from `main` today would overwrite the demo with a ROM
-  that lacks the `gallery_shown` record.
 
 ### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
 
@@ -52,6 +48,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [sync-roms-gallery] `lzss-gallery` added to `sync-roms.sh` defaults; `main` defines `gallery_shown`, missing builds only warn.
 - ✅ 2026‑10‑31 — [retarget-stop] Real ROM, headless Firefox: 1st navigation restarts the check, 2nd shows the fail badge. See [plan](docs/plans/2026-10-31-retarget-stop-check.md).
 - ✅ 2026‑10‑31 — [asyncify-trim] No meaningful gain: REMOVE list cuts wasm 7% raw/2.8% gzip, ≤3% frame time; ONLY too fragile. See [plan](docs/plans/2026-10-31-asyncify-trim.md).
 - ✅ 2026‑10‑31 — [firefox-check] Headless Firefox 156 passes the 5800-frame fidelity self-check, no COOP/COEP or SAB. See [plan](docs/plans/2026-06-25-bsnes-jg-wasm.md).
