@@ -10,7 +10,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
-- [T3] Optional: trim Asyncify cost (size/speed) with an `ASYNCIFY_ONLY`/`ADD` list once the core's
+- [wip T3] <!-- agent:a11d73675aa712db1 --> Optional: trim Asyncify cost (size/speed) with an `ASYNCIFY_ONLY`/`ADD` list once the core's
   swap-reachable call set is profiled — only if mobile perf needs it.
 
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
