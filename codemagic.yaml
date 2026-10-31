@@ -17,5 +17,35 @@ workflows:
           ditto -c -k --sequesterRsrc --keepParent ios/build/Release-iphonesimulator/BsnesPlayer.app ios/artifacts/BsnesPlayer-simulator.zip
       - name: Validate ROM, audio, touch, lifecycle, iPhone and iPad layouts
         script: python3 ios/simulator-check.py
+      - name: Compile physical iPhone target without signing
+        script: |
+          set -euo pipefail
+          cmake -S ios -B ios/build-device -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0
+          xcodebuild -project ios/build-device/BsnesPlayer.xcodeproj -scheme BsnesPlayer -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO build > ios/artifacts/device-build.log 2>&1 || { tail -100 ios/artifacts/device-build.log; exit 1; }
+    artifacts:
+      - ios/artifacts/**
+  ios-development:
+    name: Signed iPhone development build (requires uploaded signing identities)
+    instance_type: mac_mini_m2
+    max_build_duration: 30
+    environment:
+      xcode: "16.4"
+      ios_signing:
+        distribution_type: development
+        bundle_identifier: org.bsnesjg.player.ios
+    scripts:
+      - name: Verify pinned core and demo ROM
+        script: python3 ios/prepare.py
+      - name: Configure physical iPhone project and signing
+        script: |
+          set -euo pipefail
+          cmake -S ios -B ios/build-device -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphoneos -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0
+          xcode-project use-profiles --project ios/build-device/BsnesPlayer.xcodeproj
+      - name: Archive and export development IPA
+        script: |
+          set -euo pipefail
+          mkdir -p ios/artifacts
+          xcodebuild -project ios/build-device/BsnesPlayer.xcodeproj -scheme BsnesPlayer -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -archivePath ios/artifacts/BsnesPlayer.xcarchive CODE_SIGNING_ALLOWED=YES archive > ios/artifacts/archive.log 2>&1 || { tail -100 ios/artifacts/archive.log; exit 1; }
+          xcodebuild -exportArchive -archivePath ios/artifacts/BsnesPlayer.xcarchive -exportOptionsPlist "$HOME/export_options.plist" -exportPath ios/artifacts/development > ios/artifacts/export.log 2>&1 || { tail -100 ios/artifacts/export.log; exit 1; }
     artifacts:
       - ios/artifacts/**

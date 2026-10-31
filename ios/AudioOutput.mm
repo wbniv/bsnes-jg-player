@@ -28,7 +28,6 @@
             return noErr;
         }];
         [_engine attachNode:_source];
-        [_engine connect:_source to:_engine.mainMixerNode format:format];
         if (_offline) {
             NSError* error = nil;
             if (![_engine enableManualRenderingMode:AVAudioEngineManualRenderingModeOffline format:format maximumFrameCount:1024 error:&error]) {
@@ -37,6 +36,9 @@
             }
             _offlineBuffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:format frameCapacity:1024];
         }
+        // Enter manual mode before touching mainMixerNode: that accessor otherwise
+        // initializes RemoteIO, which has no audio device on headless CI runners.
+        [_engine connect:_source to:_engine.mainMixerNode format:format];
     }
     return self;
 }
