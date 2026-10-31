@@ -1,0 +1,83 @@
+SuperFamicom::ArmDSP::read(unsigned int, unsigned char)
+SuperFamicom::ArmDSP::step(unsigned int)
+SuperFamicom::ArmDSP::write(unsigned int, unsigned char)
+SuperFamicom::BSMemory::Block::erase()
+SuperFamicom::BSMemory::write(unsigned int, unsigned char)
+SuperFamicom::CPU::Channel::hdmaReload()
+SuperFamicom::CPU::Channel::transfer(unsigned int, unsigned char)
+SuperFamicom::CPU::dmaEdge()
+SuperFamicom::CPU::idle()
+SuperFamicom::CPU::read(unsigned int)
+SuperFamicom::CPU::readAPU(unsigned int, unsigned char)
+SuperFamicom::CPU::scanline()
+SuperFamicom::CPU::synchronizeCoprocessors()
+SuperFamicom::CPU::synchronizePPU()
+SuperFamicom::CPU::write(unsigned int, unsigned char)
+SuperFamicom::CPU::writeAPU(unsigned int, unsigned char)
+SuperFamicom::CPU::writeCPU(unsigned int, unsigned char)
+SuperFamicom::Enter()
+SuperFamicom::Enter()_1014
+SuperFamicom::Enter()_1058
+SuperFamicom::Enter()_1244
+SuperFamicom::Enter()_2046
+SuperFamicom::Enter()_383
+SuperFamicom::Enter()_509
+SuperFamicom::Enter()_516
+SuperFamicom::Enter()_542
+SuperFamicom::Enter()_820
+SuperFamicom::Enter()_856
+SuperFamicom::Enter()_868
+SuperFamicom::Enter()_903
+SuperFamicom::Enter()_949
+SuperFamicom::Enter()_971
+SuperFamicom::EpsonRTC::read(unsigned int, unsigned char)
+SuperFamicom::EpsonRTC::write(unsigned int, unsigned char)
+SuperFamicom::HitachiDSP::step(unsigned int)
+SuperFamicom::MCC::bsAccess(bool, unsigned int, unsigned char)
+SuperFamicom::MCC::mcuAccess(bool, unsigned int, unsigned char)
+SuperFamicom::MCC::mcuRead(unsigned int, unsigned char)
+SuperFamicom::MCC::mcuWrite(unsigned int, unsigned char)
+SuperFamicom::MSU1::readIO(unsigned int, unsigned char)
+SuperFamicom::MSU1::writeIO(unsigned int, unsigned char)
+SuperFamicom::NECDSP::read(unsigned int, unsigned char)
+SuperFamicom::NECDSP::readRAM(unsigned int, unsigned char)
+SuperFamicom::NECDSP::write(unsigned int, unsigned char)
+SuperFamicom::NECDSP::writeRAM(unsigned int, unsigned char)
+SuperFamicom::PPU::latchCounters()
+SuperFamicom::PPU::readIO(unsigned int, unsigned char)
+SuperFamicom::PPU::step(unsigned int)
+SuperFamicom::PPU::writeIO(unsigned int, unsigned char)
+SuperFamicom::SA1::BWRAM::readCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::BWRAM::writeCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::IRAM::readCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::IRAM::writeCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::idle()
+SuperFamicom::SA1::idleJump()
+SuperFamicom::SA1::read(unsigned int)
+SuperFamicom::SA1::readIOCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::step()
+SuperFamicom::SA1::write(unsigned int, unsigned char)
+SuperFamicom::SA1::writeIOCPU(unsigned int, unsigned char)
+SuperFamicom::SA1::writeIOShared(unsigned int, unsigned char)
+SuperFamicom::SMP::read(unsigned short)
+SuperFamicom::SMP::readIO(unsigned short)
+SuperFamicom::SMP::write(unsigned short, unsigned char)
+SuperFamicom::SPC7110::read(unsigned int, unsigned char)
+SuperFamicom::SPC7110::write(unsigned int, unsigned char)
+SuperFamicom::Scheduler::leave(SuperFamicom::Scheduler::Event)
+SuperFamicom::Scheduler::resume(void*)
+SuperFamicom::SuperFX::read(unsigned int, unsigned char)
+SuperFamicom::SuperFX::readIO(unsigned int, unsigned char)
+SuperFamicom::SuperFX::step(unsigned int)
+SuperFamicom::SuperFX::write(unsigned int, unsigned char)
+SuperFamicom::SuperFX::writeIO(unsigned int, unsigned char)
+bjg_run
+co_switch
+co_trampoline
+emscripten_fiber_swap is an import that
+void SuperFamicom::CPU::step<10u, true>()
+void SuperFamicom::CPU::step<12u, true>()
+void SuperFamicom::CPU::step<2u, true>()
+void SuperFamicom::CPU::step<4u, true>()
+void SuperFamicom::CPU::step<6u, true>()
+void SuperFamicom::CPU::step<8u, true>()

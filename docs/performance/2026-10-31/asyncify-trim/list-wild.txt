@@ -1,0 +1,7 @@
+Processor::*
+SuperFamicom::*
+*SuperFamicom::*
+bfunction*
+Bsnes::*
+GB_*
+nall::*

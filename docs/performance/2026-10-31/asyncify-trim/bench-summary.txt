@@ -1,0 +1,9 @@
+# python3 tools/pairsumm.py pair.json
+remove / baseline: per-repeat median ratios [0.993, 0.948, 0.997, 0.926, 1.0] -> median 0.993; pooled chunks n=65 median 0.977 IQR 0.923-1.059; ms/frame remove median 57.83 [56.61-68.62] baseline median 60.53 [56.50-67.79]
+remove2 / baseline: per-repeat median ratios [1.004, 0.872, 0.933, 0.972, 0.975] -> median 0.972; pooled chunks n=65 median 0.961 IQR 0.871-1.057; ms/frame remove2 median 56.81 [55.33-67.99] baseline median 60.53 [56.50-67.79]
+# python3 tools/pairsumm.py pair-rev.json remove2
+baseline / remove2: per-repeat median ratios [1.03, 1.044, 1.011, 0.993, 0.998] -> median 1.011; pooled chunks n=65 median 1.011 IQR 0.941-1.090; ms/frame baseline median 66.56 [51.69-82.37] remove2 median 65.79 [51.46-82.85]
+# python3 tools/summ.py bench.json (separate cold pages, interleaved)
+baseline  n=5 steady mean ms/frame: median 65.885 min 51.406 max 71.993 | per-frame median: median 62.300 | vs first +0.0% | gate {'0'}
+remove    n=5 steady mean ms/frame: median 59.577 min 52.808 max 67.513 | per-frame median: median 57.900 | vs first -9.6% | gate {'0'}
+remove2   n=5 steady mean ms/frame: median 59.455 min 50.658 max 67.763 | per-frame median: median 56.000 | vs first -9.8% | gate {'0'}

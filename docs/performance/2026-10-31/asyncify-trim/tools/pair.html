@@ -1,0 +1,23 @@
+<!doctype html><meta charset="utf-8"><title>pair</title><body><script>
+// Paired bench: instantiate several builds in one page, boot the same ROM in each, then run them in
+// lockstep chunks (alternating order) so machine-load drift hits every build equally.
+const P = new URLSearchParams(location.search), BUILDS = P.get("b").split(","), CH = +(P.get("chunk") || 100), N = +(P.get("frames") || 1500);
+function load(src) { return new Promise((ok, no) => { const s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = no; document.head.appendChild(s); }); }
+window.go = async () => {
+  const rom = new Uint8Array(await (await fetch("roms/mandel-display.sfc")).arrayBuffer()), mods = [];
+  for (const b of BUILDS) {
+    window.BsnesJg = undefined; await load("builds/" + b + "/bsnes_jg.js");
+    const M = await BsnesJg({ locateFile: f => "builds/" + b + "/" + f, print: () => {}, printErr: () => {} });
+    const p = M._malloc(rom.length); M.HEAPU8.set(rom, p); if (M._bjg_load(p, rom.length) !== 1) throw new Error("load " + b); M._free(p);
+    mods.push(M);
+  }
+  const chunks = BUILDS.map(() => []);
+  for (let c = 0, done = 0; done < N; c++, done += CH) {
+    const order = BUILDS.map((_, i) => i); if (c % 2) order.reverse();
+    for (const i of order) { const M = mods[i], t = performance.now(); for (let f = 0; f < CH; f++) M._bjg_run(); chunks[i].push((performance.now() - t) / CH); }
+  }
+  const gates = mods.map(M => { const w = M._bjg_wram() >>> 0; return (M.HEAPU8[w + 0x200] | M.HEAPU8[w + 0x201] << 8).toString(16); });
+  return { builds: BUILDS, chunk: CH, frames: N, chunks, gates };
+};
+window.ready = true;
+</script>

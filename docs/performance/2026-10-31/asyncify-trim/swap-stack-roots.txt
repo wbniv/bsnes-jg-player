@@ -1,0 +1,8 @@
+top swap stacks (innermost 4 frames ... outermost), count over all ROM runs
+6810400 co_switch <- SuperFamicom::Scheduler::resume(void*) <- SuperFamicom::CPU::scanline() <- bfunction<void ()>::member<SuperFamicom::CPU>::operator()() const ... dynCall_vi
+3784489 co_switch <- SuperFamicom::Scheduler::resume(void*) <- SuperFamicom::Enter()_1244 <- co_trampoline ... dynCall_vi
+3405640 co_switch <- SuperFamicom::Scheduler::resume(void*) <- SuperFamicom::SMP::readIO(unsigned short) <- SuperFamicom::SMP::read(unsigned short) ... dynCall_vi
+380913 co_switch <- SuperFamicom::Scheduler::resume(void*) <- SuperFamicom::CPU::synchronizePPU() <- SuperFamicom::PPU::writeIO(unsigned int, unsigned char) ... dynCall_vi
+13000 co_switch <- bjg_run ... bjg_run
+13000 co_switch <- SuperFamicom::Scheduler::leave(SuperFamicom::Scheduler::Event) <- SuperFamicom::CPU::scanline() <- bfunction<void ()>::member<SuperFamicom::CPU>::operator()() const ... dynCall_vi
+1184 co_switch <- SuperFamicom::Scheduler::resume(void*) <- SuperFamicom::PPU::step(unsigned int) <- SuperFamicom::Enter()_1244 ... dynCall_vi

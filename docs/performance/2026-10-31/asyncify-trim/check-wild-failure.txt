@@ -1,0 +1,41 @@
+baseline [('mandel-display', '204F', 'c95793d6', 'e40cdd31'), ('lzss-gallery', '0', 'a29a572f', 'fc229dc5'), ('raycaster', '600', '2285d322', '8bb10315'), ('mandel-display', '0', '8a5547e8', 'e9a90805')]
+Traceback (most recent call last):
+  File "/tmp/claude-1000/-home-will-bsnes-jg-player/687a04d2-7b89-4f18-8371-e45efa1374c5/scratchpad/drive.py", line 25, in <module>
+    r["roms"].append(pg.evaluate("([a,b,c,d,e]) => run(a,b,c,d,e)", [rom, n, ev, inp, o]))
+                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/sync_api/_generated.py", line 9385, in evaluate
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.evaluate(expression=expression, arg=mapping.to_impl(arg))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/_impl/_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/_impl/_page.py", line 472, in evaluate
+    return await self._main_frame.evaluate(expression, arg)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/_impl/_frame.py", line 345, in evaluate
+    await self._channel.send(
+    ...<6 lines>...
+    )
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/home/will/.local/lib/python3.14/site-packages/playwright/_impl/_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.evaluate: RuntimeError: null function
+    at http://127.0.0.1:8177/builds/wild/bsnes_jg.wasm:wasm-function[1403]:0x17a755
+    at wrapper (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:58153)
+    at callUserCallback (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:57651)
+    at Object.doRewind (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:59990)
+    at Object.finishContextSwitch (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:62425)
+    at Object.trampoline (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:61813)
+    at Object.maybeStopUnwind (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:59260)
+    at Object.wrapper [as _bjg_run] (http://127.0.0.1:8177/builds/wild/bsnes_jg.js:1:58238)
+    at window.run (http://127.0.0.1:8177/bench.html?b=wild:31:36)
+    at async <anonymous>:337:30

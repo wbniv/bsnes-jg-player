@@ -1,0 +1,1 @@
+distinct stacks 3422, swaps 14408626, distinct functions 59

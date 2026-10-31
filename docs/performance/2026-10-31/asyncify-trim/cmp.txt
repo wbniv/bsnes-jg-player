@@ -1,0 +1,15 @@
+remove   mandel-display  frames= 5800 checkpoints= 11 video_match=True gate base=204F var=204F OK
+remove   lzss-gallery    frames= 3000 checkpoints= 12 video_match=True gate base=0 var=0 OK
+remove   raycaster       frames= 3000 checkpoints= 12 video_match=True gate base=600 var=600 OK
+remove   mandel-display  frames= 1200 checkpoints=  4 video_match=True gate base=0 var=0 OK
+ALL MATCH
+remove2  mandel-display  frames= 5800 checkpoints= 11 video_match=True gate base=204F var=204F OK
+remove2  lzss-gallery    frames= 3000 checkpoints= 12 video_match=True gate base=0 var=0 OK
+remove2  raycaster       frames= 3000 checkpoints= 12 video_match=True gate base=600 var=600 OK
+remove2  mandel-display  frames= 1200 checkpoints=  4 video_match=True gate base=0 var=0 OK
+ALL MATCH
+profrec  mandel-display  frames= 5800 checkpoints= 11 video_match=True gate base=204F var=204F OK
+profrec  lzss-gallery    frames= 3000 checkpoints= 12 video_match=True gate base=0 var=0 OK
+profrec  raycaster       frames= 3000 checkpoints= 12 video_match=True gate base=600 var=600 OK
+profrec  mandel-display  frames= 1200 checkpoints=  4 video_match=True gate base=0 var=0 OK
+ALL MATCH

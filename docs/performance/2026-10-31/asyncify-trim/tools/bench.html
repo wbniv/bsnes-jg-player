@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><title>bench</title><body><pre id="o">loading</pre><script>
+const P = new URLSearchParams(location.search), B = P.get("b");
+const s = document.createElement("script"); s.src = "builds/" + B + "/bsnes_jg.js";
+s.onload = async () => {
+  const t0 = performance.now();
+  const M = await BsnesJg({ locateFile: f => "builds/" + B + "/" + f, print: () => {}, printErr: () => {} });
+  window.M = M; window.instMs = performance.now() - t0; document.getElementById("o").textContent = "ready"; window.ready = true;
+};
+document.head.appendChild(s);
+function fnv(u8, h) { h = h >>> 0 || 0x811c9dc5; for (let i = 0; i < u8.length; i++) { h ^= u8[i]; h = Math.imul(h, 0x01000193) >>> 0; } return h; }
+function snap() {
+  const w = M._bjg_wram() >>> 0, n = M._bjg_wram_size();
+  const v = M._bjg_video() >>> 0, pw = M._bjg_video_pitch(), hh = M._bjg_video_h();
+  return { wram: fnv(M.HEAPU8.subarray(w, w + n)).toString(16), video: fnv(M.HEAPU8.subarray(v, v + pw * 4 * hh)).toString(16), w: M._bjg_video_w(), h: hh };
+}
+// input scripts: a pure function of the frame number so every build sees identical input
+const R = 1 << 8, L = 1 << 9, U = 1 << 11, A = 1 << 7, ST = 1 << 12;
+const INPUT = {
+  none: f => 0,
+  gallery: f => { const p = f % 240; return p < 8 ? R : (f % 960 > 900 && f % 960 < 908 ? L : 0); },
+  ray: f => (f % 400 < 200 ? U : 0) | (f % 300 < 60 ? L : (f % 300 > 200 && f % 300 < 260 ? R : 0)) | (f % 500 == 10 ? A | ST : 0),
+};
+window.run = async function (rom, frames, every, input, opts = {}) {
+  const bytes = new Uint8Array(await (await fetch("roms/" + rom + ".sfc")).arrayBuffer());
+  const ptr = M._malloc(bytes.length); M.HEAPU8.set(bytes, ptr);
+  const t0 = performance.now(); const ok = M._bjg_load(ptr, bytes.length); const loadMs = performance.now() - t0; M._free(ptr);
+  if (ok !== 1) return { error: "load failed" };
+  const inp = INPUT[input], cps = [], times = opts.times ? new Float64Array(frames) : null; let core = 0;
+  for (let f = 0; f < frames; f++) {
+    M._bjg_set_input(0, inp(f));
+    const a = performance.now(); M._bjg_run(); const d = performance.now() - a; core += d; if (times) times[f] = d;
+    if (opts.resetAt === f + 1) M._bjg_reset();
+    if (every && (f + 1) % every === 0) cps.push([f + 1, snap()]);
+  }
+  const w = M._bjg_wram() >>> 0, gate = (M.HEAPU8[w + 0x200] | (M.HEAPU8[w + 0x201] << 8)).toString(16).toUpperCase();
+  let med = null; if (times) { const s = Array.from(times).sort((x, y) => x - y); med = s[s.length >> 1]; const w2 = Array.from(times.subarray(Math.min(200, frames >> 2))); window.lastSteady = w2.reduce((a, c) => a + c, 0) / w2.length; }
+  return { rom, frames, steadyMsPerFrame: window.lastSteady || null, loadMs, coreMs: core, msPerFrame: core / frames, medianFrameMs: med, gate, cps };
+};
+</script>

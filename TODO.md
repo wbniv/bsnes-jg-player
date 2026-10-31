@@ -10,9 +10,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
-- [wip T3] <!-- agent:a11d73675aa712db1 --> Optional: trim Asyncify cost (size/speed) with an `ASYNCIFY_ONLY`/`ADD` list once the core's
-  swap-reachable call set is profiled — only if mobile perf needs it.
-
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
 - [T1] **First publish (manual prereq)**: create the npm account owning `@wbniv`, mint a granular
@@ -60,6 +57,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑10‑31 — [asyncify-trim] No meaningful gain: REMOVE list cuts wasm 7% raw/2.8% gzip, ≤3% frame time; ONLY too fragile. See [plan](docs/plans/2026-10-31-asyncify-trim.md).
 - ✅ 2026‑10‑31 — [firefox-check] Headless Firefox 156 passes the 5800-frame fidelity self-check, no COOP/COEP or SAB. See [plan](docs/plans/2026-06-25-bsnes-jg-wasm.md).
 - ✅ 2026‑10‑31 — [stale-demos] Dropped the three dead picker buttons and ROM names; `npm test` now checks every button has a manifest entry.
 - ✅ 2026‑10‑31 — [pixel-perf] Pixel 8 Pro: native 10.7 ms/60 FPS, WASM 23.7 ms/45 FPS; low-end phone unmeasured. See [plan](docs/plans/2026-10-31-pixel-phone-perf.md).

@@ -1,0 +1,414 @@
+{
+ "mode": "check",
+ "chromium": "/home/will/.cache/ms-playwright/chromium_headless_shell-1234/chrome-headless-shell-linux64/chrome-headless-shell",
+ "started": "2026-10-31T14:35:59Z",
+ "runs": [
+  {
+   "build": "remove2",
+   "instMs": 396.9000000357628,
+   "roms": [
+    {
+     "rom": "mandel-display",
+     "frames": 5800,
+     "steadyMsPerFrame": null,
+     "loadMs": 814.6999999880791,
+     "coreMs": 290104.900000453,
+     "msPerFrame": 50.01808620697465,
+     "medianFrameMs": null,
+     "gate": "204F",
+     "cps": [
+      [
+       500,
+       {
+        "wram": "630fb192",
+        "video": "e9a90805",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1000,
+       {
+        "wram": "8c47d44c",
+        "video": "e9a90805",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1500,
+       {
+        "wram": "700670ed",
+        "video": "b53c14d5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2000,
+       {
+        "wram": "2303d0bc",
+        "video": "b4b3ac15",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2500,
+       {
+        "wram": "da1de750",
+        "video": "c5ceaf55",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       3000,
+       {
+        "wram": "7328166b",
+        "video": "abbd0415",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       3500,
+       {
+        "wram": "4041b6de",
+        "video": "b5235d95",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       4000,
+       {
+        "wram": "2b311e39",
+        "video": "a488fa95",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       4500,
+       {
+        "wram": "36d75d89",
+        "video": "ec214ad5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       5000,
+       {
+        "wram": "3b78575c",
+        "video": "f5b26455",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       5500,
+       {
+        "wram": "236f9778",
+        "video": "e40cdd31",
+        "w": 512,
+        "h": 240
+       }
+      ]
+     ]
+    },
+    {
+     "rom": "lzss-gallery",
+     "frames": 3000,
+     "steadyMsPerFrame": null,
+     "loadMs": 296.2000000476837,
+     "coreMs": 149661.49999928474,
+     "msPerFrame": 49.88716666642825,
+     "medianFrameMs": null,
+     "gate": "0",
+     "cps": [
+      [
+       250,
+       {
+        "wram": "73678041",
+        "video": "d6b30835",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       500,
+       {
+        "wram": "e0d64d03",
+        "video": "d6b30835",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       750,
+       {
+        "wram": "526a3f75",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1000,
+       {
+        "wram": "3ee1beac",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1250,
+       {
+        "wram": "cac2f12a",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1500,
+       {
+        "wram": "dae23168",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1750,
+       {
+        "wram": "26ac176b",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2000,
+       {
+        "wram": "7cff0063",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2250,
+       {
+        "wram": "bc0c7c01",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2500,
+       {
+        "wram": "9d34dde7",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2750,
+       {
+        "wram": "a5f5bff8",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       3000,
+       {
+        "wram": "e97f33c1",
+        "video": "fc229dc5",
+        "w": 512,
+        "h": 240
+       }
+      ]
+     ]
+    },
+    {
+     "rom": "raycaster",
+     "frames": 3000,
+     "steadyMsPerFrame": null,
+     "loadMs": 224.80000001192093,
+     "coreMs": 158042.0999993682,
+     "msPerFrame": 52.6806999997894,
+     "medianFrameMs": null,
+     "gate": "600",
+     "cps": [
+      [
+       250,
+       {
+        "wram": "4cbe64c3",
+        "video": "f6845485",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       500,
+       {
+        "wram": "7f08c644",
+        "video": "ff026cb5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       750,
+       {
+        "wram": "e4d82d16",
+        "video": "fdf3a135",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1000,
+       {
+        "wram": "b835bdb9",
+        "video": "fb841825",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1250,
+       {
+        "wram": "2abfd168",
+        "video": "36c2c34d",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1500,
+       {
+        "wram": "b6bff5b",
+        "video": "cf0df50d",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1750,
+       {
+        "wram": "43e806b6",
+        "video": "6ddbf5ed",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2000,
+       {
+        "wram": "4da06fc4",
+        "video": "2da16385",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2250,
+       {
+        "wram": "4913f65e",
+        "video": "f03705",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2500,
+       {
+        "wram": "a62184a",
+        "video": "aa5a9a05",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       2750,
+       {
+        "wram": "1b4f1a2a",
+        "video": "958e9285",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       3000,
+       {
+        "wram": "128b77e6",
+        "video": "8bb10315",
+        "w": 512,
+        "h": 240
+       }
+      ]
+     ]
+    },
+    {
+     "rom": "mandel-display",
+     "frames": 1200,
+     "steadyMsPerFrame": null,
+     "loadMs": 304.5,
+     "coreMs": 59285.800000190735,
+     "msPerFrame": 49.40483333349228,
+     "medianFrameMs": null,
+     "gate": "0",
+     "cps": [
+      [
+       300,
+       {
+        "wram": "b9d9171b",
+        "video": "b78706c5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       600,
+       {
+        "wram": "6926a1c2",
+        "video": "e9a90805",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       900,
+       {
+        "wram": "b9d9171b",
+        "video": "b78706c5",
+        "w": 512,
+        "h": 240
+       }
+      ],
+      [
+       1200,
+       {
+        "wram": "6926a1c2",
+        "video": "e9a90805",
+        "w": 512,
+        "h": 240
+       }
+      ]
+     ]
+    }
+   ],
+   "swaps": null
+  }
+ ],
+ "version": "151.0.7922.34"
+}
