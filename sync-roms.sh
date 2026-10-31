@@ -18,7 +18,7 @@ EOF
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC="${1:-$ROOT/../llvm-mos-65816/build}"
-ROMS=(mandel-zoom mandel-mode7 mandel-display mandel-interactive)
+ROMS=(mandel-display)
 # lzss-gallery is deliberately NOT in this list yet: its manifest entry (mode "live-record")
 # asserts a `gallery_shown` WRAM record that only exists on the unmerged
 # `feature/verify-fidelity-button` branch of llvm-mos-65816. A default sync from that project's

@@ -31,7 +31,7 @@
   },
   "scripts": {
     "stage-dist": "bash scripts/stage-dist.sh",
-    "test": "node bin/sync.mjs sync /tmp/bsnes-jg-player-smoke --demo && node bin/sync.mjs sync --check /tmp/bsnes-jg-player-smoke && rm -rf /tmp/bsnes-jg-player-smoke"
+    "test": "node bin/sync.mjs sync /tmp/bsnes-jg-player-smoke --demo && node bin/sync.mjs sync --check /tmp/bsnes-jg-player-smoke && rm -rf /tmp/bsnes-jg-player-smoke && node scripts/check-picker-roms.mjs"
   },
   "peerDependencies": {
     "astro": ">=4.0.0"
