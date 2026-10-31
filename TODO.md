@@ -10,6 +10,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
+- [T4] **Remove the Asyncify cost with JSPI or uninstrumented coroutines.** Asyncify list trimming gains under 3% (see [plan](docs/plans/2026-10-31-asyncify-trim.md)); the Pixel 8 Pro WASM gap (23.7 vs 16.6 ms) needs a design change: `-sJSPI` fibers, a libco backend, or a scheduler without libco. Gate on browser JSPI support and the 0x204F fidelity check.
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
 - [T1] **First publish (manual prereq)**: create the npm account owning `@wbniv`, mint a granular
@@ -18,7 +19,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 ### live-record mode — [spec](../llvm-mos-65816/docs/plans/2026-07-28-gallery-per-image-selfcheck.md)
 
 - [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
-- [T2] **Re-verify the retarget-once "stop" case** (2nd navigation mid-poll → fail badge) in a less
+- [wip T2] <!-- agent:ad37b7b4c44f8ae8d --> **Re-verify the retarget-once "stop" case** (2nd navigation mid-poll → fail badge) in a less
   resource-contended browser session — reproduced only the 1st retarget live (work 0→1, counter
   reset, correct title); the 2nd attempt kept losing its headless Chrome target to what looked like
   host memory pressure (multiple concurrent wasm/Chrome sessions on a shared box), not an app.js
