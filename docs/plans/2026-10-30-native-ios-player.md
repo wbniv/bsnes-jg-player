@@ -1,6 +1,16 @@
 # Native iOS player integration
 
-**Status:** Proposed. The `npm-package` branch has been fast-forwarded into `main` and pushed. There is no iOS target or Codemagic workflow in the repository yet. **Codemagic budget:** 219 minutes were reported available, expiring at 00:00 UTC on 2026-10-31; start the first cloud build early enough to use them.
+**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` limits each manual M2 run to 15 minutes, leaving room for one corrective run within the reported budget. No simulator success is claimed until a run receipt is recorded.
+
+### Bootstrap scope adjustment
+
+Prioritize Apple compilation and the configured 500-frame Raycaster fidelity check before the broad Android directory rename. Android remains at `android-tv/` for this bootstrap. The first shell is UIKit/Objective-C++ to exercise the native bridge directly; SwiftUI composition, audio output, GameController, physical iPhone signing/testing, and the full orientation/lifecycle test matrix remain open. The UI explicitly labels audio as unimplemented. The adapter deliberately overlaps the small Android callback boundary until Apple execution is proven; it does not claim a reusable multi-instance API.
+
+The Apple ARM64 libco backend uses the upstream context layout and instruction sequence in a compiled `.S` file. It does not execute a data buffer or change page protections. Only ARM64 iOS/simulator builds are supported initially. The stock backend remains in the Linux smoke build.
+
+Local adapter verification: `python3 ios/prepare.py`, then `cmake -S ios -B /tmp/bjg-ios-host-build -DCMAKE_BUILD_TYPE=Release`, `cmake --build /tmp/bjg-ios-host-build -j 4`, and `/tmp/bjg-ios-host-build/core-smoke ios/generated/demo.sfc ios/generated/bsnes-2.1.0/Database`.
+
+Apple build commands and artifact paths are in `codemagic.yaml`; `ios/simulator-check.py` boots an available iPhone (preferring iPhone 16), requires a JSON self-check PASS, and captures the app. The `.xcresult` currently records the **build**, not an XCTest suite. Retained proof includes the ROM self-check JSON, simulator identity, build log, simulator `.app` ZIP, and screenshot. Simulator artifacts cannot be installed on a physical iPhone.
 
 ## Goal
 

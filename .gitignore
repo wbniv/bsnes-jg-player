@@ -27,6 +27,11 @@
 /android-tv/app/.cxx/
 /android-tv/app/.externalNativeBuild/
 
+# Generated iOS project, verified dependencies, and CI evidence.
+/ios/generated/
+/ios/build/
+/ios/artifacts/
+
 # Misc
 *.log
 .DS_Store
