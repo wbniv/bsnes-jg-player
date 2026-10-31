@@ -42,6 +42,33 @@ Budget instruction: use the necessary free minutes, check cumulative usage befor
 - **Budget:** final account-wide API elapsed-time estimate is **417.21/500 minutes**, approximately **82.79 minutes remaining**, with no active jobs at 01:56:59 UTC. This estimate is not the dashboard's billing counter. No further run was started after success.
 - **Still blocked:** development signing, installation on a physical iPhone, live audible output and hardware-controller testing. WorldFoundry's iOS plan records no Apple Developer Program account and no personal iPhone; the collaborator's device is not connected here. The development-signing workflow is prepared, not claimed tested. See [device instructions](../../ios/README.md).
 
+
+#### iPhone portrait validation
+
+Normal-launch capture after the demo's startup: the SwiftUI shell, rendered game picture and all twelve touch controls are visible. This complements the automated input and lifecycle checks above.
+
+![iPhone 16 portrait: running Raycaster demo with Pause, Mute, Help and twelve touch controls](../proof/ios-support-2026-10-31/iphone-playing.png)
+
+#### iPhone landscape validation
+
+XCTest rotated the iPhone to landscape and checked the 4:3 display bounds, minimum button sizes, hit targets and separation between the picture and controls. The diagnostics line appears only in test mode.
+
+![iPhone 16 landscape: game display above accessible controls, with test diagnostics](../proof/ios-support-2026-10-31/iphone-landscape.png)
+
+#### iPad portrait validation
+
+The same layout and input checks passed on iPad Pro 11-inch (M4). The portrait capture shows the picture and both rows of controls within the safe area.
+
+![iPad Pro portrait: Raycaster display and touch controls within the safe area](../proof/ios-support-2026-10-31/ipad-portrait.png)
+
+#### iPad landscape validation
+
+After rotation, XCTest confirmed the picture remained 4:3 and no control overlapped it. All three iPad test cases passed with zero failures.
+
+![iPad Pro landscape: full game picture with separate touch controls and test diagnostics](../proof/ios-support-2026-10-31/ipad-landscape.png)
+
+These are simulator captures from the passing build linked above. Physical-device signing, audible playback and hardware-controller validation remain pending.
+
 ## Goal
 
 Add an iPhone-first, native iOS example host for the same compact Raycaster Maze ROM used by the standalone Android Native player. Reuse the vendored bsnes-jg C++ core and keep the browser integration on WebAssembly. This demonstrates a third host integration without turning the full torture-test suite into an iOS app or making the browser package depend on Apple frameworks.
