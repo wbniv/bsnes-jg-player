@@ -233,6 +233,31 @@ static bool loadDemo() {
     if (_frames % 6 == 0) [self emitState];
 }
 
+- (void)mtkView:(MTKView*)view drawableSizeWillChange:(CGSize)size {}
+- (void)drawInMTKView:(MTKView*)view {
+    unsigned w = PlayerCore::width(), h = PlayerCore::height();
+    if (!w || !h) return;
+    if (!_texture || _texture.width != w || _texture.height != h) {
+        MTLTextureDescriptor* d = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:w height:h mipmapped:NO];
+        d.usage = MTLTextureUsageShaderRead;
+        _texture = [view.device newTextureWithDescriptor:d];
+    }
+    [_texture replaceRegion:MTLRegionMake2D(0,0,w,h) mipmapLevel:0 withBytes:PlayerCore::pixels() bytesPerRow:PlayerCore::pitch()*4];
+    MTLRenderPassDescriptor* pass = view.currentRenderPassDescriptor;
+    id<CAMetalDrawable> drawable = view.currentDrawable;
+    if (!pass || !drawable) return;
+    id<MTLCommandBuffer> command = [_queue commandBuffer];
+    id<MTLRenderCommandEncoder> encoder = [command renderCommandEncoderWithDescriptor:pass];
+    [encoder setRenderPipelineState:_pipeline];
+    [encoder setFragmentTexture:_texture atIndex:0];
+    [encoder drawPrimitives:MTLPrimitiveTypeTriangleStrip vertexStart:0 vertexCount:4];
+    [encoder endEncoding];
+    [command presentDrawable:drawable];
+    // One texture: wait before CPU writes the next frame into it.
+    [command commit];
+    [command waitUntilCompleted];
+}
+
 - (void)shutdown {
     if (_closed) return;
     _closed = YES;

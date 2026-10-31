@@ -47,7 +47,7 @@ set(RESOURCES generated/demo.sfc generated/demo-rom.json generated/LICENSE.txt g
 set_source_files_properties(${RESOURCES} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 add_executable(BsnesPlayer MACOSX_BUNDLE Player.mm PlayerApp.swift AudioOutput.mm ${RESOURCES} ${DATABASE})
 target_include_directories(BsnesPlayer PRIVATE generated)
-target_compile_options(BsnesPlayer PRIVATE "$<$<COMPILE_LANGUAGE:OBJCXX>:-fobjc-arc>")
+target_compile_options(BsnesPlayer PRIVATE "$<$<COMPILE_LANGUAGE:OBJCXX>:-fobjc-arc;-Werror=protocol>")
 target_link_libraries(BsnesPlayer PRIVATE core "-framework Foundation" "-framework UIKit" "-framework CoreGraphics" "-framework MetalKit" "-framework Metal" "-framework QuartzCore" "-framework SwiftUI" "-framework AVFoundation" "-framework GameController")
 set(BJG_DEVELOPMENT_TEAM "" CACHE STRING "Apple development team for signed physical-device builds")
 set(BJG_PROFILE_SPECIFIER "" CACHE STRING "Installed provisioning profile for this bundle identifier")
