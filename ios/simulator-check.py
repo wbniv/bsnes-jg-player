@@ -62,7 +62,7 @@ try:
         (OUT / f"{label}-device.json").write_text(json.dumps(target, indent=2))
         result_bundle = OUT / f"ui-{label}.xcresult"
         command = ["xcodebuild", "-project", str(ROOT / "ios/build/BsnesPlayer.xcodeproj"),
-                   "-scheme", "PlayerUITests", "-configuration", "Release",
+                   "-scheme", "BsnesPlayer", "-configuration", "Release",
                    "-destination", f"platform=iOS Simulator,id={target_id}",
                    "-parallel-testing-enabled", "NO", "-resultBundlePath", str(result_bundle),
                    "CODE_SIGNING_ALLOWED=NO", "test"]
@@ -72,6 +72,7 @@ try:
             subprocess.run(["xcrun", "xcresulttool", "export", "attachments", "--path", str(result_bundle),
                             "--output-path", str(OUT / f"{label}-screenshots")], check=True)
             if tested.returncode:
+                print((OUT / f"ui-{label}.log").read_text()[-18000:], flush=True)
                 raise RuntimeError(f"{label} UI validation failed; see ui-{label}.log and .xcresult")
             print(f"PASS {label}: touch, core input polling, audio graph, lifecycle, portrait/landscape", flush=True)
         finally:

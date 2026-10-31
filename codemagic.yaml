@@ -13,7 +13,7 @@ workflows:
           set -euo pipefail
           mkdir -p ios/artifacts
           cmake -S ios -B ios/build -G Xcode -DCMAKE_SYSTEM_NAME=iOS -DCMAKE_OSX_SYSROOT=iphonesimulator -DCMAKE_OSX_ARCHITECTURES=arm64 -DCMAKE_OSX_DEPLOYMENT_TARGET=16.0 -DCMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED=NO
-          xcodebuild -project ios/build/BsnesPlayer.xcodeproj -scheme BsnesPlayer -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -resultBundlePath ios/artifacts/build.xcresult CODE_SIGNING_ALLOWED=NO build > ios/artifacts/build.log 2>&1 || { tail -100 ios/artifacts/build.log; exit 1; }
+          xcodebuild -project ios/build/BsnesPlayer.xcodeproj -scheme BsnesPlayer -configuration Release -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -resultBundlePath ios/artifacts/build.xcresult CODE_SIGNING_ALLOWED=NO build-for-testing > ios/artifacts/build.log 2>&1 || { tail -100 ios/artifacts/build.log; exit 1; }
           ditto -c -k --sequesterRsrc --keepParent ios/build/Release-iphonesimulator/BsnesPlayer.app ios/artifacts/BsnesPlayer-simulator.zip
       - name: Validate ROM, audio, touch, lifecycle, iPhone and iPad layouts
         script: python3 ios/simulator-check.py
