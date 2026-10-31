@@ -30,6 +30,7 @@ rows on commit.*
 | [Native iOS player integration](2026-10-30-native-ios-player.md) | Native iOS example implemented with SwiftUI, Metal, audio and GameController; six iPhone/iPad simulator tests and unsigned device SDK build pass. | Simulator PASS; physical signing/testing blocked | Platform |
 | [Rename the project to `bsnes-jg-player`](2026-10-31-bsnes-jg-player-rename.md) | Align the GitHub repository, local checkout, and public product URL around the reusable player, while retaining redirects and the established APK delivery path. | In progress | Platform |
 | [Repeatable releases, signing, retention and sharing proof](2026-10-31-repeatable-release-tooling.md) | Prepare and verify signed release candidates, publish with resumable current/previous retention, scope credentials and validate device QR/sharing flows with inline evidence. | Implemented locally; credentials/publication and device proof pending | Infra |
+| [Pixel phone performance: can the player claim mobile?](2026-10-31-pixel-phone-perf.md) | Measure emulation pacing of the WASM and native Android engines on the Pixel 8 Pro with the `playback_window` metric and record whether mobile can be claimed. | Interim: WASM 45 FPS, native 60 FPS; fresh WASM and native-baseline runs blocked on coordinator registration | Investigation |
 
 ---
 

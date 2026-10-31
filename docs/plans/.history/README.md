@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/95b76ad) | Implement verified release candidates and resumable APK publication |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
@@ -10,6 +11,10 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+95b76ad	author	Will Norris
+95b76ad	added	1
+95b76ad	deleted	0
+95b76ad	files	1
 d6498ac	author	Will Norris
 d6498ac	added	5
 d6498ac	deleted	5
