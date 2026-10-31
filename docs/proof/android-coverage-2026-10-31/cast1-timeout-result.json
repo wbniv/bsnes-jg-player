@@ -1,0 +1,31 @@
+{
+  "job": "J-34f983451310",
+  "coordinator_release": "0.1.19",
+  "duration_seconds": 60,
+  "target": 5800,
+  "watch_progress": [
+    "frame 33 of 5800 at 0 s",
+    "frame 529 of 5800 at 33 s"
+  ],
+  "validation": "incomplete",
+  "session": "clean",
+  "fence": "none",
+  "partial_artifacts_verified": 13,
+  "partial_screenshot_present": true,
+  "partial_logcat_present": true,
+  "status": "failed",
+  "reason": "checkpoint-not-reached",
+  "health": "ready",
+  "cleanup_attempts": 1,
+  "survivors": [],
+  "checkpoint": {
+    "name": "frame",
+    "target": 5800,
+    "reached": false,
+    "reached_at_seconds": null,
+    "last_observed": 961,
+    "elapsed_seconds": 60.453,
+    "source": "logcat",
+    "field": "rom_frames"
+  }
+}

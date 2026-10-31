@@ -81,4 +81,12 @@ The actual 1920×1080 screenshot contains an exact **1440×1080 (4:3)** game rec
 
 [Checkpoint observations](../proof/android-coverage-2026-10-31/cast1-checkpoint.json) · [Pixel comparison](../proof/android-coverage-2026-10-31/cast1-frame-5800.json).
 
-**Coordinator feedback:** longer execution, checkpoint detection, early completion, evidence retrieval and cleanup passed this real-device test. The `watch` command displayed phases and completion but no intermediate frame counts; progress was visible in downloaded `checkpoint.json`. The downloaded receipt reported session success and ready health, while checkpoint details were in the separate artifact. The timeout/incomplete path was not tested by this successful run.
+**Coordinator 0.1.18 result:** longer execution, checkpoint detection, early completion, evidence retrieval and cleanup passed this real-device test. Intermediate frame counts in `watch` were not shipped until 0.1.19; their absence on this run was expected, not a defect.
+
+### Coordinator 0.1.19: live progress and timeout PASS
+
+Job `J‑34f983451310` ran the same frozen benchmark with `DURATION=60 CHECKPOINT=frame TARGET=5800`. The live watcher printed `frame 33 of 5800 at 0 s` and `frame 529 of 5800 at 33 s`, consistent with its 30-second reporting interval.
+
+It intentionally failed with `checkpoint-not-reached`: last observed frame **961**, elapsed **60.453 seconds**. The watcher reported **validation: incomplete, session: clean, fence: none, partial evidence kept**. All 13 artifacts were retrieved and verified, including the partial screenshot and logcat. The receipt confirms ready device health, one cleanup attempt and no survivors. The normal MainActivity registration was restored afterward. This expected failure passes the coordinator timeout test; it is not a renderer correctness failure.
+
+[Compact timeout receipt](../proof/android-coverage-2026-10-31/cast1-timeout-result.json) · [Checkpoint observations](../proof/android-coverage-2026-10-31/cast1-timeout-checkpoint.json).
