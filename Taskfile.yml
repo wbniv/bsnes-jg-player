@@ -4,10 +4,20 @@ version: '3'
 # serve a page that runs the +mos-a16 homebrew demos.
 
 includes:
+  web:
+    taskfile: Taskfile.release.yml
   chromecast:
     taskfile: Taskfile.chromecast.yml
 
 tasks:
+  secrets-pull:
+    desc: Pull project R2 publication credentials from AWS SSM
+    cmds: [python3 scripts/release/secrets.py pull]
+
+  secrets-bootstrap:
+    desc: Store bucket-scoped R2 credentials in SSM without replacing existing parameters
+    cmds: [python3 scripts/release/secrets.py bootstrap]
+
   default:
     desc: List available tasks
     cmds:

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Repeatable release tooling — Implementation and proof</title>
+<style>
+:root{color-scheme:dark;--bg:#242321;--panel:#302e2a;--text:#f0ece5;--muted:#c5bfb6;--accent:#b8f400;--line:#5a564f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{width:min(100% - 36px,920px);margin:48px auto 80px}h1,h2,h3{line-height:1.2}h1{font-size:clamp(2rem,5vw,3.2rem);color:var(--accent);letter-spacing:-.035em}h2{margin-top:2.4em;padding-bottom:.35em;border-bottom:1px solid var(--line);font-size:1.6rem}h3{margin-top:1.7em;color:#d7ff80}p,li{color:var(--muted)}strong{color:var(--text)}a{color:var(--accent)}code{font: .9em ui-monospace,SFMono-Regular,Consolas,monospace;color:#dcf9a0;background:#414039;padding:.12em .32em;border-radius:4px}pre{overflow:auto;padding:1rem 1.2rem;border:1px solid var(--line);border-radius:10px;background:#171715;color:#e8e4dc}pre code{padding:0;background:transparent;color:inherit}blockquote{margin:1rem 0;padding:.2rem 1rem;border-left:3px solid var(--accent);background:var(--panel)}table{border-collapse:collapse;width:100%;display:block;overflow:auto}th,td{text-align:left;vertical-align:top;padding:.6rem .75rem;border-bottom:1px solid var(--line)}th{color:var(--text)}.mermaid{margin:1.5rem 0;padding:1rem;background:#1b1a18;border-radius:10px;text-align:center}hr{border:0;border-top:1px solid var(--line)}
+h4{margin-top:2em;color:var(--text)} img{display:block;max-width:100%;max-height:720px;width:auto;height:auto;margin:1rem auto;border:1px solid var(--line);border-radius:8px}
+</style></head><body><main><h1 id="repeatable-releases-signing-retention-and-sharing-proof">Repeatable releases, signing, retention and sharing proof</h1>
+<p><strong>Status (2026-10-31):</strong> Implementation and local validation in progress. Release scripts, task interface, signing/payload gates, resumable publication, retention tests, TV public-QR access and consumer-page source changes are implemented. Public publication, credential provisioning and device transfer proof remain blocked/pending as recorded below.</p>
+<p><strong>Outcome:</strong> One reviewable release candidate containing the browser player and two signed Native Android examples; an explicit publication command that verifies public downloads before changing the release pointer; exactly current and previous releases after successful cleanup; verified phone and TV sharing flows.</p>
+<p>This plan carries forward the unfinished work in <a href="2026-10-28-r2-apk-public-downloads.md">Public Android APK downloads</a>. It supersedes that plan's proposed release implementation sequence where details differ. Existing release history remains evidence of the earlier manual publications.</p>
+<h2 id="baseline-and-boundaries">Baseline and boundaries</h2>
+<p>Repository records, inspected 31 October 2026, identify Android current <strong>0.1.9 / versionCode 10</strong> and previous <strong>0.1.8</strong>. These are local records, not a fresh live-service audit. Coordinator releases 0.1.18/0.1.19 are unrelated to player versions.</p>
+<ul>
+<li>Reuse <code>task android:release-build</code> and <code>android/tools/release-signing-secrets.sh</code>. A durable Android release key already exists in SSM; do not generate a replacement identity.</li>
+<li>Preserve package IDs <code>org.bsnesjg.tv.native</code> and <code>org.bsnesjg.tv.native.phase2</code>. Verify the established signing certificate fingerprint from the retained release records.</li>
+<li>Public artifacts are the Native player and Native library. The player bundles the demo selected by <code>demo-rom.json</code>; the library bundles the catalog, ROM files and artwork. Browser WASM remains a separate web artifact. Android WASM comparison APKs stay outside the publication set.</li>
+<li>Preserve the established R2 bucket <code>bsnes-jg-downloads</code>, prefix <code>bsnes-jg/</code>, canonical product page <code>https://indri.studio/apps/bsnes-jg-player/</code>, and stable download entry <code>https://downloads.biohack.net/bsnes-jg/</code>.</li>
+<li>Browser package version and Android release version currently differ. Record both explicitly; do not silently change npm's version to the Android version. Use one candidate ID/source revision and consistent Android version fields across the two APKs.</li>
+<li>This work covers Android/web delivery. iOS signing, App Store distribution and emulator performance improvements remain separate.</li>
+</ul>
+<h2 id="1-define-the-release-candidate-and-task-interface">1. Define the release candidate and task interface</h2>
+<p>Add a focused release Taskfile and scripts under <code>scripts/release/</code>; retain the existing build entry points. Proposed interface:</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Contract</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task web:release:prepare VERSION=&lt;version&gt; VERSION_CODE=&lt;integer&gt;</code></td>
+<td>Build and inspect a candidate locally; produce a manifest, checksums and publication/deletion preview. No public writes.</td>
+</tr>
+<tr>
+<td><code>task web:release:check</code></td>
+<td>Read-only audit of configuration, public manifests, signatures/metadata, object hashes, cache headers and retained versions.</td>
+</tr>
+<tr>
+<td><code>task web:release CANDIDATE=&lt;path&gt;</code></td>
+<td>Publish the exact prepared bytes after the destination/current/previous/prune summary and explicit confirmation. No rebuilding after review.</td>
+</tr>
+<tr>
+<td><code>task web:release:resume CANDIDATE=&lt;path&gt;</code></td>
+<td>Reconcile a partial attempt using its journal; retry missing verification or cleanup without advancing versions again.</td>
+</tr>
+<tr>
+<td><code>task secrets-pull</code></td>
+<td>Render the ignored, mode-0600 project credential cache from SSM.</td>
+</tr>
+<tr>
+<td><code>task secrets-bootstrap</code> / <code>task web:r2:setup</code></td>
+<td>Explicit one-time provisioning/repair, with a concrete permission/resource diff before mutation.</td>
+</tr>
+</tbody>
+</table>
+<p>Preparation must reject a dirty source tree or explicitly capture a reproducible source snapshot; default to a clean committed revision. Record source revision, toolchain versions, browser package version, Android version name/code, demo identity/hash and library inventory hash. Pin the ROM/catalog inputs used by both builds. Eliminate unexplained version literals in <code>android/app/build.gradle.kts</code> by taking validated release inputs; ordinary development builds retain documented defaults.</p>
+<p><strong>Validation:</strong> produce the same candidate metadata from the same inputs; reject duplicate/decreasing Android codes against both APK identities and the publication history. Keep a high-water mark even if a download pointer is rolled back. Reject missing/invalid version inputs before an expensive build.</p>
+<h2 id="2-signing-and-payload-gates">2. Signing and payload gates</h2>
+<p>Inspect the actual output APKs with the Android build tools before allowing publication:</p>
+<ul>
+<li>Verify signatures and the expected certificate SHA-256; reject debug signing, unsigned files, wrong package IDs and inconsistent version fields.</li>
+<li>Require exactly the two intended Native variants. Check supported ABIs against the build contract and inspect native-library presence.</li>
+<li>Verify the player contains the configured demo and its recorded hash. Verify every library catalog reference resolves to the expected ROM/artwork bytes; record counts and hashes, not merely an expected count of 152.</li>
+<li>Record file size and SHA-256 for every artifact and generate immutable <code>release.json</code>. Run the existing browser/core fidelity gates and appropriate Android build checks.</li>
+<li>Exercise recovery of the existing signing payload into a temporary protected directory and verify its certificate identity. Remove the temporary material after the check; retain only a redacted recovery receipt.</li>
+</ul>
+<p><strong>Validation:</strong> fixture tests reject a wrong key, debug certificate, incorrect package/version, missing ROM and modified artifact. A retained correctly signed release passes inspection. A device update from previous to the candidate preserves package identity and app preferences; use coordinator-owned installs and record any required clean-install limitation explicitly.</p>
+<h2 id="3-project-scoped-credentials">3. Project-scoped credentials</h2>
+<p>Inspect parameter names and existing configuration without exposing values. Resolve the recorded R2 <code>AccessDenied</code> problem by provisioning or correcting credentials scoped to this project's bucket. SSM remains the source of truth; credentials must not enter task arguments, logs, manifests or HTML.</p>
+<p>Separate publication permissions from account-level bucket/domain setup permissions. The routine publisher needs the object operations required for upload, verification and retention in the dedicated bucket; it does not need domain or account administration. Derive account/endpoint configuration from the existing project configuration instead of asking for copied identifiers.</p>
+<p><strong>Validation:</strong> inspect the provider's scope configuration; verify read/write/delete using a disposable object under a dedicated validation prefix in the project bucket, then remove it. Do not probe unrelated buckets by writing to them. Check cache permissions and ignored-file rules; redact all secret-bearing output. Record scope and recovery evidence without credentials.</p>
+<h2 id="4-publish-safely-and-retain-currentprevious">4. Publish safely and retain current/previous</h2>
+<p>Use a single-writer release lock spanning pointer publication and pruning, with explicit stale-lock recovery. Select and test the storage client's supported concurrency mechanism before implementation; a local lock alone does not serialize multiple publishing machines. Re-read the expected current pointer before committing a candidate and abort on a conflicting publisher.</p>
+<ol>
+<li>Validate candidate hashes/signatures again and read the authoritative current/previous manifest.</li>
+<li>Stage immutable APKs and <code>release.json</code> under a new version prefix. If that prefix exists, accept only byte-identical objects; never overwrite a released version with different bytes.</li>
+<li>Download both APKs through the public HTTPS route and compare full SHA-256 and byte sizes. Check metadata and cache headers.</li>
+<li>Publish the canonical manifest last, naming the candidate as current and the former current as previous. Update the legacy manifest alias from the same bytes and journal any alias-repair requirement. These are separate writes; do not claim multi-object atomicity.</li>
+<li>Verify the public product page resolves both variants and both retained releases. Browser output is staged with provenance; deploying a consumer site remains an explicit operation with its own verification receipt.</li>
+<li>Prune only recognized release objects under <code>bsnes-jg/releases/</code> excluded by the validated current/previous pair. Validate deletion paths against the fixed bucket/prefix and an allowlisted release inventory. Preserve manifests, redirects and unrelated prefixes.</li>
+<li>Confirm the resulting inventory and publish a redacted release receipt. Exactly two releases is the successful steady state; interrupted cleanup may temporarily retain extra versions and must report failure with a resumable cleanup state.</li>
+</ol>
+<p><strong>Failure behavior:</strong> before pointer publication, the old release remains authoritative and no old release is pruned. After publication, a failure is reported as published-but-incomplete with its exact remaining work. Resume must not shift current to previous twice or delete either retained version. Maintain a journal for interrupted uploads, alias repair, page verification and pruning.</p>
+<p><strong>Rollback:</strong> repointing a download page to the retained previous build is not an Android in-place downgrade. Android may reject a lower versionCode. A corrective release intended to update installed devices needs a new, higher versionCode; document this distinction in the operator instructions.</p>
+<p><strong>Validation:</strong> storage-backed integration tests exercise three releases, upload/hash failure, concurrent publishers, interruption before/after pointer commit, alias failure and prune failure. Assert protected versions survive every failure. First prove pruning with a disposable test prefix; verify the production third-release transition only during an authorized release.</p>
+<h2 id="5-finish-public-sharing-and-consumer-pages">5. Finish public sharing and consumer pages</h2>
+<p>Wire the verified public landing URL into release builds and finish the Android <strong>Public download QR</strong> action. Keep it directly accessible when nearby transfer/local QR is unavailable or unsuccessful; do not depend on inferring transfer success from an Android Sharesheet callback. Explain that the public page supplies a published release which can differ from the sender's installed version.</p>
+<p>Keep a readable HTTPS URL beside the QR, usable by touch and TV D-pad. A local transfer QR must remain clearly distinguishable from the public one. Public fallback must not upload the sender's APK or include local paths, credentials or temporary LAN addresses.</p>
+<p>Confirm the Indri product page and biohack.net SNES panel agree with the canonical manifest. Verify the download panel's unset-configuration behavior and URL validation. Add the source/product entry to <code>wald3n.com/open-source</code> in that repository, then capture deployed evidence when publication is authorized.</p>
+<h2 id="6-device-validation-and-inline-proof">6. Device validation and inline proof</h2>
+<p>Use this repository's <code>task chromecast:*</code> workflow for every Cast1/Pixel session: inspect devices/queue, submit the matching supported job, watch it and retrieve evidence. The coordinator owns installation, input, capture and cleanup. Unsupported interactions require coordinator support or a recorded human-assisted step; never direct ADB. Cast2/tablet availability is not a gate for this plan.</p>
+<table>
+<thead>
+<tr>
+<th>Validation</th>
+<th>Setup and pass condition</th>
+<th>Proof to retain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TV public fallback</td>
+<td>Cast1 shows public QR when local transfer cannot work; D-pad can select it; readable URL matches the configured landing page</td>
+<td>Inline TV screenshot, decoded QR value, coordinator job receipt</td>
+</tr>
+<tr>
+<td>Cross-network download</td>
+<td>Recipient phone uses a different network from the sender, scans the TV/page QR and downloads the chosen Native APK</td>
+<td>Inline recipient page screenshot, downloaded size/hash, recorded network condition</td>
+</tr>
+<tr>
+<td>Local QR</td>
+<td>Same-network transfer succeeds; expired/closed session stops serving; public fallback remains accessible</td>
+<td>Transfer receipt and inline UI captures</td>
+</tr>
+<tr>
+<td>Quick Share</td>
+<td>Two physical Android devices transfer the APK with internet/cellular unavailable, while required local radios remain enabled</td>
+<td>Sender/recipient captures and matching hashes; human-assisted proof if coordinator lacks support</td>
+</tr>
+<tr>
+<td>Recipient install/update</td>
+<td>Android displays its normal install confirmation; both variants launch; library assets are present; signed update preserves preferences</td>
+<td>Inline installer/app screenshots and package/version/certificate receipt</td>
+</tr>
+<tr>
+<td>Web entry points</td>
+<td>Desktop/mobile layouts show readable URL and scannable QR; links resolve current/previous variants</td>
+<td>Inline browser screenshots, QR decode and link/hash report</td>
+</tr>
+</tbody>
+</table>
+<p>Cast1 plus Pixel covers TV and cross-network recipient testing. Quick Share requires a second Android phone/tablet; mark that row blocked if none is available rather than substituting emulator screenshots. Do not change shared device network/security settings outside the coordinator-owned workflow. Arrange human participation for camera scans and installer confirmation where required.</p>
+<p>Save compact, sanitized evidence under <code>docs/proof/release-tooling/&lt;candidate&gt;/</code>. Keep private diagnostics outside committed proof. Embed the actual screenshots <strong>in this plan and its HTML view next to each result</strong>, with device, date, job ID and pass/fail caption. Screenshots prove visible behavior; signatures, download hashes and cleanup receipts prove artifact integrity and publication behavior. Mockups are not validation evidence.</p>
+<p><strong>Evidence status:</strong> pending implementation. No new release/sharing screenshots are available yet; do not reuse renderer screenshots as proof of these flows.</p>
+<h2 id="delivery-order-and-completion-criteria">Delivery order and completion criteria</h2>
+<ol>
+<li>Candidate/version model and local preparation gates.</li>
+<li>Credential scope and signing recovery validation.</li>
+<li>Publication/resume/retention implementation with failure tests.</li>
+<li>Public QR wiring and consumer-page changes.</li>
+<li>Prepare a concrete candidate and publication/deletion preview for review.</li>
+<li>Publish when authorized, verify public bytes/pages, then complete device sharing and update tests.</li>
+<li>Attach inline proof, reconcile the older R2 plan and sharing how-to, and close only acceptance rows backed by evidence.</li>
+</ol>
+<p>Done means local preparation is repeatable, all invalid candidates are rejected, publication is resumable, current/previous retention is verified, signing continuity is preserved, and the required device flows have real evidence. A missing second recipient device or unavailable credential administration remains a named blocker, not a passing check.</p>
+<h2 id="implementation-evidence-31-october-2026">Implementation evidence — 31 October 2026</h2>
+<p><a href="../how-to/release-player.md">Operator guide</a> · <a href="../proof/release-tooling/2026-10-31/implementation-checks.json">Compact checks</a>.</p>
+<ul>
+<li><strong>PASS:</strong> 20 publication/signing/payload tests, including three-release retention, conflicting writers, tampered bytes, failure before publication, failure after pointer commit, alias repair and pruning resume. These use an in-memory conditional-object fake; live R2 writes remain unverified.</li>
+<li><strong>PASS:</strong> both signed candidate APKs compile at 0.1.10 / code 11. Independent inspection verifies the established release certificate, both package IDs, ARMv7/ARM64 native payloads, the selected demo and the 152-ROM library with per-file hashes.</li>
+<li><strong>PASS:</strong> temporary recovery of the existing signing payload from SSM reproduces the retained certificate. No replacement signing key was created.</li>
+<li><strong>PASS:</strong> browser demo WRAM selfcheck; Indri static build; nine existing wald3n open-source page tests.</li>
+<li><strong>BLOCKED:</strong> the available Cloudflare administrative token returns HTTP 403 for account-token administration. There is no project R2 credential parameter yet. <code>task secrets-bootstrap</code> can accept a separately provisioned bucket-scoped key through hidden terminal prompts; it resolves the account ID from existing SSM configuration.</li>
+<li><strong>BLOCKED:</strong> Cast1 jobs <code>J‑965e71d0c9fb</code> (release signing) and <code>J‑aedf4dab1f7e</code> (controlled signing) both returned <code>INSTALL_FAILED_UPDATE_INCOMPATIBLE</code> for the existing player package. No package or app data was removed. This is not a passing QR or signed-update check.</li>
+<li><strong>PENDING:</strong> recipient camera scan/installer confirmation and a second Android device for Quick Share; no physical transfer claim is made.</li>
+</ul>
+<h3 id="download-page-local-browser-validation-pass">Download page: local browser validation PASS</h3>
+<p>The built Indri component renders current/previous and both APK variants from the repository manifest fixture, rejects an invalid manifest, and fits 1280 px and 390 px viewports. This is local implementation proof, not deployed-page or cross-network transfer proof. The production Worker proxy has been implemented in the sibling Indri repository; it requires a separate deployment.</p>
+<p><img alt="Desktop: both APK variants for current and previous releases, local manifest fixture" src="../proof/release-tooling/2026-10-31/downloads-desktop.png" /></p>
+<p><img alt="Phone: current and previous download cards fit the viewport, local manifest fixture" src="../proof/release-tooling/2026-10-31/downloads-phone.png" /></p>
+<p><a href="../proof/release-tooling/2026-10-31/download-page-check.json">Browser check receipt</a>.</p>
+<h3 id="implementation-choices">Implementation choices</h3>
+<p>The credential cache is protected JSON under <code>.private/</code>, read directly by the publisher instead of shell-sourced dotenv. Publication confirmation is handled after the Python command has printed the concrete destination/prune preview; ordinary Task builds remain non-publishing. Existing bucket/domain infrastructure is checked, not recreated automatically. The known Cloudflare token lacks the administration scope to provision the new publisher credentials.</p>
+<p>The single-writer lock uses an atomic R2 <code>If-None-Match</code> creation; pointer publication also uses <code>If-Match</code>. Crashed locks require explicit owner verification and token-based recovery. See <a href="https://developers.cloudflare.com/r2/api/s3/api/">R2 conditional-write documentation</a> and <a href="https://developers.cloudflare.com/r2/api/tokens/">R2 credential scopes</a>, consulted 31 October 2026. Live storage-backed failure tests remain an acceptance gate before the first automated publication.</p></main></body></html>

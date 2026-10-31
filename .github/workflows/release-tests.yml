@@ -1,0 +1,16 @@
+name: Release tooling gates
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/release/**', 'Taskfile.release.yml', '.github/workflows/release-tests.yml']
+  pull_request:
+    paths: ['scripts/release/**', 'Taskfile.release.yml', '.github/workflows/release-tests.yml']
+permissions:
+  contents: read
+jobs:
+  release-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Publication failure, retention and APK gate tests
+        run: python3 -m unittest discover -s scripts/release -p 'test_*.py' -v

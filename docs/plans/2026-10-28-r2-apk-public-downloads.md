@@ -2,6 +2,8 @@
 
 **Status:** The 0.1.9 Native APK release is published. The Raycaster Maze player and full LLVM 65816 suite APKs are available from R2, with 0.1.8 retained as the previous release. `https://downloads.biohack.net/bsnes-jg/` redirects to the Indri product/download page; its release manifest is at `https://downloads.biohack.net/bsnes-jg/current.json`. The older `/bsnes-jg-wasm/current.json` path is kept in sync. The biohack.net SNES download panel and QR are live and open the Indri page. Future-release automation, bucket-scoped SSM credentials, the wald3n.com source listing, and device QR fallback proof remain open. The reusable player package and browser WebAssembly integration are the product; the Native APKs are example host integrations. The npm payload contains only the 32 KiB Raycaster Maze sample ROM, not the full suite. Retain exactly the current and previous example build.
 
+**Implementation follow-up:** the [repeatable release tooling plan](2026-10-31-repeatable-release-tooling.md) tracks the implemented task interface, local test evidence and remaining live credential/device gates. The earlier proposal below remains historical context.
+
 ## Goal
 
 Give people a stable public HTTPS page for downloading example Android integrations when nearby transfer or the temporary same-Wi-Fi QR transfer is unavailable or unsuccessful. The R2 page must offer the current and previous example build, clearly identify the Native library and Native player examples, and state the version and SHA-256 for each file.

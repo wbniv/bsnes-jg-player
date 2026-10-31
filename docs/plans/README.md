@@ -29,6 +29,7 @@ rows on commit.*
 | [Propose a reusable Native Android frontend upstream](2026-10-29-native-android-upstream.md) | Keep the browser player in this fork and prepare a focused upstream proposal for the core-facing Native Android adapter, leaving the launcher and ROM catalog downstream. | Proposal draft; not submitted | Platform |
 | [Native iOS player integration](2026-10-30-native-ios-player.md) | Native iOS example implemented with SwiftUI, Metal, audio and GameController; six iPhone/iPad simulator tests and unsigned device SDK build pass. | Simulator PASS; physical signing/testing blocked | Platform |
 | [Rename the project to `bsnes-jg-player`](2026-10-31-bsnes-jg-player-rename.md) | Align the GitHub repository, local checkout, and public product URL around the reusable player, while retaining redirects and the established APK delivery path. | In progress | Platform |
+| [Repeatable releases, signing, retention and sharing proof](2026-10-31-repeatable-release-tooling.md) | Prepare and verify signed release candidates, publish with resumable current/previous retention, scope credentials and validate device QR/sharing flows with inline evidence. | Implemented locally; credentials/publication and device proof pending | Infra |
 
 ---
 

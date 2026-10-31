@@ -191,8 +191,10 @@ android {
         applicationId = "org.bsnesjg.tv"
         minSdk = 24
         targetSdk = 34
-        versionCode = 10
-        versionName = "0.1.9"
+        versionCode = providers.gradleProperty("releaseVersionCode").orElse("10").get().toInt()
+        check(versionCode in 1..2100000000) { "Invalid releaseVersionCode" }
+        versionName = providers.gradleProperty("releaseVersionName").orElse("0.1.9").get()
+        check(Regex("(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)").matches(versionName!!)) { "Invalid releaseVersionName" }
         buildConfigField("String", "PLAYER_ROM_SLUG", groovy.json.JsonOutput.toJson(playerRomSlug))
         buildConfigField("String", "PLAYER_ROM_TITLE", groovy.json.JsonOutput.toJson(playerRomTitle))
         buildConfigField("String", "PLAYER_ROM_APK_SLUG", groovy.json.JsonOutput.toJson(playerRomApkSlug))
@@ -202,7 +204,7 @@ android {
         val publicDownloadUrl = providers.gradleProperty("publicDownloadUrl").orElse("").get()
             .replace("\\", "\\\\").replace("\"", "\\\"")
         check(publicDownloadUrl.isEmpty() ||
-                publicDownloadUrl.startsWith("https://downloads.biohack.net/bsnes-jg/")) {
+                publicDownloadUrl == "https://downloads.biohack.net/bsnes-jg/") {
             "publicDownloadUrl must use the verified Biohack SNES release page"
         }
         buildConfigField("String", "PUBLIC_DOWNLOAD_URL", "\"$publicDownloadUrl\"")

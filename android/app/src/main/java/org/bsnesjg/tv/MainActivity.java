@@ -407,8 +407,8 @@ public class MainActivity extends Activity {
 
     private void showApkShareOptions() {
         CharSequence[] options = BuildConfig.PUBLIC_DOWNLOAD_URL.isEmpty()
-                ? new CharSequence[]{"Share with another app", "Show QR code"}
-                : new CharSequence[]{"Share with another app", "Show QR code", "Public download QR"};
+                ? new CharSequence[]{"Share with another app", "Local transfer QR"}
+                : new CharSequence[]{"Share with another app", "Local transfer QR", "Public download QR"};
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle(BuildConfig.ROM_LIBRARY ? "Share app APK and ROM library" : "Share app APK")
                 .setItems(options, (dialog, choice) -> {
@@ -426,6 +426,7 @@ public class MainActivity extends Activity {
                     MainActivity.this,
                     BuildConfig.PUBLIC_DOWNLOAD_URL,
                     "Scan this code to open the public release page and choose an APK. " +
+                            "The published version may differ from this installed app. " +
                             "The recipient needs internet access; this device does not upload the APK.",
                     "Public APK download");
             dialog.show();
@@ -525,7 +526,19 @@ public class MainActivity extends Activity {
             if (getIntent().getBooleanExtra("benchmark", false)) return;
             runOnUiThread(() -> {
                 if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_LEANBACK)) {
-                    showLocalApkTransfer();
+                    if (BuildConfig.PUBLIC_DOWNLOAD_URL.isEmpty()) {
+                        showLocalApkTransfer();
+                    } else {
+                        new AlertDialog.Builder(MainActivity.this)
+                                .setTitle("Share app APK")
+                                .setItems(new CharSequence[]{"Local transfer QR", "Public download QR"},
+                                        (dialog, choice) -> {
+                                            if (choice == 0) showLocalApkTransfer();
+                                            else showPublicDownloadQr();
+                                        })
+                                .setNegativeButton("Cancel", null)
+                                .show();
+                    }
                     return;
                 }
                 showApkShareOptions();

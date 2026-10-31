@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-31",
+  "releaseTests": {
+    "passed": 20,
+    "backend": "in-memory conditional-object fake; not live R2"
+  },
+  "androidBuild": "PASS: signed Native library and player, 0.1.10 / versionCode 11",
+  "apkInspection": "PASS: signatures, package/version, both native ABIs, demo and 152-ROM library hashes",
+  "signingRecovery": "PASS: temporary SSM recovery matches retained certificate",
+  "browserFidelity": "PASS: raycaster WRAM selfcheck using packaged manifest",
+  "indriBuild": "PASS: 175 static pages",
+  "wald3nTests": {
+    "passed": 9
+  },
+  "cloudflareTokenAdministration": "HTTP 403; dedicated R2 SSM parameter absent",
+  "cast1Install": {
+    "jobs": [
+      "J-965e71d0c9fb",
+      "J-aedf4dab1f7e"
+    ],
+    "result": "INSTALL_FAILED_UPDATE_INCOMPATIBLE; no uninstall performed"
+  },
+  "published": false
+}

@@ -24,11 +24,13 @@ if [[ "$public_release" == "1" ]]; then
     fi
   done
 fi
-version_name="$(sed -n 's/^[[:space:]]*versionName = "\([^"]*\)".*/\1/p' "$here/app/build.gradle.kts" | head -n 1)"
-if [[ -z "$version_name" ]]; then
-  echo 'Could not read Android versionName from app/build.gradle.kts.' >&2
+version_name="${ORG_GRADLE_PROJECT_releaseVersionName:-0.1.9}"
+version_code="${ORG_GRADLE_PROJECT_releaseVersionCode:-10}"
+if [[ ! "$version_name" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ || ! "$version_code" =~ ^[1-9][0-9]*$ ]]; then
+  echo 'Invalid Android release version inputs.' >&2
   exit 1
 fi
+
 player_apk_slug="$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).apkSlug' "$repo/demo-rom.json")"
 player_rom_title="$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).title' "$repo/demo-rom.json")"
 
@@ -53,6 +55,8 @@ container_args=(--rm --network none --cap-drop ALL --security-opt no-new-privile
   --user 0:0 -e GRADLE_USER_HOME=/gradle-cache -e ANDROID_HOME=/android-sdk \
   -e ORG_GRADLE_PROJECT_publicDownloadUrl="${ORG_GRADLE_PROJECT_publicDownloadUrl:-}" \
   -e BJG_PUBLIC_RELEASE="$public_release" \
+  -e ORG_GRADLE_PROJECT_releaseVersionName="$version_name" \
+  -e ORG_GRADLE_PROJECT_releaseVersionCode="$version_code" \
   --mount "type=bind,src=$repo,dst=/workspace" \
   --mount "type=bind,src=$gradle_cache,dst=/gradle-cache" \
   --mount "type=bind,src=$android_sdk,dst=/android-sdk,readonly" \

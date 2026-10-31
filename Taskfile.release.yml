@@ -1,0 +1,47 @@
+version: '3'
+# Release values travel through environment variables, never interpolated shell code.
+tasks:
+  release:prepare:
+    desc: Build and inspect a local release candidate without publishing
+    env:
+      RELEASE_VERSION: '{{.VERSION | default ""}}'
+      RELEASE_CODE: '{{.VERSION_CODE | default ""}}'
+    cmds:
+      - python3 scripts/release/release.py prepare --version "$RELEASE_VERSION" --version-code "$RELEASE_CODE"
+  release:preview:
+    desc: Inspect a candidate and show the public destination and retention changes
+    env: &candidate_env
+      RELEASE_CANDIDATE: '{{.CANDIDATE | default ""}}'
+    cmds:
+      - python3 scripts/release/release.py preview --candidate "$RELEASE_CANDIDATE"
+  release:
+    desc: Publish exact reviewed candidate bytes with an explicit destination/prune confirmation
+    env: *candidate_env
+    cmds:
+      - python3 scripts/release/release.py publish --candidate "$RELEASE_CANDIDATE"
+  release:resume:
+    desc: Resume interrupted publication or retention cleanup
+    env: *candidate_env
+    cmds:
+      - python3 scripts/release/release.py resume --candidate "$RELEASE_CANDIDATE"
+  release:check:
+    desc: Read-only public download, manifest and retention audit
+    cmds: [python3 scripts/release/release.py check]
+  release:unlock:
+    desc: Manually recover a stopped publisher's remote lock after confirming its token
+    env:
+      RELEASE_LOCK_TOKEN: '{{.TOKEN | default ""}}'
+    cmds:
+      - python3 scripts/release/release.py unlock --token "$RELEASE_LOCK_TOKEN"
+  release:test:
+    desc: Exercise release failure, resume, concurrency and retention gates locally
+    cmds: [python3 -m unittest discover -s scripts/release -p 'test_*.py' -v]
+  release:signing-recovery:
+    desc: Verify recovery of the durable signing identity from SSM in a temporary protected directory
+    cmds: [python3 scripts/release/recover-signing.py]
+  r2:setup:
+    desc: Verify the existing project bucket without recreating infrastructure
+    cmds: [python3 scripts/release/secrets.py setup]
+  r2:probe:
+    desc: Check object read/write/delete permissions in a disposable project prefix
+    cmds: [python3 scripts/release/secrets.py probe]

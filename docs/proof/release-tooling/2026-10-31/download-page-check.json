@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "environment": "local built Indri page; repository current/previous manifest fixture",
+  "widths": [
+    1280,
+    390
+  ],
+  "apkLinksPerWidth": 4,
+  "invalidManifest": "rejected",
+  "deploymentVerified": false
+}
