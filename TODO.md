@@ -65,6 +65,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑10‑31 — [catchup-credit] Native credit was unbounded (3.7k to 16.2k frames on Cast1); now capped at 4. See [plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md).
 - ✅ 2026‑10‑31 — [cast1-build-tuning] Flag bisect on Cast1: ARMv8 neutral, `-O3`/LTO 0.64× slower, none kept. See [plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md).
 - [x] 2026-10-31 — Android chooser, palette and pause menu confirmed working by Will. This is user acceptance, not a new automated device-run receipt.
 
@@ -136,5 +137,4 @@ _Auto-added from plan "Out of scope"/"Deferred" sections at commit time. Triage 
 - [T4] **PGO training build.** A `-fprofile-generate` variant of `libbjg.so`, a JNI `dumpProfile()` that writes `.profraw` after a fixed frame count, a coordinator step that pulls it from the app's files directory, and a `-fprofile-use` release build. Expected gain 10–30% on this interpreter-style code. Gate on the coordinator having a file-pull capability for a non-debuggable package. — _from [2026-10-31-cast1-armv7-build-tuning.md](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)_  <!-- fp:86caa3550c052f99 -->
 - [T2] **Cast2 measurement.** Coordinator control of `chromecast-test-02` is unavailable (`transport-unavailable`); measure it with the same job once it reconnects. — _from [2026-10-31-cast1-armv7-build-tuning.md](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)_  <!-- fp:a702c47c5dba065b -->
 - [T1] **Startup cost.** `Bus::map` spends about 1.1 G instructions at load, roughly 1–2 s of Cast1's time to first frame. Inherent to the core's address-map design; record it in the selector plan's startup timing rather than optimising here. — _from [2026-10-31-cast1-armv7-build-tuning.md](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)_  <!-- fp:8d745742a1eabb20 -->
-- [T2] **Unbounded catch-up credit.** `MainActivity.onDrawFrame` accumulates `credit` without a cap, so `emulation_backlog_frames` grows forever on a slow device. Harmless for measurement, but a player should clamp it. — _from [2026-10-31-cast1-armv7-build-tuning.md](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)_  <!-- fp:fafe50707f1155d6 -->
 <!-- END auto-captured-deferrals -->
