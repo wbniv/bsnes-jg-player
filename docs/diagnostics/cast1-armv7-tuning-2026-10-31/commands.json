@@ -1,0 +1,85 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793436420.8375618,
+    "end": 1793436421.2401922,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793436421.3766,
+    "end": 1793436421.6244614,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PES7gmVB6WCLS74st428jQ==/org.bsnesjg.tv.native.phase2-qfnC1q4xk-g8KFL7m-vr9A==/base.apk'"
+    ],
+    "start": 1793436421.625593,
+    "end": 1793436421.9924977,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793436421.9979346,
+    "end": 1793436422.442132,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PES7gmVB6WCLS74st428jQ==/org.bsnesjg.tv.native.phase2-qfnC1q4xk-g8KFL7m-vr9A==/base.apk'"
+    ],
+    "start": 1793436422.443143,
+    "end": 1793436422.8695626,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "cat",
+      "/data/app/~~PES7gmVB6WCLS74st428jQ==/org.bsnesjg.tv.native.phase2-qfnC1q4xk-g8KFL7m-vr9A==/base.apk"
+    ],
+    "start": 1793436422.8711276,
+    "end": 1793436437.3686385,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "install",
+      "-r",
+      "/var/lib/wf-device-coordinator/inputs/ff47f1babe5cb7f90509448bd8828593b0aa2773a101c1c52a64de2f0b766963.apk"
+    ],
+    "start": 1793436437.520358,
+    "end": 1793436447.1333797,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793436447.134512,
+    "end": 1793436447.3499804,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PES7gmVB6WCLS74st428jQ==/org.bsnesjg.tv.native.phase2-qfnC1q4xk-g8KFL7m-vr9A==/base.apk'"
+    ],
+    "start": 1793436447.3511603,
+    "end": 1793436447.8430114,
+    "returncode": 0
+  }
+]

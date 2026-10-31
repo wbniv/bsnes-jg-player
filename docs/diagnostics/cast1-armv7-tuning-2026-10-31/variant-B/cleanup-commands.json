@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793449221.3436992,
+    "end": 1793449221.83493,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.apps.tv.launcherx/.home.HomeActivity"
+    ],
+    "start": 1793449221.836364,
+    "end": 1793449222.3609393,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793449222.3621376,
+    "end": 1793449222.6954966,
+    "returncode": 0
+  }
+]

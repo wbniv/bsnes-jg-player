@@ -1,0 +1,10 @@
+{
+  "args": [
+    "install",
+    "-r",
+    "/var/lib/wf-device-coordinator/inputs/ff47f1babe5cb7f90509448bd8828593b0aa2773a101c1c52a64de2f0b766963.apk"
+  ],
+  "returncode": 1,
+  "stdout": "Performing Streamed Install\n",
+  "stderr": "adb: failed to install /var/lib/wf-device-coordinator/inputs/ff47f1babe5cb7f90509448bd8828593b0aa2773a101c1c52a64de2f0b766963.apk: Failure [INSTALL_FAILED_UPDATE_INCOMPATIBLE: Existing package org.bsnesjg.tv.native.phase2 signatures do not match newer version; ignoring!]\n\n"
+}

@@ -1,0 +1,8 @@
+{
+  "status": "captured",
+  "package": "org.bsnesjg.tv.native.phase2",
+  "installed_sha256": "8811ca0478c4444a1f6e76d8faa1f873016a53380fbe4fc3625abd1861b2875f",
+  "labels": [
+    "LLVM 65816 Torture Test Suite on SNES"
+  ]
+}

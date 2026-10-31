@@ -2,6 +2,8 @@
 
 **Status (2026-10-31):** Android WASM and Native comparison apps are implemented. Native Pixel and Cast1 checks pass WRAM `0x204F` at frame 5800 with zero canonical-framebuffer differences. Pixel Native portrait and landscape hardware captures also pass pixel comparisons. See the [31 October comparison and job ledger](../performance/2026-10-31/comparison.html) and [renderer validation](2026-10-28-native-snes-renderer-texture-mapping.md). Cast2 and tablet hardware coverage remain open. The standalone public Native player now bundles the configured Raycaster Maze demo; Mandelbrot remains the deterministic benchmark fixture.
 
+**Support position (Will, 2026‑10‑31):** Cast1 is a correctness-and-layout device. The 60 FPS emulation-speed, responsiveness and presentation gates apply to Pixel-class hardware and future big-core TV devices. A callgrind profile of the pinned core shows about 49 M instructions per emulated frame, two thirds in the dot-accurate PPU, so even a free PPU leaves about 22 ms per frame on the Cortex‑A35 Chromecast HD. Cast1's pacing is recorded as supporting data; the 32‑bit build is still tuned honestly in [Cast1 armeabi-v7a build tuning](2026-10-31-cast1-armv7-build-tuning.md).
+
 The dated implementation notes and job states below describe the earlier rollout. Their queued jobs, initial launch failures and single-profile-pair status are historical; use the 31 October report for subsequent evidence and query the coordinator for current device availability.
 
 **Artifact count:** Phase 2 produces two APKs, `wasm` and `native`, with separate package IDs and the same selector/catalog. The existing Phase 1 APK remains a separate install. Paired Phase 2 measurements compare these two same-shell builds, so the engine is the intended build-time difference.
@@ -162,6 +164,8 @@ Use an optimized measurement APK with the same frozen ROM/core on all devices. R
 For Phase 1 on each of `cast1` and `cast2`, record three cold app launches (process restart, with OS/WebView cache state disclosed). Preserve the full startup and image-compute phase in the report. Then measure a 10-minute steady-animation run after a fixed 30-second settling period following CRC-ready. Repeat the sustained run three times; stop early on a reproducible incompatibility or correctness failure. Compare per-run results instead of hiding a bad run in a pooled average. Phase 2 extends this with the paired protocol below.
 
 Proposed gates for ordinary playback on a 60 Hz output are listed below. Apply them to both the image-compute phase and steady animation after core startup; label their results separately. Pauses, cancellation, and explicit verification are separate functional tests.
+
+Device scope for the pacing gates (2026‑10‑31): the emulation-speed, responsiveness and presentation gates are evaluated on Pixel-class and big-core TV hardware. Cast1 and Cast2 (32‑bit Cortex‑A35/A55 Chromecasts) are correctness-and-layout devices whose pacing is reported as supporting data, per the support position above.
 
 - [ ] **Correctness:** native and device WRAM checks pass for the exact fixture, and deterministic reference-frame comparisons pass.
 - [ ] **Emulation speed:** every complete 10-second playback window stays within 1% of the declared emulation rate. Report the whole-run mean as supporting data, not as the sole gate.

@@ -1,0 +1,3383 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793439322.0409284,
+    "end": 1793439322.3366818,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439322.5776725,
+    "end": 1793439322.7652519,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PfWT-4OxM2wJnJEvAq8eag==/org.bsnesjg.tv.native.phase2-oh6fZ6U3YZ1A-Sct9oXOyw==/base.apk'"
+    ],
+    "start": 1793439322.7663713,
+    "end": 1793439323.1316998,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439323.1347938,
+    "end": 1793439323.3289514,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PfWT-4OxM2wJnJEvAq8eag==/org.bsnesjg.tv.native.phase2-oh6fZ6U3YZ1A-Sct9oXOyw==/base.apk'"
+    ],
+    "start": 1793439323.3306718,
+    "end": 1793439323.8836339,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "cat",
+      "/data/app/~~PfWT-4OxM2wJnJEvAq8eag==/org.bsnesjg.tv.native.phase2-oh6fZ6U3YZ1A-Sct9oXOyw==/base.apk"
+    ],
+    "start": 1793439323.8851106,
+    "end": 1793439337.3560007,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "install",
+      "-r",
+      "/var/lib/wf-device-coordinator/inputs/640288dea47b41f8b3bfa4487b4059fa0ca8fca4536a113b2c3f3436ca4eb21f.apk"
+    ],
+    "start": 1793439337.526444,
+    "end": 1793439350.392973,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439350.394081,
+    "end": 1793439350.673128,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~PUSzCCmU7l_Ey-TRf-_lCA==/org.bsnesjg.tv.native.phase2-ANlc5g0yaI3UdjO4pQdW6Q==/base.apk'"
+    ],
+    "start": 1793439350.674416,
+    "end": 1793439351.4187038,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439351.4541795,
+    "end": 1793439351.6908216,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793439351.6918762,
+    "end": 1793439351.9140327,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793439352.0655348,
+    "end": 1793439354.6963465,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793439359.6993861,
+    "end": 1793439360.069233,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439360.0743296,
+    "end": 1793439360.3777876,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439360.40902,
+    "end": 1793439360.61605,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439360.616932,
+    "end": 1793439360.8403726,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439362.842181,
+    "end": 1793439363.1230235,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439365.1248531,
+    "end": 1793439365.4479265,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439367.450379,
+    "end": 1793439367.8783448,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439369.8812075,
+    "end": 1793439370.1346831,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439372.1369283,
+    "end": 1793439372.5608418,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439374.563188,
+    "end": 1793439374.8166068,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439376.8187559,
+    "end": 1793439377.0613654,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439379.063513,
+    "end": 1793439379.345058,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439381.3471355,
+    "end": 1793439382.0371473,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439384.039372,
+    "end": 1793439384.4300594,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439386.4321196,
+    "end": 1793439386.7485495,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439388.7511659,
+    "end": 1793439389.1656272,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439391.1678786,
+    "end": 1793439391.6301959,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439393.632553,
+    "end": 1793439394.1144218,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439396.118039,
+    "end": 1793439396.5217278,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439398.5239813,
+    "end": 1793439398.9152458,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439400.9174252,
+    "end": 1793439401.2289667,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439403.2316206,
+    "end": 1793439403.6479445,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439405.6502862,
+    "end": 1793439406.109865,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439408.112382,
+    "end": 1793439408.528563,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439410.5311654,
+    "end": 1793439410.875811,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439412.877713,
+    "end": 1793439413.4797463,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439415.482404,
+    "end": 1793439415.9435816,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439417.946162,
+    "end": 1793439418.4390066,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439420.4412293,
+    "end": 1793439420.90114,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439422.9033594,
+    "end": 1793439423.1758745,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439425.1781547,
+    "end": 1793439425.4475772,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439427.449988,
+    "end": 1793439427.7522836,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439429.7546756,
+    "end": 1793439430.2909427,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439432.2932749,
+    "end": 1793439432.7714915,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439434.773858,
+    "end": 1793439435.1742213,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439437.176603,
+    "end": 1793439437.5958533,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439439.5983908,
+    "end": 1793439439.8877153,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439441.8899786,
+    "end": 1793439442.3354962,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439444.338356,
+    "end": 1793439444.7888913,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439446.7918413,
+    "end": 1793439447.248121,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439449.2528794,
+    "end": 1793439449.544142,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439451.547176,
+    "end": 1793439451.9373806,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439453.9396906,
+    "end": 1793439454.2067091,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439456.2088068,
+    "end": 1793439456.6591377,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439458.6620972,
+    "end": 1793439458.9498253,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439460.9520082,
+    "end": 1793439461.219435,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439463.2218354,
+    "end": 1793439463.6119337,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439465.6142285,
+    "end": 1793439466.1538267,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439468.1562214,
+    "end": 1793439468.5247157,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439470.5272136,
+    "end": 1793439471.0678484,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439473.071189,
+    "end": 1793439473.4420311,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439475.4451206,
+    "end": 1793439475.693228,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439477.6954324,
+    "end": 1793439478.0880728,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439480.0905232,
+    "end": 1793439480.435071,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439482.4374743,
+    "end": 1793439482.6921847,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439484.694532,
+    "end": 1793439485.1608367,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439487.1629708,
+    "end": 1793439487.5006187,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439489.5029922,
+    "end": 1793439489.8640685,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439491.8662953,
+    "end": 1793439492.1336975,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439494.1360009,
+    "end": 1793439494.562304,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439496.565751,
+    "end": 1793439497.010154,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439499.013255,
+    "end": 1793439499.3077157,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439501.3101046,
+    "end": 1793439501.6986735,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439503.7010748,
+    "end": 1793439504.201233,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439506.204276,
+    "end": 1793439506.8895495,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439508.892533,
+    "end": 1793439509.3385537,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439511.3409185,
+    "end": 1793439511.8781312,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439513.8807065,
+    "end": 1793439514.2815075,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439516.2869177,
+    "end": 1793439516.7325332,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439518.7353058,
+    "end": 1793439519.2075002,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439521.2101192,
+    "end": 1793439521.6082156,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439523.6110096,
+    "end": 1793439523.9693954,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439525.9718218,
+    "end": 1793439526.3163414,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439528.3195806,
+    "end": 1793439528.7870297,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439530.7897546,
+    "end": 1793439531.1115043,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439533.1139746,
+    "end": 1793439533.3910155,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439535.3938859,
+    "end": 1793439535.8095362,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439537.8120315,
+    "end": 1793439538.203829,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439540.2068174,
+    "end": 1793439540.4604943,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439542.4636066,
+    "end": 1793439542.8112679,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439544.8143296,
+    "end": 1793439545.219551,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439547.2222972,
+    "end": 1793439547.6730835,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439549.6760879,
+    "end": 1793439550.0518284,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439552.0548947,
+    "end": 1793439552.3909607,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439554.3934748,
+    "end": 1793439554.8227472,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439556.8258798,
+    "end": 1793439557.2490754,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439559.2515173,
+    "end": 1793439559.5640044,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439561.566689,
+    "end": 1793439562.0427847,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439564.0452375,
+    "end": 1793439564.5200796,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439566.5235064,
+    "end": 1793439566.9627647,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439568.9654696,
+    "end": 1793439569.2937698,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439571.2963216,
+    "end": 1793439571.71705,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439573.7193432,
+    "end": 1793439574.1578722,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439576.1608505,
+    "end": 1793439576.454099,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439578.4566934,
+    "end": 1793439578.929785,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439580.9328225,
+    "end": 1793439581.308826,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439583.3122044,
+    "end": 1793439583.8085825,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439585.8115678,
+    "end": 1793439586.237761,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439588.2410498,
+    "end": 1793439588.7117472,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439590.7151163,
+    "end": 1793439591.1860902,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439593.1890123,
+    "end": 1793439593.6593776,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439595.6621985,
+    "end": 1793439596.1293037,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439598.1318488,
+    "end": 1793439598.5625014,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439600.5652807,
+    "end": 1793439600.9703248,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439602.9731503,
+    "end": 1793439603.4309773,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439605.4345274,
+    "end": 1793439605.765433,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439607.7678134,
+    "end": 1793439608.4874537,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439610.4908392,
+    "end": 1793439611.1125753,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439613.116755,
+    "end": 1793439613.4964302,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439615.499553,
+    "end": 1793439615.871882,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439617.8755984,
+    "end": 1793439618.1916711,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439620.1946273,
+    "end": 1793439620.671982,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439622.6748514,
+    "end": 1793439623.3796844,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439625.38224,
+    "end": 1793439625.7912862,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439627.794368,
+    "end": 1793439628.4713213,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439630.4748967,
+    "end": 1793439630.9414828,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439632.9627905,
+    "end": 1793439633.3612018,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439635.364343,
+    "end": 1793439635.8447468,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439637.847807,
+    "end": 1793439638.5688488,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439640.5715766,
+    "end": 1793439640.9236174,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439642.9266646,
+    "end": 1793439643.4424386,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439645.445186,
+    "end": 1793439645.8353481,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439647.838344,
+    "end": 1793439648.294809,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439650.2978299,
+    "end": 1793439650.87384,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439652.8761873,
+    "end": 1793439653.225575,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439655.2286398,
+    "end": 1793439655.7772574,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439657.780434,
+    "end": 1793439658.184934,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439660.1882086,
+    "end": 1793439660.576812,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439662.579844,
+    "end": 1793439663.343543,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439665.3463402,
+    "end": 1793439665.7424462,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439667.7451692,
+    "end": 1793439668.406746,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439670.4102201,
+    "end": 1793439670.843763,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439672.8468919,
+    "end": 1793439673.5491931,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439675.5521963,
+    "end": 1793439675.9346626,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439677.937494,
+    "end": 1793439678.3190668,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439680.3220863,
+    "end": 1793439680.9336286,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439682.9402452,
+    "end": 1793439683.3408473,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439685.3439784,
+    "end": 1793439685.7769852,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439687.780599,
+    "end": 1793439688.2298698,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439690.232694,
+    "end": 1793439690.592924,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439692.5957255,
+    "end": 1793439692.99758,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439695.0002809,
+    "end": 1793439695.3881054,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439697.3914063,
+    "end": 1793439697.7174528,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439699.720845,
+    "end": 1793439700.1635165,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439702.1665168,
+    "end": 1793439702.6181417,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439704.6208196,
+    "end": 1793439705.2371297,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439707.2396674,
+    "end": 1793439707.5150132,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439709.5177972,
+    "end": 1793439709.9610949,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439711.964031,
+    "end": 1793439712.4197497,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439714.4231954,
+    "end": 1793439714.8465974,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439716.8494322,
+    "end": 1793439717.3467488,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439719.349319,
+    "end": 1793439719.7738762,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439721.7765765,
+    "end": 1793439722.2621684,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439724.2652602,
+    "end": 1793439724.7695045,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439726.7735422,
+    "end": 1793439727.202971,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439729.2064795,
+    "end": 1793439729.9384382,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439731.9414475,
+    "end": 1793439732.2636716,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439734.2667396,
+    "end": 1793439734.8092525,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439736.8121233,
+    "end": 1793439737.1720467,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439739.1749332,
+    "end": 1793439739.5196853,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439741.5228825,
+    "end": 1793439741.9990768,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439744.005566,
+    "end": 1793439744.4262886,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439746.4292781,
+    "end": 1793439746.911731,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439748.9147377,
+    "end": 1793439749.2657623,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439751.2685788,
+    "end": 1793439751.7497528,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439753.7528617,
+    "end": 1793439754.1919458,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439756.1952431,
+    "end": 1793439756.609594,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439758.6128318,
+    "end": 1793439758.9447234,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439760.9485905,
+    "end": 1793439761.654534,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439763.657394,
+    "end": 1793439763.9962404,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439765.9997265,
+    "end": 1793439766.4566736,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439768.460308,
+    "end": 1793439768.9913352,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439770.9945748,
+    "end": 1793439771.4122624,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439773.4150834,
+    "end": 1793439773.8332133,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439775.8370028,
+    "end": 1793439776.1611936,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439778.1646216,
+    "end": 1793439778.6122894,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439780.615918,
+    "end": 1793439781.0699801,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439783.0743923,
+    "end": 1793439783.5782826,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439785.5828316,
+    "end": 1793439786.0619712,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439788.0655634,
+    "end": 1793439788.4384387,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439790.4417067,
+    "end": 1793439790.9214525,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439792.9242332,
+    "end": 1793439793.6271935,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439795.6310623,
+    "end": 1793439796.1395123,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439798.1435301,
+    "end": 1793439798.5016735,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439800.5063818,
+    "end": 1793439801.0435035,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439803.0466092,
+    "end": 1793439803.3681216,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439805.3710315,
+    "end": 1793439805.8018763,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439807.8064718,
+    "end": 1793439808.3708742,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439810.3743808,
+    "end": 1793439810.7470965,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439812.7499173,
+    "end": 1793439813.2290938,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439815.2321432,
+    "end": 1793439815.6273847,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439817.6303878,
+    "end": 1793439818.0842173,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439820.087354,
+    "end": 1793439820.59631,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439822.5992615,
+    "end": 1793439823.0635133,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439825.0664375,
+    "end": 1793439825.563262,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439827.566711,
+    "end": 1793439828.2437801,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439830.2473564,
+    "end": 1793439830.5908327,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439832.5936675,
+    "end": 1793439833.1287456,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439835.132172,
+    "end": 1793439835.5434878,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439837.5467074,
+    "end": 1793439838.0060475,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "epoch",
+      "-t",
+      "1000",
+      "--pid=31290",
+      "-s",
+      "BJG_TV_METRIC"
+    ],
+    "start": 1793439840.0088496,
+    "end": 1793439840.4402397,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793439840.4513133,
+    "end": 1793439840.800342,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439840.8038754,
+    "end": 1793439841.0134041,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793439841.0145316,
+    "end": 1793439842.7326553,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439842.733999,
+    "end": 1793439843.0244477,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=31290"
+    ],
+    "start": 1793439843.0260875,
+    "end": 1793439843.3777037,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.native.phase2/files/wf.log"
+    ],
+    "start": 1793439843.3797724,
+    "end": 1793439843.8310645,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.native.phase2"
+    ],
+    "start": 1793439843.8322694,
+    "end": 1793439844.8733833,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793439844.8745706,
+    "end": 1793439845.0686514,
+    "returncode": 0
+  }
+]

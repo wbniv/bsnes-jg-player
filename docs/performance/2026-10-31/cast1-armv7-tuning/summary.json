@@ -1,0 +1,47 @@
+{
+  "baseline": {
+    "windows": 281,
+    "first_rom_frame": 1409,
+    "last_rom_frame": 5889,
+    "core_mean_ms": {
+      "median": 64.145,
+      "mean": 64.21027758007118,
+      "p05": 63.278,
+      "p95": 65.353,
+      "min": 62.792,
+      "max": 66.598
+    },
+    "core_p95_ms_median": 71.545,
+    "emu_fps": {
+      "median": 15.41,
+      "mean": 15.39288256227758,
+      "p05": 15.12,
+      "p95": 15.62,
+      "min": 14.81,
+      "max": 15.76
+    }
+  },
+  "tuned": {
+    "windows": 375,
+    "first_rom_frame": 49,
+    "last_rom_frame": 4517,
+    "core_mean_ms": {
+      "median": 106.144,
+      "mean": 106.62533599999999,
+      "p05": 101.6903,
+      "p95": 110.44839999999999,
+      "min": 87.757,
+      "max": 182.293
+    },
+    "core_p95_ms_median": 133.098,
+    "emu_fps": {
+      "median": 9.34,
+      "mean": 9.326586666666666,
+      "p05": 8.98,
+      "p95": 9.75,
+      "min": 5.45,
+      "max": 11.29
+    }
+  },
+  "median_core_speedup": 0.6043205456738016
+}
