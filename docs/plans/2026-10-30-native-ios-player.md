@@ -4,7 +4,7 @@
 
 **Earlier bootstrap evidence:** Codemagic builds the ARM64 iOS app with Xcode 16.4, and the iPhone 16 Simulator passes the configured 500-frame Raycaster fidelity check (`0xB200` at `0x13EA`). The captured app shows the ROM rendered through Metal with visible touch controls. See [build receipt](../proof/ios-bootstrap-2026-10-31/codemagic-result.json), [self-check](../proof/ios-bootstrap-2026-10-31/selfcheck.json), and [iPhone screenshot](../proof/ios-bootstrap-2026-10-31/iphone.png). This is an initial UIKit/Objective-C++ host, not completion of the full iOS milestone below.
 
-The user corrected the dashboard reading to **385/500 minutes used (115 free minutes remaining)** before the successful retry. Final API elapsed-build accounting estimates **398.94/500 minutes used**, with no active builds at the check. The two player runs used **192.424 seconds total**; other projects share this account. `codemagic.yaml` now allows 30 minutes per manual M2 run for the expanded iPhone/iPad test matrix. The 398.94-minute figure was the bootstrap checkpoint, not current usage. The user explicitly rejected shortening runs merely to fit the budget: leave enough time to obtain an answer, and defer starting a run until the next UTC month when the shared allowance is too close to its limit.
+The user corrected the dashboard reading to **385/500 minutes used (115 free minutes remaining)** before the successful retry. At the bootstrap checkpoint, API elapsed-build accounting estimated **398.94/500 minutes used**, with no active builds at the check. The two player runs used **192.424 seconds total**; other projects share this account. `codemagic.yaml` now allows 30 minutes per manual M2 run for the expanded iPhone/iPad test matrix. The 398.94-minute figure was the bootstrap checkpoint, not current usage. The user explicitly rejected shortening runs merely to fit the budget: leave enough time to obtain an answer, and defer starting a run until the next UTC month when the shared allowance is too close to its limit.
 
 ### Bootstrap scope adjustment
 
@@ -25,7 +25,7 @@ Budget instruction: use the necessary free minutes, check cumulative usage befor
 - Local host smoke test: **PASS**, 500 frames, `0xB200` at `0x13EA`, nonblack 512×240 native framebuffer. See [local self-check record](../proof/ios-bootstrap-2026-10-31/local-selfcheck.json).
 - Codemagic app: `6ae5356ef8ef89f5624cab78`. First [build `6ae53800f8ef89f5624cadad`](https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae53800f8ef89f5624cadad) ran from 00:36:21 to 00:37:14 UTC: **53.41 seconds**. Core, ARM64 assembly, and Objective-C++ compiled with Xcode 16.4; linking failed on `_CGRectZero`. Simulator checks did not execute.
 - Fix committed and pushed: explicitly link CoreGraphics (plus Foundation). First-run `.xcresult` and logs are downloaded under `ios/artifacts/6ae53800f8ef89f5624cadad/` (ignored generated evidence).
-- A second launch attempt was refused locally because another WorldFoundry build was active; **no second player job was created**. Recheck the actual dashboard quota and shared active builds before retrying. The API's elapsed-build estimate is not the dashboard's free-minute counter. Do not shorten the 15-minute timeout to squeeze in a retry; wait for the next UTC month if necessary.
+- A second launch attempt was refused locally because another WorldFoundry build was active; **no second player job was created**. Recheck the actual dashboard quota and shared active builds before retrying. The API's elapsed-build estimate is not the dashboard's free-minute counter. The bootstrap then allowed 15 minutes; the expanded workflows now allow 30. Recheck shared usage before any new run and defer to the next UTC month if necessary.
 - After the user corrected the available quota, the retry [build `6ae53afca7837523d3173c64`](https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae53afca7837523d3173c64) **PASSED** in **139.014 seconds**, from 00:49:06 to 00:51:25 UTC. The other account job had finished before this run started. Core and ROM staging, app compilation/linking, simulator install/launch, fidelity test, screenshot, and artifact publication all succeeded. The downloaded simulator app ZIP and full `.xcresult` are under `ios/artifacts/6ae53afca7837523d3173c64/`; compact proof is committed under `docs/proof/ios-bootstrap-2026-10-31/`.
 - Bootstrap follow-up: audio, GameController, SwiftUI, touch/lifecycle/orientation tests and the Android rename have since been implemented. Expanded CI passed as recorded below. Physical iPhone signing, audible output and hardware-controller checks remain open.
 
@@ -37,7 +37,7 @@ Budget instruction: use the necessary free minutes, check cumulative usage befor
 - **iPad Pro 11-inch (M4):** the same three cases passed with zero failures. [Test receipt](../proof/ios-support-2026-10-31/ipad-tests.txt), [portrait](../proof/ios-support-2026-10-31/ipad-portrait.png), [landscape](../proof/ios-support-2026-10-31/ipad-landscape.png). Screenshots were inspected; controls are accessible, clear of the 4:3 picture and inside safe areas.
 - **Audio and ROM:** 500-frame fidelity PASS; AVAudioEngine rendered 1024 stereo frames at 48 kHz, energy 32.2547 and zero channel-sum error. UI tests also verified core PCM traversed the engine. [Self-check](../proof/ios-support-2026-10-31/audio-rom-selfcheck.json). These are offline audio checks, not audible speaker proof.
 - **Linux host tests:** passed concurrent PCM ring, stereo, underflow/overflow, mute, controller masks, 60/120 Hz timing and bounded catch-up.
-- **Android:** `task android:build` passed after the rename, 324 tasks and all seven configured APK checks. A concurrent Android fix corrected published ROM staging; that independent change remains owned by its session. [Build receipt](../proof/ios-support-2026-10-31/android-build.txt).
+- **Android:** `task android:build` passed after the rename, 324 tasks and all seven configured APK checks. The published ROM staging correction is now committed in `491f57a`. [Build receipt](../proof/ios-support-2026-10-31/android-build.txt).
 - Corrective cloud runs exposed and fixed offline-audio initialization order, missing Metal delegate methods, and the CMake app/test scheme selection. Screenshot review corrected the Metal texture channel order. Full logs, `.xcresult` bundles and simulator app ZIPs are retained under ignored `ios/artifacts/<build-id>/`.
 - **Budget:** final account-wide API elapsed-time estimate is **417.21/500 minutes**, approximately **82.79 minutes remaining**, with no active jobs at 01:56:59 UTC. This estimate is not the dashboard's billing counter. No further run was started after success.
 - **Still blocked:** development signing, installation on a physical iPhone, live audible output and hardware-controller testing. WorldFoundry's iOS plan records no Apple Developer Program account and no personal iPhone; the collaborator's device is not connected here. The development-signing workflow is prepared, not claimed tested. See [device instructions](../../ios/README.md).
@@ -127,39 +127,25 @@ This is a design sketch, not a committed API. Choose concrete types after checki
 - **Demo ROM:** bundle only the 32 KiB `raycaster.sfc` chosen through `demo-rom.json`; verify its configured SHA-256 at build/staging time. Keep slug/title/hash configurable so another small ROM can replace it without UI rewrites.
 - **Distribution:** start with simulator artifacts and locally installable development-signed builds. TestFlight/App Store signing, provisioning, privacy declarations, and public listing are a later explicit release gate; store credentials only in Codemagic secure integrations, never in Git or chat.
 
-## Codemagic build plan and expiring minutes
+## Codemagic operation and remaining work
 
-The initial plan had no `codemagic.yaml` or Xcode project; the bootstrap now generates the Xcode project with CMake. The latest user-reported dashboard reading is **385/500 used (115 free minutes remaining)**, with the UTC calendar month ending at **00:00 UTC, 2026-11-01**. Do not spend that shared allowance on speculative parallel pipelines. Stop near the limit and leave remaining cloud work for the next UTC month.
+The repository is connected to app `6ae5356ef8ef89f5624cab78`. Both manual workflows use the free M2 machine, Xcode 16.4 and a 30-minute allowance. `ios-simulator` passed; `ios-development` is prepared but has not run with signing credentials.
 
-1. Immediately confirm this GitHub repository is connected to the intended Codemagic app/team and that the remaining minutes are visible there. Confirm the account's macOS/Xcode machine availability and workflow trigger method.
-2. Add a minimal `codemagic.yaml` with one `ios-simulator` workflow. Pin a supported Xcode version explicitly. It should run the project build and unit tests for a named iPhone Simulator destination, without signing, then retain the `.xcresult` and build log as artifacts.
-3. Push the skeleton as soon as it opens in Xcode; start the first Codemagic run before the minute expiry. Treat the first run as a toolchain/project validation, not as proof that gameplay works.
-4. Keep a reserve for one corrective build. Avoid repetitive clean builds; use Codemagic's dependency/build caches after the first successful run.
-5. If account/repository integration or macOS runner setup cannot be completed before expiry, record the exact blocker and use local Apple hardware later. Do not claim that minutes were used or that CI passed without a successful run receipt.
+The last recorded account-wide estimate was **417.21/500 minutes at 2026-10-31 01:56:59 UTC**. It is a historical checkpoint, not a live balance. Recheck all projects' usage and active builds before starting another job. Reserve the full workflow allowance plus a margin; do not shorten the timeout to fit. Defer when necessary until the next UTC month (November begins 2026-11-01 00:00 UTC / 07:00 Bangkok).
 
-## Work sequence
+| Work item | Status and evidence |
+|---|---|
+| Android directory rename and build | Done; `android/`, compatibility task aliases, seven APK checks passed |
+| Codemagic connection and simulator workflow | Done; passing build receipt above |
+| Core adapter and SwiftUI shell | Done; single-instance Objective-C++ adapter, pinned demo and bundled licenses |
+| Metal, timing, PCM audio, touch and GameController | Implemented; host mapping/timing/ring tests and simulator UI/audio checks pass |
+| iPhone/iPad simulator orientation and lifecycle | Done; six XCTest cases and inline screenshots above |
+| Physical iPhone signing and install | Blocked on signing identities and device access; development workflow unverified |
+| Physical audio, controller and pacing checks | Pending device access; includes audio routes/interruption recovery, controller disconnect and sustained playback |
+| Shared adapter extraction / upstream proposal | Deferred separately; no multi-instance API or upstream submission claimed |
+| TestFlight / App Store distribution | Outside this milestone |
 
-1. **Platform naming cleanup:** rename `android-tv/` to `android/` in an isolated commit; update Taskfile task names, documentation, scripts, CI, and path references. Build the Android examples once to prove the move is mechanical.
-2. **Codemagic bootstrap:** verify access and create the smallest simulator-only workflow early, as described above.
-3. **Core portability audit:** identify Android-only dependencies, core global-state assumptions, audio/video/input callback ownership, and the minimum ROM database assets required by Raycaster Maze.
-4. **Shared adapter decision:** extract only the stable frame/input/video/audio/ROM callback boundary if Android and iOS can both use it without forcing a broad core rewrite. Otherwise keep a narrow Objective-C++ adapter and document any deliberate overlap with JNI.
-5. **iOS app shell:** add SwiftUI target, bundle the selected demo ROM with a generated hash manifest, and render a static frame before adding real-time scheduling.
-6. **Playback:** implement core lifecycle, scheduler, Metal presentation, PCM audio, touch controls, and GameController mapping in small reviewable steps.
-7. **Fidelity and UI proof:** run the configured `demo-rom.json` self-check on the simulator and physical iPhone; capture portrait, landscape, pause/resume, and controller evidence. Confirm iPad adapts without clipping or stretching.
-8. **Documentation and release decision:** document build/run steps and known limits. Decide whether the shared native adapter should be proposed upstream alongside the Android integration; do not submit or publish without review.
-
-```mermaid
-flowchart TD
-  A[Rename android-tv to android; update paths] --> B[Confirm Codemagic connection and expiring budget]
-  B --> C[Push minimal Xcode project and simulator workflow]
-  C --> D[Build shared core boundary or narrow Obj-C++ adapter]
-  D --> E[SwiftUI shell and bundled Raycaster ROM]
-  E --> F[Metal video, accurate timing, touch and controller input]
-  F --> G[PCM audio and background lifecycle]
-  G --> H[Simulator self-check and CI artifact]
-  H --> I[Physical iPhone and iPad layout proof]
-  I --> J[Review upstream and distribution options]
-```
+Build and signing instructions are in [ios/README.md](../../ios/README.md). No further simulator build is needed solely to repeat the passing checks.
 
 ## Acceptance criteria
 
@@ -177,7 +163,7 @@ flowchart TD
 
 - The Android frontend relies on bsnes-jg global state. A reusable multi-instance C API may take more work than a thin iOS bridge; constrain the first app to one emulator instance.
 - Metal texture upload and audio-ring behavior need measurement on physical hardware; simulator success alone is not performance proof.
-- Codemagic's current Xcode image, workflow availability, account link, and minute counter must be checked in the account; no repo config proves those settings.
+- Codemagic account access and Xcode 16.4 execution are proven by the retained build. Shared usage and active jobs still need a fresh check before each future run.
 - Public iOS distribution requires Apple Developer signing/provisioning and account setup. Those credentials are outside the repo and are not part of simulator CI.
 - Upstream ownership for the cross-platform native adapter is unresolved. Keep the web package and browser WASM product in this fork; coordinate the Android/iOS adapter proposal with the core maintainer before submission.
 - tvOS, full 152-ROM catalog, save states, import-any-ROM UX, cloud saves, and App Store submission are outside this first iOS example.

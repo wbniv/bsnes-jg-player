@@ -2,7 +2,7 @@
 
 **Reusable integrations for a cycle-accurate SNES core — including the browser WebAssembly player.**
 
-The product is the reusable player integration: the pinned bsnes-jg core, browser WebAssembly frontend, package sync CLI, framework-agnostic embed, and Astro component. The Android APKs are example Native host integrations; they are not the product API.
+The product is the reusable player integration: the pinned bsnes-jg core, browser WebAssembly frontend, package sync CLI, framework-agnostic embed, and Astro component. The Android APKs and iOS app are example Native host integrations; they are not the product API.
 
 A WebAssembly build of [**bsnes-jg 2.1.0**](https://gitlab.com/jgemu/bsnes) (the Jolly Good fork of
 bsnes), plus a minimal page that runs `.sfc` homebrew. Its reason to exist: bsnes-jg is the
@@ -22,7 +22,7 @@ WRAM assert (`mandel-display` → `0x9103`) live in the tab.
 
 ## The npm package — `@wbniv/bsnes-jg-player`
 
-See [Integrate the bsnes-jg player](docs/how-to/integrate-the-player.md) for the browser WebAssembly flow, Astro and static-site samples, the C++ frontend contract, and the Android Native example bridge.
+See [Integrate the bsnes-jg player](docs/how-to/integrate-the-player.md) for the browser WebAssembly flow, Astro and static-site samples, the C++ frontend contract, and the Android Native example bridge. The [iOS example](ios/README.md) adds SwiftUI, Metal, native audio and GameController support; [simulator validation and inline screenshots](docs/plans/2026-10-30-native-ios-player.md) are recorded, while physical iPhone signing/testing remain pending.
 
 This repo doubles as an npm package so any site can vendor the player without touching Emscripten:
 
@@ -34,7 +34,7 @@ npx bsnes-jg-player sync public/play --demo   # also seed the 32 KiB Raycaster M
 
 The npm payload includes this one small sample ROM, not the 152-ROM suite. The full suite is available as the APK download on [Indri](https://indri.studio/apps/bsnes-jg-player/).
 
-`demo-rom.json` is the one place that selects the sample for npm and the standalone Android player: slug, title, APK filename stem, integrity hash, and optional WRAM self-check. Add the ROM and preview under `web/roms/` and `web/preview/`, update that config, and run `bash scripts/stage-dist.sh` to refresh the npm payload.
+`demo-rom.json` is the one place that selects the sample for npm, the standalone Android player and the iOS example: slug, title, APK filename stem, integrity hash, and optional WRAM self-check. Add the ROM and preview under `web/roms/` and `web/preview/`, update that config, and run `bash scripts/stage-dist.sh` to refresh the npm payload.
 
 `sync` never touches `roms/` or `preview/` (your site's content) unless `--demo`. In CI, run
 `npx bsnes-jg-player sync --check public/play` — it exits 1 if the vendored engine drifts from the

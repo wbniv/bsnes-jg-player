@@ -1,11 +1,11 @@
 # SNES ROM quick-launch library for Google TV
 
-**Status:** Implementation in progress (2026‑10‑26). Catalog staging, the shared UI, the persistence bridge and the updated suite launcher assets are implemented, and both APK builds pass. Device launch and runtime checks remain open. **Two decisions changed after implementation started** (Will, 2026‑10‑26):
+**Status:** Implemented; remaining interaction/device checks are tracked in the [launcher views plan](2026-10-28-google-tv-launcher-views.md). Catalog staging uses published gallery previews, APK checks pass, and Cast1 launcher captures exist. Pixel chooser/treemap coverage and hardware pause-menu proof remain open. **Two decisions changed after implementation started** (Will, 2026‑10‑26):
 
 - Card art now comes from the site's own gallery images instead of frame‑600 captures.
 - Search is out of this release, deferred to its own [search plan](2026-10-26-snes-rom-library-search.md).
 
-The built capture step and search UI still need switching over; see resolved decisions 2 and 3.
+The gallery-card switch is implemented in `android/tools/sync-published-library.py`. Search remains visible in the current source; switching it off to match the deferral is still open (decision 3).
 
 **Back/return behavior update (2026-10-29):** the later [launcher views plan](2026-10-28-google-tv-launcher-views.md) supersedes this original Back ladder for library builds. Back during gameplay pauses and returns to the same selector state; its primary action becomes Resume for the loaded ROM and Play for another selection. Back from the selector exits the app. The pause menu no longer includes “Choose another ROM.”
 

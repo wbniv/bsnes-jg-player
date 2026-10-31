@@ -25,15 +25,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### live-record mode — [spec](../llvm-mos-65816/docs/plans/2026-07-28-gallery-per-image-selfcheck.md)
 
-- [T1] **Release + resync** — **PREPARED 2026-09-15, publication still user-gated.** `1.1.0` is
-  committed on `npm-package` (**unpushed**) with `live-record` staged into `dist/`, the badge
-  base-class fix, and `.rp-badge.warn` in `embed/player.css`; both sites are synced and committed
-  locally (also unpushed). What remains needs the user's go-ahead and is outward-facing:
-  `git push origin npm-package`, then on each site `pnpm update @wbniv/bsnes-jg-player` (the dep is
-  `github:wbniv/bsnes-jg-player#npm-package`, so the branch push *is* the release — `npm publish` is
-  only needed for registry consumers), then flip the gallery's selfcheck to `mode: "live-record"`
-  and deploy. Until the branch is pushed, both sites' CI `sync --check` sees 1.1.0 on disk against
-  1.0.0 in `node_modules` and fails — that is the gate working, not a defect.
+- [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
 - [T2] **Re-verify the retarget-once "stop" case** (2nd navigation mid-poll → fail badge) in a less
   resource-contended browser session — reproduced only the 1st retarget live (work 0→1, counter
   reset, correct title); the 2nd attempt kept losing its headless Chrome target to what looked like
@@ -47,14 +39,11 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
 
-- [wip T3] **Implement the quick-launch library**: in progress in another session, and both Phase 2
-  APKs build. Two decisions changed on 2026‑10‑26: use the site's `/play/preview/<slug>.png` card art
-  instead of frame‑600 capture, and switch search off (it is deferred, see Parked). Device checks
-  are still open.
+- [T3] **Finish library validation:** Quick Launch, Cartridge Flow and ROM Treemap are implemented; published gallery card art is staged and Cast1 captures exist. Remaining: Pixel chooser/treemap captures, hardware pause-menu proof and palette interaction validation. Search is still visible in source despite the deferral; switching it off remains open. See the [launcher views plan](docs/plans/2026-10-28-google-tv-launcher-views.md).
 
 ### Later (separate)
 
-- [T3] **Native iOS host:** simulator bootstrap passes on Codemagic (2026-10-31): native ARM64 core, Metal rendering, and Raycaster WRAM fidelity. Remaining: audio, GameController, touch/lifecycle/orientation validation, iPad proof, and physical iPhone signing/testing. See [iOS plan and build evidence](docs/plans/2026-10-30-native-ios-player.md).
+- [T3] **Physical iOS validation:** SwiftUI, native audio and GameController support are implemented. Six iPhone/iPad simulator UI tests, ROM/offline-audio checks and unsigned iPhone SDK compilation pass. Remaining: Apple signing identities and access to an iPhone, then install, audible audio/route/interruption checks, hardware-controller checks and sustained device pacing. [Plan and inline proof](docs/plans/2026-10-30-native-ios-player.md).
 
 - [T3] **Showroom** — a demo-reel page consuming this core (curated `+mos-a16` productions). Its own
   effort; this repo just provides the `.wasm`.
@@ -71,6 +60,8 @@ _Nothing being watched._
   ghost text would make it T3.
 
 ## Done
+
+- [x] 2026-10-31 — Native iOS simulator milestone: SwiftUI, audio graph, touch and controller mapping, lifecycle, iPhone/iPad portrait and landscape tests; unsigned device SDK build. Android directory rename and APK build checks also pass. Physical iPhone validation remains open above.
 
 - [x] 2026-09-15 — [live-record] badge state is swapped with `classList`, so the host page's base
   class (`rp-badge` / `badge`) survives every transition and its CSS finally applies; `.rp-badge.warn`
@@ -131,8 +122,8 @@ _Auto-added from plan "Out of scope"/"Deferred" sections at commit time. Triage 
 - [verify] **2026-10-26-snes-rom-library-search** — Verification section present but no PASS recorded — run + record the steps. _from [2026-10-26-snes-rom-library-search.md](docs/plans/2026-10-26-snes-rom-library-search.md)_  <!-- fp:d21c98d625b27066 -->
 - [ ] **(triage)** The Android frontend relies on bsnes-jg global state. A reusable multi-instance C API may take more work than a thin iOS bridge; constrain the first app to one emulator instance. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3755e5a5576d6456 -->
 - [ ] **(triage)** Metal texture upload and audio-ring behavior need measurement on physical hardware; simulator success alone is not performance proof. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:cdcdee449261179e -->
-- [ ] **(triage)** Codemagic's current Xcode image, workflow availability, account link, and minute counter must be checked in the account; no repo config proves those settings. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3e43923983786c69 -->
 - [ ] **(triage)** Public iOS distribution requires Apple Developer signing/provisioning and account setup. Those credentials are outside the repo and are not part of simulator CI. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:e0e28266e1471873 -->
 - [ ] **(triage)** Upstream ownership for the cross-platform native adapter is unresolved. Keep the web package and browser WASM product in this fork; coordinate the Android/iOS adapter proposal with the core maintainer before submission. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:3d782bc12400b500 -->
 - [ ] **(triage)** tvOS, full 152-ROM catalog, save states, import-any-ROM UX, cloud saves, and App Store submission are outside this first iOS example. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:8cf6d1326fee5a82 -->
+- [ ] **(triage)** Codemagic account access and Xcode 16.4 execution are proven by the retained build. Shared usage and active jobs still need a fresh check before each future run. — _from [2026-10-30-native-ios-player.md](docs/plans/2026-10-30-native-ios-player.md)_  <!-- fp:8582e82c13e24fdc -->
 <!-- END auto-captured-deferrals -->

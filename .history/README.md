@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-09-15](https://github.com/wbniv/bsnes-jg-player/commit/f1557ce) | release(prep): 1.1.0 — badge keeps the host page's base class; live-record staged |
 | [2026-07-27](https://github.com/wbniv/bsnes-jg-player/commit/4d52482) | package: SnesPlayer.astro + integration warning light + framework-agnostic embed |
@@ -7,6 +8,10 @@
 | [2026-06-25](https://github.com/wbniv/bsnes-jg-player/commit/0c1dc94) | scaffold bsnes-jg-wasm: the gate's cycle-accurate SNES core, in the browser |
 
 <!--history-meta v1
+eb74075	author	Will Norris
+eb74075	added	3
+eb74075	deleted	3
+eb74075	files	1
 e314486	author	Will Norris
 e314486	added	15
 e314486	deleted	7

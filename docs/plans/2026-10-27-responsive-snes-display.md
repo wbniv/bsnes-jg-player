@@ -182,7 +182,7 @@ The Android game-shell capture uses the actual shared `library.css`, `performanc
 
 **Viewport review outcome:** the responsive library header reflows on narrow/portrait screens, category filters scroll horizontally, and the game remains in a 4:3 rectangle with metadata and performance panels around it. Review also found a stale centering transform that shifted the canvas a second time after layout; the shared calculator now clears that transform before applying its rectangle.
 
-**Still pending:** runtime comparison of Android WASM and Native measured rectangles on devices, Cast1 and phone/tablet hardware captures, and checks for real system cutouts/insets. The captures above establish viewport rendering only.
+**Hardware follow-up (2026-10-31):** Native Pixel portrait/landscape captures now pass full-frame pixel comparisons, and Pixel/Cast1 native correctness checks pass; see [renderer evidence](2026-10-28-native-snes-renderer-texture-mapping.md). The viewport captures above remain browser-only evidence. Cross-engine measured-rectangle comparison, tablet hardware coverage and the wider cutout/inset matrix remain open.
 
 ## Work sequence
 

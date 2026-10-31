@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/4b68d74) | Index the published ROM inventory plan |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/a071ee1) | Record SNES launcher and profiling work |
@@ -7,6 +8,10 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+eb74075	author	Will Norris
+eb74075	added	3
+eb74075	deleted	1
+eb74075	files	1
 e314486	author	Will Norris
 e314486	added	3
 e314486	deleted	1
