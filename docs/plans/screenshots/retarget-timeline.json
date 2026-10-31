@@ -1,0 +1,241 @@
+{
+ "url": "http://127.0.0.1:44527/?rom=lzss-gallery&verify=1",
+ "exit": 0,
+ "presses": 2,
+ "matched_steps": 4,
+ "of": 4,
+ "final": "navigation kept restarting the check — hold on one artwork and try again",
+ "screenshot": "docs/plans/screenshots/retarget-fail.png",
+ "record_probes": [
+  {
+   "t": 4.16,
+   "rec": null
+  },
+  {
+   "t": 4.89,
+   "rec": {
+    "state": 0,
+    "work": 0
+   }
+  },
+  {
+   "t": 16.68,
+   "rec": {
+    "state": 0,
+    "work": 0
+   }
+  },
+  {
+   "t": 27.41,
+   "rec": {
+    "state": 0,
+    "work": 0
+   }
+  },
+  {
+   "t": 39.98,
+   "rec": {
+    "state": 0,
+    "work": 0
+   }
+  },
+  {
+   "t": 50.72,
+   "rec": {
+    "state": 1,
+    "work": 0
+   }
+  },
+  {
+   "t": 72.83,
+   "rec": {
+    "state": 1,
+    "work": 0
+   }
+  },
+  {
+   "t": 83.97,
+   "rec": {
+    "state": 1,
+    "work": 0
+   }
+  },
+  {
+   "t": 94.83,
+   "rec": {
+    "state": 1,
+    "work": 0
+   }
+  },
+  {
+   "t": 116.9,
+   "rec": {
+    "state": 1,
+    "work": 1
+   }
+  },
+  {
+   "t": 128.03,
+   "rec": {
+    "state": 1,
+    "work": 1
+   }
+  },
+  {
+   "t": 138.9,
+   "rec": {
+    "state": 1,
+    "work": 1
+   }
+  },
+  {
+   "t": 144.38,
+   "rec": {
+    "state": 1,
+    "work": 2
+   }
+  }
+ ],
+ "timeline": [
+  {
+   "t": 3.93,
+   "badge": "",
+   "cls": ""
+  },
+  {
+   "t": 11.06,
+   "badge": "verifying… 120/24000",
+   "cls": "running"
+  },
+  {
+   "t": 16.64,
+   "badge": "verifying… 240/24000",
+   "cls": "running"
+  },
+  {
+   "t": 22.0,
+   "badge": "verifying… 360/24000",
+   "cls": "running"
+  },
+  {
+   "t": 27.36,
+   "badge": "verifying… 480/24000",
+   "cls": "running"
+  },
+  {
+   "t": 34.6,
+   "badge": "verifying… 600/24000",
+   "cls": "running"
+  },
+  {
+   "t": 39.93,
+   "badge": "verifying… 720/24000",
+   "cls": "running"
+  },
+  {
+   "t": 45.19,
+   "badge": "verifying Under the Wave off Kanagawa… 840/24000",
+   "cls": "running"
+  },
+  {
+   "t": 50.67,
+   "badge": "verifying Under the Wave off Kanagawa… 960/24000",
+   "cls": "running"
+  },
+  {
+   "t": 56.1,
+   "badge": "verifying Under the Wave off Kanagawa… 1080/24000",
+   "cls": "running"
+  },
+  {
+   "t": 61.69,
+   "badge": "verifying Under the Wave off Kanagawa… 1200/24000",
+   "cls": "running"
+  },
+  {
+   "t": 61.73,
+   "key": "ArrowRight",
+   "hold_ms": 120
+  },
+  {
+   "t": 67.24,
+   "badge": "verifying Under the Wave off Kanagawa… 1320/24000",
+   "cls": "running"
+  },
+  {
+   "t": 72.78,
+   "badge": "verifying Under the Wave off Kanagawa… 1440/24000",
+   "cls": "running"
+  },
+  {
+   "t": 78.3,
+   "badge": "verifying Under the Wave off Kanagawa… 1560/24000",
+   "cls": "running"
+  },
+  {
+   "t": 83.92,
+   "badge": "verifying Under the Wave off Kanagawa… 1680/24000",
+   "cls": "running"
+  },
+  {
+   "t": 89.42,
+   "badge": "verifying Under the Wave off Kanagawa… 1800/24000",
+   "cls": "running"
+  },
+  {
+   "t": 94.78,
+   "badge": "verifying Under the Wave off Kanagawa… 1920/24000",
+   "cls": "running"
+  },
+  {
+   "t": 100.25,
+   "badge": "following your navigation to A Sunday on La Grande Jatte — 1884",
+   "cls": "running"
+  },
+  {
+   "t": 105.73,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 120/24000",
+   "cls": "running"
+  },
+  {
+   "t": 105.78,
+   "key": "ArrowRight",
+   "hold_ms": 120
+  },
+  {
+   "t": 111.32,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 240/24000",
+   "cls": "running"
+  },
+  {
+   "t": 116.84,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 360/24000",
+   "cls": "running"
+  },
+  {
+   "t": 122.45,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 480/24000",
+   "cls": "running"
+  },
+  {
+   "t": 127.99,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 600/24000",
+   "cls": "running"
+  },
+  {
+   "t": 133.67,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 720/24000",
+   "cls": "running"
+  },
+  {
+   "t": 138.86,
+   "badge": "verifying A Sunday on La Grande Jatte — 1884… 840/24000",
+   "cls": "running"
+  },
+  {
+   "t": 144.28,
+   "badge": "navigation kept restarting the check — hold on one artwork and try again",
+   "cls": "fail"
+  }
+ ]
+}

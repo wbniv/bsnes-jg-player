@@ -32,6 +32,7 @@ rows on commit.*
 | [Repeatable releases, signing, retention and sharing proof](2026-10-31-repeatable-release-tooling.md) | Prepare and verify signed release candidates, publish with resumable current/previous retention, scope credentials and validate device QR/sharing flows with inline evidence. | Implemented locally; credentials/publication and device proof pending | Infra |
 | [Pixel phone performance: can the player claim mobile?](2026-10-31-pixel-phone-perf.md) | Measure emulation pacing of the WASM and native Android engines on the Pixel 8 Pro with the `playback_window` metric and record whether mobile can be claimed. | Interim: WASM 45 FPS, native 60 FPS; fresh WASM and native-baseline runs blocked on coordinator registration | Investigation |
 | [Asyncify trim: does an instrumentation list make the WASM core faster or smaller?](2026-10-31-asyncify-trim.md) | Relink the core with `ASYNCIFY_ADVISE`/`ADD`/`REMOVE` lists, profile the swap-reachable stack set, and bench every build paired in headless Chromium with checkpoint and Firefox fidelity gates. | Done: no meaningful gain (−7% raw wasm, ≤3% frame time); nothing landed | Investigation |
+| [Re-verify the retarget-once stop case](2026-10-31-retarget-stop-check.md) | Drive headless Firefox against the real gallery ROM and real `web/app.js` to observe the 1st-navigation restart badge and the 2nd-navigation fail badge of the live-record self-check. | Done: both badges observed on the real ROM | Verification |
 
 ---
 

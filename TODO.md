@@ -19,12 +19,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 ### live-record mode — [spec](../llvm-mos-65816/docs/plans/2026-07-28-gallery-per-image-selfcheck.md)
 
 - [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
-- [wip T2] <!-- agent:ad37b7b4c44f8ae8d --> **Re-verify the retarget-once "stop" case** (2nd navigation mid-poll → fail badge) in a less
-  resource-contended browser session — reproduced only the 1st retarget live (work 0→1, counter
-  reset, correct title); the 2nd attempt kept losing its headless Chrome target to what looked like
-  host memory pressure (multiple concurrent wasm/Chrome sessions on a shared box), not an app.js
-  defect — the code path is the same branch already proven for the 1st retarget, gated only by a
-  trivial `retargets > 1` counter.
 - [T1] **Wire `lzss-gallery` into `sync-roms.sh`'s default ROMS list** once
   `feature/verify-fidelity-button` merges to `llvm-mos-65816` main — deliberately left out for now
   (see code comment) since a default sync from `main` today would overwrite the demo with a ROM
@@ -58,6 +52,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑10‑31 — [retarget-stop] Real ROM, headless Firefox: 1st navigation restarts the check, 2nd shows the fail badge. See [plan](docs/plans/2026-10-31-retarget-stop-check.md).
 - ✅ 2026‑10‑31 — [asyncify-trim] No meaningful gain: REMOVE list cuts wasm 7% raw/2.8% gzip, ≤3% frame time; ONLY too fragile. See [plan](docs/plans/2026-10-31-asyncify-trim.md).
 - ✅ 2026‑10‑31 — [firefox-check] Headless Firefox 156 passes the 5800-frame fidelity self-check, no COOP/COEP or SAB. See [plan](docs/plans/2026-06-25-bsnes-jg-wasm.md).
 - ✅ 2026‑10‑31 — [stale-demos] Dropped the three dead picker buttons and ROM names; `npm test` now checks every button has a manifest entry.

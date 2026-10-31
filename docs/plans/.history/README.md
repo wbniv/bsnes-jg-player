@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1fe82f5) | Index the Asyncify trim plan |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/40e06ae) | Index the Pixel phone performance plan |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/95b76ad) | Implement verified release candidates and resumable APK publication |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
@@ -12,6 +13,11 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+1fe82f5	author	Will Norris
+1fe82f5	added	2
+1fe82f5	deleted	1
+1fe82f5	files	1
+1fe82f5	body	Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 40e06ae	author	Will Norris
 40e06ae	added	1
 40e06ae	deleted	0

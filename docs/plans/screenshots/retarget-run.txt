@@ -1,0 +1,30 @@
+   3.93s  [] 
+  11.06s  [running] verifying… 120/24000
+  16.64s  [running] verifying… 240/24000
+  22.00s  [running] verifying… 360/24000
+  27.36s  [running] verifying… 480/24000
+  34.60s  [running] verifying… 600/24000
+  39.93s  [running] verifying… 720/24000
+  45.19s  [running] verifying Under the Wave off Kanagawa… 840/24000
+  50.67s  [running] verifying Under the Wave off Kanagawa… 960/24000
+  56.10s  [running] verifying Under the Wave off Kanagawa… 1080/24000
+  61.69s  [running] verifying Under the Wave off Kanagawa… 1200/24000
+  61.73s  KEY ArrowRight (held 120 ms)
+  67.24s  [running] verifying Under the Wave off Kanagawa… 1320/24000
+  72.78s  [running] verifying Under the Wave off Kanagawa… 1440/24000
+  78.30s  [running] verifying Under the Wave off Kanagawa… 1560/24000
+  83.92s  [running] verifying Under the Wave off Kanagawa… 1680/24000
+  89.42s  [running] verifying Under the Wave off Kanagawa… 1800/24000
+  94.78s  [running] verifying Under the Wave off Kanagawa… 1920/24000
+ 100.25s  [running] following your navigation to A Sunday on La Grande Jatte — 1884
+ 105.73s  [running] verifying A Sunday on La Grande Jatte — 1884… 120/24000
+ 105.78s  KEY ArrowRight (held 120 ms)
+ 111.32s  [running] verifying A Sunday on La Grande Jatte — 1884… 240/24000
+ 116.84s  [running] verifying A Sunday on La Grande Jatte — 1884… 360/24000
+ 122.45s  [running] verifying A Sunday on La Grande Jatte — 1884… 480/24000
+ 127.99s  [running] verifying A Sunday on La Grande Jatte — 1884… 600/24000
+ 133.67s  [running] verifying A Sunday on La Grande Jatte — 1884… 720/24000
+ 138.86s  [running] verifying A Sunday on La Grande Jatte — 1884… 840/24000
+ 144.28s  [fail] navigation kept restarting the check — hold on one artwork and try again
+record probes (t, state/work): 4.16:None/None 72.83:1/0 144.38:1/2
+matched 4/4 expected steps; presses=2; exit=0
