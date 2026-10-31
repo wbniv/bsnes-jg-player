@@ -283,9 +283,9 @@ def prepare(args):
     target.parent.mkdir(parents=True,exist_ok=True)
     require(not target.exists(), 'Candidate directory already exists; inspect/resume it instead')
     # Build before freezing; generated dist is subsequently captured with exact hashes.
-    env = dict(os.environ, ORG_GRADLE_PROJECT_releaseVersionName=name,
+    env = dict(os.environ, EMSDK_VERSION='6.0.4', ORG_GRADLE_PROJECT_releaseVersionName=name,
                ORG_GRADLE_PROJECT_releaseVersionCode=str(code), ORG_GRADLE_PROJECT_publicDownloadUrl=LANDING)
-    for command in [['./build.sh'],['bash','scripts/stage-dist.sh'],['python3','scripts/release/fidelity.py'],['npm','test'],['./android/tools/release-signing-secrets.sh','build']]:
+    for command in [['./android/tools/release-signing-secrets.sh','build'],['./build.sh'],['bash','scripts/stage-dist.sh'],['python3','scripts/release/fidelity.py'],['npm','test']]:
         subprocess.run(command,cwd=ROOT,env=env,check=True)
     require(run(['git','rev-parse','HEAD'],cwd=ROOT) == revision, 'Source revision changed while building')
     require(all((ROOT/p).is_file() and sha((ROOT/p).read_bytes()) == digest for p,digest in inputs.items()), 'Tracked source inputs changed during build')
