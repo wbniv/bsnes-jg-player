@@ -15,7 +15,7 @@ PRODUCTS = {
     "suite": ASSETS / "snes-rom-suite-app-icon.png",
 }
 BANNER_ARTWORK = {
-    "mandelbrot": ROOT / "android-tv/fixture/reference-5800.png",
+    "mandelbrot": ROOT / "android/fixture/reference-5800.png",
     "suite": ASSETS / "snes-rom-suite-mosaic.png",
 }
 TV_ICONS = {"mdpi": 80, "hdpi": 120, "xhdpi": 160, "xxhdpi": 240, "xxxhdpi": 320}

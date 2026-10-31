@@ -1,6 +1,6 @@
 # Search for the Google TV ROM library
 
-**Status:** Deferred (Will, 2026‑10‑26). Search is not in the first release of the [ROM library](2026-10-26-snes-rom-library-selector.md). A working version already exists in `android-tv/app/src/main/assets/library.js`. It was built before the deferral and is still on in the current build; the library plan's decision 3 switches it off. It follows the TOP MATCH design below, so picking this plan up starts from that code, not from scratch.
+**Status:** Deferred (Will, 2026‑10‑26). Search is not in the first release of the [ROM library](2026-10-26-snes-rom-library-selector.md). A working version already exists in `android/app/src/main/assets/library.js`. It was built before the deferral and is still on in the current build; the library plan's decision 3 switches it off. It follows the TOP MATCH design below, so picking this plan up starts from that code, not from scratch.
 
 ## Goal
 
@@ -80,13 +80,13 @@ Rank: **T2**. The code exists in one module; the work is switching it back on, t
 
 | File | Change |
 |---|---|
-| `android-tv/app/src/main/assets/library.js` | Switch the search UI back on above 24 ROMs; check that it matches this plan |
-| `android-tv/test/library-ui.test.mjs` | Add the search cases below |
+| `android/app/src/main/assets/library.js` | Switch the search UI back on above 24 ROMs; check that it matches this plan |
+| `android/test/library-ui.test.mjs` | Add the search cases below |
 | [Library plan](2026-10-26-snes-rom-library-selector.md) | Restore the Search rows in its catalog-size table, the keyboard rule in its Back ladder, and the Keyboard state in its state diagram |
 
 ## Verification
 
-1. Run `node --test android-tv/test/library-ui.test.mjs`. The search cases must pass:
+1. Run `node --test android/test/library-ui.test.mjs`. The search cases must pass:
     - `mand` returns 4 results with TOP MATCH on the first;
     - `gf28` finds GF(2⁸) and `pi` finds the π Spigot;
     - Enter in the field focuses the TOP MATCH row without launching it;

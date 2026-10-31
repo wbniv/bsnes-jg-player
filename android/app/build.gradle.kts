@@ -47,7 +47,7 @@ val wasmAssetsDir = layout.buildDirectory.dir("generated/wasmAssets")
 val stagePublishedLibrary by tasks.registering {
     outputs.dir(publishedLibraryDir)
     outputs.upToDateWhen { false }
-    doLast { check(publishedLibraryDir.get().file("library.json").asFile.isFile) { "Run sync-published-library.py before the container build" } }
+    doLast { check(publishedLibraryDir.get().file("library.json").asFile.isFile) { "Run sync-published-library.py before the container build: missing ${publishedLibraryDir.get().file("library.json").asFile}" } }
 }
 val stagePublishedAssets by tasks.registering(Sync::class) {
     dependsOn("verifyRomFixture", stagePublishedLibrary)

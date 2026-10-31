@@ -50,10 +50,10 @@ flowchart LR
 
 ## Implementation scope
 
-- `android-tv/app/src/main/assets/index.html`: add the view carousel and Cartridge Flow surface.
-- `android-tv/app/src/main/assets/library.css`: style both views at Google TV sizes and ensure D-pad focus remains visible.
-- `android-tv/app/src/main/assets/library.js`: add view registry, persistence, rendering, and carousel navigation while keeping the existing launch path.
-- Keep the library preview page in `android-tv/app/src/library/assets/` aligned with the shared UI.
+- `android/app/src/main/assets/index.html`: add the view carousel and Cartridge Flow surface.
+- `android/app/src/main/assets/library.css`: style both views at Google TV sizes and ensure D-pad focus remains visible.
+- `android/app/src/main/assets/library.js`: add view registry, persistence, rendering, and carousel navigation while keeping the existing launch path.
+- Keep the library preview page in `android/app/src/library/assets/` aligned with the shared UI.
 
 ## Verification plan
 

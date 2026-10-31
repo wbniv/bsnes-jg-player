@@ -32,7 +32,7 @@ The source framebuffer remains 256×224 samples (8:7 sample grid). The 4:3 game 
 
 ## Implementation status
 
-The native shader now receives a `bounds` uniform and calculates UVs relative to the fitted rectangle in [MainActivity.java](../../android-tv/app/src/main/java/org/bsnesjg/tv/MainActivity.java). The Pixel nativeplayer build completed successfully as APK SHA-256 `3568f649adbcd0b8562c80763440542665df3dadd1d9ef82465a1b2791f3a874`.
+The native shader now receives a `bounds` uniform and calculates UVs relative to the fitted rectangle in [MainActivity.java](../../android/app/src/main/java/org/bsnesjg/tv/MainActivity.java). The Pixel nativeplayer build completed successfully as APK SHA-256 `3568f649adbcd0b8562c80763440542665df3dadd1d9ef82465a1b2791f3a874`.
 
 The coordinator installed that APK, but the install job entered `recovery-required` while trying to restore the Pixel’s previous foreground activity. The saved foreground was Android Markup; restoration instead resumed Photo Picker. One coordinator re-add attempt hit the same restoration failure, so the Pixel remains recovery-required until that foreground cleanup can be reconciled. The shader change is built and installed, but a post-fix Pixel screenshot has not yet been verified.
 

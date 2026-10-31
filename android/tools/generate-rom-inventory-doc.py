@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-BUILD = ROOT / "android-tv/app/build/generated/publishedLibrary"
+BUILD = ROOT / "android/app/build/generated/publishedLibrary"
 CATALOG = BUILD / "library.json"
 CARD_SOURCE = BUILD / "cards"
 CARD_DEST = ROOT / "docs/plans/assets/snes-rom-library-cards"

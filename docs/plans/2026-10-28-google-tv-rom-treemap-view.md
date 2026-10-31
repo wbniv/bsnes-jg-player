@@ -66,10 +66,10 @@ On phone landscape, collapse the title/search area, view carousel, and category 
 
 ## Implementation scope
 
-- `android-tv/app/src/main/assets/index.html`: add the Treemap surface and detail rail.
-- `android-tv/app/src/main/assets/library.js`: compute globally squarified rectangles from `size`, assign category colors from the selected named palette, persist palette choice, and add geometric D-pad movement.
-- `android-tv/app/src/main/assets/library.css`: style the map, palette selector, selected tile, and responsive details rail.
-- Keep `android-tv/app/src/library/assets/` synchronized for the preview page.
+- `android/app/src/main/assets/index.html`: add the Treemap surface and detail rail.
+- `android/app/src/main/assets/library.js`: compute globally squarified rectangles from `size`, assign category colors from the selected named palette, persist palette choice, and add geometric D-pad movement.
+- `android/app/src/main/assets/library.css`: style the map, palette selector, selected tile, and responsive details rail.
+- Keep `android/app/src/library/assets/` synchronized for the preview page.
 
 ## Verification plan
 

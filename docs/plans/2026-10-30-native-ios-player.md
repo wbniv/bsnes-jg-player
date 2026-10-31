@@ -6,7 +6,7 @@ The user corrected the dashboard reading to **385/500 minutes used (115 free min
 
 ### Bootstrap scope adjustment
 
-Prioritize Apple compilation and the configured 500-frame Raycaster fidelity check before the broad Android directory rename. Android remains at `android-tv/` for this bootstrap. The first shell is UIKit/Objective-C++ to exercise the native bridge directly; SwiftUI composition, audio output, GameController, physical iPhone signing/testing, and the full orientation/lifecycle test matrix remain open. The UI explicitly labels audio as unimplemented. The adapter deliberately overlaps the small Android callback boundary until Apple execution is proven; it does not claim a reusable multi-instance API.
+Prioritize Apple compilation and the configured 500-frame Raycaster fidelity check before the broad Android directory rename. Android remains at `android/` for this bootstrap. The first shell is UIKit/Objective-C++ to exercise the native bridge directly; SwiftUI composition, audio output, GameController, physical iPhone signing/testing, and the full orientation/lifecycle test matrix remain open. The UI explicitly labels audio as unimplemented. The adapter deliberately overlaps the small Android callback boundary until Apple execution is proven; it does not claim a reusable multi-instance API.
 
 The Apple ARM64 libco backend uses the upstream context layout and instruction sequence in a compiled `.S` file. It does not execute a data buffer or change page protections. Only ARM64 iOS/simulator builds are supported initially. The stock backend remains in the Linux smoke build.
 
@@ -38,19 +38,19 @@ The first deliverable is a development-signed app that runs on an iOS Simulator 
 Use sibling platform directories:
 
 ```text
-android/             # existing Android/Google TV example project (rename from android-tv/)
+android/             # existing Android/Google TV example project (rename from android/)
 ios/                 # new SwiftUI iOS example app and Xcode project
 native/              # shared platform-neutral C/C++ host adapter, if extraction proves useful
 web/                 # WebAssembly player and ROM examples
 vendor/bsnes-jg/     # pinned emulator core
 ```
 
-`android-tv/` is no longer an accurate directory name: this project builds both Pixel phone and Google TV apps. Rename it to `android/` as a separate, mechanical preparatory change before creating the iOS project. Update all repository path references, build scripts, Gradle paths, Taskfile namespace, documentation, CI, and coordinator examples in that change. Prefer `task android:build` and `task android:release-build`; preserve old task aliases briefly if they help existing scripts. Do not combine the path move with emulator or UI behavior changes.
+`android/` is no longer an accurate directory name: this project builds both Pixel phone and Google TV apps. Rename it to `android/` as a separate, mechanical preparatory change before creating the iOS project. Update all repository path references, build scripts, Gradle paths, Taskfile namespace, documentation, CI, and coordinator examples in that change. Prefer `task android:build` and `task android:release-build`; preserve old task aliases briefly if they help existing scripts. Do not combine the path move with emulator or UI behavior changes.
 
 ## Existing implementation and reuse boundary
 
 - `vendor/bsnes-jg/` is the pinned C++ core. Android's CMake build already compiles these same core sources.
-- `android-tv/app/src/main/cpp/jni.cpp` owns the Android integration today. It depends on `AAssetManager`, `JNIEnv`, and Android logging; those parts cannot be compiled for iOS unchanged.
+- `android/app/src/main/cpp/jni.cpp` owns the Android integration today. It depends on `AAssetManager`, `JNIEnv`, and Android logging; those parts cannot be compiled for iOS unchanged.
 - `NativeEngine.java` and `MainActivity.java` show the current Native Android frame, controller, ROM, and lifecycle contract. They are example-host code, not the iOS API.
 - `demo-rom.json` names the selected standalone demo, supplies its SHA-256 and self-check, and should remain the single source of truth for the iOS sample ROM.
 - The current Android host discards audio. The iOS player should provide real output through `AVAudioEngine` (or a reviewed low-latency Audio Unit path), rather than silently copying that limitation.
@@ -97,7 +97,7 @@ The initial plan had no `codemagic.yaml` or Xcode project; the bootstrap now gen
 
 ## Work sequence
 
-1. **Platform naming cleanup:** rename `android-tv/` to `android/` in an isolated commit; update Taskfile task names, documentation, scripts, CI, and path references. Build the Android examples once to prove the move is mechanical.
+1. **Platform naming cleanup:** rename `android/` to `android/` in an isolated commit; update Taskfile task names, documentation, scripts, CI, and path references. Build the Android examples once to prove the move is mechanical.
 2. **Codemagic bootstrap:** verify access and create the smallest simulator-only workflow early, as described above.
 3. **Core portability audit:** identify Android-only dependencies, core global-state assumptions, audio/video/input callback ownership, and the minimum ROM database assets required by Raycaster Maze.
 4. **Shared adapter decision:** extract only the stable frame/input/video/audio/ROM callback boundary if Android and iOS can both use it without forcing a broad core rewrite. Otherwise keep a narrow Objective-C++ adapter and document any deliberate overlap with JNI.
@@ -121,7 +121,7 @@ flowchart TD
 
 ## Acceptance criteria
 
-- Android build commands and APK variants still work after the directory rename; repository search finds no stale executable path references to `android-tv/` (historical plans may retain their original context with a short note).
+- Android build commands and APK variants still work after the directory rename; repository search finds no stale executable path references to `android/` (historical plans may retain their original context with a short note).
 - Codemagic builds the simulator target and runs the automated tests from the pushed commit; logs and `.xcresult` are retained.
 - The iOS app loads only the configured small ROM, passes its self-check, and renders continuously without blocking the UI or audio render thread.
 - Video uses the correct 4:3 full-picture presentation with no crop/stretch; timing remains stable on 60 Hz and 120 Hz refresh.

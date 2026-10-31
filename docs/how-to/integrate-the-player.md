@@ -173,7 +173,7 @@ NativeEngine.copyPixels(rgbaBuffer);
 NativeEngine.wramWord(0x580); // example fidelity check
 ```
 
-These classes are package-private example code, not a published Android SDK. A different host can reuse the approach, but must provide its own Android lifecycle, audio/video output, input mapping, save-data policy, database assets, and thread ownership. The app variants are built with `task android-tv:build` for controlled testing; public APKs are signed example integrations and must never be used as a substitute for the reusable package.
+These classes are package-private example code, not a published Android SDK. A different host can reuse the approach, but must provide its own Android lifecycle, audio/video output, input mapping, save-data policy, database assets, and thread ownership. The app variants are built with `task android:build` for controlled testing; public APKs are signed example integrations and must never be used as a substitute for the reusable package.
 
 ## ROM manifest sample
 

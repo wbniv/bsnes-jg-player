@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/0f9be40) | Record passing native iOS simulator build and fidelity proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/f0af1b0) | Capture simulator failures and record confirmed free-minute balance |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/edd12e5) | Record initial iOS build evidence and pending simulator retry |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/08f9e2a) | Restore iOS build time and defer launches when budget is low |
@@ -9,6 +10,10 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 
 <!--history-meta v1
+0f9be40	author	Will Norris
+0f9be40	added	5
+0f9be40	deleted	1
+0f9be40	files	1
 f0af1b0	author	Will Norris
 f0af1b0	added	2
 f0af1b0	deleted	2

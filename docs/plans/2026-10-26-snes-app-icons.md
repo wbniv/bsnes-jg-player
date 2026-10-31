@@ -8,7 +8,7 @@ Create two distinct app-wide icons that share the realistic North American SNES 
 
 | App identity | ROM content | Icon artwork |
 |---|---|---|
-| Mandelbrot player | The single `mandel-display.sfc` ROM. WASM and native builds are engine variants of this player. | The actual Mode 7 Mandelbrot frame from `android-tv/fixture/reference-5800.png`, with the shared SNES controller badge. |
+| Mandelbrot player | The single `mandel-display.sfc` ROM. WASM and native builds are engine variants of this player. | The actual Mode 7 Mandelbrot frame from `android/fixture/reference-5800.png`, with the shared SNES controller badge. |
 | LLVM 65816 torture-test suite | The 152 published SNES ROMs in the quick-launch library. WASM and native builds remain variants of the suite where available. | A visual mosaic made from actual published ROM preview frames, with the same controller badge. |
 
 The app distinction is by ROM content, not by engine. The browser player (`web/`) can load multiple demos and arbitrary ROMs; its favicon and mobile home-screen art should follow the product identity of the page hosting it rather than create a third ROM catalog app.
@@ -31,11 +31,11 @@ The controller treatment uses the realistic North American SNES palette: light-g
 |---|---|
 | ![Mandelbrot app icon: the actual Mode 7 fractal frame with realistic gray-and-purple SNES controller badge](assets/mandel-display-app-icon.png) | ![Suite app icon: a mosaic of actual Doom Fire, Space Invaders, Raycaster, LZSS Gallery, Boids, Cardioid, FFT, Life, and Truchet ROM frames with the same SNES controller badge](assets/snes-rom-suite-app-icon.png) |
 
-The suite mosaic is generated from the published previews for `doom-fire`, `space-invaders`, `raycaster`, `lzss-gallery`, `boids`, `cardioid`, `n-body`, `life`, and `medfilt` by [`generate-suite-icon.py`](../../android-tv/tools/generate-suite-icon.py). N-body adds orbit geometry in the bottom-left tile. The Median Denoiser frame sits bottom-right: its strong blue field fills the left while the mostly black right side leaves the controller badge clear space. The Mandelbrot source is a 1254 × 1254 PNG; the suite mosaic is 512 × 512. Both are square master artwork for platform-specific sizes.
+The suite mosaic is generated from the published previews for `doom-fire`, `space-invaders`, `raycaster`, `lzss-gallery`, `boids`, `cardioid`, `n-body`, `life`, and `medfilt` by [`generate-suite-icon.py`](../../android/tools/generate-suite-icon.py). N-body adds orbit geometry in the bottom-left tile. The Median Denoiser frame sits bottom-right: its strong blue field fills the left while the mostly black right side leaves the controller badge clear space. The Mandelbrot source is a 1254 × 1254 PNG; the suite mosaic is 512 × 512. Both are square master artwork for platform-specific sizes.
 
 ## Actual-size icon renders
 
-The files below are exported at the target pixel dimensions, so opening an image directly shows the actual resource size. The generator creates every density variant in [`actual-size-renders/`](assets/actual-size-renders/) using [`generate-icon-review-renders.py`](../../android-tv/tools/generate-icon-review-renders.py).
+The files below are exported at the target pixel dimensions, so opening an image directly shows the actual resource size. The generator creates every density variant in [`actual-size-renders/`](assets/actual-size-renders/) using [`generate-icon-review-renders.py`](../../android/tools/generate-icon-review-renders.py).
 
 | Target resource | Mandelbrot-only | Full ROM suite |
 |---|---|---|

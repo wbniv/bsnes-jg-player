@@ -11,17 +11,17 @@ main{width:min(100% - 36px,920px);margin:48px auto 80px}h1,h2,h3{line-height:1.2
 <p>The first deliverable is a development-signed app that runs on an iOS Simulator and one physical iPhone, with native rendering, touch input, lifecycle pause/resume, and a reproducible ROM fidelity check. iPad layout should adapt from the same app target. App Store distribution and a full ROM library are not part of this first milestone.</p>
 <h2 id="repository-layout-decision">Repository layout decision</h2>
 <p>Use sibling platform directories:</p>
-<pre><code class="language-text">android/             # existing Android/Google TV example project (rename from android-tv/)
+<pre><code class="language-text">android/             # existing Android/Google TV example project (rename from android/)
 ios/                 # new SwiftUI iOS example app and Xcode project
 native/              # shared platform-neutral C/C++ host adapter, if extraction proves useful
 web/                 # WebAssembly player and ROM examples
 vendor/bsnes-jg/     # pinned emulator core
 </code></pre>
-<p><code>android-tv/</code> is no longer an accurate directory name: this project builds both Pixel phone and Google TV apps. Rename it to <code>android/</code> as a separate, mechanical preparatory change before creating the iOS project. Update all repository path references, build scripts, Gradle paths, Taskfile namespace, documentation, CI, and coordinator examples in that change. Prefer <code>task android:build</code> and <code>task android:release-build</code>; preserve old task aliases briefly if they help existing scripts. Do not combine the path move with emulator or UI behavior changes.</p>
+<p><code>android/</code> is no longer an accurate directory name: this project builds both Pixel phone and Google TV apps. Rename it to <code>android/</code> as a separate, mechanical preparatory change before creating the iOS project. Update all repository path references, build scripts, Gradle paths, Taskfile namespace, documentation, CI, and coordinator examples in that change. Prefer <code>task android:build</code> and <code>task android:release-build</code>; preserve old task aliases briefly if they help existing scripts. Do not combine the path move with emulator or UI behavior changes.</p>
 <h2 id="existing-implementation-and-reuse-boundary">Existing implementation and reuse boundary</h2>
 <ul>
 <li><code>vendor/bsnes-jg/</code> is the pinned C++ core. Android's CMake build already compiles these same core sources.</li>
-<li><code>android-tv/app/src/main/cpp/jni.cpp</code> owns the Android integration today. It depends on <code>AAssetManager</code>, <code>JNIEnv</code>, and Android logging; those parts cannot be compiled for iOS unchanged.</li>
+<li><code>android/app/src/main/cpp/jni.cpp</code> owns the Android integration today. It depends on <code>AAssetManager</code>, <code>JNIEnv</code>, and Android logging; those parts cannot be compiled for iOS unchanged.</li>
 <li><code>NativeEngine.java</code> and <code>MainActivity.java</code> show the current Native Android frame, controller, ROM, and lifecycle contract. They are example-host code, not the iOS API.</li>
 <li><code>demo-rom.json</code> names the selected standalone demo, supplies its SHA-256 and self-check, and should remain the single source of truth for the iOS sample ROM.</li>
 <li>The current Android host discards audio. The iOS player should provide real output through <code>AVAudioEngine</code> (or a reviewed low-latency Audio Unit path), rather than silently copying that limitation.</li>
@@ -62,7 +62,7 @@ void      bjg_destroy(bjg_host *);
 </ol>
 <h2 id="work-sequence">Work sequence</h2>
 <ol>
-<li><strong>Platform naming cleanup:</strong> rename <code>android-tv/</code> to <code>android/</code> in an isolated commit; update Taskfile task names, documentation, scripts, CI, and path references. Build the Android examples once to prove the move is mechanical.</li>
+<li><strong>Platform naming cleanup:</strong> rename <code>android/</code> to <code>android/</code> in an isolated commit; update Taskfile task names, documentation, scripts, CI, and path references. Build the Android examples once to prove the move is mechanical.</li>
 <li><strong>Codemagic bootstrap:</strong> verify access and create the smallest simulator-only workflow early, as described above.</li>
 <li><strong>Core portability audit:</strong> identify Android-only dependencies, core global-state assumptions, audio/video/input callback ownership, and the minimum ROM database assets required by Raycaster Maze.</li>
 <li><strong>Shared adapter decision:</strong> extract only the stable frame/input/video/audio/ROM callback boundary if Android and iOS can both use it without forcing a broad core rewrite. Otherwise keep a narrow Objective-C++ adapter and document any deliberate overlap with JNI.</li>
@@ -84,7 +84,7 @@ void      bjg_destroy(bjg_host *);
 </pre>
 <h2 id="acceptance-criteria">Acceptance criteria</h2>
 <ul>
-<li>Android build commands and APK variants still work after the directory rename; repository search finds no stale executable path references to <code>android-tv/</code> (historical plans may retain their original context with a short note).</li>
+<li>Android build commands and APK variants still work after the directory rename; repository search finds no stale executable path references to <code>android/</code> (historical plans may retain their original context with a short note).</li>
 <li>Codemagic builds the simulator target and runs the automated tests from the pushed commit; logs and <code>.xcresult</code> are retained.</li>
 <li>The iOS app loads only the configured small ROM, passes its self-check, and renders continuously without blocking the UI or audio render thread.</li>
 <li>Video uses the correct 4:3 full-picture presentation with no crop/stretch; timing remains stable on 60 Hz and 120 Hz refresh.</li>

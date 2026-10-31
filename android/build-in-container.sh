@@ -68,7 +68,7 @@ if [[ "$public_release" == "1" ]]; then
     --mount "type=bind,src=$release_keystore,dst=/root/.android/bsnes-jg-release.keystore,readonly"
   )
 fi
-container_args+=(--workdir /workspace/android-tv "$image")
+container_args+=(--workdir /workspace/android "$image")
 if [[ "$public_release" == "1" ]]; then
   gradle_signing=''
   gradle_tasks=':app:verifyPublicReleaseSigning :app:verifyNativeReleaseArtifact :app:verifyNativeplayerReleaseArtifact'

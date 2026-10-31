@@ -121,7 +121,7 @@ PY
 
 build() {
   [[ -s "$cache_dir/release.p12" && -s "$cache_dir/store-password" && -s "$cache_dir/key-alias" ]] || {
-    echo 'Run task android-tv:release-secrets-pull before building.' >&2
+    echo 'Run task android:release-secrets-pull before building.' >&2
     exit 1
   }
   export BJG_RELEASE_KEYSTORE="$cache_dir/release.p12"
@@ -129,7 +129,7 @@ build() {
   export BJG_RELEASE_KEY_ALIAS="$(<"$cache_dir/key-alias")"
   export BJG_RELEASE_KEY_PASSWORD="$BJG_RELEASE_KEYSTORE_PASSWORD"
   export BJG_PUBLIC_RELEASE=1
-  exec "$repo/android-tv/build-in-container.sh"
+  exec "$repo/android/build-in-container.sh"
 }
 
 case "${1:-}" in

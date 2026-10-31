@@ -16,6 +16,7 @@ coordinator implementation.
 | --- | --- |
 | `task chromecast:devices` | List enrolled devices and readiness. |
 | `task chromecast:queue` | Check active work, queued jobs and reservations. |
+| `task chromecast:app:register` | Register a frozen APK and its declared activity; no device session. |
 | `task chromecast:submit` | Submit an install, launch or other supported workflow. |
 | `task chromecast:check` | Run a coordinator-supported check. |
 | `task chromecast:profile` | Capture a performance profile. |
@@ -31,6 +32,15 @@ See the [coordinator CLI guide](../../../chromecast-coordinator/docs/chromecast-
 for argument definitions, workflow choices and admission behavior. The
 coordinator's own Taskfile is the source of truth for CLI mapping and options.
 
+For the fixed Mandelbrot comparison, register each Phase 2 APK with
+`ACTIVITY=org.bsnesjg.tv.MandelbrotBenchmarkActivity`. The ordinary
+`MainActivity` opens the selector and must not be profiled as emulation.
+Use `REPLACE=true` when updating an existing registration, and pass the exact
+`APK` to every profile/check so the coordinator verifies the installed bytes.
+Check `startup-latency-run-1.json` and the ROM-loaded metrics in downloaded
+evidence before accepting a run. Registration is shared state: restore the
+normal activity after the benchmark jobs finish.
+
 ## Standard session
 
 Check device readiness and shared queue state before every device session,
@@ -45,7 +55,7 @@ Choose an available device, then submit the full operation as one coordinator
 job. For example, install and verify the registered native app:
 
 ```sh
-task chromecast:submit DEVICE=chromecast-test-01 APP=bsnes-jg-tv WORKFLOW=install APK="$PWD/android-tv/app/build/outputs/apk/native/release/app-native-release.apk"
+task chromecast:submit DEVICE=chromecast-test-01 APP=bsnes-jg-tv WORKFLOW=install APK="$PWD/android/app/build/outputs/apk/native/release/app-native-release.apk"
 ```
 
 The app registration, APK path, and workflow must match the current build and

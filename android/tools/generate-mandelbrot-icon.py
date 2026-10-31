@@ -8,7 +8,7 @@ from PIL import Image, ImageOps
 from icon_art import controller_badge, place_controller_bottom_right
 
 ROOT = Path(__file__).resolve().parents[2]
-FRAME = ROOT / "android-tv/fixture/reference-5800.png"
+FRAME = ROOT / "android/fixture/reference-5800.png"
 OUTPUT = ROOT / "docs/plans/assets/mandel-display-app-icon.png"
 SIZE = 1254
 

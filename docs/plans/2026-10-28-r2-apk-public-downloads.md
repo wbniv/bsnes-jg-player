@@ -43,7 +43,7 @@ The release task will:
 5. Publish the manifest and download page only after the uploaded objects pass verification.
 6. Prune every release older than the new current and previous versions. The task reports failure if pruning did not complete; it never treats a partially published release as success.
 
-The exact Taskfile dependencies may call the existing Android container build and the project's web build. Public publication must remain a separate, intentional release operation rather than a side effect of `task build` or `task android-tv:build`.
+The exact Taskfile dependencies may call the existing Android container build and the project's web build. Public publication must remain a separate, intentional release operation rather than a side effect of `task build` or `task android:build`.
 
 Follow the existing project secret workflow: `task secrets-pull` renders the gitignored, mode-`0600` local `.env` cache from AWS SSM SecureString parameters, and Task loads that cache with its `dotenv` directive. SSM is the source of truth; `.env` is read-only generated cache. Store the account ID and R2 endpoint alongside the project-specific R2 access key ID and secret key under a project-scoped SSM prefix. The account ID should come from this cache/auth configuration; never ask the user to look it up or type it. If the bucket-scoped key pair is not provisioned, `task secrets-bootstrap` is the one-time path to seed SSM, with key values entered through hidden prompts and never printed. Publication passes the cached values to the R2 client as environment configuration; no credential appears in task arguments or logs.
 

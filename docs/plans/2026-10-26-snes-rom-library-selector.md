@@ -36,7 +36,7 @@ The audience is one household TV: Will, about 3 m from the screen with the Goog
         Fix these on biohack.net so the site gallery improves too. That work is outside this plan.
 3. **No search in this release** (changed by Will, 2026‑10‑26). Ship without the Search field. The search design and its open question (TOP MATCH or ghost text) move to the deferred [search plan](2026-10-26-snes-rom-library-search.md). Switch off the search code already in `library.js` rather than deleting it, so the search plan can start from it.
 
-The complete published ROM list, with one small inline card screenshot per row, is in the [ROM inventory](2026-10-26-snes-rom-library-rom-inventory.md). Regenerate it after catalog staging, and again after the card-art switch in decision 2, with `python3 android-tv/tools/generate-rom-inventory-doc.py`.
+The complete published ROM list, with one small inline card screenshot per row, is in the [ROM inventory](2026-10-26-snes-rom-library-rom-inventory.md). Regenerate it after catalog staging, and again after the card-art switch in decision 2, with `python3 android/tools/generate-rom-inventory-doc.py`.
 
 ## UX review: 2026‑10‑26
 
@@ -278,7 +278,7 @@ flowchart TB
   M --> N
 ```
 
-- **Sync script:** `android-tv/tools/sync-published-library.py` keeps its current behaviour: it is deterministic, prefers the llvm-mos bytes and rejects unsafe slugs. Each `library.json` record gains these fields:
+- **Sync script:** `android/tools/sync-published-library.py` keeps its current behaviour: it is deterministic, prefers the llvm-mos bytes and rejects unsafe slugs. Each `library.json` record gains these fields:
     - `desc`, `keys` and `compilerBug`, copied from the content record.
     - `interactive`, which is true when `keys` starts with neither "Self-running" nor "No controls".
     - The card-art path and its SHA-256.
@@ -302,18 +302,18 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
 
 | File | Change |
 |---|---|
-| `android-tv/app/build.gradle.kts` | Stages the same sync output into both Phase 2 variants and verifies identical catalog/ROM/card hashes; keeps engine-specific core checks |
-| `android-tv/tools/sync-published-library.py` | Adds the extra record fields, copies the site's card images unchanged, and adds a `--check` mode |
-| `android-tv/app/src/main/assets/` | Holds the shared selector and stylesheet, with search switched off; the WASM and native assets provide different engine adapters |
-| `android-tv/app/src/main/assets/tv.js` | Reworks the pause menu: vertical order, a header, Choose another ROM and the Restart path after a core failure |
-| `android-tv/app/src/main/java/org/bsnesjg/tv/MainActivity.java` | Adds the `getPrefs`/`setPrefs` bridge and the `rom` intent extra, plus optional gamepad key translation |
-| `android-tv/test/library-ui.test.mjs` (new) | Drives the library in headless Chromium at 1920×1080 with arrow keys and synthetic catalogs |
+| `android/app/build.gradle.kts` | Stages the same sync output into both Phase 2 variants and verifies identical catalog/ROM/card hashes; keeps engine-specific core checks |
+| `android/tools/sync-published-library.py` | Adds the extra record fields, copies the site's card images unchanged, and adds a `--check` mode |
+| `android/app/src/main/assets/` | Holds the shared selector and stylesheet, with search switched off; the WASM and native assets provide different engine adapters |
+| `android/app/src/main/assets/tv.js` | Reworks the pause menu: vertical order, a header, Choose another ROM and the Restart path after a core failure |
+| `android/app/src/main/java/org/bsnesjg/tv/MainActivity.java` | Adds the `getPrefs`/`setPrefs` bridge and the `rom` intent extra, plus optional gamepad key translation |
+| `android/test/library-ui.test.mjs` (new) | Drives the library in headless Chromium at 1920×1080 with arrow keys and synthetic catalogs |
 
 `BJGTV.play` already returns `playUrl`'s promise. It needs at most a rejection reason that says whether the core was reached.
 
 ## Verification
 
-1. Run the library UI in headless Chromium: `node --test android-tv/test/library-ui.test.mjs`. The test must cover:
+1. Run the library UI in headless Chromium: `node --test android/test/library-ui.test.mjs`. The test must cover:
     - focus starts on row 1 on first launch, and is restored to `lastPlayed` on later launches;
     - no Search field is shown;
     - every Back-ladder rule;
@@ -322,8 +322,8 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
     - the empty-Favorites state;
     - the 1/10/100/1,000 layout thresholds;
     - at most 30 rows in the DOM with 1,000 ROMs.
-2. Check sync and card art: `python3 android-tv/tools/sync-published-library.py --output /tmp/lib --check` reports 152 records and 152 cards. Each card is byte-identical to `../biohack.net/public/play/preview/<slug>.png`.
-3. Build with `task android-tv:build`. Both Phase 2 APK artifact gates must verify all 152 ROM files, 152 cards, the same catalog, and the direct-boot fixture. Record both APK sizes.
+2. Check sync and card art: `python3 android/tools/sync-published-library.py --output /tmp/lib --check` reports 152 records and 152 cards. Each card is byte-identical to `../biohack.net/public/play/preview/<slug>.png`.
+3. Build with `task android:build`. Both Phase 2 APK artifact gates must verify all 152 ROM files, 152 cards, the same catalog, and the direct-boot fixture. Record both APK sizes.
 4. Register both APKs with the coordinator and install them side by side. Confirm the separate package IDs and launcher artwork; test app launch separately because an icon does not prove the runtime works.
 5. Walk through the UI on cast1 with coordinator-owned input and capture workflows. Preserve screenshots for each mockup state; do not use raw device commands.
 6. Check persistence: star 2 ROMs, use the coordinator to stop and relaunch each engine variant. Both stars survive, and focus returns to the last-played ROM.
@@ -333,7 +333,7 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
 
 ## Appendix: published ROM inventory (snapshot 2026‑10‑26)
 
-The complete 152-row inventory, with one small inline card screenshot per ROM, is in the [published ROM inventory](2026-10-26-snes-rom-library-rom-inventory.md). After decision 2, the images are the site's gallery card images, not app screenshots. The inventory is generated from the staged `library.json` with `python3 android-tv/tools/generate-rom-inventory-doc.py`.
+The complete 152-row inventory, with one small inline card screenshot per ROM, is in the [published ROM inventory](2026-10-26-snes-rom-library-rom-inventory.md). After decision 2, the images are the site's gallery card images, not app screenshots. The inventory is generated from the staged `library.json` with `python3 android/tools/generate-rom-inventory-doc.py`.
 
 The generated inventory records title, slug, category and ROM size for each card. `MODE 7` is included in the catalog record when `displayMode: 7`.
 

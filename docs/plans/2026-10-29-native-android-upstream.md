@@ -23,11 +23,11 @@ Keep the current downstream app shell out of the first proposal. The app include
 
 | Concern | Current file | Upstream candidate? |
 | --- | --- | --- |
-| Core build and Android ABI configuration | `android-tv/app/src/main/cpp/CMakeLists.txt` | Yes, after removing downstream path assumptions |
-| JNI ROM/load/frame/input/video adapter | `android-tv/app/src/main/cpp/jni.cpp` | Yes, as the first extraction target |
-| Java native method declarations | `android-tv/app/src/main/java/org/bsnesjg/tv/NativeEngine.java` | Yes, after giving it a neutral package/API |
-| TV launcher, ROM selector, app lifecycle | `android-tv/app/src/main/java/org/bsnesjg/tv/MainActivity.java` | No; retain as this repo’s example host |
-| ROMs, catalog, screenshots, sharing, APK branding | `android-tv/app/src/main/assets/` and app resources | No; product-specific example content |
+| Core build and Android ABI configuration | `android/app/src/main/cpp/CMakeLists.txt` | Yes, after removing downstream path assumptions |
+| JNI ROM/load/frame/input/video adapter | `android/app/src/main/cpp/jni.cpp` | Yes, as the first extraction target |
+| Java native method declarations | `android/app/src/main/java/org/bsnesjg/tv/NativeEngine.java` | Yes, after giving it a neutral package/API |
+| TV launcher, ROM selector, app lifecycle | `android/app/src/main/java/org/bsnesjg/tv/MainActivity.java` | No; retain as this repo’s example host |
+| ROMs, catalog, screenshots, sharing, APK branding | `android/app/src/main/assets/` and app resources | No; product-specific example content |
 
 The current Java/native interface demonstrates `load`, `step`, `reset`, `setPad`, `width`, `height`, and `copyPixels`. It assumes a single active core instance and caller-managed thread ownership. Those constraints must be made explicit or replaced with a context handle before proposing it as a general API.
 

@@ -34,31 +34,31 @@ tasks:
     cmds:
       - ./serve.py --isolated
 
-  android-tv:build:
+  android:build:
     desc: "Test the TV frame clock and build/verify Debug and profile Release APKs in the rootless container"
     cmds:
-      - ./android-tv/build-in-container.sh
+      - ./android/build-in-container.sh
 
-  android-tv:release-build:
+  android:release-build:
     desc: Build the two public Native APKs with the durable release key
     cmds:
-      - ./android-tv/tools/release-signing-secrets.sh build
+      - ./android/tools/release-signing-secrets.sh build
 
-  android-tv:release-secrets-pull:
+  android:release-secrets-pull:
     desc: Restore the Android release keystore from encrypted AWS SSM storage
     cmds:
-      - ./android-tv/tools/release-signing-secrets.sh pull
+      - ./android/tools/release-signing-secrets.sh pull
 
-  android-tv:release-secrets-inspect:
+  android:release-secrets-inspect:
     desc: List relevant SSM parameter names without reading secret values
     cmds:
-      - ./android-tv/tools/release-signing-secrets.sh inspect
+      - ./android/tools/release-signing-secrets.sh inspect
 
-  android-tv:release-key-bootstrap:
+  android:release-key-bootstrap:
     desc: Generate and store the durable Android release key in AWS SSM SecureString
     prompt: This creates the permanent Android app signing identity in AWS SSM. Future public APK updates must use this same key. Continue?
     cmds:
-      - ./android-tv/tools/release-signing-secrets.sh bootstrap
+      - ./android/tools/release-signing-secrets.sh bootstrap
 
   sync-roms:
     desc: "Refresh web/roms/*.sfc from a sibling llvm-mos-65816 checkout"
@@ -84,3 +84,28 @@ tasks:
     desc: "Remove built core artifacts (keeps emsdk + vendored core clone)"
     cmds:
       - rm -f web/cores/*.wasm web/cores/*.js web/cores/*.data web/cores/*.bc web/cores/PROVENANCE.json
+
+  android-tv:build:
+    desc: "Compatibility alias for android:build"
+    cmds:
+      - task: android:build
+
+  android-tv:release-build:
+    desc: "Compatibility alias for android:release-build"
+    cmds:
+      - task: android:release-build
+
+  android-tv:release-secrets-pull:
+    desc: "Compatibility alias for android:release-secrets-pull"
+    cmds:
+      - task: android:release-secrets-pull
+
+  android-tv:release-secrets-inspect:
+    desc: "Compatibility alias for android:release-secrets-inspect"
+    cmds:
+      - task: android:release-secrets-inspect
+
+  android-tv:release-key-bootstrap:
+    desc: "Compatibility alias for android:release-key-bootstrap"
+    cmds:
+      - task: android:release-key-bootstrap

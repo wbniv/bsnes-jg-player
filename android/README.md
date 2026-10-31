@@ -11,14 +11,14 @@ In the ROM-library app, Back pauses gameplay and returns to the ROM selector wit
 Builds always run in the pinned JDK 17 container with the rootless Docker daemon and no network inside the build container:
 
 ```sh
-./android-tv/build-in-container.sh
+./android/build-in-container.sh
 ```
 
 The script uses Android SDK 34 at `/home/will/android-sdk-local` and the shared Gradle cache. Override `ANDROID_HOME` or `GRADLE_USER_HOME` when needed. It mounts the sibling `../biohack.net/` catalog and `../llvm-mos-65816/` build directory read-only, validates the staged ROM library against source ROM and card hashes, then builds and checks both library variants. Set `REFRESH_PUBLISHED_LIBRARY=1` to recapture all catalog card art. The APKs are `app/build/outputs/apk/wasm/release/bsnes-jg-wasm.apk` and `app/build/outputs/apk/native/release/llvm-65816-torture-test-suite-snes.apk`.
 
 Both Release APKs are non-debuggable, shell-profileable, and signed with the local debug key for controlled coordinator installation. Do not distribute these test-signed APKs. They have distinct application IDs (`org.bsnesjg.tv.phase2` and `org.bsnesjg.tv.native.phase2`) and share the suite icon/product identity. The WASM build checks the frozen core hashes and canonical `web/app.js`; the native build checks its C++ library and adapter assets. Both APK gates check the exact same ROM/catalog contents. The container syntax-checks both engine adapters, the player, and remote-control JavaScript.
 
-Public Native APKs use the durable PKCS12 release keystore. Load its path, store password, alias, and key password into `BJG_RELEASE_KEYSTORE`, `BJG_RELEASE_KEYSTORE_PASSWORD`, `BJG_RELEASE_KEY_ALIAS`, and `BJG_RELEASE_KEY_PASSWORD`, then run `task android-tv:release-build`. The task fails closed if the keystore or any value is missing. Keep the keystore and its recovery backup out of the repository; never pass passwords as Gradle arguments or print them in logs.
+Public Native APKs use the durable PKCS12 release keystore. Load its path, store password, alias, and key password into `BJG_RELEASE_KEYSTORE`, `BJG_RELEASE_KEYSTORE_PASSWORD`, `BJG_RELEASE_KEY_ALIAS`, and `BJG_RELEASE_KEY_PASSWORD`, then run `task android:release-build`. The task fails closed if the keystore or any value is missing. Keep the keystore and its recovery backup out of the repository; never pass passwords as Gradle arguments or print them in logs.
 
 The TV scheduler targets 60.0988 SNES frames per second from monotonic RAF timestamps, independently of output refresh. It retains backlog when work is late and runs at most four core steps per callback; pause/resume resets its clock. The browser player retains its existing refresh-driven behavior. Container tests cover 50, 59.94, 60, and 120 Hz, bounded catch-up, and pause reset.
 
@@ -27,7 +27,7 @@ The runtime writes structured `BJG_TV_METRIC` JSON records to Android's log unde
 After exporting a coordinator logcat capture that contains this tag, generate the run files with:
 
 ```sh
-node android-tv/tools/metrics-report.mjs /path/to/coordinator-logcat.txt /path/to/run-report
+node android/tools/metrics-report.mjs /path/to/coordinator-logcat.txt /path/to/run-report
 ```
 
 It writes the parsed JSONL events, rolling-window CSV, a Markdown summary table, and an SVG time-series plot. The summary explicitly labels window-level quantiles and keeps RAF spacing separate from compositor presentation.
@@ -61,4 +61,4 @@ Then submit install and verification jobs by the `bsnes-jg-tv` app alias. Do not
 
 ## App icons
 
-`../docs/plans/assets/mandel-display-app-icon.png` is the approved square master. Regenerate the density-specific Google TV launcher icons and 16:9 banners, plus the browser/mobile favicon and home-screen sizes, with `python3 android-tv/tools/generate-app-icons.py`. Android TV resources are wired through `@mipmap/ic_launcher` and `@mipmap/tv_banner`; web icons are linked from `web/index.html` and declared in `web/site.webmanifest`. This repository has no separate native phone APK; phone home-screen artwork is provided by the browser player.
+`../docs/plans/assets/mandel-display-app-icon.png` is the approved square master. Regenerate the density-specific Google TV launcher icons and 16:9 banners, plus the browser/mobile favicon and home-screen sizes, with `python3 android/tools/generate-app-icons.py`. Android TV resources are wired through `@mipmap/ic_launcher` and `@mipmap/tv_banner`; web icons are linked from `web/index.html` and declared in `web/site.webmanifest`. This repository has no separate native phone APK; phone home-screen artwork is provided by the browser player.

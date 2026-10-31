@@ -10,8 +10,8 @@ from icon_art import controller_badge, place_controller_bottom_right
 ROOT = Path(__file__).resolve().parents[2]
 MASTER = ROOT / "docs/plans/assets/snes-rom-suite-app-icon.png"
 MOSAIC = ROOT / "docs/plans/assets/snes-rom-suite-mosaic.png"
-ANDROID_RES = ROOT / "android-tv/app/src/main/res"
-LIBRARY_RES = ROOT / "android-tv/app/src/library/res"
+ANDROID_RES = ROOT / "android/app/src/main/res"
+LIBRARY_RES = ROOT / "android/app/src/library/res"
 WEB_ICONS = ROOT / "web/icons"
 
 TV_LAUNCHER = {

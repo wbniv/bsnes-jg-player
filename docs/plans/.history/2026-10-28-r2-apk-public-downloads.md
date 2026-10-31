@@ -1,11 +1,16 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/56edbb9) | Record published Native APK release 0.1.9 |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/e8c438f) | Improve TV library, APK sharing, and device workflows |
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/33177cd) | Implement share and responsive ROM launcher menus |
 
 <!--history-meta v1
+eb74075	author	Will Norris
+eb74075	added	1
+eb74075	deleted	1
+eb74075	files	1
 56edbb9	author	Will Norris
 56edbb9	added	21
 56edbb9	deleted	18
