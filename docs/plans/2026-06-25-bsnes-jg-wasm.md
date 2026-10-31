@@ -143,6 +143,27 @@ page** that boots our `.sfc` ROMs and renders them, on a plain static host. Reus
    **PASS (Chromium).** Firefox not automated here; the claim (no special headers, standard
    wasm+Asyncify, no SAB) is structural — re-confirm with a manual Firefox load before deploy.
 
+   **Firefox spot-check (2026-10-31).** Headless Firefox 156.0.1 on Linux x86_64, driven over Marionette by
+   `scripts/firefox-verify.py`, loaded the plain `serve.py` page (no COOP/COEP) with `?verify=1`:
+
+   ```
+   $ python3 serve.py -p 8123 &
+   $ firefox --headless --no-remote --marionette --profile <tmp> &
+   $ python3 -I scripts/firefox-verify.py "http://127.0.0.1:8123/?verify=1" out.png
+   "badge": "✓ FIDELITY 0x204F == gate (gate jgxcheck CRC (corpus_result @ WRAM $0200), 5800 frames)",
+   "cls": "badge pass",
+   "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:156.0) Gecko/20100101 Firefox/156.0",
+   "coi": false,
+   "sab": "undefined",
+   ```
+
+   <img src="plans/screenshots/firefox-verify-2026-10-31.png" width="700">
+
+   **PASS (Firefox).** The self-check ran all 5800 frames and passed, the page is not cross-origin isolated
+   and has no `SharedArrayBuffer`, so the no-special-headers claim holds. Not covered: console errors were
+   not captured, and the run was headless (software rendering, so not a pacing measurement). Run twice
+   (the first attempt's wait expired at frame 2016, the rerun finished).
+
 5. **License hygiene.** GPLv3 source ships with the build (this repo); `LICENSE` is bsnes-jg's
    verbatim `COPYING`; `NOTICE` updated for the custom frontend + vendored deps; **no snes9x and no
    EmulatorJS** anywhere in the accurate path (`grep` of `web/` finds neither in the shipped page).

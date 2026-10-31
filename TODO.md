@@ -7,8 +7,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 ### Accurate mode — remaining
 
 - [T2] **Low-end phone measurement.** Pixel 8 Pro: native 10.7 ms (60 FPS), WASM 23.7 ms (45 FPS); enrol a low-end phone with the coordinator and rerun the paired job.
-- [T2] **Firefox spot-check.** End-to-end is verified in Chromium; load the page once in current
-  Firefox (single-thread, no COOP/COEP) to confirm before deploy. (Plan step 4.)
 
 ### Polish
 
@@ -64,6 +62,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑10‑31 — [firefox-check] Headless Firefox 156 passes the 5800-frame fidelity self-check, no COOP/COEP or SAB. See [plan](docs/plans/2026-06-25-bsnes-jg-wasm.md).
 - ✅ 2026‑10‑31 — [stale-demos] Dropped the three dead picker buttons and ROM names; `npm test` now checks every button has a manifest entry.
 - ✅ 2026‑10‑31 — [pixel-perf] Pixel 8 Pro: native 10.7 ms/60 FPS, WASM 23.7 ms/45 FPS; low-end phone unmeasured. See [plan](docs/plans/2026-10-31-pixel-phone-perf.md).
 - ✅ 2026‑10‑31 — [catchup-credit] Native credit was unbounded (3.7k to 16.2k frames on Cast1); now capped at 4. See [plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md).
