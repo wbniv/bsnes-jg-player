@@ -20,9 +20,20 @@ static std::vector<uint8_t> game;
 static std::string gamePath;
 // bsnes may provide 512-pixel hires frames even when the displayed frame is
 // reduced to 256 pixels below. Keep the source framebuffer at the core's
-// maximum width; the smaller destination buffer is only for converted RGBA.
+// maximum extent; the smaller destination buffer is only for converted RGBA.
+// PPU::Screen::scanline writes line y at output + y * (interlace ? 1024 : 512)
+// and, when not interlaced, a second 512-pixel line right after it, for y up
+// to 247. The highest index touched is 247 * 512 + 1023 = 127,487 without
+// interlace (measured) and 247 * 1024 + 512 + 511 = 253,951 with it. Upstream
+// jg.cpp sizes this buffer wmax * hmax = 512 * ((240 + 8) << 1) = 253,952; the
+// former 512 * 248 buffer was overrun by 512 pixels every non-interlaced frame.
 static constexpr unsigned MaxVideoWidth = 512;
-static constexpr unsigned MaxVideoHeight = 248;
+static constexpr unsigned MaxVideoHeight = 496;
+// bsnes-jg 2.1.0 maps Audio::Spec::rsqual as `_rsqual = 2 - rsqual` onto
+// libsamplerate converter ids (0 best sinc, 1 medium sinc, 2 fastest sinc).
+// `2u - 4u` wraps to SRC_LINEAR (4). audioCb below discards every sample, so
+// the cheaper converter is output-invisible; revisit when audio is wired.
+static constexpr unsigned ResamplerLinear = 2u - 4u;
 static uint32_t pixels[MaxVideoWidth * MaxVideoHeight];
 static uint8_t rgba[256 * 248 * 4];
 static float audio[3200];
@@ -41,7 +52,7 @@ static bool openVector(void*, std::string, std::vector<uint8_t>&){return false;}
 static bool openMsu(void*, std::string, std::istream**){return false;}
 static void writeCb(void*,std::string,const uint8_t*,unsigned){}
 static bool loadRom(void*,unsigned id){if(id==Bsnes::GameType::SuperFamicom&&game.size()>=0x8000&&!gamePath.empty()){Bsnes::setRomSuperFamicom(game,gamePath);return true;}return false;}
-static void video(const void*,unsigned w,unsigned h,unsigned p){rawWidth=w;rawHeight=h;rawPitch=p;bool expected=false;if(w&&h&&p&&videoSampleReported.compare_exchange_strong(expected,true)){unsigned lit=0,samples=0;for(unsigned y=0;y<h;y+=8)for(unsigned x=0;x<w;x+=8){samples++;if(pixels[y*p+x]&0xffffff)lit++;}__android_log_print(ANDROID_LOG_INFO,"BJG_TV_METRIC","{\"event\":\"native_video_sample\",\"width\":%u,\"height\":%u,\"pitch\":%u,\"lit_samples\":%u,\"samples\":%u,\"thread\":%lu}",w,h,p,lit,samples,(unsigned long)pthread_self());}}
+static void video(const void*,unsigned w,unsigned h,unsigned p){rawWidth=w;rawHeight=h;rawPitch=p;if((size_t)h*p>sizeof(pixels)/sizeof(pixels[0]))__android_log_print(ANDROID_LOG_ERROR,"BJG_NATIVE","framebuffer %ux%u pitch %u exceeds %ux%u buffer",w,h,p,MaxVideoWidth,MaxVideoHeight);bool expected=false;if(w&&h&&p&&videoSampleReported.compare_exchange_strong(expected,true)){unsigned lit=0,samples=0;for(unsigned y=0;y<h;y+=8)for(unsigned x=0;x<w;x+=8){samples++;if(pixels[y*p+x]&0xffffff)lit++;}__android_log_print(ANDROID_LOG_INFO,"BJG_TV_METRIC","{\"event\":\"native_video_sample\",\"width\":%u,\"height\":%u,\"pitch\":%u,\"lit_samples\":%u,\"samples\":%u,\"thread\":%lu}",w,h,p,lit,samples,(unsigned long)pthread_self());}}
 static std::atomic<bool> audioCallbackSeen{false};
 static void audioCb(const void*,size_t){
   if(!audioCallbackSeen.exchange(true)) __android_log_print(ANDROID_LOG_INFO,"BJG_NATIVE","discard-audio callback reached");
@@ -54,14 +65,14 @@ extern "C" JNIEXPORT jboolean JNICALL Java_org_bsnesjg_tv_NativeEngine_load(JNIE
  gamePath=slug;if(name)env->ReleaseStringUTFChars(romName,name);
  game.resize(n);env->GetByteArrayRegion(rom,0,n,reinterpret_cast<jbyte*>(game.data()));
  Bsnes::setOpenFileCallback(nullptr,openVector);Bsnes::setOpenStreamCallback(nullptr,openStream);Bsnes::setOpenMsuCallback(nullptr,openMsu);Bsnes::setRomLoadCallback(nullptr,loadRom);Bsnes::setWriteCallback(nullptr,writeCb);Bsnes::setLogCallback(nullptr,logcb);
- Bsnes::setAudioSpec({48000.0,(48000/60)<<1,0,audio,nullptr,&audioCb});Bsnes::setVideoSpec({pixels,nullptr,video});if(!Bsnes::load()){__android_log_print(ANDROID_LOG_ERROR,"BJG_NATIVE","engine_load_rejected call=%u reason=core-load-failed rom=%s",loadCall,gamePath.c_str());return JNI_FALSE;}
- Bsnes::setAudioSpec({48000.0,(48000/60)<<1,0,audio,nullptr,&audioCb});
+ Bsnes::setAudioSpec({48000.0,(48000/60)<<1,ResamplerLinear,audio,nullptr,&audioCb});Bsnes::setVideoSpec({pixels,nullptr,video});if(!Bsnes::load()){__android_log_print(ANDROID_LOG_ERROR,"BJG_NATIVE","engine_load_rejected call=%u reason=core-load-failed rom=%s",loadCall,gamePath.c_str());return JNI_FALSE;}
+ Bsnes::setAudioSpec({48000.0,(48000/60)<<1,ResamplerLinear,audio,nullptr,&audioCb});
  Bsnes::setInputSpec({0,Bsnes::Input::Device::Gamepad,nullptr,input});Bsnes::setInputSpec({1,Bsnes::Input::Device::Gamepad,nullptr,input});Bsnes::power();
  __android_log_print(ANDROID_LOG_INFO,"BJG_NATIVE","post-power cpu_thread=%p scheduler_active=%p",SuperFamicom::cpu.thread,SuperFamicom::scheduler.active);
  // Power/reset reconstructs the core's audio streams. Reattach the no-output
  // sink afterward so the first DSP frame cannot call a null frontend callback.
  __android_log_print(ANDROID_LOG_INFO,"BJG_NATIVE","reattach discard-audio callback=%p",reinterpret_cast<void*>(&audioCb));
- Bsnes::setAudioSpec({48000.0,(48000/60)<<1,0,audio,nullptr,&audioCb});
+ Bsnes::setAudioSpec({48000.0,(48000/60)<<1,ResamplerLinear,audio,nullptr,&audioCb});
  Bsnes::setInputSpec({0,Bsnes::Input::Device::Gamepad,nullptr,input});Bsnes::setInputSpec({1,Bsnes::Input::Device::Gamepad,nullptr,input});
  __android_log_print(ANDROID_LOG_INFO,"BJG_NATIVE","engine_load_ready call=%u rom=%s thread=%lu cpu_thread=%p active=%p",loadCall,gamePath.c_str(),(unsigned long)pthread_self(),SuperFamicom::cpu.thread,SuperFamicom::scheduler.active);
  loaded=true;return JNI_TRUE;

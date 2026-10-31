@@ -16,6 +16,11 @@ add_library(bjg SHARED jni.cpp ${CORE_CPP} ${CORE_C})
 target_include_directories(bjg PRIVATE "${CORE}/src" "${CORE}/deps" "${CORE}/deps/libsamplerate")
 target_compile_definitions(bjg PRIVATE GB_INTERNAL GB_DISABLE_CHEATS GB_DISABLE_CHEAT_SEARCH GB_DISABLE_DEBUGGER GB_DISABLE_REWIND _GNU_SOURCE GB_VERSION=\"1.0.2\")
 target_compile_options(bjg PRIVATE -Wno-unused-parameter -Wno-multichar -fvisibility=hidden)
+# Measured on Chromecast HD (Cortex-A35, 32-bit), frame-5800 job, 2026-10-31:
+# adding -O3 and/or -flto=thin made the core 0.64x as fast (100 ms vs 64 ms per
+# frame); -march=armv8-a -mfpu=neon-fp-armv8 alone changed nothing (0.996x).
+# Do not add them without re-running that job.
+# docs/performance/2026-10-31/cast1-armv7-tuning/report.md
 # NDK r26 defaults ELF load segments to 4 KB; Pixel's 16 KB page-size check
 # requires each native LOAD segment to use 16 KB alignment.
 target_link_options(bjg PRIVATE "-Wl,-z,max-page-size=16384" "-Wl,-z,common-page-size=16384")
