@@ -1,0 +1,205 @@
+<!doctype html><meta charset="utf-8"><title>Android Native / WASM — 31 October 2026</title><style>body{font:17px system-ui;background:#111820;color:#e2edf4;max-width:1200px;margin:40px auto;padding:20px}table{border-collapse:collapse;width:100%}td,th{padding:10px;border-bottom:1px solid #455}img{max-width:100%}pre{white-space:pre-wrap}a{color:#8ed4ff}</style>
+<h1>Android Native / WASM — 31 October 2026</h1>
+<p><strong>Results:</strong> two Cast1 pairs measured Native 3.8276/3.8277 FPS versus WASM 0.4487/0.4444 FPS (about 8.6×). Corrected native passes frame-5800 WRAM and canonical pixels on Pixel and Cast1. Pixel native portrait and landscape hardware screenshots match every source pixel. Android WASM passes frame-5800 WRAM; the shipped WASM core passes the canonical image check on the host.</p>
+<p>Evidence review, not a release acceptance. Cast1 profiles request 120 seconds warmup and 120 seconds measurement. Pixel check captures are not matched performance profiles. Exact staged APK hashes and raw correctness events are in <a href="runs.json">runs.json</a>.</p>
+<p>Compositor FPS is measured by SurfaceFlinger. App emulation FPS below is the median of all retained log windows, including warmup; these are different quantities. APK versions differ (Native 0.1.9, WASM 0.1.8), so this is not a controlled engine-only experiment.</p>
+<img src="presented-fps.svg" alt="Per-run measured compositor FPS">
+<table><tr><th>Job</th><th>Device</th><th>Engine</th><th>Status</th><th>Compositor FPS</th><th>App emu FPS</th><th>Log windows</th></tr><tr><td>J‑039b0f772d6f</td><td>Cast1</td><td>Native</td><td>succeeded</td><td>3.828</td><td>15.380</td><td>246</td></tr><tr><td>J‑9aa21a23560f</td><td>Cast1</td><td>WASM</td><td>succeeded</td><td>0.449</td><td>3.880</td><td>55</td></tr><tr><td>J‑5e627ea361f2</td><td>Cast1</td><td>Native</td><td>succeeded</td><td>3.828</td><td>15.395</td><td>244</td></tr><tr><td>J‑f47fb920a3a5</td><td>Cast1</td><td>WASM</td><td>uncertain</td><td>—</td><td>—</td><td>0</td></tr><tr><td>J‑06b35cd9d2a6</td><td>Pixel</td><td>Native</td><td>succeeded</td><td>—</td><td>59.960</td><td>76</td></tr><tr><td>J‑e9aa930505cd</td><td>Pixel</td><td>WASM</td><td>succeeded</td><td>—</td><td>46.150</td><td>83</td></tr><tr><td>J‑68b3f9bdcde1</td><td>Pixel</td><td>WASM</td><td>succeeded</td><td>—</td><td>41.580</td><td>154</td></tr><tr><td>J‑f679a2701ab6</td><td>Cast1</td><td>WASM</td><td>succeeded</td><td>0.444</td><td>3.905</td><td>54</td></tr><tr><td>J‑14ee404606a3</td><td>Pixel</td><td>Native fixed</td><td>failed</td><td>—</td><td>—</td><td>0</td></tr><tr><td>J‑3a13ec5ce46a</td><td>Pixel</td><td>Native fixed</td><td>succeeded</td><td>—</td><td>59.980</td><td>69</td></tr><tr><td>J‑a0180c2e2ecb</td><td>Cast1</td><td>Native fixed</td><td>succeeded</td><td>—</td><td>15.050</td><td>216</td></tr><tr><td>J‑f6a11b900d90</td><td>Pixel</td><td>WASM</td><td>succeeded</td><td>9.630</td><td>45.220</td><td>163</td></tr><tr><td>J‑ccf4f03cf386</td><td>Pixel portrait</td><td>Native fixed</td><td>succeeded</td><td>—</td><td>59.850</td><td>103</td></tr><tr><td>J‑ae4268b0701b</td><td>Pixel landscape</td><td>Native fixed</td><td>succeeded</td><td>—</td><td>59.775</td><td>90</td></tr></table>
+<p>Two runs per engine are available on Cast1; this small sample does not establish statistical confidence. Performance runs use the original frozen APKs, before the native RGB correction. Corrected-build correctness evidence is listed separately.</p>
+<h2>Correctness and hardware captures</h2><p>Fixed native RGB channel order, the frame-check skip across multi-step callbacks, and ROM staging from the nested roms directory. Frozen layout captures deliberately show zero emulation FPS; their HUD rates and accumulated backlog are not performance measurements.</p>
+<p>Cast1 Native J‑039b0f772d6f</p><img src="evidence/native-pair-1/screenshot.png">
+<p>Cast1 WASM J‑9aa21a23560f</p><img src="evidence/wasm-pair-1/screenshot.png">
+<p>Cast1 Native J‑5e627ea361f2</p><img src="evidence/native-pair-2/screenshot.png">
+<h3>J‑06b35cd9d2a6</h3><pre>[
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;correctness&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;offset&quot;: 1408,
+    &quot;expected&quot;: 8271,
+    &quot;actual&quot;: 8271,
+    &quot;status&quot;: &quot;pass&quot;
+  },
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;framebuffer&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;differentPixels&quot;: 38718,
+    &quot;pixels&quot;: 57344,
+    &quot;status&quot;: &quot;fail&quot;
+  }
+]</pre>
+<p>Pixel Native J‑06b35cd9d2a6</p><img src="evidence/pixel-native/screenshot.png">
+<h3>J‑e9aa930505cd</h3><pre>[
+  {
+    &quot;event&quot;: &quot;reference_ready&quot;,
+    &quot;t_ms&quot;: 126345,
+    &quot;rom_run&quot;: 1,
+    &quot;rom&quot;: &quot;mandel-display&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;value&quot;: &quot;0x204F&quot;
+  }
+]</pre>
+<p>Pixel WASM J‑e9aa930505cd</p><img src="evidence/pixel-wasm/screenshot.png">
+<p>Pixel WASM J‑68b3f9bdcde1</p><img src="evidence/pixel-wasm-long/screenshot.png">
+<p>Cast1 WASM J‑f679a2701ab6</p><img src="evidence/wasm-pair-2-ok/screenshot.png">
+<h3>J‑3a13ec5ce46a</h3><pre>[
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;framebuffer&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;differentPixels&quot;: 0,
+    &quot;pixels&quot;: 57344,
+    &quot;status&quot;: &quot;pass&quot;
+  },
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;correctness&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;offset&quot;: 1408,
+    &quot;expected&quot;: 8271,
+    &quot;actual&quot;: 8271,
+    &quot;status&quot;: &quot;pass&quot;
+  }
+]</pre>
+<p>Pixel Native fixed J‑3a13ec5ce46a</p><img src="evidence/pixel-native-fixed-signed/screenshot.png">
+<h3>J‑a0180c2e2ecb</h3><pre>[
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;framebuffer&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;differentPixels&quot;: 0,
+    &quot;pixels&quot;: 57344,
+    &quot;status&quot;: &quot;pass&quot;
+  },
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;correctness&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;offset&quot;: 1408,
+    &quot;expected&quot;: 8271,
+    &quot;actual&quot;: 8271,
+    &quot;status&quot;: &quot;pass&quot;
+  }
+]</pre>
+<p>Cast1 Native fixed J‑a0180c2e2ecb</p><img src="evidence/cast-native-fixed/screenshot.png">
+<h3>J‑f6a11b900d90</h3><pre>[
+  {
+    &quot;event&quot;: &quot;reference_ready&quot;,
+    &quot;t_ms&quot;: 156902,
+    &quot;rom_run&quot;: 1,
+    &quot;rom&quot;: &quot;mandel-display&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;value&quot;: &quot;0x204F&quot;
+  }
+]</pre>
+<p>Pixel WASM J‑f6a11b900d90</p><img src="evidence/pixel-wasm-gate/screenshot.png">
+<h3>J‑ccf4f03cf386</h3><pre>[
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;framebuffer&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;differentPixels&quot;: 0,
+    &quot;pixels&quot;: 57344,
+    &quot;status&quot;: &quot;pass&quot;
+  },
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;correctness&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;offset&quot;: 1408,
+    &quot;expected&quot;: 8271,
+    &quot;actual&quot;: 8271,
+    &quot;status&quot;: &quot;pass&quot;
+  }
+]</pre>
+<p>Pixel portrait Native fixed J‑ccf4f03cf386</p><img src="evidence/pixel-portrait/screenshot.png">
+<h3>J‑ae4268b0701b</h3><pre>[
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;framebuffer&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;differentPixels&quot;: 0,
+    &quot;pixels&quot;: 57344,
+    &quot;status&quot;: &quot;pass&quot;
+  },
+  {
+    &quot;engine&quot;: &quot;native&quot;,
+    &quot;phase&quot;: &quot;correctness&quot;,
+    &quot;frame&quot;: 5800,
+    &quot;offset&quot;: 1408,
+    &quot;expected&quot;: 8271,
+    &quot;actual&quot;: 8271,
+    &quot;status&quot;: &quot;pass&quot;
+  }
+]</pre>
+<p>Pixel landscape Native fixed J‑ae4268b0701b</p><img src="evidence/pixel-landscape-final/screenshot.png">
+<h3>Host WASM canonical framebuffer</h3><pre>{
+  &quot;frame&quot;: 5800,
+  &quot;wram&quot;: 8271,
+  &quot;expected&quot;: 8271,
+  &quot;differentPixels&quot;: 0,
+  &quot;pixels&quot;: 57344,
+  &quot;status&quot;: &quot;pass&quot;,
+  &quot;scope&quot;: &quot;host execution of shipped WASM, not Android&quot;,
+  &quot;wasmSha256&quot;: &quot;e74dbd3d7160608dfb6e1ae2ed7ff263fafaa62b0444870530530e2e931ebeb3&quot;,
+  &quot;glueSha256&quot;: &quot;54e19fd849b823d87e278438fe7ec5ccaf8e526e966c8f4e007d29ccf78cdf4d&quot;,
+  &quot;romSha256&quot;: &quot;6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353&quot;,
+  &quot;referenceSha256&quot;: &quot;7acaa3825b82b7e61fe641ca950508d58e8aeb0cb2ff7849547d17eacaab4abe&quot;,
+  &quot;node&quot;: &quot;v22.22.1&quot;
+}
+</pre>
+<h3>Frozen hardware layout: J‑ccf4f03cf386</h3><pre>{
+  &quot;frame&quot;: 5800,
+  &quot;screen&quot;: [
+    1008,
+    2244
+  ],
+  &quot;game_rect_pixels&quot;: [
+    0,
+    832,
+    1008,
+    756
+  ],
+  &quot;aspect&quot;: 1.3333333333333333,
+  &quot;normalized_content_rect&quot;: [
+    0.0,
+    0.3374,
+    1.0,
+    0.3548
+  ],
+  &quot;geometry_source&quot;: &quot;canonical palette footprint in screenshot&quot;,
+  &quot;differentPixels&quot;: 0,
+  &quot;pixels&quot;: 57344,
+  &quot;gl_error&quot;: 0,
+  &quot;status&quot;: &quot;pass&quot;
+}
+</pre>
+<h3>Frozen hardware layout: J‑ae4268b0701b</h3><pre>{
+  &quot;frame&quot;: 5800,
+  &quot;screen&quot;: [
+    2244,
+    1008
+  ],
+  &quot;game_rect_pixels&quot;: [
+    506,
+    0,
+    1345,
+    1008
+  ],
+  &quot;aspect&quot;: 1.3343253968253967,
+  &quot;normalized_content_rect&quot;: [
+    0.1846,
+    0.0,
+    0.6308,
+    1.0
+  ],
+  &quot;geometry_source&quot;: &quot;canonical palette footprint in screenshot&quot;,
+  &quot;differentPixels&quot;: 0,
+  &quot;pixels&quot;: 57344,
+  &quot;gl_error&quot;: 0,
+  &quot;status&quot;: &quot;pass&quot;
+}
+</pre>
+<h2>Limits and excluded attempts</h2><p>The first selector profiles J‑d83eab5c4cac and J‑87a688dc7b4d were cancelled and excluded after launch evidence showed MainActivity. J‑f47fb920a3a5 had a coordinator worker crash before any measurement. Host /tmp pressure interrupted the initial build. Readd J‑4cf702d6af1b recovered Cast1. Cast2 was unavailable. Tablet hardware coverage remains unverified. Frozen Pixel orientation checks are reported separately above. The WASM canonical framebuffer check ran on the host; Android WASM supplies the WRAM verdict only.</p>
+<p>Regenerate: <code>python3 android/tools/repeat-report.py</code>. Use <code>--from-saved</code> to regenerate from the committed summaries and reviewed captures without private diagnostics. Full device logs, recordings and APKs remain private.</p>

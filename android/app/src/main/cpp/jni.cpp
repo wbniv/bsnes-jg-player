@@ -1,4 +1,5 @@
 #include <jni.h>
+#include "pixel-format.hpp"
 #include <android/asset_manager.h>
 #include <android/asset_manager_jni.h>
 #include <android/log.h>
@@ -75,5 +76,5 @@ static unsigned outputYOff(){return rawHeight>=232?8:0;}
 extern "C" JNIEXPORT jint JNICALL Java_org_bsnesjg_tv_NativeEngine_width(JNIEnv*,jclass){return rawWidth/outputStep();}
 extern "C" JNIEXPORT jint JNICALL Java_org_bsnesjg_tv_NativeEngine_height(JNIEnv*,jclass){return std::min<unsigned>(224,rawHeight-outputYOff());}
 extern "C" JNIEXPORT jint JNICALL Java_org_bsnesjg_tv_NativeEngine_pitch(JNIEnv*,jclass){return Java_org_bsnesjg_tv_NativeEngine_width(nullptr,nullptr);}
-extern "C" JNIEXPORT void JNICALL Java_org_bsnesjg_tv_NativeEngine_copyPixels(JNIEnv* env,jclass,jobject target){auto* dst=static_cast<uint8_t*>(env->GetDirectBufferAddress(target));if(!dst)return;const unsigned step=outputStep(),yoff=outputYOff(),ow=rawWidth/step,oh=std::min<unsigned>(224,rawHeight-yoff);for(unsigned y=0;y<oh;y++)for(unsigned x=0;x<ow;x++){uint32_t c=pixels[(y+yoff)*rawPitch+x*step];size_t i=(y*ow+x)*4;dst[i]=c&255;dst[i+1]=(c>>8)&255;dst[i+2]=(c>>16)&255;dst[i+3]=255;}}
+extern "C" JNIEXPORT void JNICALL Java_org_bsnesjg_tv_NativeEngine_copyPixels(JNIEnv* env,jclass,jobject target){auto* dst=static_cast<uint8_t*>(env->GetDirectBufferAddress(target));if(!dst)return;const unsigned step=outputStep(),yoff=outputYOff(),ow=rawWidth/step,oh=std::min<unsigned>(224,rawHeight-yoff);for(unsigned y=0;y<oh;y++)for(unsigned x=0;x<ow;x++){uint32_t c=pixels[(y+yoff)*rawPitch+x*step];size_t i=(y*ow+x)*4;bjgRgba(c, dst+i);}}
 extern "C" JNIEXPORT jint JNICALL Java_org_bsnesjg_tv_NativeEngine_wramWord(JNIEnv*,jclass,jint off){auto m=Bsnes::getMemoryRaw(Bsnes::Memory::MainRAM);if(!m.first||off<0||(unsigned)(off+1)>=m.second)return -1;auto*p=(uint8_t*)m.first;return p[off]|(p[off+1]<<8);}

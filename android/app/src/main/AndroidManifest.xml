@@ -31,6 +31,16 @@
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".MandelbrotPortraitBenchmarkActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MandelbrotLayoutBenchmarkActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="landscape" />
         <provider
             android:name=".ApkShareProvider"
             android:authorities="${applicationId}.apkshare"

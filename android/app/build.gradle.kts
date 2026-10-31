@@ -53,7 +53,8 @@ val stagePublishedAssets by tasks.registering(Sync::class) {
     dependsOn("verifyRomFixture", stagePublishedLibrary)
     into(publishedAssetsDir)
     from(tvProject.resolve("fixture/manifest.json")) { into("roms"); rename { "manifest.json" } }
-    from(publishedLibraryDir) { into("roms"); include("*.sfc", "library.json", "cards/**") }
+    from(publishedLibraryDir) { into("roms"); include("library.json", "cards/**") }
+    from(publishedLibraryDir.map { it.dir("roms") }) { into("roms"); include("*.sfc") }
 }
 val stageNativeAssets by tasks.registering(Sync::class) {
     dependsOn(stagePublishedAssets)

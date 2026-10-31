@@ -1,5 +1,7 @@
 # bsnes-jg Android: WASM vs native comparison
 
+**31 October follow-up:** [repeated Cast1 measurements, correctness fixes and hardware proof](../../2026-10-31/comparison.html). The historical report below is retained; its outstanding gates are superseded only where that follow-up has explicit evidence.
+
 **Status: preliminary; one matched Cast1 profile pair is now available.** The ARMv7 native crash was caused by libco restoring a Thumb-compiled coroutine entry point through an ARM `ldmia ... {pc}` switch. Compiling the native library in ARM state for `armeabi-v7a` fixes launch and playback on Cast1. The first native profile completed, but repeated pairs and the frame-5800 correctness gate are still outstanding. Pixel data remains exploratory because its WASM and native runs used different refresh modes and older APKs.
 
 The workload is the single bundled `mandel-display` ROM (SHA-256 `6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353`). The shared 152-ROM selector/catalog is present in both app variants but is not part of this workload. Core version is bsnes-jg 2.1.0; release builds use NDK 26.2.11394342 and CMake 3.22.1.

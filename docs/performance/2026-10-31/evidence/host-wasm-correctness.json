@@ -1,0 +1,14 @@
+{
+  "frame": 5800,
+  "wram": 8271,
+  "expected": 8271,
+  "differentPixels": 0,
+  "pixels": 57344,
+  "status": "pass",
+  "scope": "host execution of shipped WASM, not Android",
+  "wasmSha256": "e74dbd3d7160608dfb6e1ae2ed7ff263fafaa62b0444870530530e2e931ebeb3",
+  "glueSha256": "54e19fd849b823d87e278438fe7ec5ccaf8e526e966c8f4e007d29ccf78cdf4d",
+  "romSha256": "6c13c9042ca68be06f42650862ad7e116cc782e3a433ceaf9f760f090b430353",
+  "referenceSha256": "7acaa3825b82b7e61fe641ca950508d58e8aeb0cb2ff7849547d17eacaab4abe",
+  "node": "v22.22.1"
+}

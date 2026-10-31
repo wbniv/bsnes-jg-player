@@ -1,0 +1,117 @@
+{
+  "J-06b35cd9d2a6": [
+    {
+      "engine": "native",
+      "phase": "correctness",
+      "frame": 5800,
+      "offset": 1408,
+      "expected": 8271,
+      "actual": 8271,
+      "status": "pass"
+    },
+    {
+      "engine": "native",
+      "phase": "framebuffer",
+      "frame": 5800,
+      "differentPixels": 38718,
+      "pixels": 57344,
+      "status": "fail"
+    }
+  ],
+  "J-e9aa930505cd": [
+    {
+      "event": "reference_ready",
+      "t_ms": 126345,
+      "rom_run": 1,
+      "rom": "mandel-display",
+      "frame": 5800,
+      "value": "0x204F"
+    }
+  ],
+  "J-3a13ec5ce46a": [
+    {
+      "engine": "native",
+      "phase": "framebuffer",
+      "frame": 5800,
+      "differentPixels": 0,
+      "pixels": 57344,
+      "status": "pass"
+    },
+    {
+      "engine": "native",
+      "phase": "correctness",
+      "frame": 5800,
+      "offset": 1408,
+      "expected": 8271,
+      "actual": 8271,
+      "status": "pass"
+    }
+  ],
+  "J-a0180c2e2ecb": [
+    {
+      "engine": "native",
+      "phase": "framebuffer",
+      "frame": 5800,
+      "differentPixels": 0,
+      "pixels": 57344,
+      "status": "pass"
+    },
+    {
+      "engine": "native",
+      "phase": "correctness",
+      "frame": 5800,
+      "offset": 1408,
+      "expected": 8271,
+      "actual": 8271,
+      "status": "pass"
+    }
+  ],
+  "J-f6a11b900d90": [
+    {
+      "event": "reference_ready",
+      "t_ms": 156902,
+      "rom_run": 1,
+      "rom": "mandel-display",
+      "frame": 5800,
+      "value": "0x204F"
+    }
+  ],
+  "J-ccf4f03cf386": [
+    {
+      "engine": "native",
+      "phase": "framebuffer",
+      "frame": 5800,
+      "differentPixels": 0,
+      "pixels": 57344,
+      "status": "pass"
+    },
+    {
+      "engine": "native",
+      "phase": "correctness",
+      "frame": 5800,
+      "offset": 1408,
+      "expected": 8271,
+      "actual": 8271,
+      "status": "pass"
+    }
+  ],
+  "J-ae4268b0701b": [
+    {
+      "engine": "native",
+      "phase": "framebuffer",
+      "frame": 5800,
+      "differentPixels": 0,
+      "pixels": 57344,
+      "status": "pass"
+    },
+    {
+      "engine": "native",
+      "phase": "correctness",
+      "frame": 5800,
+      "offset": 1408,
+      "expected": 8271,
+      "actual": 8271,
+      "status": "pass"
+    }
+  ]
+}

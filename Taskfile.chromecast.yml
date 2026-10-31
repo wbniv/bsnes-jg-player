@@ -74,6 +74,12 @@ tasks:
       WF_CC_YES: '{{.YES | default ""}}'
     cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task devices"]
 
+  app:register:
+    desc: "Register a frozen APK and declared activity with the coordinator"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task app-register"]
+
   queue:
     desc: "Inspect shared Chromecast queue and reservations"
     silent: true
@@ -109,6 +115,12 @@ tasks:
     silent: true
     env: *chromecast_env
     cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task capture"]
+
+  keep-awake:
+    desc: "Keep an unlocked device awake during a bounded test preparation gap"
+    silent: true
+    env: *chromecast_env
+    cmds: ["python3 ../chromecast-coordinator/scripts/chromecast.py task keep-awake"]
 
   readd:
     desc: "Reconnect an enrolled device through the coordinator"

@@ -1,0 +1,606 @@
+[
+  {
+    "job": "J-039b0f772d6f",
+    "folder": "native-pair-1",
+    "device": "Cast1",
+    "engine": "Native",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {
+      "run": 1,
+      "frames": 459,
+      "interval_count": 459,
+      "fps": 3.827552927055373,
+      "refresh_ms": 16.683333,
+      "p50_ms": 266.933581,
+      "p90_ms": 266.933837,
+      "p95_ms": 283.61686,
+      "p99_ms": 283.617076,
+      "worst_ms": 283.617248,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 120.0,
+      "layer": "SurfaceView[org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity](BLAST)#8765",
+      "measurement_anchor_ns": 258293917393666,
+      "measurement_start_wall_time": 1793409656.22262,
+      "settling_reads": 2,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 119.919961591
+    },
+    "apk": [
+      {
+        "input": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "0749d8087a926af57d6c4b6bea7fd191ba10853ac3f78ca89fda326d595494f1",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "verified",
+        "start": 1793409486.2985563,
+        "journal_key": "install:1",
+        "installed_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "end": 1793409523.7947755
+      }
+    ],
+    "window_count": 246,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": 15.38,
+    "all_logged_windows_draw_fps_median": 3.85,
+    "all_logged_windows_core_mean_ms_median": 64.24549999999999
+  },
+  {
+    "job": "J-9aa21a23560f",
+    "folder": "wasm-pair-1",
+    "device": "Cast1",
+    "engine": "WASM",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {
+      "run": 1,
+      "frames": 54,
+      "interval_count": 54,
+      "fps": 0.4486774153067735,
+      "refresh_ms": 16.683333,
+      "p50_ms": 2068.736108,
+      "p90_ms": 2152.152909,
+      "p95_ms": 2218.886208,
+      "p99_ms": 2886.220639,
+      "worst_ms": 9843.179963,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 120.0,
+      "layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#8774",
+      "measurement_anchor_ns": 258845969637793,
+      "measurement_start_wall_time": 1793410208.496811,
+      "settling_reads": 9,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 120.353728888
+    },
+    "apk": [
+      {
+        "input": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1.apk",
+        "package": "org.bsnesjg.tv.phase2",
+        "before_sha256": "829e8f1d85453c688a4ffe890dd55d24ac152cfe693fd47a4addc7b2b568fd31",
+        "action": "install",
+        "reason": "other-user-only",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410056.4973986,
+        "source_users": [
+          10
+        ],
+        "journal_key": "install:1",
+        "installed_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "end": 1793410072.9640732
+      }
+    ],
+    "window_count": 55,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": 3.88,
+    "all_logged_windows_draw_fps_median": 0.97,
+    "all_logged_windows_core_mean_ms_median": 511.188
+  },
+  {
+    "job": "J-5e627ea361f2",
+    "folder": "native-pair-2",
+    "device": "Cast1",
+    "engine": "Native",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {
+      "run": 1,
+      "frames": 461,
+      "interval_count": 461,
+      "fps": 3.827722730332421,
+      "refresh_ms": 16.683333,
+      "p50_ms": 266.933588,
+      "p90_ms": 266.933836,
+      "p95_ms": 283.616916,
+      "p99_ms": 283.617126,
+      "worst_ms": 300.299997,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 120.0,
+      "layer": "SurfaceView[org.bsnesjg.tv.native.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity](BLAST)#8791",
+      "measurement_anchor_ns": 259116924019627,
+      "measurement_start_wall_time": 1793410479.302844,
+      "settling_reads": 2,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 120.437145655
+    },
+    "apk": [
+      {
+        "input": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "action": "reuse",
+        "reason": "exact-match",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410347.3827505,
+        "installed_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "end": 1793410347.4262948
+      }
+    ],
+    "window_count": 244,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": 15.395,
+    "all_logged_windows_draw_fps_median": 3.85,
+    "all_logged_windows_core_mean_ms_median": 64.176
+  },
+  {
+    "job": "J-f47fb920a3a5",
+    "folder": "wasm-crash",
+    "device": "Cast1",
+    "engine": "WASM",
+    "status": "uncertain",
+    "reason": "worker-crash",
+    "compositor": {},
+    "apk": [],
+    "window_count": 0,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": null,
+    "all_logged_windows_draw_fps_median": null,
+    "all_logged_windows_core_mean_ms_median": null
+  },
+  {
+    "job": "J-06b35cd9d2a6",
+    "folder": "pixel-native",
+    "device": "Pixel",
+    "engine": "Native",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "29b10ac157bd6ea33ccd0926a3e977b5da32c2a74a24e1413ad3d6bbcf705f16",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "verified",
+        "start": 1793409611.5605752,
+        "journal_key": "install:1",
+        "installed_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "end": 1793409623.4072244
+      }
+    ],
+    "window_count": 76,
+    "correctness": [
+      {
+        "engine": "native",
+        "phase": "correctness",
+        "frame": 5800,
+        "offset": 1408,
+        "expected": 8271,
+        "actual": 8271,
+        "status": "pass"
+      },
+      {
+        "engine": "native",
+        "phase": "framebuffer",
+        "frame": 5800,
+        "differentPixels": 38718,
+        "pixels": 57344,
+        "status": "fail"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 59.96,
+    "all_logged_windows_draw_fps_median": 119.91,
+    "all_logged_windows_core_mean_ms_median": 10.7605
+  },
+  {
+    "job": "J-e9aa930505cd",
+    "folder": "pixel-wasm",
+    "device": "Pixel",
+    "engine": "WASM",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1.apk",
+        "package": "org.bsnesjg.tv.phase2",
+        "before_sha256": null,
+        "action": "install",
+        "reason": "absent",
+        "variant": null,
+        "status": "verified",
+        "start": 1793409773.394601,
+        "journal_key": "install:1",
+        "installed_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "end": 1793409783.5531178
+      }
+    ],
+    "window_count": 83,
+    "correctness": [
+      {
+        "event": "reference_ready",
+        "t_ms": 126345,
+        "rom_run": 1,
+        "rom": "mandel-display",
+        "frame": 5800,
+        "value": "0x204F"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 46.15,
+    "all_logged_windows_draw_fps_median": 11.54,
+    "all_logged_windows_core_mean_ms_median": 23.213
+  },
+  {
+    "job": "J-68b3f9bdcde1",
+    "folder": "pixel-wasm-long",
+    "device": "Pixel",
+    "engine": "WASM",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1.apk",
+        "package": "org.bsnesjg.tv.phase2",
+        "before_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "action": "reuse",
+        "reason": "exact-match",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410246.0068781,
+        "installed_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "end": 1793410246.0825186
+      }
+    ],
+    "window_count": 154,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": 41.58,
+    "all_logged_windows_draw_fps_median": 10.395,
+    "all_logged_windows_core_mean_ms_median": 26.433999999999997
+  },
+  {
+    "job": "J-f679a2701ab6",
+    "folder": "wasm-pair-2-ok",
+    "device": "Cast1",
+    "engine": "WASM",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {
+      "run": 1,
+      "frames": 53,
+      "interval_count": 53,
+      "fps": 0.4443724850932047,
+      "refresh_ms": 16.683333,
+      "p50_ms": 2068.736229,
+      "p90_ms": 2185.519365,
+      "p95_ms": 2268.936277,
+      "p99_ms": 2869.537606,
+      "worst_ms": 10110.113471,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 120.0,
+      "layer": "org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#8801",
+      "measurement_anchor_ns": 259394885411097,
+      "measurement_start_wall_time": 1793410757.1123393,
+      "settling_reads": 10,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 119.26931072
+    },
+    "apk": [
+      {
+        "input": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1.apk",
+        "package": "org.bsnesjg.tv.phase2",
+        "before_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "action": "reuse",
+        "reason": "exact-match",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410621.455963,
+        "installed_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "end": 1793410621.4917665
+      }
+    ],
+    "window_count": 54,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": 3.9050000000000002,
+    "all_logged_windows_draw_fps_median": 0.975,
+    "all_logged_windows_core_mean_ms_median": 513.369
+  },
+  {
+    "job": "J-14ee404606a3",
+    "folder": "pixel-native-fixed",
+    "device": "Pixel",
+    "engine": "Native fixed",
+    "status": "failed",
+    "reason": "install-refused",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "442c1ddffd180bc6c5e165d570cbf7ece5caa7bb8dad6b17c7609972bb16715c.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "refused",
+        "start": 1793410679.2363613,
+        "journal_key": "install:1",
+        "installed_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "install_failure": "INSTALL_FAILED_UPDATE_INCOMPATIBLE",
+        "end": 1793410689.3594885
+      }
+    ],
+    "window_count": 0,
+    "correctness": [],
+    "all_logged_windows_emu_fps_median": null,
+    "all_logged_windows_draw_fps_median": null,
+    "all_logged_windows_core_mean_ms_median": null
+  },
+  {
+    "job": "J-3a13ec5ce46a",
+    "folder": "pixel-native-fixed-signed",
+    "device": "Pixel",
+    "engine": "Native fixed",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "fb4b8a7801767574232213d44eb54a001fbd5920f559bac3589fae8f27f68812.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410803.1656904,
+        "journal_key": "install:1",
+        "installed_sha256": "fb4b8a7801767574232213d44eb54a001fbd5920f559bac3589fae8f27f68812",
+        "end": 1793410813.382647
+      }
+    ],
+    "window_count": 69,
+    "correctness": [
+      {
+        "engine": "native",
+        "phase": "framebuffer",
+        "frame": 5800,
+        "differentPixels": 0,
+        "pixels": 57344,
+        "status": "pass"
+      },
+      {
+        "engine": "native",
+        "phase": "correctness",
+        "frame": 5800,
+        "offset": 1408,
+        "expected": 8271,
+        "actual": 8271,
+        "status": "pass"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 59.98,
+    "all_logged_windows_draw_fps_median": 119.9,
+    "all_logged_windows_core_mean_ms_median": 10.726
+  },
+  {
+    "job": "J-a0180c2e2ecb",
+    "folder": "cast-native-fixed",
+    "device": "Cast1",
+    "engine": "Native fixed",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "fb4b8a7801767574232213d44eb54a001fbd5920f559bac3589fae8f27f68812.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "c04666f5abe7f6865b4e2cfdd695cf47c238e06a78a50a4a8e7d27e73532f88c",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410892.4833274,
+        "journal_key": "install:1",
+        "installed_sha256": "fb4b8a7801767574232213d44eb54a001fbd5920f559bac3589fae8f27f68812",
+        "end": 1793410926.6834655
+      }
+    ],
+    "window_count": 216,
+    "correctness": [
+      {
+        "engine": "native",
+        "phase": "framebuffer",
+        "frame": 5800,
+        "differentPixels": 0,
+        "pixels": 57344,
+        "status": "pass"
+      },
+      {
+        "engine": "native",
+        "phase": "correctness",
+        "frame": 5800,
+        "offset": 1408,
+        "expected": 8271,
+        "actual": 8271,
+        "status": "pass"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 15.05,
+    "all_logged_windows_draw_fps_median": 3.76,
+    "all_logged_windows_core_mean_ms_median": 65.6675
+  },
+  {
+    "job": "J-f6a11b900d90",
+    "folder": "pixel-wasm-gate",
+    "device": "Pixel",
+    "engine": "WASM",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {
+      "run": 1,
+      "frames": 625,
+      "interval_count": 625,
+      "fps": 9.62984246188511,
+      "refresh_ms": 8.333333,
+      "p50_ms": 91.70695,
+      "p90_ms": 150.116048,
+      "p95_ms": 158.429891,
+      "p99_ms": 174.986369,
+      "worst_ms": 183.295776,
+      "missed_refresh_percent": 100.0,
+      "duration_seconds": 60.0,
+      "layer": "VRI-org.bsnesjg.tv.phase2/org.bsnesjg.tv.MandelbrotBenchmarkActivity#89633",
+      "measurement_anchor_ns": 651855372364428,
+      "measurement_start_wall_time": 1793411083.6144958,
+      "settling_reads": 3,
+      "sampling_holes": [],
+      "empty_sample_indices": [],
+      "latency_statistics_may_include_unobserved_bridges": false,
+      "observed_span_seconds": 64.902411693
+    },
+    "apk": [
+      {
+        "input": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1.apk",
+        "package": "org.bsnesjg.tv.phase2",
+        "before_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "action": "reuse",
+        "reason": "exact-match",
+        "variant": null,
+        "status": "verified",
+        "start": 1793410952.9411542,
+        "installed_sha256": "043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1",
+        "end": 1793410952.973799
+      }
+    ],
+    "window_count": 163,
+    "correctness": [
+      {
+        "event": "reference_ready",
+        "t_ms": 156902,
+        "rom_run": 1,
+        "rom": "mandel-display",
+        "frame": 5800,
+        "value": "0x204F"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 45.22,
+    "all_logged_windows_draw_fps_median": 11.3,
+    "all_logged_windows_core_mean_ms_median": 23.658
+  },
+  {
+    "job": "J-ccf4f03cf386",
+    "folder": "pixel-portrait",
+    "device": "Pixel portrait",
+    "engine": "Native fixed",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "fb4b8a7801767574232213d44eb54a001fbd5920f559bac3589fae8f27f68812",
+        "action": "install",
+        "reason": "different-hash",
+        "variant": null,
+        "status": "verified",
+        "start": 1793411228.8337328,
+        "journal_key": "install:1",
+        "installed_sha256": "a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e",
+        "end": 1793411240.0277658
+      }
+    ],
+    "window_count": 103,
+    "correctness": [
+      {
+        "engine": "native",
+        "phase": "framebuffer",
+        "frame": 5800,
+        "differentPixels": 0,
+        "pixels": 57344,
+        "status": "pass"
+      },
+      {
+        "engine": "native",
+        "phase": "correctness",
+        "frame": 5800,
+        "offset": 1408,
+        "expected": 8271,
+        "actual": 8271,
+        "status": "pass"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 59.85,
+    "all_logged_windows_draw_fps_median": 119.96,
+    "all_logged_windows_core_mean_ms_median": 10.534
+  },
+  {
+    "job": "J-ae4268b0701b",
+    "folder": "pixel-landscape-final",
+    "device": "Pixel landscape",
+    "engine": "Native fixed",
+    "status": "succeeded",
+    "reason": "completed",
+    "compositor": {},
+    "apk": [
+      {
+        "input": "a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e.apk",
+        "package": "org.bsnesjg.tv.native.phase2",
+        "before_sha256": "a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e",
+        "action": "reuse",
+        "reason": "exact-match",
+        "variant": null,
+        "status": "verified",
+        "start": 1793411931.0392554,
+        "installed_sha256": "a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e",
+        "end": 1793411931.0718768
+      }
+    ],
+    "window_count": 90,
+    "correctness": [
+      {
+        "engine": "native",
+        "phase": "framebuffer",
+        "frame": 5800,
+        "differentPixels": 0,
+        "pixels": 57344,
+        "status": "pass"
+      },
+      {
+        "engine": "native",
+        "phase": "correctness",
+        "frame": 5800,
+        "offset": 1408,
+        "expected": 8271,
+        "actual": 8271,
+        "status": "pass"
+      }
+    ],
+    "all_logged_windows_emu_fps_median": 59.775000000000006,
+    "all_logged_windows_draw_fps_median": 119.97,
+    "all_logged_windows_core_mean_ms_median": 10.5
+  }
+]

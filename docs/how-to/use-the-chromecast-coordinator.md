@@ -22,6 +22,7 @@ coordinator implementation.
 | `task chromecast:profile` | Capture a performance profile. |
 | `task chromecast:record` | Start an interactive recording session. |
 | `task chromecast:capture` | Capture the current screen. |
+| `task chromecast:keep-awake` | Hold an unlocked device awake during bounded preparation between tests. |
 | `task chromecast:readd` | Request a coordinator-managed reconnect. |
 | `task chromecast:watch` | Follow a job or batch. |
 | `task chromecast:evidence` | Download verified evidence for a job or batch. |
@@ -78,6 +79,20 @@ covers options such as `ASYNC=true`, profiling fields, recording recipes and
 output locations.
 
 ## Ownership and availability rules
+
+For phone test sequences, keep preparation gaps covered. While a test is running,
+queue `task chromecast:keep-awake DEVICE=phone-pixel-8-pro DURATION=600 ASYNC=true`
+to follow it if further preparation is needed. Watch that job. Once the next test
+is ready, submit it to the same device queue and cancel only your keep-awake job;
+wait for its cleanup and watch the next test. The test's own session handles wake
+pulses while it runs. Cancel any unused keep-awake job at the end of the sequence
+and retrieve its evidence. Do not leave the phone idle while building, analyzing,
+or changing the app registration between tests.
+
+Keep-awake occupies the device, respects reservations, and cannot unlock an
+already locked phone. Its 600-second maximum is a bound, not an indefinite lease;
+finish preparation or arrange the next owned job before it expires. Do not change
+the phone's persistent lock settings to work around a missed hand-off.
 
 - A job is the complete device session. Keep its launch, input, capture and
   cleanup inside the coordinator workflow; do not split ownership across raw

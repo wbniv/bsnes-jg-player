@@ -62,3 +62,34 @@ Then submit install and verification jobs by the `bsnes-jg-tv` app alias. Do not
 ## App icons
 
 `../docs/plans/assets/mandel-display-app-icon.png` is the approved square master. Regenerate the density-specific Google TV launcher icons and 16:9 banners, plus the browser/mobile favicon and home-screen sizes, with `python3 android/tools/generate-app-icons.py`. Android TV resources are wired through `@mipmap/ic_launcher` and `@mipmap/tv_banner`; web icons are linked from `web/index.html` and declared in `web/site.webmanifest`. This repository has no separate native phone APK; phone home-screen artwork is provided by the browser player.
+
+## Comparison and correctness checks
+
+The [31 October report](../docs/performance/2026-10-31/comparison.html) separates
+SurfaceFlinger presentation rates, app emulation rates, fixed-frame correctness,
+and actual hardware captures. Regenerate it from downloaded evidence with
+`python3 android/tools/repeat-report.py`.
+
+Run the packed-color regression check from the repository root:
+
+```sh
+c++ -std=c++11 -Wall -Wextra -Werror android/test/pixel-format.test.cpp -o /tmp/bjg-pixel-format-test
+/tmp/bjg-pixel-format-test
+node --test android/test/*.test.mjs
+```
+
+`node android/tools/check-wasm-frame.cjs <output-directory>` runs the shipped
+WASM core to frame 5800 on the host and saves packed RGB plus a WRAM/hash record.
+Compare that RGB against `android/fixture/reference-5800.png`; host execution is
+not Android hardware proof.
+
+Coordinator registrations can select `org.bsnesjg.tv.MandelbrotBenchmarkActivity`
+for continuous landscape profiling. For native layout proof, select
+`org.bsnesjg.tv.MandelbrotLayoutBenchmarkActivity` (landscape) or
+`org.bsnesjg.tv.MandelbrotPortraitBenchmarkActivity` (portrait). These two entries
+freeze at frame 5800 without opening a pause menu. Compare the downloaded screenshot
+using `python3 android/tools/check-layout-frame.py <evidence-directory>`.
+All launch the same frozen ROM and have no launcher icons. Use the frozen entries
+only for layout checks, and restore the ordinary MainActivity registration
+after all jobs finish. A signature mismatch must be resolved using the existing
+release key; ordinary testing should not uninstall the app or discard its data.
