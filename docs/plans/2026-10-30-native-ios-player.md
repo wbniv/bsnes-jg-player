@@ -1,6 +1,6 @@
 # Native iOS player integration
 
-**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` limits each manual M2 run to 15 minutes, leaving room for one corrective run within the reported budget. No simulator success is claimed until a run receipt is recorded.
+**Status:** Bootstrap implementation in progress (2026-10-31). The user reports **37 free Codemagic minutes remaining** and authorized starting iOS work. `ios/` now contains a CMake-generated Xcode app, a narrow single-instance native adapter, compiled ARM64 libco switch, Metal rendering, touch controls, lifecycle scheduling, and a simulator ROM self-check. `codemagic.yaml` limits each manual M2 run to 10 minutes; admission must leave a five-minute reserve after the full timeout, accounting for other account builds. No simulator success is claimed until a run receipt is recorded.
 
 ### Bootstrap scope adjustment
 
@@ -76,7 +76,7 @@ This is a design sketch, not a committed API. Choose concrete types after checki
 
 ## Codemagic build plan and expiring minutes
 
-No `codemagic.yaml` or Xcode project exists in the repo at this plan's writing. The user has authorized Codemagic use and reports 219 build minutes expiring at **00:00 UTC, 2026-10-31**. Do not spend that budget on speculative parallel pipelines.
+The initial plan had no `codemagic.yaml` or Xcode project; the bootstrap now generates the Xcode project with CMake. The latest user-reported allowance is **37 free build minutes**, with the UTC calendar month ending at **00:00 UTC, 2026-11-01**. Do not spend that shared allowance on speculative parallel pipelines. Stop near the limit and leave remaining cloud work for the next UTC month.
 
 1. Immediately confirm this GitHub repository is connected to the intended Codemagic app/team and that the remaining minutes are visible there. Confirm the account's macOS/Xcode machine availability and workflow trigger method.
 2. Add a minimal `codemagic.yaml` with one `ios-simulator` workflow. Pin a supported Xcode version explicitly. It should run the project build and unit tests for a named iPhone Simulator destination, without signing, then retain the `.xcresult` and build log as artifacts.
