@@ -16,6 +16,13 @@ Local investigation found a stale demo self-check address: the exact bundled SHA
 
 Budget instruction: use the necessary free minutes, check cumulative usage before each run, and stop near the allowance until the next **UTC calendar month**. October ends at 2026-11-01 00:00 UTC (07:00 Bangkok), not 2026-10-31 00:00 UTC. Account-wide runs by other sessions share the same allowance.
 
+### Build evidence (2026-10-31)
+
+- Local host smoke test: **PASS**, 500 frames, `0xB200` at `0x13EA`, nonblack 512×240 native framebuffer. See [local self-check record](../proof/ios-bootstrap-2026-10-31/local-selfcheck.json).
+- Codemagic app: `6ae5356ef8ef89f5624cab78`. First [build `6ae53800f8ef89f5624cadad`](https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae53800f8ef89f5624cadad) ran from 00:36:21 to 00:37:14 UTC: **53.41 seconds**. Core, ARM64 assembly, and Objective-C++ compiled with Xcode 16.4; linking failed on `_CGRectZero`. Simulator checks did not execute.
+- Fix committed and pushed: explicitly link CoreGraphics (plus Foundation). First-run `.xcresult` and logs are downloaded under `ios/artifacts/6ae53800f8ef89f5624cadad/` (ignored generated evidence).
+- A second launch attempt was refused locally because another WorldFoundry build was active; **no second player job was created**. Recheck the actual dashboard quota and shared active builds before retrying. The API's elapsed-build estimate is not the dashboard's free-minute counter. Do not shorten the 15-minute timeout to squeeze in a retry; wait for the next UTC month if necessary.
+
 ## Goal
 
 Add an iPhone-first, native iOS example host for the same compact Raycaster Maze ROM used by the standalone Android Native player. Reuse the vendored bsnes-jg C++ core and keep the browser integration on WebAssembly. This demonstrates a third host integration without turning the full torture-test suite into an iOS app or making the browser package depend on Apple frameworks.

@@ -1,0 +1,17 @@
+{
+  "platform": "Linux x86_64 (not iOS proof)",
+  "rom_sha256": "b5085b575247e8d5c71a35f48f49e4cdead9ba32dd2bcbcd7cbb4d0955f4e109",
+  "core_archive_sha256": "a8e0fd36711406198afe1110ddc6960c9d795f4ab73d0badd8878396ac3d0c42",
+  "frames": 500,
+  "offset": "0x13EA",
+  "expected": "0xB200",
+  "observed": "0xB200",
+  "pass": true,
+  "native_video_width": 512,
+  "native_video_height": 240,
+  "nonblack": true,
+  "independent_reference": "llvm-mos-65816/build/jgxcheck",
+  "reference_result": "SMOKE: PASS off=0x13EA len=2 got=0xB200 (ran 500 frames, bsnes-jg)",
+  "old_offset": "0x1362",
+  "old_offset_observed": "0xB3AF"
+}
