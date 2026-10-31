@@ -31,6 +31,7 @@ rows on commit.*
 | [Rename the project to `bsnes-jg-player`](2026-10-31-bsnes-jg-player-rename.md) | Align the GitHub repository, local checkout, and public product URL around the reusable player, while retaining redirects and the established APK delivery path. | In progress | Platform |
 | [Repeatable releases, signing, retention and sharing proof](2026-10-31-repeatable-release-tooling.md) | Prepare and verify signed release candidates, publish with resumable current/previous retention, scope credentials and validate device QR/sharing flows with inline evidence. | Implemented locally; credentials/publication and device proof pending | Infra |
 | [Pixel phone performance: can the player claim mobile?](2026-10-31-pixel-phone-perf.md) | Measure emulation pacing of the WASM and native Android engines on the Pixel 8 Pro with the `playback_window` metric and record whether mobile can be claimed. | Interim: WASM 45 FPS, native 60 FPS; fresh WASM and native-baseline runs blocked on coordinator registration | Investigation |
+| [Asyncify trim: does an instrumentation list make the WASM core faster or smaller?](2026-10-31-asyncify-trim.md) | Relink the core with `ASYNCIFY_ADVISE`/`ADD`/`REMOVE` lists, profile the swap-reachable stack set, and bench every build paired in headless Chromium with checkpoint and Firefox fidelity gates. | Done: no meaningful gain (−7% raw wasm, ≤3% frame time); nothing landed | Investigation |
 
 ---
 
@@ -39,4 +40,4 @@ rows on commit.*
 - **Order** = each plan's *creation* commit (oldest commit that touched the file), by committer date.
 - **Commit(s)** = the full `git log --follow` set per plan, oldest → newest.
 - **Summaries / categories** auto-generated from each plan's TL;DR (Sonnet, medium effort) — refine as needed.
-- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s).
+- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s); asyncify-trim row added by hand 2026-10-31.

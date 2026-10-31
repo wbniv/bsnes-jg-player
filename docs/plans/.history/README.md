@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/40e06ae) | Index the Pixel phone performance plan |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/95b76ad) | Implement verified release candidates and resumable APK publication |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
@@ -11,6 +12,11 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+40e06ae	author	Will Norris
+40e06ae	added	1
+40e06ae	deleted	0
+40e06ae	files	1
+40e06ae	body	Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 95b76ad	author	Will Norris
 95b76ad	added	1
 95b76ad	deleted	0
