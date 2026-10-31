@@ -282,10 +282,10 @@ def prepare(args):
     target = ROOT/'.private/release/candidates'/name
     target.parent.mkdir(parents=True,exist_ok=True)
     require(not target.exists(), 'Candidate directory already exists; inspect/resume it instead')
-    # Build before freezing; generated dist is subsequently captured with exact hashes.
+    # Android retains its validated fixture; browser packaging uses an isolated tree.
     env = dict(os.environ, EMSDK_VERSION='6.0.4', ORG_GRADLE_PROJECT_releaseVersionName=name,
                ORG_GRADLE_PROJECT_releaseVersionCode=str(code), ORG_GRADLE_PROJECT_publicDownloadUrl=LANDING)
-    for command in [['./android/tools/release-signing-secrets.sh','build'],['./build.sh'],['bash','scripts/stage-dist.sh'],['python3','scripts/release/fidelity.py'],['npm','test']]:
+    for command in [['./android/tools/release-signing-secrets.sh','build'],['./build.sh']]:
         subprocess.run(command,cwd=ROOT,env=env,check=True)
     require(run(['git','rev-parse','HEAD'],cwd=ROOT) == revision, 'Source revision changed while building')
     require(all((ROOT/p).is_file() and sha((ROOT/p).read_bytes()) == digest for p,digest in inputs.items()), 'Tracked source inputs changed during build')
@@ -299,7 +299,21 @@ def prepare(args):
             shutil.copyfile(ROOT/f'android/app/build/outputs/apk/{flavor}/release/app-{flavor}-release.apk',file)
             artifacts.append(inspect_apk(file,kind,name,code,demo,catalog.read_bytes()))
         webname='bsnes-jg-player-web-'+name+'.tgz'
-        pack=json.loads(run(['npm','pack','--json','--pack-destination',folder],cwd=ROOT))[0]
+        with tempfile.TemporaryDirectory(dir=ROOT/'.private/release') as package_tmp:
+            package=Path(package_tmp)
+            for name_ in ['package.json','LICENSE','NOTICE','README.md','demo-rom.json']:
+                shutil.copyfile(ROOT/name_,package/name_)
+            for name_ in ['astro','embed','bin']:
+                shutil.copytree(ROOT/name_,package/name_)
+            (package/'scripts').mkdir()
+            shutil.copyfile(ROOT/'scripts/stage-dist.sh',package/'scripts/stage-dist.sh')
+            (package/'web').symlink_to(ROOT/'web',target_is_directory=True)
+            subprocess.run(['bash',str(package/'scripts/stage-dist.sh')],check=True,env=env)
+            subprocess.run(['python3',str(ROOT/'scripts/release/fidelity.py'),str(package/'dist')],check=True)
+            smoke=package/'smoke'
+            subprocess.run(['node',str(package/'bin/sync.mjs'),'sync',str(smoke),'--demo'],check=True)
+            subprocess.run(['node',str(package/'bin/sync.mjs'),'sync','--check',str(smoke)],check=True)
+            pack=json.loads(run(['npm','pack','--json','--pack-destination',folder],cwd=package))[0]
         (folder/pack['filename']).rename(folder/webname)
         record={'versionName':name,'versionCode':code,'publishedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),
                 'sourceRepository':'https://github.com/wbniv/bsnes-jg-player','sourceRevision':revision,'sourceWorktreeDirty':False,

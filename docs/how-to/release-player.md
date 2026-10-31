@@ -20,7 +20,7 @@ task web:release:prepare VERSION=0.1.10 VERSION_CODE=11
 task web:release:preview CANDIDATE="$PWD/.private/release/candidates/0.1.10"
 ```
 
-Preparation builds both signed Native APKs against their retained validated fixture, rebuilds the web core with Emscripten 6.0.4, stages the npm payload, checks browser WRAM fidelity and package sync, verifies certificate/package/version/ABI/ROM assets and freezes the candidate in `.private/release/candidates/`. The manifest records exact hashes, catalog hash and source inputs. Generated `dist/` changes may appear after preparation; review them separately rather than editing the frozen candidate. Do not modify candidate files to retry a failed gate.
+Preparation builds both signed Native APKs against their retained validated fixture, rebuilds the web core with Emscripten 6.0.4, stages the npm payload in an isolated temporary package tree, checks browser WRAM fidelity and package sync, verifies certificate/package/version/ABI/ROM assets and freezes the candidate in `.private/release/candidates/`. The manifest records exact hashes, catalog hash and source inputs. The committed `dist/` fixture is left intact; only the candidate contains the freshly staged browser payload. Do not modify candidate files to retry a failed gate.
 
 ## Publication and recovery
 
