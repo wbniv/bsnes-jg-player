@@ -40,7 +40,7 @@ set_source_files_properties(${RESOURCES} PROPERTIES MACOSX_PACKAGE_LOCATION Reso
 add_executable(BsnesPlayer MACOSX_BUNDLE Player.mm ${RESOURCES} ${DATABASE})
 target_include_directories(BsnesPlayer PRIVATE generated)
 target_compile_options(BsnesPlayer PRIVATE -fobjc-arc)
-target_link_libraries(BsnesPlayer PRIVATE core "-framework UIKit" "-framework MetalKit" "-framework Metal" "-framework QuartzCore")
+target_link_libraries(BsnesPlayer PRIVATE core "-framework Foundation" "-framework UIKit" "-framework CoreGraphics" "-framework MetalKit" "-framework Metal" "-framework QuartzCore")
 set_target_properties(BsnesPlayer PROPERTIES
   MACOSX_BUNDLE_INFO_PLIST "${CMAKE_CURRENT_SOURCE_DIR}/Info.plist"
   XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER org.bsnesjg.player.ios
