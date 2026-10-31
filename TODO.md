@@ -41,6 +41,10 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 - [T3] **Device coverage:** Will selected Cast1 and/or Pixel instead of unavailable Cast2/tablet (2026-10-31). Follow-up Pixel portrait and landscape checks PASS with zero differing pixels. Cast1 checkpoint job `J‑980895a9d7bc` also PASS: frame 5800 at 379.561 seconds, zero differing pixels, exact 4:3 geometry and no GL error. Substitute layout/correctness coverage is complete; sustained emulation pacing remains below target. See [inline proof](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md#follow-up-coverage-requested-by-will-2026-10-31). Chooser, palette and pause menu are user-validated. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`; no physical tablet is enrolled. Those devices remain untested, but are not blockers for the requested substitute coverage. iPad simulator coverage already passes.
 
+### Release automation — [plan](docs/plans/2026-10-31-repeatable-release-tooling.md)
+
+- [T3] Tooling and full local candidate preparation PASS (0.1.10/code 11); 20 failure/gate tests, signed APK inspection, signing recovery, browser fidelity and local consumer-page checks pass. Remaining: scoped R2 credentials (existing admin token HTTP 403), live publication/retention tests, consumer deployments and real QR/recipient transfer proof. Cast1 player install is signature-incompatible; Pixel test was cancelled before grant due to another session reservation. No public release was made.
+
 ### Later (separate)
 
 - [T3] **Physical iOS validation:** SwiftUI, native audio and GameController support are implemented. Six iPhone/iPad simulator UI tests, ROM/offline-audio checks and unsigned iPhone SDK compilation pass. Remaining: Apple signing identities and access to an iPhone, then install, audible audio/route/interruption checks, hardware-controller checks and sustained device pacing. [Plan and inline proof](docs/plans/2026-10-30-native-ios-player.md).

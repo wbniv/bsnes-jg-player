@@ -20,5 +20,26 @@
     ],
     "result": "INSTALL_FAILED_UPDATE_INCOMPATIBLE; no uninstall performed"
   },
-  "published": false
+  "published": false,
+  "candidatePreparation": {
+    "status": "pass",
+    "sourceRevision": "31d196c6d43206d52ca94cea76479bfe690bf350",
+    "androidVersion": "0.1.10",
+    "versionCode": 11,
+    "browserPackageVersion": "1.1.0",
+    "browserRomFiles": [
+      "package/dist/demo/roms/raycaster.sfc"
+    ],
+    "committedDistUnchanged": true
+  },
+  "indriWorker": "PASS: Wrangler dry-run compilation and compiled proxy success/503/405 checks",
+  "consumerCommits": {
+    "indri": "0380d0c",
+    "wald3n": "32ee637",
+    "deployed": false
+  },
+  "pixelInstall": {
+    "job": "J-db7761e828d7",
+    "result": "cancelled before grant; another test session reserves Pixel until 06:14:40 UTC"
+  }
 }

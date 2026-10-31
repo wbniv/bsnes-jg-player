@@ -1,6 +1,6 @@
 # Repeatable releases, signing, retention and sharing proof
 
-**Status (2026-10-31):** Implementation and local validation in progress. Release scripts, task interface, signing/payload gates, resumable publication, retention tests, TV public-QR access and consumer-page source changes are implemented. Public publication, credential provisioning and device transfer proof remain blocked/pending as recorded below.
+**Status (2026-10-31):** Local implementation and full candidate preparation PASS. Release scripts, task interface, signing/payload gates, resumable publication, retention tests, TV public-QR access and consumer-page source changes are implemented. Public publication, credential provisioning and device transfer proof remain blocked/pending as recorded below.
 
 **Outcome:** One reviewable release candidate containing the browser player and two signed Native Android examples; an explicit publication command that verifies public downloads before changing the release pointer; exactly current and previous releases after successful cleanup; verified phone and TV sharing flows.
 
@@ -97,7 +97,7 @@ Cast1 plus Pixel covers TV and cross-network recipient testing. Quick Share requ
 
 Save compact, sanitized evidence under `docs/proof/release-tooling/<candidate>/`. Keep private diagnostics outside committed proof. Embed the actual screenshots **in this plan and its HTML view next to each result**, with device, date, job ID and pass/fail caption. Screenshots prove visible behavior; signatures, download hashes and cleanup receipts prove artifact integrity and publication behavior. Mockups are not validation evidence.
 
-**Evidence status:** pending implementation. No new release/sharing screenshots are available yet; do not reuse renderer screenshots as proof of these flows.
+**Evidence status:** local download-page screenshots and candidate receipts are recorded below. Physical sharing/QR transfer screenshots remain pending; renderer screenshots are not evidence of these flows.
 
 ## Delivery order and completion criteria
 
@@ -139,3 +139,14 @@ The built Indri component renders current/previous and both APK variants from th
 The credential cache is protected JSON under `.private/`, read directly by the publisher instead of shell-sourced dotenv. Publication confirmation is handled after the Python command has printed the concrete destination/prune preview; ordinary Task builds remain non-publishing. Existing bucket/domain infrastructure is checked, not recreated automatically. The known Cloudflare token lacks the administration scope to provision the new publisher credentials.
 
 The single-writer lock uses an atomic R2 `If-None-Match` creation; pointer publication also uses `If-Match`. Crashed locks require explicit owner verification and token-based recovery. See [R2 conditional-write documentation](https://developers.cloudflare.com/r2/api/s3/api/) and [R2 credential scopes](https://developers.cloudflare.com/r2/api/tokens/), consulted 31 October 2026. Live storage-backed failure tests remain an acceptance gate before the first automated publication.
+
+
+### Full candidate preparation: PASS
+
+`task web:release:prepare VERSION=0.1.10 VERSION_CODE=11` completed from source commit `31d196c`. The verified candidate is in `.private/release/candidates/0.1.10/`: two release-signed Native APKs plus the browser package (npm version remains 1.1.0). The browser archive contains only the configured Raycaster Maze sample ROM. [Candidate metadata and exact hashes](../proof/release-tooling/2026-10-31/candidate-0.1.10.json). This is a candidate receipt, not a publication receipt; the public current/previous pointer has not been changed.
+
+Preparation exposed and fixed a build-order coupling: Android checks the retained WASM fixture even for Native builds. It now validates/builds Android first, then rebuilds browser WASM with Emscripten 6.0.4 and packages it in an isolated temporary tree. The committed `dist/` fixture stays unchanged. Browser WRAM fidelity and package sync checks run on the newly staged payload.
+
+Indri source commit `0380d0c` includes the dynamic current/previous listing and Worker proxy; wald3n commit `32ee637` adds the source/product entry. Both are local commits, not deployments. Wrangler dry-run compilation and the compiled proxy's success, upstream-failure and method-restriction checks pass.
+
+Pixel job `J‑db7761e828d7` was cancelled before grant because another test session reserved the device until 06:14:40 UTC. No install or device mutation occurred in that job. Cast1 signing incompatibility, missing scoped R2 credentials, live storage-backed publication tests, site deployments and physical recipient/Quick Share evidence remain open.

@@ -1,0 +1,57 @@
+{
+  "artifacts": [
+    {
+      "bytes": 26814603,
+      "certificateSha256": "1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e",
+      "engine": "native",
+      "filename": "bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.10.apk",
+      "name": "Native library",
+      "packageId": "org.bsnesjg.tv.native.phase2",
+      "sha256": "8811ca0478c4444a1f6e76d8faa1f873016a53380fbe4fc3625abd1861b2875f",
+      "type": "library",
+      "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.10/bsnes-jg_llvm-65816-torture-test-suite-on-snes-v0.1.10.apk"
+    },
+    {
+      "bytes": 7156367,
+      "certificateSha256": "1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e",
+      "engine": "native",
+      "filename": "bsnes-jg_raycaster-maze-v0.1.10.apk",
+      "name": "Native player",
+      "packageId": "org.bsnesjg.tv.native",
+      "sha256": "795e3d46e8b3b9950ed3ad3583ee4e2f3238f91abfd2749393491eb58acc3a73",
+      "type": "player",
+      "url": "https://downloads.biohack.net/bsnes-jg/releases/0.1.10/bsnes-jg_raycaster-maze-v0.1.10.apk"
+    }
+  ],
+  "certificateSha256": "1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e",
+  "demoRom": {
+    "apkSlug": "raycaster-maze",
+    "selfcheck": {
+      "frames": 500,
+      "offset": "0x13EA",
+      "want": "0xB200"
+    },
+    "sha256": "b5085b575247e8d5c71a35f48f49e4cdead9ba32dd2bcbcd7cbb4d0955f4e109",
+    "slug": "raycaster",
+    "title": "Raycaster Maze"
+  },
+  "libraryInventorySha256": "58d0336a7eff6ff40b685af29cad441ee7da156b9b7ef22f2c43381f9393bf8b",
+  "publicDownloadUrl": "https://downloads.biohack.net/bsnes-jg/",
+  "publishedAt": "2026-10-31T05:45:40.127992+00:00",
+  "romCount": 152,
+  "sourceInputsSha256": "a513298ea0cf4d8a63272832174765dc6040737ec83acc44489280fe8d8b80c0",
+  "sourceRepository": "https://github.com/wbniv/bsnes-jg-player",
+  "sourceRevision": "31d196c6d43206d52ca94cea76479bfe690bf350",
+  "sourceWorktreeDirty": false,
+  "tools": {
+    "java": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-26.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-26.04.4-Ubuntu, mixed mode, sharing)",
+    "node": "v22.22.1"
+  },
+  "versionCode": 11,
+  "versionName": "0.1.10",
+  "web": {
+    "filename": "bsnes-jg-player-web-0.1.10.tgz",
+    "packageVersion": "1.1.0",
+    "sha256": "f0bbd5421b614e6dd613ae2bd5648912c8cd165fd2b2c2a11f5f6f5665fe6dd1"
+  }
+}
