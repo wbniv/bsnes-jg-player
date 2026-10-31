@@ -12,8 +12,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 - [T3] Optional: trim Asyncify cost (size/speed) with an `ASYNCIFY_ONLY`/`ADD` list once the core's
   swap-reachable call set is profiled — only if mobile perf needs it.
-- [T2] Wire self-checks for the other demos (zoom/mode7/interactive) — needs their scripted-input
-  gates (see `dev/mandel-interactive.sh`), not just a boot-time WRAM read.
 
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
