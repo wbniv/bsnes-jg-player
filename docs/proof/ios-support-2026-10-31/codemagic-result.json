@@ -1,0 +1,48 @@
+{
+  "_id": "6ae548645de5c45c009590e2",
+  "status": "finished",
+  "startedAt": "2026-10-31T01:46:17.906000+00:00",
+  "finishedAt": "2026-10-31T01:54:47.223000+00:00",
+  "commit": "2073308d97fdb998630ca7b198c6c22c5141876d",
+  "url": "https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae548645de5c45c009590e2",
+  "steps": [
+    {
+      "name": "Preparing build machine",
+      "status": "success"
+    },
+    {
+      "name": "Fetching app sources",
+      "status": "success"
+    },
+    {
+      "name": "Verify pinned core and demo ROM",
+      "status": "success"
+    },
+    {
+      "name": "Build ARM64 iOS Simulator app",
+      "status": "success"
+    },
+    {
+      "name": "Validate ROM, audio, touch, lifecycle, iPhone and iPad layouts",
+      "status": "success"
+    },
+    {
+      "name": "Compile physical iPhone target without signing",
+      "status": "success"
+    },
+    {
+      "name": "Publishing",
+      "status": "success"
+    },
+    {
+      "name": "Cleaning up",
+      "status": "success"
+    }
+  ],
+  "budget": {
+    "checked_at": "2026-10-31T01:56:59.161290+00:00",
+    "builds_inspected": 56,
+    "estimated_mac_minutes": 417.21,
+    "active": []
+  }
+}

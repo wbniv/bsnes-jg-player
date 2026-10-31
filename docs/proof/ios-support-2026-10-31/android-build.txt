@@ -1,0 +1,11 @@
+Command: GRADLE_USER_HOME="$PWD/.tmp/android-gradle" task android:build
+Workspace includes concurrent Android pixel-format and published-assets fixes.
+Verified WasmDebug APK: /workspace/android/app/build/outputs/apk/wasm/debug/app-wasm-debug.apk (30474040 bytes)
+Verified WasmplayerDebug APK: /workspace/android/app/build/outputs/apk/wasmplayer/debug/app-wasmplayer-debug.apk (30482265 bytes)
+Verified NativeDebug APK: /workspace/android/app/build/outputs/apk/native/debug/app-native-debug.apk (29274178 bytes)
+Verified WasmRelease APK: /workspace/android/app/build/outputs/apk/wasm/release/app-wasm-release.apk (28000282 bytes)
+Verified NativeRelease APK: /workspace/android/app/build/outputs/apk/native/release/app-native-release.apk (26814539 bytes)
+Verified WasmplayerRelease APK: /workspace/android/app/build/outputs/apk/wasmplayer/release/app-wasmplayer-release.apk (27998618 bytes)
+Verified NativeplayerRelease APK: /workspace/android/app/build/outputs/apk/nativeplayer/release/app-nativeplayer-release.apk (7156299 bytes)
+BUILD SUCCESSFUL in 3m 18s
+324 actionable tasks: 172 executed, 45 from cache, 107 up-to-date

@@ -1,0 +1,10 @@
+{
+  "dataPath": "/Users/builder/Library/Developer/CoreSimulator/Devices/6799AEA1-F0BF-4891-B84C-2C07E869B64A/data",
+  "dataPathSize": 18337792,
+  "logPath": "/Users/builder/Library/Logs/CoreSimulator/6799AEA1-F0BF-4891-B84C-2C07E869B64A",
+  "udid": "6799AEA1-F0BF-4891-B84C-2C07E869B64A",
+  "isAvailable": true,
+  "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-M4-8GB",
+  "state": "Shutdown",
+  "name": "iPad Pro 11-inch (M4)"
+}

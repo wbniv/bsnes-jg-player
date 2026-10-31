@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "6ae543d0c810789832982671",
+    "status": "failed",
+    "startedAt": "2026-10-31T01:26:45.983000+00:00",
+    "finishedAt": "2026-10-31T01:30:55.491000+00:00",
+    "commit": "48a89af35a910d41c973e762d136e23dafea299f",
+    "message": "Step 4 script `Validate ROM, audio, touch, lifecycle, iPhone and iPad layouts` exited with status code 1"
+  },
+  {
+    "_id": "6ae54572ecf46353a2555908",
+    "status": "failed",
+    "startedAt": "2026-10-31T01:33:44.925000+00:00",
+    "finishedAt": "2026-10-31T01:37:01.160000+00:00",
+    "commit": "a642cfc9212c73f2f25228b455db84bc3b091065",
+    "message": "Step 4 script `Validate ROM, audio, touch, lifecycle, iPhone and iPad layouts` exited with status code 1"
+  }
+]

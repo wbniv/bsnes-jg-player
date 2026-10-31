@@ -1,0 +1,10 @@
+{
+  "dataPath": "/Users/builder/Library/Developer/CoreSimulator/Devices/0AC9444F-3A74-40DC-A41C-A6B973A31ABB/data",
+  "dataPathSize": 18337792,
+  "logPath": "/Users/builder/Library/Logs/CoreSimulator/0AC9444F-3A74-40DC-A41C-A6B973A31ABB",
+  "udid": "0AC9444F-3A74-40DC-A41C-A6B973A31ABB",
+  "isAvailable": true,
+  "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-16",
+  "state": "Shutdown",
+  "name": "iPhone 16"
+}

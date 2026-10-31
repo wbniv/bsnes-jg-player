@@ -1,0 +1,16 @@
+{
+  "nonblack": true,
+  "audio": {
+    "pass": true,
+    "frames": 1024,
+    "energy": 32.254737192905964,
+    "channels": 2,
+    "mode": "AVAudioEngine offline render (not speaker proof)",
+    "stereoError": 0,
+    "sampleRate": 48000
+  },
+  "expected": 45568,
+  "pass": true,
+  "wram": 45568,
+  "frames": 500
+}

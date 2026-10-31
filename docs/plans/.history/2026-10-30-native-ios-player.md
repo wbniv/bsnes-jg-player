@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/0f9be40) | Record passing native iOS simulator build and fidelity proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/f0af1b0) | Capture simulator failures and record confirmed free-minute balance |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/edd12e5) | Record initial iOS build evidence and pending simulator retry |
@@ -10,6 +11,10 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 
 <!--history-meta v1
+83c5456	author	Will Norris
+83c5456	added	6
+83c5456	deleted	6
+83c5456	files	1
 0f9be40	author	Will Norris
 0f9be40	added	5
 0f9be40	deleted	1

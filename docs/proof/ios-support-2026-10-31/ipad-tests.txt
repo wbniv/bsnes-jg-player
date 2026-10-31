@@ -1,0 +1,10 @@
+Test Case '-[PlayerUITests.PlayerUITests testPauseBackgroundResumeAndAudio]' started.
+Test Case '-[PlayerUITests.PlayerUITests testPauseBackgroundResumeAndAudio]' passed (45.780 seconds).
+Test Case '-[PlayerUITests.PlayerUITests testPortraitLandscapeAndHelp]' started.
+Test Case '-[PlayerUITests.PlayerUITests testPortraitLandscapeAndHelp]' passed (31.257 seconds).
+Test Case '-[PlayerUITests.PlayerUITests testTouchButtonsAndRelease]' started.
+Test Case '-[PlayerUITests.PlayerUITests testTouchButtonsAndRelease]' passed (60.395 seconds).
+	 Executed 3 tests, with 0 failures (0 unexpected) in 137.433 (137.435) seconds
+	 Executed 3 tests, with 0 failures (0 unexpected) in 137.433 (137.436) seconds
+	 Executed 3 tests, with 0 failures (0 unexpected) in 137.433 (137.437) seconds
+** TEST SUCCEEDED **
