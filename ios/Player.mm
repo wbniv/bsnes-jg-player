@@ -238,7 +238,9 @@ static bool loadDemo() {
     unsigned w = PlayerCore::width(), h = PlayerCore::height();
     if (!w || !h) return;
     if (!_texture || _texture.width != w || _texture.height != h) {
-        MTLTextureDescriptor* d = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatRGBA8Unorm width:w height:h mipmapped:NO];
+        // Core pixels are 0x00RRGGBB: little-endian ARM64 memory is B,G,R,0.
+        // The fragment shader supplies opaque alpha independently.
+        MTLTextureDescriptor* d = [MTLTextureDescriptor texture2DDescriptorWithPixelFormat:MTLPixelFormatBGRA8Unorm width:w height:h mipmapped:NO];
         d.usage = MTLTextureUsageShaderRead;
         _texture = [view.device newTextureWithDescriptor:d];
     }
