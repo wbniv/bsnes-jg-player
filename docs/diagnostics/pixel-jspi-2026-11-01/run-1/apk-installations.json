@@ -1,0 +1,15 @@
+[
+  {
+    "input": "4d3da94e703fbbe115f9d11395081866edf030f736eee053823463da200db931.apk",
+    "package": "org.bsnesjg.tv.phase2.jspi",
+    "before_sha256": null,
+    "action": "install",
+    "reason": "forced-reinstall",
+    "variant": null,
+    "status": "verified",
+    "start": 1793508463.923989,
+    "journal_key": "install:1",
+    "installed_sha256": "4d3da94e703fbbe115f9d11395081866edf030f736eee053823463da200db931",
+    "end": 1793508470.7479608
+  }
+]

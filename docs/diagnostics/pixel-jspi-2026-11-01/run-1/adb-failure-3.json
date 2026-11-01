@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "pm path org.bsnesjg.tv.phase2.jspi"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": ""
+}

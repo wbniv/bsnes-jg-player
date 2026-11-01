@@ -1,0 +1,79 @@
+--------- beginning of main
+11-01 11:47:52.116 30030 30030 I libprocessgroup: Created cgroup /sys/fs/cgroup/apps/uid_10527
+11-01 11:47:52.116 30030 30030 I libprocessgroup: Created cgroup /sys/fs/cgroup/apps/uid_10527/pid_30030
+11-01 11:47:52.121 30030 30030 I Zygote  : Process 30030 created for org.bsnesjg.tv.phase2.jspi
+11-01 11:47:52.121 30030 30030 I .tv.phase2.jspi: Using generational CollectorTypeCMC GC.
+11-01 11:47:52.129 30030 30030 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+11-01 11:47:52.136 30030 30030 D CompatChangeReporter: Compat change id reported: 242716250; UID 10527; state: ENABLED
+11-01 11:47:52.142 30030 30030 D nativeloader: Configuring clns-9 for other apk /data/app/~~FlnFbcNxjEwzIhbNdWsfIw==/org.bsnesjg.tv.phase2.jspi-W4U4OdodG0zdXO9Y7ZxryA==/base.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~FlnFbcNxjEwzIhbNdWsfIw==/org.bsnesjg.tv.phase2.jspi-W4U4OdodG0zdXO9Y7ZxryA==/lib/arm64:/data/app/~~FlnFbcNxjEwzIhbNdWsfIw==/org.bsnesjg.tv.phase2.jspi-W4U4OdodG0zdXO9Y7ZxryA==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/org.bsnesjg.tv.phase2.jspi
+--------- beginning of system
+11-01 11:47:52.146 30030 30030 D ActivityThread: Set OS env TMPDIR to /data/user/0/org.bsnesjg.tv.phase2.jspi/cache
+11-01 11:47:52.146 30030 30030 V GraphicsEnvironment: Currently set values for:
+11-01 11:47:52.146 30030 30030 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[com.android.angle]
+11-01 11:47:52.146 30030 30030 V GraphicsEnvironment:   angle_gl_driver_selection_values=[angle]
+11-01 11:47:52.146 30030 30030 V GraphicsEnvironment: org.bsnesjg.tv.phase2.jspi is not listed in per-application setting
+11-01 11:47:52.146 30030 30030 V GraphicsEnvironment: No special selections for ANGLE, returning default driver choice
+11-01 11:47:52.147 30030 30030 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+11-01 11:47:52.151 30030 30104 I DisplayManager: Choreographer implicitly registered for the refresh rate.
+11-01 11:47:52.153 30030 30104 D vulkan  : searching for layers in '/data/app/~~FlnFbcNxjEwzIhbNdWsfIw==/org.bsnesjg.tv.phase2.jspi-W4U4OdodG0zdXO9Y7ZxryA==/lib/arm64'
+11-01 11:47:52.153 30030 30104 D vulkan  : searching for layers in '/data/app/~~FlnFbcNxjEwzIhbNdWsfIw==/org.bsnesjg.tv.phase2.jspi-W4U4OdodG0zdXO9Y7ZxryA==/base.apk!/lib/arm64-v8a'
+11-01 11:47:52.157 30030 30030 I BJG_TV_METRIC: {"event":"app_start","app_version":"0.1.10","version_code":11}
+11-01 11:47:52.157 30030 30030 I BJG_TV_METRIC: phone controller: off (Android TV remote input)
+11-01 11:47:52.166 30030 30030 I WebViewFactory: Loading com.google.android.webview version 156.0.8078.47 (code 807804703)
+11-01 11:47:52.167 30030 30030 V ResourcesManager: The following library key has been added: ResourcesKey{ mHash=151ddbc2 mResDir=null mSplitDirs=[] mOverlayDirs=[] mLibDirs=[/data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk,/system/framework/android.test.base.jar,/system_ext/framework/androidx.window.extensions.jar] mDisplayId=0 mOverrideConfig=v37 mCompatInfo={480dpi always-compat} mLoaders=[]}
+11-01 11:47:52.168 30030 30030 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/android.test.base.jar
+11-01 11:47:52.168 30030 30030 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+11-01 11:47:52.170 30030 30030 D nativeloader: Configuring clns-10 for other apk /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/lib/arm64:/data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+11-01 11:47:52.189 30030 30030 I cr_WVCFactoryProvider: version=156.0.8078.47 (807804703) minSdkVersion=29 multiprocess=true packageId=2 splits=<none>
+11-01 11:47:52.191 30030 30030 D nativeloader: Load /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk!/lib/arm64-v8a/libwebviewchromium.so using class loader ns clns-10 (caller=/data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk): ok
+11-01 11:47:52.192 30030 30030 D nativeloader: Load /system/lib64/libwebviewchromium_plat_support.so using class loader ns clns-10 (caller=/data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk): ok
+11-01 11:47:52.194 30030 30136 I chromium: [1101/114752.194169:INFO:android_webview/browser/variations/variations_seed_loader.cc:63] Failed to open file for reading.: No such file or directory (2)
+11-01 11:47:52.194 30030 30136 I chromium: [1101/114752.194692:INFO:android_webview/browser/variations/variations_seed_loader.cc:63] Failed to open file for reading.: No such file or directory (2)
+11-01 11:47:52.194 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ContentSafetyManager;->isContentSafetyEnabled()Z (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.194 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/webkit/WebViewDelegate;->isNativeWebViewZygoteEnabled()Z (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.195 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ClassifiableContent$Builder;-><init>(Landroid/content/LocusId;Ljava/lang/String;)V (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.195 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ClassifiableContent$Builder;->setUri(Landroid/net/Uri;)Landroid/app/contentsafety/ClassifiableContent$Builder; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.195 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ClassifiableContent$Builder;->setData(Landroid/os/ParcelFileDescriptor;)Landroid/app/contentsafety/ClassifiableContent$Builder; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.195 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ClassifiableContent$Builder;->build()Landroid/app/contentsafety/ClassifiableContent; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.195 30030 30030 E .tv.phase2.jspi: hiddenapi: Accessing hidden method Landroid/app/contentsafety/ContentSafetyManager;->createContentRestrictedIntent(Landroid/content/LocusId;)Landroid/content/Intent; (runtime_flags=0, domain=platform, api=blocked) from /data/app/~~2KFoSEIKm8Lzem-8tPLKeA==/com.google.android.webview-RcmL9vG0AlkHBV42DG5jhg==/base.apk (domain=app, TargetSdkVersion=34) using linking: denied
+11-01 11:47:52.201 30030 30030 I cr_LibraryLoader: Successfully loaded native library
+11-01 11:47:52.202 30030 30030 I cr_CachingUmaRecorder: Flushed 46 samples from 21 histograms, 0 samples were dropped.
+11-01 11:47:52.203 30030 30030 I cr_ChildProcLH: ScopedServiceBindingBatch.tryActivate: false
+11-01 11:47:52.204 30030 30030 I cr_CombinedPProvider: #registerProvider() provider:WV.hj@80f408b isPolicyCacheEnabled:false policyProvidersSize:0
+11-01 11:47:52.204 30030 30030 I cr_PolicyProvider: #setManagerAndSource() 0
+11-01 11:47:52.205 30030 30136 I cr_policy: registerReceiver succeeded after 1ms
+11-01 11:47:52.205 30030 30030 I cr_DisplayManager: Is Display Topology available: false
+11-01 11:47:52.214 30030 30030 I cr_CombinedPProvider: #linkNativeInternal() 1
+11-01 11:47:52.215 30030 30030 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+11-01 11:47:52.215 30030 30030 I cr_PolicyProvider: #notifySettingsAvailable() 0
+11-01 11:47:52.215 30030 30030 I cr_CombinedPProvider: #onSettingsAvailable() 0
+11-01 11:47:52.215 30030 30030 I cr_CombinedPProvider: #flushPolicies()
+11-01 11:47:52.233 30030 30159 W chromium: [WARNING:net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+11-01 11:47:52.294 30030 30177 W cr_media: BLUETOOTH_CONNECT permission is missing.
+11-01 11:47:52.294 30030 30177 W cr_media: getBluetoothAdapter() requires BLUETOOTH permission
+11-01 11:47:52.294 30030 30177 W cr_media: registerBluetoothIntentsIfNeeded: Requires BLUETOOTH permission
+11-01 11:47:52.299 30030 30177 D AudioSystem: onNewService: media.audio_policy service obtained 0xb400007da603d210
+11-01 11:47:52.299 30030 30177 D AudioSystem: getService: IAudioPolicyService retrieved: 0xb400007da603d210  cached: 0xb400007da603d210
+11-01 11:47:52.302 30030 30030 I ContentCaptureHelper: Setting logging level to OFF
+11-01 11:47:52.308 30030 30030 D InsetsController: Setting requestedVisibleTypes to 496 (was 503)
+11-01 11:47:52.321 30030 30030 I cr_AppResProvider: #getApplicationRestrictionsFromUserManager() Bundle[EMPTY_PARCEL]
+11-01 11:47:52.321 30030 30030 I cr_PolicyProvider: #notifySettingsAvailable() 0
+11-01 11:47:52.321 30030 30030 I cr_CombinedPProvider: #onSettingsAvailable() 0
+11-01 11:47:52.321 30030 30030 I cr_CombinedPProvider: #flushPolicies()
+11-01 11:47:52.324 30030 30266 I CameraManagerGlobal: Connecting to camera service
+11-01 11:47:52.324 30030 30030 D VRI[MandelbrotBenchmarkActivity]: WindowInsets changed: 2131x1008 statusBars:[0,63,0,0] navigationBars:[0,0,0,54] mandatorySystemGestures:[0,63,0,72] 
+11-01 11:47:52.325 30030 30030 D WindowOnBackDispatcher: setTopOnBackInvokedCallback (unwrapped): android.view.ViewRootImpl$$ExternalSyntheticLambda14@5d436df
+11-01 11:47:52.325 30030 30239 D WindowOnBackDispatcher: setOnBackInvokedCallbackInfo: android.view.ViewRootImpl$$ExternalSyntheticLambda14@5d436df
+11-01 11:47:52.328 30030 30030 I Surface : Creating surface for consumer unnamed-30030-0 with slotExpansion=1 for 64 slots
+11-01 11:47:52.329 30030 30030 I Surface : Creating surface for consumer VRI[MandelbrotBenchmarkActivity]#0(BLAST Consumer)0 with slotExpansion=1 for 64 slots
+11-01 11:47:52.331 30030 30030 D VRI[MandelbrotBenchmarkActivity]: WindowInsets changed: statusBars:null navigationBars:null 
+11-01 11:47:52.353 30030 30030 I ContentCaptureHelper: Setting logging level to OFF
+11-01 11:47:52.361 30030 30104 W BLASTBufferQueue: Attempting to clear sync transaction when none are active
+11-01 11:47:52.397 30030 30030 D InsetsController: hide(ime())
+11-01 11:47:52.397 30030 30030 I ImeTracker: org.bsnesjg.tv.phase2.jspi:4d689793: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+11-01 11:47:52.462 30030 30104 W BLASTBufferQueue: Attempting to clear sync transaction when none are active
+11-01 11:47:52.688 30030 30159 W BJG_WEBVIEW: blocked path /favicon.ico
+11-01 11:47:52.705 30030 30303 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=org.bsnesjg.tv.phase2.jspi
+11-01 11:47:52.827 30030 30030 I BJG_TV_METRIC: {"event":"core_ready","t_ms":242,"rom_run":0,"core":"bsnes-jg","version":"2.1.0","runtime":"wasm"}
+11-01 11:47:53.126 30030 30030 I BJG_TV_METRIC: {"event":"rom_loaded","t_ms":541,"rom_run":1,"rom":"mandel-display","bytes":32768}
+11-01 11:47:53.126 30030 30030 I BJG_TV_METRIC: {"event":"engine_info","t_ms":541,"rom_run":1,"core":"jspi","jspi":true,"ua":"Mozilla/5.0 (Linux; Android 17; Pixel 8 Pro Build/CP3A.261005.005; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/156.0.8078.47 Mobile Safari/537.36"}

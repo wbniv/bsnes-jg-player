@@ -1,0 +1,5 @@
+Applications Memory Usage (in Kilobytes):
+Uptime: 748634238 Realtime: 805130506
+
+** MEMINFO in pid 30030 [org.bsnesjg.tv.phase2.jspi] **
+Got IoException! java.io.IOException: Timeout
