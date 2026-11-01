@@ -328,17 +328,11 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
     ```
     $ node --test android/test/library-ui.test.mjs
     # tests 24
-    # pass 18
-    # fail 6
-    not ok 3 - selector: no Search field is shown (4 and 10 ROMs)
-    not ok 12 - selector: the empty-Favorites state
-    not ok 14 - selector: layout at 10 ROMs is list and preview, no filter chips, Lucky shown
-    not ok 15 - selector: layout at 13+ ROMs in one category hides the filter chips
-    not ok 22 - search: an empty result inside a filter offers Search all N ROMs with the right count
-    not ok 24 - search: the field is hidden at 24 ROMs and shown at 25
+    # pass 24
+    # fail 0
     ```
 
-    **PARTIAL (2026‑11‑01): the test now exists (`android/test/library-ui.test.mjs`, commit `4ed94f8`) and 18 of 24 cases pass; 6 fail, each a place where `android/app/src/main/assets/library.js` or `library.css` does not match this plan.** #3, #14 and #24: `.search{display:flex}` and `.filters{display:flex}` in `library.css` override the `hidden` attribute that `library.js` sets. #15: `buildFilters` never checks for two or more categories. #12: the empty-Favorites text is the generic "No ROMs match this search", not "No favorites yet". #22: the label is "Search all ROMs", not "Search all 152 ROMs", and the global match count is not shown. The Back-ladder cases test the launcher-views plan's superseding rules, as this plan's status line says.
+    **PASS (2026‑11‑01).** The test is `android/test/library-ui.test.mjs` (commit `4ed94f8`). Its first run failed 6 of 24 cases against `library.js` and `library.css`; the fixes are in `449388c` (hidden attribute) and `b39f85c` (empty-state text, "Search all N ROMs" with the global count, chips only with 2 or more categories). The Back-ladder cases test the launcher-views plan's superseding rules, as this plan's status line says. The engine is a stub and the viewport is 1920×1080, so this proves the library logic, not the device.
 2. Check sync and card art: `python3 android/tools/sync-published-library.py --output /tmp/lib --check` reports 152 records and 152 cards. Each card is byte-identical to `../biohack.net/public/play/preview/<slug>.png`.
 
     ```

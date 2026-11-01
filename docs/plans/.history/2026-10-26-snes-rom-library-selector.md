@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/611c792) | Record the library UI test result and file its findings |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7cf30f4) | Record the verify run for the library selector and search plans |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
@@ -10,6 +11,11 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/a755147) | feat: unify responsive SNES layout across platforms |
 
 <!--history-meta v1
+611c792	author	Will Norris
+611c792	added	10
+611c792	deleted	4
+611c792	files	1
+611c792	body	The test now exists (4ed94f8): 24 cases, 18 pass, 6 fail. The failures are real\ngaps between library.js/library.css and the selector and search plans, filed as\nranked TODO items. The two verify items stay open.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 7cf30f4	author	Will Norris
 7cf30f4	added	31
 7cf30f4	deleted	0
