@@ -1,11 +1,17 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/fa98dee) | Record the JSPI Pixel repeats: three clean runs, one coordinator crash |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/58d77ee) | Record the JSPI Pixel result: 14.20 ms median, 60.64 FPS |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7d1a828) | Add device diagnostics to the JSPI APK after the Pixel stall |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/6d8798f) | Record the JSPI Pixel APK builds and the signing-key finding |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/a094821) | Add an opt-in experimental WASM engine to the wasm flavor for a JSPI Pixel run |
 
 <!--history-meta v1
+fa98dee	author	Will Norris
+fa98dee	added	11
+fa98dee	deleted	0
+fa98dee	files	1
+fa98dee	body	Runs 2, 4 and 5 of the v2 APK ran clean with median core 14.20, 15.81 and\n16.58 ms against Asyncify's 23.66 ms. Run 3 never started the app (coordinator\nworker-crash), so it counts for nothing either way. The v1 stall has not recurred.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 58d77ee	author	Will Norris
 58d77ee	added	14
 58d77ee	deleted	0

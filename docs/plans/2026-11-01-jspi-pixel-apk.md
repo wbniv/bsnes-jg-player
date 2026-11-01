@@ -149,4 +149,13 @@ Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-1/` and `run-2/`; comparis
 | 4 | `J‑163c089b8043` | 140 paced windows, median core 15.81 ms, 63.64 FPS, `reference_ready` at frame 5800, no errors |
 | 5 | `J‑f34e9c1c9d8a` | 137 paced windows, median core 16.58 ms, 62.41 FPS, `reference_ready` at frame 5800, no errors |
 
-All three v2 runs that reached the app were clean (no stall, no `jspi_error` or `core_error`), with median core time 14.20, 15.81 and 16.58 ms, so about 1.4 to 1.7× faster than the Asyncify baseline of 23.66 ms, and the slowest sits right at the 16.6 ms frame budget. The one stall, run 1 on the v1 APK, has not recurred in three v2 runs; with a sample this small that does not show it is gone. The spread (14.2 to 16.6 ms) was not explained; thermal state is a candidate, and `thermal.txt` in each evidence directory can be checked. Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-3`, `run-4`, `run-5`.
+All three v2 runs that reached the app were clean (no stall, no `jspi_error` or `core_error`), with median core time 14.20, 15.81 and 16.58 ms, so about 1.4 to 1.7× faster than the Asyncify baseline of 23.66 ms, and the slowest sits right at the 16.6 ms frame budget. The one stall, run 1 on the v1 APK, has not recurred in three v2 runs; with a sample this small that does not show it is gone. The spread (14.2 to 16.6 ms) tracks the phone's skin temperature in each run's `thermal.txt`:
+
+| Run | VIRTUAL-SKIN | Thermal status | Median core |
+|---|---|---|---|
+| 2 | 36.9 °C | 0 (none) | 14.20 ms |
+| 4 | 39.1 °C | 1 (light) | 15.81 ms |
+| 5 | 39.1 °C | 1 (light) | 16.58 ms |
+| Asyncify baseline | 39.1 °C | 1 (light) | 23.66 ms |
+
+So the baseline ran at the warm, throttled state of runs 4 and 5, and the like-for-like speedup is **1.43× to 1.50×** (23.66 against 16.58 and 15.81 ms), not the 1.67× from the cold run 2. Caution: only the skin reading and the status changed between runs. The other sensors (`soc_therm` 32.66, battery 27.8, `BIG` 73.0) are identical in all four files, so they look like stale snapshots, and three runs make a pattern, not a proof. Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-3`, `run-4`, `run-5`.
