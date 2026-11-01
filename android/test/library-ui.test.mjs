@@ -390,3 +390,117 @@ test("search: the field is hidden at 24 ROMs and shown at 25", async () => {
     assert.equal((await state(page)).searchVisible, true, "25 ROMs");
   });
 });
+
+// ──────────────────────── D-pad route to I'm Feeling Lucky ────────────────────────
+// A TV remote has only arrows and Select, so Lucky must be reachable from the
+// ROM list with those alone. These never call .focus() on #lucky and never click.
+// The selector plan's focus map has Lucky above the chips (Down goes to the
+// chips, Up from the chips comes back); the launcher-views plan later put the
+// view switcher between them, so the route up is list, chips (when shown), view
+// switcher, Lucky, and the route back down is the reverse.
+
+const focusKey = (s) => s.focusId || s.focusClass;
+
+// Presses `key` until `done(state)` holds, at most `max` times. Returns the keys'
+// focus trail (each stop's id/class) so a failure shows where focus went.
+async function walk(page, key, done, max = 8) {
+  const trail = [focusKey(await state(page))];
+  for (let i = 0; i < max; i++) {
+    await press(page, key);
+    const s = await state(page);
+    trail.push(focusKey(s));
+    if (done(s)) return { s, trail };
+  }
+  return { s: await state(page), trail };
+}
+
+// Up from the list to Lucky, Select, Back, then Down to the list.
+async function reachLuckyAndReturn(page, { expectChips, startRow = 0 }) {
+  const start = await state(page);
+  assert.equal(start.focusClass, "rom", "starts on a list row");
+  assert.equal(start.filtersVisible, expectChips, "layout under test");
+  assert.equal(start.luckyVisible, true);
+  if (startRow) {
+    await press(page, "ArrowDown", startRow);
+    assert.equal((await state(page)).focusIndex, String(startRow));
+  }
+
+  const up = await walk(page, "ArrowUp", (s) => s.focusId === "lucky");
+  assert.equal(up.s.focusId, "lucky", `ArrowUp never reached Lucky; focus trail: ${up.trail.join(" > ")}`);
+
+  const before = launches(await state(page)).length;
+  await press(page, "Enter");
+  const launched = await state(page);
+  assert.equal(launches(launched).length, before + 1, "Select on Lucky launches a ROM");
+  await press(page, "Escape"); // Back to the selector, as the remote would
+  assert.equal((await state(page)).libraryVisible, true, "Back returns to the selector");
+
+  // Back leaves focus on the list, so go up to Lucky again before coming back down.
+  if ((await state(page)).focusId !== "lucky") {
+    const again = await walk(page, "ArrowUp", (s) => s.focusId === "lucky");
+    assert.equal(again.s.focusId, "lucky", `Lucky unreachable after Back; trail: ${again.trail.join(" > ")}`);
+  }
+
+  const down = await walk(page, "ArrowDown", (s) => s.focusClass === "rom");
+  assert.equal(down.s.focusClass, "rom", `ArrowDown never returned to the list; trail: ${down.trail.join(" > ")}`);
+  // Up walks the list to row 1 before it leaves, so row 1 is "the row that was focused last".
+  assert.equal(down.s.focusIndex, "0", "returns to the list row it left");
+  return up.trail;
+}
+
+test("lucky D-pad: reachable from the list in the full layout (100 ROMs, chips shown)", async () => {
+  await withLibrary({ roms: synthetic(100) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: true });
+  });
+});
+
+test("lucky D-pad: reachable from a later row of the full layout (Up walks the list first)", async () => {
+  await withLibrary({ roms: synthetic(100) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: true, startRow: 5 });
+  });
+});
+
+test("lucky D-pad: reachable with the chips hidden (10 ROMs)", async () => {
+  await withLibrary({ roms: synthetic(10) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: false });
+  });
+});
+
+test("lucky D-pad: reachable with the chips hidden (4 ROMs)", async () => {
+  await withLibrary({ roms: synthetic(4) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: false });
+  });
+});
+
+test("lucky D-pad: reachable with the chips hidden by a single category (13 ROMs)", async () => {
+  await withLibrary({ roms: singleCategory(13) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: false });
+  });
+});
+
+test("lucky D-pad: reachable at 1,000 ROMs", async () => {
+  await withLibrary({ roms: synthetic(1000) }, async (page) => {
+    await reachLuckyAndReturn(page, { expectChips: true });
+  });
+});
+
+test("lucky D-pad: reachable while a search is active, and still draws from the results", async () => {
+  await withLibrary({ roms: synthetic(152) }, async (page) => {
+    await typeSearch(page, "mand");
+    await press(page, "Enter"); // Select in the field puts focus on the TOP MATCH row
+    const s0 = await state(page);
+    assert.equal(s0.focusClass, "rom");
+    assert.equal(s0.rows, 4);
+    assert.equal(s0.luckyVisible, true);
+    const up = await walk(page, "ArrowUp", (s) => s.focusId === "lucky");
+    assert.equal(up.s.focusId, "lucky", `ArrowUp never reached Lucky; focus trail: ${up.trail.join(" > ")}`);
+    await press(page, "Enter");
+    const drawn = launches(await state(page)).at(-1);
+    assert.equal(MANDELBROTS.includes(drawn[1]), true, `drew ${drawn[1]}, outside the results`);
+    await press(page, "Escape");
+    if ((await state(page)).focusId !== "lucky") await walk(page, "ArrowUp", (s) => s.focusId === "lucky");
+    const down = await walk(page, "ArrowDown", (s) => s.focusClass === "rom");
+    assert.equal(down.s.focusClass, "rom", `ArrowDown never returned to the list; trail: ${down.trail.join(" > ")}`);
+    assert.equal(down.s.focusIndex, "0");
+  });
+});
