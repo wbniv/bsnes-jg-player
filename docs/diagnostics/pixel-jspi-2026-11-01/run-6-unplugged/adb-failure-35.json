@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.phase2.jspi/files/wf.log"
+  ],
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "tail: /sdcard/Android/data/org.bsnesjg.tv.phase2.jspi/files/wf.log: No such file or directory\n"
+}

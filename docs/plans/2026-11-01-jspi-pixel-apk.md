@@ -159,3 +159,13 @@ All three v2 runs that reached the app were clean (no stall, no `jspi_error` or 
 | Asyncify baseline | 39.1 °C | 1 (light) | 23.66 ms |
 
 So the baseline ran at the warm, throttled state of runs 4 and 5, and the like-for-like speedup is **1.43× to 1.50×** (23.66 against 16.58 and 15.81 ms), not the 1.67× from the cold run 2. Caution: only the skin reading and the status changed between runs. The other sensors (`soc_therm` 32.66, battery 27.8, `BIG` 73.0) are identical in all four files, so they look like stale snapshots, and three runs make a pattern, not a proof. Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-3`, `run-4`, `run-5`.
+
+### Unplugged batch (2026‑11‑01, per Will the phone was unplugged during these runs)
+
+| Run | Job | Skin / thermal status | Outcome |
+|---|---|---|---|
+| 6 | `J‑42284f7c2a42` | 37.0 °C / 0 | 139 paced windows, median core **15.97 ms**, 60.78 FPS, `0x204F` at frame 5800, no errors |
+| 7 | `J‑7c880896c471` | — | **No app run.** The client failed with `chromecast: database is locked` while the job was queued behind another. Not a result. |
+| 8 | `J‑ebf798cf4923` | 39.1 °C / 1 | 136 paced windows, median core **19.42 ms**, 53.62 FPS, `0x204F` at frame 5800, no errors |
+
+Against the earlier runs, whose plug state was not recorded: run 6 (37.0 °C) was 1.8 ms slower than run 2 (36.9 °C, 14.20 ms), and run 8 (39.1 °C, status 1) was 3.6 and 2.8 ms slower than runs 4 and 5 (15.81 and 16.58 ms at the same temperature and status). So temperature alone does not explain the spread. That fits the earlier runs having been plugged in, but nobody recorded their plug state, so it is a hypothesis; a plugged batch run the same way is the test. On battery the warm JSPI median (19.42 ms) is 1.22× faster than the Asyncify baseline (23.66 ms, plug state also unrecorded) and misses the 16.6 ms budget.

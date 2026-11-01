@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f01b7fd) | Tie the JSPI Pixel spread to skin temperature; like-for-like speedup is 1.43-1.50x |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/fa98dee) | Record the JSPI Pixel repeats: three clean runs, one coordinator crash |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/58d77ee) | Record the JSPI Pixel result: 14.20 ms median, 60.64 FPS |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7d1a828) | Add device diagnostics to the JSPI APK after the Pixel stall |
@@ -7,6 +8,11 @@
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/a094821) | Add an opt-in experimental WASM engine to the wasm flavor for a JSPI Pixel run |
 
 <!--history-meta v1
+f01b7fd	author	Will Norris
+f01b7fd	added	10
+f01b7fd	deleted	1
+f01b7fd	files	1
+f01b7fd	body	The fastest run (14.20 ms) was a cold phone at 36.9 C; runs 4 and 5 and the\nAsyncify baseline all ran at 39.1 C with light thermal throttling. Compared at\nthe same thermal state, JSPI is 1.43x to 1.50x faster, not 1.67x.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 fa98dee	author	Will Norris
 fa98dee	added	11
 fa98dee	deleted	0
