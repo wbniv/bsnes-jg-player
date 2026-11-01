@@ -1,11 +1,17 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/3794783) | Record Cast2 frame-5800 gate and layout from existing evidence |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f807031) | Record the Cast2 measurement: 44.04 ms median, 22.41 FPS |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9d17a92) | Record the Cast1 device check of the catch-up credit cap |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9132eae) | Cap native catch-up credit so a slow core or stall is dropped, not banked |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/cd6a3fc) | Record Cast1 build-flag bisect: no compiler flag helps, none kept |
 
 <!--history-meta v1
+3794783	author	Will Norris
+3794783	added	81
+3794783	deleted	0
+3794783	files	1
+3794783	body	Cast2 job J-0020fd86a0c0 logged the in-app frame-5800 framebuffer\n(0 of 57,344 differing) and WRAM 0x204F checks as pass, 96/96 zero\nglGetError readings, and a 1440x1080 4:3 game rectangle. The display\nchanges after frame ~5400, so the end-of-run screenshot cannot prove\nzero differing displayed pixels; that needs a frozen checkpoint run.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 f807031	author	Will Norris
 f807031	added	17
 f807031	deleted	1

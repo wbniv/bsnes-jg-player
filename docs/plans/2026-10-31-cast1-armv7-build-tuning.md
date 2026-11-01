@@ -98,7 +98,7 @@ Job `J‑0020fd86a0c0` on `chromecast-test-02` (Chromecast, Android 12, armeabi-
 - `emulation_backlog_frames` is 0.0 in every window, as the catch-up clamp intends.
 - The run reached ROM frame 10,773 at about 491 s and passed frame 5800 at 269 s.
 - Clamp and baseline cores differ by 0.1% on Cast1, so the comparison is a device comparison.
-- **Not measured:** the frame‑5800 capture, the WRAM `0x204F` gate and the 4:3 layout check were not run on Cast2.
+- **Not captured:** the frozen frame‑5800 screenshot (no checkpoint, and the run used the non-freezing activity). The app's own frame‑5800 self-checks did run on Cast2 and pass: framebuffer `differentPixels 0` of 57,344 and WRAM `0x204F` (8271 expected, 8271 actual). The first version of this section said the gate had not run; that was wrong, because the search was for the hex string and the app logs the value in decimal. See the next subsection for the per-claim result.
 - **The package id differs.** Cast2 carries a stale `org.bsnesjg.tv.native.phase2` signed with another key (it survived a factory reset), so `INSTALL_FAILED_UPDATE_INCOMPATIBLE` blocked four installs (evidence in the `-install-refused*` directories, untracked). This build uses id `org.bsnesjg.tv.native.phase2.cast2`, built with `BJG_GRADLE_EXTRA=-PnativeIdSuffixExtra=.cast2` (`android/app/build.gradle.kts`, `android/build-in-container.sh`). Native code, version, key and ROM are identical.
 - The coordinator app `bsnes-jg-tv-phase2-native-cast2` has no `frame` checkpoint, because checkpoints are declared per package in the coordinator's root-owned `applications.json`. Adding one for the `.cast2` package would restore the automatic frame‑5800 capture; that is the administrator's change.
 
