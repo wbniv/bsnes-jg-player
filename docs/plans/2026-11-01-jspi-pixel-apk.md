@@ -83,4 +83,24 @@ sequenceDiagram
 
 ## Results
 
-Pending.
+Run on 2026‑11‑01. The tools are in [../performance/2026-11-01/jspi-coroutines/tools/](../performance/2026-11-01/jspi-coroutines/tools/).
+
+1. **PASS.** `default-orig` and `default-new` are the same file: wasm release APK `5ee1f6c8…` from both, `apkdiff.py: 338 vs 338 entries; SAME`. Every pinned check passed (`Verified WasmRelease APK …`).
+2. **PASS** for the positive path: `Verified experimental WASM engine in /workspace/.experimental/jspi-core` and `Experimental WASM engine verified in WasmRelease APK: wasm 0a3a6ffe…` in both experimental builds. **Not run**: the wrong‑sha negative build. The tool call was stopped at the user's request.
+3. `tools/apk-facts.sh`:
+
+    ```
+    jspi-release.apk   4d3da94e703fbbe115f9d11395081866edf030f736eee053823463da200db931
+      package org.bsnesjg.tv.phase2.jspi  versionCode 11  versionName 0.1.10
+      signer CN=bsnes-jg Android Release, O=Biohack  SHA-256 1bc3d0586ff02c6be1479785652484ba70efccdfee46ce451520d221802d9a5e (v2 verified)
+      assets/cores/bsnes_jg.wasm 0a3a6ffe701cc6ee15d777750229344f49f31580002e613c28b78a54573566ea
+    jspi-debugkey.apk  f2b7dbc7de351177f10c6d5df494dc45f26d8f189b13e4198991326ee539371b
+      package org.bsnesjg.tv.phase2  11 / 0.1.10  signer Android Debug 79f65b24…c4cb  wasm 0a3a6ffe…
+    baseline wasm.apk  043323ff4951a0e0eed216a306f7fa0df55dc9143f1cff7627b80d6d3501e5a1
+      package org.bsnesjg.tv.phase2  9 / 0.1.8   signer Android Debug 79f65b24…c4cb  wasm e74dbd3d…
+    ```
+    **PASS.** The baseline's `app.js` differs from today's `web/app.js` only in two comment lines (the project rename), so the JSPI `app.js` is the baseline's plus the JSPI patch.
+4. See the hand‑back in the session. `apk-page-check.py` runs the release APK's own assets in Chromium 151.
+5. **PASS.** `/` stayed at 4.3 GB free or more. The builds ran in `/tmp/jspi-apk`.
+
+**The signing key decides the package id.** The Pixel's last installed `org.bsnesjg.tv.phase2` is `043323ff…`, signed with the debug key, so a release‑signed APK cannot update it. The release‑signed build therefore uses `-PwasmIdSuffixExtra=.jspi` and needs a new coordinator registration, with `ACTIVITY=org.bsnesjg.tv.MandelbrotBenchmarkActivity`. The debug‑key build keeps `org.bsnesjg.tv.phase2` and would install over the Pixel's copy. It can only be measured through the existing `bsnes-jg-tv-phase2-wasm` registration, though, and that registration was last recorded as pointing at `MainActivity`.
