@@ -1,11 +1,16 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/0472db0) | Verify coordinator live progress and clean checkpoint timeout |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/491f57a) | Fix Android framebuffer colors and verify native hardware layouts |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/a071ee1) | Record SNES launcher and profiling work |
 
 <!--history-meta v1
+0472db0	author	Will Norris
+0472db0	added	9
+0472db0	deleted	1
+0472db0	files	1
 d6498ac	author	Will Norris
 d6498ac	added	37
 d6498ac	deleted	0

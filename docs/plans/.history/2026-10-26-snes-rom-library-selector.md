@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/bc2f74c) | Record 24 of 24 library UI cases passing |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/611c792) | Record the library UI test result and file its findings |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7cf30f4) | Record the verify run for the library selector and search plans |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
@@ -11,6 +12,11 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/a755147) | feat: unify responsive SNES layout across platforms |
 
 <!--history-meta v1
+bc2f74c	author	Will Norris
+bc2f74c	added	3
+bc2f74c	deleted	9
+bc2f74c	files	1
+bc2f74c	body	Step 1 of the selector and search plans now passes. The two verify items stay\nopen because their device steps have not run.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 611c792	author	Will Norris
 611c792	added	10
 611c792	deleted	4

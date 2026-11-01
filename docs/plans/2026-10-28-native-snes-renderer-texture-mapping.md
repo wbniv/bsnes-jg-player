@@ -48,7 +48,7 @@ A dedicated native layout benchmark freezes at frame 5800. Pixel portrait job `J
 
 ## Follow-up coverage requested by Will (2026-10-31)
 
-Will confirmed the Android chooser, palette and pause menu work, and selected Cast1 and/or Pixel instead of Cast2/tablet. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable`; no physical tablet is enrolled. These remain coverage limits, not claims of tested devices.
+Will confirmed the Android chooser, palette and pause menu work, and selected Cast1 and/or Pixel instead of Cast2/tablet. Cast2 reconnect `J‑6dda7aff5728` failed with `transport-unavailable` on 2026‑10‑31; Cast2 ran later (2026‑11‑01, see the [Cast2 section](2026-10-31-cast1-armv7-build-tuning.md#cast2-measurement-2026-11-01)): in-app frame‑5800 framebuffer check and WRAM `0x204F` gate pass, 4:3 geometry and GL checks pass, but its displayed pixels at frame 5800 are not yet proven. No physical tablet is enrolled. These remain coverage limits, not claims of tested devices.
 
 The new checks used frozen APK SHA-256 `a64650acfca10e7b72297218257284aee19974bf993415c72174fff887cd600e`. [Machine-readable results](../proof/android-coverage-2026-10-31/results.json). The coordinator restored foreground state after each job; the Native app registration was restored to MainActivity afterward.
 

@@ -1,5 +1,7 @@
 # Asyncify trim: does an instrumentation list make the WASM core faster or smaller?
 
+**Status (2026‑11‑01):** done. No instrumentation list gives a meaningful gain (an `ASYNCIFY_REMOVE` list saves at most 3% frame time; `ONLY`/`ADD` lists trap). Superseded by the [JSPI coroutines plan](2026-11-01-jspi-coroutines.md).
+
 TODO item: **Optional: trim Asyncify cost (size/speed) with an `ASYNCIFY_ONLY`/`ADD` list once the core's swap‑reachable call set is profiled** (`[T3]`, Polish). "Only if mobile perf needs it."
 
 ## Context

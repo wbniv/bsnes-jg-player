@@ -1,5 +1,7 @@
 # Pixel phone performance: can the player claim mobile?
 
+**Status (2026‑11‑01):** measured on the Pixel 8 Pro. Native 10.7 ms and 59.97 FPS; WASM in WebView 23.7 ms and 45.2 FPS, so mobile web cannot claim 60 FPS. A low-end phone is not measured. The [JSPI plan](2026-11-01-jspi-coroutines.md) projects about 13 ms for WASM; that is not measured on a phone.
+
 TODO item: **Perf on a phone** (`[T3]`, Accurate mode — remaining). "Laptop is ~82 fps raw (>60 with headroom); Asyncify adds overhead, so measure a real low‑end phone for the zoom/Mode‑7 demos before claiming mobile."
 
 ## Context

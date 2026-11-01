@@ -1,44 +1,76 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/2f65e42) | Index the JSPI coroutines plan |
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/efcea07) | Observe the retarget-once stop case live on the real ROM |
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1fe82f5) | Index the Asyncify trim plan |
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/40e06ae) | Index the Pixel phone performance plan |
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/95b76ad) | Implement verified release candidates and resumable APK publication |
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
-| [2026-09-15](https://github.com/wbniv/bsnes-jg-player/commit/f1557ce) | release(prep): 1.1.0 — badge keeps the host page's base class; live-record staged |
-| [2026-07-27](https://github.com/wbniv/bsnes-jg-player/commit/4d52482) | package: SnesPlayer.astro + integration warning light + framework-agnostic embed |
-| [2026-06-25](https://github.com/wbniv/bsnes-jg-player/commit/66bc05d) | Wire accurate mode: the gate's bsnes-jg 2.1.0 core, in the browser |
-| [2026-06-25](https://github.com/wbniv/bsnes-jg-player/commit/0c1dc94) | scaffold bsnes-jg-wasm: the gate's cycle-accurate SNES core, in the browser |
+| [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/4b68d74) | Index the published ROM inventory plan |
+| [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/a071ee1) | Record SNES launcher and profiling work |
+| [2026-07-27](https://github.com/wbniv/bsnes-jg-player/commit/39c02cb) | TODO/plan-index: triage deferrals, record A1 done, index the npm-package plan |
+| [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+2f65e42	author	Will Norris
+2f65e42	added	2
+2f65e42	deleted	1
+2f65e42	files	1
+2f65e42	body	Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
+efcea07	author	Will Norris
+efcea07	added	1
+efcea07	deleted	0
+efcea07	files	1
+efcea07	body	scripts/retarget-verify.py drives headless Firefox (Marionette, /tmp profile)\nagainst the real lzss-gallery ROM and the real web/app.js: two ArrowRight\nnavigations mid-check produce "following your navigation to ..." and then the\nfail badge "navigation kept restarting the check". Real ROM, not a stubbed\nModule. Plan, timeline and screenshot recorded; TODO item moved to Done.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
+1fe82f5	author	Will Norris
+1fe82f5	added	2
+1fe82f5	deleted	1
+1fe82f5	files	1
+1fe82f5	body	Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
+40e06ae	author	Will Norris
+40e06ae	added	1
+40e06ae	deleted	0
+40e06ae	files	1
+40e06ae	body	Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
+95b76ad	author	Will Norris
+95b76ad	added	1
+95b76ad	deleted	0
+95b76ad	files	1
+d6498ac	author	Will Norris
+d6498ac	added	5
+d6498ac	deleted	5
+d6498ac	files	1
 1e7b34a	author	Will Norris
-1e7b34a	added	3
-1e7b34a	deleted	3
+1e7b34a	added	8
+1e7b34a	deleted	8
 1e7b34a	files	1
 eb74075	author	Will Norris
 eb74075	added	3
-eb74075	deleted	3
+eb74075	deleted	1
 eb74075	files	1
 e314486	author	Will Norris
-e314486	added	15
-e314486	deleted	7
+e314486	added	3
+e314486	deleted	1
 e314486	files	1
-f1557ce	author	Will Norris
-f1557ce	added	2
-f1557ce	deleted	0
-f1557ce	files	1
-f1557ce	body	Prepares the `@wbniv/bsnes-jg-player` live-record release. **Nothing outward happens here**:\nno push, no `npm publish`, no tag. Both consuming sites depend on\n`github:wbniv/bsnes-jg-wasm#npm-package`, so pushing this branch *is* the release for them —\nthat push is the user's call.\n\nThe badge fix. `badge()` assigned `checkEl.className = "badge " + cls`, which replaces whatever\nbase class the host page put on `#checkresult`. The sites style `.rp-badge.pass` / `.rp-badge.fail`\n/ `.rp-badge.running`, and no bare `.badge` rule exists on either, so the green PASS pill and the\nred FAIL pill never rendered on any demo page — found while specifying `live-record`\n(llvm-mos-65816 docs/plans/2026-07-28-gallery-per-image-selfcheck.md, "Found while doing this").\n\nThat plan proposes writing `"rp-badge " + cls` instead. This does not, because the package ships\ntwo markup shapes with different base classes — `rp-badge` in astro/SnesPlayer.astro and\nembed/snippet.html, plain `badge` in web/index.html — and an embedder may supply a third. Any\nhardcoded literal only moves the breakage. So `badgeState()` swaps the state class with classList\nand leaves everything else alone: `classList.remove("running","pass","fail","warn")` then add.\nEvery `checkEl.className` write is gone, the two playUrl/playFile resets and the three legacy\nscalar assignments included. The legacy power-on path had the same defect, so it is fixed there\ntoo — deliberate, not incidental.\n\n`warn` gets a real CSS rule. `embed/player.css` gains `.rp-badge.warn` (#ffd166 on #0c1116, the\nsame pill weight as pass/fail, matching `--warn` in web/index.html). Amber, not red: a live-record\ncheck that spends its frame budget without the ROM publishing a verdict is indeterminate, and\nnothing was disproved.\n\nThe regression guard. CI greps the rendered DOM for `badge pass` and could never have caught this:\nthe page it serves carries base class `badge`, which is exactly what the hardcoded className wrote\nanyway. ci.yml now runs the fidelity check a third time against a harness whose badge span is\nrewritten to `class="rp-badge"`, asserting `id="checkresult" class="rp-badge pass"` — base class and\nstate class together, on the shape the sites use. That case fails on the pre-fix engine. publish.yml\ntightens its grep the same way.\n\nDemo bundle, a deviation worth stating. The staged `dist/demo/roms/manifest.json` carried an\n`lzss-gallery` entry whose .sfc was never staged beside it, so `sync --demo` would seed a picker\nbutton that 404s. Shipping the 1 MB ROM instead grows the published tarball 1.9 MB -> ~2.9 MB for a\ndemo asset, which is a publishing decision, not a bugfix. The manifest therefore keeps only the\nlive-record schema documentation in `_comment`, and stage-dist.sh now filters the demo manifest to\nthe ROMs it actually stages (DEMO_ROMS) so the two cannot disagree again. One-line flip if the\npackage should demo live-record out of the box.\n\n1.1.0, not 1.0.1: `selfcheck.mode: "live-record"` is a new manifest surface and `warn` is a new\nbadge state consuming stylesheets must add a rule for. Backward compatible — a manifest without\n`mode` takes the untouched legacy branch.\n\nBrowser-verified headless (Playwright + Chromium, the packaged dist/engine/app.js under\nSnesPlayer.astro's markup and biohack.net's stylesheet; a MutationObserver on #checkresult catches\nthe transient `running` state that polling always missed). All four states assert the base class,\nthe state class, and the computed background colour:\n\n  scalar  mandel-display, legacy path  -> rp-badge running -> rp-badge pass  bg rgb(84,217,140)\n                                          "FIDELITY 0x204F == gate"\n  warn    frames truncated to 400      -> rp-badge running -> rp-badge warn  bg rgb(255,209,102)\n  fail    oracle[work] - 1             -> rp-badge running -> rp-badge fail  bg rgb(255,107,107)\n                                          "MISMATCH Under the Wave off Kanagawa got 15305 want 15304"\n  pass    unmodified manifest          -> rp-badge running -> rp-badge pass  bg rgb(84,217,140)\n                                          "FIDELITY Under the Wave off Kanagawa - repacked on-SNES\n                                           to 15305 B == host oracle"\n\nUntil this branch is pushed, both sites' CI `sync --check` sees 1.1.0 on disk against 1.0.0 in\nnode_modules and fails. That is the drift gate working as designed.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_011AP736JtwzSGYH4bmxDWTa
-4d52482	author	Will Norris
-4d52482	added	55
-4d52482	deleted	0
-4d52482	files	1
-4d52482	body	- astro/SnesPlayer.astro: renders the #bjg-embed block, computes the BJG_BUST\n  map at build time, emits the boot script; props slug/title/keys/playBase/\n  fullscreen/class + a slot for extra lines. Imports embed/player.css.\n- astro/integration.mjs: optional astro:config:setup check of the\n  ENGINE_VERSION stamp vs the installed package (warn or error).\n- embed/snippet.html + player.css: documented plain-HTML embed with the full\n  boot contract (globals, element ids, keymap, manifest selfcheck/touchNav).\n- README: npm usage, sync/--check flow, boot contract table.\n  npm pack --dry-run: 17 files, 1.9 MB tarball.\n\nCo-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_011DEG8ouwAWtqeWtcvZSysz
-66bc05d	author	Will Norris
-66bc05d	added	35
-66bc05d	deleted	29
-66bc05d	files	1
-66bc05d	body	Compile the EXACT core the llvm-mos-65816 differential gate trusts —\njgemu/bsnes 2.1.0, pinned by version and sha256 — to WebAssembly, and\ndrive it with a custom Jolly-Good-API frontend instead of EmulatorJS.\nThe page now reproduces the gate's headless fidelity assert live in a\nbrowser tab.\n\nResolved two findings from the first build:\n- The pin is jgemu/bsnes 2.1.0 (gitlab), NOT a libretro commit; the gate\n  builds that tarball via dev/jgxcheck.cpp through the Bsnes:: C++ API.\n  build.sh fetches + sha256-verifies it, so "same core" is literally true.\n- Stock libco v20 has no wasm path (falls through to sjlj.c, which needs\n  POSIX sigaltstack/SIGUSR1). Added web/src/libco_emscripten.c — a libco\n  backend on emscripten_fiber_*; the link uses -sASYNCIFY. libsamplerate\n  is vendored in the tarball, so USE_VENDORED_SAMPLERATE=1 self-contains it.\n\n- web/src/main.cpp: minimal wasm frontend mirroring dev/jgxcheck.cpp;\n  exports a C ABI (load/run/video/wram/input) to JS.\n- web/app.js + index.html: canvas loader, ROM picker + drag-drop, keyboard\n  pad, live PROVENANCE banner, and a Verify-fidelity self-check.\n- build.sh rewritten: emsdk → fetch+verify 2.1.0 → patch libco → emmake\n  make static core → em++ link with Asyncify + embedded game database.\n\nVerified end-to-end in headless Chrome (emscripten 6.0.1): demo boots and\nrenders a Mandelbrot (512x240), and the in-browser self-check reads WRAM\n$0580 == 0x9103 == the gate's jgxcheck value after 1000 frames. Raw\nthroughput ~82 fps on a laptop. Evidence + PASS/FAIL recorded in the plan.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_012z1vSadjiUqKEsQ6dU4u3P
-0c1dc94	author	Will Norris
-0c1dc94	added	76
-0c1dc94	deleted	0
-0c1dc94	files	1
-0c1dc94	body	A WebAssembly build of bsnes-jg (the cycle-accurate core that is the second leg\nof the llvm-mos-65816 differential gate) + a loader page that runs the +mos-a16\nhomebrew demos. The pitch: a browser demo backed by THE SAME core the gate trusts\nis byte-for-byte what was verified — not a snes9x lookalike (snes9x is not\ncycle-accurate and is non-commercial/GPL-incompatible; bsnes-jg is cycle-accurate\nAND GPLv3).\n\nReproducible from repo + network:\n  build.sh        bootstrap emsdk -> clone+pin libretro/bsnes-jg -> build WASM core -> web/cores/\n  web/index.html  EmulatorJS loader (ROM picker + drag-drop; showcase mode works today)\n  serve.py        static server (plain single-thread; --isolated adds COOP/COEP for threaded builds)\n  sync-roms.sh / Taskfile.yml / LICENSE (GPLv3) / NOTICE\n  web/roms/       snapshot of mandel-{zoom,mode7,display,interactive}.sfc\n\nShowcase mode (stock CDN core) serves now (verified: page + ROM 200); accurate\nmode (the built bsnes-jg core, CRC-matched to the gate's jgxcheck) is the headline\nremaining work — see docs/plans/2026-06-25-bsnes-jg-wasm.md + TODO.md.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
+4b68d74	author	Will Norris
+4b68d74	added	1
+4b68d74	deleted	0
+4b68d74	files	1
+a071ee1	author	Will Norris
+a071ee1	added	12
+a071ee1	deleted	0
+a071ee1	files	1
+39c02cb	author	Will Norris
+39c02cb	added	2
+39c02cb	deleted	1
+39c02cb	files	1
+39c02cb	body	Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_011DEG8ouwAWtqeWtcvZSysz
+9b85386	author	Will Norris
+9b85386	added	22
+9b85386	deleted	0
+9b85386	files	1
+9b85386	body	One row per docs/plans/*.md — auto-generated summary + category plus the per-plan\ncommit history — kept current by the shared check-plan-index drift hook on commit.\nSummaries auto-generated (Sonnet, medium effort); refine as needed.\n\nCo-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>
 -->

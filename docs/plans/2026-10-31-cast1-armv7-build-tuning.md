@@ -1,5 +1,7 @@
 # Cast1 armeabi-v7a build tuning and support position
 
+**Status (2026‑11‑01):** done except one proof. No compiler flag helps on Cast1 (the baseline wins); the framebuffer fix and linear resampler are kept; the catch-up credit clamp landed (`MAX_CATCHUP_STEPS = 4`). Cast2 is measured (44.04 ms, 22.41 FPS). Cast2's displayed pixels at exactly frame 5800 still need a coordinator checkpoint; see the [handoff](../handoffs/2026-11-01-coordinator-cast2-checkpoint.md).
+
 ## Context
 
 Cast1 (`chromecast-test-01`, Chromecast HD, Amlogic quad Cortex‑A35, 32‑bit userspace, Android 14) runs the native bsnes-jg core at about 65 ms per emulated frame, roughly 15 FPS against the 60 FPS target. Pixel 8 Pro runs the same core at about 10 ms. Evidence: every `playback_window` record in [`docs/diagnostics/coverage-followup-2026-10-31/cast1-landscape/logcat.txt`](../diagnostics/coverage-followup-2026-10-31/cast1-landscape/logcat.txt) reports `core_mean_ms` between 63 and 67 and `emu_fps` near 15.

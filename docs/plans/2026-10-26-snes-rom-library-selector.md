@@ -309,7 +309,7 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
 | `android/app/src/main/assets/` | Holds the shared selector and stylesheet, with search switched off; the WASM and native assets provide different engine adapters |
 | `android/app/src/main/assets/tv.js` | Reworks the pause menu: vertical order, a header, Choose another ROM and the Restart path after a core failure |
 | `android/app/src/main/java/org/bsnesjg/tv/MainActivity.java` | Adds the `getPrefs`/`setPrefs` bridge and the `rom` intent extra, plus optional gamepad key translation |
-| `android/test/library-ui.test.mjs` (new) | Drives the library in headless Chromium at 1920×1080 with arrow keys and synthetic catalogs |
+| `android/test/library-ui.test.mjs` | Drives the library in headless Chromium at 1920×1080 with arrow keys and synthetic catalogs |
 
 `BJGTV.play` already returns `playUrl`'s promise. It needs at most a rejection reason that says whether the core was reached.
 

@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/38bb2be) | Hand off the Cast2 frame checkpoint to the coordinator |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/cb020b5) | Correct the Cast2 coverage claims: the in-app gate passed |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/3794783) | Record Cast2 frame-5800 gate and layout from existing evidence |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f807031) | Record the Cast2 measurement: 44.04 ms median, 22.41 FPS |
@@ -8,6 +9,11 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/cd6a3fc) | Record Cast1 build-flag bisect: no compiler flag helps, none kept |
 
 <!--history-meta v1
+38bb2be	author	Will Norris
+38bb2be	added	1
+38bb2be	deleted	1
+38bb2be	files	1
+38bb2be	body	Writes the instructions for the coordinator repo: a frame checkpoint entry for\norg.bsnesjg.tv.native.phase2.cast2 in applications.json, with tests, plus the\nregistration Will runs for the layout activity. The plan now says checkpoints\nare keyed by package.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 cb020b5	author	Will Norris
 cb020b5	added	1
 cb020b5	deleted	1
