@@ -1,0 +1,36 @@
+{
+  "schema": 2,
+  "source": "current-process-log",
+  "controller_advertised": false,
+  "process": "5627",
+  "controller_state": "off",
+  "policy": "best-effort",
+  "variant": null,
+  "panel_visibility": "verified-absent",
+  "reason": "engine-controller-off",
+  "back_sent": false,
+  "back_keys_sent": 0,
+  "back_outcome": null,
+  "before": null,
+  "after": null,
+  "elapsed_seconds": 0.419,
+  "history": [
+    {
+      "schema": 2,
+      "source": "current-process-log",
+      "controller_advertised": false,
+      "process": "5627",
+      "controller_state": "off",
+      "policy": "best-effort",
+      "variant": null,
+      "panel_visibility": "verified-absent",
+      "reason": "engine-controller-off",
+      "back_sent": false,
+      "back_keys_sent": 0,
+      "back_outcome": null,
+      "before": null,
+      "after": null,
+      "elapsed_seconds": 0.419
+    }
+  ]
+}

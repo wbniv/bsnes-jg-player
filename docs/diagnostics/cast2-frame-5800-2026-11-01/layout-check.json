@@ -1,0 +1,25 @@
+{
+  "frame": 5800,
+  "screen": [
+    1920,
+    1080
+  ],
+  "game_rect_pixels": [
+    240,
+    0,
+    1440,
+    1080
+  ],
+  "aspect": 1.3333333333333333,
+  "normalized_content_rect": [
+    0.125,
+    0.0,
+    0.75,
+    1.0
+  ],
+  "geometry_source": "canonical palette footprint in screenshot",
+  "differentPixels": 0,
+  "pixels": 57344,
+  "gl_error": 0,
+  "status": "pass"
+}

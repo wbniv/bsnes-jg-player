@@ -79,6 +79,16 @@ The actual 1920×1080 screenshot contains an exact **1440×1080 (4:3)** game rec
 
 ![Cast1: complete canonical frame 5800, zero differing source pixels](../proof/android-coverage-2026-10-31/cast1-frame-5800.png)
 
+### Cast2 checkpoint run: PASS (2026‑11‑01)
+
+Cast2 (`chromecast-test-02`, Chromecast, Android 12) is available again, so the frozen frame was captured there too. Job `J‑dea949aa468a` ran the `.cast2` package APK (sha256 `be5e60a7…`) with the layout activity `MandelbrotLayoutBenchmarkActivity`, `DURATION=480 CHECKPOINT=frame TARGET=5800`. The coordinator detected frame 5800 at **259.6 seconds** and completed with the session clean and the device released.
+
+The 1920×1080 screenshot has an exact **1440×1080 (4:3)** game rectangle at x=240. All **57,344 source-pixel centers match** (`differentPixels 0`), and all 53 `renderer_health` records report `gl_error 0`. This closes the Cast2 frozen-pixel gap that the in-app gates left open. Evidence: `docs/diagnostics/cast2-frame-5800-2026-11-01/`, checker output `docs/proof/android-coverage-2026-10-31/cast2-frame-5800.json`.
+
+Setup note: the coordinator allows one registered app per package, so the layout activity was run by temporarily re-registering `bsnes-jg-tv-phase2-native-cast2` with it (`REPLACE=true`), as for Cast1. The normal registration (`MandelbrotBenchmarkActivity`, same APK) was restored afterwards. The installed coordinator 0.1.29 already carried the `.cast2` `frame` checkpoint (commit `9c088fe`), so no redeploy was needed.
+
+![Cast2: complete canonical frame 5800, zero differing source pixels](../proof/android-coverage-2026-10-31/cast2-frame-5800.png)
+
 [Checkpoint observations](../proof/android-coverage-2026-10-31/cast1-checkpoint.json) · [Pixel comparison](../proof/android-coverage-2026-10-31/cast1-frame-5800.json).
 
 **Coordinator 0.1.18 result:** longer execution, checkpoint detection, early completion, evidence retrieval and cleanup passed this real-device test. Intermediate frame counts in `watch` were not shipped until 0.1.19; their absence on this run was expected, not a defect.
