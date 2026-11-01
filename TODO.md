@@ -20,7 +20,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
 
-- [T3] **Device coverage:** Will selected Cast1 and/or Pixel instead of unavailable Cast2/tablet (2026-10-31). Follow-up Pixel portrait and landscape checks PASS with zero differing pixels. Cast1 checkpoint job `J‑980895a9d7bc` also PASS: frame 5800 at 379.561 seconds, zero differing pixels, exact 4:3 geometry and no GL error. Substitute layout/correctness coverage is complete. Support position (Will, 2026‑10‑31): Cast1 is a correctness-and-layout device; the 60 FPS pacing target applies to Pixel-class and future big-core TV hardware, because the core needs ~49 M instructions per frame and two thirds of them are the dot-accurate PPU ([profile and plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)). See [inline proof](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md#follow-up-coverage-requested-by-will-2026-10-31). Chooser, palette and pause menu are user-validated. Cast2 (2026‑11‑01, [plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md#cast2-measurement-2026-11-01)): 22.41 FPS median; the in-app frame‑5800 framebuffer check (0 differing pixels) and WRAM `0x204F` gate pass, 4:3 geometry matches Cast1 and all 96 GL readings are 0. Not proven: the displayed pixels at exactly frame 5800, which needs a frozen checkpoint capture (the coordinator needs a `frame` checkpoint entry for package `org.bsnesjg.tv.native.phase2.cast2` and a second app on `MandelbrotLayoutBenchmarkActivity`; instructions in [the handoff](docs/handoffs/2026-11-01-coordinator-cast2-checkpoint.md), then the commands in the plan). No physical tablet is enrolled; neither is a blocker for the requested substitute coverage. iPad simulator coverage already passes.
 
 
 ### Release automation — [plan](docs/plans/2026-10-31-repeatable-release-tooling.md)
@@ -53,6 +52,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [device-coverage] Cast1, Pixel and Cast2 frame-5800 proofs pass (0 differing pixels, 4:3, GL 0); tablet never available. See [plan](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md).
 - ✅ 2026‑11‑01 — [jspi-pixel-run] JSPI WASM on the Pixel 8 Pro: 14.20 ms median, 60.64 FPS vs 23.66 ms Asyncify; one unexplained stall. See [plan](docs/plans/2026-11-01-jspi-pixel-apk.md).
 - ✅ 2026‑11‑01 — [lucky-dpad] D-pad route to I'm Feeling Lucky added and a chip-timer focus bug fixed; library UI test 31 of 31; no remote or device run. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [native-currentrom] Native adapter exposes `currentRom()`, so Resume works from the library; new adapter test 2 of 2; not run on a device. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
