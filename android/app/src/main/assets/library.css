@@ -311,3 +311,4 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
 }
 
 .search[hidden],.filters[hidden]{display:none}
+.empty-detail{margin:0 0 12px;color:var(--muted)}.empty-detail:empty{display:none}
