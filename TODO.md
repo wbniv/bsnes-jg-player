@@ -29,8 +29,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 - [T3] **Physical iOS validation:** SwiftUI, native audio and GameController support are implemented. Six iPhone/iPad simulator UI tests, ROM/offline-audio checks and unsigned iPhone SDK compilation pass. Remaining: Apple signing identities and access to an iPhone, then install, audible audio/route/interruption checks, hardware-controller checks and sustained device pacing. [Plan and inline proof](docs/plans/2026-10-30-native-ios-player.md).
 
-- [T3] **Showroom** — a demo-reel page consuming this core (curated `+mos-a16` productions). Its own
-  effort; this repo just provides the `.wasm`.
 
 ## Watch
 
@@ -53,6 +51,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [showroom] Superseded: the `web/` player already is the demo-reel (ROM chooser/library, 3 ROMs); more ROMs are library content. See [plan](docs/plans/2026-06-25-bsnes-jg-wasm.md).
 - ✅ 2026‑11‑01 — [device-coverage] Cast1, Pixel and Cast2 frame-5800 proofs pass (0 differing pixels, 4:3, GL 0); tablet never available. See [plan](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md).
 - ✅ 2026‑11‑01 — [jspi-pixel-run] JSPI WASM on the Pixel 8 Pro: 14.20 ms median, 60.64 FPS vs 23.66 ms Asyncify; one unexplained stall. See [plan](docs/plans/2026-11-01-jspi-pixel-apk.md).
 - ✅ 2026‑11‑01 — [lucky-dpad] D-pad route to I'm Feeling Lucky added and a chip-timer focus bug fixed; library UI test 31 of 31; no remote or device run. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
