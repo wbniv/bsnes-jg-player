@@ -167,3 +167,9 @@ Build and signing instructions are in [ios/README.md](../../ios/README.md). No f
 - Public iOS distribution requires Apple Developer signing/provisioning and account setup. Those credentials are outside the repo and are not part of simulator CI.
 - Upstream ownership for the cross-platform native adapter is unresolved. Keep the web package and browser WASM product in this fork; coordinate the Android/iOS adapter proposal with the core maintainer before submission.
 - tvOS, full 152-ROM catalog, save states, import-any-ROM UX, cloud saves, and App Store submission are outside this first iOS example.
+
+### Simulator workflow re-run (2026‑11‑01)
+
+[Codemagic build `6ae6ef557bc556dd654c6180`](https://codemagic.io/app/6ae5356ef8ef89f5624cab78/build/6ae6ef557bc556dd654c6180) (workflow `ios-simulator`, `main` at `5852168`) **finished**. All eight steps succeeded: pinned core and demo ROM, the ARM64 simulator build, the ROM/audio/touch/lifecycle/iPhone/iPad checks (`ios/simulator-check.py`), the unsigned iPhone SDK compile, publishing and cleanup. The workflow does not tee a log artifact, so this record is the step statuses only.
+
+This re-confirms the simulator side. It does not cover what remains for the physical item: Apple signing identities and a real iPhone for install, audible audio and route/interruption checks, hardware-controller checks and sustained device pacing. An earlier attempt the same day used the wrong Codemagic app (WorldFoundry, from the default `~/.config/codemagic/app-id`); Codemagic rejected it before it started, so it ran nothing and used no minutes. Pass `--app-id 6ae5356ef8ef89f5624cab78` explicitly.

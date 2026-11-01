@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/008930d) | Inline iPhone and iPad screenshots alongside plan validation steps |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/754cd60) | Record passing iOS UI and audio validation and physical-device prerequisites |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
@@ -13,6 +14,10 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/eb74075) | Rename project to bsnes-jg-player |
 
 <!--history-meta v1
+1e7b34a	author	Will Norris
+1e7b34a	added	23
+1e7b34a	deleted	37
+1e7b34a	files	1
 008930d	author	Will Norris
 008930d	added	27
 008930d	deleted	0
