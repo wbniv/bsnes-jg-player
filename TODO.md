@@ -22,7 +22,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 - [T3] **Device coverage:** Will selected Cast1 and/or Pixel instead of unavailable Cast2/tablet (2026-10-31). Follow-up Pixel portrait and landscape checks PASS with zero differing pixels. Cast1 checkpoint job `J‑980895a9d7bc` also PASS: frame 5800 at 379.561 seconds, zero differing pixels, exact 4:3 geometry and no GL error. Substitute layout/correctness coverage is complete. Support position (Will, 2026‑10‑31): Cast1 is a correctness-and-layout device; the 60 FPS pacing target applies to Pixel-class and future big-core TV hardware, because the core needs ~49 M instructions per frame and two thirds of them are the dot-accurate PPU ([profile and plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md)). See [inline proof](docs/plans/2026-10-28-native-snes-renderer-texture-mapping.md#follow-up-coverage-requested-by-will-2026-10-31). Chooser, palette and pause menu are user-validated. Cast2 (2026‑11‑01, [plan](docs/plans/2026-10-31-cast1-armv7-build-tuning.md#cast2-measurement-2026-11-01)): 22.41 FPS median; the in-app frame‑5800 framebuffer check (0 differing pixels) and WRAM `0x204F` gate pass, 4:3 geometry matches Cast1 and all 96 GL readings are 0. Not proven: the displayed pixels at exactly frame 5800, which needs a frozen checkpoint capture (the administrator adds a `frame` checkpoint for the `.cast2` app on `MandelbrotLayoutBenchmarkActivity`, then the command in the plan). No physical tablet is enrolled; neither is a blocker for the requested substitute coverage. iPad simulator coverage already passes.
 
-- [wip T2] **Check that the D-pad can reach I'm Feeling Lucky.** The test agent reports Up from row 1 goes to a chip row that can be hidden and nothing leads to Lucky (my read of `library.js` is consistent, but I have not run it). On a TV remote that would make Lucky unreachable. Confirm first, then add a route. <!-- agent:a76b13d99aca16668 -->
 
 ### Release automation — [plan](docs/plans/2026-10-31-repeatable-release-tooling.md)
 
@@ -54,6 +53,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [lucky-dpad] D-pad route to I'm Feeling Lucky added and a chip-timer focus bug fixed; library UI test 31 of 31; no remote or device run. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [native-currentrom] Native adapter exposes `currentRom()`, so Resume works from the library; new adapter test 2 of 2; not run on a device. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [jspi-coroutines] JSPI libco backend measured: 0.551× frame time, bit-identical gates, needs an Asyncify fallback. See [plan](docs/plans/2026-11-01-jspi-coroutines.md).
 - ✅ 2026‑11‑01 — [stale-library-copy] Deleted `android/app/src/library/assets/` (drifted, no consumer); its `res/` icons stay, the generator writes them. See [plan](docs/plans/2026-10-28-google-tv-launcher-views.md).
