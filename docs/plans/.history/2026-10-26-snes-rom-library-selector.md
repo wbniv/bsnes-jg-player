@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7cf30f4) | Record the verify run for the library selector and search plans |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
@@ -9,6 +10,11 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/a755147) | feat: unify responsive SNES layout across platforms |
 
 <!--history-meta v1
+7cf30f4	author	Will Norris
+7cf30f4	added	31
+7cf30f4	deleted	0
+7cf30f4	files	1
+7cf30f4	body	Step 2 of the selector plan passes (152 records, ROMs and cards). Step 1 of\nboth plans fails: android/test/library-ui.test.mjs has never existed. The\ndevice steps are marked not run. Both items stay [verify]; the missing test\nis a new TODO item.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 d6498ac	author	Will Norris
 d6498ac	added	4
 d6498ac	deleted	2

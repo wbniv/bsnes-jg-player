@@ -327,12 +327,18 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
 
     ```
     $ node --test android/test/library-ui.test.mjs
-    Could not find 'android/test/library-ui.test.mjs'
-    $ git log --all --oneline -- android/test/library-ui.test.mjs
-    (no commits: the file has never existed in this repository)
+    # tests 24
+    # pass 18
+    # fail 6
+    not ok 3 - selector: no Search field is shown (4 and 10 ROMs)
+    not ok 12 - selector: the empty-Favorites state
+    not ok 14 - selector: layout at 10 ROMs is list and preview, no filter chips, Lucky shown
+    not ok 15 - selector: layout at 13+ ROMs in one category hides the filter chips
+    not ok 22 - search: an empty result inside a filter offers Search all N ROMs with the right count
+    not ok 24 - search: the field is hidden at 24 ROMs and shown at 25
     ```
 
-    **FAIL (2026‑11‑01).** The test this step names was never written, so none of the listed cases has run. `android/test/` holds only `frame-scheduler.test.mjs`, `metrics-report.test.mjs` and `pixel-format.test.cpp`.
+    **PARTIAL (2026‑11‑01): the test now exists (`android/test/library-ui.test.mjs`, commit `4ed94f8`) and 18 of 24 cases pass; 6 fail, each a place where `android/app/src/main/assets/library.js` or `library.css` does not match this plan.** #3, #14 and #24: `.search{display:flex}` and `.filters{display:flex}` in `library.css` override the `hidden` attribute that `library.js` sets. #15: `buildFilters` never checks for two or more categories. #12: the empty-Favorites text is the generic "No ROMs match this search", not "No favorites yet". #22: the label is "Search all ROMs", not "Search all 152 ROMs", and the global match count is not shown. The Back-ladder cases test the launcher-views plan's superseding rules, as this plan's status line says.
 2. Check sync and card art: `python3 android/tools/sync-published-library.py --output /tmp/lib --check` reports 152 records and 152 cards. Each card is byte-identical to `../biohack.net/public/play/preview/<slug>.png`.
 
     ```
