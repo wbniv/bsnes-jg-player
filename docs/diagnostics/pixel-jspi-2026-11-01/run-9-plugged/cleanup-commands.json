@@ -1,0 +1,47 @@
+[
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793517982.8601935,
+    "end": 1793517983.1959634,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.android.settings/.SubSettings"
+    ],
+    "start": 1793517983.198845,
+    "end": 1793517984.8046732,
+    "returncode": 255
+  },
+  {
+    "args": [
+      "shell",
+      "cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME"
+    ],
+    "start": 1793517984.8062963,
+    "end": 1793517985.0919015,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.apps.nexuslauncher/.NexusLauncherActivity"
+    ],
+    "start": 1793517985.0937707,
+    "end": 1793517985.3907886,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793517985.3923664,
+    "end": 1793517985.6216626,
+    "returncode": 0
+  }
+]

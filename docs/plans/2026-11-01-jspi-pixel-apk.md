@@ -169,3 +169,21 @@ So the baseline ran at the warm, throttled state of runs 4 and 5, and the like-f
 | 8 | `J‑ebf798cf4923` | 39.1 °C / 1 | 136 paced windows, median core **19.42 ms**, 53.62 FPS, `0x204F` at frame 5800, no errors |
 
 Against the earlier runs, whose plug state was not recorded: run 6 (37.0 °C) was 1.8 ms slower than run 2 (36.9 °C, 14.20 ms), and run 8 (39.1 °C, status 1) was 3.6 and 2.8 ms slower than runs 4 and 5 (15.81 and 16.58 ms at the same temperature and status). So temperature alone does not explain the spread. That fits the earlier runs having been plugged in, but nobody recorded their plug state, so it is a hypothesis; a plugged batch run the same way is the test. On battery the warm JSPI median (19.42 ms) is 1.22× faster than the Asyncify baseline (23.66 ms, plug state also unrecorded) and misses the 16.6 ms budget.
+
+### After the Pixel reboot (2026‑11‑01 14:10 to 14:45)
+
+The Pixel hit `device-command-timeout` during the install of `J‑1b1086831a3c`, and the coordinator then held it at `cleanup-requires-restart` until the phone rebooted. That job produced no windows and is not a result. The reboot left wireless debugging off; Will turned it back on and the coordinator reconnected on its own. Runs 9 and 10 were plugged in (per Will); run 11 was unplugged (per Will). All three used the v2 APK `f1afe769…`, `REINSTALL=true`, `DURATION=150`.
+
+| Run | Job | Plug | Paced windows | Median core | FPS | Quarter medians (ms) | `0x204F` at 5800 |
+|---|---|---|---|---|---|---|---|
+| 9 | `J‑fdfebc28f9f4` | plugged | 43 (logcat kept only the last 53 s) | **35.71 ms** | 30.73 | 36.3, 36.0, 35.2, 35.1 | not reached (3977 frames) |
+| 10 | `J‑3bc9cfd340d7` | plugged | 131 | **29.14 ms** | 36.52 | 14.2, 29.5, 29.4, 29.2 | yes |
+| 11 | `J‑c4ea6977eb82` | unplugged | 138 | **16.63 ms** | 60.47 | 13.4, 22.0, 15.9, 16.9 | yes |
+
+Run 9 was slow from the first window. Run 10 started at 14 to 17 ms like runs 4 and 5 and stepped up to about 21 ms near window 35 (38 s), then settled near 29 ms. Run 11 had one slow stretch (about 22 ms in the second quarter) and recovered. Run 11 is 1.42x faster than the Asyncify baseline (23.66 ms).
+
+**Reading.** On this boot the two plugged runs were 1.75x and 2.15x slower than the unplugged run. That supports plugging in (charging) as the cause of the slowdown, but it is two plugged runs against one unplugged run on one boot, so it is a hypothesis, not a finding. It reverses the earlier guess that the fast runs were plugged in. The reboot as a cause is not excluded either: run 11 ran on the same boot and was fast, which argues against it.
+
+**Thermal readings are unreliable here.** `thermal.txt` for runs 10 and 11 holds the same skin value (40.94 °C) and battery value (38.7 °C), so it is a stale snapshot, not a per-run reading. Run 9's snapshot read thermal status 3 and 45.1 °C. Do not use skin temperature to explain these three runs.
+
+Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-9-plugged`, `run-10-plugged`, `run-11-unplugged`.

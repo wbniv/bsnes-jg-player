@@ -1,0 +1,9 @@
+{
+  "args": [
+    "shell",
+    "am start -W -n com.android.settings/.SubSettings"
+  ],
+  "returncode": 255,
+  "stdout": "Starting: Intent { cmp=com.android.settings/.SubSettings }\n",
+  "stderr": "\nException occurred while executing 'start':\njava.lang.SecurityException: Permission Denial: starting Intent { flg=0x10000000 xflg=0x4 cmp=com.android.settings/.SubSettings } from null (pid=16692, uid=2000) not exported from uid 1000\n\tat com.android.server.wm.Session$$ExternalSyntheticBUOutline1.m(R8$$SyntheticClass:0)\n\tat com.android.server.wm.ActivityTaskSupervisor.checkStartAnyActivityPermission(ActivityTaskSupervisor.java:1301)\n\tat com.android.server.wm.ActivityStarter.executeRequest(ActivityStarter.java:1307)\n\tat com.android.server.wm.ActivityStarter.execute(ActivityStarter.java:920)\n\tat com.android.server.wm.ActivityTaskManagerService.startActivityAndWait(ActivityTaskManagerService.java:1731)\n\tat com.android.server.am.ActivityManagerService.startActivityAndWait(ActivityManagerService.java:4082)\n\tat com.android.server.am.ActivityManagerShellCommand.runStartActivity(ActivityManagerShellCommand.java:910)\n\tat com.android.server.am.ActivityManagerShellCommand.onCommand(ActivityManagerShellCommand.java:268)\n\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n\tat android.os.ShellCommand.exec(ShellCommand.java:40)\n\tat com.android.server.am.ActivityManagerService.onShellCommand(ActivityManagerService.java:11448)\n\tat android.os.Binder.shellCommand(Binder.java:1054)\n\tat android.os.Binder.onTransact(Binder.java:914)\n\tat android.app.IActivityManager$Stub.onTransact(IActivityManager.java:5888)\n\tat com.android.server.am.ActivityManagerService.onTransact(ActivityManagerService.java:3513)\n\tat android.os.Binder.execTransactInternal(Binder.java:1328)\n\tat android.os.Binder.execTransact(Binder.java:1282)\n"
+}

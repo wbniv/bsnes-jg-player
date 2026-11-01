@@ -1,0 +1,64 @@
+Applications Memory Usage (in Kilobytes):
+Uptime: 982657 Realtime: 982657
+
+** MEMINFO in pid 20443 [org.bsnesjg.tv.phase2.jspi] **
+                   Pss  Private  Private  SwapPss      Rss     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty    Total     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------   ------
+  Native Heap    34573    34564        0        3    38368    61372    51667     5675
+  Dalvik Heap     2088     2056        0        3     7640   262144     3220   258924
+ Dalvik Other     1016      988        0        0     1816                           
+        Stack     1636     1636        0        0     1644                           
+       Ashmem      863      184        0        0     3192                           
+    Other dev       16        0       16        0      880                           
+     .so mmap     3915      200     1104        2    61564                           
+    .jar mmap      556        0        0        0    41948                           
+    .apk mmap     9619      492     3004        0    46560                           
+    .dex mmap       83        0       76        0      980                           
+    .oat mmap      165        0        0        0    12028                           
+    .art mmap      492      360        0        0    22720                           
+   Other mmap      825       80      432        0     3460                           
+   EGL mtrack    49884    49884        0        0    49884                           
+    GL mtrack    29316    29316        0        0    29316                           
+      Unknown    10202    10048      152        2    11608                           
+        TOTAL   145259   129808     4784       10   333608   323516    54887   264599
+ 
+ App Summary
+                       Pss(KB)                        Rss(KB)
+                        ------                         ------
+           Java Heap:     2416                          30360
+         Native Heap:    34564                          38368
+                Code:     4876                         163136
+               Stack:     1636                           1644
+            Graphics:    79200                          79200
+       Private Other:    11900
+              System:    10667
+             Unknown:                                   20900
+ 
+           TOTAL PSS:   145259            TOTAL RSS:   333608       TOTAL SWAP PSS:       10
+ 
+ Objects
+               Views:        6         ViewRootImpl:        1
+         AppContexts:        6           Activities:        1
+              Assets:       32        AssetManagers:        0
+       Local Binders:       35        Proxy Binders:       72
+       Parcel memory:       15         Parcel count:       62
+    Death Recipients:        4             WebViews:        1
+ 
+ Native Allocations
+                         Count                       Total(kB)
+                        ------                         ------
+    Other (malloced):      398                             36
+ Other (nonmalloced):      118                             83
+ 
+ Shared Bitmaps
+                         Count                       Size(KB)
+                        ------                         ------
+              Mapped:        0                              0
+  (Enable debug.hwui.bitmap_ashmem_long_name sysprop to count unique bitmap allocations)
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 
+ 

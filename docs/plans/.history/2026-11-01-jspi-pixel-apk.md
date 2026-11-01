@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/bcdbbc7) | Record the unplugged JSPI Pixel batch: 15.97 ms cold, 19.42 ms warm |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f01b7fd) | Tie the JSPI Pixel spread to skin temperature; like-for-like speedup is 1.43-1.50x |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/fa98dee) | Record the JSPI Pixel repeats: three clean runs, one coordinator crash |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/58d77ee) | Record the JSPI Pixel result: 14.20 ms median, 60.64 FPS |
@@ -8,6 +9,11 @@
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/a094821) | Add an opt-in experimental WASM engine to the wasm flavor for a JSPI Pixel run |
 
 <!--history-meta v1
+bcdbbc7	author	Will Norris
+bcdbbc7	added	10
+bcdbbc7	deleted	0
+bcdbbc7	files	1
+bcdbbc7	body	Per Will the phone was unplugged. Run 6 (37.0 C) 15.97 ms, run 8 (39.1 C,\nlight throttling) 19.42 ms; run 7 never reached the app (coordinator database\nlock). Both are slower than the earlier runs at the same temperature, so a\nplugged batch is the next test; the earlier plug state was not recorded.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 f01b7fd	author	Will Norris
 f01b7fd	added	10
 f01b7fd	deleted	1

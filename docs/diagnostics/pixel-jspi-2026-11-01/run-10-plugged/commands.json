@@ -1,0 +1,391 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793518485.624433,
+    "end": 1793518486.0155394,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793518486.0279753,
+    "end": 1793518486.3762963,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518486.5949585,
+    "end": 1793518486.8834937,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~xVqWbtCSOp5Ofzx3O959XQ==/org.bsnesjg.tv.phase2.jspi-QaT-fsBJp1o9xsrq-16hig==/base.apk'"
+    ],
+    "start": 1793518486.8867037,
+    "end": 1793518487.2826352,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518486.5892909,
+    "end": 1793518487.3419275,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "install",
+      "-r",
+      "/var/lib/wf-device-coordinator/inputs/f1afe7696a7f766e4f3b9ecf4fd94287379c3532170a568dc5607c5db73318ee.apk"
+    ],
+    "start": 1793518487.3419635,
+    "end": 1793518496.6294985,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518496.6352224,
+    "end": 1793518496.8244073,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~ewNqvFXFGBZz-LcXKrtyuA==/org.bsnesjg.tv.phase2.jspi-84CTabGUmvUunbZbEKHtZg==/base.apk'"
+    ],
+    "start": 1793518496.827057,
+    "end": 1793518497.0560682,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518496.632999,
+    "end": 1793518497.1448967,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518497.1449475,
+    "end": 1793518497.4031038,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518497.407019,
+    "end": 1793518497.6142917,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.phase2.jspi/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793518497.7665436,
+    "end": 1793518498.2264965,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793518503.2306588,
+    "end": 1793518503.48311,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518503.4942534,
+    "end": 1793518503.69763,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518506.712731,
+    "end": 1793518507.2366233,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518516.8143528,
+    "end": 1793518517.1273208,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518526.8197694,
+    "end": 1793518527.2412443,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518536.8555937,
+    "end": 1793518537.279509,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518546.8721356,
+    "end": 1793518547.2839756,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518556.9675212,
+    "end": 1793518557.2834096,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518567.0567741,
+    "end": 1793518567.3740585,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518577.09094,
+    "end": 1793518577.6553981,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518587.204214,
+    "end": 1793518587.8754354,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518597.2309523,
+    "end": 1793518597.6540961,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518607.3165765,
+    "end": 1793518607.6358519,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518617.3905318,
+    "end": 1793518617.825702,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518627.4618332,
+    "end": 1793518627.8947835,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518637.5145798,
+    "end": 1793518637.862628,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793518647.5610585,
+    "end": 1793518647.957471,
+    "returncode": 0,
+    "session_wake": true,
+    "error": null,
+    "interrupted": false
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793518653.7110937,
+    "end": 1793518654.0486944,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518654.0660613,
+    "end": 1793518654.4135628,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793518654.4165435,
+    "end": 1793518655.3924093,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518655.395687,
+    "end": 1793518655.761883,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=20443"
+    ],
+    "start": 1793518655.7642362,
+    "end": 1793518656.2012968,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.phase2.jspi/files/wf.log"
+    ],
+    "start": 1793518656.2052507,
+    "end": 1793518656.864684,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793518656.8689735,
+    "end": 1793518659.9635763,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793518659.9700174,
+    "end": 1793518660.3075569,
+    "returncode": 0
+  }
+]

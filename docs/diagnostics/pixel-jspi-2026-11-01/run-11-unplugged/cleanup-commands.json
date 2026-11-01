@@ -1,0 +1,29 @@
+[
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.phase2.jspi"
+    ],
+    "start": 1793519129.4791248,
+    "end": 1793519129.7500367,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.apps.nexuslauncher/.NexusLauncherActivity"
+    ],
+    "start": 1793519129.7518146,
+    "end": 1793519130.008804,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793519130.0106208,
+    "end": 1793519130.8948424,
+    "returncode": 0
+  }
+]
