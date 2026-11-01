@@ -123,10 +123,11 @@ def inspect_apk(path, kind, name, code, demo, catalog):
 
 class S3Store:
     """AWS CLI v2 transport. Credentials stay in environment, errors are redacted."""
-    def __init__(self):
-        require(CACHE.exists(), 'Run task secrets-pull first')
-        require(CACHE.stat().st_mode & 0o077 == 0, 'Credential cache must be mode 0600')
-        config = json.loads(CACHE.read_text())
+    def __init__(self, config=None):
+        if config is None:
+            require(CACHE.exists(), 'Run task secrets-pull first')
+            require(CACHE.stat().st_mode & 0o077 == 0, 'Credential cache must be mode 0600')
+            config = json.loads(CACHE.read_text())
         require(config['bucket'] == BUCKET and re.fullmatch('[0-9a-f]{32}', config['accountId']), 'Unexpected R2 configuration')
         self.endpoint = 'https://' + config['accountId'] + '.r2.cloudflarestorage.com'
         self.env = {k:v for k,v in os.environ.items() if not k.startswith('AWS_')}

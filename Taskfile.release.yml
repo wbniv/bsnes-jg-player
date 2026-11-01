@@ -42,6 +42,11 @@ tasks:
   r2:setup:
     desc: Verify the existing project bucket without recreating infrastructure
     cmds: [python3 scripts/release/secrets.py setup]
+  r2:provision:
+    desc: Create bucket-scoped R2 credentials through Cloudflare, validate them, and save to SSM
+    env:
+      BSNES_R2_BOOTSTRAP_PARAMETER: '{{.BOOTSTRAP_PARAMETER | default ""}}'
+    cmds: [python3 scripts/release/r2_provision.py]
   r2:probe:
     desc: Check object read/write/delete permissions in a disposable project prefix
     cmds: [python3 scripts/release/secrets.py probe]
