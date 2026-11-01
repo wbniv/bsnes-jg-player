@@ -125,3 +125,17 @@ Run on 2026‑11‑01. The tools are in [../performance/2026-11-01/jspi-coroutin
 | `jspi_error` or `core_error` | A trap, for example stack exhaustion |
 
 The host run of v2 reaches frame 5800 with `0x204F` and logs all of the new events.
+
+## Pixel 8 Pro result (2026‑11‑01)
+
+Release-signed APK `org.bsnesjg.tv.phase2.jspi` 0.1.10 (code 11), cert `1bc3d058…`, JSPI core `0a3a6ffe…`, `MandelbrotBenchmarkActivity`, `DURATION=150`, no checkpoint. WebView Chrome 156 on Android 17, `jspi: true`.
+
+| Run | APK | Result |
+|---|---|---|
+| Asyncify baseline (160 windows) | existing | median core 23.66 ms, 45.22 FPS |
+| JSPI run 2, job `J‑851ba877eabd` (144 windows) | v2 `f1afe769…` | median core **14.20 ms**, **60.64 FPS** (1.666×); p05 12.58 ms, p95 25.25 ms; `reference_ready` at frame 5800 with `0x204F`; no `jspi_error` or `core_error` |
+| JSPI run 1, job `J‑6839cadfce9b` | v1 `4d3da94e…` | one frame, no `playback_window`; nothing logged after `engine_info`; EMU and DRAW FPS read 0.0 |
+
+Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-1/` and `run-2/`; comparison in `docs/performance/2026-11-01/pixel-jspi/`. The laptop projection was about 13.0 ms, so the phone result is close to it.
+
+**Not explained.** Run 1 stalled and run 2 did not. v2 only adds logging, so the stall may be intermittent. Run 1 also waited about 3 minutes for the phone to unlock before the app launched. Repeat the run at least three times before relying on JSPI.

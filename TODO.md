@@ -10,7 +10,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
-- [wip T4] **Land the JSPI core beside the Asyncify core, if Will agrees.** Measured 2026‑11‑01 ([plan](docs/plans/2026-11-01-jspi-coroutines.md)): a JSPI libco backend runs at 0.551× the Asyncify frame time on the laptop, with bit-identical WRAM and framebuffer and `?verify=1` passing in Firefox 156, Chromium 151 and Chrome 154. Projected Pixel 8 Pro WASM: 23.7 to about 13.0 ms (not measured on a phone). JSPI is not universal (Safari and iOS 27, Firefox 153), so it ships beside the Asyncify core, chosen at load with `typeof WebAssembly.Suspending === "function"`. Landing means two cores, an async `_bjg_run`, new pinned shas and the Android/TV paths. First step, chosen by Will 2026‑11‑01: a Pixel run to confirm the gain (the agent is building the experimental APK; registering it on the coordinator is a step for Will). Needs Will's decision before any change to `web/cores`, `dist` or the pinned shas. <!-- agent:a16ea50713848f620 -->
+- [T4] **Land the JSPI core beside the Asyncify core, if Will agrees.** Pixel 8 Pro measured 2026‑11‑01 ([plan](docs/plans/2026-11-01-jspi-pixel-apk.md), [laptop plan](docs/plans/2026-11-01-jspi-coroutines.md)): median core 14.20 ms and 60.64 FPS against Asyncify's 23.66 ms and 45.22 FPS (1.666×), frame 5800 `0x204F` passes, no core errors. One earlier run (v1 APK) drew a single frame and logged nothing more; it did not recur on v2, whose only change is diagnostic logging, so the cause is unknown. JSPI is not universal (Safari and iOS 27, Firefox 153), so it ships beside the Asyncify core, chosen at load with `typeof WebAssembly.Suspending === "function"`. Before landing: repeat the Pixel run 3 or more times to see whether the stall recurs. Landing means two cores, an async `_bjg_run`, new pinned shas and the Android/TV paths, and needs Will's decision before any change to `web/cores`, `dist` or the pinned shas.
 
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
@@ -53,6 +53,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [jspi-pixel-run] JSPI WASM on the Pixel 8 Pro: 14.20 ms median, 60.64 FPS vs 23.66 ms Asyncify; one unexplained stall. See [plan](docs/plans/2026-11-01-jspi-pixel-apk.md).
 - ✅ 2026‑11‑01 — [lucky-dpad] D-pad route to I'm Feeling Lucky added and a chip-timer focus bug fixed; library UI test 31 of 31; no remote or device run. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [native-currentrom] Native adapter exposes `currentRom()`, so Resume works from the library; new adapter test 2 of 2; not run on a device. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [jspi-coroutines] JSPI libco backend measured: 0.551× frame time, bit-identical gates, needs an Asyncify fallback. See [plan](docs/plans/2026-11-01-jspi-coroutines.md).
