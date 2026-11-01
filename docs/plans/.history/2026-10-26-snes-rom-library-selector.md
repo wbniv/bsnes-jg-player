@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1e7b34a) | Reconcile documentation status with iOS and Android validation evidence |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
 | [2026-10-29](https://github.com/wbniv/bsnes-jg-player/commit/8cf3f67) | Correct SNES display aspect guidance in mockups |
@@ -8,6 +9,10 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/a755147) | feat: unify responsive SNES layout across platforms |
 
 <!--history-meta v1
+d6498ac	author	Will Norris
+d6498ac	added	4
+d6498ac	deleted	2
+d6498ac	files	1
 1e7b34a	author	Will Norris
 1e7b34a	added	2
 1e7b34a	deleted	2

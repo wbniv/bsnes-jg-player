@@ -93,5 +93,18 @@ Rank: **T2**. The code exists in one module; the work is switching it back on, t
     - an empty result inside a filter offers Search all N ROMs with the right count;
     - I'm Feeling Lucky draws only from the search results;
     - the field is hidden at 24 ROMs and shown at 25.
+
+    ```
+    $ node --test android/test/library-ui.test.mjs
+    Could not find 'android/test/library-ui.test.mjs'
+    $ git log --all --oneline -- android/test/library-ui.test.mjs
+    (no commits: the file has never existed in this repository)
+    ```
+
+    **FAIL (2026‑11‑01).** The test this step names (the search cases) was never written, so none of the six search cases has run. `android/test/` holds only `frame-scheduler.test.mjs`, `metrics-report.test.mjs` and `pixel-format.test.cpp`.
 2. On cast1, press Select on the field and take a coordinator screen capture. Record whether the keyboard is a bottom panel or full-screen, and update "Still to verify" above.
+
+    **NOT RUN (2026‑11‑01).** Needs Cast1 with a coordinator screen capture.
 3. On cast1, type `mand`, press the keyboard's action key, then Select. Double-Precision Mandelbrot starts: all four Mandelbrots tie on rank, and it comes first in gallery order. Back closes the keyboard without leaving the library.
+
+    **NOT RUN (2026‑11‑01).** Needs Cast1 with remote input.

@@ -324,14 +324,45 @@ Rank: **T3**; implementation is in progress. The two decision changes add a **T2
     - the empty-Favorites state;
     - the 1/10/100/1,000 layout thresholds;
     - at most 30 rows in the DOM with 1,000 ROMs.
+
+    ```
+    $ node --test android/test/library-ui.test.mjs
+    Could not find 'android/test/library-ui.test.mjs'
+    $ git log --all --oneline -- android/test/library-ui.test.mjs
+    (no commits: the file has never existed in this repository)
+    ```
+
+    **FAIL (2026‑11‑01).** The test this step names was never written, so none of the listed cases has run. `android/test/` holds only `frame-scheduler.test.mjs`, `metrics-report.test.mjs` and `pixel-format.test.cpp`.
 2. Check sync and card art: `python3 android/tools/sync-published-library.py --output /tmp/lib --check` reports 152 records and 152 cards. Each card is byte-identical to `../biohack.net/public/play/preview/<slug>.png`.
+
+    ```
+    $ python3 android/tools/sync-published-library.py --output /tmp/lib --check
+    Staged 152 published ROMs (44,630,016 raw bytes) and 152 site previews into /tmp/lib
+    Check passed: 152 catalog records, ROMs, and card hashes
+    ```
+
+    **PASS (2026‑11‑01).** 152 records and 152 cards, matching the step.
 3. Build with `task android:build`. Both Phase 2 APK artifact gates must verify all 152 ROM files, 152 cards, the same catalog, and the direct-boot fixture. Record both APK sizes.
+
+    **NOT RUN (2026‑11‑01).** Needs `task android:build`, a Docker build of both Phase 2 APKs; not run on a disk with about 4 GB free. The release-signed native library build did pass its own artifact gate this session, but that is not both Phase 2 gates.
 4. Register both APKs with the coordinator and install them side by side. Confirm the separate package IDs and launcher artwork; test app launch separately because an icon does not prove the runtime works.
+
+    **NOT RUN (2026‑11‑01).** Needs both APKs registered with the coordinator, which adds shared coordinator apps.
 5. Walk through the UI on cast1 with coordinator-owned input and capture workflows. Preserve screenshots for each mockup state; do not use raw device commands.
+
+    **NOT RUN (2026‑11‑01).** Needs a Cast1 session with coordinator-owned input and capture workflows.
 6. Check persistence: star 2 ROMs, use the coordinator to stop and relaunch each engine variant. Both stars survive, and focus returns to the last-played ROM.
+
+    **NOT RUN (2026‑11‑01).** Needs Cast1 with coordinator stop and relaunch of each engine variant.
 7. Check offline play: disable Wi-Fi on cast1, launch, and play a 32 KB ROM, an 8 MB ROM and an I'm Feeling Lucky pick.
+
+    **NOT RUN (2026‑11‑01).** Needs Cast1 with Wi-Fi disabled.
 8. Check that every ROM boots: loop over all 152 slugs with the `rom` intent extra and assert a non-blank frame after 120 frames. Record the time to the first frame for `mandel-display` and `svx2-fastrom-video`.
+
+    **NOT RUN (2026‑11‑01).** Needs a device loop over all 152 slugs.
 9. Spot-check TalkBack on cast1: a row, a chip and the pause menu read correctly.
+
+    **NOT RUN (2026‑11‑01).** Needs TalkBack on Cast1.
 
 ## Appendix: published ROM inventory (snapshot 2026‑10‑26)
 
