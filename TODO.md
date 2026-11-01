@@ -10,7 +10,7 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
-- [T4] **Remove the Asyncify cost with JSPI or uninstrumented coroutines.** Asyncify list trimming gains under 3% (see [plan](docs/plans/2026-10-31-asyncify-trim.md)); the Pixel 8 Pro WASM gap (23.7 vs 16.6 ms) needs a design change: `-sJSPI` fibers, a libco backend, or a scheduler without libco. Gate on browser JSPI support and the 0x204F fidelity check.
+- [wip T4] **Remove the Asyncify cost with JSPI or uninstrumented coroutines.** Asyncify list trimming gains under 3% (see [plan](docs/plans/2026-10-31-asyncify-trim.md)); the Pixel 8 Pro WASM gap (23.7 vs 16.6 ms) needs a design change: `-sJSPI` fibers, a libco backend, or a scheduler without libco. Gate on browser JSPI support and the 0x204F fidelity check. <!-- agent:a16ea50713848f620 -->
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
 - [T1] **First publish (manual prereq)**: create the npm account owning `@wbniv`, mint a granular
