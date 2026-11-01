@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/fda6cf9) | Sweep the plans for statements this session made stale |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/2f65e42) | Index the JSPI coroutines plan |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/efcea07) | Observe the retarget-once stop case live on the real ROM |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/1fe82f5) | Index the Asyncify trim plan |
@@ -15,6 +16,11 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+fda6cf9	author	Will Norris
+fda6cf9	added	2
+fda6cf9	deleted	1
+fda6cf9	files	1
+fda6cf9	body	The renderer plan still said Cast2 had failed to reconnect; it now points at\nthe 2026-11-01 Cast2 run and says what is and is not proven. The Asyncify\ntrim, Pixel perf and Cast1 tuning plans get status lines, the Cast1 plan gets\nits missing index row, and the selector plan no longer calls the library UI\ntest new.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 2f65e42	author	Will Norris
 2f65e42	added	2
 2f65e42	deleted	1
