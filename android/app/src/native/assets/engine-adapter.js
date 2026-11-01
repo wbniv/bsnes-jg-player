@@ -31,6 +31,7 @@
     onBackground: null,
     isReady: function () { return true; },
     hasRom: function () { return !!currentRom; },
+    currentRom: function () { return currentRom; },
     canVerify: function (slug) { return slug === "mandel-display"; },
     background: function () { api.pause(); if (api.hasRom() && api.onBackground) api.onBackground(); },
     play: function (slug) {
