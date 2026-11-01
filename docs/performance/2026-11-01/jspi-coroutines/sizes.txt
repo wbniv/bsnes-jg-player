@@ -1,0 +1,7 @@
+build           raw_bytes  gzip9_bytes    glue_js  wasm_sha256
+baseline          3903329      1880482      73360  a3f5299b7fc29acb77dbdc22e56d4f45413187e6a416861c98a508b162b45172
+jspi              3285035      1753877      68222  0a3a6ffe701cc6ee15d777750229344f49f31580002e613c28b78a54573566ea
+baseline-seed     3903082      1880348      72928  033708a44409805cb9d3caebbc7e3667d2b488200b3586902e515f121f15cf45
+jspi-seed         3284761      1753766      67778  b5fad3dc1fd0d90314fcaa02fe6e6695b8f44a7af02a10de9eb6319ff6fa4f7e
+pp-asyncify          8772         3675      12052  f2c1ea038a7332e1f1bb7e97ab9cdded4c3341ec173d6559f83ba9d97e093550
+pp-jspi              7750         3435       7914  2f4a554b073cf4d24d8d75eb168df8a204dea30e19ee21cd80038bffef4fdc16

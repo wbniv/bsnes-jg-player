@@ -1,0 +1,8 @@
+{
+ "badge": "✓ FIDELITY 0x204F == gate (gate jgxcheck CRC (corpus_result @ WRAM $0200), 5800 frames)",
+ "cls": "badge pass",
+ "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:156.0) Gecko/20100101 Firefox/156.0",
+ "coi": false,
+ "sab": "undefined",
+ "title": "bsnes-jg-player — the gate's cycle-accurate SNES core, in the browser"
+}

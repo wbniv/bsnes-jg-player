@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>jspi probe</title><body><pre id="checkresult">probing</pre><script>
+// Feature probe for JSPI. Writes "✓ JSPI ..." or "✗ JSPI ..." into #checkresult so scripts/firefox-verify.py
+// (which waits for a ✓/✗ badge there) can read it unchanged.
+(async () => {
+  const has = typeof WebAssembly.Suspending === "function" && typeof WebAssembly.promising === "function";
+  let live = "n/a";
+  if (has) {
+    try {
+      // (module (import "m" "s" (func $s (result i32))) (func (export "f") (result i32) call $s))
+      const bytes = new Uint8Array([0,97,115,109,1,0,0,0,1,5,1,96,0,1,127,2,7,1,1,109,1,115,0,0,3,2,1,0,7,5,1,1,102,0,1,10,6,1,4,0,16,0,11]);
+      const s = new WebAssembly.Suspending(() => new Promise(r => setTimeout(() => r(42), 1)));
+      const { instance } = await WebAssembly.instantiate(bytes, { m: { s } });
+      live = String(await WebAssembly.promising(instance.exports.f)());
+    } catch (e) { live = "error: " + e.message; }
+  }
+  document.getElementById("checkresult").textContent =
+    (has && live === "42" ? "✓" : "✗") + " JSPI Suspending=" + typeof WebAssembly.Suspending + " promising=" + typeof WebAssembly.promising + " suspend-resume=" + live;
+  window.ready = true;
+})();
+</script>
