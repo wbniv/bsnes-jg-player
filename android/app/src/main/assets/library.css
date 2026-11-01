@@ -309,3 +309,5 @@ body.playing #hud>div{max-width:100%;overflow-wrap:break-word;word-break:normal}
   .treemap-total{display:none!important}
   .treemap-palette-control{margin-left:auto}
 }
+
+.search[hidden],.filters[hidden]{display:none}
