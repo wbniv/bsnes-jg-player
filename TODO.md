@@ -13,12 +13,9 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 - [wip T4] **Remove the Asyncify cost with JSPI or uninstrumented coroutines.** Asyncify list trimming gains under 3% (see [plan](docs/plans/2026-10-31-asyncify-trim.md)); the Pixel 8 Pro WASM gap (23.7 vs 16.6 ms) needs a design change: `-sJSPI` fibers, a libco backend, or a scheduler without libco. Gate on browser JSPI support and the 0x204F fidelity check. <!-- agent:a16ea50713848f620 -->
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
-- [T1] **First publish (manual prereq)**: create the npm account owning `@wbniv`, mint a granular
-  automation token for this package, add repo secret `NPM_TOKEN`, then `git tag v1.0.0 && git push --tags`.
 
 ### live-record mode — [spec](../llvm-mos-65816/docs/plans/2026-07-28-gallery-per-image-selfcheck.md)
 
-- [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
 
 ### Google TV ROM library — [plan](docs/plans/2026-10-26-snes-rom-library-selector.md)
 
@@ -40,6 +37,12 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 _Nothing being watched._
 
 ## Parked
+
+- [T1] **First publish (manual prereq)**: create the npm account owning `@wbniv`, mint a granular
+  automation token for this package, add repo secret `NPM_TOKEN`, then `git tag v1.0.0 && git push --tags`.
+  Parked 2026‑11‑01 (Will: "we're not ready for release"). Re-check the tier on unpark.
+- [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
+  Parked 2026‑11‑01 (Will: "we're not ready for release"). Re-check the tier on unpark.
 
 - [T2] **Search for the TV library**: see the [plan](docs/plans/2026-10-26-snes-rom-library-search.md).
   Deferred by Will on 2026‑10‑26. Search is currently visible. The old instruction to disable it is under clarification with Will; do not remove it solely because of that historical deferral. Un-park when
