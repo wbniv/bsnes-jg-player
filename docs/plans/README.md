@@ -33,6 +33,7 @@ rows on commit.*
 | [Pixel phone performance: can the player claim mobile?](2026-10-31-pixel-phone-perf.md) | Measure emulation pacing of the WASM and native Android engines on the Pixel 8 Pro with the `playback_window` metric and record whether mobile can be claimed. | Interim: WASM 45 FPS, native 60 FPS; fresh WASM and native-baseline runs blocked on coordinator registration | Investigation |
 | [Asyncify trim: does an instrumentation list make the WASM core faster or smaller?](2026-10-31-asyncify-trim.md) | Relink the core with `ASYNCIFY_ADVISE`/`ADD`/`REMOVE` lists, profile the swap-reachable stack set, and bench every build paired in headless Chromium with checkpoint and Firefox fidelity gates. | Done: no meaningful gain (−7% raw wasm, ≤3% frame time); nothing landed | Investigation |
 | [Re-verify the retarget-once stop case](2026-10-31-retarget-stop-check.md) | Drive headless Firefox against the real gallery ROM and real `web/app.js` to observe the 1st-navigation restart badge and the 2nd-navigation fail badge of the live-record self-check. | Done: both badges observed on the real ROM | Verification |
+| [JSPI coroutines: can a design change remove the Asyncify cost?](2026-11-01-jspi-coroutines.md) | Replace the Asyncify-fiber libco backend with a JSPI one (each thread its own engine stack), then bench it paired against the committed core and gate it on WRAM/video checkpoints and `?verify=1` in three browsers. | [`538e7c4`](https://github.com/wbniv/bsnes-jg-player/commit/538e7c4); viable only with an Asyncify fallback (0.55× frame time, bit-identical); not landed | Investigation |
 
 ---
 
@@ -41,4 +42,4 @@ rows on commit.*
 - **Order** = each plan's *creation* commit (oldest commit that touched the file), by committer date.
 - **Commit(s)** = the full `git log --follow` set per plan, oldest → newest.
 - **Summaries / categories** auto-generated from each plan's TL;DR (Sonnet, medium effort) — refine as needed.
-- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s); asyncify-trim row added by hand 2026-10-31.
+- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s); asyncify-trim row added by hand 2026-10-31; jspi-coroutines row added by hand 2026-11-01.
