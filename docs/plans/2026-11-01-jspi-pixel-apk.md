@@ -139,3 +139,14 @@ Release-signed APK `org.bsnesjg.tv.phase2.jspi` 0.1.10 (code 11), cert `1bc3d058
 Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-1/` and `run-2/`; comparison in `docs/performance/2026-11-01/pixel-jspi/`. The laptop projection was about 13.0 ms, so the phone result is close to it.
 
 **Not explained.** Run 1 stalled and run 2 did not. v2 only adds logging, so the stall may be intermittent. Run 1 also waited about 3 minutes for the phone to unlock before the app launched. Repeat the run at least three times before relying on JSPI.
+
+### Repeats (2026‑11‑01, v2 APK `f1afe769…`, `REINSTALL=true`, `DURATION=150`)
+
+| Run | Job | Outcome |
+|---|---|---|
+| 2 | `J‑851ba877eabd` | 144 windows, median core 14.20 ms, 60.64 FPS |
+| 3 | `J‑22d6346d7c53` | **No app run.** The coordinator worker crashed right after the device was granted (`worker-crash`, `work_started` empty); an automatic readd (`J‑d7e02dd7619c`) followed. Not a result for or against JSPI. |
+| 4 | `J‑163c089b8043` | 140 paced windows, median core 15.81 ms, 63.64 FPS, `reference_ready` at frame 5800, no errors |
+| 5 | `J‑f34e9c1c9d8a` | 137 paced windows, median core 16.58 ms, 62.41 FPS, `reference_ready` at frame 5800, no errors |
+
+All three v2 runs that reached the app were clean (no stall, no `jspi_error` or `core_error`), with median core time 14.20, 15.81 and 16.58 ms, so about 1.4 to 1.7× faster than the Asyncify baseline of 23.66 ms, and the slowest sits right at the 16.6 ms frame budget. The one stall, run 1 on the v1 APK, has not recurred in three v2 runs; with a sample this small that does not show it is gone. The spread (14.2 to 16.6 ms) was not explained; thermal state is a candidate, and `thermal.txt` in each evidence directory can be checked. Evidence: `docs/diagnostics/pixel-jspi-2026-11-01/run-3`, `run-4`, `run-5`.

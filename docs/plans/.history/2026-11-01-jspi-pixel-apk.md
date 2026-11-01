@@ -1,10 +1,16 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/58d77ee) | Record the JSPI Pixel result: 14.20 ms median, 60.64 FPS |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/7d1a828) | Add device diagnostics to the JSPI APK after the Pixel stall |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/6d8798f) | Record the JSPI Pixel APK builds and the signing-key finding |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/a094821) | Add an opt-in experimental WASM engine to the wasm flavor for a JSPI Pixel run |
 
 <!--history-meta v1
+58d77ee	author	Will Norris
+58d77ee	added	14
+58d77ee	deleted	0
+58d77ee	files	1
+58d77ee	body	The JSPI WASM core on the Pixel 8 Pro is 1.666x faster than Asyncify, with the\nframe-5800 gate passing. One earlier run stalled after its first frame and has\nno known cause; the TODO item asks for repeat runs before landing.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 7d1a828	author	Will Norris
 7d1a828	added	21
 7d1a828	deleted	0
