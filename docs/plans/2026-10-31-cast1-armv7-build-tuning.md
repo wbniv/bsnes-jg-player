@@ -85,10 +85,26 @@ Measured 2026-10-31 on Cast1 with release-signed APKs, one frame-5800 job per bu
 
 `CMakeLists.txt` keeps none of the flags, only a comment recording this. The framebuffer fix and linear resampler stay. `-O3` was not separated from thin LTO.
 
+## Cast2 measurement (2026‑11‑01)
+
+Job `J‑0020fd86a0c0` on `chromecast-test-02` (Chromecast, Android 12, armeabi-v7a), release-signed clamp build, version 0.1.10 (code 11), cert `1bc3d058…`, `DURATION=480`. Evidence: `docs/diagnostics/cast2-armv7-measure-2026-11-01/`; comparison: `compare/summary.json` and `compare/core-ms.svg`.
+
+| Device | Windows | Median core ms | Median FPS | p05 / p95 core ms |
+|---|---|---|---|---|
+| Cast1 Chromecast HD, baseline `8811ca04` | 281 | 64.14 | 15.41 | 63.28 / 65.35 |
+| Cast2 Chromecast, clamp `8dc3b646` build | 446 | 44.04 | 22.41 | 43.77 / 45.62 |
+
+- Cast2 runs the core 1.456× faster than Cast1 (median core ms), still well under the 60 FPS target (16.6 ms budget).
+- `emulation_backlog_frames` is 0.0 in every window, as the catch-up clamp intends.
+- The run reached ROM frame 10,773 at about 491 s and passed frame 5800 at 269 s.
+- Clamp and baseline cores differ by 0.1% on Cast1, so the comparison is a device comparison.
+- **Not measured:** the frame‑5800 capture, the WRAM `0x204F` gate and the 4:3 layout check were not run on Cast2.
+- **The package id differs.** Cast2 carries a stale `org.bsnesjg.tv.native.phase2` signed with another key (it survived a factory reset), so `INSTALL_FAILED_UPDATE_INCOMPATIBLE` blocked four installs (evidence in the `-install-refused*` directories, untracked). This build uses id `org.bsnesjg.tv.native.phase2.cast2`, built with `BJG_GRADLE_EXTRA=-PnativeIdSuffixExtra=.cast2` (`android/app/build.gradle.kts`, `android/build-in-container.sh`). Native code, version, key and ROM are identical.
+- The coordinator app `bsnes-jg-tv-phase2-native-cast2` has no `frame` checkpoint, because checkpoints are declared per package in the coordinator's root-owned `applications.json`. Adding one for the `.cast2` package would restore the automatic frame‑5800 capture; that is the administrator's change.
+
 ## Out of scope
 
 - **PGO training build.** A `-fprofile-generate` variant of `libbjg.so`, a JNI `dumpProfile()` that writes `.profraw` after a fixed frame count, a coordinator step that pulls it from the app's files directory, and a `-fprofile-use` release build. Expected gain 10–30% on this interpreter-style code. Gate on the coordinator having a file-pull capability for a non-debuggable package.
-- **Cast2 measurement.** Coordinator control of `chromecast-test-02` is unavailable (`transport-unavailable`); measure it with the same job once it reconnects.
 - **Startup cost.** `Bus::map` spends about 1.1 G instructions at load, roughly 1–2 s of Cast1's time to first frame. Inherent to the core's address-map design; record it in the selector plan's startup timing rather than optimising here.
 - **Unbounded catch-up credit (fixed after this plan's runs).** `emulation_backlog_frames` is the running `credit` value at the end of each one-second window (`peak_backlog_frames` is the window maximum), not a windowed peak. On Cast1 it grew monotonically for the whole run: 3 739.74 to 16 219.70 frames over 284 windows in the baseline, about 44 frames per second, which is the 60.0988 Hz target minus the 15.4 FPS the core delivers. The tuned and variant runs showed the same growth, with no decreases in any of them. A stall would have been replayed at 4 steps per callback. `MainActivity.NativeRenderer` now clamps `credit` to `MAX_CATCHUP_STEPS` (4, one callback of work) after the peak is sampled, so the missed time is dropped instead of banked. The cap is native-only: the WASM `tv-scheduler.js` has no credit cap and still recovers a stall in full, which `android/test/frame-scheduler.test.mjs` pins. Covered by that test: the Java source declares the constant and the clamp, and a JS model of the arithmetic stays bounded on a slow core and does not burst after a 10 s stall. Not covered: the Java code executing (it is not unit-testable here) and any device run; after the fix, `emulation_backlog_frames` should read at most 4 on Cast1. **Device check, 2026-10-31 (job J‑12d2458f0664, release APK `8dc3b646`, Cast1):** frame 5809 reached at 377 s, WRAM `0x204F` gate passes, median core time 64.24 ms (0.999× the baseline's 64.14 ms), and `emulation_backlog_frames` is 0.0 in all 366 windows against 3,739.74 rising to 16,219.70 in the baseline; `peak_backlog_frames` sits at 15.02 (the pre-clamp per-callback credit, 0.25 s × 60.0988). Evidence: `docs/diagnostics/cast1-armv7-tuning-2026-10-31/clamp/`.
 

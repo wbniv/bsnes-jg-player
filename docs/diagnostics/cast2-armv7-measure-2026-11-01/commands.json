@@ -1,0 +1,178 @@
+[
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793495684.4314282,
+    "end": 1793495684.7632592,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793495684.9208848,
+    "end": 1793495685.1116269,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "pm list packages org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793495685.1132247,
+    "end": 1793495685.4610252,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "install",
+      "-r",
+      "/var/lib/wf-device-coordinator/inputs/be5e60a7c97a8136ac199c747e32a43ede9cf7d33700336f606dd925d3a0e73f.apk"
+    ],
+    "start": 1793495685.5239189,
+    "end": 1793495702.1904984,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pm path org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793495702.192464,
+    "end": 1793495702.394042,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "sha256sum '/data/app/~~YOabAvsF1B1phmAAjr3tTQ==/org.bsnesjg.tv.native.phase2.cast2-_MQ3L_fCDh1fOFQMlZ3ipg==/base.apk'"
+    ],
+    "start": 1793495702.3949234,
+    "end": 1793495702.6183283,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793495702.6510487,
+    "end": 1793495702.9125912,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "input keyevent KEYCODE_WAKEUP"
+    ],
+    "start": 1793495702.914039,
+    "end": 1793495703.3074338,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n org.bsnesjg.tv.native.phase2.cast2/org.bsnesjg.tv.MandelbrotBenchmarkActivity"
+    ],
+    "start": 1793495703.4595327,
+    "end": 1793495708.8797767,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793495713.882847,
+    "end": 1793495714.25064,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793495714.2577837,
+    "end": 1793495714.4480915,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793496194.4561582,
+    "end": 1793496194.8195958,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793496194.824091,
+    "end": 1793496194.9853792,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "exec-out",
+      "screencap",
+      "-p"
+    ],
+    "start": 1793496194.9868171,
+    "end": 1793496196.2287347,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "pidof org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793496196.2308004,
+    "end": 1793496196.3859274,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "logcat",
+      "-d",
+      "-v",
+      "threadtime",
+      "--pid=23004"
+    ],
+    "start": 1793496196.3872366,
+    "end": 1793496196.7293472,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "tail -c 4000000 /sdcard/Android/data/org.bsnesjg.tv.native.phase2.cast2/files/wf.log"
+    ],
+    "start": 1793496196.7308836,
+    "end": 1793496196.8774498,
+    "returncode": 1
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys meminfo org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793496196.879143,
+    "end": 1793496197.381615,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys thermalservice"
+    ],
+    "start": 1793496197.386976,
+    "end": 1793496197.5932384,
+    "returncode": 0
+  }
+]

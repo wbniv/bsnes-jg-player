@@ -1,9 +1,15 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9d17a92) | Record the Cast1 device check of the catch-up credit cap |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9132eae) | Cap native catch-up credit so a slow core or stall is dropped, not banked |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/cd6a3fc) | Record Cast1 build-flag bisect: no compiler flag helps, none kept |
 
 <!--history-meta v1
+9d17a92	author	Will Norris
+9d17a92	added	1
+9d17a92	deleted	1
+9d17a92	files	1
+9d17a92	body	Release APK from 9132eae on Chromecast HD: frame 5809 at 377 s, WRAM\ngate passes, median core time 64.24 ms (0.999x the baseline), and\nemulation_backlog_frames stays 0.0 in all 366 windows against the\nbaseline's 3,739.74 rising to 16,219.70.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 9132eae	author	Will Norris
 9132eae	added	1
 9132eae	deleted	1

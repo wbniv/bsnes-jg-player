@@ -32,6 +32,10 @@ val expectedGlueSha = "54e19fd849b823d87e278438fe7ec5ccaf8e526e966c8f4e007d29ccf
 val expectedWasmSha = "e74dbd3d7160608dfb6e1ae2ed7ff263fafaa62b0444870530530e2e931ebeb3"
 val controlledDebugSigning = providers.gradleProperty("controlledDebugSigning")
     .map(String::toBoolean).getOrElse(false)
+// Optional per-device suffix (-PnativeIdSuffixExtra=.cast2) so a measurement build can install
+// beside another copy of this package that was signed with a different key.
+val nativeIdSuffixExtra = providers.gradleProperty("nativeIdSuffixExtra").orElse("").get()
+check(Regex("(\\.[a-z][a-z0-9]*)*").matches(nativeIdSuffixExtra)) { "Invalid nativeIdSuffixExtra" }
 val releaseKeystorePath = providers.environmentVariable("BJG_RELEASE_KEYSTORE").orNull
 val releaseKeystorePassword = providers.environmentVariable("BJG_RELEASE_KEYSTORE_PASSWORD").orNull
 val releaseKeyAlias = providers.environmentVariable("BJG_RELEASE_KEY_ALIAS").orNull
@@ -234,7 +238,7 @@ android {
         }
         create("native") {
             dimension = "engine"
-            applicationIdSuffix = ".native.phase2"
+            applicationIdSuffix = ".native.phase2$nativeIdSuffixExtra"
             resValue("string", "app_name", "LLVM 65816 Torture Test Suite on SNES")
             buildConfigField("boolean", "NATIVE_ENGINE", "true")
             buildConfigField("boolean", "ROM_LIBRARY", "true")
@@ -415,7 +419,7 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
                 }
                 val expectedPackage = when (flavor) {
                     "wasmplayer" -> "org.bsnesjg.tv"
-                    "native" -> "org.bsnesjg.tv.native.phase2"
+                    "native" -> "org.bsnesjg.tv.native.phase2$nativeIdSuffixExtra"
                     "nativeplayer" -> "org.bsnesjg.tv.native"
                     else -> "org.bsnesjg.tv.phase2"
                 }

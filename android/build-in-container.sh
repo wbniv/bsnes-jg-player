@@ -80,6 +80,8 @@ else
   gradle_signing='-PcontrolledDebugSigning=true'
   gradle_tasks=':app:verifyDebugArtifact :app:verifyReleaseArtifact :app:verifyWasmplayerDebugArtifact :app:verifyWasmplayerReleaseArtifact :app:verifyNativeDebugArtifact :app:verifyNativeReleaseArtifact :app:verifyNativeplayerReleaseArtifact'
 fi
+# Extra Gradle arguments, for example BJG_GRADLE_EXTRA=-PnativeIdSuffixExtra=.cast2
+gradle_signing="$gradle_signing ${BJG_GRADLE_EXTRA:-}"
 build_commands="python3 tools/apply-core-patches.py ../vendor/bsnes-jg && python3 tools/generate-suite-icon.py && python3 tools/generate-app-icons.py && node --check ../web/app.js && node --check app/src/main/assets/tv.js && node --check app/src/main/assets/tv-player.js && node --check app/src/main/assets/performance-overlay.js && node --check app/src/main/assets/library.js && node --check app/src/main/assets/tv-scheduler.js && node --check app/src/wasm/assets/engine-adapter.js && node --check app/src/native/assets/engine-adapter.js && node --check tools/metrics-report.mjs && node --check tools/compare-report.mjs && node tools/compare-report.mjs && node test/frame-scheduler.test.mjs && node test/metrics-report.test.mjs && node ../bin/sync.mjs sync /tmp/bsnes-jg-tv-package-smoke --demo && node ../bin/sync.mjs sync --check /tmp/bsnes-jg-tv-package-smoke && exec ./gradlew $gradle_signing $gradle_tasks --offline --no-daemon"
 docker run "${container_args[@]}" sh -c "$build_commands"
 

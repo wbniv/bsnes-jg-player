@@ -1,0 +1,15 @@
+[
+  {
+    "input": "be5e60a7c97a8136ac199c747e32a43ede9cf7d33700336f606dd925d3a0e73f.apk",
+    "package": "org.bsnesjg.tv.native.phase2.cast2",
+    "before_sha256": null,
+    "action": "install",
+    "reason": "forced-reinstall",
+    "variant": null,
+    "status": "verified",
+    "start": 1793495685.4610538,
+    "journal_key": "install:1",
+    "installed_sha256": "be5e60a7c97a8136ac199c747e32a43ede9cf7d33700336f606dd925d3a0e73f",
+    "end": 1793495702.6495318
+  }
+]

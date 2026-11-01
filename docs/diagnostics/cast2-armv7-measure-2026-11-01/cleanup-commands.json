@@ -1,0 +1,47 @@
+[
+  {
+    "args": [
+      "shell",
+      "am force-stop org.bsnesjg.tv.native.phase2.cast2"
+    ],
+    "start": 1793496197.6509824,
+    "end": 1793496197.9121602,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.MainActivity"
+    ],
+    "start": 1793496197.9137409,
+    "end": 1793496198.1256208,
+    "returncode": 255
+  },
+  {
+    "args": [
+      "shell",
+      "cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.LEANBACK_LAUNCHER -p com.google.android.youtube.tv"
+    ],
+    "start": 1793496198.1269152,
+    "end": 1793496198.288953,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "am start -W -n com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity"
+    ],
+    "start": 1793496198.290796,
+    "end": 1793496198.6958919,
+    "returncode": 0
+  },
+  {
+    "args": [
+      "shell",
+      "dumpsys activity activities"
+    ],
+    "start": 1793496198.697701,
+    "end": 1793496198.9073243,
+    "returncode": 0
+  }
+]
