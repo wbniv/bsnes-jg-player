@@ -24,7 +24,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Release automation — [plan](docs/plans/2026-10-31-repeatable-release-tooling.md)
 
-- [T3] Tooling and full local candidate preparation PASS (0.1.10/code 11); 20 failure/gate tests, signed APK inspection, signing recovery, browser fidelity and local consumer-page checks pass. Remaining: scoped R2 credentials (existing admin token HTTP 403), live publication/retention tests, consumer deployments and real QR/recipient transfer proof. Cast1 player install is signature-incompatible; Pixel test was cancelled before grant due to another session reservation. No public release was made.
 
 ### Later (separate)
 
@@ -45,6 +44,8 @@ _Nothing being watched._
 - [T1] **Consumer release verification:** player `1.1.0` and live-record are committed and pushed on `npm-package` and merged into `main`. The old “unpushed branch” blocker is resolved. Recheck each consumer's installed revision, sync result and live-record deployment before closing the cross-repository release; this repository's push does not prove either site is current.
   Parked 2026‑11‑01 (Will: "we're not ready for release"). Re-check the tier on unpark.
 
+- [T3] Tooling and full local candidate preparation PASS (0.1.10/code 11); 20 failure/gate tests, signed APK inspection, signing recovery, browser fidelity and local consumer-page checks pass. Remaining: scoped R2 credentials (existing admin token HTTP 403), live publication/retention tests, consumer deployments and real QR/recipient transfer proof. Cast1 player install is signature-incompatible; Pixel test was cancelled before grant due to another session reservation. No public release was made.
+  Parked 2026‑11‑01 (Will: "we're not ready for release"). All remaining steps are release steps (R2 credentials, live publication, consumer deployments, QR transfer proof). Re-check the tier on unpark.
 - [T2] **Search for the TV library**: see the [plan](docs/plans/2026-10-26-snes-rom-library-search.md).
   Deferred by Will on 2026‑10‑26. Search is currently visible. The old instruction to disable it is under clarification with Will; do not remove it solely because of that historical deferral. Un-park when
   the catalog nears 1,000 ROMs. T2 because it means switching on and testing one module; choosing
