@@ -36,6 +36,35 @@ val controlledDebugSigning = providers.gradleProperty("controlledDebugSigning")
 // beside another copy of this package that was signed with a different key.
 val nativeIdSuffixExtra = providers.gradleProperty("nativeIdSuffixExtra").orElse("").get()
 check(Regex("(\\.[a-z][a-z0-9]*)*").matches(nativeIdSuffixExtra)) { "Invalid nativeIdSuffixExtra" }
+// Opt-in experimental WASM engine for the `wasm` flavor only (all default off; the default build stages
+// and verifies the pinned dist/ core pair and web/app.js exactly as before). -PexperimentalWasmDir names a
+// directory, relative to the repository root, holding bsnes_jg.js, bsnes_jg.wasm, PROVENANCE.json and app.js;
+// each file is verified against the sha256 passed in -PexperimentalWasmGlueSha / -PexperimentalWasmSha /
+// -PexperimentalWasmAppSha / -PexperimentalWasmProvenanceSha, both before staging and inside the APK.
+// -PwasmIdSuffixExtra=.jspi optionally gives the wasm package its own id (org.bsnesjg.tv.phase2.jspi).
+// See docs/plans/2026-11-01-jspi-pixel-apk.md.
+val experimentalWasmDir = providers.gradleProperty("experimentalWasmDir").orNull?.takeIf { it.isNotBlank() }
+val wasmIdSuffixExtra = providers.gradleProperty("wasmIdSuffixExtra").orElse("").get()
+check(Regex("(\\.[a-z][a-z0-9]*)*").matches(wasmIdSuffixExtra)) { "Invalid wasmIdSuffixExtra" }
+fun experimentalSha(name: String): String {
+    val value = providers.gradleProperty(name).orNull
+    check(value != null && Regex("[0-9a-f]{64}").matches(value)) {
+        "-PexperimentalWasmDir requires -P$name=<sha256 of the file it stages>"
+    }
+    return value
+}
+val experimentalWasm = experimentalWasmDir?.let { dir ->
+    mapOf(
+        "dir" to dir,
+        "glue" to experimentalSha("experimentalWasmGlueSha"),
+        "wasm" to experimentalSha("experimentalWasmSha"),
+        "app" to experimentalSha("experimentalWasmAppSha"),
+        "provenance" to experimentalSha("experimentalWasmProvenanceSha"),
+    )
+}
+// What the wasm flavor's APK must contain: the experimental files when opted in, else the pinned pair.
+val wasmFlavorGlueSha = experimentalWasm?.get("glue") ?: expectedGlueSha
+val wasmFlavorWasmSha = experimentalWasm?.get("wasm") ?: expectedWasmSha
 val releaseKeystorePath = providers.environmentVariable("BJG_RELEASE_KEYSTORE").orNull
 val releaseKeystorePassword = providers.environmentVariable("BJG_RELEASE_KEYSTORE_PASSWORD").orNull
 val releaseKeyAlias = providers.environmentVariable("BJG_RELEASE_KEY_ALIAS").orNull
@@ -186,6 +215,40 @@ val stageWasmAssets by tasks.registering(Sync::class) {
     from(publishedAssetsDir)
 }
 
+val experimentalWasmAssetsDir = layout.buildDirectory.dir("generated/experimentalWasmAssets")
+val verifyExperimentalWasm by tasks.registering {
+    onlyIf { experimentalWasm != null }
+    doLast {
+        val spec = experimentalWasm!!
+        val dir = repo.resolve(spec.getValue("dir"))
+        fun sha(file: java.io.File) = MessageDigest.getInstance("SHA-256").digest(file.readBytes())
+            .joinToString("") { "%02x".format(it) }
+        listOf("bsnes_jg.js" to "glue", "bsnes_jg.wasm" to "wasm", "app.js" to "app", "PROVENANCE.json" to "provenance")
+            .forEach { (name, key) ->
+                val file = dir.resolve(name)
+                check(file.isFile) { "Experimental WASM file missing: $file" }
+                check(sha(file) == spec.getValue(key)) { "Experimental WASM $name does not match the sha256 passed in" }
+            }
+        println("Verified experimental WASM engine in $dir")
+    }
+}
+// Same layout as stageWasmAssets, with the experimental engine files in place of dist/ and web/app.js.
+val stageExperimentalWasmAssets by tasks.registering(Sync::class) {
+    dependsOn(verifyRomFixture, stagePublishedAssets, verifyExperimentalWasm)
+    into(experimentalWasmAssetsDir)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    experimentalWasm?.let { spec ->
+        val dir = repo.resolve(spec.getValue("dir"))
+        from(dir.resolve("app.js"))
+        from(dir) {
+            into("cores")
+            include("bsnes_jg.js", "bsnes_jg.wasm", "PROVENANCE.json")
+        }
+    }
+    from(publishedAssetsDir)
+}
+val wasmFlavorAssets = if (experimentalWasm != null) stageExperimentalWasmAssets else stageWasmAssets
+
 android {
     namespace = "org.bsnesjg.tv"
     compileSdk = 34
@@ -231,7 +294,7 @@ android {
         create("wasm") {
             dimension = "engine"
             // Keep Phase 2 measurements beside the Phase 1 install and user data.
-            applicationIdSuffix = ".phase2"
+            applicationIdSuffix = ".phase2$wasmIdSuffixExtra"
             resValue("string", "app_name", "LLVM 65816 Torture Test Suite on SNES")
             buildConfigField("boolean", "NATIVE_ENGINE", "false")
             buildConfigField("boolean", "ROM_LIBRARY", "true")
@@ -276,7 +339,7 @@ android {
         }
     }
 
-    sourceSets.getByName("wasm").assets.srcDir(stageWasmAssets.map { it.destinationDir })
+    sourceSets.getByName("wasm").assets.srcDir(wasmFlavorAssets.map { it.destinationDir })
     sourceSets.getByName("wasmplayer").assets.srcDir(stageWasmAssets.map { it.destinationDir })
     sourceSets.getByName("wasmplayer").assets.srcDir(tvProject.resolve("app/src/wasm/assets"))
     sourceSets.getByName("native").assets.srcDir(nativeAssetsDir)
@@ -293,7 +356,7 @@ stageNativeAssets.configure { dependsOn(verifyRomFixture) }
 tasks.configureEach {
     when (name) {
         "preWasmplayerDebugBuild", "preWasmplayerReleaseBuild" -> dependsOn(stageWasmAssets)
-        "preWasmDebugBuild", "preWasmReleaseBuild" -> dependsOn(stageWasmAssets)
+        "preWasmDebugBuild", "preWasmReleaseBuild" -> dependsOn(wasmFlavorAssets)
         "preNativeDebugBuild", "preNativeReleaseBuild" -> dependsOn(stageNativeAssets)
         "preNativeplayerDebugBuild", "preNativeplayerReleaseBuild" -> dependsOn(stageNativePlayerAssets)
     }
@@ -364,14 +427,27 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
                 }
             }
             if (flavor == "wasm" || flavor == "wasmplayer") {
-                check(sha(zip.getInputStream(zip.getEntry("assets/app.js")).use { it.readBytes() }) == sha(repo.resolve("web/app.js").readBytes())) {
-                    "APK player does not match the canonical web/app.js source"
+                // Only the wasm flavor takes the opt-in experimental engine; wasmplayer stays pinned.
+                val experimental = if (flavor == "wasm") experimentalWasm else null
+                val appSha = experimental?.get("app") ?: sha(repo.resolve("web/app.js").readBytes())
+                check(sha(zip.getInputStream(zip.getEntry("assets/app.js")).use { it.readBytes() }) == appSha) {
+                    if (experimental != null) "APK player does not match the experimental app.js sha256 passed in"
+                    else "APK player does not match the canonical web/app.js source"
                 }
-                check(sha(zip.getInputStream(zip.getEntry("assets/cores/bsnes_jg.js")).use { it.readBytes() }) == expectedGlueSha) {
+                check(sha(zip.getInputStream(zip.getEntry("assets/cores/bsnes_jg.js")).use { it.readBytes() }) ==
+                      (if (flavor == "wasm") wasmFlavorGlueSha else expectedGlueSha)) {
                     "APK glue differs from the validated core pair"
                 }
-                check(sha(zip.getInputStream(zip.getEntry("assets/cores/bsnes_jg.wasm")).use { it.readBytes() }) == expectedWasmSha) {
+                check(sha(zip.getInputStream(zip.getEntry("assets/cores/bsnes_jg.wasm")).use { it.readBytes() }) ==
+                      (if (flavor == "wasm") wasmFlavorWasmSha else expectedWasmSha)) {
                     "APK wasm differs from the validated core pair"
+                }
+                if (experimental != null) {
+                    check(sha(zip.getInputStream(zip.getEntry("assets/cores/PROVENANCE.json")).use { it.readBytes() }) ==
+                          experimental.getValue("provenance")) {
+                        "APK core provenance does not match the experimental PROVENANCE.json sha256 passed in"
+                    }
+                    println("Experimental WASM engine verified in $variant APK: wasm ${experimental.getValue("wasm")}")
                 }
             }
             if (flavor == "nativeplayer") {
@@ -421,7 +497,7 @@ fun verifyApkArtifact(taskName: String, variant: String) = tasks.register(taskNa
                     "wasmplayer" -> "org.bsnesjg.tv"
                     "native" -> "org.bsnesjg.tv.native.phase2$nativeIdSuffixExtra"
                     "nativeplayer" -> "org.bsnesjg.tv.native"
-                    else -> "org.bsnesjg.tv.phase2"
+                    else -> "org.bsnesjg.tv.phase2$wasmIdSuffixExtra"
                 }
                 check(mergedManifest.readText().contains("package=\"$expectedPackage\"")) {
                     "$variant APK package id does not match $expectedPackage"
