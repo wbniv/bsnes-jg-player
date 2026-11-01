@@ -102,6 +102,87 @@ Job `J‑0020fd86a0c0` on `chromecast-test-02` (Chromecast, Android 12, armeabi-
 - **The package id differs.** Cast2 carries a stale `org.bsnesjg.tv.native.phase2` signed with another key (it survived a factory reset), so `INSTALL_FAILED_UPDATE_INCOMPATIBLE` blocked four installs (evidence in the `-install-refused*` directories, untracked). This build uses id `org.bsnesjg.tv.native.phase2.cast2`, built with `BJG_GRADLE_EXTRA=-PnativeIdSuffixExtra=.cast2` (`android/app/build.gradle.kts`, `android/build-in-container.sh`). Native code, version, key and ROM are identical.
 - The coordinator app `bsnes-jg-tv-phase2-native-cast2` has no `frame` checkpoint, because checkpoints are declared per package in the coordinator's root-owned `applications.json`. Adding one for the `.cast2` package would restore the automatic frame‑5800 capture; that is the administrator's change.
 
+### Cast2 gate and layout from existing evidence (2026‑11‑01)
+
+No device was touched; this reads `J‑0020fd86a0c0`'s downloaded evidence only.
+
+**How Cast1 was checked.** Two independent checks, both reused here.
+
+- **In the app, at frame 5800** (`MainActivity.NativeRenderer`, the step loop): for ROM `mandel-display` the app compares the core's 256×224 RGBA framebuffer (`NativeEngine.copyPixels`) with the APK asset `reference-5800.png` (source `android/fixture/reference-5800.png`) and logs `"phase":"framebuffer"`, then reads WRAM word offset `0x580` (1408) and logs `"phase":"correctness"` with expected `0x204F` (8271). Only `MandelbrotLayoutBenchmarkActivity` (the `layoutProof` extra) then freezes emulation at 5800.
+- **On the host, on the screenshot** (`android/tools/check-layout-frame.py <evidence dir>`): finds the bounding box of the reference's non-black palette in `screenshot.png`, samples the centre of each of the 57,344 source pixels inside it, diffs against `android/fixture/reference-5800.png`, and takes `gl_error` from the logcat `renderer_health` record at frame 5800. Cast1 `J‑980895a9d7bc` launched `MandelbrotLayoutBenchmarkActivity`, so its screenshot is the frozen frame 5800 (`layout-check.json`: rect `[240, 0, 1440, 1080]`, `differentPixels` 0, `gl_error` 0).
+
+Cast2 launched `MandelbrotBenchmarkActivity` (no freeze), so its screenshot is the frame at the end of the run, about 10,781.
+
+1. **The in-app frame-5800 gate ran on Cast2.**
+
+    ```
+    $ grep -n '"frame":5800' docs/diagnostics/cast2-armv7-measure-2026-11-01/logcat.txt
+    567:11-01 08:19:33.258 23004 23048 I BJG_TV_METRIC: {"engine":"native","phase":"framebuffer","frame":5800,"differentPixels":0,"pixels":57344,"status":"pass"}
+    568:11-01 08:19:33.259 23004 23048 I BJG_TV_METRIC: {"engine":"native","phase":"correctness","frame":5800,"offset":1408,"expected":8271,"actual":8271,"status":"pass"}
+    $ grep -n '"frame":5800' docs/diagnostics/coverage-followup-2026-10-31/cast1-checkpoint-final/logcat.txt | cut -c1-200
+    7292:10-31 11:49:12.555 10676 10701 I BJG_TV_METRIC: {"engine":"native","phase":"framebuffer","frame":5800,"differentPixels":0,"pixels":57344,"status":"pass"}
+    7293:10-31 11:49:12.559 10676 10701 I BJG_TV_METRIC: {"engine":"native","phase":"correctness","frame":5800,"offset":1408,"expected":8271,"actual":8271,"status":"pass"}
+    ```
+
+    **PASS:** identical lines to Cast1's. The ROM is `mandel-display` (`rom_loaded` at line 261).
+
+2. **GL error over the whole run.** `renderer_health` is logged every 5 s with `GLES20.glGetError()`, which returns any error flag raised since the previous call, so 96 zero readings cover frames 1 to 10,781.
+
+    ```
+    $ python3 -I - logcat.txt   # count renderer_health records
+    96
+    gl_error values Counter({0: 96})
+    game_rect values Counter({'[0.125, 0.0, 0.75, 1.0]': 96})
+    frames [1, 113, 225, 337, 449] ... [10557, 10669, 10781]
+    renderer_surface: "gl_version":"OpenGL ES 3.2 v1.r47p0-01eac0...","gl_vendor":"ARM","gl_renderer":"Mali-G31"
+    $ grep -n -i -E 'FATAL|AndroidRuntime|libEGL|EGL_|GL_INVALID|glError|OpenGLRenderer.*(error|fail)|F DEBUG|signal [0-9]' logcat.txt
+    60:  W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane"
+    61:  W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane_imported"
+    129: W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane"
+    130: W libc    : Access denied finding property "vendor.mali.cctx_memory_class_egl_color_plane_imported"
+    ```
+
+    **PASS:** no GL error, no crash. The four matches are Mali driver property-lookup warnings at startup, not GL errors.
+
+3. **Is the end-of-run screenshot equivalent to frame 5800?** The `lit_samples` count (non-black pixels on an 8-pixel grid, 896 samples) in each `renderer_health` record shows whether the picture changes.
+
+    ```
+    5069 677; 5185 675; 5301 675; 5413 652; 5529 621; 5641 629; 5753 661; 5865 575; 5981 672; 6097 514; 6209 660; ...
+    10329 668; 10441 527; 10557 667; 10669 600; 10781 648
+    ```
+
+    **FAIL:** it changes after about frame 5400 and keeps changing through 10,781. Cast1 cannot help: its only screenshot past 5800 is the frozen one. The Cast2 screenshot is not a frame-5800 equivalent.
+
+4. **Run the Cast1 comparison on the Cast2 screenshot.** `check-layout-frame.py` stops on Cast2 because no `renderer_health` record falls on frame 5800 (they are at 5753 and 5865). A copy of its sampling without that check (scratch only, not committed) gives:
+
+    ```
+    $ python3 -I cmp.py docs/diagnostics/cast2-armv7-measure-2026-11-01/screenshot.png android/fixture/reference-5800.png
+    screen (1920, 1080) palette_bbox (240, 0, 1680, 1080)
+    {"game_rect_pixels": [240, 0, 1440, 1080], "aspect": 1.3333333333333333, "differentPixels": 49764, "pixels": 57344}
+    $ python3 -I cmp.py docs/diagnostics/coverage-followup-2026-10-31/cast1-checkpoint-final/screenshot.png android/fixture/reference-5800.png
+    screen (1920, 1080) palette_bbox (240, 0, 1680, 1080)
+    {"game_rect_pixels": [240, 0, 1440, 1080], "aspect": 1.3333333333333333, "differentPixels": 0, "pixels": 57344}
+    ```
+
+    **PASS for geometry, FAIL for pixels.** The Cast2 game rectangle is exactly 1440×1080 at x = 240, the same as Cast1, and the green field visibly fills it edge to edge. The 49,764 differing pixels mean only that frame 10,781 is a different picture (step 3); they are not a rendering fault.
+
+| Claim | Cast2 verdict | Evidence |
+|---|---|---|
+| (a) 4:3 geometry | **PROVEN** | Screenshot rectangle 1440×1080 at x = 240 on 1920×1080, aspect 1.3333 (step 4); `game_rect` [0.125, 0, 0.75, 1] in all 96 `renderer_health` records (step 2) |
+| (b) Zero differing pixels vs `reference-5800.png` | **Core framebuffer PROVEN; displayed pixels NOT PROVEN** | The in-app check found 0 of 57,344 differing in the emulator framebuffer at 5800 (step 1). No frame-5800 screenshot exists, so the GL-rasterized output was never compared (steps 3–4) |
+| (c) No GL error in logcat | **PROVEN** | 96 of 96 `glGetError` readings 0, frames 1 to 10,781; no EGL, GL or crash lines (step 2) |
+| (d) WRAM `0x204F` at frame 5800 | **PROVEN** | `correctness` line, offset 1408, expected 8271, actual 8271, pass (step 1) |
+
+**Still needed for (b):** a frozen frame-5800 capture on Cast2. It needs the administrator to declare a `frame` checkpoint for `bsnes-jg-tv-phase2-native-cast2` in the coordinator's `applications.json`, with that app's launch activity set to `org.bsnesjg.tv.MandelbrotLayoutBenchmarkActivity` so the app freezes at 5800. Then, with the same `.cast2` APK (SHA‑256 `be5e60a7…`), the orchestrator runs:
+
+```
+task chromecast:check DEVICE=chromecast-test-02 APP=bsnes-jg-tv-phase2-native-cast2 APK=<.cast2 release APK, sha256 be5e60a7c97a8136ac199c747e32a43ede9cf7d33700336f606dd925d3a0e73f> REINSTALL=true DURATION=480 CHECKPOINT=frame TARGET=5800
+task chromecast:evidence JOB=<job id> OUT=docs/diagnostics/cast2-checkpoint-2026-11-0X
+python3 android/tools/check-layout-frame.py docs/diagnostics/cast2-checkpoint-2026-11-0X
+```
+
+Cast2 reached frame 5800 at 269 s, so 480 s leaves room. Not run here.
+
 ## Out of scope
 
 - **PGO training build.** A `-fprofile-generate` variant of `libbjg.so`, a JNI `dumpProfile()` that writes `.profraw` after a fixed frame count, a coordinator step that pulls it from the app's files directory, and a `-fprofile-use` release build. Expected gain 10–30% on this interpreter-style code. Gate on the coordinator having a file-pull capability for a non-debuggable package.

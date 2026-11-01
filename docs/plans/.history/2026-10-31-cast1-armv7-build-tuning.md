@@ -1,10 +1,16 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f807031) | Record the Cast2 measurement: 44.04 ms median, 22.41 FPS |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9d17a92) | Record the Cast1 device check of the catch-up credit cap |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9132eae) | Cap native catch-up credit so a slow core or stall is dropped, not banked |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/cd6a3fc) | Record Cast1 build-flag bisect: no compiler flag helps, none kept |
 
 <!--history-meta v1
+f807031	author	Will Norris
+f807031	added	17
+f807031	deleted	1
+f807031	files	1
+f807031	body	Cast2 refused four installs (a stale org.bsnesjg.tv.native.phase2 signed with\nanother key survived a factory reset), so the measurement uses a release-signed\nbuild with the package id suffix .cast2. -PnativeIdSuffixExtra is optional and\nchanges nothing when unset. No frame-5800 capture: the new package registers\nno checkpoint with the coordinator.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 9d17a92	author	Will Norris
 9d17a92	added	1
 9d17a92	deleted	1
