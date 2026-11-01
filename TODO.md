@@ -10,7 +10,8 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 ### Polish
 
-- [wip T4] **Remove the Asyncify cost with JSPI or uninstrumented coroutines.** Asyncify list trimming gains under 3% (see [plan](docs/plans/2026-10-31-asyncify-trim.md)); the Pixel 8 Pro WASM gap (23.7 vs 16.6 ms) needs a design change: `-sJSPI` fibers, a libco backend, or a scheduler without libco. Gate on browser JSPI support and the 0x204F fidelity check. <!-- agent:a16ea50713848f620 -->
+- [T4] **Land the JSPI core beside the Asyncify core, if Will agrees.** Measured 2026‑11‑01 ([plan](docs/plans/2026-11-01-jspi-coroutines.md)): a JSPI libco backend runs at 0.551× the Asyncify frame time on the laptop, with bit-identical WRAM and framebuffer and `?verify=1` passing in Firefox 156, Chromium 151 and Chrome 154. Projected Pixel 8 Pro WASM: 23.7 to about 13.0 ms (not measured on a phone). JSPI is not universal (Safari and iOS 27, Firefox 153), so it ships beside the Asyncify core, chosen at load with `typeof WebAssembly.Suspending === "function"`. Landing means two cores, an async `_bjg_run`, new pinned shas and the Android/TV paths. First step: a Pixel run to confirm the gain. Needs Will's decision before any change to `web/cores`, `dist` or the pinned shas.
+
 ### npm package — [plan](docs/plans/2026-07-27-npm-player-package.md)
 
 
@@ -54,6 +55,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [jspi-coroutines] JSPI libco backend measured: 0.551× frame time, bit-identical gates, needs an Asyncify fallback. See [plan](docs/plans/2026-11-01-jspi-coroutines.md).
 - ✅ 2026‑11‑01 — [stale-library-copy] Deleted `android/app/src/library/assets/` (drifted, no consumer); its `res/` icons stay, the generator writes them. See [plan](docs/plans/2026-10-28-google-tv-launcher-views.md).
 - ✅ 2026‑11‑01 — [library-text-rules] Empty-state text, "Search all N ROMs" count and 2-category chip rule match the plans; library UI test 24 of 24. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [library-hidden-css] `.search[hidden],.filters[hidden]` now hide; library UI tests 3, 14, 24 pass (21 of 24). See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
