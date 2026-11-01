@@ -173,7 +173,7 @@ Cast2 launched `MandelbrotBenchmarkActivity` (no freeze), so its screenshot is t
 | (c) No GL error in logcat | **PROVEN** | 96 of 96 `glGetError` readings 0, frames 1 to 10,781; no EGL, GL or crash lines (step 2) |
 | (d) WRAM `0x204F` at frame 5800 | **PROVEN** | `correctness` line, offset 1408, expected 8271, actual 8271, pass (step 1) |
 
-**Still needed for (b):** a frozen frame-5800 capture on Cast2. It needs the administrator to declare a `frame` checkpoint for `bsnes-jg-tv-phase2-native-cast2` in the coordinator's `applications.json`, with that app's launch activity set to `org.bsnesjg.tv.MandelbrotLayoutBenchmarkActivity` so the app freezes at 5800. Then, with the same `.cast2` APK (SHA‑256 `be5e60a7…`), the orchestrator runs:
+**Still needed for (b):** a frozen frame-5800 capture on Cast2. It needs the administrator to declare a `frame` checkpoint for the package `org.bsnesjg.tv.native.phase2.cast2` in the coordinator's `applications.json` (checkpoints are keyed by package, not app name; see [the handoff](../handoffs/2026-11-01-coordinator-cast2-checkpoint.md)), with that app's launch activity set to `org.bsnesjg.tv.MandelbrotLayoutBenchmarkActivity` so the app freezes at 5800. Then, with the same `.cast2` APK (SHA‑256 `be5e60a7…`), the orchestrator runs:
 
 ```
 task chromecast:check DEVICE=chromecast-test-02 APP=bsnes-jg-tv-phase2-native-cast2 APK=<.cast2 release APK, sha256 be5e60a7c97a8136ac199c747e32a43ede9cf7d33700336f606dd925d3a0e73f> REINSTALL=true DURATION=480 CHECKPOINT=frame TARGET=5800

@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/cb020b5) | Correct the Cast2 coverage claims: the in-app gate passed |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/3794783) | Record Cast2 frame-5800 gate and layout from existing evidence |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/f807031) | Record the Cast2 measurement: 44.04 ms median, 22.41 FPS |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/9d17a92) | Record the Cast1 device check of the catch-up credit cap |
@@ -7,6 +8,11 @@
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/cd6a3fc) | Record Cast1 build-flag bisect: no compiler flag helps, none kept |
 
 <!--history-meta v1
+cb020b5	author	Will Norris
+cb020b5	added	1
+cb020b5	deleted	1
+cb020b5	files	1
+cb020b5	body	The first Cast2 section said the frame-5800 WRAM gate and layout check had not\nrun. The app logs the gate value in decimal (8271 = 0x204F), so the hex search\nmissed it. Cast2 logcat lines 567-568 show differentPixels 0 and the gate pass.\nOnly the displayed-pixel comparison at exactly frame 5800 is still unproven.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 3794783	author	Will Norris
 3794783	added	81
 3794783	deleted	0
