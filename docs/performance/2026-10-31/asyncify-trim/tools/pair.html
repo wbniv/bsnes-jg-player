@@ -14,7 +14,7 @@ window.go = async () => {
   const chunks = BUILDS.map(() => []);
   for (let c = 0, done = 0; done < N; c++, done += CH) {
     const order = BUILDS.map((_, i) => i); if (c % 2) order.reverse();
-    for (const i of order) { const M = mods[i], t = performance.now(); for (let f = 0; f < CH; f++) M._bjg_run(); chunks[i].push((performance.now() - t) / CH); }
+    for (const i of order) { const M = mods[i], t = performance.now(); for (let f = 0; f < CH; f++) { const pr = M._bjg_run(); if (pr) await pr; /* JSPI cores return a Promise */ } chunks[i].push((performance.now() - t) / CH); }
   }
   const gates = mods.map(M => { const w = M._bjg_wram() >>> 0; return (M.HEAPU8[w + 0x200] | M.HEAPU8[w + 0x201] << 8).toString(16); });
   return { builds: BUILDS, chunk: CH, frames: N, chunks, gates };

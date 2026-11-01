@@ -28,7 +28,7 @@ window.run = async function (rom, frames, every, input, opts = {}) {
   const inp = INPUT[input], cps = [], times = opts.times ? new Float64Array(frames) : null; let core = 0;
   for (let f = 0; f < frames; f++) {
     M._bjg_set_input(0, inp(f));
-    const a = performance.now(); M._bjg_run(); const d = performance.now() - a; core += d; if (times) times[f] = d;
+    const a = performance.now(); const pr = M._bjg_run(); if (pr) await pr; /* JSPI cores return a Promise */ const d = performance.now() - a; core += d; if (times) times[f] = d;
     if (opts.resetAt === f + 1) M._bjg_reset();
     if (every && (f + 1) % every === 0) cps.push([f + 1, snap()]);
   }

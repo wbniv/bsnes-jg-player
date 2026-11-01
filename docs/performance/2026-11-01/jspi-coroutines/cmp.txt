@@ -1,0 +1,10 @@
+check rc=0
+jspi     mandel-display  frames= 5800 checkpoints= 11 video_match=True gate base=204F var=204F OK
+jspi     lzss-gallery    frames= 3000 checkpoints= 12 video_match=True gate base=0 var=0 OK
+jspi     raycaster       frames= 3000 checkpoints= 12 video_match=True gate base=600 var=600 OK
+jspi     mandel-display  frames= 1200 checkpoints=  4 video_match=True gate base=0 var=0 OK
+ALL MATCH
+baseline [('mandel-display', '204F', '9c402328', 'e40cdd31'), ('lzss-gallery', '0', '891ab464', 'fc229dc5'), ('raycaster', '600', '1231b912', '8bb10315'), ('mandel-display', '0', '147335fd', 'e9a90805')]
+jspi [('mandel-display', '204F', '3b2f1e77', 'e40cdd31'), ('lzss-gallery', '0', 'e7d36eb6', 'fc229dc5'), ('raycaster', '600', 'afb71e8b', '8bb10315'), ('mandel-display', '0', 'a3c7e5d6', 'e9a90805')]
+
+[exited with code 0]
