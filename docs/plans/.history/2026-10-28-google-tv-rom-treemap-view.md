@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/d6498ac) | Validate Cast1 checkpoint and Pixel layouts with inline proof |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/83c5456) | Rename Android host directory and retain task compatibility aliases |
 | [2026-10-30](https://github.com/wbniv/bsnes-jg-player/commit/e314486) | Prepare Native releases and configurable ROM demo |
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/330c043) | Record device validation status for launcher views |
@@ -8,6 +9,10 @@
 | [2026-10-28](https://github.com/wbniv/bsnes-jg-player/commit/33177cd) | Implement share and responsive ROM launcher menus |
 
 <!--history-meta v1
+d6498ac	author	Will Norris
+d6498ac	added	3
+d6498ac	deleted	1
+d6498ac	files	1
 83c5456	author	Will Norris
 83c5456	added	4
 83c5456	deleted	4

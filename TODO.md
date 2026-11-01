@@ -23,7 +23,6 @@ Plan / contract: [docs/plans/2026-06-25-bsnes-jg-wasm.md](docs/plans/2026-06-25-
 
 - [wip T2] **Check that the D-pad can reach I'm Feeling Lucky.** The test agent reports Up from row 1 goes to a chip row that can be hidden and nothing leads to Lucky (my read of `library.js` is consistent, but I have not run it). On a TV remote that would make Lucky unreachable. Confirm first, then add a route. <!-- agent:a76b13d99aca16668 -->
 - [T3] **Give the native engine adapter `currentRom()`.** `android/app/src/native/assets/engine-adapter.js` lacks it, so "▶ Resume" and Select-on-paused-row cannot work on the native APK (library.js falls back to Play/restart). The test uses a `web/app.js`-shaped stub, so it does not catch this.
-- [T1] **Remove or document the stale library copy `android/app/src/library/assets/`.** The test agent found it is in no Gradle sourceSet (both Phase 2 flavors package `src/main/assets`). Confirm nothing references it before deleting.
 
 ### Release automation — [plan](docs/plans/2026-10-31-repeatable-release-tooling.md)
 
@@ -55,6 +54,7 @@ _Nothing being watched._
 
 ## Done
 
+- ✅ 2026‑11‑01 — [stale-library-copy] Deleted `android/app/src/library/assets/` (drifted, no consumer); its `res/` icons stay, the generator writes them. See [plan](docs/plans/2026-10-28-google-tv-launcher-views.md).
 - ✅ 2026‑11‑01 — [library-text-rules] Empty-state text, "Search all N ROMs" count and 2-category chip rule match the plans; library UI test 24 of 24. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [library-hidden-css] `.search[hidden],.filters[hidden]` now hide; library UI tests 3, 14, 24 pass (21 of 24). See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).
 - ✅ 2026‑11‑01 — [library-ui-test] `android/test/library-ui.test.mjs` written: 24 cases, 18 pass, 6 fail on real code/plan gaps. See [plan](docs/plans/2026-10-26-snes-rom-library-selector.md).

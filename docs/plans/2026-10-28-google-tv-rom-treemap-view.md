@@ -71,7 +71,7 @@ On phone landscape, collapse the title/search area, view carousel, and category 
 - `android/app/src/main/assets/index.html`: add the Treemap surface and detail rail.
 - `android/app/src/main/assets/library.js`: compute globally squarified rectangles from `size`, assign category colors from the selected named palette, persist palette choice, and add geometric D-pad movement.
 - `android/app/src/main/assets/library.css`: style the map, palette selector, selected tile, and responsive details rail.
-- Keep `android/app/src/library/assets/` synchronized for the preview page.
+- ~~Keep `android/app/src/library/assets/` synchronized for the preview page.~~ Removed 2026‑11‑01: that copy had drifted from `android/app/src/main/assets/` and no Gradle source set packaged it. `main/assets` is the one library UI, covered by `android/test/library-ui.test.mjs`.
 
 ## Verification plan
 
