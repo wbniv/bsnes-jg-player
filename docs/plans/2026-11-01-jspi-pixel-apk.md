@@ -104,3 +104,24 @@ Run on 2026‑11‑01. The tools are in [../performance/2026-11-01/jspi-coroutin
 5. **PASS.** `/` stayed at 4.3 GB free or more. The builds ran in `/tmp/jspi-apk`.
 
 **The signing key decides the package id.** The Pixel's last installed `org.bsnesjg.tv.phase2` is `043323ff…`, signed with the debug key, so a release‑signed APK cannot update it. The release‑signed build therefore uses `-PwasmIdSuffixExtra=.jspi` and needs a new coordinator registration, with `ACTIVITY=org.bsnesjg.tv.MandelbrotBenchmarkActivity`. The debug‑key build keeps `org.bsnesjg.tv.phase2` and would install over the Pixel's copy. It can only be measured through the existing `bsnes-jg-tv-phase2-wasm` registration, though, and that registration was last recorded as pointing at `MainActivity`.
+
+## Pixel run 1 stalled (J‑6839cadfce9b) and the v2 diagnostic APK
+
+**What the device evidence shows.** The run logged `app_start`, `core_ready`, `rom_loaded` and `engine_info` (Chrome 156, `jspi: true`), then nothing more. There was no `first_live_frame`, no `playback_window` and no console error. `dumpsys meminfo` on the app pid **timed out**, which the baseline's did not, so the app's UI thread was unresponsive. In WebView's synchronous compositor the UI thread waits on the renderer, so this points to the renderer main thread being stuck inside the first frame: a long microtask loop, a wait that never ends, or a hang in the engine. It does not point to a rejected promise, because that would have logged `Uncaught (in promise)` through `BJG_WEBVIEW`.
+
+**What the host shows.** The same APK assets and the same benchmark URL in TV mode reach frame 5800 with `0x204F` in Chromium 151 (and in Chrome 154 for the scratch web copy). The stall does not reproduce on the host. No Chrome 156 or Android WebView is available here without a device.
+
+**v2** (`jspi-wasm-release-v2.apk`, `f1afe769…`). The wasm is unchanged (`0a3a6ffe…`). The glue is `5a0c3afa…` and `app.js` is `d400f0c0…`.
+
+- `libco_jspi.js` logs `jspi_progress` at switches 1, 2, 4, 8 and so on, from inside the microtask chain, so the lines appear even if a frame never returns. It also logs `jspi_thread_start` and `jspi_error`.
+- `app.js` logs `core_error` and carries on with the loop. It logs a `jspi_heartbeat` every 2 s for the first 60 s, which appears only while the main thread is free. The in‑flight guard now clears on rejection too.
+
+**How to read a v2 run:**
+
+| Pattern | Meaning |
+|---|---|
+| Growing `jspi_progress` and no heartbeats | A busy microtask or switch loop |
+| Progress stops while heartbeats continue with `inflight: true` | A promise never resumed |
+| `jspi_error` or `core_error` | A trap, for example stack exhaustion |
+
+The host run of v2 reaches frame 5800 with `0x204F` and logs all of the new events.

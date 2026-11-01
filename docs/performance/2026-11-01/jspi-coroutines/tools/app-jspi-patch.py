@@ -26,13 +26,15 @@ sub("  function frame(timestamp) {\n    if (!running) return;\n",
     "  // JSPI cores return a Promise from _bjg_run; never start a frame while another is in flight.\n"
     "  function runCore() {\n"
     "    var pr = Module._bjg_run();\n"
-    "    if (pr && pr.then) { window.__bjgInflight = pr; pr.then(function () { if (window.__bjgInflight === pr) window.__bjgInflight = null; }); }\n"
+    "    if (pr && pr.then) { var clear = function () { if (window.__bjgInflight === pr) window.__bjgInflight = null; }; window.__bjgInflight = pr; pr.then(clear, clear); }\n"
     "    return pr;\n"
     "  }\n\n"
     "  async function frame(timestamp) {\n    if (!running) return;\n"
     "    if (window.__bjgInflight) { rafId = requestAnimationFrame(frame); return; }\n")
 sub("      var coreStart = performance.now();\n      Module._bjg_run();\n",
-    "      var coreStart = performance.now();\n      var pending = runCore(); if (pending) await pending;\n")
+    "      var coreStart = performance.now();\n"
+    "      try { var pending = runCore(); if (pending) await pending; }\n"
+    "      catch (e) { tvMetric(\"core_error\", { message: String(e && e.stack || e).slice(0, 1500) }); break; }\n")
 # live-record self-check (gallery)
 sub("    (function chunk() {\n      for (var i = 0; i < poll; i++) Module._bjg_run();\n",
     "    (async function chunk() {\n      for (var i = 0; i < poll; i++) { var pending = runCore(); if (pending) await pending; }\n")
@@ -52,7 +54,10 @@ sub("var t = performance.now(); Module._bjg_run(); coreNs +=",
 # record JSPI support with every ROM load (TV mode only; tvMetric is a no-op elsewhere)
 sub('      tvMetric("rom_loaded", { rom: current || DEFAULT_ROM, bytes: bytes.length });\n',
     '      tvMetric("rom_loaded", { rom: current || DEFAULT_ROM, bytes: bytes.length });\n'
-    '      tvMetric("engine_info", { core: "jspi", jspi: typeof WebAssembly.Suspending === "function", ua: navigator.userAgent });\n')
+    '      tvMetric("engine_info", { core: "jspi", jspi: typeof WebAssembly.Suspending === "function", ua: navigator.userAgent });\n'
+    '      if (!window.__bjgBeat) { var beats = 0; window.__bjgBeat = setInterval(function () {\n'
+    '        tvMetric("jspi_heartbeat", { frames: tvMetrics.frames, rom_frames: tvMetrics.romFrames, running: running, inflight: !!window.__bjgInflight });\n'
+    '        if (++beats >= 30) clearInterval(window.__bjgBeat); }, 2000); }\n')
 if "Module._bjg_run()" in s.replace("var pr = Module._bjg_run();", ""):
     sys.exit("an unpatched _bjg_run call site remains")
 open(sys.argv[2], "w").write(s)
