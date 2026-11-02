@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/6d8798f) | Record the JSPI Pixel APK builds and the signing-key finding |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/fda6cf9) | Sweep the plans for statements this session made stale |
 | [2026-11-01](https://github.com/wbniv/bsnes-jg-player/commit/2f65e42) | Index the JSPI coroutines plan |
 | [2026-10-31](https://github.com/wbniv/bsnes-jg-player/commit/efcea07) | Observe the retarget-once stop case live on the real ROM |
@@ -16,6 +17,11 @@
 | [2026-06-26](https://github.com/wbniv/bsnes-jg-player/commit/9b85386) | docs: add plan index (docs/plans/README.md) |
 
 <!--history-meta v1
+6d8798f	author	Will Norris
+6d8798f	added	2
+6d8798f	deleted	1
+6d8798f	files	1
+6d8798f	body	The Pixel's installed org.bsnesjg.tv.phase2 (043323ff) is debug-signed, so\nthe release-signed JSPI APK carries the .jspi suffix and needs its own\nregistration. The default wasm build is byte-identical to main's.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01YEenqN5v3cNEkbzjiw3yKs
 fda6cf9	author	Will Norris
 fda6cf9	added	2
 fda6cf9	deleted	1

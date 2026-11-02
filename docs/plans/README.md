@@ -36,6 +36,7 @@ rows on commit.*
 | [JSPI coroutines: can a design change remove the Asyncify cost?](2026-11-01-jspi-coroutines.md) | Replace the Asyncify-fiber libco backend with a JSPI one (each thread its own engine stack), then bench it paired against the committed core and gate it on WRAM/video checkpoints and `?verify=1` in three browsers. | [`538e7c4`](https://github.com/wbniv/bsnes-jg-player/commit/538e7c4); viable only with an Asyncify fallback (0.55× frame time, bit-identical); not landed | Investigation |
 | [Cast1 armeabi-v7a build tuning and support position](2026-10-31-cast1-armv7-build-tuning.md) | Profile the 15 FPS Cast1 core, bisect build flags (none help), keep the framebuffer fix and linear resampler, clamp the catch-up credit, and measure Cast2 (44 ms, 22 FPS). | Cast2 frozen-pixel proof pending a coordinator checkpoint. |
 | [JSPI Pixel APK: an experimental WASM build for a Pixel 8 Pro measurement](2026-11-01-jspi-pixel-apk.md) | Add an opt-in Gradle override that stages a sha-pinned experimental engine into the wasm flavor, and build release-signed and debug-key JSPI APKs for a Pixel run without touching the default build. | [`a094821`](https://github.com/wbniv/bsnes-jg-player/commit/a094821); APKs built, device run pending | Tooling |
+| [ROM Treemap touch selection and launch](2026-11-02-rom-treemap-touch-selection.md) | Make short touches select a ROM without launching, while keeping long-press and the selected-ROM Play button as launch actions. | [`e16880d`](https://github.com/wbniv/bsnes-jg-player/commit/e16880d) | Feature |
 
 ---
 
@@ -44,4 +45,4 @@ rows on commit.*
 - **Order** = each plan's *creation* commit (oldest commit that touched the file), by committer date.
 - **Commit(s)** = the full `git log --follow` set per plan, oldest → newest.
 - **Summaries / categories** auto-generated from each plan's TL;DR (Sonnet, medium effort) — refine as needed.
-- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s); asyncify-trim row added by hand 2026-10-31; jspi-coroutines, jspi-pixel-apk and cast1-armv7-build-tuning rows added by hand 2026-11-01.
+- **Generated** 2026-06-26 for 2 plan(s); updated 2026-07-27 for 3 plan(s); asyncify-trim row added by hand 2026-10-31; jspi-coroutines, jspi-pixel-apk and cast1-armv7-build-tuning rows added by hand 2026-11-01; rom-treemap-touch-selection row added by hand 2026-11-02.
